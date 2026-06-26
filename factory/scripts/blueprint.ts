@@ -1,4 +1,4 @@
-import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { captureMotion, captureScreenshots } from "./capture";
@@ -62,6 +62,20 @@ async function checkRequiredFiles(siteSlug: string): Promise<string[]> {
     if (!(await fileExists(requiredFile))) missing.push(requiredFile);
   }
   return missing;
+}
+
+async function directoryHasFiles(relativePath: string): Promise<boolean> {
+  try {
+    const entries = await readdir(path.join(rootDir, relativePath));
+    return entries.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+function deployProfile(markdown: string): string {
+  const match = markdown.match(/^Profile:\s*(.+)$/m);
+  return match ? match[1].trim() : "unknown";
 }
 
 async function main() {
@@ -133,6 +147,49 @@ async function main() {
     await mkdir(outputDir, { recursive: true });
     await captureMotion(url, outputDir);
     console.log(`Captured motion for ${siteSlug}.`);
+    return;
+  }
+
+  if (command === "beauty") {
+    const missingEvidence: string[] = [];
+    if (!(await fileExists(`sites/${siteSlug}/art-direction.md`))) {
+      missingEvidence.push("art-direction.md");
+    }
+    if (!(await fileExists(`sites/${siteSlug}/screenshots/desktop.png`))) {
+      missingEvidence.push("screenshots/desktop.png");
+    }
+    if (!(await fileExists(`sites/${siteSlug}/screenshots/mobile.png`))) {
+      missingEvidence.push("screenshots/mobile.png");
+    }
+    if (!(await directoryHasFiles(`sites/${siteSlug}/qa/motion`))) {
+      missingEvidence.push("qa/motion capture");
+    }
+
+    const reviewPath = path.join(rootDir, "sites", siteSlug, "qa", "visual-review.md");
+    const entry = [
+      "",
+      `## Beauty Pass ${new Date().toISOString()}`,
+      "",
+      missingEvidence.length > 0 ? "Status: NOT_READY" : "Status: READY_FOR_REVIEW",
+      "",
+      missingEvidence.length > 0 ? `Missing evidence: ${missingEvidence.join(", ")}` : "Evidence present. Run the rubric and record scores.",
+      ""
+    ].join("\n");
+    await appendFile(reviewPath, entry);
+
+    if (missingEvidence.length > 0) {
+      console.log(`NOT_READY: missing evidence for ${siteSlug}: ${missingEvidence.join(", ")}`);
+      return;
+    }
+    console.log(`READY_FOR_REVIEW: evidence exists for ${siteSlug}.`);
+    return;
+  }
+
+  if (command === "deploy") {
+    const deployPath = path.join(rootDir, "sites", siteSlug, "deploy.md");
+    const deployNotes = await readFile(deployPath, "utf8");
+    console.log(`Deploy profile for ${siteSlug}: ${deployProfile(deployNotes)}`);
+    console.log("Production deploy is intentionally disabled in the first factory version.");
     return;
   }
 
