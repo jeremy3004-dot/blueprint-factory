@@ -47,6 +47,22 @@ async function copyTemplate(templateName: string, destination: string, siteSlug:
   await writeFile(path.join(rootDir, destination), raw.replaceAll("{{siteSlug}}", siteSlug));
 }
 
+async function copyTemplateDirectory(source: string, destination: string, siteSlug: string) {
+  await mkdir(destination, { recursive: true });
+  const entries = await readdir(source, { withFileTypes: true });
+  for (const entry of entries) {
+    const sourcePath = path.join(source, entry.name);
+    const destinationPath = path.join(destination, entry.name);
+    if (entry.isDirectory()) {
+      await copyTemplateDirectory(sourcePath, destinationPath, siteSlug);
+      continue;
+    }
+
+    const raw = await readFile(sourcePath, "utf8");
+    await writeFile(destinationPath, raw.replaceAll("{{siteSlug}}", siteSlug));
+  }
+}
+
 async function fileExists(relativePath: string): Promise<boolean> {
   try {
     await access(path.join(rootDir, relativePath));
@@ -94,6 +110,11 @@ async function main() {
     await mkdir(path.join(rootDir, "sites", siteSlug, "references"), { recursive: true });
     await mkdir(path.join(rootDir, "sites", siteSlug, "source-notes"), { recursive: true });
     await mkdir(path.join(rootDir, "sites", siteSlug, "screenshots"), { recursive: true });
+    await copyTemplateDirectory(
+      path.join(rootDir, "factory/templates/next-site"),
+      path.join(rootDir, "sites", siteSlug, "app"),
+      siteSlug
+    );
     await copyTemplate("brief.template.md", `sites/${siteSlug}/brief.md`, siteSlug);
     await copyTemplate("art-direction.template.md", `sites/${siteSlug}/art-direction.md`, siteSlug);
     await copyTemplate("asset-log.template.md", `sites/${siteSlug}/asset-log.md`, siteSlug);
