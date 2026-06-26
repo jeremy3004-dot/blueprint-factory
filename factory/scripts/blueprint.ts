@@ -1,6 +1,7 @@
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { captureMotion, captureScreenshots } from "./capture";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -64,7 +65,7 @@ async function checkRequiredFiles(siteSlug: string): Promise<string[]> {
 }
 
 async function main() {
-  const [command, rawSlug] = process.argv.slice(2);
+  const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
     console.log("Usage: blueprint <new|art|check|screenshots|motion|beauty|deploy> <slug>");
     return;
@@ -108,6 +109,30 @@ async function main() {
       process.exit(1);
     }
     console.log(`READY: required factory files exist for ${siteSlug}.`);
+    return;
+  }
+
+  if (command === "screenshots") {
+    if (!url) {
+      console.error("Usage: blueprint screenshots <slug> <url>");
+      process.exit(1);
+    }
+    const outputDir = path.join(rootDir, "sites", siteSlug, "screenshots");
+    await mkdir(outputDir, { recursive: true });
+    await captureScreenshots(url, outputDir);
+    console.log(`Captured screenshots for ${siteSlug}.`);
+    return;
+  }
+
+  if (command === "motion") {
+    if (!url) {
+      console.error("Usage: blueprint motion <slug> <url>");
+      process.exit(1);
+    }
+    const outputDir = path.join(rootDir, "sites", siteSlug, "qa", "motion");
+    await mkdir(outputDir, { recursive: true });
+    await captureMotion(url, outputDir);
+    console.log(`Captured motion for ${siteSlug}.`);
     return;
   }
 
