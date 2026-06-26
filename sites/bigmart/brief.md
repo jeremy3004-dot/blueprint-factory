@@ -4,29 +4,30 @@ Status: draft
 
 ## What This Site Is
 
-A high-craft concept landing page for BigMart Nepal, positioning the supermarket as the neighborhood grocery network that connects nearby shelves, offers, loyalty, and quick pickup.
+A premium, campaign-style landing page concept for BigMart Nepal. It reframes the supermarket as a warm neighborhood retail brand with a useful app layer, not just an online grocery catalog.
 
 ## Audience
 
-Kathmandu Valley shoppers who already know BigMart stores, plus new mobile-first customers comparing organized grocery options.
+Kathmandu shoppers who already recognize BigMart, new customers comparing grocery options, and brand stakeholders evaluating how BigMart could feel with stronger digital taste.
 
 ## Inputs Provided
 
 - User command: `$blueprint run bigmart`.
-- BigMart official web presence at `https://bigmart.com.np/`.
-- App Store and Google Play listings describing loyalty vouchers, purchase history, offers, product browsing, cart/order, and collect-from-store behavior.
-- LinkedIn company page describing Big Mart Nepal as a Kathmandu-based supermarket chain founded in 2009 with dozens of stores.
+- User rejection of the first draft as terrible.
+- BigMart official site metadata: “Your Neighbor ( तपाईंको छिमेकी )”.
+- Official BigMart public asset manifest, including logo, grocery banners, app screenshots, offer imagery, and product/category imagery.
+- App/public listing themes: store selection, product search, categories, offers, vouchers, purchase history, and in-store purchase/collection language.
 
 ## Source Notes
 
-This is a concept rebuild, not an official production site. Brand claims are kept conservative and source-backed: neighborhood supermarket, loyalty, offers, purchase history, product browsing, and store collection. Exact store counts are treated as unstable and should be confirmed before production copy.
+The first draft failed because it invented diagrammatic grocery visuals and rubber-stamped itself through the factory. The rebuild uses real BigMart assets and keeps claims conservative. Exact store counts and production service promises still need current owner approval before deployment.
 
 ## Required Pages Or Sections
 
-- First-screen hero with the route-drawing signature moment.
-- Neighborhood store promise and app/service highlights.
-- Offer strip, loyalty receipt, and shopping categories.
-- Mobile-safe layout with no production checkout or backend.
+- First-screen campaign hero with official logo, “Your Neighbor,” produce photography, real app screenshot, and shutter reveal.
+- Editorial market section using real grocery imagery.
+- App story section centered on the actual BigMart app screenshot.
+- Neighborhood proof section that keeps the brand local and store-rooted.
 
 ## Deploy Expectation
 
@@ -34,8 +35,9 @@ Local preview and QA only. Ask before production deploy.
 
 ## Ready Criteria
 
+- Factory tests pass.
 - `pnpm blueprint:art bigmart` passes.
 - `pnpm --filter bigmart build` passes.
-- Desktop and mobile screenshots exist.
-- Motion capture exists because the hero animation is part of the concept.
-- Visual review records source assumptions and next production checks.
+- Desktop and mobile screenshots exist and are visually reviewed.
+- Motion capture exists and shows the opening shutter reveal.
+- Visual review includes named reference comparisons and explicit scores.

@@ -6,54 +6,56 @@ Owner sign-off: pending
 
 ## 1. What this site is
 
-A polished concept landing page for BigMart Nepal that makes organized grocery feel close, fast, and neighborhood-native.
+A premium campaign concept for BigMart Nepal that makes everyday grocery shopping feel cinematic, local, and app-enabled.
 
 ## 2. The visual world
 
-Bright organized retail with Kathmandu street energy: clean aisles, bold offer tags, receipt typography, and a practical mobile-app layer.
+Kathmandu market energy through a high-end retail editorial lens: warm paper, BigMart orange, sharp blue/red brand accents, real produce photography, and app screenshots staged like a launch campaign.
 
 ## 3. The signature moment (required)
 
-On load, a red shopping route draws itself through illustrated neighborhood aisles, snapping offer tags and loyalty receipts into place around the BigMart headline.
+On load, a full-screen BigMart-orange storefront shutter opens to reveal a grocery still-life and real app screen sliding into the hero, turning the public promise “Your Neighbor” into a cinematic first impression.
 
 ## 4. Motion language
 
-- Pace: quick and retail-bright.
-- Easing feel: confident, with small snap-ins for offers and receipts.
-- Scroll feel: natural browser scroll; no heavy hijacking.
-- Restraint: only the hero route loops; below-fold motion is subtle hover and entrance rhythm.
+- Pace: confident and theatrical on first load, quiet after that.
+- Easing feel: premium campaign reveal, not cartoon bounce.
+- Scroll feel: native and clean.
+- Restraint: the hero reveal carries the emotion; lower sections use scale, overlap, and image rhythm instead of busy animation.
 
 ## 5. Typography
 
-- Display type: heavy system sans, uppercase in short bursts, like supermarket signage.
-- Body type: system sans for fast rendering.
-- Character move: receipt-style microcopy and price-tag labels interrupt larger editorial headings.
+- Display type: editorial serif for a more expensive campaign feel and to break away from generic grocery UI.
+- Body type: system sans for crisp product/service explanation.
+- Character move: tiny uppercase retail labels over huge serif headlines.
 
 ## 6. Color world
 
-- Base: warm daylight white and deep grocery green.
-- Accents: BigMart red, turmeric yellow, fresh produce green.
-- Overall feel: bright, energetic, and practical.
-- Contrast rule: red is for route, calls to action, and savings; green is for trust and grocery freshness.
+- Base: warm paper and ink.
+- Accents: official BigMart orange, brand blue, saving red, fresh green.
+- Overall feel: bright, warm, premium, and appetizing.
+- Contrast rule: orange owns brand heat; blue and red appear as deliberate campaign accents, not random color blocks.
 
 ## 7. Layout system
 
-- Grid feel: structured aisles with offset offer strips.
-- Sections differ by surface: hero map, service band, receipt panel, and category shelves.
-- First-screen plan: BigMart name, neighborhood promise, app/store actions, and the animated route visibly connecting shelves to pickup.
+- Grid feel: editorial overlap with real product/app imagery.
+- Sections differ by composition: opening campaign reveal, dark product editorial, orange app story, and warm neighborhood proof.
+- First-screen plan: official logo, “Your Neighbor” promise, huge campaign headline, produce still-life, real app screen, and a moving shutter reveal.
 
 ## 8. Reference comparanda
 
-- Reference 1: Supermarket shelf-edge labels. Steal: dense offer tags without visual chaos.
-- Reference 2: Transit maps. Steal: one animated route that explains proximity.
-- Reference 3: Mobile wallet receipts. Steal: loyalty and purchase history as tactile proof.
+- Reference 1: Apple retail campaign pages. Steal: product/app screenshots staged as hero objects with room to breathe.
+- Reference 2: High-end food editorial spreads. Steal: large serif typography, warm paper, and appetite-driven photography.
+- Reference 3: Nike campaign pages. Steal: confident oversized type plus one unmistakable first-screen motion idea.
+- Reference 4: BigMart public site/app assets. Steal: official logo, orange energy, “Your Neighbor,” store selection, category browsing, and Mahabachat offer language.
 
 ## 9. Anti-goals
 
-- No generic ecommerce template.
-- No fake checkout flow or unsourced delivery promises.
-- No one-note red page; grocery freshness needs green, white, yellow, and produce color.
-- Motion must explain the neighborhood route and loyalty mechanics, not decorate empty space.
+- No grocery clip-art.
+- No fake route map.
+- No blocky dashboard/card wall.
+- No self-invented brand claims beyond public source material.
+- No `READY_FOR_REVIEW` unless the screenshots look good enough to defend.
 
 ## 10. Deploy and backend expectation
 
@@ -62,7 +64,8 @@ On load, a red shopping route draws itself through illustrated neighborhood aisl
 
 ## 11. What must be true before this site is called ready
 
-- The route animation is visible on desktop and mobile.
-- The page reads as BigMart/organized grocery in the first viewport.
-- Source assumptions are documented before production use.
-- Screenshots, motion, and visual review exist.
+- The opening shutter reveal is visible in motion capture.
+- The first viewport clearly reads BigMart, not a generic grocery demo.
+- Real BigMart assets are used and logged.
+- Desktop and mobile screenshots are visually strong without excuses.
+- Visual review must record named reference comparisons and no score below 3.

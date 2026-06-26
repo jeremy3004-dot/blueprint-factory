@@ -63,6 +63,21 @@ export function hasNamedSignatureMoment(markdown: string): boolean {
   return firstContentLine.length > 20;
 }
 
+export function hasPassingVisualReview(markdown: string): boolean {
+  const latestVerdict = markdown.match(/## Latest Verdict\s+Status:\s*([A-Z_]+)/);
+  if (!latestVerdict || latestVerdict[1] !== "READY_FOR_REVIEW") return false;
+
+  if (!markdown.includes("## Signature Moment Check")) return false;
+  if (!markdown.includes("## Reference Comparison")) return false;
+  if (!markdown.includes("## Highest Impact Next Fix")) return false;
+  if (/Status:\s*(NOT_READY|NEEDS_HUMAN_BEAUTY_PASS|FAILED)/.test(markdown)) return false;
+
+  const scoreMatches = [...markdown.matchAll(/-\s*[^:\n]+:\s*([1-5])\b/g)];
+  if (scoreMatches.length < 8) return false;
+
+  return scoreMatches.every((match) => Number(match[1]) >= 3);
+}
+
 async function copyTemplate(templateName: string, destination: string, siteSlug: string) {
   const source = path.join(rootDir, "factory/templates", templateName);
   const raw = await readFile(source, "utf8");
@@ -178,7 +193,7 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
       (await fileExists(`sites/${siteSlug}/screenshots/desktop.png`)) &&
       (await fileExists(`sites/${siteSlug}/screenshots/mobile.png`)),
     motionReady: await directoryHasFiles(`sites/${siteSlug}/qa/motion`),
-    beautyReady: visualReview.includes("Status: READY_FOR_REVIEW")
+    beautyReady: hasPassingVisualReview(visualReview)
   };
 }
 
@@ -301,13 +316,13 @@ async function main() {
         "",
         `## Beauty Pass ${new Date().toISOString()}`,
         "",
-        "Status: READY_FOR_REVIEW",
+        "Status: NEEDS_HUMAN_BEAUTY_PASS",
         "",
-        "Evidence present. Codex should run the rubric, make one focused improvement if needed, then stop for human taste review.",
+        "Evidence present. Run the rubric against screenshots, motion, and named references before setting Latest Verdict to READY_FOR_REVIEW.",
         ""
       ].join("\n");
       await appendFile(reviewPath, entry);
-      await appendRunLog(siteSlug, "- Beauty evidence is present. Stopped at human taste review gate.");
+      await appendRunLog(siteSlug, "- Beauty evidence is present. Stopped at human beauty pass gate.");
     }
 
     printStatus(siteSlug, await siteStatus(siteSlug));
@@ -380,9 +395,11 @@ async function main() {
       "",
       `## Beauty Pass ${new Date().toISOString()}`,
       "",
-      missingEvidence.length > 0 ? "Status: NOT_READY" : "Status: READY_FOR_REVIEW",
+      missingEvidence.length > 0 ? "Status: NOT_READY" : "Status: NEEDS_HUMAN_BEAUTY_PASS",
       "",
-      missingEvidence.length > 0 ? `Missing evidence: ${missingEvidence.join(", ")}` : "Evidence present. Run the rubric and record scores.",
+      missingEvidence.length > 0
+        ? `Missing evidence: ${missingEvidence.join(", ")}`
+        : "Evidence present. Run the rubric, compare named references, record scores, and update Latest Verdict manually.",
       ""
     ].join("\n");
     await appendFile(reviewPath, entry);
@@ -391,7 +408,7 @@ async function main() {
       console.log(`NOT_READY: missing evidence for ${siteSlug}: ${missingEvidence.join(", ")}`);
       return;
     }
-    console.log(`READY_FOR_REVIEW: evidence exists for ${siteSlug}.`);
+    console.log(`NEEDS_HUMAN_BEAUTY_PASS: evidence exists for ${siteSlug}.`);
     return;
   }
 

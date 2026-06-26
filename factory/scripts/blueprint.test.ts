@@ -1,6 +1,6 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { hasNamedSignatureMoment, nextActionForStatus, requiredSiteFiles, slugify } from "./blueprint";
+import { hasNamedSignatureMoment, hasPassingVisualReview, nextActionForStatus, requiredSiteFiles, slugify } from "./blueprint";
 
 describe("slugify", () => {
   it("normalizes names into site slugs", () => {
@@ -91,5 +91,84 @@ describe("nextActionForStatus", () => {
       }),
       "RUN_BEAUTY"
     );
+  });
+});
+
+describe("hasPassingVisualReview", () => {
+  it("fails when ready appears only in an appended beauty pass note", () => {
+    const markdown = [
+      "# Visual Review: demo",
+      "",
+      "## Latest Verdict",
+      "",
+      "Status: NOT_READY",
+      "",
+      "## Beauty Pass 2026-06-26T10:47:50.283Z",
+      "",
+      "Status: READY_FOR_REVIEW"
+    ].join("\n");
+    assert.equal(hasPassingVisualReview(markdown), false);
+  });
+
+  it("fails when the human beauty pass gate is still present", () => {
+    const markdown = [
+      "# Visual Review: demo",
+      "",
+      "## Latest Verdict",
+      "",
+      "Status: READY_FOR_REVIEW",
+      "",
+      "## Signature Moment Check",
+      "Lands.",
+      "",
+      "## Reference Comparison",
+      "Specific comparisons recorded.",
+      "",
+      "## Scores",
+      "- First-screen impact: 4",
+      "- Signature moment: 4",
+      "- Typography: 4",
+      "- Layout and rhythm: 4",
+      "- Motion craft: 4",
+      "- Color and imagery: 4",
+      "- Mobile: 4",
+      "- Coherence: 4",
+      "",
+      "## Highest Impact Next Fix",
+      "None blocking.",
+      "",
+      "Status: NEEDS_HUMAN_BEAUTY_PASS"
+    ].join("\n");
+    assert.equal(hasPassingVisualReview(markdown), false);
+  });
+
+  it("passes only with an explicit latest verdict and eight acceptable scores", () => {
+    const markdown = [
+      "# Visual Review: demo",
+      "",
+      "## Latest Verdict",
+      "",
+      "Status: READY_FOR_REVIEW",
+      "",
+      "## Signature Moment Check",
+      "Lands in motion.",
+      "",
+      "## Reference Comparison",
+      "Named reference gaps are closed.",
+      "",
+      "## Scores",
+      "- First-screen impact: 4",
+      "- Signature moment: 4",
+      "- Typography: 4",
+      "- Layout and rhythm: 4",
+      "- Motion craft: 3",
+      "- Color and imagery: 4",
+      "- Mobile: 4",
+      "- Coherence: 4",
+      "",
+      "## Highest Impact Next Fix",
+      "Human review before production deploy."
+    ].join("\n");
+    assert.equal(hasPassingVisualReview(markdown), true);
   });
 });

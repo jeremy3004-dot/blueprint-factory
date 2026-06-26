@@ -1,113 +1,145 @@
-const aisles = ["Fresh", "Pantry", "Home", "Offers"];
+const assetBase = "/bigmart-assets/";
 
-const services = [
+const appFeatures = [
+  "My Store: Baluwatar-2",
+  "Search by product",
+  "Mahabachat offers",
+  "In-store purchase"
+];
+
+const departments = [
   {
-    label: "Loyalty",
-    title: "Vouchers that feel visible",
-    detail: "A receipt-style panel makes savings, purchase history, and offers easy to scan."
+    name: "Fresh market",
+    note: "Produce, fruit, bakery, and daily basket staples.",
+    image: "grocery-banner.2c56649c9cbe2e19b86f.png"
   },
   {
-    label: "Nearby",
-    title: "Store-first convenience",
-    detail: "The concept keeps BigMart rooted in neighborhood shopping instead of pretending to be a warehouse."
+    name: "Pantry rhythm",
+    note: "Weekly shopping with better offer visibility.",
+    image: "banner-deal1.0d876b93afaaf6eb4f18.jpg"
   },
   {
-    label: "Mobile",
-    title: "Browse, order, collect",
-    detail: "App-led actions are framed around product search, cart building, and pickup confidence."
+    name: "Fast top-up",
+    note: "App-led lists, nearby collection, and quick household runs.",
+    image: "bm-app.163efd85be34bea2686f.jpeg"
   }
 ];
 
-const categories = ["Vegetables", "Dairy", "Snacks", "Cleaning", "Bakery", "Daily Offers"];
+const proofPoints = [
+  ["2009", "Founded in Kathmandu"],
+  ["Neighbor", "The public site promise"],
+  ["App + store", "Browse, offer, collect"]
+];
 
 export default function Home() {
   return (
     <main>
-      <section className="hero" aria-label="BigMart neighborhood grocery concept">
-        <nav className="topbar" aria-label="Primary">
-          <a className="brand" href="#top" aria-label="BigMart home">
-            <span>Big</span>Mart
+      <section className="hero" aria-label="BigMart Nepal concept">
+        <header className="masthead">
+          <a className="logoMark" href="#top" aria-label="BigMart home">
+            <img src={`${assetBase}logo.a77926cc00794c2dac7a.png`} alt="BigMart" />
           </a>
-          <div className="navLinks">
-            <a href="#offers">Offers</a>
-            <a href="#loyalty">Loyalty</a>
-            <a href="#categories">Aisles</a>
-          </div>
-        </nav>
+          <nav aria-label="Primary navigation">
+            <a href="#market">Market</a>
+            <a href="#app">App</a>
+            <a href="#stores">Stores</a>
+          </nav>
+        </header>
+
+        <div className="heroBackdrop" aria-hidden="true">
+          <div className="shutter shutterLeft" />
+          <div className="shutter shutterRight" />
+          <img
+            className="produceHero"
+            src={`${assetBase}grocery-banner.2c56649c9cbe2e19b86f.png`}
+            alt=""
+          />
+          <img
+            className="phoneHero"
+            src={`${assetBase}bm-app.163efd85be34bea2686f.jpeg`}
+            alt=""
+          />
+          <div className="priceStamp">Mahabachat</div>
+        </div>
 
         <div className="heroCopy">
-          <p className="eyebrow">Kathmandu neighborhood grocery</p>
-          <h1>Groceries that know the route home.</h1>
-          <p className="lede">
-            A brighter BigMart concept for nearby aisles, live offers, loyalty receipts,
-            and app-assisted collection.
-          </p>
-          <div className="actions" aria-label="Primary actions">
-            <a href="#offers">See today&apos;s offers</a>
-            <a href="#loyalty">Track loyalty</a>
-          </div>
-        </div>
-
-        <div className="routeStage" aria-hidden="true">
-          <div className="mapLabel">Neighborhood route</div>
-          <div className="routeLine" />
-          {aisles.map((aisle, index) => (
-            <div className={`aisle aisle${index + 1}`} key={aisle}>
-              <span>{aisle}</span>
-            </div>
-          ))}
-          <div className="offerTag">Save Rs. 120</div>
-          <div className="pickupTag">Collect nearby</div>
-          <div className="receipt">
-            <span>BIGMART REWARDS</span>
-            <strong>Voucher ready</strong>
-            <small>Purchase history synced</small>
-          </div>
-        </div>
-      </section>
-
-      <section className="serviceBand" id="offers" aria-label="BigMart service highlights">
-        {services.map((service) => (
-          <article key={service.title}>
-            <p>{service.label}</p>
-            <h2>{service.title}</h2>
-            <span>{service.detail}</span>
-          </article>
-        ))}
-      </section>
-
-      <section className="loyalty" id="loyalty" aria-label="Loyalty and app concept">
-        <div>
-          <p className="eyebrow">Phone to store</p>
-          <h2>Make the app feel like a useful shopping companion.</h2>
+          <p className="eyebrow">Your Neighbor · तपाईंको छिमेकी</p>
+          <h1>BigMart, made cinematic for the daily shop.</h1>
           <p>
-            The page centers the practical things shoppers already expect: offers,
-            purchase history, vouchers, product browsing, and a clear collection path.
+            A campaign-style rebuild for Kathmandu shoppers: fresh aisles, visible
+            offers, neighborhood stores, and the app as the bridge between intent and pickup.
           </p>
+          <div className="heroActions">
+            <a href="#app">See the app story</a>
+            <a href="#market">Explore the market</a>
+          </div>
         </div>
-        <div className="phoneShell" aria-hidden="true">
-          <div className="phoneTop">BigMart</div>
-          <div className="savingsMeter">
-            <span />
-          </div>
-          <div className="phoneRows">
-            <span>Fresh basket</span>
-            <span>Voucher</span>
-            <span>Pickup slot</span>
-          </div>
+
+        <div className="ticker" aria-label="Service highlights">
+          {appFeatures.map((feature) => (
+            <span key={feature}>{feature}</span>
+          ))}
         </div>
       </section>
 
-      <section className="categories" id="categories" aria-label="Shopping categories">
-        <div className="sectionHead">
-          <p className="eyebrow">Aisles with rhythm</p>
-          <h2>Everyday categories, treated like a brand system.</h2>
+      <section className="market" id="market" aria-label="BigMart market sections">
+        <div className="sectionIntro">
+          <p className="eyebrow">Retail with appetite</p>
+          <h2>Stop selling groceries like a database. Sell the feeling of a better errand.</h2>
         </div>
-        <div className="categoryGrid">
-          {categories.map((category) => (
-            <article key={category}>
-              <span />
-              <h3>{category}</h3>
+        <div className="departmentGrid">
+          {departments.map((department) => (
+            <article key={department.name}>
+              <img src={`${assetBase}${department.image}`} alt="" />
+              <div>
+                <h3>{department.name}</h3>
+                <p>{department.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="appStory" id="app" aria-label="BigMart app story">
+        <div className="phoneStage" aria-hidden="true">
+          <img src={`${assetBase}bm-app.163efd85be34bea2686f.jpeg`} alt="" />
+          <div className="appGlow" />
+        </div>
+        <div className="appCopy">
+          <p className="eyebrow">Store in the pocket</p>
+          <h2>The app should feel like a personal entrance, not an afterthought.</h2>
+          <p>
+            The real app already carries the strongest proof: store selection, product search,
+            category browsing, brand rows, and offer rails. The site should stage those moments
+            with confidence.
+          </p>
+          <dl>
+            <div>
+              <dt>Find</dt>
+              <dd>Search and browse by category.</dd>
+            </div>
+            <div>
+              <dt>Save</dt>
+              <dd>Surface Mahabachat and voucher moments.</dd>
+            </div>
+            <div>
+              <dt>Collect</dt>
+              <dd>Keep the promise rooted in nearby stores.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="stores" id="stores" aria-label="Store promise">
+        <div>
+          <p className="eyebrow">Neighborhood proof</p>
+          <h2>BigMart should own the distance between “I need this” and “I got it.”</h2>
+        </div>
+        <div className="proofGrid">
+          {proofPoints.map(([value, label]) => (
+            <article key={value}>
+              <strong>{value}</strong>
+              <span>{label}</span>
             </article>
           ))}
         </div>
