@@ -1,6 +1,6 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { hasNamedSignatureMoment, requiredSiteFiles, slugify } from "./blueprint";
+import { hasNamedSignatureMoment, nextActionForStatus, requiredSiteFiles, slugify } from "./blueprint";
 
 describe("slugify", () => {
   it("normalizes names into site slugs", () => {
@@ -44,5 +44,52 @@ describe("hasNamedSignatureMoment", () => {
       "## 4. Motion language"
     ].join("\n");
     assert.equal(hasNamedSignatureMoment(markdown), false);
+  });
+});
+
+describe("nextActionForStatus", () => {
+  it("creates missing sites first", () => {
+    assert.equal(
+      nextActionForStatus({
+        exists: false,
+        missingFiles: [],
+        artReady: false,
+        appExists: false,
+        screenshotsReady: false,
+        motionReady: false,
+        beautyReady: false
+      }),
+      "CREATE_SITE"
+    );
+  });
+
+  it("stops for art direction before build work", () => {
+    assert.equal(
+      nextActionForStatus({
+        exists: true,
+        missingFiles: [],
+        artReady: false,
+        appExists: true,
+        screenshotsReady: false,
+        motionReady: false,
+        beautyReady: false
+      }),
+      "NEEDS_ART_DIRECTION"
+    );
+  });
+
+  it("runs beauty when evidence exists but review is not ready", () => {
+    assert.equal(
+      nextActionForStatus({
+        exists: true,
+        missingFiles: [],
+        artReady: true,
+        appExists: true,
+        screenshotsReady: true,
+        motionReady: true,
+        beautyReady: false
+      }),
+      "RUN_BEAUTY"
+    );
   });
 });

@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "blueprint": "tsx factory/scripts/blueprint.ts",
+    "blueprint:run": "tsx factory/scripts/blueprint.ts run",
+    "blueprint:status": "tsx factory/scripts/blueprint.ts status",
     "blueprint:new": "tsx factory/scripts/blueprint.ts new",
     "blueprint:art": "tsx factory/scripts/blueprint.ts art",
     "blueprint:check": "tsx factory/scripts/blueprint.ts check",
