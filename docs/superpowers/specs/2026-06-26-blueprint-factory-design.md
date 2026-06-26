@@ -15,12 +15,15 @@ Use one Blueprint Factory project as the durable workshop. Each website starts a
 
 This keeps the factory's playbooks, templates, loops, QA rules, and command tool in one place while preventing dozens of websites from sharing one fragile runtime.
 
+Sites should be self-contained. Reusable craft patterns, such as Lenis setup, GSAP scroll helpers, transition examples, shader starters, and layout patterns, should live in `factory/reference-library/` as canonical examples that are copied into a site when needed. Do not make active sites depend on shared runtime packages until the factory has proven that the extra coupling is worth it.
+
 ## Repository Shape
 
 ```text
 BLUEPRINT FACTORY/
   AGENTS.md
   package.json
+  pnpm-workspace.yaml
   docs/
     superpowers/
       specs/
@@ -34,6 +37,7 @@ BLUEPRINT FACTORY/
   sites/
     <site-slug>/
       brief.md
+      art-direction.md
       asset-log.md
       deploy.md
       app/
@@ -44,9 +48,12 @@ BLUEPRINT FACTORY/
       qa/
         run-log.md
         visual-review.md
+        motion/
 ```
 
 The `factory/` directory is the reusable system. The `sites/` directory holds active website jobs. Each site has its own `app/` so Codex can reason about one website at a time and a broken site does not affect every other site.
+
+Use `pnpm` workspaces so dozens of independent site apps can install efficiently while still staying independently buildable.
 
 ## Default Website Stack
 
@@ -95,6 +102,23 @@ The factory should accept mixed inputs:
 
 Each input type should be normalized into the same site brief. The brief should describe what is being built, who it is for, what visual world it belongs to, what assets are available, what deploy profile is expected, and what must be verified before the site is called ready.
 
+## Art Direction
+
+Every site needs an `art-direction.md` before build work starts. This is not paperwork; it is the guardrail against generic output.
+
+The art direction must name:
+
+- The visual world.
+- The one signature moment: a single interaction or visual that makes the site memorable.
+- Motion language.
+- Typography direction.
+- Color world.
+- Layout system.
+- Two to four reference comparanda, each with the specific move to learn from.
+- Anti-goals that would make this site feel generic.
+
+A site with no signature moment is not ready. The Build stage must honor the signature moment instead of deferring it to a late polish pass.
+
 ## Command Tool
 
 Build both the playbook system and a thin command tool immediately. The first command tool should organize the workflow rather than replace Codex's judgment.
@@ -103,8 +127,10 @@ Initial commands:
 
 ```text
 blueprint new <slug>
+blueprint art <slug>
 blueprint check <slug>
 blueprint screenshots <slug>
+blueprint motion <slug>
 blueprint beauty <slug>
 blueprint deploy <slug>
 ```
@@ -112,8 +138,10 @@ blueprint deploy <slug>
 Expected behavior:
 
 - `blueprint new <slug>` creates the site folder, starter docs, asset log, deploy notes, QA files, and Next.js app.
+- `blueprint art <slug>` checks the art-direction artifact and confirms the signature moment is named.
 - `blueprint check <slug>` verifies required factory files and runs the relevant build and lint checks.
 - `blueprint screenshots <slug>` captures desktop and mobile screenshots for review.
+- `blueprint motion <slug>` captures a scripted scroll-through video of the key experience.
 - `blueprint beauty <slug>` starts the Beauty Pass checklist and records findings.
 - `blueprint deploy <slug>` deploys through the selected profile, defaulting to Vercel.
 
@@ -126,6 +154,7 @@ Blueprint Factory should use bounded loops, not endless automation.
 Named loops:
 
 - Intake Loop: turns mixed inputs into a usable brief.
+- Art Direction Loop: produces the concept and signature moment artifact.
 - Build Loop: creates or updates the Next.js site from the brief.
 - Beauty Pass Loop: improves visual craft, including layout, typography, spacing, motion, imagery, and first-screen impact.
 - QA Loop: checks desktop and mobile screenshots, build health, broken layouts, and generic AI-site problems.
@@ -133,14 +162,18 @@ Named loops:
 
 Beauty Pass process:
 
-1. Capture desktop and mobile screenshots.
+1. Capture desktop and mobile screenshots plus a short scroll-through motion capture.
 2. Review the site against the brief, references, and high-craft standards.
-3. Pick the highest-impact issue.
-4. Make one focused improvement.
-5. Rebuild and screenshot again.
-6. Stop when the site passes, progress stalls, or user approval is needed.
+3. Confirm the signature moment exists and lands in motion.
+4. Compare the site against the specific moves named in the references.
+5. Pick the highest-impact issue.
+6. Make one focused improvement.
+7. Rebuild and capture again.
+8. Stop when the site passes, progress stalls, or user approval is needed.
 
 The loop should fail sites that feel generic: bland hero, stock SaaS layout, weak typography, no concept, purposeless motion, repeated section patterns, or mobile afterthoughts.
+
+Still screenshots are not enough for high-craft animated sites. Beauty Pass and QA must judge motion with a recorded scroll-through, because bad easing, janky scroll sequencing, and weak signature moments often hide in still images.
 
 ## Automation Boundaries
 
@@ -157,14 +190,19 @@ The system must ask before:
 - Major art-direction changes.
 - Repository graduation or ownership changes.
 
+Exactly one human taste review is mandatory per site. It happens after the first Beauty Pass produces a viewable build and before any production deploy. Codex should stop at that gate and request owner review.
+
 ## Ready Gate
 
 A site is not ready unless it has:
 
 - A working build.
+- Complete `art-direction.md` with a named signature moment.
 - Required factory files.
 - Desktop and mobile screenshots.
+- Motion capture of the key scroll experience.
 - Visual review pass.
+- Required human taste review on record.
 - Asset log.
 - Deploy profile.
 - No obvious mobile breakage.
@@ -199,6 +237,7 @@ Before handoff, each meaningful site change should run the relevant checks:
 - Build.
 - Lint or typecheck when configured.
 - Desktop and mobile screenshot capture.
+- Motion capture for animated or scroll-led experiences.
 - Visual review.
 - Deploy verification when deployment is part of the request.
 
@@ -206,6 +245,17 @@ When a check is blocked, the run log should say exactly what is missing and what
 
 ## First Implementation Target
 
-The first implementation plan should create the basic factory scaffold, starter docs, thin command tool, one Next.js site template, and one example site to prove the workflow.
+The first implementation plan should create the basic factory scaffold, starter docs, thin command tool, art-direction template, Beauty Pass rubric, one Next.js site template, and one example site to prove the workflow.
 
 It should not build a full CMS, complex agent platform, or broad automation scheduler yet.
+
+## Decisions Log
+
+These decisions are deliberate and should not be silently reversed:
+
+- Sites are self-contained and copy from `factory/reference-library/` rather than importing shared runtime code.
+- `pnpm` workspaces are used for efficient installs across many separate site apps.
+- Art Direction is required before Build.
+- Every site needs a named signature moment.
+- Beauty Pass and QA judge motion, not still screenshots alone.
+- One human taste review is required before production deploy.
