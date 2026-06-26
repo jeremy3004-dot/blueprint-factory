@@ -1,0 +1,21 @@
+{
+  "name": "blueprint-factory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "blueprint": "tsx factory/scripts/blueprint.ts",
+    "blueprint:new": "tsx factory/scripts/blueprint.ts new",
+    "blueprint:art": "tsx factory/scripts/blueprint.ts art",
+    "blueprint:check": "tsx factory/scripts/blueprint.ts check",
+    "blueprint:screenshots": "tsx factory/scripts/blueprint.ts screenshots",
+    "blueprint:motion": "tsx factory/scripts/blueprint.ts motion",
+    "blueprint:beauty": "tsx factory/scripts/blueprint.ts beauty",
+    "blueprint:deploy": "tsx factory/scripts/blueprint.ts deploy",
+    "test": "tsx --test factory/scripts/*.test.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
