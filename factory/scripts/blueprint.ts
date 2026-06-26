@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,10 +22,45 @@ export function requiredSiteFiles(siteSlug: string): string[] {
   ];
 }
 
+export function hasNamedSignatureMoment(markdown: string): boolean {
+  const match = markdown.match(/## 3\. The signature moment \(required\)([\s\S]*?)(\n## |\n# |$)/);
+  if (!match) return false;
+  const body = match[1].trim();
+  if (body.length <= 20) return false;
+
+  const firstContentLine = body
+    .split("\n")
+    .map((line) => line.trim())
+    .find((line) => line.length > 0 && !line.startsWith("-"));
+
+  if (!firstContentLine) return false;
+  if (firstContentLine.includes("<") || firstContentLine.toLowerCase().startsWith("todo")) return false;
+  if (firstContentLine.startsWith("The single interaction or visual that makes someone stop scrolling")) return false;
+
+  return firstContentLine.length > 20;
+}
+
 async function copyTemplate(templateName: string, destination: string, siteSlug: string) {
   const source = path.join(rootDir, "factory/templates", templateName);
   const raw = await readFile(source, "utf8");
   await writeFile(path.join(rootDir, destination), raw.replaceAll("{{siteSlug}}", siteSlug));
+}
+
+async function fileExists(relativePath: string): Promise<boolean> {
+  try {
+    await access(path.join(rootDir, relativePath));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function checkRequiredFiles(siteSlug: string): Promise<string[]> {
+  const missing: string[] = [];
+  for (const requiredFile of requiredSiteFiles(siteSlug)) {
+    if (!(await fileExists(requiredFile))) missing.push(requiredFile);
+  }
+  return missing;
 }
 
 async function main() {
@@ -51,6 +86,28 @@ async function main() {
     await copyTemplate("run-log.template.md", `sites/${siteSlug}/qa/run-log.md`, siteSlug);
     await copyTemplate("visual-review.template.md", `sites/${siteSlug}/qa/visual-review.md`, siteSlug);
     console.log(`Created sites/${siteSlug}`);
+    return;
+  }
+
+  if (command === "art") {
+    const artPath = `sites/${siteSlug}/art-direction.md`;
+    const artDirection = await readFile(path.join(rootDir, artPath), "utf8");
+    if (!hasNamedSignatureMoment(artDirection)) {
+      console.error(`NOT_READY: ${artPath} needs a concrete signature moment.`);
+      process.exit(1);
+    }
+    console.log(`READY: ${artPath} names a signature moment.`);
+    return;
+  }
+
+  if (command === "check") {
+    const missing = await checkRequiredFiles(siteSlug);
+    if (missing.length > 0) {
+      console.error(`NOT_READY: missing required files for ${siteSlug}`);
+      for (const missingFile of missing) console.error(`- ${missingFile}`);
+      process.exit(1);
+    }
+    console.log(`READY: required factory files exist for ${siteSlug}.`);
     return;
   }
 
