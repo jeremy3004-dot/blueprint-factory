@@ -7,6 +7,7 @@ The Beauty Pass exists to catch the failure mode an AI builder is most prone to:
 ## Inputs Required Before A Beauty Pass
 
 - The site's `art-direction.md`, especially the signature moment and the reference comparanda.
+- Primary donor screenshots and topology notes from the reference-first clone pass.
 - Desktop and mobile screenshots from `blueprint screenshots`.
 - A scroll-through video capture from `blueprint motion`, saved under `qa/motion/`.
 
@@ -21,6 +22,8 @@ If it is missing, weak, or feels like decorative filler, the site fails this che
 ## Reference Comparison
 
 For each reference in `art-direction.md`, compare the site against the specific thing that reference was chosen to teach. Write the comparison in `qa/visual-review.md`.
+
+The primary donor comparison is mandatory. If there is no donor screenshot/topology evidence, the site cannot pass. The goal is not pixel-perfect plagiarism; the goal is to prove the build inherited a 10/10 structure, section rhythm, and interaction model before translating it into the client brand.
 
 For each one, record:
 

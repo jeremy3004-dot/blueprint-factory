@@ -56,7 +56,11 @@ How motion feels across the whole site. Pick a small set of rules, not a wish li
 
 ## 8. Reference comparanda
 
-List two to four reference sites or pieces, each with the specific thing to learn from it. Not "looks nice." Name the move.
+List one primary 10/10 donor site and two to four secondary references, each with the specific thing to learn from it. Not "looks nice." Name the move.
+
+- Primary donor: <name or url>. Clone-derived structure: <hero/section/motion/layout pattern to borrow>.
+- Donor screenshots captured: desktop <path>; mobile <path>.
+- Donor topology notes: <path>.
 
 - Reference 1: <name or url>. Steal: <the specific move>.
 - Reference 2: <name or url>. Steal: <the specific move>.

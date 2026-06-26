@@ -6,14 +6,14 @@ Status: READY_FOR_REVIEW
 
 ## Signature Moment Check
 
-Pass. Motion capture `qa/motion/page@733e8f3e4075e0a483bcb820d8dcfe51.webm` shows the BigMart-orange storefront shutter opening into the hero. The reveal lands because it exposes the real brand logo, produce photography, app screenshot, and “Your Neighbor” promise in one first-screen composition.
+Pass. Motion capture `qa/motion/page@45a6877ab1754ba1122ea7e006b3f67a.webm` shows the full-bleed produce hero settling behind the centered “Select your nearest BigMart” card. The first interaction now translates Natoora’s region selector into a BigMart neighborhood-store promise.
 
 ## Reference Comparison
 
-- Apple retail campaign pages: the app screen is treated as a hero object with shadow, angle, and breathing room instead of being buried as a UI screenshot.
-- High-end food editorial spreads: large serif type, warm paper, produce photography, and dark market section create appetite and hierarchy.
-- Nike campaign pages: oversized confident type and one first-screen reveal provide a memorable campaign move.
-- BigMart public site/app assets: official logo, orange brand field, public “Your Neighbor” language, app store selector, search, Mahabachat, category, and offer cues are visible.
+- Primary donor, Natoora: the BigMart build borrows the minimal nav, food-first hero, centered selector card, editorial image story, acid campaign band, product/editorial card rhythm, app CTA, and mission close. It is not pixel-perfect, but the page structure is now donor-derived rather than invented.
+- Farm to People: the build borrows grocery category/commerce clarity through “In store now,” the three-step flow, and location-first shopping logic.
+- Erewhon app case study: the build borrows the idea of treating app screenshots as premium strategic proof rather than generic phone decoration.
+- BigMart public assets: official logo, produce imagery, app screenshot, “Your Neighbor,” store selection, category browsing, Mahabachat, and orange identity are visible.
 
 ## Scores
 
@@ -28,8 +28,8 @@ Pass. Motion capture `qa/motion/page@733e8f3e4075e0a483bcb820d8dcfe51.webm` show
 
 ## Highest Impact Next Fix
 
-Before production, replace concept copy with approved BigMart marketing copy and confirm asset usage rights. The site is concept-ready, not production-authorized.
+For production, get approved high-resolution BigMart photography and current service copy. The concept is now structurally strong, but the public app screenshot and manifest images cap the final polish.
 
 ## Notes
 
-This replaces the rejected route-map draft. The main improvement is using real BigMart assets and a campaign reveal instead of invented grocery clip-art.
+This pass follows the new reference-first Blueprint flow. Donor screenshots and topology are saved under `references/reference-first/`.

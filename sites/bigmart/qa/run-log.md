@@ -38,3 +38,11 @@
 - Rebuilt BigMart with official public assets, editorial serif typography, orange shutter reveal, real app screenshot, and premium campaign sections.
 - Recaptured desktop screenshot, mobile screenshot, and motion from production preview at http://localhost:3101.
 - Visual review set to READY_FOR_REVIEW after direct screenshot inspection.
+
+### 2026-06-26T11:41:06.000Z
+
+- User requested a reference-first clone flow for all new Blueprint websites.
+- Added Reference-First Build Rule to factory instructions, art-direction template, Beauty Pass rubric, and playbook.
+- Captured Natoora, Farm to People, and Erewhon app reference screenshots under `references/reference-first/`.
+- Rebuilt BigMart from Natoora's donor topology with BigMart assets and Farm to People/Erewhon secondary moves.
+- Recaptured desktop screenshot, mobile screenshot, and motion from production preview at http://localhost:3101.

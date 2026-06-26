@@ -20,14 +20,16 @@ Kathmandu shoppers who already recognize BigMart, new customers comparing grocer
 
 ## Source Notes
 
-The first draft failed because it invented diagrammatic grocery visuals and rubber-stamped itself through the factory. The rebuild uses real BigMart assets and keeps claims conservative. Exact store counts and production service promises still need current owner approval before deployment.
+The first draft failed because it invented diagrammatic grocery visuals and rubber-stamped itself through the factory. The second draft improved with real assets but still came from blank-page invention. This pass uses a reference-first flow: Natoora is the primary donor structure, with Farm to People and an Erewhon app case study as secondary references. Exact store counts and production service promises still need current owner approval before deployment.
 
 ## Required Pages Or Sections
 
-- First-screen campaign hero with official logo, “Your Neighbor,” produce photography, real app screenshot, and shutter reveal.
-- Editorial market section using real grocery imagery.
-- App story section centered on the actual BigMart app screenshot.
-- Neighborhood proof section that keeps the brand local and store-rooted.
+- First-screen full-bleed produce hero with official logo and centered store selector card.
+- Editorial app/story image section.
+- Acid campaign band.
+- “In store now” market cards.
+- App CTA section centered on the actual BigMart app screenshot.
+- How-it-works steps and mission close.
 
 ## Deploy Expectation
 
@@ -40,4 +42,4 @@ Local preview and QA only. Ask before production deploy.
 - `pnpm --filter bigmart build` passes.
 - Desktop and mobile screenshots exist and are visually reviewed.
 - Motion capture exists and shows the opening shutter reveal.
-- Visual review includes named reference comparisons and explicit scores.
+- Visual review includes donor comparison, named reference comparisons, and explicit scores.

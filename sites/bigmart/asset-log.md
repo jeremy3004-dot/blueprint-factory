@@ -38,6 +38,19 @@ Official BigMart logo from public site manifest.
 - `https://bigmart.com.np/asset-manifest.json`
 - `https://apps.apple.com/np/app/bigmart/id1028314435`
 - `https://play.google.com/store/apps/details?id=com.bigmart.crm`
+- `https://natoora.com/` — primary donor structure.
+- `https://farmtopeople.com/` — grocery conversion reference.
+- `https://www.delve.com/work/erewhon-market-luxury-app-experience` — premium grocery app reference.
+
+## Donor Research Files
+
+- `references/reference-first/natoora-desktop.png`
+- `references/reference-first/natoora-mobile.png`
+- `references/reference-first/farm-to-people-desktop.png`
+- `references/reference-first/farm-to-people-mobile.png`
+- `references/reference-first/erewhon-app-desktop.png`
+- `references/reference-first/erewhon-app-mobile.png`
+- `references/reference-first/topology.md`
 
 ## Unknown Or Needs Review
 
