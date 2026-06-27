@@ -1946,11 +1946,99 @@ video {
   font-size: 0.92rem;
 }
 
+.adminNotice.success {
+  border-color: rgba(10, 123, 104, 0.22);
+  background: rgba(117, 222, 201, 0.22);
+}
+
+.adminNotice.error {
+  border-color: rgba(214, 31, 75, 0.24);
+  background: rgba(255, 22, 162, 0.14);
+}
+
+.adminStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.adminStat {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 14px;
+}
+
+.adminStat span {
+  color: rgba(20, 17, 15, 0.58);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.adminStat strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 450;
+  line-height: 0.95;
+}
+
+.adminWorkspaceTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adminWorkspaceTabs button,
+.adminGhostButton {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.adminWorkspaceTabs button.active,
+.adminGhostButton:hover {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+}
+
 .adminGrid {
   display: grid;
   grid-template-columns: minmax(250px, 0.82fr) repeat(2, minmax(0, 1fr));
   gap: 16px;
   align-items: start;
+}
+
+.adminOpsLayout,
+.adminCalendarLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 16px;
+  align-items: start;
+}
+
+.adminCalendarLayout {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr) 300px;
+}
+
+.spanWide {
+  min-width: 0;
+}
+
+.adminSideStack {
+  display: grid;
+  gap: 16px;
 }
 
 .adminGrid.lower {
@@ -2031,6 +2119,19 @@ video {
   resize: vertical;
 }
 
+.adminCheck {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(20, 17, 15, 0.72);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.adminCheck input {
+  accent-color: var(--pink);
+}
+
 .adminButton,
 .leadActions button {
   border: 0;
@@ -2060,7 +2161,7 @@ video {
 
 .pipelineGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-columns: repeat(7, minmax(190px, 1fr));
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 2px;
@@ -2070,7 +2171,41 @@ video {
   display: grid;
   align-content: start;
   gap: 10px;
-  min-width: 158px;
+  min-width: 190px;
+  border: 1px solid rgba(10, 63, 58, 0.12);
+  border-radius: 8px;
+  background: rgba(250, 247, 242, 0.66);
+  padding: 11px;
+  transition: border-color 0.18s var(--ease), background 0.18s var(--ease);
+}
+
+.pipelineColumn[data-active="true"] {
+  border-color: rgba(255, 22, 162, 0.35);
+  background: rgba(255, 22, 162, 0.06);
+}
+
+.pipelineHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pipelineHeader span {
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--mint-deep);
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.pipelineColumn > p {
+  min-height: 44px;
+  margin: 0;
+  color: rgba(20, 17, 15, 0.54);
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .pipelineColumn h3 {
@@ -2083,6 +2218,27 @@ video {
   gap: 6px;
   min-height: 142px;
   padding: 12px;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+.leadTripDrop,
+.tripScheduleCard {
+  border: 1px dashed rgba(255, 22, 162, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 22, 162, 0.08);
+  padding: 9px;
+}
+
+.leadTripDrop span,
+.leadTripDrop small {
+  display: block;
 }
 
 .leadCard span,
@@ -2147,6 +2303,80 @@ video {
   font-weight: 700;
 }
 
+.adminChips button {
+  border: 1px solid rgba(255, 22, 162, 0.22);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 5px 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.adminCalendar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.calendarMonth,
+.calendarEventList article {
+  border: 1px solid rgba(10, 63, 58, 0.12);
+  border-radius: 8px;
+  background: rgba(250, 247, 242, 0.7);
+  padding: 12px;
+}
+
+.calendarMonth > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.calendarMonth strong,
+.calendarEventList strong,
+.tripScheduleCard strong {
+  display: block;
+  font-weight: 900;
+}
+
+.calendarMonth span,
+.calendarEventList span,
+.tripScheduleCard span {
+  color: rgba(20, 17, 15, 0.58);
+  font-size: 0.78rem;
+}
+
+.calendarMonth p {
+  margin: 0;
+  color: rgba(20, 17, 15, 0.52);
+  font-size: 0.82rem;
+}
+
+.calendarEventList,
+.guideEditGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.tripScheduleCard {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tripScheduleCard[data-active="true"] {
+  background: rgba(117, 222, 201, 0.18);
+  border-color: rgba(10, 123, 104, 0.24);
+}
+
+.guideEditGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .adminModeNote {
   margin-top: 18px;
   font-size: 0.9rem;
@@ -2154,7 +2384,10 @@ video {
 
 @media (max-width: 980px) {
   .adminGrid,
-  .tripGrid {
+  .tripGrid,
+  .adminOpsLayout,
+  .adminCalendarLayout,
+  .guideEditGrid {
     grid-template-columns: 1fr;
   }
 
@@ -2165,6 +2398,11 @@ video {
   .pipelineGrid {
     grid-template-columns: repeat(7, minmax(160px, 1fr));
   }
+
+  .adminStats,
+  .adminCalendar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -2174,6 +2412,16 @@ video {
 
   .adminHero h1 {
     grid-column: auto;
+  }
+
+  .adminStats,
+  .adminCalendar {
+    grid-template-columns: 1fr;
+  }
+
+  .adminWorkspaceTabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

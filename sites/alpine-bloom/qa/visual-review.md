@@ -54,6 +54,17 @@ Resolved after review:
 - Route dossiers now show starting price and readiness notes in addition to facts, permits, access, itinerary, and map.
 - Conflict visibility is now represented in the admin board.
 
+## Admin Backend Follow-Up
+
+Resolved after Green Pastures admin parity review:
+
+- Admin now has separate Create, Pipeline, Calendar, and Guides workspaces.
+- Pipeline cards can be dragged across all seven Green Pastures pipeline stages.
+- Guide roster cards can be dragged onto trip cards from the pipeline and calendar schedule surfaces.
+- Calendar view now includes 12 monthly departure buckets, trip span cards, guide assignment chips, and remove-assignment actions.
+- Guide profiles can be created and edited in the demo backend, with changes reflected in assignments.
+- Proof captures are saved as `screenshots/admin-pipeline-expanded.png` and `screenshots/admin-calendar-expanded.png`.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

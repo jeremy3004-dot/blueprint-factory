@@ -2,10 +2,13 @@ import {
   createDemoDashboard,
   demoDashboardWithBooking,
   demoDashboardWithBookingUpdate,
+  demoDashboardWithGuide,
   demoDashboardWithGuideAssignment,
+  demoDashboardWithGuideUpdate,
+  demoDashboardWithoutGuideAssignment,
   demoDashboardWithTrip,
 } from "@/data/ops-demo";
-import type { BookingFormValues, OpsDashboard, PipelineStage, BookingRequestStatus } from "@/lib/ops-types";
+import type { BookingFormValues, OpsDashboard, OpsGuide, PipelineStage, BookingRequestStatus } from "@/lib/ops-types";
 
 export const opsReadiness = {
   mode: "demo",
@@ -37,4 +40,16 @@ export function createOpsTripFromBooking(bookingId: string) {
 
 export function assignOpsGuideToTrip(tripId: string, guideId: string) {
   return demoDashboardWithGuideAssignment(tripId, guideId);
+}
+
+export function removeOpsGuideAssignment(assignmentId: string) {
+  return demoDashboardWithoutGuideAssignment(assignmentId);
+}
+
+export function createOpsGuide(values: Omit<OpsGuide, "id">) {
+  return demoDashboardWithGuide(values);
+}
+
+export function updateOpsGuide(guideId: string, updates: Partial<Omit<OpsGuide, "id">>) {
+  return demoDashboardWithGuideUpdate(guideId, updates);
 }

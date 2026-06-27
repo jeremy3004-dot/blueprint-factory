@@ -323,3 +323,51 @@ export function demoDashboardWithGuideAssignment(tripId: string, guideId: string
     ),
   });
 }
+
+export function demoDashboardWithoutGuideAssignment(assignmentId: string) {
+  const dashboard = createDemoDashboard();
+
+  return saveDashboard({
+    ...dashboard,
+    trips: dashboard.trips.map((trip) => ({
+      ...trip,
+      assignedGuides: trip.assignedGuides.filter((assignment) => assignment.id !== assignmentId),
+    })),
+  });
+}
+
+export function demoDashboardWithGuide(values: Omit<OpsGuide, "id">) {
+  const dashboard = createDemoDashboard();
+  const id = values.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || `guide-${Date.now().toString(36)}`;
+
+  return saveDashboard({
+    ...dashboard,
+    guides: [{ ...values, id }, ...dashboard.guides],
+  });
+}
+
+export function demoDashboardWithGuideUpdate(guideId: string, updates: Partial<Omit<OpsGuide, "id">>) {
+  const dashboard = createDemoDashboard();
+
+  return saveDashboard({
+    ...dashboard,
+    guides: dashboard.guides.map((guide) =>
+      guide.id === guideId ? { ...guide, ...updates } : guide,
+    ),
+    trips: dashboard.trips.map((trip) => ({
+      ...trip,
+      assignedGuides: trip.assignedGuides.map((assignment) =>
+        assignment.guideId === guideId
+          ? {
+              ...assignment,
+              guideName: updates.name ?? assignment.guideName,
+              role: updates.role ?? assignment.role,
+            }
+          : assignment,
+      ),
+    })),
+  });
+}
