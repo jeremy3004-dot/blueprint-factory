@@ -1,14 +1,17 @@
 # Deploy: Alpine Bloom
 
-Profile: local-preview
+Profile: vercel-production
 
 ## Target
 
-No production target selected.
+- Vercel project: `app`
+- Public URL: https://app-nine-wine-27.vercel.app
+- Deployment: `dpl_4YXhh7WAQW7kgpyvT6wgAqRKbDLJ`
 
 ## Environments
 
-- Local Next.js preview for this run.
+- Production Vercel deployment.
+- Local Next.js preview for development.
 
 ## Commands
 
@@ -21,4 +24,5 @@ No production target selected.
 
 ## Deploy Notes
 
-Production deploy requires human approval under the Blueprint Factory rules.
+Production deploy approved by Jeremy for sharing.
+Local Vercel project metadata is kept in `app/.vercel/` and ignored from git.
