@@ -6,13 +6,13 @@ Status: READY_FOR_REVIEW
 
 ## Signature Moment Check
 
-Pass with caveat. Motion capture now shows a WHOA-derived homepage structure using the donor's actual asset proportions: top photographic collage, two-column manifesto, adventure photo scatter, pink CTA, press strip, black-framed media, sparse way marker, founder note, and compact footer.
+Pass. Motion capture now shows the WHOA-derived homepage structure translated into a Nepal-only scrapbook: overlapping Himalayan trekking photos, two-column manifesto, route polaroids, pink CTA, press strip, black-framed Everest media, sparse way marker, founder note, and compact footer.
 
 ## Reference Comparison
 
 - Primary donor, WHOA Travel: the corrected build now uses WHOA's pink/white/black/mint palette, centered pink wordmark, left hamburger, hero collage asset ratio, two-column intro structure, photo-scatter rhythm, hot pink CTA, press strip, black media frame, large whitespace before the "way" marker, founder collage, and footer dividers.
-- Current translation: copy and brand name are Alpine Bloom/Himalayas, but the donor asset skeleton is intentionally preserved to satisfy the pixel-first clone step.
-- Remaining gap: exact WHOA typography depends on Futura/Futura PT availability; the local fallback is close but not identical on machines without the donor font. Some footer microcopy differs because this is a Himalayan translation rather than a literal WHOA mirror.
+- Nepal image pass: the rendered route imagery now uses Commons-sourced Himalayan/Nepal trekking photos for Annapurna, Everest Base Camp, Ghandruk, Tengboche, and a snowy route card. Mongolia/Patagonia-style donor content is no longer rendered.
+- Remaining gap: exact WHOA typography depends on Futura/Futura PT availability; the local fallback is close but not identical on machines without the donor font. Press logos still use the clone-reference treatment and should be replaced or approved before production.
 
 ## Scores
 
@@ -21,10 +21,10 @@ Pass with caveat. Motion capture now shows a WHOA-derived homepage structure usi
 - Typography: 3
 - Layout and rhythm: 4
 - Motion craft: 3
-- Color and imagery: 4
+- Color and imagery: 5
 - Mobile: 4
 - Coherence: 4
 
 ## Highest Impact Next Fix
 
-For true production-grade pixel perfection, license or bundle the exact donor-equivalent Futura font and replace borrowed donor photography with approved Alpine Bloom photography cut to the same dimensions.
+For true production-grade pixel perfection, license or bundle the exact donor-equivalent Futura font and replace the remaining clone-reference press/logo material with approved Alpine Bloom assets.

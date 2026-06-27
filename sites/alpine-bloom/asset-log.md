@@ -2,9 +2,26 @@
 
 ## Images
 
+- `app/public/alpine-bloom-assets/nepal-public-domain/annapurna-hikers.jpg`
+  - Source: Wikimedia Commons, `Hiking to Mount Annapurna,Nepal 2017 (Unsplash).jpg`
+  - License noted on source page: CC0 1.0 Public Domain Dedication.
+  - Use: hero scrapbook and Annapurna route card.
+- `app/public/alpine-bloom-assets/nepal-public-domain/ghandruk-route.jpg`
+  - Source: Wikimedia Commons, `Annapurna Base Camp Trekking Route, Ghandruk, Nepal (Unsplash).jpg`
+  - Use: hero scrapbook and Ghandruk route card.
+- `app/public/alpine-bloom-assets/nepal-public-domain/everest-base-camp.jpg`
+  - Source: Wikimedia Commons, `Trek to Everest Base Camp.jpg`
+  - Use: Everest route card and black-framed media feature.
+- `app/public/alpine-bloom-assets/nepal-public-domain/snowy-everest-route.jpg`
+  - Source: Wikimedia Commons, snowy Everest Base Camp route photo.
+  - Use: Langtang-style snowy route card.
+- `app/public/alpine-bloom-assets/nepal-public-domain/tengboche-monastery.jpg`
+  - Source: Wikimedia Commons, Tengboche Monastery on the Everest Base Camp route.
+  - License noted on source page: CC0 1.0 Public Domain Dedication.
+  - Use: hero scrapbook, Tengboche route card, founder scrapbook.
 - `app/public/alpine-bloom-assets/whoa-source/*`
   - Source: extracted from WHOA Travel live page for clone-reference fidelity.
-  - Use: pixel-first clone pass for hero, adventure scatter, press strip, film frame, and founder collage.
+  - Use: pixel-first clone reference and remaining press-logo styling.
   - Status: reference/clone workflow only; replace with approved Alpine Bloom assets before production.
 - `app/public/alpine-bloom-assets/himalaya-range.jpg`
   - Source: Wikimedia Commons redirect for `Himalayas, Nepal.jpg`
@@ -29,7 +46,7 @@
 
 ## Generated Assets
 
-- CSS mountain cutouts, snow drift, handwritten labels, press logos, route cards, and black media frame.
+- CSS scrapbook hero, route polaroids, handwritten labels, press logos, route cards, founder collage, and black media frame.
 
 ## References
 

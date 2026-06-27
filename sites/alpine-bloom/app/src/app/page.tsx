@@ -1,4 +1,30 @@
-const polaroids = ["polaroid-1.webp", "polaroid-2.webp", "polaroid-3.webp", "polaroid-4.webp", "polaroid-5.webp"];
+const routes = [
+  {
+    title: "Annapurna",
+    note: "Women-led ridge trek / 10 days",
+    image: "annapurna-hikers.jpg"
+  },
+  {
+    title: "Everest",
+    note: "Base camp sisterhood / 15 days",
+    image: "everest-base-camp.jpg"
+  },
+  {
+    title: "Ghandruk",
+    note: "Village trails + bloom season / 7 days",
+    image: "ghandruk-route.jpg"
+  },
+  {
+    title: "Tengboche",
+    note: "Monastery route / 12 days",
+    image: "tengboche-monastery.jpg"
+  },
+  {
+    title: "Langtang",
+    note: "Quiet valley return / 9 days",
+    image: "snowy-everest-route.jpg"
+  }
+];
 
 const way = [
   ["STAND STRONG", "We climb as a small group, keep watch for one another, and treat altitude with respect."],
@@ -22,7 +48,18 @@ export default function Home() {
       </header>
 
       <section className="heroClone" id="top">
-        <img src="/alpine-bloom-assets/whoa-source/hero.gif" alt="" />
+        <div className="heroScrapbook" aria-label="Women trekking in Nepal with local guides">
+          <figure className="heroPhoto main">
+            <img src="/alpine-bloom-assets/nepal-public-domain/annapurna-hikers.jpg" alt="Trekkers walking toward Annapurna in Nepal" />
+          </figure>
+          <figure className="heroPhoto side">
+            <img src="/alpine-bloom-assets/nepal-public-domain/tengboche-monastery.jpg" alt="Tengboche monastery on the Everest Base Camp route" />
+          </figure>
+          <figure className="heroPhoto small">
+            <img src="/alpine-bloom-assets/nepal-public-domain/ghandruk-route.jpg" alt="Trail near Ghandruk on the Annapurna trekking route" />
+          </figure>
+          <div className="guideRibbon">Nepali guides + women-only groups</div>
+        </div>
       </section>
 
       <section className="introClone">
@@ -47,8 +84,12 @@ export default function Home() {
       </section>
 
       <section className="photoScatter" aria-label="Alpine Bloom adventures">
-        {polaroids.map((name) => (
-          <img key={name} src={`/alpine-bloom-assets/whoa-source/${name}`} alt="" />
+        {routes.map((route) => (
+          <article className="routePolaroid" key={route.title}>
+            <img src={`/alpine-bloom-assets/nepal-public-domain/${route.image}`} alt="" />
+            <h2>{route.title}</h2>
+            <p>{route.note}</p>
+          </article>
         ))}
       </section>
 
@@ -67,7 +108,7 @@ export default function Home() {
 
       <section className="filmBlock" aria-label="Himalayan route film">
         <div className="filmFrame">
-          <img src="/alpine-bloom-assets/whoa-source/film.gif" alt="" />
+          <img src="/alpine-bloom-assets/nepal-public-domain/everest-base-camp.jpg" alt="Everest Base Camp trekking scene in Nepal" />
           <button type="button" aria-label="Play route film">▶</button>
           <span>Himalayas</span>
         </div>
@@ -86,7 +127,12 @@ export default function Home() {
       </section>
 
       <section className="founderClone">
-        <img src="/alpine-bloom-assets/whoa-source/founder-collage.webp" alt="" />
+        <div className="founderScrapbook" aria-hidden="true">
+          <img src="/alpine-bloom-assets/nepal-public-domain/annapurna-hikers.jpg" alt="" />
+          <img src="/alpine-bloom-assets/rhododendron.jpg" alt="" />
+          <img src="/alpine-bloom-assets/nepal-public-domain/tengboche-monastery.jpg" alt="" />
+          <strong>WITH LOVE,<br />Alpine Bloom</strong>
+        </div>
         <div>
           <p className="pinkLabel">A note from Alpine Bloom</p>
           <p>

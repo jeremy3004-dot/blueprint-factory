@@ -50,3 +50,11 @@
 ### 2026-06-27T06:31:17.468Z
 
 - Captured motion from http://localhost:3042.
+
+### 2026-06-27T06:51:50.902Z
+
+- Captured desktop and mobile screenshots from http://localhost:3042.
+
+### 2026-06-27T06:51:54.019Z
+
+- Captured motion from http://localhost:3042.
