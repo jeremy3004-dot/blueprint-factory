@@ -53,6 +53,7 @@ describe("nextActionForStatus", () => {
       nextActionForStatus({
         exists: false,
         missingFiles: [],
+        referenceReady: false,
         artReady: false,
         appExists: false,
         screenshotsReady: false,
@@ -68,6 +69,7 @@ describe("nextActionForStatus", () => {
       nextActionForStatus({
         exists: true,
         missingFiles: [],
+        referenceReady: true,
         artReady: false,
         appExists: true,
         screenshotsReady: false,
@@ -78,11 +80,28 @@ describe("nextActionForStatus", () => {
     );
   });
 
+  it("stops for reference-first research before art direction", () => {
+    assert.equal(
+      nextActionForStatus({
+        exists: true,
+        missingFiles: [],
+        referenceReady: false,
+        artReady: false,
+        appExists: true,
+        screenshotsReady: false,
+        motionReady: false,
+        beautyReady: false
+      }),
+      "NEEDS_REFERENCE_FIRST"
+    );
+  });
+
   it("runs beauty when evidence exists but review is not ready", () => {
     assert.equal(
       nextActionForStatus({
         exists: true,
         missingFiles: [],
+        referenceReady: true,
         artReady: true,
         appExists: true,
         screenshotsReady: true,

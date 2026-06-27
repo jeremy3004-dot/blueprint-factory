@@ -9,6 +9,7 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../.
 type SiteStatus = {
   exists: boolean;
   missingFiles: string[];
+  referenceReady: boolean;
   artReady: boolean;
   appExists: boolean;
   screenshotsReady: boolean;
@@ -19,6 +20,7 @@ type SiteStatus = {
 type NextAction =
   | "CREATE_SITE"
   | "REPAIR_REQUIRED_FILES"
+  | "NEEDS_REFERENCE_FIRST"
   | "NEEDS_ART_DIRECTION"
   | "CREATE_APP"
   | "NEEDS_PREVIEW_URL"
@@ -78,6 +80,18 @@ export function hasPassingVisualReview(markdown: string): boolean {
   return scoreMatches.every((match) => Number(match[1]) >= 3);
 }
 
+async function hasReferenceFirstEvidence(siteSlug: string): Promise<boolean> {
+  const referenceDir = path.join(rootDir, "sites", siteSlug, "references", "reference-first");
+  if (!(await fileExists(`sites/${siteSlug}/references/reference-first/topology.md`))) return false;
+
+  try {
+    const entries = await readdir(referenceDir);
+    return entries.some((entry) => entry.endsWith("-desktop.png")) && entries.some((entry) => entry.endsWith("-mobile.png"));
+  } catch {
+    return false;
+  }
+}
+
 async function copyTemplate(templateName: string, destination: string, siteSlug: string) {
   const source = path.join(rootDir, "factory/templates", templateName);
   const raw = await readFile(source, "utf8");
@@ -134,6 +148,7 @@ function deployProfile(markdown: string): string {
 export function nextActionForStatus(status: SiteStatus): NextAction {
   if (!status.exists) return "CREATE_SITE";
   if (status.missingFiles.length > 0) return "REPAIR_REQUIRED_FILES";
+  if (!status.referenceReady) return "NEEDS_REFERENCE_FIRST";
   if (!status.artReady) return "NEEDS_ART_DIRECTION";
   if (!status.appExists) return "CREATE_APP";
   if (!status.screenshotsReady) return "CAPTURE_SCREENSHOTS";
@@ -167,6 +182,7 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
     return {
       exists,
       missingFiles: [],
+      referenceReady: false,
       artReady: false,
       appExists: false,
       screenshotsReady: false,
@@ -187,6 +203,7 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
   return {
     exists,
     missingFiles: await checkRequiredFiles(siteSlug),
+    referenceReady: await hasReferenceFirstEvidence(siteSlug),
     artReady,
     appExists: await fileExists(`sites/${siteSlug}/app/package.json`),
     screenshotsReady:
@@ -218,6 +235,7 @@ function printStatus(siteSlug: string, status: SiteStatus) {
   console.log(`SITE: ${siteSlug}`);
   console.log(`STATUS: ${next}`);
   console.log(`exists: ${status.exists ? "yes" : "no"}`);
+  console.log(`references: ${status.referenceReady ? "ready" : "missing"}`);
   console.log(`art: ${status.artReady ? "ready" : "not ready"}`);
   console.log(`app: ${status.appExists ? "present" : "missing"}`);
   console.log(`screenshots: ${status.screenshotsReady ? "ready" : "missing"}`);
@@ -253,7 +271,10 @@ async function main() {
 
     if (next === "CREATE_SITE") {
       await createSite(siteSlug);
-      await appendRunLog(siteSlug, "- Created site scaffold.\n- Next gate: complete `brief.md` and `art-direction.md`.");
+      await appendRunLog(
+        siteSlug,
+        "- Created site scaffold.\n- Next gate: run reference-first research and save donor screenshots plus topology notes under `references/reference-first/`."
+      );
       console.log(`Created sites/${siteSlug}`);
       status = await siteStatus(siteSlug);
       printStatus(siteSlug, status);
@@ -263,6 +284,14 @@ async function main() {
     if (next === "REPAIR_REQUIRED_FILES") {
       printStatus(siteSlug, status);
       process.exit(1);
+    }
+
+    if (next === "NEEDS_REFERENCE_FIRST") {
+      console.log(`NEEDS_REFERENCE_FIRST: research at least three strong references for ${siteSlug}.`);
+      console.log(`Save donor screenshots to sites/${siteSlug}/references/reference-first/ with *-desktop.png and *-mobile.png names.`);
+      console.log(`Write the donor structure and borrowed moves to sites/${siteSlug}/references/reference-first/topology.md.`);
+      console.log("Then update art-direction.md with the primary donor, secondary references, and exact moves being translated.");
+      return;
     }
 
     if (next === "NEEDS_ART_DIRECTION") {
