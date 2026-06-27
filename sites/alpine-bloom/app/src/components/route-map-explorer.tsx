@@ -1,14 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 
 import type { TrekMapData, TrekWaypoint } from "@/data/trek-route-geo";
 import type { TrekRoute } from "@/data/green-pastures";
 
-type ProjectedPoint = TrekWaypoint & {
-  x: number;
-  y: number;
-};
+const RouteMapCanvas = dynamic(
+  () => import("@/components/route-map-canvas").then((mod) => mod.RouteMapCanvas),
+  {
+    ssr: false,
+    loading: () => <div className="trekLeafletMap isLoading" />,
+  },
+);
+
+export type RouteMapViewMode = "terrain" | "topo" | "light";
 
 function distanceKm(a: [number, number], b: [number, number]) {
   const toRad = (value: number) => (value * Math.PI) / 180;
@@ -25,23 +31,6 @@ function distanceKm(a: [number, number], b: [number, number]) {
   return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
 }
 
-function projectPoints(mapData: TrekMapData): ProjectedPoint[] {
-  const lngs = mapData.waypoints.map((point) => point.coordinates[0]);
-  const lats = mapData.waypoints.map((point) => point.coordinates[1]);
-  const minLng = Math.min(...lngs);
-  const maxLng = Math.max(...lngs);
-  const minLat = Math.min(...lats);
-  const maxLat = Math.max(...lats);
-  const lngRange = Math.max(maxLng - minLng, 0.001);
-  const latRange = Math.max(maxLat - minLat, 0.001);
-
-  return mapData.waypoints.map((point) => ({
-    ...point,
-    x: 10 + ((point.coordinates[0] - minLng) / lngRange) * 80,
-    y: 86 - ((point.coordinates[1] - minLat) / latRange) * 72,
-  }));
-}
-
 export function RouteMapExplorer({
   trek,
   mapData,
@@ -49,8 +38,9 @@ export function RouteMapExplorer({
   trek: TrekRoute;
   mapData: TrekMapData;
 }) {
-  const points = useMemo(() => projectPoints(mapData), [mapData]);
+  const points = mapData.waypoints;
   const [selectedId, setSelectedId] = useState(points[0]?.id);
+  const [viewMode, setViewMode] = useState<RouteMapViewMode>("terrain");
   const selectedIndex = Math.max(
     points.findIndex((point) => point.id === selectedId),
     0,
@@ -102,52 +92,29 @@ export function RouteMapExplorer({
 
       <div className="routeMapGrid">
         <div className="routeMapCanvas" aria-label={`${trek.name} interactive route map`}>
-          <svg viewBox="0 0 100 100" role="img">
-            <defs>
-              <linearGradient id={`trail-${trek.slug}`} x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stopColor="#75dec9" />
-                <stop offset="100%" stopColor="#ff16a2" />
-              </linearGradient>
-            </defs>
-            <path className="mapContour c1" d="M4 70 C22 48, 38 88, 58 54 S82 28, 96 48" />
-            <path className="mapContour c2" d="M7 38 C22 20, 48 28, 58 16 S84 10, 95 23" />
-            <path className="mapContour c3" d="M8 88 C28 76, 42 92, 63 74 S84 60, 97 70" />
-            <polyline
-              className="mapRouteGhost"
-              points={points.map((point) => `${point.x},${point.y}`).join(" ")}
-            />
-            <polyline
-              className="mapRouteLine"
-              points={points.map((point) => `${point.x},${point.y}`).join(" ")}
-              stroke={`url(#trail-${trek.slug})`}
-            />
-            {points.map((point, index) => (
-              <g
-                aria-label={`Select ${point.name}`}
-                className="mapStopHit"
-                key={point.id}
-                role="button"
-                tabIndex={0}
-                onClick={() => setSelectedId(point.id)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    setSelectedId(point.id);
-                  }
-                }}
+          <div className="mapModeSwitch" aria-label="Map view">
+            {[
+              ["terrain", "Terrain"],
+              ["topo", "Topo"],
+              ["light", "Light"],
+            ].map(([mode, label]) => (
+              <button
+                className={viewMode === mode ? "active" : ""}
+                key={mode}
+                type="button"
+                onClick={() => setViewMode(mode as RouteMapViewMode)}
               >
-                <circle
-                  className={point.id === selected.id ? "mapStop active" : "mapStop"}
-                  cx={point.x}
-                  cy={point.y}
-                  r={point.id === selected.id ? 4.6 : 3.4}
-                />
-                <text x={point.x} y={point.y - 7} textAnchor="middle">
-                  {index + 1}
-                </text>
-              </g>
+                {label}
+              </button>
             ))}
-          </svg>
+          </div>
+          <RouteMapCanvas
+            mapData={mapData}
+            selectedStop={selected}
+            viewMode={viewMode}
+            onSelectStop={(waypoint: TrekWaypoint) => setSelectedId(waypoint.id)}
+          />
+          <div className="routeMapBrand">Nepal</div>
           <div className="routeCompass">N</div>
           <div className="routeScale"><span /> 20 km</div>
         </div>

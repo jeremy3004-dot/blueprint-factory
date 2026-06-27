@@ -58,6 +58,7 @@ Resolved after review:
 
 Resolved after route-map review:
 
-- Trek detail pages now use Green Pastures-style interactive route maps instead of the earlier decorative scrapbook sketch.
-- Map sections include real route coordinates, clickable stages, stop photos and notes, route distance/progress, and an elevation profile.
-- The map visual treatment is native to Alpine Bloom: black terrain panel, hot pink/mint route line, paper side panel, and pill-style stage rail.
+- Trek detail pages now use the Green Pastures-style Leaflet map stack instead of the earlier decorative SVG sketch.
+- Map sections include terrain, topo, and light tile modes; clickable stage pins; route labels; stop photos and notes; route distance/progress; and an elevation profile.
+- The map visual treatment is native to Alpine Bloom: real mountain terrain under a hot pink/white route overlay, paper side panel, mint labels, and pill-style stage rail.
+- Desktop and mobile proof captures are saved as `screenshots/desktop-route-map-leaflet.png` and `screenshots/mobile-route-map-leaflet.png`.

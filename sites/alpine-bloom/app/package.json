@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "@gsap/react": "latest",
+    "@types/leaflet": "^1.9.21",
     "gsap": "latest",
+    "leaflet": "^1.9.4",
     "lenis": "latest",
     "next": "latest",
     "react": "latest",
