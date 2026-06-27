@@ -6,68 +6,63 @@ Owner sign-off: pending
 
 ## 1. What this site is
 
-Alpine Bloom is a women-focused Himalayan travel agency for travelers who want mountain ambition, cultural respect, and calm expedition support in one place.
+Alpine Bloom is a women-powered Himalayan adventure company rebuilt as a WHOA Travel-style homepage.
 
 ## 2. The visual world
 
-Editorial expedition journal with alpine softness: high-altitude ridges, annotated route planning, pressed-flower detail, and confident women-first hospitality.
+White-page editorial collage, hot pink confidence, black utility type, and mint mountain-scale display words.
 
 ## 3. The signature moment (required)
 
-The Bloom Route: on load, a thin expedition trail draws across the Himalayan hero image and lands on a rhododendron marker that opens like a flower beside the trip finder.
+The Himalayan WHOA collage: on load, a cut-paper mountain hero rises into place while the pink Alpine Bloom wordmark and left menu stay crisp over the white field.
 
 ## 4. Motion language
 
-- Pace: slow, certain, and breathable.
-- Easing feel: smooth and gliding, like a careful ascent.
-- Scroll feel: native or lightly smoothed; no heavy parallax needed.
-- Restraint: motion quiets after the hero so the content feels trustworthy.
+- Pace: light, quick, and poster-like.
+- Easing: simple ease-out.
+- Scroll: mostly native, because WHOA's page strength is composition and whitespace.
+- Restraint: no complex parallax; the clone should feel graphic, not over-engineered.
 
 ## 5. Typography
 
-- Display: Georgia, used large and editorial for a travel-journal feeling.
-- Body: Inter/system sans for clear itinerary and safety details.
-- Character move: oversized serif headlines paired with tiny all-caps route labels.
+- Display: Futura/Futura PT style via system fallbacks.
+- Body: same geometric sans stack for consistency.
+- Move: all-caps block words, wide micro-labels, and oversized mint display lines.
 
 ## 6. Color world
 
-- Base: snow, slate ink, and warm parchment.
-- Accents: rhododendron rose and alpine teal.
-- Overall feel: mostly light with one deep forest expedition band.
-- Rule: never let the palette become pastel-only; safety proof needs strong contrast.
+- White: `#ffffff`
+- Black: `#000000`
+- Hot pink: `rgb(255, 22, 162)` / `#ff16a2`
+- Mint: `#75dec9`
+- Occasional pale gray divider: `#eeeeee`
 
 ## 7. Layout system
 
-- Grid feel: editorial asymmetry with a practical booking rail.
-- Section variety: cinematic hero, compact finder strip, staggered journey cards, dark guide proof, open community close.
-- First-screen plan: brand, promise, Himalayan image, Bloom Route animation, and trip finder all visible before the first scroll.
+- Clone WHOA's sparse vertical flow: hero image, intro two-column, collage, centered CTA, press logos, black media frame, huge whitespace, founder/contact/footer.
+- Keep sections airy and separated by white space, not cards.
+- First screen should be dominated by the Himalayan collage, small pink logo, and hamburger.
 
 ## 8. Reference comparanda
 
-- Primary donor: AdventureWomen, `https://www.adventurewomen.com/`. Clone-derived structure: women-first hero, immediate trip finder, trust proof, featured journeys, editorial travel proof.
-- Donor screenshots captured: desktop `sites/alpine-bloom/references/reference-first/adventurewomen-desktop.png`; mobile `sites/alpine-bloom/references/reference-first/adventurewomen-mobile.png`.
+- Primary donor: WHOA Travel, `https://www.whoatravel.com/`. Clone-derived structure: exact homepage rhythm, pink/white/black color world, Futura-like typography, polaroid collage, press strip, black media frame, founder/contact close.
+- Donor screenshots captured: desktop `sites/alpine-bloom/references/reference-first/whoa-desktop.png`; mobile `sites/alpine-bloom/references/reference-first/whoa-mobile.png`.
 - Donor topology notes: `sites/alpine-bloom/references/reference-first/topology.md`.
-
-- Reference 1: Wild Women Expeditions, `https://wildwomenexpeditions.com/`. Steal: community warmth, guide-first reassurance, testimonial energy.
-- Reference 2: WHOA Travel, `https://www.whoatravel.com/`. Steal: women-powered manifesto language and mountain-climb confidence.
-- Reference 3: Himalayan expedition photography. Steal: real ridge scale and rhododendron bloom texture.
 
 ## 9. Anti-goals
 
-- No generic luxury travel beige wash.
-- No macho summit-conquest copy.
-- No centered hero with decorative gradients doing the work of art direction.
-- No repeated identical cards without concrete trip planning value.
-- Motion must explain the journey path, not decorate the page.
+- No beige luxury trekking look.
+- No generic travel agency cards.
+- No complicated animation that hides the WHOA clone structure.
+- No old Alpine Bloom styling from the first pass.
 
 ## 10. Deploy and backend expectation
 
 - Deploy profile expected: Vercel or Cloudflare static.
-- Backend expected: none for this first site.
+- Backend expected: none.
 
 ## 11. What must be true before this site is called ready
 
-- The Bloom Route is visible in still screenshots and lands in motion capture.
-- The trip finder is above the fold on desktop and easy to reach on mobile.
-- The page feels explicitly built for women exploring the Himalayas, not generic adventure tourism.
-- Safety, local guide support, pacing, and community are visible before final CTA.
+- It should be obvious this was built from WHOA's visual grammar.
+- Pink, white, black, mint, collage, and heavy uppercase type must dominate.
+- The content must still clearly sell women exploring the Himalayas.

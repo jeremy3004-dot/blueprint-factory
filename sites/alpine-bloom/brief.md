@@ -4,46 +4,42 @@ Status: draft
 
 ## What This Site Is
 
-A high-craft landing page for Alpine Bloom, a women-focused travel agency for Himalayan exploration. The site sells guided small-group trekking, cultural immersion, acclimatization support, and calm expedition planning.
+A WHOA-inspired landing page for Alpine Bloom, a women-powered Himalayan travel agency.
 
 ## Audience
 
-Women who want to explore Nepal and the Himalayas with expert planning, local guides, thoughtful pacing, and a group culture that feels strong without being macho.
+Women who want bold but supportive Himalayan trips: first-time trekkers, women ready for altitude, solo travelers who want a group, and friends planning Nepal together.
 
 ## Inputs Provided
 
-- User prompt: "travel agency for women called Alpine Bloom - for women exploring the himalayas"
-- Factory rule: reference-first website build with screenshots, topology, motion capture, and Beauty Pass.
+- User correction: fully clone WHOA Travel first, including the pink/white/black color world, then translate it for the Himalayas.
+- Target donor: `https://www.whoatravel.com/`
 
 ## Source Notes
 
-Reference evidence is saved under `references/reference-first/`.
-
-Primary donor:
-- AdventureWomen: women-only adventure travel, premium trip finder, trust proof, featured journeys.
-
-Secondary references:
-- Wild Women Expeditions: belonging, guide warmth, women-led travel community.
-- WHOA Travel: women-powered manifesto and mountain-adventure voice.
+WHOA donor screenshots, extraction, and topology are saved under `references/reference-first/`.
 
 ## Required Pages Or Sections
 
-- Hero with Alpine Bloom identity, Himalayan imagery, CTA, and signature route-line moment.
-- Trip finder with season, pace, and region options.
-- Featured Himalayan journeys.
-- Safety and guide proof.
-- Community/founder-style story.
-- Practical booking CTA.
+- WHOA-style top chrome with hot pink hamburger and centered wordmark.
+- Paper-collage Himalayan hero.
+- Giant split-color all-caps intro headline.
+- Compact manifesto copy.
+- Polaroid adventure collage.
+- Pink CTA.
+- Press/trust strip.
+- Black-framed route film placeholder.
+- "The Bloom Way" section marker.
+- Founder note, connect block, newsletter, and compact footer.
 
 ## Deploy Expectation
 
-Local preview only for this run. Production deploy requires human approval.
+Local preview only. Production deploy requires human approval.
 
 ## Ready Criteria
 
-- Reference-first screenshots and topology exist.
-- `art-direction.md` names the primary donor, secondary references, and a concrete signature moment.
-- The page builds successfully.
-- Desktop and mobile screenshots are captured.
-- Motion capture shows the Bloom Route moment and scroll experience.
-- Visual review compares the build to the donor screenshots and marks the site ready for human review.
+- WHOA donor screenshots and topology are present.
+- Alpine Bloom visibly uses WHOA's pink/white/black/mint visual language.
+- Desktop and mobile screenshots show the WHOA structure translated to Himalayan content.
+- Motion capture exists.
+- Beauty Pass is honest and references WHOA directly.

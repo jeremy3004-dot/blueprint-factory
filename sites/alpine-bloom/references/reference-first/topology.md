@@ -1,53 +1,54 @@
-# Reference-First Topology: Alpine Bloom
+# WHOA Clone Topology: Alpine Bloom
 
 ## Primary Donor
 
-Primary donor: AdventureWomen, `https://www.adventurewomen.com/`
+Primary donor: WHOA Travel, `https://www.whoatravel.com/`
 
 Captured evidence:
-- Desktop: `sites/alpine-bloom/references/reference-first/adventurewomen-desktop.png`
-- Mobile: `sites/alpine-bloom/references/reference-first/adventurewomen-mobile.png`
-- Text capture: `sites/alpine-bloom/references/reference-first/adventurewomen-desktop.txt`
+- Desktop: `sites/alpine-bloom/references/reference-first/whoa-desktop.png`
+- Mobile: `sites/alpine-bloom/references/reference-first/whoa-mobile.png`
+- Extraction: `sites/alpine-bloom/references/reference-first/whoa-extraction.json`
 
-## Secondary References
+## Donor Visual System
 
-- Wild Women Expeditions, `https://wildwomenexpeditions.com/`
-- WHOA Travel, `https://www.whoatravel.com/`
-
-Captured evidence:
-- `wild-women-expeditions-desktop.png`
-- `wild-women-expeditions-mobile.png`
-- `whoa-travel-desktop.png`
-- `whoa-travel-mobile.png`
+- Base: pure white page.
+- Core text: black.
+- Primary accent: hot pink, extracted as `rgb(255, 22, 162)`.
+- Secondary accent: aqua/mint used in the large "MOVE MOUNTAINS" headline.
+- Typeface: Futura/Futura PT style, all-caps, heavy tracking for labels and block display.
 
 ## Donor Structure
 
-AdventureWomen opens with a premium all-women travel promise, direct navigation, a strong trip-finder path, and immediate filters for pace, activity, and destination. The homepage then builds confidence through longevity, press proof, featured journeys, and editorial travel storytelling.
-
-## Interaction Model
-
-The donor is direct and conversion-forward: visitors can find a trip from the hero, scan trust proof, browse featured travel products, and move into deeper planning. Motion is restrained; hierarchy and imagery do most of the work.
-
-## Layout Rhythm To Translate
-
-- Full-bleed, image-led hero with a clear women-first promise.
-- A trip finder immediately after the promise, not buried below generic brand copy.
-- Trust proof close to the top: years, local guides, safety, small groups.
-- Featured journey cards with concrete pace, duration, season, and price framing.
-- Editorial/community section that makes the company feel guided by women, not just marketed to women.
+1. Minimal fixed-ish top chrome: pink hamburger on the left, small centered pink wordmark.
+2. Full-width image-collage hero with a mountain background and people in the foreground.
+3. Intro block: giant split-color block headline on the left, compact founder-style paragraph on the right.
+4. Polaroid adventure collage.
+5. Hot pink centered CTA.
+6. Press logo strip.
+7. Black-framed video/media feature.
+8. Pink "THE WHOA WAY" section marker with lots of whitespace.
+9. Founder-note collage plus handwritten-signature feeling.
+10. Contact/newsletter/footer with black dividers, pink links, and compact uppercase nav.
 
 ## Alpine Bloom Translation
 
-Alpine Bloom should inherit AdventureWomen's conversion clarity, then add Wild Women Expeditions' belonging/community language and WHOA Travel's emotionally direct founder energy. The custom signature moment is the "Bloom Route": a thin trail line draws across a Himalayan ridge on load, then a rhododendron marker blooms at the current expedition stage.
+Clone the WHOA page rhythm, colors, typography, and sparse whitespace while changing the content to a Himalayan women-only travel agency. The hero becomes a Himalaya paper-collage scene. The headline becomes "LET'S CLIMB AND BLOOM IN THE HIMALAYAS." The travel products become Annapurna, Everest, Mustang, and Langtang routes.
 
-## Moves Borrowed
+## Interaction Model
 
-- From AdventureWomen: premium women-only adventure positioning, trip finder above the fold, trust proof near the hero, featured trip cards.
-- From Wild Women Expeditions: warm community voice, guide-first reassurance, testimonial energy.
-- From WHOA Travel: compact manifesto copy, women-powered language, mission section that feels personal rather than institutional.
+Mostly static and scroll-led. The signature movement is a light entrance: hero collage layers rise into place, polaroids tilt into view, and CTA hover uses WHOA's simple color confidence rather than complex animation.
 
-## Moves Avoided
+## Borrowed Moves
 
-- Do not copy exact colors, brand marks, copy, or trip inventory from the donors.
-- Do not use a generic travel-grid homepage with interchangeable destination cards.
-- Do not make the Himalayas feel extreme-only; the brand must feel capable, soft, and highly prepared.
+- WHOA's exact pink/white/black attitude and mint block-word accent.
+- WHOA's sparse centered top logo plus left hamburger.
+- WHOA's giant all-caps intro headline with paragraph beside it.
+- WHOA's polaroid collage adventure proof.
+- WHOA's black-framed media band and pink section marker.
+- WHOA's compact founder/contact/footer close.
+
+## Anti-Copy Rules
+
+- Do not reuse WHOA copy, logo, or protected photography.
+- Keep the Himalayan brand, routes, and positioning Alpine Bloom-specific.
+- Keep the donor's quality bar, not its proprietary identity.
