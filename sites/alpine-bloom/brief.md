@@ -33,7 +33,7 @@ WHOA donor screenshots, extraction, and topology are saved under `references/ref
 - "The Bloom Way" section marker.
 - Founder note, connect block, newsletter, and compact footer.
 - `/treks` route explorer with region/difficulty filters.
-- `/treks/[slug]` route dossiers with facts, permits, itinerary, highlights, and scrapbook map.
+- `/treks/[slug]` route dossiers with facts, permits, itinerary, highlights, and Green Pastures-style interactive route maps.
 - `/book` proposal request flow with preview-mode submission.
 - `/planner` route-aware concierge with local fallback replies.
 - `/faq` travel readiness page.

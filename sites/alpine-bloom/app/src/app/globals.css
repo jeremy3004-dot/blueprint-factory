@@ -2627,6 +2627,297 @@ video {
   font-size: 1.5rem;
 }
 
+.routeMapExplorer {
+  padding-bottom: clamp(80px, 12vh, 140px);
+}
+
+.routeMapHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  padding-top: 34px;
+  margin-bottom: 28px;
+}
+
+.routeMapHead h2 {
+  margin: 12px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-weight: 360;
+  line-height: 0.98;
+}
+
+.routeMapHead p:not(.kicker) {
+  max-width: 48rem;
+  margin: 0;
+  color: rgba(20, 17, 15, 0.7);
+  line-height: 1.7;
+}
+
+.routeMapStats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.routeMapStats span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  padding: 9px 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routeMapGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: 18px;
+}
+
+.routeMapCanvas {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(117, 222, 201, 0.2), transparent 25%),
+    radial-gradient(circle at 78% 30%, rgba(255, 22, 162, 0.16), transparent 28%),
+    linear-gradient(145deg, #07100f, #15110f 58%, #090807);
+  box-shadow: 0 30px 80px -50px rgba(20, 17, 15, 0.8);
+}
+
+.routeMapCanvas::before {
+  content: "NEPAL";
+  position: absolute;
+  right: 32px;
+  bottom: 34px;
+  color: rgba(255, 255, 255, 0.08);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.routeMapCanvas svg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+}
+
+.mapContour {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 0.55;
+}
+
+.mapRouteGhost {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4.6;
+}
+
+.mapRouteLine {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.mapStopHit {
+  cursor: pointer;
+  outline: none;
+}
+
+.mapStop {
+  fill: var(--paper);
+  stroke: var(--pink);
+  stroke-width: 1.4;
+  transition: r 0.2s var(--ease), fill 0.2s var(--ease);
+}
+
+.mapStop.active {
+  fill: var(--pink);
+  stroke: var(--white);
+}
+
+.mapStopHit text {
+  fill: var(--white);
+  font-family: var(--font-sans);
+  font-size: 3.4px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+.routeCompass {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 50%;
+  color: var(--mint);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.routeScale {
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routeScale span {
+  width: 80px;
+  height: 2px;
+  background: var(--mint);
+}
+
+.routeMapPanel {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 16px;
+}
+
+.routeMapPanel img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.routeMapPanel > span,
+.elevationMini p {
+  display: block;
+  margin-top: 16px;
+  color: var(--mint-deep);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.routeMapPanel h3 {
+  margin: 10px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 360;
+  line-height: 0.96;
+}
+
+.routeMapPanel p {
+  margin: 0;
+  color: rgba(20, 17, 15, 0.7);
+  line-height: 1.65;
+}
+
+.routeProgress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.routeProgress div {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.routeProgress strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.routeProgress span {
+  color: rgba(20, 17, 15, 0.58);
+  font-size: 0.76rem;
+}
+
+.elevationMini {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.elevationMini svg {
+  width: 100%;
+  height: 120px;
+  margin-top: 8px;
+}
+
+.elevationMini polyline {
+  fill: none;
+  stroke: var(--pink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.3;
+}
+
+.elevationMini circle {
+  fill: var(--mint-deep);
+  stroke: var(--white);
+  stroke-width: 1;
+}
+
+.routeStageRail {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.routeStageRail button {
+  min-width: max-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  padding: 10px 14px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.routeStageRail button.active {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+}
+
+.routeStageRail span {
+  margin-right: 8px;
+  color: var(--mint-deep);
+}
+
+.routeStageRail button.active span {
+  color: var(--white);
+}
+
 .bookingLayout {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
@@ -2771,6 +3062,8 @@ video {
   .routeFacts,
   .routeBody,
   .mapPanel,
+  .routeMapHead,
+  .routeMapGrid,
   .bookingLayout,
   .filterBar {
     grid-template-columns: 1fr;
@@ -2786,6 +3079,10 @@ video {
 
   .proposalSnapshot {
     position: static;
+  }
+
+  .routeMapStats {
+    justify-content: flex-start;
   }
 }
 
@@ -2808,5 +3105,14 @@ video {
 
   .chatForm .btn {
     justify-content: center;
+  }
+
+  .routeMapCanvas,
+  .routeMapCanvas svg {
+    min-height: 390px;
+  }
+
+  .routeProgress {
+    grid-template-columns: 1fr;
   }
 }

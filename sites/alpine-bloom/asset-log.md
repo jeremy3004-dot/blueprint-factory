@@ -54,6 +54,7 @@
 
 - CSS scrapbook hero, route polaroids, handwritten labels, press logos, route cards, founder collage, and black media frame.
 - Feature-page UI surfaces for route explorer, route dossiers, booking proposal form, planner concierge, FAQ, and admin demo operations. These reuse the existing local Nepal image set; no new external assets were added for the feature port.
+- Interactive route maps use copied/adapted coordinate and waypoint data from the local Green Pastures feature donor, rendered natively in Alpine Bloom's visual system rather than pulling in a new map tile dependency.
 
 ## References
 

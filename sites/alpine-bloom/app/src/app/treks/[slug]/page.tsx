@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { RouteMapExplorer } from "@/components/route-map-explorer";
 import { SiteShell } from "@/components/site-shell";
 import { trekRoutes } from "@/data/green-pastures";
+import { getTrekMapData } from "@/data/trek-route-geo";
 
 export function generateStaticParams() {
   return trekRoutes.map((route) => ({ slug: route.slug }));
@@ -18,6 +20,7 @@ export default async function TrekDetailPage({
 
   if (!trek) notFound();
 
+  const trekMap = getTrekMapData(trek.slug);
   const alternates = trekRoutes
     .filter((route) => route.slug !== trek.slug && route.region === trek.region)
     .concat(trekRoutes.filter((route) => route.slug !== trek.slug && route.region !== trek.region))
@@ -92,23 +95,7 @@ export default async function TrekDetailPage({
         </div>
       </section>
 
-      <section className="mapPanel shell">
-        <div>
-          <p className="kicker">Scrapbook map</p>
-          <h2>{trek.region} planning notes</h2>
-          <p>
-            Alpine Bloom uses this route dossier to shape altitude pacing, guide match, permit
-            timing, and the comfort layer around the trek.
-          </p>
-        </div>
-        <div className="mapSketch" aria-label={`${trek.name} route sketch`}>
-          {trek.itinerary.map((item, index) => (
-            <span key={item.day} style={{ "--i": index } as React.CSSProperties}>
-              {item.day}
-            </span>
-          ))}
-        </div>
-      </section>
+      {trekMap ? <RouteMapExplorer trek={trek} mapData={trekMap} /> : null}
 
       <section className="alternateRoutes shell">
         <h2>Nearby ideas</h2>

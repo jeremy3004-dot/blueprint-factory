@@ -83,3 +83,10 @@
   - Admin board now displays conflict watch items.
 - Re-verified `npm run lint`, `npm run build`, page/API status checks, and a stateful admin workflow smoke.
 - Refreshed feature screenshots, including `desktop-route-detail.png`.
+
+### 2026-06-27T08:45:00.000Z
+
+- Ported Green Pastures-style route map data and interaction into Alpine Bloom route dossiers.
+- Added native interactive map renderer with route line, clickable stages, selected stop panel, route progress, and elevation profile.
+- Verified `npm run lint`, `npm run build`, `/treks/annapurna-circuit`, `/treks/poon-hill-ghandruk`, and route-stage click behavior.
+- Captured `screenshots/desktop-route-map.png`.
