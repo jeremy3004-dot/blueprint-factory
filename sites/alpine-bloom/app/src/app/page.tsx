@@ -48,16 +48,16 @@ export default function Home() {
       </header>
 
       <section className="heroClone" id="top">
-        <div className="heroScrapbook" aria-label="Women trekking in Nepal with local guides">
-          <figure className="heroPhoto main">
-            <img src="/alpine-bloom-assets/nepal-public-domain/annapurna-hikers.jpg" alt="Trekkers walking toward Annapurna in Nepal" />
-          </figure>
-          <figure className="heroPhoto side">
-            <img src="/alpine-bloom-assets/nepal-public-domain/tengboche-monastery.jpg" alt="Tengboche monastery on the Everest Base Camp route" />
-          </figure>
-          <figure className="heroPhoto small">
-            <img src="/alpine-bloom-assets/nepal-public-domain/ghandruk-route.jpg" alt="Trail near Ghandruk on the Annapurna trekking route" />
-          </figure>
+        <div className="heroScrapbook videoHero" aria-label="Women trekking in Nepal with local guides">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/alpine-bloom-assets/generated/alpine-bloom-hero-poster.jpg"
+          >
+            <source src="/alpine-bloom-assets/generated/alpine-bloom-hero-loop.mp4" type="video/mp4" />
+          </video>
           <div className="guideRibbon">Nepali guides + women-only groups</div>
         </div>
       </section>

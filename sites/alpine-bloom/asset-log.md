@@ -34,6 +34,12 @@
 
 ## Video
 
+- `app/public/alpine-bloom-assets/generated/alpine-bloom-hero-loop.mp4`
+  - Source: local ffmpeg collage loop generated from the Nepal public-domain/Commons image set.
+  - Use: current hero video, matching WHOA's flashing scrapbook motion pattern.
+- `scripts/generate-openrouter-hero-video.mjs`
+  - Source: OpenRouter video generation workflow script.
+  - Use: can generate a SeedDance-style replacement video when `OPENROUTER_API_KEY` is set securely in the environment.
 - Motion capture saved under `qa/motion/`.
 
 ## Fonts

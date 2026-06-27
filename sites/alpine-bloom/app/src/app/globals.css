@@ -95,6 +95,19 @@ img {
   height: 690px;
 }
 
+.videoHero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoHero video {
+  width: 100%;
+  max-width: 1180px;
+  aspect-ratio: 15 / 8;
+  object-fit: cover;
+}
+
 .heroPhoto {
   position: absolute;
   margin: 0;
@@ -138,8 +151,8 @@ img {
 
 .guideRibbon {
   position: absolute;
-  left: 492px;
-  top: 516px;
+  left: 50%;
+  top: 558px;
   z-index: 4;
   background: var(--pink);
   color: var(--white);
@@ -148,7 +161,7 @@ img {
   letter-spacing: 2.2px;
   padding: 18px 24px;
   text-transform: uppercase;
-  transform: rotate(-3deg);
+  transform: translateX(-50%) rotate(-3deg);
 }
 
 .heroClone::after {
@@ -591,6 +604,11 @@ img {
     height: 360px;
   }
 
+  .videoHero video {
+    width: 100%;
+    height: 300px;
+  }
+
   .heroPhoto.main {
     left: 28px;
     top: 44px;
@@ -614,8 +632,8 @@ img {
   }
 
   .guideRibbon {
-    left: 58px;
-    top: 320px;
+    left: 50%;
+    top: 314px;
     font-size: 8px;
     padding: 10px 12px;
   }
