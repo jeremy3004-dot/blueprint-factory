@@ -60,7 +60,9 @@ body::before {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
   color: inherit;
 }
@@ -1271,5 +1273,1540 @@ video {
   .heroMeta {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* =========================================================================
+   FEATURE DONOR PUBLIC SURFACES
+   ========================================================================= */
+.publicNav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 249, 245, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.publicWordmark {
+  justify-items: start;
+  text-align: left;
+}
+
+.publicNavLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 30px);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.publicNavLinks a:not(.publicCta) {
+  transition: color 0.25s var(--ease);
+}
+
+.publicNavLinks a:not(.publicCta):hover {
+  color: var(--pink);
+}
+
+.publicCta {
+  color: var(--ink);
+}
+
+.publicHero {
+  padding-top: clamp(72px, 10vh, 130px);
+  padding-bottom: clamp(36px, 7vh, 84px);
+}
+
+.publicHero h1 {
+  max-width: 12ch;
+  margin: 20px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7.4rem);
+  font-weight: 360;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.publicHero h1::first-line {
+  color: var(--pink);
+}
+
+.publicHero > p:last-child {
+  max-width: 52ch;
+  margin: 28px 0 0 auto;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.75;
+  color: rgba(20, 17, 15, 0.72);
+}
+
+.publicPageBlock {
+  padding-bottom: clamp(84px, 12vh, 150px);
+}
+
+.trekList {
+  display: grid;
+  gap: clamp(28px, 5vw, 64px);
+  padding-bottom: clamp(90px, 13vh, 160px);
+}
+
+.trekCard {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.84fr) 1fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  padding-top: clamp(24px, 4vw, 42px);
+  border-top: 1px solid var(--line);
+}
+
+.trekCard:nth-child(even) {
+  grid-template-columns: 1fr minmax(260px, 0.84fr);
+}
+
+.trekCard:nth-child(even) .trekCardImage {
+  order: 2;
+}
+
+.trekCardImage {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.08;
+  border: 10px solid var(--white);
+  background: var(--ink);
+  box-shadow: 0 30px 70px -40px rgba(20, 17, 15, 0.55);
+  transform: rotate(-1deg);
+}
+
+.trekCard:nth-child(even) .trekCardImage {
+  transform: rotate(1.2deg);
+}
+
+.trekCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.trekCard:hover .trekCardImage img {
+  transform: scale(1.05);
+}
+
+.trekCardBody span,
+.detailFacts span,
+.itinerary article span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.trekCardBody h2,
+.proposalPanel h2,
+.detailHero h1,
+.detailColumns h2,
+.itinerary h2,
+.faqGrid h2 {
+  font-family: var(--font-display);
+  font-weight: 380;
+  line-height: 1;
+}
+
+.trekCardBody h2 {
+  max-width: 11ch;
+  margin: 12px 0;
+  font-size: clamp(2.2rem, 4.8vw, 5rem);
+}
+
+.trekCardBody p {
+  max-width: 46rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(20, 17, 15, 0.72);
+}
+
+.trekMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.trekMeta b {
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 9px 13px;
+  background: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detailHero {
+  position: relative;
+  min-height: 64svh;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  background: var(--ink);
+}
+
+.detailHero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.74;
+}
+
+.detailHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 17, 15, 0.14), rgba(20, 17, 15, 0.86));
+}
+
+.detailHeroCopy {
+  position: relative;
+  z-index: 2;
+  padding-top: 120px;
+  padding-bottom: clamp(44px, 8vh, 90px);
+  color: var(--white);
+}
+
+.detailHeroCopy h1 {
+  max-width: 10ch;
+  margin: 20px 0;
+  font-size: clamp(3.4rem, 8vw, 8rem);
+  letter-spacing: -0.015em;
+}
+
+.detailHeroCopy p:last-child {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 0.38fr 1fr;
+  gap: clamp(32px, 6vw, 86px);
+  padding-top: clamp(64px, 9vh, 110px);
+  padding-bottom: clamp(40px, 8vh, 90px);
+}
+
+.detailFacts {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 26px 60px -42px rgba(20, 17, 15, 0.5);
+}
+
+.detailFacts div {
+  display: grid;
+  gap: 7px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.detailFacts b {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 380;
+}
+
+.detailFacts .btn {
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.detailCopy .publicHero {
+  padding: 0;
+}
+
+.detailCopy .publicHero h1 {
+  font-size: clamp(2.4rem, 5vw, 5rem);
+}
+
+.detailCopy .publicHero > p:last-child {
+  margin-left: 0;
+}
+
+.detailColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.detailColumns section,
+.itinerary article,
+.faqGrid article,
+.proposalPanel,
+.plannerConsole,
+.publicForm {
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 22px 50px -42px rgba(20, 17, 15, 0.5);
+}
+
+.detailColumns section {
+  padding: 26px;
+}
+
+.detailColumns h2,
+.itinerary h2,
+.faqGrid h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.detailColumns ul {
+  display: grid;
+  gap: 13px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detailColumns li {
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  line-height: 1.55;
+}
+
+.itinerary {
+  padding-bottom: clamp(90px, 13vh, 160px);
+}
+
+.itineraryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.itinerary article {
+  min-height: 250px;
+  padding: 22px;
+}
+
+.itinerary article:nth-child(odd) {
+  transform: rotate(-0.7deg);
+}
+
+.itinerary article:nth-child(even) {
+  transform: rotate(0.8deg);
+}
+
+.itinerary p,
+.faqGrid p,
+.proposalPanel p,
+.assistantBubble {
+  line-height: 1.7;
+  color: rgba(20, 17, 15, 0.72);
+}
+
+.bookingGrid,
+.plannerPage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+}
+
+.publicForm,
+.proposalPanel,
+.plannerConsole {
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.publicForm {
+  display: grid;
+  gap: 22px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.formGrid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.publicForm label {
+  display: grid;
+  gap: 9px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(20, 17, 15, 0.58);
+}
+
+.publicForm input,
+.publicForm select,
+.publicForm textarea,
+.plannerConsole input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  padding: 15px 16px;
+  color: var(--ink);
+  outline: none;
+}
+
+.publicForm textarea {
+  resize: vertical;
+}
+
+.publicForm input:focus,
+.publicForm select:focus,
+.publicForm textarea:focus,
+.plannerConsole input:focus {
+  border-color: var(--pink);
+}
+
+.formNote {
+  margin: 0;
+  color: var(--mint-deep);
+  font-weight: 700;
+}
+
+.proposalPanel {
+  position: sticky;
+  top: 96px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.proposalPanel .kicker {
+  color: var(--mint);
+}
+
+.proposalPanel h2 {
+  margin: 22px 0 12px;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.proposalPanel p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.proposalPanel dl {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.proposalPanel dl div {
+  display: grid;
+  gap: 5px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.proposalPanel dt {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.proposalPanel dd {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.proposalPanel a {
+  color: var(--pink);
+  overflow-wrap: anywhere;
+}
+
+.plannerPage {
+  padding-top: clamp(40px, 8vh, 90px);
+  padding-bottom: clamp(90px, 13vh, 160px);
+}
+
+.plannerPage .publicHero {
+  padding: 0;
+}
+
+.plannerConsole {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.plannerMessages {
+  min-height: 250px;
+  display: grid;
+  align-items: end;
+  padding-bottom: 24px;
+}
+
+.assistantBubble {
+  max-width: 36rem;
+  border-radius: 4px;
+  background: var(--paper);
+  padding: 18px;
+}
+
+.plannerConsole form {
+  display: flex;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.plannerConsole input {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+}
+
+.plannerConsole button,
+.promptRow button {
+  border: 0;
+  background: var(--pink);
+  color: var(--white);
+  padding: 0 18px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.promptRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.promptRow button {
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.faqGrid article {
+  min-height: 230px;
+  padding: 26px;
+}
+
+.faqGrid article:nth-child(3n + 1) {
+  background: var(--pink-soft);
+}
+
+.faqGrid article:nth-child(3n + 2) {
+  background: #e3fff9;
+}
+
+.faqActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 38px;
+  padding-bottom: clamp(90px, 13vh, 150px);
+}
+
+@media (max-width: 900px) {
+  .publicNav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .publicNavLinks {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .trekCard,
+  .trekCard:nth-child(even),
+  .detailGrid,
+  .bookingGrid,
+  .plannerPage,
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+  .trekCard:nth-child(even) .trekCardImage {
+    order: 0;
+  }
+  .detailFacts,
+  .proposalPanel {
+    position: static;
+  }
+  .itineraryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .formGrid,
+  .formGrid.three,
+  .detailColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .publicNavLinks {
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .publicCta {
+    display: inline-flex;
+  }
+  .publicHero > p:last-child {
+    margin-left: 0;
+  }
+  .itineraryGrid {
+    grid-template-columns: 1fr;
+  }
+  .plannerConsole form {
+    flex-direction: column;
+  }
+  .plannerConsole button {
+    min-height: 48px;
+  }
+}
+
+/* =========================================================================
+   ADMIN DEMO OPS
+   ========================================================================= */
+.adminPage {
+  min-height: 100svh;
+  background:
+    linear-gradient(180deg, rgba(117, 222, 201, 0.14), transparent 380px),
+    var(--paper);
+  color: var(--ink);
+  padding: 36px 0 56px;
+}
+
+.adminOps {
+  display: grid;
+  gap: 18px;
+}
+
+.adminHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px 28px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 26px;
+}
+
+.adminHero h1 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 6.8rem);
+  font-weight: 650;
+  line-height: 0.92;
+}
+
+.adminHero p:not(.kicker),
+.adminModeNote {
+  margin: 0;
+  max-width: 720px;
+  color: rgba(20, 17, 15, 0.68);
+  line-height: 1.6;
+}
+
+.adminNotice {
+  border: 1px solid rgba(255, 22, 162, 0.22);
+  background: var(--pink-soft);
+  color: var(--ink);
+  padding: 12px 14px;
+  font-size: 0.92rem;
+}
+
+.adminGrid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.82fr) repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.adminGrid.lower {
+  margin-top: 2px;
+}
+
+.adminPanel,
+.adminCard,
+.leadCard,
+.guideList article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 40px rgba(10, 63, 58, 0.07);
+}
+
+.adminPanel {
+  display: grid;
+  gap: 13px;
+  padding: 16px;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.adminPanelHead,
+.adminCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.adminPanelHead h2,
+.pipelineColumn h3,
+.adminCard h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 650;
+}
+
+.adminPanelHead span,
+.adminCardTop span,
+.adminCardTop strong {
+  border: 1px solid rgba(10, 63, 58, 0.16);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--mint-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.adminField {
+  display: grid;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(20, 17, 15, 0.68);
+}
+
+.adminField input,
+.adminField select,
+.adminField textarea,
+.adminCard select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  padding: 10px 11px;
+  color: var(--ink);
+  outline: 0;
+}
+
+.adminField textarea {
+  resize: vertical;
+}
+
+.adminButton,
+.leadActions button {
+  border: 0;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 11px 15px;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.adminButton:hover,
+.leadActions button:hover {
+  background: var(--pink);
+  transform: translateY(-1px);
+}
+
+.adminButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.adminButton.wide {
+  width: 100%;
+}
+
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.pipelineColumn {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 158px;
+}
+
+.pipelineColumn h3 {
+  color: var(--pine);
+  font-size: 1rem;
+}
+
+.leadCard {
+  display: grid;
+  gap: 6px;
+  min-height: 142px;
+  padding: 12px;
+}
+
+.leadCard span,
+.leadCard small,
+.adminCard p,
+.guideList span,
+.guideList small {
+  color: rgba(20, 17, 15, 0.66);
+  line-height: 1.45;
+}
+
+.leadActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.leadActions button {
+  padding: 8px 9px;
+  font-size: 0.8rem;
+}
+
+.guideList,
+.tripGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.guideList article {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+}
+
+.tripGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.adminCard {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.adminCard p {
+  margin: 0;
+}
+
+.adminChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.adminChips span {
+  border-radius: 999px;
+  background: rgba(117, 222, 201, 0.2);
+  color: var(--pine);
+  padding: 5px 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.adminModeNote {
+  margin-top: 18px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .adminGrid,
+  .tripGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .spanTwo {
+    grid-column: auto;
+  }
+
+  .pipelineGrid {
+    grid-template-columns: repeat(7, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .adminHero {
+    grid-template-columns: 1fr;
+  }
+
+  .adminHero h1 {
+    grid-column: auto;
+  }
+}
+
+/* =========================================================================
+   ALPINE BLOOM FEATURE APP
+   ========================================================================= */
+.appSurface {
+  min-height: 100svh;
+  padding-top: 104px;
+  background: var(--paper);
+}
+
+.appSurface.darkSurface {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.appHeader {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 18px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 249, 245, 0.91);
+  backdrop-filter: blur(16px);
+}
+
+.darkSurface .appHeader {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(20, 17, 15, 0.92);
+}
+
+.appBrand {
+  display: grid;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  line-height: 0.95;
+}
+
+.appBrand em {
+  color: var(--pink);
+}
+
+.appBrand span {
+  margin-top: 5px;
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+
+.appHeader nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.appHeader nav a {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.appHeader nav a:hover {
+  color: var(--pink);
+}
+
+.pageHero {
+  padding: clamp(52px, 9vh, 100px) 0 clamp(32px, 6vh, 70px);
+}
+
+.pageHero h1 {
+  max-width: 12ch;
+  margin: 20px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7.4rem);
+  font-weight: 340;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.pageHero h1 em {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.pageHero p:not(.kicker) {
+  max-width: 47rem;
+  margin: 26px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.72;
+  color: rgba(20, 17, 15, 0.7);
+}
+
+.darkSurface .pageHero p:not(.kicker) {
+  color: rgba(251, 249, 245, 0.72);
+}
+
+.featureBlock,
+.bookingLayout,
+.plannerWrap,
+.faqList,
+.guideStrip,
+.routeFacts,
+.routeBody,
+.itinerary,
+.mapPanel,
+.alternateRoutes {
+  padding-bottom: clamp(70px, 10vh, 120px);
+}
+
+.filterBar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.filterBar p,
+.addonField p {
+  margin: 0 0 12px;
+  color: rgba(20, 17, 15, 0.56);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chipRow button,
+.starterRow button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  padding: 10px 14px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chipRow button.active,
+.starterRow button:hover {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+}
+
+.trekGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.trekTile {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.trekTile.wide {
+  grid-column: span 2;
+}
+
+.trekTile img,
+.routeHero > img,
+.guideStrip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trekTile::after,
+.routeHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(20, 17, 15, 0.84));
+}
+
+.trekTileText {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 26px;
+}
+
+.trekTileText span,
+.routeFacts span,
+.proposalSnapshot span,
+.guideStrip article span {
+  color: var(--mint);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.trekTileText h2,
+.guideStrip h2,
+.routeBody h2,
+.itinerary h2,
+.mapPanel h2,
+.alternateRoutes h2 {
+  margin: 10px 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 360;
+  line-height: 1;
+}
+
+.trekTileText p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+}
+
+.guideStrip > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.guideStrip article {
+  padding: 12px;
+  background: var(--white);
+  box-shadow: 0 24px 48px -34px rgba(20, 17, 15, 0.55);
+  transform: rotate(var(--tilt, -1deg));
+}
+
+.guideStrip article:nth-child(2n) {
+  --tilt: 1.4deg;
+}
+
+.guideStrip img {
+  aspect-ratio: 4 / 3;
+}
+
+.guideStrip h3,
+.leadCard h3 {
+  margin: 12px 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.guideStrip p {
+  margin: 0;
+  color: rgba(20, 17, 15, 0.66);
+  line-height: 1.55;
+}
+
+.routeHero {
+  position: relative;
+  min-height: 76svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.routeHero > img {
+  position: absolute;
+  inset: 0;
+}
+
+.routeHero .shell {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 72px;
+}
+
+.routeHero h1 {
+  max-width: 12ch;
+  margin: 18px 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9vw, 8rem);
+  font-weight: 340;
+  line-height: 0.88;
+}
+
+.routeHero p:not(.kicker) {
+  max-width: 44rem;
+  margin-bottom: 28px;
+  font-size: 1.16rem;
+  line-height: 1.65;
+}
+
+.routeFacts {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  padding-top: 1px;
+}
+
+.routeFacts div,
+.proposalSnapshot,
+.proposalForm,
+.conciergePanel,
+.faqList article {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.routeFacts div {
+  padding: 24px;
+}
+
+.routeFacts strong {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.routeBody,
+.mapPanel {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 34px;
+}
+
+.routeBody article,
+.routeBody aside,
+.mapPanel {
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.routeBody p,
+.itinerary p,
+.mapPanel p,
+.alternateRoutes a {
+  color: rgba(20, 17, 15, 0.72);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.prepList {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: rgba(20, 17, 15, 0.72);
+  line-height: 1.65;
+}
+
+.highlightList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.highlightList span {
+  border-radius: 999px;
+  background: var(--pink-soft);
+  padding: 10px 14px;
+}
+
+.itinerary > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.itinerary article {
+  border-top: 2px solid var(--pink);
+  padding-top: 18px;
+}
+
+.itinerary span {
+  color: var(--pink);
+  font-family: var(--font-display);
+}
+
+.itinerary h3 {
+  margin: 10px 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.mapSketch {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--pink-soft);
+}
+
+.mapSketch::before {
+  content: "";
+  position: absolute;
+  inset: 20%;
+  border: 3px solid var(--pink);
+  border-bottom-color: var(--mint-deep);
+  border-left-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.mapSketch span {
+  position: absolute;
+  top: calc(22% + (var(--i) * 12%));
+  left: calc(16% + (var(--i) * 18%));
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--white);
+  font-family: var(--font-display);
+}
+
+.alternateRoutes {
+  display: grid;
+  gap: 12px;
+}
+
+.alternateRoutes a {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.bookingLayout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.proposalForm,
+.proposalSnapshot,
+.conciergePanel {
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.field span {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea,
+.chatForm input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  padding: 14px 16px;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.chatForm input:focus {
+  border-color: var(--pink);
+}
+
+.formSplit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.formResult {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  background: var(--pink-soft);
+  line-height: 1.55;
+}
+
+.proposalSnapshot {
+  position: sticky;
+  top: 110px;
+}
+
+.proposalSnapshot h2 {
+  margin: 12px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 360;
+  line-height: 0.95;
+}
+
+.proposalSnapshot dl {
+  margin-top: 26px;
+}
+
+.proposalSnapshot div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.conciergePanel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chatWindow {
+  display: grid;
+  gap: 12px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.chatBubble {
+  max-width: 78%;
+  padding: 14px 16px;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.chatBubble.user {
+  justify-self: end;
+  background: var(--pink);
+  color: var(--white);
+}
+
+.starterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.chatForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.faqList {
+  display: grid;
+  gap: 14px;
+}
+
+.faqList article {
+  padding: 26px;
+}
+
+.faqList h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .trekGrid,
+  .guideStrip > div,
+  .routeFacts,
+  .routeBody,
+  .mapPanel,
+  .bookingLayout,
+  .filterBar {
+    grid-template-columns: 1fr;
+  }
+
+  .trekTile.wide {
+    grid-column: auto;
+  }
+
+  .itinerary > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proposalSnapshot {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .appHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appHeader nav {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .formSplit,
+  .itinerary > div,
+  .chatForm {
+    grid-template-columns: 1fr;
+  }
+
+  .chatForm .btn {
+    justify-content: center;
   }
 }

@@ -59,10 +59,11 @@ The Himalayan WHOA collage: on load, a cut-paper mountain hero rises into place 
 ## 10. Deploy and backend expectation
 
 - Deploy profile expected: Vercel or Cloudflare static.
-- Backend expected: none.
+- Backend expected: preview/demo mode only in this pass. The site now includes local Next API routes for booking, chat, and admin demo operations, but no production database, email, AI provider, paid service, or external deployment is configured.
 
 ## 11. What must be true before this site is called ready
 
 - It should be obvious this was built from WHOA's visual grammar.
 - Pink, white, black, mint, collage, and heavy uppercase type must dominate.
 - The content must still clearly sell women exploring the Himalayas.
+- The feature expansion should feel like Alpine Bloom product depth, not a Green Pastures visual transplant.

@@ -132,7 +132,7 @@ export default function Home() {
           </span>
           <span className="sub">Himalaya · Women-Led</span>
         </a>
-        <a className="navCta" href="#connect">
+        <a className="navCta" href="/book">
           Plan a trip
         </a>
       </nav>
@@ -145,7 +145,7 @@ export default function Home() {
           <a
             key={item}
             href={
-              ["#journeys", "#way", "#founder", "#connect"][i]
+              ["/treks", "#way", "#founder", "/book"][i]
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -247,7 +247,7 @@ export default function Home() {
             <a
               className="card"
               key={route.title}
-              href="#connect"
+              href="/treks"
               data-reveal
               style={{ "--delay": `${i * 90}ms` } as React.CSSProperties}
             >
@@ -267,7 +267,7 @@ export default function Home() {
         </div>
 
         <div className="journeysFoot">
-          <a className="btn dark" href="#connect" data-reveal>
+          <a className="btn dark" href="/treks" data-reveal>
             View all adventures <span className="arrow">→</span>
           </a>
         </div>

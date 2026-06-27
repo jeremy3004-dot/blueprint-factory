@@ -53,11 +53,13 @@
 ## Generated Assets
 
 - CSS scrapbook hero, route polaroids, handwritten labels, press logos, route cards, founder collage, and black media frame.
+- Feature-page UI surfaces for route explorer, route dossiers, booking proposal form, planner concierge, FAQ, and admin demo operations. These reuse the existing local Nepal image set; no new external assets were added for the feature port.
 
 ## References
 
 - WHOA Travel, `https://www.whoatravel.com/`
 - Captures saved under `references/reference-first/`.
+- Green Pastures local app, `/Users/dev/Projects/Travel Agency`, used as feature donor only.
 
 ## Unknown Or Needs Review
 

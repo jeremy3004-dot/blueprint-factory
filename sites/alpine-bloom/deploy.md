@@ -17,10 +17,24 @@ Profile: vercel-production
 
 - Build: `pnpm --filter alpine-bloom build`
 - Preview: `pnpm --filter alpine-bloom dev`
+- Current local preview: `http://localhost:3042`
 
 ## Required Secrets
 
 - None.
+
+## Preview APIs
+
+- `POST /api/book`
+- `POST /api/chat`
+- `GET /api/admin/dashboard`
+- `POST /api/admin/bookings`
+- `PATCH /api/admin/bookings/[bookingId]`
+- `POST /api/admin/trips`
+- `POST /api/admin/assignments`
+- `POST /api/admin/guides`
+
+All admin and booking behavior is demo/local-preview only until a real storage and notification backend is approved.
 
 ## Deploy Notes
 
