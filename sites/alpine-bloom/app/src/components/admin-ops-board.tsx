@@ -897,8 +897,8 @@ function AdminAssistPanel({
         </button>
       </div>
       <p className="adminModeNote">
-        Draft assist never adds men or mixed-team examples. Unclear details stay in notes for ops
-        review instead of being invented.
+        Draft assist keeps examples women-only and guide profiles women-led. Unclear details stay
+        in notes for ops review instead of being invented.
       </p>
     </section>
   );
