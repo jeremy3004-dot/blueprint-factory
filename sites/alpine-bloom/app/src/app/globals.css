@@ -379,9 +379,17 @@ video {
   font-weight: 340;
   font-size: clamp(2.9rem, 8.4vw, 8.2rem);
   line-height: 0.92;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   max-width: 14ch;
   text-wrap: balance;
+}
+
+.floating-concierge-open .heroTitle {
+  max-width: min(10.5ch, calc(100vw - 700px));
+}
+
+.floating-concierge-open .heroMeta {
+  max-width: min(520px, calc(100vw - 700px));
 }
 
 .heroTitle em {
@@ -1436,6 +1444,12 @@ video {
   .heroMeta {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .floating-concierge-open .heroTitle {
+    max-width: 14ch;
+  }
+  .floating-concierge-open .heroMeta {
+    max-width: 640px;
   }
 }
 

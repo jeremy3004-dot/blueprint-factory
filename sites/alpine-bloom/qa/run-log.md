@@ -90,3 +90,20 @@
 - Added native interactive map renderer with route line, clickable stages, selected stop panel, route progress, and elevation profile.
 - Verified `npm run lint`, `npm run build`, `/treks/annapurna-circuit`, `/treks/poon-hill-ghandruk`, and route-stage click behavior.
 - Captured `screenshots/desktop-route-map.png`.
+
+### 2026-06-28T05:04:15Z
+
+- Completed Phase 10 proof sweep after the guardrail and image-optimization commits.
+- Verified `npm run lint` and `npm run build` from `sites/alpine-bloom/app`.
+- Captured fresh browser proofs from local preview:
+  - `screenshots/phase10-admin-dashboard.jpg`
+  - `screenshots/phase10-admin-calendar.jpg`
+  - `screenshots/phase10-admin-guide-roster.jpg`
+  - `screenshots/phase10-route-dossier.jpg`
+  - `screenshots/phase10-floating-concierge.jpg`
+  - `screenshots/phase10-mobile-home.jpg`
+  - `screenshots/phase10-mobile-treks.jpg`
+  - `screenshots/phase10-mobile-book.png`
+- Captured production locked-admin proof from https://app-nine-wine-27.vercel.app/admin:
+  - `screenshots/phase10-admin-locked-production.png`
+- Browser captures reported no console errors and included women-only/Nepali women guide copy in each checked state.

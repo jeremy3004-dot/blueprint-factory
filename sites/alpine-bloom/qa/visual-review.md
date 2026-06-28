@@ -17,6 +17,20 @@ Screenshots refreshed:
 - `screenshots/mobile-treks.png`
 - `screenshots/mobile-book.png`
 
+Phase 10 browser proof captures:
+
+- `screenshots/phase10-admin-locked-production.png`
+- `screenshots/phase10-admin-dashboard.jpg`
+- `screenshots/phase10-admin-calendar.jpg`
+- `screenshots/phase10-admin-guide-roster.jpg`
+- `screenshots/phase10-route-dossier.jpg`
+- `screenshots/phase10-floating-concierge.jpg`
+- `screenshots/phase10-mobile-home.jpg`
+- `screenshots/phase10-mobile-treks.jpg`
+- `screenshots/phase10-mobile-book.png`
+
+The Phase 10 captures were taken from the running local preview for authenticated admin states and from production for the locked admin state. The browser run reported no console errors and confirmed women-only/Nepali women guide copy in every checked state. The floating concierge capture was recut after a desktop overlap fix so the open chat panel no longer sits on top of the hero title.
+
 ## Signature Moment Check
 
 Pass. Motion capture now shows the WHOA-derived homepage structure translated into a Nepal-only scrapbook with a looping hero video: a large Himalayan backplate holds while collage photos flash in and out, followed by the two-column manifesto, route polaroids, pink CTA, press strip, black-framed Everest media, sparse way marker, founder note, and compact footer.
