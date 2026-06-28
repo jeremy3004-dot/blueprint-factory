@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
 import { createOpsGuide, opsBackendReadiness, opsSetupRequiredMessage } from "@/lib/ops-client";
+import { isWomenOnlyGuideText } from "@/lib/ops-ai";
 
 function splitList(value: unknown) {
   return String(value ?? "")
@@ -30,9 +31,23 @@ export async function POST(request: Request) {
   };
   const name = String(values.name ?? "").trim();
   const role = String(values.role ?? "").trim();
+  const regions = Array.isArray(values.regions) ? values.regions.map(String) : splitList(values.regions);
+  const languages = Array.isArray(values.languages) ? values.languages.map(String) : splitList(values.languages);
+  const certifications = Array.isArray(values.certifications)
+    ? values.certifications.map(String)
+    : splitList(values.certifications).length
+      ? splitList(values.certifications)
+      : ["Licensed women trekking guide"];
 
   if (!name || !role) {
     return NextResponse.json({ message: "Guide name and role are required." }, { status: 400 });
+  }
+
+  if (![role, ...regions, ...languages, ...certifications].every(isWomenOnlyGuideText)) {
+    return NextResponse.json(
+      { message: "Alpine Bloom guide profiles must be women guides only." },
+      { status: 400 },
+    );
   }
 
   if (!opsBackendReadiness.connected) {
@@ -47,15 +62,9 @@ export async function POST(request: Request) {
       await createOpsGuide({
         name,
         role,
-        regions: Array.isArray(values.regions) ? values.regions.map(String) : splitList(values.regions),
-        languages: Array.isArray(values.languages)
-          ? values.languages.map(String)
-          : splitList(values.languages),
-        certifications: Array.isArray(values.certifications)
-          ? values.certifications.map(String)
-          : splitList(values.certifications).length
-            ? splitList(values.certifications)
-            : ["Licensed women trekking guide"],
+        regions,
+        languages,
+        certifications,
         active: values.active !== false,
       }),
       { status: 201 },

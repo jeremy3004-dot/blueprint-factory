@@ -86,6 +86,16 @@ Resolved after Phase 2 parity work:
 - Public booking no longer claims success in preview mode; it returns a not-stored response until the ops backend is connected.
 - Seeded guides and public guide profiles are explicitly women-only or women-led, with no mixed-team guide labels.
 
+## AI Admin Assist Follow-Up
+
+Resolved after Phase 3 parity work:
+
+- Admin now has `/api/admin/brief` for generated daily priorities and `/api/admin/draft` for booking/guide draft extraction.
+- The Create workspace includes a paste/dictation assist panel with Booking and Guide modes plus a Draft fields action.
+- Draft extraction uses model providers when configured and deterministic local extraction when no key is available.
+- Guide draft/create/update paths enforce women-only guardrails and reject male or mixed-team guide text.
+- Booking draft and validation paths whitelist Alpine Bloom route slugs before accepting saved requests.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

@@ -35,6 +35,8 @@ Profile: vercel-production
 - `POST /api/book`
 - `POST /api/chat`
 - `GET /api/admin/dashboard`
+- `GET /api/admin/brief`
+- `POST /api/admin/draft`
 - `POST /api/admin/bookings`
 - `PATCH /api/admin/bookings/[bookingId]`
 - `POST /api/admin/trips`
@@ -46,6 +48,8 @@ Profile: vercel-production
 - `POST /api/admin/logout`
 
 Admin endpoints require admin access. Without `OPS_API_URL` and `OPS_API_TOKEN`, `/admin` shows setup-required preview data, public booking returns a not-stored preview response, and admin write endpoints return `503` instead of mutating local demo state. With both ops env vars present, server routes send `tenantId: alpine-bloom` to the external ops API.
+
+Admin draft assist uses `OPENAI_API_KEY` / `OPENAI_MODEL` or `ANTHROPIC_API_KEY` / `ANTHROPIC_MODEL` when available, otherwise it falls back to deterministic local extraction. Draft assist is guarded for Alpine Bloom's women-only guide rule and route slug whitelist.
 
 ## Deploy Notes
 

@@ -2194,6 +2194,51 @@ video {
   padding: 16px;
 }
 
+.adminAssistPanel {
+  grid-column: span 3;
+  background:
+    linear-gradient(135deg, rgba(255, 22, 162, 0.12), rgba(117, 222, 201, 0.14)),
+    rgba(255, 255, 255, 0.76);
+}
+
+.adminAssistPanel textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.adminAssistToggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  padding: 3px;
+}
+
+.adminAssistToggle button {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(20, 17, 15, 0.62);
+  cursor: pointer;
+  padding: 7px 10px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.adminAssistToggle button.active {
+  background: var(--pink);
+  color: var(--white);
+}
+
+.adminAssistActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .spanTwo {
   grid-column: span 2;
 }
@@ -2537,6 +2582,10 @@ video {
   }
 
   .spanTwo {
+    grid-column: auto;
+  }
+
+  .adminAssistPanel {
     grid-column: auto;
   }
 

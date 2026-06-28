@@ -1,4 +1,5 @@
 import type { BookingFormValues } from "@/lib/ops-types";
+import { routeOptions } from "@/data/ops-demo";
 
 function text(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -33,7 +34,9 @@ export function validateBookingPayload(payload: unknown):
   if (values.fullName.length < 2) issues.fullName = "Enter your name.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) issues.email = "Enter a valid email.";
   if (!values.departureWindow) issues.departureWindow = "Choose a departure window.";
-  if (!values.routeSlug) issues.routeSlug = "Choose a route.";
+  if (!values.routeSlug || !routeOptions.some((route) => route.slug === values.routeSlug)) {
+    issues.routeSlug = "Choose a route.";
+  }
   if (!values.groupSize) issues.groupSize = "Choose a group size.";
   if (!values.style) issues.style = "Choose a travel style.";
   if ((values.notes ?? "").length > 1500) issues.notes = "Keep notes under 1500 characters.";

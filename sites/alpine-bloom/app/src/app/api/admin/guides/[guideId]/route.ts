@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
 import { opsBackendReadiness, opsSetupRequiredMessage, updateOpsGuide } from "@/lib/ops-client";
+import { isWomenOnlyGuideText } from "@/lib/ops-ai";
 
 function splitList(value: unknown) {
   return String(value ?? "")
@@ -37,6 +38,32 @@ export async function PATCH(
     return NextResponse.json(
       { message: opsSetupRequiredMessage(), readiness: opsBackendReadiness },
       { status: 503 },
+    );
+  }
+
+  const nextTextValues = [
+    values.role === undefined ? undefined : String(values.role).trim(),
+    ...(values.certifications === undefined
+      ? []
+      : Array.isArray(values.certifications)
+        ? values.certifications.map(String)
+        : splitList(values.certifications)),
+    ...(values.languages === undefined
+      ? []
+      : Array.isArray(values.languages)
+        ? values.languages.map(String)
+        : splitList(values.languages)),
+    ...(values.regions === undefined
+      ? []
+      : Array.isArray(values.regions)
+        ? values.regions.map(String)
+        : splitList(values.regions)),
+  ].filter((value): value is string => typeof value === "string");
+
+  if (!nextTextValues.every(isWomenOnlyGuideText)) {
+    return NextResponse.json(
+      { message: "Alpine Bloom guide profiles must be women guides only." },
+      { status: 400 },
     );
   }
 

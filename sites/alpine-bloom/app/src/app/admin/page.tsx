@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 
 import { AdminOpsBoard } from "@/components/admin-ops-board";
 import { adminAuthReadiness, getAdminIdentityFromHeaders } from "@/lib/admin-auth";
+import { generateOpsBrief } from "@/lib/ops-ai";
 import { fetchOpsDashboard, opsBackendReadiness } from "@/lib/ops-client";
 
 export const metadata = {
@@ -94,6 +95,7 @@ export default async function AdminPage({
     <main className="adminPage">
       <AdminOpsBoard
         identity={identity}
+        initialBrief={generateOpsBrief(dashboard)}
         initialDashboard={dashboard}
         readiness={opsBackendReadiness}
       />

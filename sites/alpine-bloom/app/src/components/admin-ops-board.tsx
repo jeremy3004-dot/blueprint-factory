@@ -5,6 +5,8 @@ import type { DragEvent } from "react";
 
 import { routeOptions } from "@/data/ops-demo";
 import type { AdminIdentity } from "@/lib/admin-auth";
+import type { AssistedBookingDraft, AssistedGuideDraft } from "@/lib/ops-ai";
+import { isWomenOnlyGuideText, sanitizeWomenGuideText, validRouteSlug } from "@/lib/ops-ai";
 import type {
   BookingFormValues,
   BookingRequestStatus,
@@ -18,10 +20,22 @@ import type {
 
 type WorkspaceTab = "create" | "pipeline" | "calendar" | "guides";
 type Message = { tone: "info" | "success" | "error"; text: string };
+type AssistMode = "booking" | "guide";
 type GuideDraft = Omit<OpsGuide, "id" | "slug" | "gender" | "regions" | "languages" | "certifications"> & {
   regions: string;
   languages: string;
   certifications: string;
+};
+
+type DictationRecognition = {
+  lang: string;
+  interimResults: boolean;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  onresult:
+    | ((event: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void)
+    | null;
+  start: () => void;
 };
 
 const emptyBooking: BookingFormValues = {
@@ -81,6 +95,106 @@ function splitList(value: string) {
     .filter(Boolean);
 }
 
+function fieldAfter(text: string, labels: string[]) {
+  for (const label of labels) {
+    const pattern = new RegExp(`${label}\\s*[:\\-]\\s*([^\\n;]+)`, "i");
+    const match = text.match(pattern)?.[1]?.trim();
+
+    if (match) return match;
+
+    const loosePattern = new RegExp(`${label}\\s+([^,.;\\n]+)`, "i");
+    const looseMatch = text.match(loosePattern)?.[1]?.trim();
+
+    if (looseMatch) return looseMatch;
+  }
+
+  return "";
+}
+
+function detectEmail(text: string) {
+  return text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0] ?? "";
+}
+
+function detectRouteSlug(text: string) {
+  const normalized = text.toLowerCase();
+  return routeOptions.find(
+    (route) =>
+      normalized.includes(route.name.toLowerCase()) ||
+      normalized.includes(route.slug.replace(/-/g, " ")),
+  )?.slug;
+}
+
+function joinWomenOnlyList(values: string[] | undefined, fallback: string) {
+  const safeValues = values?.filter(isWomenOnlyGuideText) ?? [];
+
+  return safeValues.length ? safeValues.join(", ") : fallback;
+}
+
+function mergeAssistedBookingDraft(
+  current: BookingFormValues,
+  draft: AssistedBookingDraft,
+  fallbackText: string,
+): BookingFormValues {
+  return {
+    ...current,
+    fullName: draft.fullName || current.fullName,
+    email: draft.email || current.email || detectEmail(fallbackText),
+    departureWindow: draft.departureWindow || current.departureWindow,
+    routeSlug:
+      draft.routeSlug && validRouteSlug(draft.routeSlug)
+        ? draft.routeSlug
+        : detectRouteSlug(fallbackText) || current.routeSlug,
+    groupSize: draft.groupSize || current.groupSize,
+    style: draft.style || current.style,
+    addons: draft.addons?.length ? draft.addons : current.addons,
+    notes: draft.notes || fallbackText.trim() || current.notes,
+  };
+}
+
+function mergeAssistedGuideDraft(current: GuideDraft, draft: AssistedGuideDraft): GuideDraft {
+  return {
+    ...current,
+    name: draft.name || current.name,
+    role: sanitizeWomenGuideText(draft.role ?? "", current.role),
+    regions: joinWomenOnlyList(draft.regions, current.regions),
+    languages: joinWomenOnlyList(draft.languages, current.languages),
+    certifications: joinWomenOnlyList(draft.certifications, current.certifications),
+  };
+}
+
+function inferBookingDraft(text: string, current: BookingFormValues): BookingFormValues {
+  return mergeAssistedBookingDraft(
+    current,
+    {
+      fullName: fieldAfter(text, ["name", "traveler", "woman traveler", "client"]),
+      email: detectEmail(text),
+      departureWindow: fieldAfter(text, ["departure", "window", "dates", "season"]),
+      routeSlug: detectRouteSlug(text) ?? "",
+      groupSize: fieldAfter(text, ["group size", "group", "travelers"]),
+      style: fieldAfter(text, ["style", "trip style", "pace"]),
+      addons: splitList(fieldAfter(text, ["addons", "add-ons", "support"])),
+      notes: text.trim(),
+    },
+    text,
+  );
+}
+
+function inferGuideDraft(text: string, current: GuideDraft): GuideDraft {
+  const certifications = splitList(
+    fieldAfter(text, ["certifications", "certs", "licenses"]),
+  ).filter(isWomenOnlyGuideText);
+
+  return mergeAssistedGuideDraft(current, {
+    name: fieldAfter(text, ["name", "guide"]),
+    role: fieldAfter(text, ["role", "title", "position"]) || "Women-only trekking guide",
+    regions: splitList(fieldAfter(text, ["regions", "routes", "specialties", "areas"])).filter(
+      isWomenOnlyGuideText,
+    ),
+    languages: splitList(fieldAfter(text, ["languages", "speaks"])).filter(isWomenOnlyGuideText),
+    certifications: certifications.length ? certifications : ["Licensed women trekking guide"],
+  });
+}
+
 function endDateForCalendar(value: string) {
   const date = new Date(`${value}T00:00:00`);
   date.setDate(date.getDate() + 1);
@@ -133,14 +247,17 @@ function StatCard({ label, value }: { label: string; value: string }) {
 
 export function AdminOpsBoard({
   identity,
+  initialBrief,
   initialDashboard,
   readiness,
 }: {
   identity: AdminIdentity;
+  initialBrief: string;
   initialDashboard: OpsDashboard;
   readiness: OpsReadiness;
 }) {
   const [dashboard, setDashboard] = useState(initialDashboard);
+  const [opsBrief, setOpsBrief] = useState(initialBrief);
   const [bookingDraft, setBookingDraft] = useState(emptyBooking);
   const [guideDraft, setGuideDraft] = useState(emptyGuide);
   const [activeTab, setActiveTab] = useState<WorkspaceTab>("pipeline");
@@ -187,7 +304,9 @@ export function AdminOpsBoard({
 
     startTransition(async () => {
       try {
-        setDashboard(await action());
+        const nextDashboard = await action();
+        setDashboard(nextDashboard);
+        setOpsBrief("Brief needs refresh after the latest board change.");
         setMessage({ tone: "success", text: success });
         options.onSuccess?.();
       } catch (error) {
@@ -205,6 +324,21 @@ export function AdminOpsBoard({
       setupRequired ? "Setup preview refreshed." : "Ops dashboard refreshed.",
       { requiresBackend: false },
     );
+  }
+
+  function refreshBrief() {
+    startTransition(async () => {
+      try {
+        const payload = await requestJson<{ brief: string }>("/api/admin/brief", "GET");
+        setOpsBrief(payload.brief);
+        setMessage({ tone: "success", text: "Ops brief refreshed." });
+      } catch (error) {
+        setMessage({
+          tone: "error",
+          text: error instanceof Error ? error.message : "Ops brief refresh failed.",
+        });
+      }
+    });
   }
 
   function moveBooking(bookingId: string, pipelineStage: PipelineStage) {
@@ -375,6 +509,12 @@ export function AdminOpsBoard({
 
       {activeTab === "create" ? (
         <div className="adminGrid">
+          <AdminAssistPanel
+            bookingDraft={bookingDraft}
+            guideDraft={guideDraft}
+            onBookingDraft={setBookingDraft}
+            onGuideDraft={setGuideDraft}
+          />
           <form className="adminPanel" onSubmit={submitBooking}>
             <div className="adminPanelHead">
               <h2>Create request</h2>
@@ -437,7 +577,12 @@ export function AdminOpsBoard({
             </button>
           </form>
 
-          <AdminBrief dashboard={dashboard} />
+          <AdminBrief
+            brief={opsBrief}
+            dashboard={dashboard}
+            isPending={isPending}
+            onRefreshBrief={refreshBrief}
+          />
         </div>
       ) : null}
 
@@ -584,17 +729,185 @@ function GuideRoster({
   );
 }
 
-function AdminBrief({ dashboard }: { dashboard: OpsDashboard }) {
+function AdminAssistPanel({
+  bookingDraft,
+  guideDraft,
+  onBookingDraft,
+  onGuideDraft,
+}: {
+  bookingDraft: BookingFormValues;
+  guideDraft: GuideDraft;
+  onBookingDraft: (draft: BookingFormValues) => void;
+  onGuideDraft: (draft: GuideDraft) => void;
+}) {
+  const [mode, setMode] = useState<AssistMode>("booking");
+  const [assistantText, setAssistantText] = useState("");
+  const [isDrafting, setIsDrafting] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+
+  async function applyAssistant() {
+    if (!assistantText.trim()) return;
+
+    setIsDrafting(true);
+
+    try {
+      const response = await fetch("/api/admin/draft", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ mode, text: assistantText }),
+      });
+      const payload = (await response.json().catch(() => null)) as {
+        draft?: AssistedBookingDraft | AssistedGuideDraft | null;
+      } | null;
+
+      if (!response.ok) {
+        const message =
+          payload && typeof payload === "object" && "message" in payload
+            ? String((payload as { message?: unknown }).message)
+            : "Draft assist failed.";
+        throw new Error(message);
+      }
+
+      if (payload?.draft) {
+        if (mode === "booking") {
+          onBookingDraft(
+            mergeAssistedBookingDraft(
+              bookingDraft,
+              payload.draft as AssistedBookingDraft,
+              assistantText,
+            ),
+          );
+        } else {
+          onGuideDraft(mergeAssistedGuideDraft(guideDraft, payload.draft as AssistedGuideDraft));
+        }
+
+        return;
+      }
+    } catch {
+      // The local deterministic extractor below is the intended no-key fallback.
+    } finally {
+      setIsDrafting(false);
+    }
+
+    if (mode === "booking") {
+      onBookingDraft(inferBookingDraft(assistantText, bookingDraft));
+    } else {
+      onGuideDraft(inferGuideDraft(assistantText, guideDraft));
+    }
+  }
+
+  function startDictation() {
+    const SpeechRecognition =
+      typeof window !== "undefined"
+        ? ((window as unknown as {
+            SpeechRecognition?: new () => DictationRecognition;
+            webkitSpeechRecognition?: new () => DictationRecognition;
+          }).SpeechRecognition ??
+          (window as unknown as {
+            webkitSpeechRecognition?: new () => DictationRecognition;
+          }).webkitSpeechRecognition)
+        : undefined;
+
+    if (!SpeechRecognition) {
+      setAssistantText((text) =>
+        text || "Dictation is not available in this browser. Paste women traveler or guide notes here instead.",
+      );
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+    recognition.onresult = (event) => {
+      const transcript = Array.from(event.results)
+        .map((result) => result[0]?.transcript ?? "")
+        .join(" ")
+        .trim();
+
+      setAssistantText((text) => [text, transcript].filter(Boolean).join(" "));
+    };
+    recognition.onend = () => setIsListening(false);
+    recognition.onerror = () => setIsListening(false);
+    setIsListening(true);
+    recognition.start();
+  }
+
+  return (
+    <section className="adminPanel adminAssistPanel">
+      <div className="adminPanelHead">
+        <div>
+          <h2>AI assist</h2>
+          <span>Paste or dictate women-only intake notes</span>
+        </div>
+        <div className="adminAssistToggle">
+          <button
+            className={mode === "booking" ? "active" : ""}
+            type="button"
+            onClick={() => setMode("booking")}
+          >
+            Booking
+          </button>
+          <button
+            className={mode === "guide" ? "active" : ""}
+            type="button"
+            onClick={() => setMode("guide")}
+          >
+            Guide
+          </button>
+        </div>
+      </div>
+      <textarea
+        value={assistantText}
+        onChange={(event) => setAssistantText(event.target.value)}
+        placeholder={
+          mode === "booking"
+            ? "Example: Name Priya Shah, priya@example.com, 2 women, Mardi Himal, October 2026, private comfort trek, wants altitude reassurance and a Nepali woman guide."
+            : "Example: Name Asha Rai, role Annapurna confidence coach, regions Poon Hill and Mardi Himal, languages Nepali and English, certifications first aid and licensed trekking guide."
+        }
+        rows={7}
+      />
+      <div className="adminAssistActions">
+        <button type="button" className="adminGhostButton" onClick={startDictation}>
+          {isListening ? "Listening" : "Dictate"}
+        </button>
+        <button
+          type="button"
+          className="adminButton"
+          onClick={applyAssistant}
+          disabled={isDrafting || !assistantText.trim()}
+        >
+          {isDrafting ? "Drafting..." : "Draft fields"}
+        </button>
+      </div>
+      <p className="adminModeNote">
+        Draft assist never adds men or mixed-team examples. Unclear details stay in notes for ops
+        review instead of being invented.
+      </p>
+    </section>
+  );
+}
+
+function AdminBrief({
+  brief,
+  dashboard,
+  isPending,
+  onRefreshBrief,
+}: {
+  brief: string;
+  dashboard: OpsDashboard;
+  isPending: boolean;
+  onRefreshBrief: () => void;
+}) {
   return (
     <aside className="adminPanel">
       <div className="adminPanelHead">
-        <h2>Ops brief</h2>
+        <h2>AI ops brief</h2>
         <span>{dashboard.generatedAt.slice(0, 10)}</span>
       </div>
-      <p className="adminModeNote">
-        Keep first-contact women traveler leads moving, convert scheduled leads into trip holds,
-        and drag active women guides onto the women-only departures that need coverage.
-      </p>
+      <p className="adminModeNote">{brief}</p>
+      <button className="adminButton wide" type="button" onClick={onRefreshBrief} disabled={isPending}>
+        Refresh brief
+      </button>
     </aside>
   );
 }
