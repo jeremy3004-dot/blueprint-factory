@@ -1,0 +1,25 @@
+name = "gptrek-ops-api"
+main = "src/index.ts"
+compatibility_date = "2026-05-05"
+
+# Copy this file to wrangler.toml and fill in your Cloudflare account values.
+# Do not commit secrets. Set OPS_API_TOKEN with:
+#   wrangler secret put OPS_API_TOKEN
+
+[vars]
+DEFAULT_TENANT_ID = "green-pastures"
+TEAM_EMAIL = "greenpastures977@gmail.com"
+EMAIL_FROM = "ops@gptrek.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gptrek-ops"
+database_id = "replace-with-cloudflare-d1-database-id"
+migrations_dir = "migrations"
+
+# Optional email binding. The Worker will still store bookings when this is not configured.
+# Configure the binding name as BOOKING_EMAIL in Cloudflare and keep TEAM_EMAIL set above.
+#
+# send_email = [
+#   { name = "BOOKING_EMAIL", destination_address = "greenpastures977@gmail.com" }
+# ]

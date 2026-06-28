@@ -1,0 +1,15 @@
+.git
+.next
+.artifacts
+.planning
+.playwright-artifacts
+.playwright-home
+.gstack
+.vercel
+node_modules
+coverage
+dist
+out
+TEXT with Doctor
+npm-debug.log*
+.DS_Store

@@ -2,6 +2,8 @@
 
 Blueprint Factory builds high-craft animated websites. Optimize for standout visual quality first.
 
+When Jeremy asks what to call or how to run Blueprint Factory workflows, use `factory/playbooks/blueprint-factory-callbook.md`.
+
 Every site must have:
 - `brief.md`
 - `art-direction.md` with one named signature moment
@@ -20,6 +22,11 @@ Every site must have:
 - Do not copy brand identity or protected content blindly for production. Clone the proven structure and quality bar first, then replace protected assets/content during the translation pass.
 - `art-direction.md` must name the primary donor, secondary references, and the exact moves being borrowed.
 - Beauty Pass must compare the build against the donor screenshots, not just against the agent's own taste.
+
+## Green Pastures Pack
+- When Jeremy says `Green Pastures Pack`, `copy what Green Pastures has`, or asks for Green Pastures-level company capability, follow `factory/playbooks/green-pastures-pack.md`.
+- Green Pastures is the capability donor only. The visual donor and company brand rules still control the final look, copy, imagery, personas, and exclusions.
+- Do not hand-port from memory. Use the pack checklist and verify each capability phase before save or deploy.
 
 Sites under `sites/<slug>/app` are self-contained. Copy reusable patterns from `factory/reference-library/`; do not import shared runtime code from the factory.
 

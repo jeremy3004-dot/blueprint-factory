@@ -1,0 +1,1381 @@
+[
+  {
+    "slug": "holy-himalaya-trek-abc",
+    "title": "Holy Himalaya Trek (ABC)",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 7,
+    "maxDurationDays": 10,
+    "durationType": "7-10 days",
+    "costUsd": 1260,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 4400,
+    "seasonWindow": "Oct-Nov and Apr - May",
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "This trek ascends through picturesque villages to the center of the Annapurna range, offering dramatic mountain scenery. Standing in the middle of the Sanctuary, surrounded by towering snowy peaks ranging between 6000-8000m, sunrise and sunset are magical as you watch the sun dance on the peaks of Annapurna I, Annapurna South, Annapurna III, and Machhapuchhre. The trail up is often steep and the Sanctuary trek is perhaps one of the more challenging of the teahouse treks. If you allow the time to ascend at your own pace this trek is open to the moderately fit.",
+      "Challenging trek through picturesque villages in the centre of the Annapurna range. Dramatic mountain scenery and led by local female guides."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (884m)",
+        "details": "A 1 hour drive takes us to Nayapul ~ the starting point of our trek. We follow the river and then slowly ascend through rice fields to Hille (1430m) and stop for the night.",
+        "duration": "1.30 min drive 4 hrs walk",
+        "distance": "42 kms drive 5 kms walk",
+        "ascent": "546m Ascent"
+      },
+      {
+        "day": 3,
+        "title": "Ghorepani (2855m) - Tadapani (2660m)",
+        "details": "Our day begins with an early climb to the summit of Poon Hill (3200m) to watch the sun rise across a magnificent Himalayan panorama. After breakfast in Ghorepani, we follow a long trail through rhododendron forests to Deurali. We then walk through an impressive river gorge with a chance to see Langur monkeys. Today's destination is Tadapani (2680m).",
+        "duration": "6 hrs walk",
+        "distance": "12 kms walk",
+        "ascent": "195m Descent"
+      },
+      {
+        "day": 4,
+        "title": "Tadapani (2660m) - Chomrong (2170m)",
+        "details": "We walk through a shaded forest trail steeply down to the river (1900m), followed by an up and down walk through terraced fields of maize and potatoes to Chomrong (2170m), the last permanent settlement in the valley. From here we have fantastic views of Annapurna South and Machhapuchhare.",
+        "duration": "6 hrs walk",
+        "distance": "9 kms walk",
+        "ascent": "490m descent"
+      },
+      {
+        "day": 5,
+        "title": "Chomrong (2170m) - Bamboo (2310 m)",
+        "details": "This day we walk for 6 hours to Bamboo (2310 m) – the trail takes us through beautiful bamboo and rhododendron forests.",
+        "duration": "6 hrs walk",
+        "distance": "8 kms walk",
+        "ascent": "140m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "annapurna-massif-trek-round-annapurna",
+    "title": "Annapurna Massif Trek (Round Annapurna)",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 13,
+    "maxDurationDays": 16,
+    "durationType": "13-16 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 820,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Since its opening in 1977, the Annapurna Circuit has been renowned as one of the world's greatest trekking destinations for both cultural diversity and scenic grandeur. Despite being fragmented by roads, this trek still lives up to its reputation with many side trips and alternate routes available, and can be tailored to fit your personal needs! The traditional route circumnavigates the Annapurna massif, home of the world's 10th tallest peak, and traces two great Nepali river valleys, the Marsyangdi and the Kali Gandaki. The environmental variation along the trek is unrivaled as you ascend from merely 800m in the jungles and Rhododendron forests of the lower Marsyangdi valley to over 5,400m at the snow covered Throng La pass, then down into the arid Mustang Region in the rain-shadow of the Himalayas. Abundant wildlife, along with many religious and cultural sites and a hot spring are other highlights of this classic trek!"
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m) - Besisahar (760m) - Jagat (1300m)",
+        "details": "If you are taking a local bus to Besisahar, we recommend waiting for the Thorong La - Phedi guest house guide. A 3-hour jeep/bus ride takes us to the starting point of the trek: Besisahar (900m), the capital of Lamjung District. After lunch drive a further 3hrs to Jagat, to avoid the crowded town of Besisahar. Also, it is a nice and better way to experience village life in Jagat (1300m) from the first day. Great mountain views!",
+        "duration": "7hrs drive",
+        "distance": "140kms/86mls",
+        "ascent": "480m ascend"
+      },
+      {
+        "day": 2,
+        "title": "Jagat (1300m) – Tal (1700m)",
+        "details": "Also at the beginning, we will be walking on the road for about 3 hours after that we will be walking on trial up to Tal. On the way to Tal, we can see beautiful waterfalls and beehives. Tal is the first village in Manang district. A paradise along the Marsyangdi River. We can see beautiful waterfalls from the hotel. A Buddhist shrine called Chorten is located in front of the waterfall and according to the villagers the shrine protects the villages from natural disasters. Tal means lake in Nepali. The village was once a lake, and therefore it is called Tal (1700m). Hiking hours: 5",
+        "duration": "5hrs",
+        "distance": "12kms/7.4mls",
+        "ascent": "400m ascend"
+      },
+      {
+        "day": 3,
+        "title": "Tal (1700m) – Danagyu (2300m)",
+        "details": "Tal is the first village in the Manang district. A paradise along the Marsyandi River. We can see beautiful waterfalls from the hotel. A Buddhist shrine called Chorten is located in front of the waterfall and according to the villagers the shrine protects the villages from natural disasters. Today's destination is Danagyu (2300m). Hiking hours: 5",
+        "duration": "5 hrs",
+        "distance": "12kms/7.5mls",
+        "ascent": "600m ascend"
+      },
+      {
+        "day": 4,
+        "title": "Danaque (2300m) - Chame (2600m)",
+        "details": "We continue to follow the river and reach Chame (2670m). This village is famous for its hot springs – perfect for soothing our aching limbs! The village of Chame is the districts headquarter of Manang district. Many administrative offices are located in Chame. The trail continues thru pine and rhododendron forests with spectacular view of Manaslu. The lower route is faster, but is not as scenic as the higher route. Hiking hours: 5.",
+        "duration": "5 hrs",
+        "distance": "12 kms",
+        "ascent": "300m ascend"
+      }
+    ]
+  },
+  {
+    "slug": "the-sunset-village-trek-astam-dhampus",
+    "title": "The Sunset Village Trek (Astam-Dhampus)",
+    "updatedAt": "Mar 17, 2024",
+    "minDurationDays": 1,
+    "maxDurationDays": 3,
+    "durationType": "1-3 days",
+    "costUsd": 920,
+    "sourceDifficulty": "",
+    "highestAltitudeM": 1600,
+    "seasonWindow": null,
+    "groupSize": "2-10",
+    "accommodation": "- Trek Seasons: all season",
+    "activity": "hiking",
+    "description": [
+      "Astam and Dhampus are traditional mountain villages offering a taste of Nepali Village life and excellent mountain views of the Annapurna Range as well as amazing sunsets and sunrises over the Himalayas.",
+      "Experience Astam and Dhampus mountain villages and culture with female guides in Nepal. Hike is 1 to 3 days, and includes guide, assistant, meals, and housing"
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m) - Astam (1522m)",
+        "details": "Twenty five minutes drive takes us to the town of Milan Chowk. From here we begin our gradual uphill trek through the chestnut forest with views across the Hemja and Mardi valleys, before we arrive at the village of Jijharka where we stop for refreshments at the local store. From here we continue walking for another hour on to Astam. Astam offers 360 degree views of the entire Pokhara, Hemja, and Mardi valley with backdrop majestic views of the Annapurna Range offering one of the most spectacular places to view a sunset and sunrise in the Himalayas. It also provides a great insight into rural village life of Adhikari, Brahimins dwelling in these mid-hills for generations. This day hike is very relaxing and rejuvenating.",
+        "duration": "20 Min Drive 3hrs walk",
+        "distance": "15km drive 5 km walk",
+        "ascent": "618m Ascent"
+      },
+      {
+        "day": 2,
+        "title": "Astam (1522m) - Australian Camp (1900m)",
+        "details": "After breakfast we take a gradual walk to Dhampus, passing through small villages and terraced farms. Dampus is inhabited by various ethnic groups including Gurungs, Brahmin’s, Chhetri’s and Dalits. The village of Dhampus offers spectacular mountain views of the Annapurna Range. You can enjoy a cup of masala tea, meditate and be inspired by the snow capped Himalayas. Dhampus is also famous for spectacular sunsets and sunrises. Approximately 3 hours of walking. After lunch we will continue trekking for 1.5 hours gradually uphill through lush mid-Himalayan forests until we reach Australian Camp where we will spend the night. Australian Camp offers breathtaking views of the Annapurna’s, Machhapuchhare and the Lamjung Himal. Approximately 5 hours of walking.",
+        "duration": "5hrs walk",
+        "distance": "11 km walk",
+        "ascent": "378m Ascent"
+      },
+      {
+        "day": 3,
+        "title": "Australian Camp (1900m) -- Pokhara (800m)",
+        "details": "After breakfast, we will make a steep descent to Khare (1700m). From Khare, we will take a local bus to Naudanda where we will take gradual ascent through the village of Kaskikot until we reach Sarankot. Along the way, we will see panoramic views of the Himalayas, terraced farming, rural villages, and views of the Pokhara valley, Phewa lake and the Peace Pagoda. Sarankot is one of the most popular destinations for sunset and sunrise. We will stay in Sarankot for sunset and take 30 minutes drive back to Pokhara.",
+        "duration": "4/5hrs walk 1hr drive",
+        "distance": "10 kms walk 15 kms drive",
+        "ascent": "1100m Desent"
+      }
+    ]
+  },
+  {
+    "slug": "lower-dolpo-trek",
+    "title": "Lower Dolpo Trek",
+    "updatedAt": "Mar 13, 2024",
+    "minDurationDays": 14,
+    "maxDurationDays": 17,
+    "durationType": "14-17 days",
+    "costUsd": null,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 1300,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Lower Dolpo Trekking is a high-altitude region situated in the upper part of the Dolpa district which is in the western part of Nepal. Dolpo lies in the Shey Phoksumdo National Park of Nepal and is a very remote and untouched geographical region. The whole region of Dolpo is surrounded by a chain of the Himalayas which includes the Dhaulagiri at 8172m.",
+      "This remote region of Dolpo is very sparsely populated with an estimated population of less than 5000. The people that live there are very traditional and their religion and language quite resemble the Tibetan Buddhist it is among the few areas in Nepal where the per - Buddhist Bon Po religion is still practised. This is an amazing trek and takes us to the most magnificent and isolated landscapes of the western Himalayan zones. The main highlight of the trek is the Lake of Phoksumdo and its waterfall, lying at the altitude of 3627m this is the deepest lake in the entire Himalayan region.",
+      "The remote location of the Dolpo is also home to a diverse variety of flora and fauna, the rugged and rough terrain throughout the area shelters various biodiversity. Traversing through the rocky and rough topography is difficult but trekking in the region of Dolpo is an incredible lifetime adventure. This trek is also known as `Ba Yul, the Hidden Land'."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Lower Dopla restricted area permit and TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1300m) - Nepalgunj (150m)",
+        "details": "Kathmandu – Nepalgunj (50 minutes flight) Stay in GH or Hotel",
+        "duration": "50 min flight",
+        "distance": "527 kms",
+        "ascent": "1150 m descent"
+      },
+      {
+        "day": 2,
+        "title": "Nepalgunj (150m)– Juphal (2475m)- Dunai (2140m)",
+        "details": "Fly to Dolpa (Juphal) trek to Dunai. After arriving at Juphal airport walk downhill through the villages and farms for about 30 minutes to arrive by the Bheri river. From here onwards about 2.5hrs. walk on the motorable road along the Bheri River to reach Dunai. Exploring and acclimatization day. Hiking hours: 3",
+        "duration": "21 min flight 3hrs walk",
+        "distance": "155 kms flight 10 kms walk",
+        "ascent": "2325 m ascent 335 m descent"
+      },
+      {
+        "day": 3,
+        "title": "Dunai (2140m) - Lingdo (2391m)",
+        "details": "The trail is along the Bheri River to Lingdo. 6 hours of moderate walk passing by a few teahouses will lead us to our next destination, Lingdo (2391m). Lingdo is a small village where there are few teahouses and a health post. Hiking hours: 5/6",
+        "duration": "5/6hrs",
+        "distance": "13.7 kms",
+        "ascent": "250 m ascent"
+      },
+      {
+        "day": 4,
+        "title": "Lingdo (2391m) – Laina (Lahini Camp) (3370m)",
+        "details": "Following the Bheri River, we will do a gentle uphill walk for 3 hours to reach Laisicap where we can enjoy our lunch at a local tented teahouse. From here onwards, we leave the Bheri River behind and follow the Tarap River. From Laisicap immediately steep climbing for 3 hours to reach Laina (Lahini Camp). There is only a tented camp facility, a nomad tent where locals and tourists share the tent with about 15 people. We can carry a light two men's tent for privacy. Hiking hours: 6/7",
+        "duration": "6/7hrs",
+        "distance": "9 kms",
+        "ascent": "979 m descent"
+      }
+    ]
+  },
+  {
+    "slug": "everest-base-camp-gokyo-lake",
+    "title": "Everest Base Camp & Gokyo Lake",
+    "updatedAt": "Mar 5, 2024",
+    "minDurationDays": 15,
+    "maxDurationDays": 24,
+    "durationType": "15-24 days",
+    "costUsd": 1200,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 1200,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Mount Everest towers above Khumbu at over 8,848m and is perhaps the most iconic symbol of challenge and adventure. At Base camp, stand face-to-face with the famous Khumbu ice fall and beyond. This trek gives you a grand tour of the famous Khumbu valley. It is a strenuous route leading to Cholapass 5430m and Gokyo lakes. Gokyo Ri and Gokyo lakes trek is a beautiful journey to the enticing Gokyo lakes and Gokyo Ri which is a very amazing viewpoint for great views of Mt. Everest and massive Ngozzumpa Glacier and many other mountains.",
+      "At Everest base camp, stand face-to-face with the famous Khumbu ice fall.The trek gives a grand tour of the famous Khumbu valley and led by local female guide"
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Everest Park entry and TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1200m) - Lukla (2840m) - Phakding (2610m)",
+        "details": "A spectacular 30-minute flight gives us the first view of the mountains. An easy 4-hour walk through alpine forest and along the Dudh Koshi river takes us to Phakding, our first destination.",
+        "duration": "45 min flight 4 hrs walk",
+        "distance": "50 kms flight 8 kms walk",
+        "ascent": "1410m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Phakding (2610m)",
+        "details": "This day we walk to Namche Bazaar (3440 m), the main centre of the Solu Khumbu region. The walk is about 4 to 5 hours and includes some steady climbing. Also this day we walk through alpine forest and we might spot pheasants, the national bird of Nepal.",
+        "duration": "5 ½ hrs walk",
+        "distance": "11 kms walk",
+        "ascent": "830m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Namcha Bazaar (3440m) - Khumjung (3780m) - Namcha Bazaar (3440m)",
+        "details": "Acclimatization day in Namche Bazaar. We walk up to Syangboche and Khumjung (3780 m) where we have our first view of Ama Dablam and Mt. Everest. A visit can be brought to the Hillary School and the hospital in Khunde.",
+        "duration": "6 hrs walk",
+        "distance": "8 kms walk",
+        "ascent": "340m ascent / 340m Descent"
+      },
+      {
+        "day": 4,
+        "title": "Namcha Bazaar (3440m) - Tengboche (3860m)",
+        "details": "Today Tengboche (3860 m) is our destination. A gradual walk takes us to Tesing (3380 m) where we have lunch followed by a 2-hour climb. We walk through juniper and rhododendron forest and there is a possibility we see a group of tahr (Himalayan goat). In the afternoon we visit the famous gompa (Buddhist monastery) where we can attend the chanting ceremony of the monks.",
+        "duration": "7 hrs walk",
+        "distance": "8 kms walk",
+        "ascent": "420m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "everest-epic-everest-base-camp",
+    "title": "Everest Epic (Everest Base Camp)",
+    "updatedAt": "Mar 5, 2024",
+    "minDurationDays": 12,
+    "maxDurationDays": 15,
+    "durationType": "12-15 days",
+    "costUsd": 2220,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 1200,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Everest Park entry and TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1200m) - Lukla (2840m) - Phakding (2610m)",
+        "details": "We fly with a small twin-engine plane to Lukla (2840m). We start the trek with a descent to Ghat (2490m) in the valley of the Dudh Kosi (Milk River). Then we continue to Phakding (2610m) for our first night.",
+        "duration": "45 min flight 4 hrs walk",
+        "distance": "50 kms flight 8 kms walk",
+        "ascent": "1410m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Phakding (2610m) - Namche Bazaar (3440m)",
+        "details": "A tough day awaits us. In total, about 900 meters up to Namche Bazar. At Monjo we enter the Sagarmatha National Park. We see Thamserku (6608m) towering high above us. Following the Dudh Kosi for the fifth and last time, we have a tough final climb high above the river to Namche Bazaar. With clear weather, in the distance we can see Mount Everest and Lhotse. We stay in a comfortable lodge in Namche Bazaar (3440m). If we just go up in the direction of the military camp and go just around the corner we can see Everest and the Ama Dablan. Namche Bazaar is a commercial city, on Saturdays there is a famous market and many lodge owners come to buy their supplies.",
+        "duration": "5 ½ hrs walk",
+        "distance": "11 kms walk",
+        "ascent": "830m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Explore Namche Bazaar (3440m)",
+        "details": "We allow one extra day for acclimatization in Namche Bazaar where we make a short hike with views of Lhotse, Ama Dablam and Everest mountains. We just go around the corner in the direction of Kenjoma where we have lunch and get accustomed to the altitude. This is really necessary because the next few days we only go uphill.",
+        "duration": "",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 4,
+        "title": "Namche Bazaar (3440m) - Thame (3840m)",
+        "details": "Today we walk at a leisurely pace through Thamo to the village of Thame (3840m). We walk slowly because the elevation will be noticeable. With nice views to the other side of the valley and high above us the peaks of the Nupla, Shar and Lho Nup we walk along above the Bhote Kosi river. At Thame, a visit to the monastery is very worthwhile. East of Thame is the Rolwaling area with beautiful high peaks and sonorous names such Bigphera Go Shar, Panayo Tippa and Tengi Rai Tau.",
+        "duration": "4 hrs walk",
+        "distance": "5 kms walk",
+        "ascent": "400m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "3-passes-3-weeks-everest",
+    "title": "3 Passes 3 Weeks (EVEREST)",
+    "updatedAt": "Mar 5, 2024",
+    "minDurationDays": 19,
+    "maxDurationDays": 21,
+    "durationType": "19-21 days",
+    "costUsd": 3200,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 5000,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "This challenging trek is one of the most fulfilling and unforgettable treks for ambitious trekkers. On this trek, one will cross 3 high altitude passes, namely the Kongma La (5535 m), Cho La (5380 m) and Renjo La (5388 m) linking the four breathtaking valleys of Bhotekoshi, Gokyo, Khumbu and Imjatse. If trekkers are interested we can customize trek to Everest Base Camp also.",
+      "This challenging trek is one of the most fulfilling for ambitious trekkers. On this trek, one will cross 3 high altitude passes and be led by a female guide."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Everest Park entry and TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 3,
+        "title": "Rest day and acclimatization hike to KHUMJUNG (3780m) - KHUNDE Village (3840m)",
+        "details": "The trail to the Khumjung and Khunde, the first village of Khumbu Region, is steep hillside above Namchebazar from beside the GOMPA but, becomes gradual, after the SYANGBOCHE (3740m) airstrip. What to see: The sacred mountain KHUMBILA, THAMSERKU (6618m), Everest View from Everest view hotel built by Japanese, Khumjung school built by Ed. Hillary, Mt. Kwancoe (6187m), Khunde Hospital built by Ed. Hillary and Gompas.",
+        "duration": "2-3 hrs walk",
+        "distance": "6 kms walk",
+        "ascent": "340m ascent/340m descent"
+      },
+      {
+        "day": 2,
+        "title": "Phakding (2610m) - Namchebazar (3440m)",
+        "details": "Mt. Everest emerge for the first time, Upto JORSALLEY Village, a lot of ups and downs but not tough, through the villages with stunning views of mountains and peaks. After JORSALLEY, a steep stepped path leads to NAMCHEBAZAR, crossing two suspensions bridge over Dudhkoshi and Bhotekoshi. The 600m ascent is a tough, exhausting. Finally, after ascending 230m, we can first see Mt. Everest still about 2km walk to NAMCHEBAZAR. in Namche Bazar there are several guest houses, government offices, army camp, schools, monasteries, museum, trekking shops, money changers, an ATM counter and weekly market that make it feel it is a gate way to the Everest and a last place for shopping.",
+        "duration": "5-6 hrs walk",
+        "distance": "11 kms walk",
+        "ascent": "830 acent"
+      },
+      {
+        "day": 1,
+        "title": "Kathmandu (1200m)",
+        "details": "Offers you stunning views of Himalayan Panorama. After landing in Lukla Airport, usually we have a tea break, introduction with assistants (porters) and, prepare for the march ahead to PHAKDING; today’s destination. LUKLA (2840m) – PHAKDING (2610m), After leaving Lukla we are soon walking down a gently descending trail crossing the Sherpa village of Chheplung, the meeting point of two trails from Jiri. There are views of Khumbila Peak (5761m) which is the sacred Mt. to the Sherpas, and further, Mt. Kusum Kangaru (6367m). If we reach Phakding and still have energy left, we can do an excursion to PEMA CHOLING GOMPA, 30m high on the west bank.",
+        "duration": "45 min flight",
+        "distance": "..",
+        "ascent": "1640m ascent/230m descent"
+      },
+      {
+        "day": 4,
+        "title": "NAMCHE (3440m)",
+        "details": "The trail is broad and follows the Dudh Koshi river valley on the west bank of deep gorge. The magnificent peaks of AMADABLAM (6828m), THAMSERKU (6618m) and TABOCHE (6542m) mesmerize us. We can also spot herds of Blue sheep, Thar or Himalayan Goats and Musk deer and Danphe (the national bird of Nepal). TENGBOCHE is famous for monastery and Mountains view.",
+        "duration": "6 hrs walk",
+        "distance": "10 kms walk",
+        "ascent": "420m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "kanchenjunga-north-south-base-camp-trek",
+    "title": "Kanchenjunga North & South Base Camp Trek",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 14,
+    "maxDurationDays": 20,
+    "durationType": "14-20 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 5160,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Kanchenjunga North and South Base Camp trek is the third highest mountain in the world. It is one the most adventurous trek and beautiful mountainous terrain, located in isolated regions of eastern Nepal. Along the way, a various ethnic groups are seen; a beautiful experience at one trek, among many Kirat ethnic groups has majority of settlement. In Kirati culture women inherit her mother's god, and after she gets married, she brings her deities with herself who later celebrates as the household deities. You'll be visiting one of the most rural regions in Nepal, surrounded by absolute pristine nature."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Kanchenjunga Park entry and Special permit,",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1300m) – Bhadrapur - (91m) Taplejung (1820m)",
+        "details": "50-minute flight to Bhadrapur and on same day jeep (private) ride to Taplejung (7/8hrs). overnight in Taplejung",
+        "duration": "50min flight 7-8hrs drive",
+        "distance": "308km flight 242km drive",
+        "ascent": "1729m ascend"
+      },
+      {
+        "day": 2,
+        "title": "Taplejung (1820m) – Lelep (1750 m) - Japantar (1500m)",
+        "details": "Driving day in a private jeep until Lelep, which is a 4-hour and gradual uphill walk to Japantar for 2 hours. Along the way, you will pass by small villages and beautiful landscapes.",
+        "duration": "4hrs drive 2hr walk",
+        "distance": "50km drive, 6km walk",
+        "ascent": "70m ascend 250m descend"
+      },
+      {
+        "day": 3,
+        "title": "Japantar (1500m) - Amjilesa (2395m)",
+        "details": "Today is our first day walking through a deep canyon, with fewer villages, no view of snow peaks, and at the end steep sections with spectacular waterfalls. The trail is partly up and down initially passing through sub-tropical forests like cardamom fields. We can also see some rhododendron flowers if we trek in spring. Hiking hours: 7",
+        "duration": "7hrs",
+        "distance": "11km",
+        "ascent": "900m ascend"
+      },
+      {
+        "day": 4,
+        "title": "Amjilesa (2395m) - Gyabla (2730m)",
+        "details": "Today’s trek through temperate dense forests. The trail is initially gentle up to the ridge, then the trail dropped down into the forest until the river bank where a small tea shop at Thungyam, from there the trail rises on the well-maintained trail and continues climbing up through a deep canyon. We cross a couple of steel bridges over tributaries of Ghunsa River and the trail begins steeper at the end of the trail. Finally, we will reach the fascinating village of Gyabla (2730m), today’s destination. Gyabla is a Sherpa village that has 16 households, Mountain Kumbakarna Ghunsa shyar is visible from Gyabla. Hiking hours: 5",
+        "duration": "5hrs",
+        "distance": "10km",
+        "ascent": "330m ascend"
+      }
+    ]
+  },
+  {
+    "slug": "shaman-spiritual-trek-langtang-gosainkund",
+    "title": "Shaman Spiritual Trek (Langtang & Gosainkund)",
+    "updatedAt": "Mar 17, 2024",
+    "minDurationDays": 6,
+    "maxDurationDays": 12,
+    "durationType": "6-12 days",
+    "costUsd": 1250,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 5300,
+    "seasonWindow": "Oct - Nov and Apr - May",
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Sacred lakes and remote villages enter into the spectacular living geology of the Langtang region with its sacred lakes and remote villages. Stunning glacial valleys and breathtaking snowy white peaks of Mt Langtang and Ganash Himal range await you along this 7-10 day adventure. The trail ascends through lush oak and rhododendron forests. You will stay in the charming villages of Langtang (3,300m) and Kyangjin (3,700m). Kyangjin has a monastery and a cheese factory with delicious yoghurt. It is possible to make several side treks from these villages. Depending on your time you can combine this adventure with the Gosainkund Lake (4,380m) and Helambu trek to have a full two week trek.",
+      "Experience the sacred lakes and remote villages in the Langtang region. Glacial valleys and white peaks. Led by local female guides."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Langtang National Park entry, TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1300m) - Syabrubesi (1460m)",
+        "details": "On our first day, we take a bus from Kathmandu in the early morning in direction of Syabrubesi. The drive from Trisuli is on a very dusty road. We therefore recommend taking a mask to avoid breathing the dusty air.",
+        "duration": "8-10 hrs drive",
+        "distance": "133 kms drive",
+        "ascent": "160m Ascent"
+      },
+      {
+        "day": 2,
+        "title": "Syabrubesi (1460m) - Lama hotel (2340m)",
+        "details": "We begin our walk through the old Syabru village, then walk uphill all the way to the Lama Hotel. A lunch break will be taken on the way, in Bamboo.",
+        "duration": "6-7 hrs walk",
+        "distance": "11 km walk",
+        "ascent": "880m Ascent"
+      },
+      {
+        "day": 3,
+        "title": "Lama hotel (2340m) - Langtang village (3330m)",
+        "details": "Today starts with a gradual uphill walk through the rhododendron forest all the way to Ghora Tabela. Depending on the walking pace of the group we either stop in Ghora Tabela or in Thansap for lunch, before continuing our gradual uphill walk to Langtang village (3330m). Langtang village is the biggest village in the Langtang National Park.",
+        "duration": "6-7 hrs walk",
+        "distance": "7 kms walk",
+        "ascent": "990m Ascent"
+      },
+      {
+        "day": 4,
+        "title": "Langtang village (3330m) - Kyanjing Gompa (3730m)",
+        "details": "Today starts with a gradual uphill walk through the rhododendron forest all the way to Ghora Tabela. Depending on the walking pace of the group we either stop in Ghora Tabela or in Thansap for lunch, before continuing our gradual uphill walk to Langtang village (3330m). Langtang village is the biggest village in the Langtang Conservation Area.",
+        "duration": "3-4 hrs walk",
+        "distance": "5 kms walk",
+        "ascent": "520m Ascent"
+      }
+    ]
+  },
+  {
+    "slug": "manaslu-trek",
+    "title": "Manaslu Trek",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 14,
+    "maxDurationDays": 18,
+    "durationType": "14-18 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 5115,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Manaslu Park entry, TIMS fees and Special permit,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": []
+  },
+  {
+    "slug": "machhapuchhare-kiss-trek-mardi-himal",
+    "title": "Machhapuchhare Kiss Trek (Mardi Himal)",
+    "updatedAt": "Mar 17, 2024",
+    "minDurationDays": 4,
+    "maxDurationDays": 8,
+    "durationType": "4-8 days",
+    "costUsd": 1250,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 4200,
+    "seasonWindow": "Whole year",
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "The Mardi Himal trek is a highly recommended trekking route in the Annapurna Himalayan region. It is located east of the Modi river, across the valley from Himchuli. The spectacular trek takes you off the beaten track, away from busy trails and has the essence of exploration and adventure. This stunningly beautiful trek through ancient rhododendron forests, high ridges and traditional Gurung villages is a trip of a lifetime. This trek offers spectacular views of Machhapuchhre, Annapurna Range, Lamjung Himal and Dhaulagiri. This trek is suitable for the moderately fit.",
+      "The Mardi Himal trek is a highly recommended trekking route in the Annapurna Himalayan region. Experience the scenery and culture with female guides in Nepal."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (884m) - Pitam Deurali (2100m)",
+        "details": "A one hour drive takes us to the starting point: the small village of Kande. Then we have a 2 hour steep climb to Australian Camp (2000 m) where we arrive in early afternoon for lunch. A 2 hour gentle walk from Australia Camp via Pothana takes us to Pitam Deurali (2100m).",
+        "duration": "1hr drive 4hrs walk",
+        "distance": "30 kms drive 10 kms walk",
+        "ascent": "1216m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Pitam Deurali (2100m) - Forest Camp (2550m)",
+        "details": "The trail takes us deep into greenery of mountain oak, birch, rhododendron and hemlock. Today's destination is Forest Camp (2550 m).",
+        "duration": "5 hrs walk",
+        "distance": "10 kms walk",
+        "ascent": "450m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Forest Camp (2550m) - Badal Danda (3200m)",
+        "details": "Today is steady, gentle climbing through the forest. After an hour walk we stop for a short tea break to enjoy the fishtail view. A gentle walk through the forest takes us to Low Camp where we have lunch. After lunch, we walk 2 hours further up reach our destination, Badal Danda (3200m). At Badal Danda, we have a close up view of the Machhapuchhre (fishtail), Hinchuli, and Annapurna South mountains. It is a famous place for viewing the sunrise and sunset.",
+        "duration": "5hrs walk",
+        "distance": "7km walk",
+        "ascent": "650m ascent"
+      },
+      {
+        "day": 4,
+        "title": "Badal Danda (3200m) - High Camp (3900m)",
+        "details": "Today we make our way to the highest point on the ridge, High Camp (3900m). We leave the forest behind and reach the meadows with grazing sheep. Again the views are breathtaking as we can see the widespread Gurung villages and we can also see the trail to Annapurna Base Camp. From the guesthouse at High Camp we can see a beautiful sunset and sunrise and a closeup view of Machhapuchhre mountain.",
+        "duration": "3 hrs walk",
+        "distance": "8 kms walk",
+        "ascent": "700m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "lost-valley-of-the-annapurna-nar-phu",
+    "title": "Lost Valley of the Annapurna (Nar Phu)",
+    "updatedAt": "Mar 4, 2024",
+    "minDurationDays": 16,
+    "maxDurationDays": 18,
+    "durationType": "16-18 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 884,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "The Nar Phu trek is known as a hidden valley and extremely rural part of Nepal. It explores stunning viewpoints at Kang La Pass (5171m) and Thorong La Pass (5416m). The Nar Phu valley trek is one of the most popular treks in Nepal and lies in a remote area of the Manang District. Experience the Buddhist culture by exploring hidden valley. The Nar Phu Trek is in a restricted area and a special permit is required to trek in this remote but alluring valley. This trail leads us an area of Tibetan villages from where we cross the Kong La pass. After Nar Phu the trek descends with views of the Annapurna, Lamjung, Manaslu and Tilicho mountains.",
+      "The Hidden Valley of the Annapurna (Nar Phu)"
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees and Special permit,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (884m) – Besisahar (760m) - Syange (1130m)",
+        "details": "A 5- hour bus ride takes us to the starting point of the trek: Besisahar (900 m), the capital of Lamjung District. After lunch drive 2hrs to Syange, to avoid the crowded town of Besisahar. Also, it is a nice walk and a better way to experience village life in Syange (1130m) from the first day. Great mountain views!",
+        "duration": "7hrs drive",
+        "distance": "135kms/84mls drive",
+        "ascent": "246m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Syange (1100m) – Tal (1700m)",
+        "details": "Also at the beginning, we will be walking on the road till about 3 hours after that we will be walking on trail all the way up to Tal. On the way to Tak, we can see beautiful waterfalls, Beehives. Tal is the first village of Manang district. A paradise along the Marsyandi River. We can see beautiful waterfalls from the hotel. A Buddhist shrine called chorten is located in front of the waterfall and according to the villagers the shrine protects the villages from natural disasters. Tal means lake in Nepali. The village was once a lake, and therefore it is called Tal (1700 m). Hiking hours: 5",
+        "duration": "5hrs",
+        "distance": "11kms/6.8mls",
+        "ascent": "600m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Tal (1700m) – Danaque (2300m)",
+        "details": "The trail is gentle on the west bank of Marsyangdi River through the trail continues crossing through a beautiful village of Dharapani, Bagarchhap and finally reach to Danaque. After Dharapani, we can see Annapurna 2nd Mountain view and Manaslu view too. Today's destination is Danagyu (2300 m). Hiking hours: 5",
+        "duration": "6hrs",
+        "distance": "12kms/ 7.5mls",
+        "ascent": "600m ascent"
+      },
+      {
+        "day": 4,
+        "title": "Danaque (2300m) - Koto (2600m)",
+        "details": "We continue to follow the river and reach Koto (2600 m). This village is famous. And close to the Koto village have Chame. Chame is the districts headquarter of Manang district. Many administrative offices are located in Chame. The trail continues thru pine and rhododendron forests with spectacular view of Manaslu. The lower route is faster, but is not as scenic as the higher route. Hiking hours: 5.",
+        "duration": "5hrs",
+        "distance": "9kms/5.6mls",
+        "ascent": "300m ascend"
+      }
+    ]
+  },
+  {
+    "slug": "happy-feet-panchase-trek",
+    "title": "Happy Feet (Panchase trek)",
+    "updatedAt": "Mar 17, 2024",
+    "minDurationDays": 3,
+    "maxDurationDays": 4,
+    "durationType": "3-4 days",
+    "costUsd": 950,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 820,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "For travelers who don't have time and wanting an authentic Himalayan trekking experience with panoramic mountain views, the Panchase trek is perfect. It starts close to the popular town of Pokhara, takes just four days, and can be done in autumn, winter, or spring.",
+      "For travellers who don't have time and want to experience an authentic Himalayan trekking experience with panoramic mountain views. Starts close to Pokhara, Nepal."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m)",
+        "details": "We begin with a 30 minute boat ride across Phewa Lake and then a 45 minute climb through the forest to the Peace pagoda (1080m). It is nice to stop and have a rest with excellent mountain views, views of Pokhara valley and the lake. We walk for one hour, gentle climbing, to Lukanswara and Pumdi village. Then we climb for 45 minutes to the traditional Gurung village of Bhumdi (1500m), which is our final destination. We stay with the local people in a traditional Gurung house and enjoy traditional food. Amazing views of Ganesh Himal, Himalchuli, Manaslu, Annapurna range and Fishtail Mountain from Bhumdi.",
+        "duration": "45mins boating 5hrs walk",
+        "distance": "1.5 kms boat 8.5 kms walk",
+        "ascent": "680m Ascent"
+      },
+      {
+        "day": 2,
+        "title": "Bhumdi (1500m)",
+        "details": "Today our walk takes us through the uninhabited forest with both climbing and gentle walking. We can see Rhododendron trees, Himalayan sandalwood and many species of birds. We can stop in a nice meadow enjoying packed lunch. Our destination is Panchase Bhanjang at 2030m, which is a settlement of only 5 Gurung households. We stay in a basic lodge, which is one of the households.",
+        "duration": "6hrs walk",
+        "distance": "15kms walk",
+        "ascent": "530m Ascent"
+      },
+      {
+        "day": 3,
+        "title": "Panchase Bhanjyang (2030m)",
+        "details": "2 hours steep climbing gets us to Panchase top where we can enjoy the sunrise and sunset and view the Annapurna range, Hiunchuli, Dhaulagiri, Lamjung, Manaslu and Machhapucharre. Also we can see Phewa Lake of Pokhara. After lunch we can go for 3 hours hike around Panchase lake, a secret lake.",
+        "duration": "5hrs walk",
+        "distance": "3 km walk",
+        "ascent": "487m Ascent"
+      },
+      {
+        "day": 4,
+        "title": "Panchase Top (2587m)",
+        "details": "Downhill through forest we reach Bhadaure, a Gurung village. After 3 hours gentle walk we reach Naudanda, a Brahmin village. A 45 minutes drive takes us back to the relaxing Lakeside of Pokhara.",
+        "duration": "4hrs walk 1hr drive",
+        "distance": "5 Km walk 27 Km drive",
+        "ascent": "917m Descend"
+      }
+    ]
+  },
+  {
+    "slug": "pikey-peak-everest-panoramic-view-cultural-trek",
+    "title": "Pikey Peak ~ Everest Panoramic View & Cultural Trek",
+    "updatedAt": "May 6, 2024",
+    "minDurationDays": 7,
+    "maxDurationDays": 10,
+    "durationType": "7-10 days",
+    "costUsd": 2000,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 1350,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "If you're looking for a short trek in the Everest region near Kathmandu, this is a great place to explore. If you're fit or have very limited time, this trek is best to hike in more leisurely 7-days. This trek allows a physical workout without the stress, and a chance to visit a number of Buddhist sites (monasteries, gompas, and stupas). We have included one night in Thupten Choling monastery so you can be a part of the monastery member and can observe closely their daily life and chanting and doing puja in the monastery. This itinerary provide amazing views of the mountain range and Everest. It is the best view of Everest in Nepal. Many people say that the view of Mount Everest from the Pikey Peak is one of the best in Nepal. That's a bold statement, but Sir Edmund Hillary himself claimed it to be his favorite, and we're inclined to agree. This trek can be done in 7 days or more. Take your time enjoying the unmatched scenery by adding a few more days on the Pikey Peak trek. This itinerary allows for a more leisurely pace and is well suited to trekkers who don't want the extra physical challenge.",
+      "Experience short trek in the Everest region near Kathmandu. Leisurely 7 day trek and led by local female guides."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "TIMS fees",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Kathmandu (1350m) - Dhap (2900m)",
+        "details": "Leaves Kathmandu at 5.30 am. Drive is scenic passing by agricultural fields, river and can observe the daily village lives.",
+        "duration": "8-9 hrs drive",
+        "distance": "200 kms drive",
+        "ascent": "1550m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Dhap (2900m) - Jhapre (2812m)",
+        "details": "Early morning walk for 25 minutes’ to view point for sunrise and mountain views, we can view Dughkunda, Mera Peak, Lotse, Cho Yo and Everest. Where there is a temple for both Hinduism and Buddhism. After enjoying the magnificent views we can eat breakfast and get ready for the walk to Jhapre. We follow the road however we hardly see any vehicles. We can skip road for about 40%. After two hours gradual/gentle downhill walk through the rhododendron and pine forest we can stop at the first village Siganay for a short tea break. Then continue for three more hours uphill and gentle walk reach to our destination Jhapra. It is a small settlement of Sherpa and Magar ethnic groups. It has monastery attach to the guesthouse. We can enjoy sunrise and mountains view (Dudhkunda, Pongday, Makalu, Mera Peak, Cho Yu, Everest, Tsumsherko and Kanchanjunga range).",
+        "duration": "5 hrs walk",
+        "distance": "8 kms walk",
+        "ascent": "88 m descend"
+      },
+      {
+        "day": 3,
+        "title": "Jhapre (2812m) - Pikey Peak Base Camp (3640m)",
+        "details": "After enjoying sunrise and mountains view and breakfast we can start the trek for 2.5 hrs gradual uphill through rhododendron and pine forest take us to Bulbule where we can have a short break for the tea. Then 45 minutes gradual uphill and gentle walk can reach at Lamachay village and where we can stop for lunch. After crossing stupa further zigzag steep climb for an hour through the rhododendron and pine forest. Then gentle and gradual uphill we reach to our destination Pikey B. C. There are only 4 households. It is interesting to visit cheese factory. We can view sunset and can view Langtang Peak, Ganesh Himal, Manaslu and Annapurna mountains.",
+        "duration": "7 hrs walk",
+        "distance": "17 kms walk",
+        "ascent": "828 m ascent"
+      },
+      {
+        "day": 4,
+        "title": "Pikey Peak B. C (3640m) - Jose Bhanjang (3549m)",
+        "details": "Early morning for an hour and half hour steep climb reach us Pikey Peak for sunrise and can view panoramic mountain views from Manaslu to Kanchanjunga range (Dhaulagiri, Annapurna I, Manaslu, Ganesh Himal, Langtang, Pongday, Dudhkunda, Everest, Cho Yu, Thamserko, Mera Peak, Makalu and Kanchanjunga, out of 14 highest mountains above 8000 meters peak in the world we can view 7 highest peaks from the Pikey Peak (4067 m). We can enjoy sunrise, panaromic mountain views, and villages around and can relax for couple of hours. Slowly we can walk steep downhill for two hours passing by jasmine flowers (high mountain incense). Then we can reach to Jase Bhanjyang. It is located in the valley. There is only two teahouses. We can spend the night there. Teahouses have cows and yaks so can observe handmade hard and soft cheese, butter milk, butter and yogurt.",
+        "duration": "4 hrs walk",
+        "distance": "5 kms walk",
+        "ascent": "91 m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "himalayan-sunrise-trek-ghorepani-ghandruk",
+    "title": "Himalayan Sunrise Trek (Ghorepani - Ghandruk)",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 3,
+    "maxDurationDays": 6,
+    "durationType": "3-6 days",
+    "costUsd": 1250,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 3200,
+    "seasonWindow": "whole year",
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Sunrise and panoramic mountain views. This is one of the most scenic teahouse treks in the Annapurna region. From Ghorepani village you arise early in the morning to go to Poonhill for a spectacular 360 degree view of the whole Annapurna range, including the snowy peaks of the Macchupucchare. Later on you continue to the Gurung village of Ghandruk. The Gurung originally migrated from western Tibet. They are renowned for their exotic traditional dress, the key feature being a neck ornament made of coral, gold and turquoise beads for the women. Many aspects of their culture can be seen in the local museum.",
+      "Experience Annapurna range with female guides in Nepal. This is one of the most scenic teahouse treks with 360 views in the Annapurna region."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (884m) - Hille (1475m)",
+        "details": "A 1.5 hour drive takes us to Nayapul ~ the starting point of our trek. We follow the river and then slowly ascend through rice fields to Hille (1475m) and stop for the night.",
+        "duration": "1:30 hrs drive 4 hr walk",
+        "distance": "42kms drive 5kms walk",
+        "ascent": "591m ascent"
+      },
+      {
+        "day": 2,
+        "title": "Hille (1475m) - Ghorepani (2855m)",
+        "details": "We start our day with a steep ascent to Ulleri where we get our first view of the Himalayas. We then continue through forests of rhododendron until we reach our destination ~ Ghorepani (2855 m).",
+        "duration": "6/7hrs walk",
+        "distance": "7km walk",
+        "ascent": "1380m Ascent"
+      },
+      {
+        "day": 4,
+        "title": "Tadapani (2680m) - Pokhara (820m)",
+        "details": "We walk along a shaded forest trail, followed by terraced fields of maize and potatoes to Ghandruk (2170m). From here we have fantastic views of Annapurna South and Machhapuchhare. It is a major settlement of the Gurung, an ethnic group of Nepal, and a famous Gurung village with terraces and offers excellent mountain views. After arriving, it is possible to take a short walk to explore the village, visiting a cultural museum and monastery. After enjoying lunch with the beautiful mountain view we leave the mountains behind us. A 3-hour drive takes us back to the relaxing Lakeside of Pokhara. Hiking hours: 4, Driving hours: 3",
+        "duration": "4hrs walk 3hrs drive",
+        "distance": "5km walk 42km drive",
+        "ascent": "1860m Descend"
+      },
+      {
+        "day": 3,
+        "title": "Ghorepani (2855m) - Tadapani (2680m)",
+        "details": "An early climb to the summit of Poon Hill (3030m) to watch the sunrise across a magnificent Himalayan panorama. After breakfast we follow a long ridge through rhododendron forests to Deurali. We then walk through impressive river gorges with the chance to see Langur monkeys in the trees. Our destination is Tadapani (2680m)",
+        "duration": "6hrs walk",
+        "distance": "5km walk",
+        "ascent": "510m Descend"
+      }
+    ]
+  },
+  {
+    "slug": "salt-trade-route-trek-jomsom-muktinath",
+    "title": "Salt Trade Route Trek (Jomsom / Muktinath)",
+    "updatedAt": "Mar 17, 2024",
+    "minDurationDays": 8,
+    "maxDurationDays": 10,
+    "durationType": "8-10 days",
+    "costUsd": 1290,
+    "sourceDifficulty": "Moderate",
+    "highestAltitudeM": 884,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "One of the most popular treks in Nepal. The Jomsom trek from Pokhara to Muktinath, offers the greatest cultural diversity of anywhere in Nepal. Along this scenic route you will pass through villages inhabited by different ethnic groups such as Thakali, Gurung, and Magar and in higher elevation the Tibetan culture is predominant. Here you may visit several authentic Tibetan Monasteries. The trail follows up the Kali Gandaki Valley, one of the deepest gorges in the world, between the soaring peaks of Annapurna and Dhaulagiri. Finally emerges to the north of the main Himalayan range, on the dry, desert like Tibetan Plateau. The high point of the trek is at the holy temple of Muktinath 3800m which is worshiped by both Hindu and Buddhist people. It is also possible to finish the trek at Jomsom, elevation 2,800m. The walking trail is a gentle slope making this a relatively easy trek that can be completed all year round. The average time is 14 days although a flight one way or the other not only offers incredible views but enables you to do this trek in approximately 8 - 10 days.",
+      "Experience the most popular trek. The Jomsom trek from Pokhara to Muktinath offers the greatest cultural diversity in Nepal. Led by local female guides."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (884m) - Hille (1430m)",
+        "details": "A 1.5 hr drive takes us to our starting point, Nayapul. The beginning of our trek follows the banks of the Modi Khola river and slowly we ascend through local villages and rice fields until we reach Hille (1475m).",
+        "duration": "1.5 hrs drive 4 hrs walk",
+        "distance": "42kms drive 7kms walk",
+        "ascent": "546m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Ghorepani (2860m)",
+        "details": "We begin our day with an early climb to the summit of Poon Hill (3210 m) to watch the sun rise across a spectacular Himalayan panorama. After breakfast back at the lodge we begin our trek. Rhododendron and Magnolia forests give way to the terraced fields of Shika. (1935m). Hiking hours: 4",
+        "duration": "3 hrs walk",
+        "distance": "6 kms walk",
+        "ascent": "30 m Descent"
+      },
+      {
+        "day": 4,
+        "title": "Shika (2430m)",
+        "details": "We descend through the terrace fields and cross the Kali Gandaki river. Tatopani (1189 m), on the banks of the river, is famous for its hot springs. Here we can spend the afternoon relaxing in the springs. Hiking hours: 3",
+        "duration": "4 hrs walk",
+        "distance": "7 kms walk",
+        "ascent": "1240 m Descent"
+      },
+      {
+        "day": 5,
+        "title": "Tatopani (1190m) - Kalopani (2530m)",
+        "details": "We have a gentle walk along the banks of the Kali Gandaki river until we reach the magnificent falls of Rupse Chhahara (1630m). We then pass through the deepest gorge in the world and climb up to Ghasa. (2010m), this is a paradise for bird watchers. Today’s destination, Kalopani (2530m) is reached after a 2-hour walk and offers great mountain views of Annapurna and Dhaulagiri. We take a side trip from here and spend the rest of the day exploring Titi lake and viewing the Dhaulagiri glacier. Hiking hours: 6",
+        "duration": "6 hrs walk",
+        "distance": "18 kms walk",
+        "ascent": "1340 m Ascent"
+      }
+    ]
+  },
+  {
+    "slug": "tilicho-lake-annapurna-massif-trek",
+    "title": "Tilicho Lake & Annapurna Massif Trek",
+    "updatedAt": "May 23, 2024",
+    "minDurationDays": 16,
+    "maxDurationDays": 20,
+    "durationType": "16-20 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 820,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "coming soon"
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Guide support, meals, lodging, permits, and trailhead transport are the common package backbone."
+    ],
+    "excludeItems": [
+      "Mineral water, discretionary drinks, tips, souvenirs, and traveler insurance should still be budgeted separately."
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m) - Basisahar (760m) - Syange (1130m)",
+        "details": "A 5-hour bus ride takes us to the starting point of the trek: Besisahar (900m), the capital of Lamjung District. After lunch drive 2hrs to Syange, to avoid the crowded town of Besisahar. Also, it is a nice walk and a better way to experience village life in Syange (1130m) from the first day. Great mountain views!",
+        "duration": "7hrs drive",
+        "distance": "135kms/83mls",
+        "ascent": "310m descend"
+      },
+      {
+        "day": 2,
+        "title": "Syange (1130m) – Tal (1700m)",
+        "details": "Also at the beginning, we will be walking on the road for about 3 hours after that we will be walking on the trail up to Tal. On the way to Tak, we can see beautiful waterfalls and beehives. Tal is the first village of the Manang district. A paradise along the Marsyandi River. We can see beautiful waterfalls from the hotel. A Buddhist shrine called Chorten is located in front of the waterfall and according to the villagers the shrine protects the villages from natural disasters. Tal means lake in Nepali. The village was once a lake, and therefore it is called Tal (1700m). Hiking hours: 6",
+        "duration": "6hrs",
+        "distance": "15.4kms/9.6mls",
+        "ascent": "570m ascend"
+      },
+      {
+        "day": 3,
+        "title": "Tal (1700m) – Danagyu (2300m)",
+        "details": "Tal is the first village in the Manang district. A paradise along the Marsyandi River. We can see beautiful waterfalls from the hotel. A Buddhist shrine called Chorten is located in front of the waterfall and according to the villagers the shrine protects the villages from natural disasters. Today's destination is Danagyu (2300m). Hiking hours: 5",
+        "duration": "5hrs",
+        "distance": "12kms/7.5mls",
+        "ascent": "600m ascend"
+      },
+      {
+        "day": 4,
+        "title": "Danaque (2300m) - Chame (2600m)",
+        "details": "We continue to follow the river and reach Chame (2670m). This village is famous for its hot springs – perfect for soothing our aching limbs! The village of Chame is the district headquarters of Manang district. Many administrative offices are located in Chame. The trail continues through pine and rhododendron forests with a spectacular view of Manaslu. The lower route is faster but is not as scenic as the higher route. Hiking hours: 5.",
+        "duration": "5hrs",
+        "distance": "15.5kms/9.62mls",
+        "ascent": "300m ascend"
+      }
+    ]
+  },
+  {
+    "slug": "mount-manaslu-trek-tsum-valleymanaslu",
+    "title": "Mount Manaslu Trek (Tsum Valley/Manaslu)",
+    "updatedAt": "May 12, 2024",
+    "minDurationDays": 17,
+    "maxDurationDays": 20,
+    "durationType": "17-20 days",
+    "costUsd": null,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 5100,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "The Manaslu Valley Trek is more remote and spectacular than other treks, with rough steep tracks and limited accommodation. It is culturally fascinating with strong continuing links to Tibet in the upper Budi Gandaki river. The Tsum Valley, and Larkya La (5100m) provides a challenge and the views of Mt. Manaslu the eighth highest mountain in the world are marvelous and close. The trek around Manaslu can be done as a tea house trek except for the night before the Larkya La. The remote Tsum Valley side-trip should not be missed, with friendly hospitable people, a thriving Buddhist culture and untouched wildlife. Tsum comes from the Tibetan word 'Tsombo', which means vivid and we can only agree. The people are poor, since they have been by passed by development for centuries, but this means their unique culture has remained intact."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Manaslu Park entry, TIMS fees and Special permit,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m) – Arughat (608m) – Machi Khola (869m)",
+        "details": "Arughat is 220 km from Pokhara and is 9/10 hours drive",
+        "duration": "8/9hrs drive",
+        "distance": "220kms/137mls",
+        "ascent": "212m descend 261m ascend"
+      },
+      {
+        "day": 2,
+        "title": "Machi Khola (869m) – Philim (1570m)",
+        "details": "We reach Tatopani (Hot spring) and cross a bridge over the Budi Gandaki River. It is a gentle uphill and downhill walk until Dovan. Dovan is a small village with a few schools. After walking for 1 ½ hour from Dovan we will reach a cliff where we should be more careful as rocks are falling out. After crossing a bridge we will arrive at Jagat. Jagat is a restricted area. It is a small village where ethnic groups such as Gurung, Shahi, Chhetri, and Thakuri live. After Jagat, we enter Tsum Valley and walk through the gentle trail for ½ an hour until we reach a bridge passing small villages to reach Philim (1570m). Walking hours: 6",
+        "duration": "6hrs",
+        "distance": "8kms/5mls",
+        "ascent": "701m ascend"
+      },
+      {
+        "day": 3,
+        "title": "Philim (1570m) - Lokpa (2240m)",
+        "details": "Climbing uphill and downhill until Chisapani (Eklebhatli). We continue to walk through the forest and climb uphill until we reach Lokpa (2240m) Walking hours: 4",
+        "duration": "4hrs",
+        "distance": "6kms/3.72mls",
+        "ascent": "670m ascend"
+      },
+      {
+        "day": 4,
+        "title": "Lokpa (2240m) – Chukung Paro (3031m)",
+        "details": "We will pass through many bridges today. First, we start with a gentle walk and after passing the bridge, we climb steep uphill through the forest for 2 hours. The trail is narrow and we walk downhill to cross the bridge. We will walk uphill again until chumling village where we stop for lunch. We will walk gently and climb uphill to Chukurparo where we will have good views of Ganesh Himal 2 and 6, Tipu Himal. Walking hours: 7",
+        "duration": "7hrs",
+        "distance": "14kms/8.6mls",
+        "ascent": "791m ascend"
+      }
+    ]
+  },
+  {
+    "slug": "the-forbidden-kingdom-of-nepal-upper-mustang-one-way-drive",
+    "title": "The Forbidden Kingdom of Nepal (Upper Mustang) (one way drive)",
+    "updatedAt": "Mar 4, 2024",
+    "minDurationDays": 9,
+    "maxDurationDays": 10,
+    "durationType": "9-10 days",
+    "costUsd": 1200,
+    "sourceDifficulty": "Streneous",
+    "highestAltitudeM": 3650,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "The hidden kingdom above the tree line, the vast barren landscape of the Upper Mustang region, dotted with ancient forts, walled medieval villages and monasteries rich in Buddhist art, offers its visitors a fascinating glimpse into this remote enclave of Tibetan Culture. A deliberate policy of cultural and environmental preservation has meant that Mustang remains one of the world's most special trekking destinations. Entry is limited and special trekking permits are required. 10 to 15 days should be allowed for Upper Mustang and it may also be combined with the Jomsom trek. A reasonable fitness level is required. We organise tea house treks.",
+      "The Upper Mustang region has ancient forts, walled medieval villages and monasteries rich in Buddhist art. Exclusive entry and trekking permit required."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Annapurna Park entry, TIMS fees and Special permit,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 7,
+        "title": "Lo-Manthang (exploration day)",
+        "details": "Lo-Manthang means the “plains of prayer.” The city is a walled fortress of old times with houses tightly packed behind the walls, and a maze of narrow alleys to explore. The king’s palace, in which he still resides, is easily noticeable, as it is the largest residence in Lo-Manthang. It is also possible to visit 3 monasteries – the Chamba Lakhang which houses the massive 45 foot statue of Maitreya (the future Buddha), the Thugchen Lakhang with several large images of Sakyamuki, Avolokitsevara and Maitreya and Chodi of the Sakya Sect which has several monks in residence and offers us the chance to join in prayer and chanting. Half way to the King’s summer palace in Namgyal, is the Namgyal Monastery. It is the largest monastery in Mustang and is perched on a hillside above the village. Its massive walls are painted in scripts of grey, white and yellow. There is a large courtyard surrounded by galleries and the main hall contains a large altar with splendid statues, images and Thankas hanging from the pillars. Lo-Manthang has a post office, health post; police check post and radio communication with Jomsom and Kathamndu.",
+        "duration": ".",
+        "distance": ".",
+        "ascent": "."
+      },
+      {
+        "day": 6,
+        "title": "Tsarang (3650m) – Lo-Manthang (3760m)",
+        "details": "After our initial descent, the trail follows a gentle but continuous climb with increasingly beautiful views. High sandstone cliffs with numerous caves flank our east and the Mustang Himal peaks are visible stretching towards Tibet. From the Lo-Manthang Pass (3950m) we first see the village of Namgyal, and then Lo-Manthang itself, the only walled village on this route. It contains the Royal Palace of the King of Mustang and will be our base camp for the next 3 nights. Hiking hours: 5",
+        "duration": "5 hrs",
+        "distance": "10 kms",
+        "ascent": "110m ascent"
+      },
+      {
+        "day": 5,
+        "title": "Ghami (3490m) – Tsarang (Charang) (3650m)",
+        "details": "We cross the river on the other side of Ghami village. There is a hospital following 300m long Mani wall. The Mani wall is the longest in Upper Mustang and is said to be the intestine of the demon killed by Padmasambhav (Guru Rimpoche). Tsarang (3650m), a Dzong which formerly housed a king of the region. Tsarang is situated on the edge of a beautiful cliff. The name Tsarang has been derived from the Tibetan word Chaptrun meaning cook’s crest. The crest being the narrow rocky ridge upon which the Castle stands. There is a Monastery which was built in 1385AD and a 5 storied Palace built in 1378AD. The Palace has 108 volumes of Kangyur Text engraved in Gold. Hiking hours: 6",
+        "duration": "6 hrs",
+        "distance": "11 kms",
+        "ascent": "160m ascent"
+      },
+      {
+        "day": 3,
+        "title": "Chaile (3050m) – Syanboche (3920m)",
+        "details": "We climb until we reach the Chotare Lopcha Pass (3625 m) where it offers a good view towards Samar, the Kali Gandaki Valley and snow-capped peaks in the distance. We then follow the contour of the mountain to Samar (3700 m) named after the red outcrop of rocks. We stop for lunch at Samar. Then we take the lower route to visit Chunsi cave red painted monastery, which is an impressive and worth to visit. This is Rangchyung Chorten, one of the most sacred places in Mustang. Sometime it is possible to see the rare blue mountain sheep in this area. Our today’s destination is Syanboche (3920 m). Hiking hours: 6.",
+        "duration": "6 hrs",
+        "distance": "10 kms",
+        "ascent": "870m ascent"
+      }
+    ]
+  },
+  {
+    "slug": "village-to-village-homestay-trek",
+    "title": "Village to Village Homestay Trek",
+    "updatedAt": "May 21, 2024",
+    "minDurationDays": 3,
+    "maxDurationDays": 5,
+    "durationType": "3-5 days",
+    "costUsd": null,
+    "sourceDifficulty": "Easy",
+    "highestAltitudeM": 820,
+    "seasonWindow": null,
+    "groupSize": null,
+    "accommodation": null,
+    "activity": null,
+    "description": [
+      "Rural homestay trek with spectaular mountain views."
+    ],
+    "pagedescription": null,
+    "highlights": [],
+    "includeItems": [
+      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
+      "Guide",
+      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
+      "3 meals per day, afternoon tea & snacks,",
+      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
+      "Staff insurance,"
+    ],
+    "excludeItems": [
+      "Mineral water",
+      "Beverages- soft and hard",
+      "Extra dessert",
+      "Souvenirs",
+      "Tipping to staff",
+      "Any entry fee during cultural (monastery/temple heritage visit)"
+    ],
+    "facts": [],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara (820m) - Bhumdi (1500m)",
+        "details": "We begin with a 30 minute boat ride across Phewa Lake and then a 45 minute climb through the forest to the Peace pagoda (1080m). It is nice to stop and have a rest with excellent mountain views, views of Pokhara valley and the lake. We walk for one hour, gentle climbing, to Lukanswara and Pumdi village. Then we climb for 45 minutes to the traditional Gurung village of Bhumdi (1500m), which is our final destination. We stay with the local people in a traditional Gurung house and enjoy traditional food. Amazing views of Ganesh Himal, Himalchuli, Manaslu, Annapurna range and Fishtail Mountain from Bhumdi. Hiking hours: 5",
+        "duration": "45 min Boating 5hrs walk",
+        "distance": "1 kms boating 8 kms walk",
+        "ascent": "680m Ascent"
+      },
+      {
+        "day": 2,
+        "title": "Bhumdi (1500m)",
+        "details": "Today our walk takes us through the uninhabited forest with both climbing and gentle walking. We can see Rhododendron trees, Himalayan sandalwood and many species of birds. We can stop in a nice meadow enjoying packed lunch. Our destination is Panchase Bhanjyang at 2030 m, which is a settlement of only 5 Gurung households. We stay in a basic lodge, which is one of the households. All the way through forest with packed lunch. Hiking hours: 6",
+        "duration": "6hrs walk",
+        "distance": "15kms walk",
+        "ascent": "530m Ascent"
+      },
+      {
+        "day": 3,
+        "title": "Panchase Bhanjyang (2030m)",
+        "details": "2 hours steep climbing reaches us in our destination Panchase top. Where we can enjoy the sunrise and sunset and can view Annapurna range, Hiunchuli, Dhaulagiri, Lamjung, Manaslu and Machhapucharre. Also we can see Phewa Lake of Pokhara, views are much better than Poon Hill trek After lunch we can walk through forest around three hour downhill and two more hours to Chitre 1700m. Hiking hours: 5",
+        "duration": "5hrs walk including side trip to Panchase Lake",
+        "distance": "13kms walk",
+        "ascent": "487m Ascent 817m Decent"
+      },
+      {
+        "day": 4,
+        "title": "Chitre (1700m)",
+        "details": "In the morning we can enjoy sunrise and mountain views. Slowly after breakfast we can start our walk for mostly gradual easy walk passing by villages. After 2 hours walk we can reach to Bhadaure where we can stop and can enjoy the surrounding villages, mountain views and can spend some time and then take light lunch before heading to Naudanda. 45 minutes’ drive take us back to the relaxing Lakeside of Pokhara. Back in Pokhara, the day closes with a relaxed crew dinner and time to unwind together. Hiking hours: 5",
+        "duration": "5hrs walk 1hrs drive",
+        "distance": "10km walk 27km drive",
+        "ascent": "100m Decent 780m Decent"
+      }
+    ]
+  }
+]

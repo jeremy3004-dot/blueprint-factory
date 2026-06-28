@@ -1,0 +1,17 @@
+{
+  "name": "gptrek-ops-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "migrate:local": "wrangler d1 migrations apply gptrek-ops --local",
+    "migrate:remote": "wrangler d1 migrations apply gptrek-ops --remote"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "wrangler": "^4.0.0"
+  }
+}

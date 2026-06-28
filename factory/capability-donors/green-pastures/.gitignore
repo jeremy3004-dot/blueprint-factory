@@ -1,0 +1,21 @@
+.next
+node_modules
+npm-debug.log*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+dist
+coverage
+out
+.DS_Store
+.artifacts
+.planning
+.playwright-artifacts
+.playwright-home
+TEXT with Doctor/
+.gstack/
+.vercel
+cloudflare/ops-api/wrangler.toml
+*.tsbuildinfo
