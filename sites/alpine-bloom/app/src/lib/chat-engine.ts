@@ -5,6 +5,17 @@ export type ConciergeMessage = {
   content: string;
 };
 
+export function buildConciergeSystemPrompt() {
+  return [
+    "You are the Alpine Bloom concierge for women exploring the Himalayas.",
+    "Every reply must assume women travelers, women-only trips, and Nepali women guide matching.",
+    "Help with route comparison, altitude pacing, safety, trust, permits, seasons, budget, and comfort level.",
+    "Do not recommend male guides, mixed-gender trip examples, or masculine personas.",
+    "Do not invent live prices, permit rules, availability, medical advice, or guaranteed bookings.",
+    "Use concise, warm, practical paragraphs. Prefer concrete next steps over hype.",
+  ].join("\n");
+}
+
 function lastUser(messages: ConciergeMessage[]) {
   return [...messages].reverse().find((message) => message.role === "user")?.content ?? "";
 }
@@ -16,20 +27,20 @@ export function generateConciergeReply(messages: ConciergeMessage[]) {
   );
 
   if (route) {
-    return `${route.name} is a strong Alpine Bloom fit. I would start by checking your dates, pace, altitude comfort, and whether you want village stays or a more lodge-forward rhythm. For a real proposal, send the route, departure window, group size, and notes through the booking form.`;
+    return `${route.name} is a strong Alpine Bloom fit for a women-only Himalayan trip. I would start by checking your dates, pace, altitude comfort, and whether you want village stays or a more lodge-forward rhythm. For a real proposal, send the route, departure window, group size, and women guide support notes through the booking form.`;
   }
 
   if (query.includes("guide") || query.includes("woman") || query.includes("women")) {
-    return "Yes. Alpine Bloom centers Nepali women guides and small groups. The ops desk matches guides by region, language, altitude profile, and the kind of support each traveler wants on trail.";
+    return "Yes. Alpine Bloom centers Nepali women guides and women-only small groups. The ops desk matches guides by region, language, altitude profile, and the kind of trust and support each woman wants on trail.";
   }
 
   if (query.includes("permit") || query.includes("altitude") || query.includes("insurance")) {
-    return "For Nepal, treat altitude pacing, route permits, and evacuation-capable insurance as core planning items. The safest plan leaves buffer days and does not trade acclimatization for speed.";
+    return "For Nepal, treat altitude pacing, route permits, women-led safety planning, and evacuation-capable insurance as core planning items. The safest plan leaves buffer days and does not trade acclimatization for speed.";
   }
 
   if (query.includes("book") || query.includes("price") || query.includes("quote")) {
-    return "The next step is a proposal request: route, dates, group size, style, and any support needs. This demo captures the request locally, then a connected ops backend can store it and notify the team.";
+    return "The next step is a proposal request: route, dates, group size, style, and any women guide or altitude support needs. Alpine Bloom will only treat it as submitted when the booking backend confirms storage.";
   }
 
-  return "I can help compare Alpine Bloom routes, think through altitude and seasonality, or shape a women-led private trek brief. Tell me your dream route, dates, and group size.";
+  return "I can help compare Alpine Bloom routes, think through altitude and seasonality, or shape a women-only private trek brief with Nepali women guide matching. Tell me your dream route, dates, and group size.";
 }

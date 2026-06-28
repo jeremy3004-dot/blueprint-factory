@@ -2,6 +2,8 @@
 
 import { useState, useTransition } from "react";
 
+import { formatAssistantReply } from "@/lib/chat-format";
+
 type Message = {
   role: "user" | "assistant";
   content: string;
@@ -13,12 +15,12 @@ const starters = [
   "Can I request a Nepali woman guide?",
 ];
 
-export function Concierge() {
+export function Concierge({ variant = "embedded" }: { variant?: "embedded" | "floating" }) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
       content:
-        "Tell me your route dream, travel window, group size, and how brave you want the trip to feel. I will shape the first Alpine Bloom brief.",
+        "Tell me your route dream, travel window, group size, and what support would help you feel steady. I will shape the first Alpine Bloom women-only trek brief.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -29,25 +31,42 @@ export function Concierge() {
     setMessages(next);
     setInput("");
     startTransition(async () => {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ messages: next }),
-      });
-      const payload = (await response.json()) as { reply: string };
-      setMessages((current) => [...current, { role: "assistant", content: payload.reply }]);
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ messages: next }),
+        });
+        const payload = (await response.json()) as { reply?: string; provider?: string };
+
+        if (!response.ok || !payload.reply) {
+          throw new Error("Concierge reply failed.");
+        }
+
+        const reply = payload.reply;
+        setMessages((current) => [...current, { role: "assistant", content: reply }]);
+      } catch {
+        setMessages((current) => [
+          ...current,
+          {
+            role: "assistant",
+            content:
+              "I could not load a fresh reply just now. Try again, or send the route, dates, group size, and women guide support notes through /book.",
+          },
+        ]);
+      }
     });
   }
 
   return (
-    <section className="conciergePanel">
+    <section className={`conciergePanel ${variant === "floating" ? "floating" : ""}`}>
       <div className="chatWindow">
         {messages.map((message, index) => (
           <div className={`chatBubble ${message.role}`} key={`${message.role}-${index}`}>
-            {message.content}
+            {message.role === "assistant" ? formatAssistantReply(message.content) : message.content}
           </div>
         ))}
-        {pending ? <div className="chatBubble assistant">Checking routes, permits, and guide fit...</div> : null}
+        {pending ? <div className="chatBubble assistant">Checking routes, altitude pacing, permits, and women guide fit...</div> : null}
       </div>
       <div className="starterRow">
         {starters.map((starter) => (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Archivo } from "next/font/google";
+import { FloatingConcierge } from "@/components/floating-concierge";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
@@ -35,7 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${archivo.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingConcierge />
+      </body>
     </html>
   );
 }

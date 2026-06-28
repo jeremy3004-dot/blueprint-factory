@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { generateConciergeReply, type ConciergeMessage } from "@/lib/chat-engine";
+import { type ConciergeMessage } from "@/lib/chat-engine";
+import { generateModelConciergeReply } from "@/lib/model-concierge";
 
 export async function POST(request: Request) {
   const payload = await request.json().catch(() => null);
@@ -20,8 +21,5 @@ export async function POST(request: Request) {
         .slice(-8)
     : [];
 
-  return NextResponse.json({
-    provider: "local",
-    reply: generateConciergeReply(messages),
-  });
+  return NextResponse.json(await generateModelConciergeReply(messages));
 }

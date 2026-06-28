@@ -96,6 +96,17 @@ Resolved after Phase 3 parity work:
 - Guide draft/create/update paths enforce women-only guardrails and reject male or mixed-team guide text.
 - Booking draft and validation paths whitelist Alpine Bloom route slugs before accepting saved requests.
 
+## Model Concierge Follow-Up
+
+Resolved after Phase 4 parity work:
+
+- Public `/api/chat` now routes through a provider resolver with Anthropic-first, OpenAI-second, and local fallback behavior.
+- Anthropic chat uses lightweight/deep model selection, recent message limiting, and 360-token output caps.
+- Assistant replies are cleaned with a formatting helper before display.
+- `/planner` keeps the embedded Alpine Bloom concierge, and the root layout now mounts a floating concierge button across the app.
+- Concierge copy and system prompt center women-only Himalayan trips, women-led safety, pacing, trust, altitude support, and Nepali women guide matching.
+- Focused node tests cover provider precedence, Anthropic model selection/request shaping, and assistant formatting.
+
 ## Map Follow-Up
 
 Resolved after route-map review:
