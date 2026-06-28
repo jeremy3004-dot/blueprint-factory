@@ -384,14 +384,6 @@ video {
   text-wrap: balance;
 }
 
-.floating-concierge-open .heroTitle {
-  max-width: min(10.5ch, calc(100vw - 700px));
-}
-
-.floating-concierge-open .heroMeta {
-  max-width: min(520px, calc(100vw - 700px));
-}
-
 .heroTitle em {
   font-style: italic;
   font-weight: 360;
@@ -1453,12 +1445,6 @@ video {
   .heroMeta {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .floating-concierge-open .heroTitle {
-    max-width: 14ch;
-  }
-  .floating-concierge-open .heroMeta {
-    max-width: 640px;
   }
 }
 

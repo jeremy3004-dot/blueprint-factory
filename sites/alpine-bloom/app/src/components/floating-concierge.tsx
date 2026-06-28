@@ -28,12 +28,6 @@ export function FloatingConcierge() {
     return () => window.removeEventListener("keydown", close);
   }, []);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("floating-concierge-open", open);
-
-    return () => document.documentElement.classList.remove("floating-concierge-open");
-  }, [open]);
-
   if (pathname === "/planner") return null;
 
   return (
