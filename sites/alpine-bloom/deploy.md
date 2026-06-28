@@ -71,3 +71,4 @@ Final live verification:
 - `/`, `/treks`, `/treks/mardi-himal`, `/book`, `/planner`, and `/admin` returned 200 with Alpine Bloom/women-only/Nepali/admin content present.
 - Production `/admin` renders the locked state without admin credentials.
 - Production browser check opened the floating concierge and confirmed the Nepali woman guide avatar is present, no console errors were reported, and the open panel does not overlap the hero title.
+- The final asset-clean deploy removed the unused WHOA donor media from `app/public`; the old `/alpine-bloom-assets/whoa-source/press-afar.webp` path now returns 404.
