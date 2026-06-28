@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { requireAdminApiAccess } from "@/lib/admin-api";
-import { updateOpsBooking } from "@/lib/ops-client";
+import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
+import { opsBackendReadiness, opsSetupRequiredMessage, updateOpsBooking } from "@/lib/ops-client";
 
 export async function PATCH(
   request: Request,
@@ -13,5 +13,16 @@ export async function PATCH(
   const { bookingId } = await params;
   const updates = await request.json().catch(() => ({}));
 
-  return NextResponse.json(updateOpsBooking(bookingId, updates));
+  if (!opsBackendReadiness.connected) {
+    return NextResponse.json(
+      { message: opsSetupRequiredMessage(), readiness: opsBackendReadiness },
+      { status: 503 },
+    );
+  }
+
+  try {
+    return NextResponse.json(await updateOpsBooking(bookingId, updates));
+  } catch (error) {
+    return adminOpsUnavailable(error);
+  }
 }

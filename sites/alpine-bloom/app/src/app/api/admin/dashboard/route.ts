@@ -7,5 +7,5 @@ export async function GET() {
   const unauthorized = await requireAdminApiAccess();
   if (unauthorized) return unauthorized;
 
-  return NextResponse.json(fetchOpsDashboard());
+  return NextResponse.json(await fetchOpsDashboard());
 }

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { requireAdminApiAccess } from "@/lib/admin-api";
-import { createOpsGuide } from "@/lib/ops-client";
+import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
+import { createOpsGuide, opsBackendReadiness, opsSetupRequiredMessage } from "@/lib/ops-client";
 
 function splitList(value: unknown) {
   return String(value ?? "")
@@ -26,6 +26,7 @@ export async function POST(request: Request) {
     name?: unknown;
     regions?: unknown;
     role?: unknown;
+    certifications?: unknown;
   };
   const name = String(values.name ?? "").trim();
   const role = String(values.role ?? "").trim();
@@ -34,11 +35,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Guide name and role are required." }, { status: 400 });
   }
 
-  return NextResponse.json(createOpsGuide({
-    name,
-    role,
-    regions: Array.isArray(values.regions) ? values.regions.map(String) : splitList(values.regions),
-    languages: Array.isArray(values.languages) ? values.languages.map(String) : splitList(values.languages),
-    active: values.active !== false,
-  }), { status: 201 });
+  if (!opsBackendReadiness.connected) {
+    return NextResponse.json(
+      { message: opsSetupRequiredMessage(), readiness: opsBackendReadiness },
+      { status: 503 },
+    );
+  }
+
+  try {
+    return NextResponse.json(
+      await createOpsGuide({
+        name,
+        role,
+        regions: Array.isArray(values.regions) ? values.regions.map(String) : splitList(values.regions),
+        languages: Array.isArray(values.languages)
+          ? values.languages.map(String)
+          : splitList(values.languages),
+        certifications: Array.isArray(values.certifications)
+          ? values.certifications.map(String)
+          : splitList(values.certifications).length
+            ? splitList(values.certifications)
+            : ["Licensed women trekking guide"],
+        active: values.active !== false,
+      }),
+      { status: 201 },
+    );
+  } catch (error) {
+    return adminOpsUnavailable(error);
+  }
 }

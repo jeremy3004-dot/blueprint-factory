@@ -2,7 +2,7 @@ import { headers } from "next/headers";
 
 import { AdminOpsBoard } from "@/components/admin-ops-board";
 import { adminAuthReadiness, getAdminIdentityFromHeaders } from "@/lib/admin-auth";
-import { fetchOpsDashboard } from "@/lib/ops-client";
+import { fetchOpsDashboard, opsBackendReadiness } from "@/lib/ops-client";
 
 export const metadata = {
   title: "Alpine Bloom Admin",
@@ -88,11 +88,15 @@ export default async function AdminPage({
     return <AdminLockedState loginStatus={resolvedSearchParams?.login} />;
   }
 
-  const dashboard = fetchOpsDashboard();
+  const dashboard = await fetchOpsDashboard();
 
   return (
     <main className="adminPage">
-      <AdminOpsBoard identity={identity} initialDashboard={dashboard} />
+      <AdminOpsBoard
+        identity={identity}
+        initialDashboard={dashboard}
+        readiness={opsBackendReadiness}
+      />
     </main>
   );
 }

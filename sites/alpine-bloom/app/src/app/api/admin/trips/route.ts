@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 
-import { requireAdminApiAccess } from "@/lib/admin-api";
-import { createOpsTripFromBooking } from "@/lib/ops-client";
+import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
+import {
+  createOpsTripFromBooking,
+  opsBackendReadiness,
+  opsSetupRequiredMessage,
+} from "@/lib/ops-client";
 
 export async function POST(request: Request) {
   const unauthorized = await requireAdminApiAccess();
@@ -13,5 +17,16 @@ export async function POST(request: Request) {
       ? String((payload as { bookingId: unknown }).bookingId)
       : "";
 
-  return NextResponse.json(createOpsTripFromBooking(bookingId));
+  if (!opsBackendReadiness.connected) {
+    return NextResponse.json(
+      { message: opsSetupRequiredMessage(), readiness: opsBackendReadiness },
+      { status: 503 },
+    );
+  }
+
+  try {
+    return NextResponse.json(await createOpsTripFromBooking(bookingId));
+  } catch (error) {
+    return adminOpsUnavailable(error);
+  }
 }

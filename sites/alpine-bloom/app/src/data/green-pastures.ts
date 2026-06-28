@@ -24,7 +24,7 @@ export type GuideProfile = {
   slug: string;
   name: string;
   role: string;
-  gender: "Women-led" | "Mixed team";
+  gender: "Women-led";
   regions: string[];
   languages: string[];
   certifications: string[];
@@ -327,7 +327,7 @@ export const guideProfiles: GuideProfile[] = [
     slug: "nima-tamang",
     name: "Nima Tamang",
     role: "Safety and logistics coordinator",
-    gender: "Mixed team",
+    gender: "Women-led",
     regions: ["Langtang", "Helambu", "Kathmandu Valley"],
     languages: ["Nepali", "English", "Tamang"],
     certifications: ["High-altitude safety", "Trail logistics"],

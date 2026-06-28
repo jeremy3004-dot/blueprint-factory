@@ -9,32 +9,42 @@ import type {
   PipelineStage,
 } from "@/lib/ops-types";
 import { trekRoutes } from "@/data/green-pastures";
+import { tenantConfig } from "@/data/tenant";
 
 const now = new Date("2026-06-27T08:00:00.000Z");
 
 const guides: OpsGuide[] = [
   {
     id: "maya-sherpa",
+    slug: "maya-sherpa",
     name: "Maya Sherpa",
-    role: "Lead altitude guide",
+    role: "Lead women altitude guide",
+    gender: "woman",
     regions: ["Everest", "Gokyo", "Tengboche"],
     languages: ["Nepali", "English", "Hindi"],
+    certifications: ["Licensed trekking guide", "Wilderness first aid"],
     active: true,
   },
   {
     id: "lhamo-gurung",
+    slug: "lhamo-gurung",
     name: "Lhamo Gurung",
-    role: "Village route specialist",
+    role: "Women-led village route specialist",
+    gender: "woman",
     regions: ["Annapurna", "Ghandruk", "Mardi Himal"],
     languages: ["Nepali", "English"],
+    certifications: ["Licensed trekking guide", "Mountain safety"],
     active: true,
   },
   {
     id: "nima-tamang",
+    slug: "nima-tamang",
     name: "Nima Tamang",
-    role: "Safety coordinator",
+    role: "Women-only safety coordinator",
+    gender: "woman",
     regions: ["Langtang", "Helambu"],
     languages: ["Nepali", "English", "Tamang"],
+    certifications: ["High-altitude safety", "Trail logistics"],
     active: true,
   },
 ];
@@ -90,6 +100,7 @@ const trips: OpsTrip[] = [
         id: "assignment-lhamo-ghandruk",
         guideId: "lhamo-gurung",
         guideName: "Lhamo Gurung",
+        guideSlug: "lhamo-gurung",
         role: "Lead guide",
         startDate: "2026-10-14",
         endDate: "2026-10-21",
@@ -132,6 +143,7 @@ function cloneDashboard(dashboard: OpsDashboard): OpsDashboard {
       ...guide,
       regions: [...guide.regions],
       languages: [...guide.languages],
+      certifications: [...guide.certifications],
     })),
     trips: dashboard.trips.map((trip) => ({
       ...trip,
@@ -201,14 +213,16 @@ export function createDemoDashboard(): OpsDashboard {
   }
 
   return saveDashboard({
-    provider: "demo",
-    tenantName: "Alpine Bloom",
+    provider: "setup-required",
+    tenantId: tenantConfig.tenantId,
+    tenantName: tenantConfig.tenantName,
     generatedAt: new Date().toISOString(),
     bookings: bookings.map((booking) => ({ ...booking, addons: [...booking.addons] })),
     guides: guides.map((guide) => ({
       ...guide,
       regions: [...guide.regions],
       languages: [...guide.languages],
+      certifications: [...guide.certifications],
     })),
     trips: trips.map((trip) => ({
       ...trip,
@@ -313,6 +327,7 @@ export function demoDashboardWithGuideAssignment(tripId: string, guideId: string
                     id: `assignment-${trip.id}-${guide.id}`,
                     guideId: guide.id,
                     guideName: guide.name,
+                    guideSlug: guide.slug,
                     role: guide.role,
                     startDate: trip.startDate,
                     endDate: trip.endDate,
@@ -336,20 +351,29 @@ export function demoDashboardWithoutGuideAssignment(assignmentId: string) {
   });
 }
 
-export function demoDashboardWithGuide(values: Omit<OpsGuide, "id">) {
+function guideSlug(name: string) {
+  return (
+    name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "") || `guide-${Date.now().toString(36)}`
+  );
+}
+
+export function demoDashboardWithGuide(values: Omit<OpsGuide, "id" | "slug" | "gender">) {
   const dashboard = createDemoDashboard();
-  const id = values.name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "") || `guide-${Date.now().toString(36)}`;
+  const id = guideSlug(values.name);
 
   return saveDashboard({
     ...dashboard,
-    guides: [{ ...values, id }, ...dashboard.guides],
+    guides: [{ ...values, id, slug: id, gender: "woman" }, ...dashboard.guides],
   });
 }
 
-export function demoDashboardWithGuideUpdate(guideId: string, updates: Partial<Omit<OpsGuide, "id">>) {
+export function demoDashboardWithGuideUpdate(
+  guideId: string,
+  updates: Partial<Omit<OpsGuide, "id" | "slug" | "gender">>,
+) {
   const dashboard = createDemoDashboard();
 
   return saveDashboard({

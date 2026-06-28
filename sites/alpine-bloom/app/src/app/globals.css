@@ -2032,6 +2032,63 @@ video {
   background: rgba(255, 22, 162, 0.14);
 }
 
+.adminSetupBanner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid rgba(255, 22, 162, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 22, 162, 0.09);
+  padding: 14px;
+}
+
+.adminSetupBanner[data-connected="true"] {
+  border-color: rgba(10, 123, 104, 0.22);
+  background: rgba(117, 222, 201, 0.18);
+}
+
+.adminSetupBanner div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.adminSetupBanner strong {
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.adminSetupBanner span {
+  color: rgba(20, 17, 15, 0.68);
+  font-size: 0.9rem;
+}
+
+.adminSetupChecks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.adminSetupChecks span {
+  border: 1px solid rgba(214, 31, 75, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #a6153c;
+  padding: 7px 10px;
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.adminSetupChecks span[data-ok="true"] {
+  border-color: rgba(10, 123, 104, 0.22);
+  color: var(--teal);
+}
+
 .adminStats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2465,8 +2522,18 @@ video {
   .adminCalendarLayout,
   .guideEditGrid,
   .adminHero,
+  .adminSetupBanner,
   .adminLocked {
     grid-template-columns: 1fr;
+  }
+
+  .adminSetupBanner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adminSetupChecks {
+    justify-content: flex-start;
   }
 
   .spanTwo {

@@ -12,3 +12,15 @@ export async function requireAdminApiAccess() {
 
   return null;
 }
+
+export function adminOpsUnavailable(error: unknown) {
+  const detail = error instanceof Error ? error.message : "Ops backend request failed.";
+
+  return NextResponse.json(
+    {
+      message: "Ops backend is unavailable. Admin changes were not saved.",
+      detail,
+    },
+    { status: 503 },
+  );
+}

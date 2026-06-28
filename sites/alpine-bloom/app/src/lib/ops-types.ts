@@ -28,15 +28,18 @@ export type OpsBookingRequest = BookingFormValues & {
   pipelineStage: PipelineStage;
   createdAt: string;
   updatedAt: string;
-  source: "web" | "admin" | "demo";
+  source: "web" | "admin" | "import";
 };
 
 export type OpsGuide = {
   id: string;
+  slug: string;
   name: string;
   role: string;
+  gender: "woman";
   regions: string[];
   languages: string[];
+  certifications: string[];
   active: boolean;
 };
 
@@ -44,6 +47,7 @@ export type OpsTripGuide = {
   id: string;
   guideId: string;
   guideName: string;
+  guideSlug: string;
   role: string;
   startDate: string;
   endDate: string;
@@ -73,7 +77,8 @@ export type OpsConflict = {
 };
 
 export type OpsDashboard = {
-  provider: "demo";
+  provider: "cloudflare-d1" | "setup-required";
+  tenantId: string;
   tenantName: string;
   generatedAt: string;
   bookings: OpsBookingRequest[];
@@ -86,6 +91,13 @@ export type BookingApiResult = {
   accepted: boolean;
   stored: boolean;
   bookingId?: string;
-  provider: "demo";
+  emailSent?: boolean;
+  provider: "cloudflare-ops" | "preview";
   message: string;
+};
+
+export type OpsReadiness = {
+  connected: boolean;
+  urlConfigured: boolean;
+  tokenConfigured: boolean;
 };

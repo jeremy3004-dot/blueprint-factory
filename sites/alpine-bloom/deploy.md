@@ -26,6 +26,9 @@ Profile: vercel-production
   - Cloudflare Access: `CLOUDFLARE_ACCESS_AUD`, `CLOUDFLARE_ACCESS_TEAM_DOMAIN`
   - Bootstrap password: `ADMIN_BOOTSTRAP_EMAIL`, `ADMIN_BOOTSTRAP_PASSWORD` or `ADMIN_BOOTSTRAP_PASSWORD_SHA256`, and dedicated `ADMIN_SESSION_SECRET`
 - Optional role settings: `ADMIN_SUPERADMIN_EMAIL`, `ADMIN_SUPERADMIN_EMAILS`
+- Durable ops backend is setup-required until both are configured:
+  - `OPS_API_URL`
+  - `OPS_API_TOKEN`
 
 ## Preview APIs
 
@@ -42,7 +45,7 @@ Profile: vercel-production
 - `POST /api/admin/login`
 - `POST /api/admin/logout`
 
-Admin endpoints require admin access. Admin and booking behavior is still demo/local-preview only until a real storage and notification backend is approved.
+Admin endpoints require admin access. Without `OPS_API_URL` and `OPS_API_TOKEN`, `/admin` shows setup-required preview data, public booking returns a not-stored preview response, and admin write endpoints return `503` instead of mutating local demo state. With both ops env vars present, server routes send `tenantId: alpine-bloom` to the external ops API.
 
 ## Deploy Notes
 

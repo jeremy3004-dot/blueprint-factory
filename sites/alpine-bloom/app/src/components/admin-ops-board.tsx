@@ -11,15 +11,17 @@ import type {
   OpsBookingRequest,
   OpsDashboard,
   OpsGuide,
+  OpsReadiness,
   OpsTrip,
   PipelineStage,
 } from "@/lib/ops-types";
 
 type WorkspaceTab = "create" | "pipeline" | "calendar" | "guides";
 type Message = { tone: "info" | "success" | "error"; text: string };
-type GuideDraft = Omit<OpsGuide, "id" | "regions" | "languages"> & {
+type GuideDraft = Omit<OpsGuide, "id" | "slug" | "gender" | "regions" | "languages" | "certifications"> & {
   regions: string;
   languages: string;
+  certifications: string;
 };
 
 const emptyBooking: BookingFormValues = {
@@ -38,6 +40,7 @@ const emptyGuide: GuideDraft = {
   role: "Lead women-only trekking guide",
   regions: "Annapurna, Everest",
   languages: "Nepali, English",
+  certifications: "Licensed women trekking guide",
   active: true,
 };
 
@@ -131,9 +134,11 @@ function StatCard({ label, value }: { label: string; value: string }) {
 export function AdminOpsBoard({
   identity,
   initialDashboard,
+  readiness,
 }: {
   identity: AdminIdentity;
   initialDashboard: OpsDashboard;
+  readiness: OpsReadiness;
 }) {
   const [dashboard, setDashboard] = useState(initialDashboard);
   const [bookingDraft, setBookingDraft] = useState(emptyBooking);
@@ -142,10 +147,13 @@ export function AdminOpsBoard({
   const [dragGuideId, setDragGuideId] = useState<string | null>(null);
   const [dragBookingId, setDragBookingId] = useState<string | null>(null);
   const [message, setMessage] = useState<Message>({
-    tone: "info",
-    text: "Demo mode active. Drag women traveler leads across the pipeline or drag women guides onto trip cards.",
+    tone: readiness.connected ? "success" : "info",
+    text: readiness.connected
+      ? "Ops backend connected. Admin changes are durable."
+      : "Setup required. Preview data is visible, but admin writes need the ops backend before they save.",
   });
   const [isPending, startTransition] = useTransition();
+  const setupRequired = !readiness.connected;
 
   const brief = useMemo(() => {
     const firstContact = dashboard.bookings.filter(
@@ -162,11 +170,26 @@ export function AdminOpsBoard({
     [dashboard.trips],
   );
 
-  function run(action: () => Promise<OpsDashboard>, success: string) {
+  function run(
+    action: () => Promise<OpsDashboard>,
+    success: string,
+    options: { onSuccess?: () => void; requiresBackend?: boolean } = {},
+  ) {
+    const requiresBackend = options.requiresBackend ?? true;
+
+    if (requiresBackend && setupRequired) {
+      setMessage({
+        tone: "error",
+        text: "Ops backend setup required before admin changes can be saved.",
+      });
+      return;
+    }
+
     startTransition(async () => {
       try {
         setDashboard(await action());
         setMessage({ tone: "success", text: success });
+        options.onSuccess?.();
       } catch (error) {
         setMessage({
           tone: "error",
@@ -179,7 +202,8 @@ export function AdminOpsBoard({
   function refresh() {
     run(
       () => requestJson<OpsDashboard>("/api/admin/dashboard", "GET"),
-      "Demo dashboard refreshed.",
+      setupRequired ? "Setup preview refreshed." : "Ops dashboard refreshed.",
+      { requiresBackend: false },
     );
   }
 
@@ -220,9 +244,13 @@ export function AdminOpsBoard({
     run(
       () => requestJson<OpsDashboard>("/api/admin/bookings", "POST", bookingDraft),
       "Demo booking added to the board.",
+      {
+        onSuccess: () => {
+          setBookingDraft(emptyBooking);
+          setActiveTab("pipeline");
+        },
+      },
     );
-    setBookingDraft(emptyBooking);
-    setActiveTab("pipeline");
   }
 
   function submitGuide(event: React.FormEvent<HTMLFormElement>) {
@@ -233,11 +261,16 @@ export function AdminOpsBoard({
           ...guideDraft,
           regions: splitList(guideDraft.regions),
           languages: splitList(guideDraft.languages),
+          certifications: splitList(guideDraft.certifications),
         }),
       "Guide added to the roster.",
+      {
+        onSuccess: () => {
+          setGuideDraft(emptyGuide);
+          setActiveTab("guides");
+        },
+      },
     );
-    setGuideDraft(emptyGuide);
-    setActiveTab("guides");
   }
 
   function updateGuide(guide: OpsGuide, draft: GuideDraft) {
@@ -247,6 +280,7 @@ export function AdminOpsBoard({
           ...draft,
           regions: splitList(draft.regions),
           languages: splitList(draft.languages),
+          certifications: splitList(draft.certifications),
         }),
       `${guide.name} updated.`,
     );
@@ -279,7 +313,7 @@ export function AdminOpsBoard({
     <section className="adminOps shell">
       <div className="adminHero">
         <div>
-          <p className="kicker">Demo operations</p>
+          <p className="kicker">{setupRequired ? "Setup required" : "Connected operations"}</p>
           <h1>Alpine Bloom admin desk</h1>
           <p>{brief}</p>
         </div>
@@ -294,6 +328,22 @@ export function AdminOpsBoard({
         <button className="adminButton" type="button" onClick={refresh} disabled={isPending}>
           {isPending ? "Working..." : "Refresh"}
         </button>
+      </div>
+
+      <div className="adminSetupBanner" data-connected={readiness.connected}>
+        <div>
+          <strong>{readiness.connected ? "Ops backend connected" : "Ops backend setup required"}</strong>
+          <span>
+            {readiness.connected
+              ? `${dashboard.tenantName} is reading durable ${dashboard.provider} operations data.`
+              : "Preview data is available for review. Configure the ops backend before saving admin changes."}
+          </span>
+        </div>
+        <div className="adminSetupChecks">
+          <span data-ok={readiness.urlConfigured}>OPS_API_URL</span>
+          <span data-ok={readiness.tokenConfigured}>OPS_API_TOKEN</span>
+          <span data-ok={dashboard.tenantId === "alpine-bloom"}>{dashboard.tenantId}</span>
+        </div>
       </div>
 
       <div className="adminStats">
@@ -374,6 +424,9 @@ export function AdminOpsBoard({
             </Field>
             <Field label="Languages">
               <input value={guideDraft.languages} onChange={(event) => setGuideDraft({ ...guideDraft, languages: event.target.value })} />
+            </Field>
+            <Field label="Certifications">
+              <input value={guideDraft.certifications} onChange={(event) => setGuideDraft({ ...guideDraft, certifications: event.target.value })} />
             </Field>
             <label className="adminCheck">
               <input type="checkbox" checked={guideDraft.active} onChange={(event) => setGuideDraft({ ...guideDraft, active: event.target.checked })} />
@@ -721,6 +774,7 @@ function GuideEditCard({
   const [draft, setDraft] = useState<GuideDraft>({
     active: guide.active,
     languages: guide.languages.join(", "),
+    certifications: guide.certifications.join(", "),
     name: guide.name,
     regions: guide.regions.join(", "),
     role: guide.role,
@@ -754,6 +808,9 @@ function GuideEditCard({
         </Field>
         <Field label="Languages">
           <input value={draft.languages} onChange={(event) => setDraft({ ...draft, languages: event.target.value })} />
+        </Field>
+        <Field label="Certifications">
+          <input value={draft.certifications} onChange={(event) => setDraft({ ...draft, certifications: event.target.value })} />
         </Field>
         <label className="adminCheck">
           <input type="checkbox" checked={draft.active} onChange={(event) => setDraft({ ...draft, active: event.target.checked })} />

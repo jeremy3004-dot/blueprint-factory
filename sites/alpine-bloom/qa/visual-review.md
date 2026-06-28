@@ -75,6 +75,17 @@ Resolved after Phase 1 parity work:
 - Locked admin copy and dashboard labels now explicitly assume women travelers and women/Nepali women guides.
 - Locked-state proof capture is saved as `screenshots/admin-locked.png`.
 
+## Ops Backend Readiness Follow-Up
+
+Resolved after Phase 2 parity work:
+
+- Alpine Bloom now has tenant config with `tenantId: alpine-bloom`.
+- Admin dashboard supports `provider: setup-required` or `cloudflare-d1`.
+- The admin desk displays backend setup status and missing `OPS_API_URL` / `OPS_API_TOKEN` checks.
+- Admin write routes require the ops backend and return setup-required `503` responses when durable storage is not configured.
+- Public booking no longer claims success in preview mode; it returns a not-stored response until the ops backend is connected.
+- Seeded guides and public guide profiles are explicitly women-only or women-led, with no mixed-team guide labels.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

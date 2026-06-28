@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 
-import { requireAdminApiAccess } from "@/lib/admin-api";
-import { removeOpsGuideAssignment } from "@/lib/ops-client";
+import { adminOpsUnavailable, requireAdminApiAccess } from "@/lib/admin-api";
+import {
+  opsBackendReadiness,
+  opsSetupRequiredMessage,
+  removeOpsGuideAssignment,
+} from "@/lib/ops-client";
 
 export async function DELETE(
   _request: Request,
@@ -12,5 +16,16 @@ export async function DELETE(
 
   const { assignmentId } = await params;
 
-  return NextResponse.json(removeOpsGuideAssignment(assignmentId));
+  if (!opsBackendReadiness.connected) {
+    return NextResponse.json(
+      { message: opsSetupRequiredMessage(), readiness: opsBackendReadiness },
+      { status: 503 },
+    );
+  }
+
+  try {
+    return NextResponse.json(await removeOpsGuideAssignment(assignmentId));
+  } catch (error) {
+    return adminOpsUnavailable(error);
+  }
 }

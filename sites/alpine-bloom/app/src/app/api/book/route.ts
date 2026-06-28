@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { validateBookingPayload } from "@/lib/booking";
-import { createOpsBooking } from "@/lib/ops-client";
+import { createPublicOpsBooking } from "@/lib/ops-client";
 
 export async function POST(request: Request) {
   const parsed = validateBookingPayload(await request.json().catch(() => null));
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       {
         accepted: false,
         stored: false,
-        provider: "demo",
+        provider: "preview",
         message: "Some proposal fields need attention before Alpine Bloom can shape the trip.",
         issues: parsed.issues,
       },
@@ -19,15 +19,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const dashboard = createOpsBooking(parsed.values, "web");
-  const booking = dashboard.bookings[0];
+  const result = await createPublicOpsBooking(parsed.values, request);
 
-  return NextResponse.json({
-    accepted: true,
-    stored: false,
-    bookingId: booking?.id,
-    provider: "demo",
-    message:
-      "Proposal captured in Alpine Bloom preview mode. A connected ops backend can store this request and notify the team.",
-  });
+  return NextResponse.json(result, { status: result.accepted ? 200 : 503 });
 }
