@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
 
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { RoutePillNav } from "@/components/route-pill-nav";
+import { trekRoutes } from "@/data/green-pastures";
+
 const IMG = "/alpine-bloom-assets/nepal-public-domain";
 
 const routes = [
@@ -10,30 +14,35 @@ const routes = [
     n: "01",
     title: "Annapurna Circuit",
     note: "Women-led ridgeline trek · 10 days",
+    slug: "annapurna-circuit",
     image: `${IMG}/annapurna-hikers.jpg`
   },
   {
     n: "02",
     title: "Everest Base Camp",
     note: "Base camp sisterhood · 15 days",
+    slug: "everest-base-camp",
     image: `${IMG}/everest-base-camp.jpg`
   },
   {
     n: "03",
     title: "Ghandruk Trail",
     note: "Village trails + bloom season · 7 days",
+    slug: "poon-hill-ghandruk",
     image: `${IMG}/ghandruk-route.jpg`
   },
   {
     n: "04",
     title: "Tengboche Monastery",
     note: "Sacred high-valley route · 12 days",
+    slug: "everest-base-camp",
     image: `${IMG}/tengboche-monastery.jpg`
   },
   {
     n: "05",
     title: "Langtang Valley",
     note: "Quiet glacial return · 9 days",
+    slug: "langtang-valley",
     image: `${IMG}/snowy-everest-route.jpg`
   }
 ];
@@ -63,6 +72,29 @@ const footerLinks = [
   "Reviews",
   "FAQ",
   "Sustainability"
+];
+
+const photoSlides = [
+  {
+    eyebrow: "Khumbu morning",
+    title: "Base camp days with altitude handled gently.",
+    image: `${IMG}/everest-base-camp.jpg`,
+  },
+  {
+    eyebrow: "Annapurna ridges",
+    title: "Long views, steady women guide pacing.",
+    image: `${IMG}/annapurna-hikers.jpg`,
+  },
+  {
+    eyebrow: "Village trails",
+    title: "Ghandruk, rhododendrons, and soft landings.",
+    image: `${IMG}/ghandruk-route.jpg`,
+  },
+  {
+    eyebrow: "High valley quiet",
+    title: "Langtang texture without domestic flight risk.",
+    image: `${IMG}/snowy-everest-route.jpg`,
+  },
 ];
 
 export default function Home() {
@@ -242,12 +274,14 @@ export default function Home() {
           </p>
         </div>
 
+        <RoutePillNav routes={trekRoutes} />
+
         <div className="journeyGrid">
           {routes.map((route, i) => (
             <a
               className="card"
               key={route.title}
-              href="/treks"
+              href={`/treks/${route.slug}`}
               data-reveal
               style={{ "--delay": `${i * 90}ms` } as React.CSSProperties}
             >
@@ -289,6 +323,24 @@ export default function Home() {
             </h3>
           </div>
         </div>
+      </section>
+
+      <section className="photoStory shell">
+        <div className="sectionHead">
+          <div>
+            <p className="kicker" data-reveal>
+              Field notes
+            </p>
+            <h2 className="sectionTitle" data-reveal style={{ "--delay": "80ms" } as React.CSSProperties}>
+              A scrapbook from the <em>high trail</em>.
+            </h2>
+          </div>
+          <p data-reveal style={{ "--delay": "160ms" } as React.CSSProperties}>
+            Route texture for women choosing between big altitude, village warmth, short windows,
+            and the kind of support they want around them.
+          </p>
+        </div>
+        <PhotoCarousel slides={photoSlides} />
       </section>
 
       {/* THE BLOOM WAY */}

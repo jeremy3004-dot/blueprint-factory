@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { RouteMapExplorer } from "@/components/route-map-explorer";
+import { RoutePillNav } from "@/components/route-pill-nav";
 import { SiteShell } from "@/components/site-shell";
 import { trekRoutes } from "@/data/green-pastures";
 import { getOperatorSourceRoute } from "@/data/operator-source";
@@ -69,6 +70,11 @@ export default async function TrekDetailPage({
             <strong>{value}</strong>
           </div>
         ))}
+      </section>
+
+      <section className="routeQuickLinks shell">
+        <p className="kicker">Compare nearby routes</p>
+        <RoutePillNav activeSlug={trek.slug} routes={trekRoutes} />
       </section>
 
       <section className="routeBody shell">
@@ -171,7 +177,10 @@ export default async function TrekDetailPage({
         <h2>Nearby ideas</h2>
         {alternates.map((route) => (
           <Link href={`/treks/${route.slug}`} key={route.slug}>
-            {route.name} <span>{route.durationDays} days</span>
+            <img src={route.image} alt="" />
+            <strong>{route.name}</strong>
+            <span>{route.durationDays} days · {route.region}</span>
+            <small>Women-only support, Nepali guide matching, and proposal pacing.</small>
           </Link>
         ))}
       </section>

@@ -3,6 +3,7 @@ import { TrekExplorer } from "@/components/trek-explorer";
 import { guideProfiles, trekRoutes } from "@/data/green-pastures";
 import { operatorSourceRoutes } from "@/data/operator-source";
 import type { CSSProperties } from "react";
+import { RoutePillNav } from "@/components/route-pill-nav";
 
 export default function TreksPage() {
   return (
@@ -16,6 +17,10 @@ export default function TreksPage() {
           Browse Alpine Bloom routes by region, altitude, season, and the kind of support you want
           around you on trail.
         </p>
+      </section>
+      <section className="routeQuickLinks shell">
+        <p className="kicker">Route quick links</p>
+        <RoutePillNav routes={trekRoutes} />
       </section>
       <TrekExplorer operatorSources={operatorSourceRoutes} routes={trekRoutes} />
       <section className="guideStrip shell">
