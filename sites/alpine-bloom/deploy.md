@@ -15,13 +15,17 @@ Profile: vercel-production
 
 ## Commands
 
-- Build: `pnpm --filter alpine-bloom build`
-- Preview: `pnpm --filter alpine-bloom dev`
+- Build: `npm run build` from `sites/alpine-bloom/app`
+- Preview: `npm run dev -- --port 3042` from `sites/alpine-bloom/app`
 - Current local preview: `http://localhost:3042`
 
 ## Required Secrets
 
-- None.
+- Public site: none.
+- Admin production access is locked unless one of these is configured:
+  - Cloudflare Access: `CLOUDFLARE_ACCESS_AUD`, `CLOUDFLARE_ACCESS_TEAM_DOMAIN`
+  - Bootstrap password: `ADMIN_BOOTSTRAP_EMAIL`, `ADMIN_BOOTSTRAP_PASSWORD` or `ADMIN_BOOTSTRAP_PASSWORD_SHA256`, and dedicated `ADMIN_SESSION_SECRET`
+- Optional role settings: `ADMIN_SUPERADMIN_EMAIL`, `ADMIN_SUPERADMIN_EMAILS`
 
 ## Preview APIs
 
@@ -32,9 +36,13 @@ Profile: vercel-production
 - `PATCH /api/admin/bookings/[bookingId]`
 - `POST /api/admin/trips`
 - `POST /api/admin/assignments`
+- `DELETE /api/admin/assignments/[assignmentId]`
 - `POST /api/admin/guides`
+- `PATCH /api/admin/guides/[guideId]`
+- `POST /api/admin/login`
+- `POST /api/admin/logout`
 
-All admin and booking behavior is demo/local-preview only until a real storage and notification backend is approved.
+Admin endpoints require admin access. Admin and booking behavior is still demo/local-preview only until a real storage and notification backend is approved.
 
 ## Deploy Notes
 

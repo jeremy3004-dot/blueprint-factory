@@ -1914,7 +1914,7 @@ video {
 
 .adminHero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 320px) auto;
   gap: 16px 28px;
   align-items: end;
   border-bottom: 1px solid var(--line);
@@ -1922,7 +1922,6 @@ video {
 }
 
 .adminHero h1 {
-  grid-column: 1 / -1;
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 7vw, 6.8rem);
@@ -1936,6 +1935,83 @@ video {
   max-width: 720px;
   color: rgba(20, 17, 15, 0.68);
   line-height: 1.6;
+}
+
+.adminLocked {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(40px, 10vh, 92px);
+}
+
+.adminLocked h1 {
+  margin: 12px 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7.4rem);
+  font-weight: 650;
+  line-height: 0.9;
+}
+
+.adminLocked p {
+  max-width: 680px;
+  color: rgba(20, 17, 15, 0.68);
+  line-height: 1.7;
+}
+
+.adminLoginPanel,
+.adminIdentityCard {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16px 40px rgba(10, 63, 58, 0.07);
+  padding: 16px;
+}
+
+.adminIdentityCard {
+  display: grid;
+  gap: 7px;
+}
+
+.adminIdentityCard span,
+.adminIdentityCard small {
+  color: rgba(20, 17, 15, 0.58);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.adminIdentityCard strong {
+  overflow-wrap: anywhere;
+}
+
+.adminIdentityCard button {
+  width: max-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 7px 10px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.adminIdentityCard button:hover {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+}
+
+.adminLoginError {
+  margin: 0;
+  color: #a6153c;
+  font-size: 0.86rem;
+  font-weight: 800;
 }
 
 .adminNotice {
@@ -2387,7 +2463,9 @@ video {
   .tripGrid,
   .adminOpsLayout,
   .adminCalendarLayout,
-  .guideEditGrid {
+  .guideEditGrid,
+  .adminHero,
+  .adminLocked {
     grid-template-columns: 1fr;
   }
 

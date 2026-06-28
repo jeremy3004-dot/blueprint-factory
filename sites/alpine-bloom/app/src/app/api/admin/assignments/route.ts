@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 
+import { requireAdminApiAccess } from "@/lib/admin-api";
 import { assignOpsGuideToTrip } from "@/lib/ops-client";
 
 export async function POST(request: Request) {
+  const unauthorized = await requireAdminApiAccess();
+  if (unauthorized) return unauthorized;
+
   const payload = await request.json().catch(() => null);
   const tripId =
     payload && typeof payload === "object" && typeof (payload as { tripId?: unknown }).tripId === "string"

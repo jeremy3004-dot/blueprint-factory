@@ -4,6 +4,7 @@ import { useMemo, useState, useTransition } from "react";
 import type { DragEvent } from "react";
 
 import { routeOptions } from "@/data/ops-demo";
+import type { AdminIdentity } from "@/lib/admin-auth";
 import type {
   BookingFormValues,
   BookingRequestStatus,
@@ -34,7 +35,7 @@ const emptyBooking: BookingFormValues = {
 
 const emptyGuide: GuideDraft = {
   name: "",
-  role: "Lead trekking guide",
+  role: "Lead women-only trekking guide",
   regions: "Annapurna, Everest",
   languages: "Nepali, English",
   active: true,
@@ -83,7 +84,11 @@ function endDateForCalendar(value: string) {
   return date.toISOString().slice(0, 10);
 }
 
-async function requestJson<T>(path: string, method: "POST" | "PATCH" | "DELETE", body?: unknown) {
+async function requestJson<T>(
+  path: string,
+  method: "DELETE" | "GET" | "PATCH" | "POST",
+  body?: unknown,
+) {
   const response = await fetch(path, {
     method,
     headers: body === undefined ? undefined : { "content-type": "application/json" },
@@ -123,7 +128,13 @@ function StatCard({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashboard }) {
+export function AdminOpsBoard({
+  identity,
+  initialDashboard,
+}: {
+  identity: AdminIdentity;
+  initialDashboard: OpsDashboard;
+}) {
   const [dashboard, setDashboard] = useState(initialDashboard);
   const [bookingDraft, setBookingDraft] = useState(emptyBooking);
   const [guideDraft, setGuideDraft] = useState(emptyGuide);
@@ -132,7 +143,7 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
   const [dragBookingId, setDragBookingId] = useState<string | null>(null);
   const [message, setMessage] = useState<Message>({
     tone: "info",
-    text: "Demo mode active. Drag leads across the pipeline or drag guides onto trip cards.",
+    text: "Demo mode active. Drag women traveler leads across the pipeline or drag women guides onto trip cards.",
   });
   const [isPending, startTransition] = useTransition();
 
@@ -144,7 +155,7 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
       (booking) => booking.pipelineStage === "scheduled",
     ).length;
     const unassigned = dashboard.trips.filter((trip) => !trip.assignedGuides.length).length;
-    return `${firstContact} first-contact lead${firstContact === 1 ? "" : "s"}, ${scheduled} scheduled, ${unassigned} needing guide coverage.`;
+    return `${firstContact} first-contact women traveler lead${firstContact === 1 ? "" : "s"}, ${scheduled} women-only departures scheduled, ${unassigned} needing women guide coverage.`;
   }, [dashboard]);
   const tripByBookingId = useMemo(
     () => new Map(dashboard.trips.map((trip) => [trip.requestId, trip])),
@@ -167,7 +178,7 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
 
   function refresh() {
     run(
-      () => fetch("/api/admin/dashboard", { cache: "no-store" }).then((response) => response.json()),
+      () => requestJson<OpsDashboard>("/api/admin/dashboard", "GET"),
       "Demo dashboard refreshed.",
     );
   }
@@ -267,18 +278,28 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
   return (
     <section className="adminOps shell">
       <div className="adminHero">
-        <p className="kicker">Demo operations</p>
-        <h1>Alpine Bloom admin desk</h1>
-        <p>{brief}</p>
+        <div>
+          <p className="kicker">Demo operations</p>
+          <h1>Alpine Bloom admin desk</h1>
+          <p>{brief}</p>
+        </div>
+        <div className="adminIdentityCard">
+          <span>Signed in</span>
+          <strong>{identity.email}</strong>
+          <small>{identity.role.replace("_", " ")} · {identity.source.replace("-", " ")}</small>
+          <form action="/api/admin/logout" method="post">
+            <button type="submit">Log out</button>
+          </form>
+        </div>
         <button className="adminButton" type="button" onClick={refresh} disabled={isPending}>
           {isPending ? "Working..." : "Refresh"}
         </button>
       </div>
 
       <div className="adminStats">
-        <StatCard label="Leads" value={String(dashboard.bookings.length)} />
-        <StatCard label="Trips" value={String(dashboard.trips.length)} />
-        <StatCard label="Active guides" value={String(dashboard.guides.filter((guide) => guide.active).length)} />
+        <StatCard label="Women leads" value={String(dashboard.bookings.length)} />
+        <StatCard label="Women-only trips" value={String(dashboard.trips.length)} />
+        <StatCard label="Women guides" value={String(dashboard.guides.filter((guide) => guide.active).length)} />
         <StatCard label="Conflicts" value={String(dashboard.conflicts.length)} />
       </div>
 
@@ -307,9 +328,9 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
           <form className="adminPanel" onSubmit={submitBooking}>
             <div className="adminPanelHead">
               <h2>Create request</h2>
-              <span>Lead intake</span>
+              <span>Women traveler intake</span>
             </div>
-            <Field label="Traveler">
+            <Field label="Woman traveler">
               <input value={bookingDraft.fullName} onChange={(event) => setBookingDraft({ ...bookingDraft, fullName: event.target.value })} required />
             </Field>
             <Field label="Email">
@@ -340,7 +361,7 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
           <form className="adminPanel" onSubmit={submitGuide}>
             <div className="adminPanelHead">
               <h2>Add guide</h2>
-              <span>Roster</span>
+              <span>Women guide roster</span>
             </div>
             <Field label="Guide">
               <input value={guideDraft.name} onChange={(event) => setGuideDraft({ ...guideDraft, name: event.target.value })} required />
@@ -371,7 +392,7 @@ export function AdminOpsBoard({ initialDashboard }: { initialDashboard: OpsDashb
         <div className="adminOpsLayout">
           <section className="adminPanel spanWide">
             <div className="adminPanelHead">
-              <h2>Lead pipeline</h2>
+              <h2>Women traveler pipeline</h2>
               <span>Drag cards</span>
             </div>
             <div className="pipelineGrid">
@@ -455,7 +476,7 @@ function LeadCard({
     >
       <strong>{booking.fullName}</strong>
       <span>{routeName(booking.routeSlug)}</span>
-      <small>{booking.departureWindow} · {booking.groupSize} pax</small>
+      <small>{booking.departureWindow} · {booking.groupSize} women</small>
       {trip ? (
         <div
           className="leadTripDrop"
@@ -484,7 +505,7 @@ function GuideRoster({
   return (
     <section className="adminPanel">
       <div className="adminPanelHead">
-        <h2>Guide roster</h2>
+        <h2>Women guide roster</h2>
         <span>Drag to assign</span>
       </div>
       <div className="guideList">
@@ -518,8 +539,8 @@ function AdminBrief({ dashboard }: { dashboard: OpsDashboard }) {
         <span>{dashboard.generatedAt.slice(0, 10)}</span>
       </div>
       <p className="adminModeNote">
-        Keep first-contact leads moving, convert scheduled leads into trip holds, and drag active
-        guides onto the departures that need coverage.
+        Keep first-contact women traveler leads moving, convert scheduled leads into trip holds,
+        and drag active women guides onto the women-only departures that need coverage.
       </p>
     </aside>
   );

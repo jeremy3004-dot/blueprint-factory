@@ -65,6 +65,16 @@ Resolved after Green Pastures admin parity review:
 - Guide profiles can be created and edited in the demo backend, with changes reflected in assignments.
 - Proof captures are saved as `screenshots/admin-pipeline-expanded.png` and `screenshots/admin-calendar-expanded.png`.
 
+## Admin Security Follow-Up
+
+Resolved after Phase 1 parity work:
+
+- Production admin now renders a locked state unless Cloudflare Access or signed bootstrap password session auth succeeds.
+- Admin login/logout routes, signed admin sessions, role/source display, and guarded `/api/admin/*` endpoints are in place.
+- `ADMIN_AUTH_DISABLED` only works outside production, and bootstrap sessions require a dedicated `ADMIN_SESSION_SECRET`.
+- Locked admin copy and dashboard labels now explicitly assume women travelers and women/Nepali women guides.
+- Locked-state proof capture is saved as `screenshots/admin-locked.png`.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

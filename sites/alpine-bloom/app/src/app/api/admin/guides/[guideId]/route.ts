@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { requireAdminApiAccess } from "@/lib/admin-api";
 import { updateOpsGuide } from "@/lib/ops-client";
 
 function splitList(value: unknown) {
@@ -13,6 +14,9 @@ export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ guideId: string }> },
 ) {
+  const unauthorized = await requireAdminApiAccess();
+  if (unauthorized) return unauthorized;
+
   const { guideId } = await params;
   const payload = await request.json().catch(() => null);
 

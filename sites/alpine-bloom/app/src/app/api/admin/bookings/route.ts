@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
 import { validateBookingPayload } from "@/lib/booking";
+import { requireAdminApiAccess } from "@/lib/admin-api";
 import { createOpsBooking } from "@/lib/ops-client";
 
 export async function POST(request: Request) {
+  const unauthorized = await requireAdminApiAccess();
+  if (unauthorized) return unauthorized;
+
   const parsed = validateBookingPayload(await request.json().catch(() => null));
 
   if (!parsed.ok) {
