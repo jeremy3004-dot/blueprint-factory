@@ -64,4 +64,10 @@ Analytics is inert unless `NEXT_PUBLIC_POSTHOG_KEY` is configured. When enabled,
 Production deploy approved by Jeremy for sharing.
 Local Vercel project metadata is kept in `app/.vercel/` and ignored from git.
 
-Latest production deploy completed on 2026-06-28 after Phase 9 guardrail tests and the public image optimization pass. Vercel aliased the build to https://app-nine-wine-27.vercel.app and live 200 responses were verified for `/`, `/treks`, `/book`, and `/admin`.
+Latest production deploy completed on 2026-06-28 after the Phase 10 QA pass and floating-concierge overlap fix. Vercel aliased the build to https://app-nine-wine-27.vercel.app.
+
+Final live verification:
+
+- `/`, `/treks`, `/treks/mardi-himal`, `/book`, `/planner`, and `/admin` returned 200 with Alpine Bloom/women-only/Nepali/admin content present.
+- Production `/admin` renders the locked state without admin credentials.
+- Production browser check opened the floating concierge and confirmed the Nepali woman guide avatar is present, no console errors were reported, and the open panel does not overlap the hero title.
