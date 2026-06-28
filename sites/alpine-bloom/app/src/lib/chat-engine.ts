@@ -1,3 +1,4 @@
+import { guideProfiles } from "@/data/green-pastures";
 import { routeOptions } from "@/data/ops-demo";
 
 export type ConciergeMessage = {
@@ -25,13 +26,23 @@ export function generateConciergeReply(messages: ConciergeMessage[]) {
   const route = routeOptions.find((item) =>
     [item.name, item.slug].some((value) => query.includes(value.toLowerCase())),
   );
+  const guide = guideProfiles.find((item) =>
+    [item.name, item.role, ...item.regions, ...item.languages, ...item.specialties].some((value) =>
+      query.includes(value.toLowerCase()),
+    ),
+  );
 
   if (route) {
     return `${route.name} is a strong Alpine Bloom fit for a women-only Himalayan trip. I would start by checking your dates, pace, altitude comfort, and whether you want village stays or a more lodge-forward rhythm. For a real proposal, send the route, departure window, group size, and women guide support notes through the booking form.`;
   }
 
+  if (guide) {
+    return `${guide.name} is one of Alpine Bloom's Nepali women guides for ${guide.regions.slice(0, 2).join(" and ")}. Her strengths are ${guide.specialties.slice(0, 2).join(" and ")}, with ${guide.languages.join(" / ")} language support. The ops desk still confirms final guide matches by date, route, altitude profile, and each woman's support needs.`;
+  }
+
   if (query.includes("guide") || query.includes("woman") || query.includes("women")) {
-    return "Yes. Alpine Bloom centers Nepali women guides and women-only small groups. The ops desk matches guides by region, language, altitude profile, and the kind of trust and support each woman wants on trail.";
+    const names = guideProfiles.slice(0, 3).map((item) => item.name).join(", ");
+    return `Yes. Alpine Bloom centers Nepali women guides and women-only small groups. The roster includes guides like ${names}, matched by region, language, altitude profile, and the kind of trust and support each woman wants on trail.`;
   }
 
   if (query.includes("permit") || query.includes("altitude") || query.includes("insurance")) {

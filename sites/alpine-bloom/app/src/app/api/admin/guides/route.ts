@@ -28,11 +28,19 @@ export async function POST(request: Request) {
     regions?: unknown;
     role?: unknown;
     certifications?: unknown;
+    focus?: unknown;
+    specialties?: unknown;
+    bio?: unknown;
   };
   const name = String(values.name ?? "").trim();
   const role = String(values.role ?? "").trim();
+  const focus = String(values.focus ?? "").trim();
+  const bio = String(values.bio ?? "").trim();
   const regions = Array.isArray(values.regions) ? values.regions.map(String) : splitList(values.regions);
   const languages = Array.isArray(values.languages) ? values.languages.map(String) : splitList(values.languages);
+  const specialties = Array.isArray(values.specialties)
+    ? values.specialties.map(String)
+    : splitList(values.specialties);
   const certifications = Array.isArray(values.certifications)
     ? values.certifications.map(String)
     : splitList(values.certifications).length
@@ -43,7 +51,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Guide name and role are required." }, { status: 400 });
   }
 
-  if (![role, ...regions, ...languages, ...certifications].every(isWomenOnlyGuideText)) {
+  if (![role, focus, bio, ...regions, ...languages, ...specialties, ...certifications].every(isWomenOnlyGuideText)) {
     return NextResponse.json(
       { message: "Alpine Bloom guide profiles must be women guides only." },
       { status: 400 },
@@ -65,6 +73,9 @@ export async function POST(request: Request) {
         regions,
         languages,
         certifications,
+        specialties,
+        focus,
+        bio,
         active: values.active !== false,
       }),
       { status: 201 },

@@ -2,6 +2,7 @@ import { SiteShell } from "@/components/site-shell";
 import { TrekExplorer } from "@/components/trek-explorer";
 import { guideProfiles, trekRoutes } from "@/data/green-pastures";
 import { operatorSourceRoutes } from "@/data/operator-source";
+import type { CSSProperties } from "react";
 
 export default function TreksPage() {
   return (
@@ -22,11 +23,27 @@ export default function TreksPage() {
         <h2>Meet the people who make the mountain feel held.</h2>
         <div>
           {guideProfiles.map((guide) => (
-            <article key={guide.slug}>
-              <img src={guide.image} alt="" />
-              <span>{guide.gender}</span>
+            <article
+              key={guide.slug}
+              style={{ "--guide-color": guide.color } as CSSProperties & Record<"--guide-color", string>}
+            >
+              <div className="guidePhoto">
+                <img src={guide.image} alt={`${guide.name}'s Himalayan region`} />
+                <strong>{guide.avatar}</strong>
+              </div>
+              <span>{guide.label}</span>
               <h3>{guide.name}</h3>
               <p>{guide.role}</p>
+              <small>{guide.focus}</small>
+              <ul>
+                {guide.specialties.slice(0, 3).map((specialty) => (
+                  <li key={specialty}>{specialty}</li>
+                ))}
+              </ul>
+              <p>{guide.bio}</p>
+              <small>
+                {guide.languages.join(" / ")} · {guide.certifications[0]}
+              </small>
             </article>
           ))}
         </div>

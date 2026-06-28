@@ -25,10 +25,15 @@ export type GuideProfile = {
   slug: string;
   name: string;
   role: string;
-  gender: "Women-led";
+  gender: "woman";
+  label: "Nepali woman guide";
+  focus: string;
   regions: string[];
   languages: string[];
   certifications: string[];
+  specialties: string[];
+  avatar: string;
+  color: string;
   image: string;
   bio: string;
 };
@@ -310,33 +315,48 @@ export const guideProfiles: GuideProfile[] = [
   {
     slug: "maya-sherpa",
     name: "Maya Sherpa",
-    role: "Lead altitude guide",
-    gender: "Women-led",
+    role: "Lead Everest altitude guide",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Calm acclimatization, Khumbu lodge rhythm, and clear summit-morning decisions.",
     regions: ["Khumbu", "Gokyo", "Everest Base Camp"],
     languages: ["Nepali", "English", "Sherpa"],
-    certifications: ["Licensed trekking guide", "Wilderness first aid"],
+    certifications: ["Licensed trekking guide", "Wilderness first aid", "Altitude response"],
+    specialties: ["Everest Base Camp", "Gokyo Lakes", "First high-altitude trek"],
+    avatar: "MS",
+    color: "#ff16a2",
     image: `${IMG}/everest-base-camp.jpg`,
-    bio: "Maya is calm, direct, and excellent with first-time Himalayan trekkers who want honest altitude pacing and steady confidence on the trail.",
+    bio: "Maya is calm, direct, and trusted by first-time Himalayan trekkers who want honest altitude pacing, steady confidence, and a Nepali woman guide who will say the quiet safety thing out loud.",
   },
   {
     slug: "lhamo-gurung",
     name: "Lhamo Gurung",
-    role: "Annapurna route specialist",
-    gender: "Women-led",
+    role: "Annapurna village route specialist",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Village hospitality, ridge pacing, and warm cultural interpretation in the Annapurna foothills.",
     regions: ["Annapurna", "Mardi Himal", "Ghandruk"],
     languages: ["Nepali", "English", "Gurung"],
-    certifications: ["Licensed trekking guide", "Mountain safety"],
+    certifications: ["Licensed trekking guide", "Mountain safety", "Responsible tourism"],
+    specialties: ["Mardi Himal", "Poon Hill", "Ghandruk homestays"],
+    avatar: "LG",
+    color: "#66ead6",
     image: `${IMG}/annapurna-hikers.jpg`,
-    bio: "Lhamo brings warm village knowledge and practical mountain judgement to groups that want beauty, culture, and a supportive walking pace.",
+    bio: "Lhamo brings village knowledge and practical mountain judgement to women-only groups that want beauty, culture, and a walking pace that leaves room for the place itself.",
   },
   {
     slug: "nima-tamang",
     name: "Nima Tamang",
-    role: "Safety and logistics coordinator",
-    gender: "Women-led",
+    role: "Langtang safety and logistics lead",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Road-access trekking, weather buffers, and grounded safety systems near Kathmandu.",
     regions: ["Langtang", "Helambu", "Kathmandu Valley"],
     languages: ["Nepali", "English", "Tamang"],
-    certifications: ["High-altitude safety", "Trail logistics"],
+    certifications: ["High-altitude safety", "Trail logistics", "First aid"],
+    specialties: ["Langtang Valley", "Helambu", "Overland contingency planning"],
+    avatar: "NT",
+    color: "#14110f",
     image: `${IMG}/snowy-everest-route.jpg`,
     bio: "Nima handles route buffers, overland logistics, and practical safety checks so the Nepali women guide team can keep the group present and cared for.",
   },
@@ -344,12 +364,49 @@ export const guideProfiles: GuideProfile[] = [
     slug: "asha-rai",
     name: "Asha Rai",
     role: "First-trek confidence coach",
-    gender: "Women-led",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Gentle first-Himalaya coaching, realistic training advice, and supportive trail confidence.",
     regions: ["Poon Hill", "Mardi Himal", "Pokhara"],
     languages: ["Nepali", "English", "Hindi"],
-    certifications: ["Licensed trekking guide", "First aid"],
+    certifications: ["Licensed trekking guide", "First aid", "Women trek leader"],
+    specialties: ["First Nepal trek", "Poon Hill sunrise", "Pokhara extensions"],
+    avatar: "AR",
+    color: "#ff16a2",
     image: `${IMG}/ghandruk-route.jpg`,
     bio: "Asha is the guide for women who want their first Himalayan route to feel brave, realistic, and never performative.",
+  },
+  {
+    slug: "pema-dolma-sherpa",
+    name: "Pema Dolma Sherpa",
+    role: "High-pass safety captain",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Disciplined pass-day timing, strong group checks, and cool-headed weather calls.",
+    regions: ["Everest Three Passes", "Annapurna Circuit", "Manang"],
+    languages: ["Nepali", "English", "Sherpa", "Hindi"],
+    certifications: ["Licensed trekking guide", "Wilderness first aid", "High-pass safety"],
+    specialties: ["Thorong La", "Everest high passes", "Fitness-forward departures"],
+    avatar: "PD",
+    color: "#66ead6",
+    image: `${IMG}/annapurna-hikers.jpg`,
+    bio: "Pema is the guide for ambitious women who want a stronger route without macho energy: disciplined preparation, honest body checks, and a plan that respects the mountain.",
+  },
+  {
+    slug: "sita-thakuri",
+    name: "Sita Thakuri",
+    role: "Mustang and Annapurna logistics guide",
+    gender: "woman",
+    label: "Nepali woman guide",
+    focus: "Permit timing, jeep-and-trail routing, and graceful backup plans for private departures.",
+    regions: ["Lower Mustang", "Annapurna", "Pokhara"],
+    languages: ["Nepali", "English", "Hindi"],
+    certifications: ["Licensed trekking guide", "Permit operations", "Remote route logistics"],
+    specialties: ["Jomsom exits", "Jeep-assisted treks", "Comfort private trips"],
+    avatar: "ST",
+    color: "#14110f",
+    image: `${IMG}/ghandruk-route.jpg`,
+    bio: "Sita keeps private trips feeling easy on the surface because the details underneath are handled: permits, transfers, lodge calls, and the soft landings that matter after long days.",
   },
 ];
 

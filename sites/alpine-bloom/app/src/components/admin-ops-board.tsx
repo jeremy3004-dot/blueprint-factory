@@ -22,10 +22,16 @@ import type {
 type WorkspaceTab = "create" | "pipeline" | "calendar" | "guides";
 type Message = { tone: "info" | "success" | "error"; text: string };
 type AssistMode = "booking" | "guide";
-type GuideDraft = Omit<OpsGuide, "id" | "slug" | "gender" | "regions" | "languages" | "certifications"> & {
+type GuideDraft = {
+  name: string;
+  role: string;
+  focus: string;
   regions: string;
   languages: string;
   certifications: string;
+  specialties: string;
+  bio: string;
+  active: boolean;
 };
 
 type DictationRecognition = {
@@ -53,9 +59,12 @@ const emptyBooking: BookingFormValues = {
 const emptyGuide: GuideDraft = {
   name: "",
   role: "Lead women-only trekking guide",
+  focus: "Women-only Himalayan pacing, route confidence, and supportive trail care.",
   regions: "Annapurna, Everest",
   languages: "Nepali, English",
   certifications: "Licensed women trekking guide",
+  specialties: "First Himalayan trek, Altitude confidence",
+  bio: "A Nepali woman guide for small Alpine Bloom departures.",
   active: true,
 };
 
@@ -401,6 +410,7 @@ export function AdminOpsBoard({
           regions: splitList(guideDraft.regions),
           languages: splitList(guideDraft.languages),
           certifications: splitList(guideDraft.certifications),
+          specialties: splitList(guideDraft.specialties),
         }),
       "Guide added to the roster.",
       {
@@ -420,6 +430,7 @@ export function AdminOpsBoard({
           regions: splitList(draft.regions),
           languages: splitList(draft.languages),
           certifications: splitList(draft.certifications),
+          specialties: splitList(draft.specialties),
         }),
       `${guide.name} updated.`,
     );
@@ -726,6 +737,7 @@ function GuideRoster({
           >
             <strong>{guide.name}</strong>
             <span>{guide.role}</span>
+            {guide.specialties?.length ? <small>{guide.specialties.slice(0, 2).join(" · ")}</small> : null}
             <small>{guide.regions.join(", ")} · {guide.languages.join(" / ")}</small>
           </article>
         ))}
@@ -1096,6 +1108,9 @@ function GuideEditCard({
     name: guide.name,
     regions: guide.regions.join(", "),
     role: guide.role,
+    focus: guide.focus ?? "",
+    specialties: guide.specialties?.join(", ") ?? "",
+    bio: guide.bio ?? "",
   });
   const assignments = trips.flatMap((trip) =>
     trip.assignedGuides
@@ -1121,6 +1136,9 @@ function GuideEditCard({
         <Field label="Role">
           <input value={draft.role} onChange={(event) => setDraft({ ...draft, role: event.target.value })} />
         </Field>
+        <Field label="Focus">
+          <input value={draft.focus} onChange={(event) => setDraft({ ...draft, focus: event.target.value })} />
+        </Field>
         <Field label="Regions">
           <input value={draft.regions} onChange={(event) => setDraft({ ...draft, regions: event.target.value })} />
         </Field>
@@ -1129,6 +1147,12 @@ function GuideEditCard({
         </Field>
         <Field label="Certifications">
           <input value={draft.certifications} onChange={(event) => setDraft({ ...draft, certifications: event.target.value })} />
+        </Field>
+        <Field label="Specialties">
+          <input value={draft.specialties} onChange={(event) => setDraft({ ...draft, specialties: event.target.value })} />
+        </Field>
+        <Field label="Bio">
+          <textarea value={draft.bio} onChange={(event) => setDraft({ ...draft, bio: event.target.value })} />
         </Field>
         <label className="adminCheck">
           <input type="checkbox" checked={draft.active} onChange={(event) => setDraft({ ...draft, active: event.target.checked })} />

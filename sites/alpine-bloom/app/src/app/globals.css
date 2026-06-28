@@ -2981,12 +2981,14 @@ video {
 
 .guideStrip > div {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
   margin-top: 34px;
 }
 
 .guideStrip article {
+  display: grid;
+  gap: 10px;
   padding: 12px;
   background: var(--white);
   box-shadow: 0 24px 48px -34px rgba(20, 17, 15, 0.55);
@@ -2997,22 +2999,66 @@ video {
   --tilt: 1.4deg;
 }
 
-.guideStrip img {
+.guidePhoto {
+  position: relative;
+}
+
+.guidePhoto img {
   aspect-ratio: 4 / 3;
+  filter: saturate(0.92) contrast(1.04);
+}
+
+.guidePhoto strong {
+  position: absolute;
+  right: 10px;
+  bottom: -14px;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 6px solid var(--white);
+  border-radius: 50%;
+  background: var(--guide-color, var(--pink));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.38rem;
+  font-weight: 400;
+  box-shadow: 0 14px 24px -18px rgba(20, 17, 15, 0.8);
 }
 
 .guideStrip h3,
 .leadCard h3 {
-  margin: 12px 0 4px;
+  margin: 8px 0 0;
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 400;
 }
 
-.guideStrip p {
+.guideStrip p,
+.guideStrip small {
   margin: 0;
   color: rgba(20, 17, 15, 0.66);
   line-height: 1.55;
+}
+
+.guideStrip ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 2px 0;
+  list-style: none;
+}
+
+.guideStrip li {
+  border: 1px solid rgba(20, 17, 15, 0.14);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(255, 22, 162, 0.07);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .routeHero {

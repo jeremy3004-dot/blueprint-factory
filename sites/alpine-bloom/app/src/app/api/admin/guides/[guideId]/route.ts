@@ -32,6 +32,9 @@ export async function PATCH(
     regions?: unknown;
     role?: unknown;
     certifications?: unknown;
+    focus?: unknown;
+    specialties?: unknown;
+    bio?: unknown;
   };
 
   if (!opsBackendReadiness.connected) {
@@ -43,11 +46,18 @@ export async function PATCH(
 
   const nextTextValues = [
     values.role === undefined ? undefined : String(values.role).trim(),
+    values.focus === undefined ? undefined : String(values.focus).trim(),
+    values.bio === undefined ? undefined : String(values.bio).trim(),
     ...(values.certifications === undefined
       ? []
       : Array.isArray(values.certifications)
         ? values.certifications.map(String)
         : splitList(values.certifications)),
+    ...(values.specialties === undefined
+      ? []
+      : Array.isArray(values.specialties)
+        ? values.specialties.map(String)
+        : splitList(values.specialties)),
     ...(values.languages === undefined
       ? []
       : Array.isArray(values.languages)
@@ -75,6 +85,13 @@ export async function PATCH(
         : Array.isArray(values.certifications)
           ? values.certifications.map(String)
           : splitList(values.certifications),
+      specialties: values.specialties === undefined
+        ? undefined
+        : Array.isArray(values.specialties)
+          ? values.specialties.map(String)
+          : splitList(values.specialties),
+      focus: values.focus === undefined ? undefined : String(values.focus).trim(),
+      bio: values.bio === undefined ? undefined : String(values.bio).trim(),
       languages: values.languages === undefined
         ? undefined
         : Array.isArray(values.languages)

@@ -8,46 +8,29 @@ import type {
   OpsTrip,
   PipelineStage,
 } from "@/lib/ops-types";
-import { trekRoutes } from "@/data/green-pastures";
+import { guideProfiles, trekRoutes } from "@/data/green-pastures";
 import { tenantConfig } from "@/data/tenant";
 
 const now = new Date("2026-06-27T08:00:00.000Z");
 
-const guides: OpsGuide[] = [
-  {
-    id: "maya-sherpa",
-    slug: "maya-sherpa",
-    name: "Maya Sherpa",
-    role: "Lead women altitude guide",
-    gender: "woman",
-    regions: ["Everest", "Gokyo", "Tengboche"],
-    languages: ["Nepali", "English", "Hindi"],
-    certifications: ["Licensed trekking guide", "Wilderness first aid"],
-    active: true,
-  },
-  {
-    id: "lhamo-gurung",
-    slug: "lhamo-gurung",
-    name: "Lhamo Gurung",
-    role: "Women-led village route specialist",
-    gender: "woman",
-    regions: ["Annapurna", "Ghandruk", "Mardi Himal"],
-    languages: ["Nepali", "English"],
-    certifications: ["Licensed trekking guide", "Mountain safety"],
-    active: true,
-  },
-  {
-    id: "nima-tamang",
-    slug: "nima-tamang",
-    name: "Nima Tamang",
-    role: "Women-only safety coordinator",
-    gender: "woman",
-    regions: ["Langtang", "Helambu"],
-    languages: ["Nepali", "English", "Tamang"],
-    certifications: ["High-altitude safety", "Trail logistics"],
-    active: true,
-  },
-];
+const guides: OpsGuide[] = guideProfiles.map((guide) => ({
+  id: guide.slug,
+  slug: guide.slug,
+  name: guide.name,
+  role: guide.role,
+  gender: "woman",
+  label: guide.label,
+  focus: guide.focus,
+  regions: [...guide.regions],
+  languages: [...guide.languages],
+  certifications: [...guide.certifications],
+  specialties: [...guide.specialties],
+  avatar: guide.avatar,
+  color: guide.color,
+  image: guide.image,
+  bio: guide.bio,
+  active: true,
+}));
 
 const bookings: OpsBookingRequest[] = [
   {
@@ -144,6 +127,7 @@ function cloneDashboard(dashboard: OpsDashboard): OpsDashboard {
       regions: [...guide.regions],
       languages: [...guide.languages],
       certifications: [...guide.certifications],
+      specialties: guide.specialties ? [...guide.specialties] : undefined,
     })),
     trips: dashboard.trips.map((trip) => ({
       ...trip,
@@ -223,6 +207,7 @@ export function createDemoDashboard(): OpsDashboard {
       regions: [...guide.regions],
       languages: [...guide.languages],
       certifications: [...guide.certifications],
+      specialties: guide.specialties ? [...guide.specialties] : undefined,
     })),
     trips: trips.map((trip) => ({
       ...trip,

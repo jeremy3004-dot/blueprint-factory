@@ -37,9 +37,16 @@ export type OpsGuide = {
   name: string;
   role: string;
   gender: "woman";
+  label?: string;
+  focus?: string;
   regions: string[];
   languages: string[];
   certifications: string[];
+  specialties?: string[];
+  avatar?: string;
+  color?: string;
+  image?: string;
+  bio?: string;
   active: boolean;
 };
 
