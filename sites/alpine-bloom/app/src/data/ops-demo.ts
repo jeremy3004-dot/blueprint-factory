@@ -7,9 +7,9 @@ import type {
   OpsGuide,
   OpsTrip,
   PipelineStage,
-} from "@/lib/ops-types";
-import { guideProfiles, trekRoutes } from "@/data/green-pastures";
-import { tenantConfig } from "@/data/tenant";
+} from "../lib/ops-types.ts";
+import { guideProfiles, trekRoutes } from "./green-pastures.ts";
+import { tenantConfig } from "./tenant.ts";
 
 const now = new Date("2026-06-27T08:00:00.000Z");
 

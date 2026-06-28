@@ -1,5 +1,5 @@
-import { guideProfiles } from "@/data/green-pastures";
-import { routeOptions } from "@/data/ops-demo";
+import { guideProfiles } from "../data/green-pastures.ts";
+import { routeOptions } from "../data/ops-demo.ts";
 
 export type ConciergeMessage = {
   role: "user" | "assistant";

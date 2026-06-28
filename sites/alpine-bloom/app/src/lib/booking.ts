@@ -1,5 +1,5 @@
-import type { BookingFormValues } from "@/lib/ops-types";
-import { routeOptions } from "@/data/ops-demo";
+import type { BookingFormValues } from "./ops-types.ts";
+import { routeOptions } from "../data/ops-demo.ts";
 
 function text(value: unknown) {
   return typeof value === "string" ? value.trim() : "";

@@ -1,8 +1,8 @@
 import {
   createDemoDashboard,
   demoDashboardWithBooking,
-} from "@/data/ops-demo";
-import { tenantConfig } from "@/data/tenant";
+} from "../data/ops-demo.ts";
+import { tenantConfig } from "../data/tenant.ts";
 import type {
   BookingApiResult,
   BookingFormValues,
@@ -11,7 +11,7 @@ import type {
   OpsGuide,
   OpsReadiness,
   PipelineStage,
-} from "@/lib/ops-types";
+} from "./ops-types.ts";
 
 const opsApiUrl = process.env.OPS_API_URL?.replace(/\/$/, "");
 const opsApiToken = process.env.OPS_API_TOKEN;

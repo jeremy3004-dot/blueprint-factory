@@ -1,5 +1,5 @@
-import { routeOptions } from "@/data/ops-demo";
-import type { BookingFormValues, OpsDashboard } from "@/lib/ops-types";
+import { routeOptions } from "../data/ops-demo.ts";
+import type { BookingFormValues, OpsDashboard } from "./ops-types.ts";
 
 export type AssistedBookingDraft = Partial<BookingFormValues>;
 
