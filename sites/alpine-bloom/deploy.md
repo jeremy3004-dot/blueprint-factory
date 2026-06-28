@@ -6,7 +6,7 @@ Profile: vercel-production
 
 - Vercel project: `app`
 - Public URL: https://app-nine-wine-27.vercel.app
-- Deployment: `dpl_7kamVboFPZRZRvh3jCxBKizdr5Hz`
+- Latest production alias verified: https://app-nine-wine-27.vercel.app
 
 ## Environments
 
@@ -64,4 +64,4 @@ Analytics is inert unless `NEXT_PUBLIC_POSTHOG_KEY` is configured. When enabled,
 Production deploy approved by Jeremy for sharing.
 Local Vercel project metadata is kept in `app/.vercel/` and ignored from git.
 
-Latest production deploy completed on 2026-06-28 after Phase 9 guardrail tests and the public image optimization pass. Verified live 200 responses for `/`, `/treks`, `/book`, and `/admin`.
+Latest production deploy completed on 2026-06-28 after Phase 9 guardrail tests and the public image optimization pass. Vercel aliased the build to https://app-nine-wine-27.vercel.app and live 200 responses were verified for `/`, `/treks`, `/book`, and `/admin`.
