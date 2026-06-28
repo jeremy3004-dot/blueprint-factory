@@ -68,21 +68,21 @@
   - Use: Everest route cards, route detail, route pills, guide region imagery, map waypoint imagery, and homepage photo surfaces.
   - Optimization: 1600px JPEG, metadata stripped, ~289 KB.
 - `app/public/alpine-bloom-assets/generated-photos/annapurna-women-ridge.jpg`
-  - Source: generated women-led Annapurna ridge trekking image.
+  - Source: regenerated candid women-led Annapurna ridge trekking image with muted trail gear, overcast light, and no all-pink styling.
   - Use: Annapurna route cards, route detail, route pills, guide region imagery, map waypoint imagery, and homepage photo surfaces.
-  - Optimization: 1600px JPEG, metadata stripped, ~203 KB.
+  - Optimization: 1600px JPEG, metadata stripped, ~256 KB.
 - `app/public/alpine-bloom-assets/generated-photos/ghandruk-women-bloom-trail.jpg`
   - Source: generated women-only Ghandruk/rhododendron village trail image.
   - Use: Mardi/Ghandruk route cards, guide region imagery, and homepage route/card surfaces.
   - Optimization: 1600px JPEG, metadata stripped, ~268 KB.
 - `app/public/alpine-bloom-assets/generated-photos/langtang-women-high-valley.jpg`
-  - Source: generated women-led snowy high-valley/Langtang-style trekking image.
+  - Source: regenerated candid women-led Langtang-style high-valley trekking image with varied practical gear and matte cloudy light.
   - Use: Langtang route cards, route pills, route map waypoints, and carousel surfaces.
-  - Optimization: 1600px JPEG, metadata stripped, ~204 KB.
+  - Optimization: 1600px JPEG, metadata stripped, ~304 KB.
 - `app/public/alpine-bloom-assets/generated-photos/tengboche-women-monastery.jpg`
-  - Source: generated women travelers and Nepali woman guide near a Himalayan monastery.
+  - Source: regenerated candid women travelers and Nepali woman guide near a Himalayan monastery, with realistic muted clothing and no sunshine-facing glamour pose.
   - Use: Poon Hill/Ghandruk route imagery, monastery route map waypoints, and founder scrapbook.
-  - Optimization: 1600px JPEG, metadata stripped, ~215 KB.
+  - Optimization: 1600px JPEG, metadata stripped, ~348 KB.
 - `app/public/alpine-bloom-assets/generated-photos/rhododendron-bloom-detail.jpg`
   - Source: generated Himalayan rhododendron bloom detail.
   - Use: founder scrapbook bloom detail.
