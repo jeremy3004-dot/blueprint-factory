@@ -4,7 +4,16 @@ import { notFound } from "next/navigation";
 import { RouteMapExplorer } from "@/components/route-map-explorer";
 import { SiteShell } from "@/components/site-shell";
 import { trekRoutes } from "@/data/green-pastures";
+import { getOperatorSourceRoute } from "@/data/operator-source";
 import { getTrekMapData } from "@/data/trek-route-geo";
+import {
+  getRouteDossierFacts,
+  getRouteNarrative,
+  getSanitizedSourceItems,
+  getSourceUpdatedLabel,
+  sanitizeSourceCopy,
+} from "@/lib/operator-dossier";
+import { formatStartingRateWithPrefix } from "@/lib/route-pricing";
 
 export function generateStaticParams() {
   return trekRoutes.map((route) => ({ slug: route.slug }));
@@ -21,6 +30,15 @@ export default async function TrekDetailPage({
   if (!trek) notFound();
 
   const trekMap = getTrekMapData(trek.slug);
+  const sourceRoute = getOperatorSourceRoute(trek.sourceSlug);
+  const dossierFacts = getRouteDossierFacts(trek, sourceRoute);
+  const narrative = getRouteNarrative(trek, sourceRoute);
+  const included = getSanitizedSourceItems(sourceRoute?.includeItems ?? [], [
+    "Nepali women guide support, permit planning, lodging, meals, and trailhead transport are shaped into the proposal.",
+  ]);
+  const excluded = getSanitizedSourceItems(sourceRoute?.excludeItems ?? [], [
+    "International flights, insurance, personal trail expenses, optional upgrades, and tips are quoted separately.",
+  ]);
   const alternates = trekRoutes
     .filter((route) => route.slug !== trek.slug && route.region === trek.region)
     .concat(trekRoutes.filter((route) => route.slug !== trek.slug && route.region !== trek.region))
@@ -34,6 +52,10 @@ export default async function TrekDetailPage({
           <p className="kicker">{trek.region} route dossier</p>
           <h1>{trek.name}</h1>
           <p>{trek.signature}</p>
+          <div className="routeHeroMeta">
+            <span>{formatStartingRateWithPrefix(trek.fromUsd)}</span>
+            <span>{getSourceUpdatedLabel(sourceRoute)}</span>
+          </div>
           <Link className="btn" href={`/book?route=${trek.slug}`}>
             Build a proposal <span className="arrow">→</span>
           </Link>
@@ -41,13 +63,7 @@ export default async function TrekDetailPage({
       </section>
 
       <section className="routeFacts shell">
-        {[
-          ["Days", trek.durationDays],
-          ["Altitude", `${trek.maxAltitudeM.toLocaleString()}m`],
-          ["Difficulty", trek.difficulty],
-          ["From", trek.fromUsd ? `$${trek.fromUsd.toLocaleString()}` : "Custom"],
-          ["Season", trek.bestSeasons.join(" / ")],
-        ].map(([label, value]) => (
+        {dossierFacts.map(({ label, value }) => (
           <div key={label}>
             <span>{label}</span>
             <strong>{value}</strong>
@@ -59,7 +75,9 @@ export default async function TrekDetailPage({
         <article>
           <p className="kicker">Route shape</p>
           <h2>What this trek feels like.</h2>
-          <p>{trek.summary}</p>
+          {narrative.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
           <div className="highlightList">
             {trek.highlights.map((highlight) => (
               <span key={highlight}>{highlight}</span>
@@ -79,6 +97,58 @@ export default async function TrekDetailPage({
             ))}
           </ul>
         </aside>
+      </section>
+
+      <section className="routeDossier shell">
+        <div className="routeDossierIntro">
+          <p className="kicker">Dossier depth</p>
+          <h2>What the proposal normally wraps around this route.</h2>
+          <p>
+            These are planning-snapshot details, not a final quote. Alpine Bloom confirms guide
+            availability, room standards, permits, and women-only support before the proposal is
+            locked.
+          </p>
+        </div>
+        <div className="routeDossierGrid">
+          <article>
+            <h3>Usually included</h3>
+            {included.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </article>
+          <article>
+            <h3>Usually separate</h3>
+            {excluded.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </article>
+          <article>
+            <h3>Source itinerary notes</h3>
+            {(sourceRoute?.itinerary.length ? sourceRoute.itinerary : []).slice(0, 3).map((item) => (
+              <p key={`${item.day}-${item.title}`}>
+                <strong>{item.day ? `Day ${item.day}: ` : ""}{sanitizeSourceCopy(item.title)}</strong>
+                <span>{sanitizeSourceCopy(item.details)}</span>
+                {[item.duration, item.distance, item.ascent].filter(Boolean).length ? (
+                  <em>{[item.duration, item.distance, item.ascent].filter(Boolean).join(" · ")}</em>
+                ) : null}
+              </p>
+            ))}
+            {!sourceRoute?.itinerary.length ? <p>Custom itinerary notes are confirmed during proposal planning.</p> : null}
+          </article>
+          <article>
+            <h3>Snapshot signals</h3>
+            {sourceRoute?.activity ? <p><strong>Activity</strong><span>{sanitizeSourceCopy(sourceRoute.activity)}</span></p> : null}
+            {sourceRoute?.highlights.map((highlight) => (
+              <p key={highlight}>{sanitizeSourceCopy(highlight)}</p>
+            ))}
+            {sourceRoute?.facts.map((fact) => (
+              <p key={fact.label}>
+                <strong>{sanitizeSourceCopy(fact.label)}</strong>
+                <span>{sanitizeSourceCopy(fact.value)}</span>
+              </p>
+            ))}
+          </article>
+        </div>
       </section>
 
       <section className="itinerary shell">

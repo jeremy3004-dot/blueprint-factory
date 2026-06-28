@@ -16,6 +16,7 @@ export type TrekRoute = {
   highlights: string[];
   prep: string[];
   itinerary: Array<{ day: string; title: string; detail: string }>;
+  sourceSlug?: string;
 };
 
 const IMG = "/alpine-bloom-assets/nepal-public-domain";
@@ -56,7 +57,7 @@ export const trekRoutes: TrekRoute[] = [
     signature:
       "A classic base camp journey through Sherpa villages, glacier country, and Kala Patthar sunrise.",
     summary:
-      "Best for travelers who want the Everest story with careful acclimatization, guide support, and a clear weather buffer.",
+      "Best for women travelers who want the Everest story with careful acclimatization, Nepali women guide support, and a clear weather buffer.",
     stayStyle: "Kathmandu hotel, mountain teahouses, porter support",
     fromUsd: 2390,
     image: `${IMG}/everest-base-camp.jpg`,
@@ -71,6 +72,7 @@ export const trekRoutes: TrekRoute[] = [
       "Train for long uphill days with a daypack",
       "Keep buffer days around Lukla flights",
     ],
+    sourceSlug: "alpine-everest-base-camp-snapshot",
     itinerary: [
       {
         day: "1-2",
@@ -119,9 +121,10 @@ export const trekRoutes: TrekRoute[] = [
     ],
     prep: [
       "Pack for warm valleys and cold pass mornings",
-      "Private transport helps mixed-ability groups",
+      "Private transport helps varied-ability women-only groups",
       "Cash is useful outside larger villages",
     ],
+    sourceSlug: "alpine-annapurna-circuit-snapshot",
     itinerary: [
       {
         day: "1-4",
@@ -173,6 +176,7 @@ export const trekRoutes: TrekRoute[] = [
       "Expect sustained uphill walking",
       "Book early in peak rhododendron season",
     ],
+    sourceSlug: "alpine-mardi-himal-snapshot",
     itinerary: [
       {
         day: "1-2",
@@ -224,6 +228,7 @@ export const trekRoutes: TrekRoute[] = [
       "Altitude insurance still matters",
       "Good for photography-focused private trips",
     ],
+    sourceSlug: "alpine-langtang-valley-snapshot",
     itinerary: [
       {
         day: "1-2",
@@ -260,7 +265,7 @@ export const trekRoutes: TrekRoute[] = [
     signature:
       "A short sunrise classic with village warmth, rhododendron forests, and soft-adventure pacing.",
     summary:
-      "Great for first-timers, mixed ages, and travelers who want a beautiful Himalayan sampler before or after a broader Nepal trip.",
+      "Great for first-timers, multi-age women-only groups, and travelers who want a beautiful Himalayan sampler before or after a broader Nepal trip.",
     stayStyle: "Pokhara hotel and comfortable village lodges",
     fromUsd: 790,
     image: `${IMG}/tengboche-monastery.jpg`,
@@ -275,6 +280,7 @@ export const trekRoutes: TrekRoute[] = [
       "Ideal if you are altitude-curious",
       "Works well with Chitwan or wellness add-ons",
     ],
+    sourceSlug: "alpine-poon-hill-ghandruk-snapshot",
     itinerary: [
       {
         day: "1",
@@ -332,7 +338,7 @@ export const guideProfiles: GuideProfile[] = [
     languages: ["Nepali", "English", "Tamang"],
     certifications: ["High-altitude safety", "Trail logistics"],
     image: `${IMG}/snowy-everest-route.jpg`,
-    bio: "Nima handles route buffers, overland logistics, and practical safety checks so the guide team can keep the group present and cared for.",
+    bio: "Nima handles route buffers, overland logistics, and practical safety checks so the Nepali women guide team can keep the group present and cared for.",
   },
   {
     slug: "asha-rai",

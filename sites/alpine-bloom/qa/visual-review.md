@@ -116,6 +116,15 @@ Resolved after Phase 5 parity work:
 - Booking and concierge events use coarse, privacy-preserving properties only: route slug, group size, add-on count, provider, stored state, variant, message count, and prompt length.
 - Analytics intentionally avoids traveler names, emails, notes, guide names, booking IDs, and raw chat text.
 
+## Route Data Follow-Up
+
+Resolved after Phase 6 route dossier work:
+
+- Route data now links to Alpine Bloom source snapshots with planning rates, update dates, duration ranges, group-size notes, accommodation notes, inclusions, exclusions, source facts, and itinerary notes.
+- Trek cards show rate and planning snippets, while the route atlas includes a source-backed dossier preview.
+- Trek detail pages now surface snapshot facts, source update dates, included/separate planning sections, and source itinerary notes before the existing map and itinerary blocks.
+- Source-copy sanitation rewrites donor/operator wording into Alpine Bloom voice and blocks male-coded assistant copy from appearing in route dossier output.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

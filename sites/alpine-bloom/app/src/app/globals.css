@@ -2731,6 +2731,7 @@ video {
 .routeBody,
 .itinerary,
 .mapPanel,
+.routeDossier,
 .alternateRoutes {
   padding-bottom: clamp(70px, 10vh, 120px);
 }
@@ -2854,6 +2855,130 @@ video {
   line-height: 1.55;
 }
 
+.trekTileMeta {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.trekTileMeta div {
+  display: grid;
+  gap: 4px;
+}
+
+.trekTileMeta dt,
+.routeHeroMeta span,
+.routePreviewDossier > div > span {
+  color: var(--mint);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.trekTileMeta dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+.routePreviewDossier {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  margin-top: 36px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.trekEmptyState {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: clamp(28px, 5vw, 54px);
+}
+
+.trekEmptyState h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 360;
+  line-height: 0.95;
+}
+
+.trekEmptyState p {
+  max-width: 42rem;
+  margin: 18px 0 0;
+  color: rgba(20, 17, 15, 0.7);
+  line-height: 1.7;
+}
+
+.routePreviewHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.routePreviewHighlights span {
+  border: 1px solid var(--line);
+  background: var(--pink-soft);
+  padding: 8px 10px;
+  color: var(--ink);
+  font-size: 0.72rem;
+}
+
+.routePreviewDossier h2,
+.routeDossier h2 {
+  margin: 12px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4.1rem);
+  font-weight: 340;
+  line-height: 0.95;
+}
+
+.routePreviewDossier p,
+.routeDossier p {
+  margin: 0;
+  color: rgba(20, 17, 15, 0.72);
+  line-height: 1.7;
+}
+
+.routePreviewLists,
+.routeDossierGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.routePreviewLists {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.routePreviewLists article,
+.routeDossierGrid article {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 24px;
+}
+
+.routePreviewLists h3,
+.routeDossierGrid h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+}
+
+.routePreviewLists p,
+.routeDossierGrid p {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 12px;
+  font-size: 0.94rem;
+}
+
 .guideStrip > div {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2927,9 +3052,22 @@ video {
   line-height: 1.65;
 }
 
+.routeHeroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: -8px 0 26px;
+}
+
+.routeHeroMeta span {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(20, 17, 15, 0.28);
+  padding: 9px 12px;
+}
+
 .routeFacts {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   padding-top: 1px;
 }
@@ -2951,8 +3089,9 @@ video {
   display: block;
   margin-top: 10px;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 400;
+  overflow-wrap: anywhere;
 }
 
 .routeBody,
@@ -2972,10 +3111,40 @@ video {
 .routeBody p,
 .itinerary p,
 .mapPanel p,
+.routeDossier p,
 .alternateRoutes a {
   color: rgba(20, 17, 15, 0.72);
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.routeDossierIntro {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.routeDossierGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.routeDossierGrid p strong,
+.routeDossierGrid p span {
+  display: block;
+}
+
+.routeDossierGrid p span {
+  margin-top: 6px;
+}
+
+.routeDossierGrid p em {
+  display: block;
+  margin-top: 8px;
+  color: var(--mint-deep);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .prepList {
@@ -3698,6 +3867,9 @@ video {
   .routeMapHead,
   .routeMapGrid,
   .bookingLayout,
+  .routePreviewDossier,
+  .routePreviewLists,
+  .routeDossierGrid,
   .filterBar {
     grid-template-columns: 1fr;
   }

@@ -1,6 +1,7 @@
 import { SiteShell } from "@/components/site-shell";
 import { TrekExplorer } from "@/components/trek-explorer";
 import { guideProfiles, trekRoutes } from "@/data/green-pastures";
+import { operatorSourceRoutes } from "@/data/operator-source";
 
 export default function TreksPage() {
   return (
@@ -15,7 +16,7 @@ export default function TreksPage() {
           around you on trail.
         </p>
       </section>
-      <TrekExplorer routes={trekRoutes} />
+      <TrekExplorer operatorSources={operatorSourceRoutes} routes={trekRoutes} />
       <section className="guideStrip shell">
         <p className="kicker">Guide matching</p>
         <h2>Meet the people who make the mountain feel held.</h2>
