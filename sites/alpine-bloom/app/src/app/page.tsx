@@ -375,9 +375,9 @@ export default function Home() {
           Look who&apos;s talking
         </p>
         <div className="pressLogos" data-reveal style={{ "--delay": "120ms" } as React.CSSProperties}>
-          <img src="/alpine-bloom-assets/whoa-source/press-afar.webp" alt="AFAR" />
-          <img src="/alpine-bloom-assets/whoa-source/press-nyt.webp" alt="The New York Times" />
-          <img src="/alpine-bloom-assets/whoa-source/press-travel.webp" alt="Travel + Leisure" />
+          <span>Mountain Letters</span>
+          <span>Trail Notes</span>
+          <span>Bloom Field Journal</span>
         </div>
       </section>
 

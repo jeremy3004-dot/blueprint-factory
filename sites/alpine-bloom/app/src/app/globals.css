@@ -1096,16 +1096,25 @@ video {
   margin-top: 44px;
 }
 
-.pressLogos img {
-  width: 116px;
-  filter: grayscale(1) contrast(0.7) brightness(0.4);
-  opacity: 0.7;
-  transition: opacity 0.4s var(--ease), filter 0.4s var(--ease);
+.pressLogos span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  min-width: 148px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: rgba(20, 17, 15, 0.62);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  font-weight: 650;
+  letter-spacing: 0;
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
-.pressLogos img:hover {
-  opacity: 1;
-  filter: grayscale(0);
+.pressLogos span:hover {
+  border-color: var(--pink);
+  color: var(--pink);
 }
 
 /* =========================================================================

@@ -41,7 +41,7 @@ Pass. Motion capture now shows the WHOA-derived homepage structure translated in
 - Nepal image pass: the rendered route imagery now uses generated Alpine Bloom women-only trekking photos for Annapurna, Everest Base Camp, Ghandruk, Langtang, Tengboche, and rhododendron surfaces. Commons/public-domain mountain photos remain only as optimized legacy/reference assets and the preserved top hero image.
 - Hero motion pass: the static scrapbook hero was replaced with `app/public/alpine-bloom-assets/generated/alpine-bloom-hero-loop.mp4`, a local ffmpeg loop built from the Nepal image set to mimic WHOA's flashing collage rhythm.
 - AI avatar pass: embedded and floating concierge surfaces use `app/public/alpine-bloom-assets/generated-photos/ask-alpine-bloom-avatar.jpg`, a 512px optimized image of a young Nepali woman mountain guide in Alpine Bloom pink/black styling.
-- Remaining gap: exact WHOA typography depends on Futura/Futura PT availability; the local fallback is close but not identical on machines without the donor font. Press logos still use the clone-reference treatment and should be replaced or approved before production.
+- Remaining gap: exact WHOA typography depends on Futura/Futura PT availability; the local fallback is close but not identical on machines without the donor font. Donor press images have been replaced in active rendering with Alpine Bloom text marks.
 
 ## Scores
 
@@ -56,7 +56,7 @@ Pass. Motion capture now shows the WHOA-derived homepage structure translated in
 
 ## Highest Impact Next Fix
 
-For true production-grade pixel perfection, license or bundle the exact donor-equivalent Futura font and replace the remaining clone-reference press/logo material with approved Alpine Bloom assets.
+For true production-grade pixel perfection, license or bundle the exact donor-equivalent Futura font.
 
 For the feature layer, the next production fix is connecting approved persistence/email/AI services behind the preview APIs after human approval.
 

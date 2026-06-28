@@ -24,11 +24,10 @@
   - License noted on source page: CC0 1.0 Public Domain Dedication.
   - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
   - Optimization: metadata stripped and recompressed, ~504 KB.
-- `app/public/alpine-bloom-assets/whoa-source/*`
-  - Source: extracted from WHOA Travel live page for clone-reference fidelity.
-  - Use: pixel-first clone reference and remaining press-logo styling.
-  - Status: reference/clone workflow only; replace with approved Alpine Bloom assets before production.
-  - Optimization: extracted polaroids and founder collage were metadata-stripped and recompressed; largest remaining reference file is ~132 KB.
+- WHOA donor media
+  - Source: extracted during clone-reference work from WHOA Travel.
+  - Use: clone analysis only.
+  - Status: removed from `app/public` so active production does not ship donor media. Reference evidence remains in `references/reference-first/`.
 - `app/public/alpine-bloom-assets/himalaya-range.jpg`
   - Source: Wikimedia Commons redirect for `Himalayas, Nepal.jpg`
   - Use: Himalayan collage hero, media frame, polaroid.
@@ -88,7 +87,7 @@
   - Source: generated Himalayan rhododendron bloom detail.
   - Use: founder scrapbook bloom detail.
   - Optimization: 1200px JPEG, metadata stripped, ~150 KB.
-- CSS scrapbook hero, route polaroids, handwritten labels, press logos, route cards, founder collage, and black media frame.
+- CSS scrapbook hero, route polaroids, handwritten labels, Alpine Bloom text press marks, route cards, founder collage, and black media frame.
 - Feature-page UI surfaces for route explorer, route dossiers, booking proposal form, planner concierge, FAQ, and admin demo operations now consume the optimized generated Alpine Bloom photo set, while the top homepage hero image remains unchanged per direction.
 - All public image assets in `app/public/alpine-bloom-assets` were checked after optimization; largest remaining file is the 1000px tall-route reference image at ~648 KB.
 - Interactive route maps use copied/adapted coordinate and waypoint data from the local Green Pastures feature donor, rendered with Leaflet plus Esri imagery/topographic tiles and Alpine Bloom's hot pink/white/black route styling.
