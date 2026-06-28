@@ -2,6 +2,7 @@
 
 import { useRef, useState, useTransition } from "react";
 
+import { ConciergeAvatarIcon } from "@/components/concierge-avatar-icon";
 import { formatAssistantReply } from "@/lib/chat-format";
 import { analytics } from "@/lib/analytics";
 
@@ -75,6 +76,15 @@ export function Concierge({ variant = "embedded" }: { variant?: "embedded" | "fl
 
   return (
     <section className={`conciergePanel ${variant === "floating" ? "floating" : ""}`}>
+      <div className="conciergeHead">
+        <div className="conciergeAvatar">
+          <ConciergeAvatarIcon />
+        </div>
+        <div>
+          <p className="kicker">Alpine Bloom guide desk</p>
+          <span>Nepali women guide matching, altitude pacing, and route fit.</span>
+        </div>
+      </div>
       <div className="chatWindow">
         {messages.map((message, index) => (
           <div className={`chatBubble ${message.role}`} key={`${message.role}-${index}`}>

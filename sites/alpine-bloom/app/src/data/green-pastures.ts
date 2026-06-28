@@ -19,7 +19,7 @@ export type TrekRoute = {
   sourceSlug?: string;
 };
 
-const IMG = "/alpine-bloom-assets/nepal-public-domain";
+const IMG = "/alpine-bloom-assets/generated-photos";
 
 export type GuideProfile = {
   slug: string;
@@ -65,7 +65,7 @@ export const trekRoutes: TrekRoute[] = [
       "Best for women travelers who want the Everest story with careful acclimatization, Nepali women guide support, and a clear weather buffer.",
     stayStyle: "Kathmandu hotel, mountain teahouses, porter support",
     fromUsd: 2390,
-    image: `${IMG}/everest-base-camp.jpg`,
+    image: `${IMG}/everest-women-base-camp.jpg`,
     highlights: [
       "Base Camp and Kala Patthar viewpoints",
       "Namche Bazaar and Tengboche Monastery",
@@ -117,7 +117,7 @@ export const trekRoutes: TrekRoute[] = [
       "A flexible private trek for travelers who want big variety and transport options without losing the high-pass drama.",
     stayStyle: "Kathmandu and Pokhara hotels with teahouse route support",
     fromUsd: 2190,
-    image: `${IMG}/annapurna-hikers.jpg`,
+    image: `${IMG}/annapurna-women-ridge.jpg`,
     highlights: [
       "Thorong La high pass crossing",
       "Jeep-assisted route compression",
@@ -169,7 +169,7 @@ export const trekRoutes: TrekRoute[] = [
       "Perfect for travelers with a tight Nepal window who still want real trail texture, sunrise drama, and women-led support.",
     stayStyle: "Pokhara hotel and simple ridge lodges",
     fromUsd: 990,
-    image: `${IMG}/ghandruk-route.jpg`,
+    image: `${IMG}/ghandruk-women-bloom-trail.jpg`,
     highlights: [
       "Big views on a compact schedule",
       "Lower transfer complexity",
@@ -221,7 +221,7 @@ export const trekRoutes: TrekRoute[] = [
       "A smart first or second Nepal trek when travelers want mountain scale with simpler logistics and strong local story.",
     stayStyle: "Kathmandu hotel and character teahouses",
     fromUsd: 1380,
-    image: `${IMG}/snowy-everest-route.jpg`,
+    image: `${IMG}/langtang-women-high-valley.jpg`,
     highlights: [
       "No Lukla-style flight risk",
       "Kyanjin Gompa and glacier viewpoints",
@@ -273,7 +273,7 @@ export const trekRoutes: TrekRoute[] = [
       "Great for first-timers, multi-age women-only groups, and travelers who want a beautiful Himalayan sampler before or after a broader Nepal trip.",
     stayStyle: "Pokhara hotel and comfortable village lodges",
     fromUsd: 790,
-    image: `${IMG}/tengboche-monastery.jpg`,
+    image: `${IMG}/tengboche-women-monastery.jpg`,
     highlights: [
       "Poon Hill sunrise panorama",
       "Ghandruk village culture",
@@ -325,7 +325,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["Everest Base Camp", "Gokyo Lakes", "First high-altitude trek"],
     avatar: "MS",
     color: "#ff16a2",
-    image: `${IMG}/everest-base-camp.jpg`,
+    image: `${IMG}/everest-women-base-camp.jpg`,
     bio: "Maya is calm, direct, and trusted by first-time Himalayan trekkers who want honest altitude pacing, steady confidence, and a Nepali woman guide who will say the quiet safety thing out loud.",
   },
   {
@@ -341,7 +341,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["Mardi Himal", "Poon Hill", "Ghandruk homestays"],
     avatar: "LG",
     color: "#66ead6",
-    image: `${IMG}/annapurna-hikers.jpg`,
+    image: `${IMG}/annapurna-women-ridge.jpg`,
     bio: "Lhamo brings village knowledge and practical mountain judgement to women-only groups that want beauty, culture, and a walking pace that leaves room for the place itself.",
   },
   {
@@ -357,7 +357,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["Langtang Valley", "Helambu", "Overland contingency planning"],
     avatar: "NT",
     color: "#14110f",
-    image: `${IMG}/snowy-everest-route.jpg`,
+    image: `${IMG}/langtang-women-high-valley.jpg`,
     bio: "Nima handles route buffers, overland logistics, and practical safety checks so the Nepali women guide team can keep the group present and cared for.",
   },
   {
@@ -373,7 +373,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["First Nepal trek", "Poon Hill sunrise", "Pokhara extensions"],
     avatar: "AR",
     color: "#ff16a2",
-    image: `${IMG}/ghandruk-route.jpg`,
+    image: `${IMG}/ghandruk-women-bloom-trail.jpg`,
     bio: "Asha is the guide for women who want their first Himalayan route to feel brave, realistic, and never performative.",
   },
   {
@@ -389,7 +389,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["Thorong La", "Everest high passes", "Fitness-forward departures"],
     avatar: "PD",
     color: "#66ead6",
-    image: `${IMG}/annapurna-hikers.jpg`,
+    image: `${IMG}/annapurna-women-ridge.jpg`,
     bio: "Pema is the guide for ambitious women who want a stronger route without macho energy: disciplined preparation, honest body checks, and a plan that respects the mountain.",
   },
   {
@@ -405,7 +405,7 @@ export const guideProfiles: GuideProfile[] = [
     specialties: ["Jomsom exits", "Jeep-assisted treks", "Comfort private trips"],
     avatar: "ST",
     color: "#14110f",
-    image: `${IMG}/ghandruk-route.jpg`,
+    image: `${IMG}/ghandruk-women-bloom-trail.jpg`,
     bio: "Sita keeps private trips feeling easy on the surface because the details underneath are handled: permits, transfers, lodge calls, and the soft landings that matter after long days.",
   },
 ];

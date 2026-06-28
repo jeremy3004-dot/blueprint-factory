@@ -15,13 +15,13 @@ export type TrekMapData = {
   visualHook: string;
 };
 
-const IMG = "/alpine-bloom-assets/nepal-public-domain";
+const IMG = "/alpine-bloom-assets/generated-photos";
 
-const everest = `${IMG}/everest-base-camp.jpg`;
-const annapurna = `${IMG}/annapurna-hikers.jpg`;
-const ghandruk = `${IMG}/ghandruk-route.jpg`;
-const snowy = `${IMG}/snowy-everest-route.jpg`;
-const monastery = `${IMG}/tengboche-monastery.jpg`;
+const everest = `${IMG}/everest-women-base-camp.jpg`;
+const annapurna = `${IMG}/annapurna-women-ridge.jpg`;
+const ghandruk = `${IMG}/ghandruk-women-bloom-trail.jpg`;
+const snowy = `${IMG}/langtang-women-high-valley.jpg`;
+const monastery = `${IMG}/tengboche-women-monastery.jpg`;
 
 export const trekRouteGeo: Record<string, TrekMapData> = {
   "everest-base-camp": {

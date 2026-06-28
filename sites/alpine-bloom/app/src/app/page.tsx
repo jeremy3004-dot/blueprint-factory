@@ -7,7 +7,7 @@ import { PhotoCarousel } from "@/components/photo-carousel";
 import { RoutePillNav } from "@/components/route-pill-nav";
 import { trekRoutes } from "@/data/green-pastures";
 
-const IMG = "/alpine-bloom-assets/nepal-public-domain";
+const IMG = "/alpine-bloom-assets/generated-photos";
 
 const routes = [
   {
@@ -15,35 +15,35 @@ const routes = [
     title: "Annapurna Circuit",
     note: "Women-led ridgeline trek · 10 days",
     slug: "annapurna-circuit",
-    image: `${IMG}/annapurna-hikers.jpg`
+    image: `${IMG}/annapurna-women-ridge.jpg`
   },
   {
     n: "02",
     title: "Everest Base Camp",
     note: "Base camp sisterhood · 15 days",
     slug: "everest-base-camp",
-    image: `${IMG}/everest-base-camp.jpg`
+    image: `${IMG}/everest-women-base-camp.jpg`
   },
   {
     n: "03",
     title: "Ghandruk Trail",
     note: "Village trails + bloom season · 7 days",
     slug: "poon-hill-ghandruk",
-    image: `${IMG}/ghandruk-route.jpg`
+    image: `${IMG}/ghandruk-women-bloom-trail.jpg`
   },
   {
     n: "04",
     title: "Tengboche Monastery",
     note: "Sacred high-valley route · 12 days",
     slug: "everest-base-camp",
-    image: `${IMG}/tengboche-monastery.jpg`
+    image: `${IMG}/tengboche-women-monastery.jpg`
   },
   {
     n: "05",
     title: "Langtang Valley",
     note: "Quiet glacial return · 9 days",
     slug: "langtang-valley",
-    image: `${IMG}/snowy-everest-route.jpg`
+    image: `${IMG}/langtang-women-high-valley.jpg`
   }
 ];
 
@@ -78,22 +78,22 @@ const photoSlides = [
   {
     eyebrow: "Khumbu morning",
     title: "Base camp days with altitude handled gently.",
-    image: `${IMG}/everest-base-camp.jpg`,
+    image: `${IMG}/everest-women-base-camp.jpg`,
   },
   {
     eyebrow: "Annapurna ridges",
     title: "Long views, steady women guide pacing.",
-    image: `${IMG}/annapurna-hikers.jpg`,
+    image: `${IMG}/annapurna-women-ridge.jpg`,
   },
   {
     eyebrow: "Village trails",
     title: "Ghandruk, rhododendrons, and soft landings.",
-    image: `${IMG}/ghandruk-route.jpg`,
+    image: `${IMG}/ghandruk-women-bloom-trail.jpg`,
   },
   {
     eyebrow: "High valley quiet",
     title: "Langtang texture without domestic flight risk.",
-    image: `${IMG}/snowy-everest-route.jpg`,
+    image: `${IMG}/langtang-women-high-valley.jpg`,
   },
 ];
 
@@ -310,7 +310,7 @@ export default function Home() {
       {/* FILM */}
       <section className="film shell">
         <div className="filmFrame" data-reveal>
-          <img src={`${IMG}/everest-base-camp.jpg`} alt="Trekkers on the route to Everest Base Camp" />
+          <img src={`${IMG}/everest-women-base-camp.jpg`} alt="Women trekkers on the route to Everest Base Camp" />
           <div className="filmInner">
             <span>Watch the film</span>
             <button className="playBtn" type="button" aria-label="Play route film">
@@ -386,13 +386,13 @@ export default function Home() {
         <div className="grid">
           <div className="founderArt" data-reveal aria-hidden="true">
             <div className="ph ph1">
-              <img src={`${IMG}/annapurna-hikers.jpg`} alt="" />
+              <img src={`${IMG}/annapurna-women-ridge.jpg`} alt="" />
             </div>
             <div className="ph ph2">
-              <img src="/alpine-bloom-assets/rhododendron.jpg" alt="" />
+              <img src={`${IMG}/rhododendron-bloom-detail.jpg`} alt="" />
             </div>
             <div className="ph ph3">
-              <img src={`${IMG}/tengboche-monastery.jpg`} alt="" />
+              <img src={`${IMG}/tengboche-women-monastery.jpg`} alt="" />
             </div>
             <div className="seal">
               With

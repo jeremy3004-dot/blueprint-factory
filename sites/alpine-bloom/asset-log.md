@@ -5,20 +5,20 @@
 - `app/public/alpine-bloom-assets/nepal-public-domain/annapurna-hikers.jpg`
   - Source: Wikimedia Commons, `Hiking to Mount Annapurna,Nepal 2017 (Unsplash).jpg`
   - License noted on source page: CC0 1.0 Public Domain Dedication.
-  - Use: hero scrapbook and Annapurna route card.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
 - `app/public/alpine-bloom-assets/nepal-public-domain/ghandruk-route.jpg`
   - Source: Wikimedia Commons, `Annapurna Base Camp Trekking Route, Ghandruk, Nepal (Unsplash).jpg`
-  - Use: hero scrapbook and Ghandruk route card.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
 - `app/public/alpine-bloom-assets/nepal-public-domain/everest-base-camp.jpg`
   - Source: Wikimedia Commons, `Trek to Everest Base Camp.jpg`
-  - Use: Everest route card and black-framed media feature.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
 - `app/public/alpine-bloom-assets/nepal-public-domain/snowy-everest-route.jpg`
   - Source: Wikimedia Commons, snowy Everest Base Camp route photo.
-  - Use: Langtang-style snowy route card.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
 - `app/public/alpine-bloom-assets/nepal-public-domain/tengboche-monastery.jpg`
   - Source: Wikimedia Commons, Tengboche Monastery on the Everest Base Camp route.
   - License noted on source page: CC0 1.0 Public Domain Dedication.
-  - Use: hero scrapbook, Tengboche route card, founder scrapbook.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
 - `app/public/alpine-bloom-assets/whoa-source/*`
   - Source: extracted from WHOA Travel live page for clone-reference fidelity.
   - Use: pixel-first clone reference and remaining press-logo styling.
@@ -29,7 +29,7 @@
   - Status: needs final license/attribution review before production.
 - `app/public/alpine-bloom-assets/rhododendron.jpg`
   - Source: Wikimedia Commons redirect for `Pink Rhododendron Flower-Annapurna conservation area.jpg`
-  - Use: bloom/polaroid/founder collage.
+  - Use: legacy source/reference file; active app surfaces now use optimized generated Alpine Bloom imagery.
   - Status: needs final license/attribution review before production.
 
 ## Video
@@ -52,8 +52,36 @@
 
 ## Generated Assets
 
+- `app/public/alpine-bloom-assets/generated-photos/ask-alpine-bloom-avatar.jpg`
+  - Source: generated with the built-in image generation workflow from a Green Pastures-style mountain-guide avatar reference direction.
+  - Use: Alpine Bloom concierge avatar in embedded and floating chat.
+  - Optimization: 512px JPEG, metadata stripped, ~43 KB.
+- `app/public/alpine-bloom-assets/generated-photos/everest-women-base-camp.jpg`
+  - Source: generated women-only Everest Base Camp route image.
+  - Use: Everest route cards, route detail, route pills, guide region imagery, map waypoint imagery, and homepage photo surfaces.
+  - Optimization: 1600px JPEG, metadata stripped, ~289 KB.
+- `app/public/alpine-bloom-assets/generated-photos/annapurna-women-ridge.jpg`
+  - Source: generated women-led Annapurna ridge trekking image.
+  - Use: Annapurna route cards, route detail, route pills, guide region imagery, map waypoint imagery, and homepage photo surfaces.
+  - Optimization: 1600px JPEG, metadata stripped, ~203 KB.
+- `app/public/alpine-bloom-assets/generated-photos/ghandruk-women-bloom-trail.jpg`
+  - Source: generated women-only Ghandruk/rhododendron village trail image.
+  - Use: Mardi/Ghandruk route cards, guide region imagery, and homepage route/card surfaces.
+  - Optimization: 1600px JPEG, metadata stripped, ~268 KB.
+- `app/public/alpine-bloom-assets/generated-photos/langtang-women-high-valley.jpg`
+  - Source: generated women-led snowy high-valley/Langtang-style trekking image.
+  - Use: Langtang route cards, route pills, route map waypoints, and carousel surfaces.
+  - Optimization: 1600px JPEG, metadata stripped, ~204 KB.
+- `app/public/alpine-bloom-assets/generated-photos/tengboche-women-monastery.jpg`
+  - Source: generated women travelers and Nepali woman guide near a Himalayan monastery.
+  - Use: Poon Hill/Ghandruk route imagery, monastery route map waypoints, and founder scrapbook.
+  - Optimization: 1600px JPEG, metadata stripped, ~215 KB.
+- `app/public/alpine-bloom-assets/generated-photos/rhododendron-bloom-detail.jpg`
+  - Source: generated Himalayan rhododendron bloom detail.
+  - Use: founder scrapbook bloom detail.
+  - Optimization: 1200px JPEG, metadata stripped, ~150 KB.
 - CSS scrapbook hero, route polaroids, handwritten labels, press logos, route cards, founder collage, and black media frame.
-- Feature-page UI surfaces for route explorer, route dossiers, booking proposal form, planner concierge, FAQ, and admin demo operations. These reuse the existing local Nepal image set; no new external assets were added for the feature port.
+- Feature-page UI surfaces for route explorer, route dossiers, booking proposal form, planner concierge, FAQ, and admin demo operations now consume the optimized generated Alpine Bloom photo set, while the top homepage hero image remains unchanged per direction.
 - Interactive route maps use copied/adapted coordinate and waypoint data from the local Green Pastures feature donor, rendered with Leaflet plus Esri imagery/topographic tiles and Alpine Bloom's hot pink/white/black route styling.
 - Map review screenshots:
   - `screenshots/desktop-route-map-leaflet.png`

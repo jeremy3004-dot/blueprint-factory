@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { Concierge } from "@/components/concierge";
+import { ConciergeAvatarIcon } from "@/components/concierge-avatar-icon";
 import { analytics } from "@/lib/analytics";
 
 export function FloatingConcierge() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   function toggleOpen() {
@@ -24,6 +27,8 @@ export function FloatingConcierge() {
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, []);
+
+  if (pathname === "/planner") return null;
 
   return (
     <div className="floatingConcierge">
@@ -47,6 +52,9 @@ export function FloatingConcierge() {
         aria-controls="floating-concierge-panel"
         onClick={toggleOpen}
       >
+        <span className="floatingConciergeAvatar" aria-hidden="true">
+          <ConciergeAvatarIcon />
+        </span>
         <span>Ask Alpine Bloom</span>
         <small>Routes, altitude, women guides</small>
       </button>
