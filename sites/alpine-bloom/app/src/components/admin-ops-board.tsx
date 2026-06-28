@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import type { DragEvent } from "react";
 
 import { routeOptions } from "@/data/ops-demo";
 import type { AdminIdentity } from "@/lib/admin-auth";
+import { analytics } from "@/lib/analytics";
 import type { AssistedBookingDraft, AssistedGuideDraft } from "@/lib/ops-ai";
 import { isWomenOnlyGuideText, sanitizeWomenGuideText, validRouteSlug } from "@/lib/ops-ai";
 import type {
@@ -271,6 +272,10 @@ export function AdminOpsBoard({
   });
   const [isPending, startTransition] = useTransition();
   const setupRequired = !readiness.connected;
+
+  useEffect(() => {
+    analytics.adminViewed();
+  }, []);
 
   const brief = useMemo(() => {
     const firstContact = dashboard.bookings.filter(

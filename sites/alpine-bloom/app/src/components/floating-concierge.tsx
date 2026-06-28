@@ -3,9 +3,18 @@
 import { useEffect, useState } from "react";
 
 import { Concierge } from "@/components/concierge";
+import { analytics } from "@/lib/analytics";
 
 export function FloatingConcierge() {
   const [open, setOpen] = useState(false);
+
+  function toggleOpen() {
+    setOpen((current) => {
+      const next = !current;
+      if (next) analytics.chatOpened({ source: "floating_concierge_button", variant: "floating" });
+      return next;
+    });
+  }
 
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
@@ -36,7 +45,7 @@ export function FloatingConcierge() {
         type="button"
         aria-expanded={open}
         aria-controls="floating-concierge-panel"
-        onClick={() => setOpen((current) => !current)}
+        onClick={toggleOpen}
       >
         <span>Ask Alpine Bloom</span>
         <small>Routes, altitude, women guides</small>

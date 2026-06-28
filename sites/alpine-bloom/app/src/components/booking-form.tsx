@@ -3,6 +3,7 @@
 import { useMemo, useState, useTransition } from "react";
 
 import { trekRoutes } from "@/data/green-pastures";
+import { analytics } from "@/lib/analytics";
 import type { BookingApiResult, BookingFormValues } from "@/lib/ops-types";
 
 const addOns = [
@@ -54,6 +55,24 @@ export function BookingForm({ initialRouteSlug }: { initialRouteSlug?: string })
     }));
   }
 
+  function trackBookingResult(payload: BookingApiResult, status: number) {
+    const properties = {
+      routeSlug: values.routeSlug,
+      groupSize: values.groupSize,
+      addonCount: values.addons.length,
+      provider: payload.provider,
+      stored: payload.stored,
+      status,
+    };
+
+    if (status >= 200 && status < 300 && payload.accepted) {
+      analytics.bookingSubmitted(properties);
+      return;
+    }
+
+    analytics.bookingSubmissionFailed(properties);
+  }
+
   return (
     <section className="bookingLayout shell">
       <form
@@ -62,12 +81,32 @@ export function BookingForm({ initialRouteSlug }: { initialRouteSlug?: string })
           event.preventDefault();
           setResult(null);
           startTransition(async () => {
-            const response = await fetch("/api/book", {
-              method: "POST",
-              headers: { "content-type": "application/json" },
-              body: JSON.stringify(values),
-            });
-            setResult((await response.json()) as BookingApiResult);
+            try {
+              const response = await fetch("/api/book", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(values),
+              });
+              const payload = (await response.json()) as BookingApiResult;
+              trackBookingResult(payload, response.status);
+              setResult(payload);
+            } catch {
+              analytics.bookingSubmissionFailed({
+                routeSlug: values.routeSlug,
+                groupSize: values.groupSize,
+                addonCount: values.addons.length,
+                provider: "preview",
+                stored: false,
+                status: 0,
+              });
+              setResult({
+                accepted: false,
+                stored: false,
+                provider: "preview",
+                message:
+                  "We could not send this proposal request just now. Please try again in a moment.",
+              });
+            }
           });
         }}
       >

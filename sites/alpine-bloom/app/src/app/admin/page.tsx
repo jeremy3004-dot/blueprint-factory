@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 
+import { AdminLoginAnalytics } from "@/components/analytics-provider";
 import { AdminOpsBoard } from "@/components/admin-ops-board";
 import { adminAuthReadiness, getAdminIdentityFromHeaders } from "@/lib/admin-auth";
 import { generateOpsBrief } from "@/lib/ops-ai";
@@ -24,6 +25,7 @@ function AdminLockedState({ loginStatus }: { loginStatus?: string }) {
 
   return (
     <main className="adminPage">
+      <AdminLoginAnalytics />
       <section className="adminLocked shell">
         <div>
           <p className="kicker">Alpine Bloom operations</p>

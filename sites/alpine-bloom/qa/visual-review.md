@@ -107,6 +107,15 @@ Resolved after Phase 4 parity work:
 - Concierge copy and system prompt center women-only Himalayan trips, women-led safety, pacing, trust, altitude support, and Nepali women guide matching.
 - Focused node tests cover provider precedence, Anthropic model selection/request shaping, and assistant formatting.
 
+## Analytics Follow-Up
+
+Resolved after Phase 5 parity work:
+
+- Alpine Bloom now has inert PostHog-style analytics for pageviews, booking submit/fail, chat opened/prompt sent, and admin login/viewed.
+- Analytics remains disabled without `NEXT_PUBLIC_POSTHOG_KEY`, so local preview and unconfigured deployments do not send tracking calls.
+- Booking and concierge events use coarse, privacy-preserving properties only: route slug, group size, add-on count, provider, stored state, variant, message count, and prompt length.
+- Analytics intentionally avoids traveler names, emails, notes, guide names, booking IDs, and raw chat text.
+
 ## Map Follow-Up
 
 Resolved after route-map review:

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 
 import { formatAssistantReply } from "@/lib/chat-format";
+import { analytics } from "@/lib/analytics";
 
 type Message = {
   role: "user" | "assistant";
@@ -16,6 +17,7 @@ const starters = [
 ];
 
 export function Concierge({ variant = "embedded" }: { variant?: "embedded" | "floating" }) {
+  const openedTracked = useRef(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -26,8 +28,21 @@ export function Concierge({ variant = "embedded" }: { variant?: "embedded" | "fl
   const [input, setInput] = useState("");
   const [pending, startTransition] = useTransition();
 
+  function trackOpened(source = `${variant}_concierge`) {
+    if (variant === "floating") return;
+    if (openedTracked.current) return;
+    openedTracked.current = true;
+    analytics.chatOpened({ source, variant });
+  }
+
   function send(prompt: string) {
+    trackOpened(`${variant}_concierge_prompt`);
     const next = [...messages, { role: "user" as const, content: prompt }];
+    analytics.chatPromptSent({
+      variant,
+      promptLength: prompt.length,
+      messageCount: next.length,
+    });
     setMessages(next);
     setInput("");
     startTransition(async () => {
@@ -85,6 +100,7 @@ export function Concierge({ variant = "embedded" }: { variant?: "embedded" | "fl
         <input
           value={input}
           onChange={(event) => setInput(event.target.value)}
+          onFocus={() => trackOpened(`${variant}_concierge_input`)}
           placeholder="Ask about routes, guides, altitude, permits, or dates"
         />
         <button className="btn" type="submit" disabled={!input.trim() || pending}>
