@@ -7,14 +7,14 @@ import "./globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-fraunces",
   axes: ["opsz", "SOFT"],
   display: "swap"
 });
 
 const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-archivo",
   display: "swap"
 });
 

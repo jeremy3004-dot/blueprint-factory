@@ -11,6 +11,7 @@
   --pink-soft: #ffe3f4;
   --mint: #75dec9;
   --mint-deep: #0e6f63;
+  --teal: #0e6f63;
   --pine: #0a3f3a;
   --ink: #14110f;
   --paper: #fbf9f5;
@@ -18,8 +19,8 @@
   --line: #e6e0d5;
   --white: #ffffff;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 
   --measure: 1180px;
   --gutter: clamp(20px, 5vw, 72px);
