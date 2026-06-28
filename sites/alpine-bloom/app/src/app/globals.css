@@ -4143,7 +4143,7 @@ video {
 .floatingConciergeButton {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2px 10px;
+  gap: 2px 12px;
   align-items: center;
   border: 1px solid rgba(255, 22, 162, 0.35);
   border-radius: 999px;
@@ -4151,14 +4151,14 @@ video {
   color: var(--white);
   cursor: pointer;
   box-shadow: 0 16px 40px rgba(255, 22, 162, 0.25);
-  padding: 12px 18px;
+  padding: 10px 20px 10px 12px;
   text-align: left;
 }
 
 .floatingConciergeAvatar {
   grid-row: span 2;
-  width: 46px;
-  height: 46px;
+  width: 62px;
+  height: 62px;
 }
 
 .floatingConciergeButton span {
@@ -4253,12 +4253,12 @@ video {
   }
 
   .floatingConciergeButton {
-    padding: 11px 14px;
+    padding: 9px 14px 9px 10px;
   }
 
   .floatingConciergeAvatar {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
   }
 
   .floatingConciergeButton small {
