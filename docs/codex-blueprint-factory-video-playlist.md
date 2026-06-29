@@ -2,18 +2,18 @@
 
 Research date: 2026-06-29
 
-Use this for onboarding new Blueprint Factory builders. The list is intentionally current: no recommended video should be older than six months from the research date, and Codex-specific videos should skew toward the last three months whenever possible.
+Use this for onboarding new Blueprint Factory builders. This is a curated, lean playlist: official Codex essentials first, then preferred channels for agent workflow, AI coding habits, and product judgment.
 
 ## Hard Rules
 
 - Prefer videos published on or after 2026-03-29.
-- Allow 2025-12-29 through 2026-03-28 only when the topic is stable enough and there is no better recent replacement.
+- Allow 2025-12-29 through 2026-03-28 only for official Codex material or stable workflow concepts.
 - Do not use Figma-required videos, Figma workflows, or Figma-first channels for this onboarding path.
 - Re-check this file monthly. Codex changes fast enough that old tutorials can train the wrong habits.
 
 ## How To Use This Playlist
 
-Give new builders the Codex block first, then the Blueprint Factory craft block. They should watch with this repo open, not as passive homework.
+Give new builders the Codex essentials first, then the three preferred-channel blocks. They should watch with this repo open, not as passive homework.
 
 After each block, they should do one small factory exercise:
 
@@ -31,153 +31,92 @@ They should read these local docs alongside the videos:
 - `factory/playbooks/green-pastures-pack.md`
 - `factory/qa/beauty-pass-rubric.md`
 
-## Core Codex Playlist
+## Core Codex Essentials
 
-### Last 90 Days
+Keep this block small and official. These are the "what is Codex and how should I think about it" videos.
 
-1. [Ultimate Guide To ChatGPT Codex for Everyday People](https://www.youtube.com/watch?v=BU3llOqYy8k) - Skill Leap AI, 2026-06-22
-   - Good plain-English overview for new team members who are not already agent power users.
-   - Watch for: how to frame tasks, review output, and stay in control.
-
-2. [OpenAI Codex in 7 Minutes](https://www.youtube.com/watch?v=2OnmwXm6N4U) - Developers Digest, 2026-06-14
-   - Fast orientation before longer tutorials.
-   - Watch for: the mental model of Codex as a coding agent, not an autocomplete tool.
-
-3. [How to Use OpenAI Codex Like a Pro](https://www.youtube.com/watch?v=rMh_dt41Cbw) - Love Babbar, 2026-06-09
-   - Strong practical workflow video.
-   - Watch for: prompting, iteration, and checking work.
-
-4. [Introducing Sites in Codex](https://www.youtube.com/watch?v=VRvC5smyzso) - OpenAI, 2026-06-05
-   - Official, current Codex feature context.
+1. [Introducing Sites in Codex](https://www.youtube.com/watch?v=VRvC5smyzso) - OpenAI, 2026-06-05
    - Watch for: how Codex handles web/app surfaces and preview-style workflows.
 
-5. [OpenAI Codex: Build Apps That Work For You 24/7](https://www.youtube.com/watch?v=tUeSxXHmE9w) - Greg Isenberg, 2026-06-04
-   - Useful for thinking beyond one-off code edits.
-   - Watch for: agentic product-building habits and delegation.
+2. [How PMs use the Codex app](https://www.youtube.com/watch?v=6OiE0jIY93c) - OpenAI, 2026-02-09
+   - Watch for: turning product intent into concrete work for Codex.
 
-6. [The Ultimate Codex Tutorial: How To Use Codex For Beginners 2026](https://www.youtube.com/watch?v=0TitiOk7hbI) - Charlie Chang, 2026-05-24
-   - Good beginner-to-practical walkthrough.
-   - Watch for: the full flow from task setup to review.
+3. [Multitasking with the Codex app](https://www.youtube.com/watch?v=9ohXlkbXiM4) - OpenAI, 2026-02-06
+   - Watch for: parallel work, task boundaries, and review checkpoints.
 
-7. [Codex is INSANE - Everything New in 10 Minutes](https://www.youtube.com/watch?v=t2G0L0cqktw) - Tech With Tim, 2026-05-08
-   - Good update-oriented overview.
-   - Watch for: what changed recently and what behaviors old tutorials miss.
+4. [Automate tasks with the Codex app](https://www.youtube.com/watch?v=xHnlzAPD9QI) - OpenAI, 2026-02-03
+   - Watch for: repeatable task delegation and follow-through.
 
-8. [OpenAI Codex Full Course 4 Hours: Build & Ship](https://www.youtube.com/watch?v=j7d5rs0iMlE) - Aniket Panjwani, 2026-05-02
-   - Use as the longer weekend video for builders who need depth.
-   - Watch for: build, ship, review, and iteration loops.
+5. [OpenAI Codex docs](https://developers.openai.com/codex/app) - OpenAI, living docs
+   - Not a video, but required. Use this when any video conflicts with current product behavior.
 
-9. [Codex Full Course 2026: The NEW Best AI Coding Tool](https://www.youtube.com/watch?v=KXIdYEdOPys) - Riley Brown, 2026-04-20
-   - Good power-user pass after the basics.
-   - Watch for: repeated task loops and practical agent workflow.
+## Matthew Berman: Agent Workflow And Loops
 
-10. [CODEX FULL COURSE: From Zero to Deployed App](https://www.youtube.com/watch?v=hoCWD1aI60Y) - David Ondrej, 2026-04-11
-    - Useful for seeing a fuller product path.
-    - Watch for: scope control, deployment thinking, and end-to-end proof.
+Use this block to help new builders understand agent loops, tool discovery, and the broader AI-agent world without turning onboarding into generic hype.
 
-11. [OpenAI Codex Full Tutorial in 2026 | using Codex from Scratch](https://www.youtube.com/watch?v=69m2qGsyAec) - Arsh Goyal, 2026-03-29
-    - Boundary item: exactly at the 90-day preference line.
-    - Watch for: the beginner setup flow and what to skip once they are comfortable.
+1. ["The best thing since OpenClaw" (Hermes Tutorial)](https://www.youtube.com/watch?v=TML-0HmxWCE) - Matthew Berman, 2026-06-28
+   - Watch for: quick setup mindset, tool orchestration, and why agent workflows are becoming normal.
 
-### Still Current, But Older Than 90 Days
+2. [You NEED to try these 12 open-source AI projects RIGHT NOW](https://www.youtube.com/watch?v=2lmBj_XQq0I) - Matthew Berman, 2026-06-24
+   - Watch for: how to scout useful tools before building from scratch.
 
-12. [How PMs use the Codex app](https://www.youtube.com/watch?v=6OiE0jIY93c) - OpenAI, 2026-02-09
-    - Official Codex app workflow for non-engineering task framing.
-    - Watch for: using Codex to turn product intent into concrete work.
+3. [7 INSANE loops you need to try right now](https://www.youtube.com/watch?v=F4a8aMLb678) - Matthew Berman, 2026-06-19
+   - Watch for: loop thinking, bounded iteration, and repeatable agent workflows.
 
-13. [Multitasking with the Codex app](https://www.youtube.com/watch?v=9ohXlkbXiM4) - OpenAI, 2026-02-06
-    - Still inside the six-month window and useful for team workflow.
-    - Watch for: parallel work, task boundaries, and review checkpoints.
+4. [I figured out the best way to vibe code](https://www.youtube.com/watch?v=wwfJlSF34n8) - Matthew Berman, 2026-06-18
+   - Watch for: how to steer an AI coding session without letting it wander.
 
-14. [Automate tasks with the Codex app](https://www.youtube.com/watch?v=xHnlzAPD9QI) - OpenAI, 2026-02-03
-    - Use for understanding Codex beyond manual coding.
-    - Watch for: repeatable task delegation and follow-through.
+5. [Only the best are using them...](https://www.youtube.com/watch?v=dMrm2jAyrKM) - Matthew Berman, 2026-06-09
+   - Watch for: the practical value of loops and repeatable patterns.
 
-## Blueprint Factory Craft Playlist
+## Robin Ebers: AI Coding Discipline
 
-These are for the kind of sites this factory builds: donor-first, high-craft, animated, responsive, and shipped from code. None of these should be used as a Figma workflow.
+Use this block for the habits we want inside Blueprint Factory: prompt clarity, review discipline, smaller steps, and not trusting AI output blindly.
 
-### Design Judgment And Donor Analysis
+1. [5 Things I Wish I Knew Before I Started AI Coding](https://www.youtube.com/watch?v=iTB5moCuQPY) - Robin Ebers, 2026-06-11
+   - Watch for: beginner mistakes and practical guardrails.
 
-1. [Design trends that kill sales](https://www.youtube.com/watch?v=lpqTva43Bxo) - Malewicz, 2026-06-23
-   - Strong critique training for avoiding pretty-but-weak pages.
-   - Watch for: which visual trends hurt clarity, trust, and conversion.
+2. [Why I Switched Back to Claude Code](https://www.youtube.com/watch?v=QvW4lb1pwrU) - Robin Ebers, 2026-06-03
+   - Watch for: judging tools by workflow fit, not brand loyalty.
 
-2. [6 EASY Tips to 10x Any Site's Design](https://www.youtube.com/watch?v=pbhLsV-Dyho) - Self-Made Web Designer, 2026-03-05
-   - Slightly older than 90 days, but inside six months and directly useful.
-   - Watch for: fast layout and polish checks that map to Beauty Pass.
+3. [STOP Reviewing AI Code Yourself (Use THIS)](https://www.youtube.com/watch?v=MlMXUhKL7OY) - Robin Ebers, 2026-05-14
+   - Watch for: using AI/code review loops to catch weak output.
 
-3. [Web Design Trends 2026](https://www.youtube.com/watch?v=meACC0ud-7o) - Tilda, 2025-12-30
+4. [Why I Trust This AI to Build Apps for My Business](https://www.youtube.com/watch?v=YgK1TE_OM1A) - Robin Ebers, 2026-04-30
+   - Watch for: when to trust the agent, when to verify, and how to keep business context visible.
+
+5. [3 Prompt Mistakes That Kill 97% of AI Apps](https://www.youtube.com/watch?v=56Ub0FY5t6w) - Robin Ebers, 2025-12-18
    - Boundary item: keep only while it remains inside the six-month rule.
-   - Watch for: current visual language and what to borrow from references.
+   - Watch for: prompt mistakes that create fragile, generic apps.
 
-### Next.js, Tailwind, And React Surfaces
+## Starter Story: Product And Customer Judgment
 
-4. [Next.js Tutorial for Beginners | NextJS Full Course](https://www.youtube.com/watch?v=jVsTUGRgy7s) - ProgrammingKnowledge, 2026-03-24
-   - Good recent Next.js refresher for newer builders.
-   - Watch for: app structure, routing, and page composition.
+Use this block to keep builders grounded in real businesses. Blueprint Factory sites should not just look good; they should support a clear offer, audience, conversion path, and operational reality.
 
-5. [Next.js Crash Course - Full Stack TypeScript, React 19, Postgres & Prisma](https://www.youtube.com/watch?v=A7EiK5D4A-Q) - Code with Ahsan, 2026-03-12
-   - Use when someone needs a fuller modern app context.
-   - Watch for: TypeScript structure and full-stack boundaries.
+1. [We Built This $20K/Month App While In College](https://www.youtube.com/watch?v=DiRxTfnHTaY) - Starter Story, 2026-06-28
+   - Watch for: simple product thinking and how small teams ship.
 
-6. [Tailwind CSS v4 Tutorial - What It Is & Why It Changed Everything](https://www.youtube.com/watch?v=m-IGibAiJo8) - Pixel Grid UI, 2026-04-25
-   - Best current Tailwind v4 orientation from this research pass.
-   - Watch for: CSS-first configuration and what old Tailwind tutorials get wrong.
+2. [I Turned This Spreadsheet Into a $30K/Month Micro-SaaS](https://www.youtube.com/watch?v=d8PdJJcEtE0) - Starter Story, 2026-06-24
+   - Watch for: turning a boring workflow into a clear product.
 
-7. [Tailwind CSS v4 for Beginners | Full Course 2026](https://www.youtube.com/watch?v=9I3JQ1q4IMk) - Coder Coder, 2026-03-14
-   - Practical foundation for the styling layer.
-   - Watch for: utility composition and responsive layout.
+3. [I Built a $10K/Month App With This One System](https://www.youtube.com/watch?v=-VlJIgj6gM4) - Starter Story, 2026-06-21
+   - Watch for: repeatable systems, not one-off cleverness.
 
-8. [Build a landing page using React, TypeScript, Tailwind CSS and Motion](https://www.youtube.com/watch?v=QUhK8sH1BFE) - keen coding, 2026-06-06
-   - Directly maps to Blueprint Factory page-building work.
-   - Watch for: code-first landing page structure and small motion details.
+4. [I Built A $30K/Month App: Here's My Exact Process](https://www.youtube.com/watch?v=P4QodeA_lQ0) - Starter Story, 2026-05-31
+   - Watch for: customer-first process and offer clarity.
 
-### Motion And Signature Moments
-
-9. [GSAP Full Course | Beginner to Advanced + Animated Website Project](https://www.youtube.com/watch?v=w5M638OxVhE) - APPROX Coding, 2026-03-31
-   - Best recent GSAP full-course candidate from this pass.
-   - Watch for: timelines, sequencing, and how a signature moment is built.
-
-10. [Build a Stunning Animated Carousel in React](https://www.youtube.com/watch?v=YQTGYpDU6WE) - Works on my machine, 2026-03-27
-    - Near the 90-day line, useful for component-level motion.
-    - Watch for: interaction states and motion restraint.
-
-11. [Build Scroll-Controlled Text Animations with GSAP ScrollTrigger in React](https://www.youtube.com/watch?v=iXL5ENS7vL4) - CodeRef, 2026-02-22
-    - Older than 90 days, still inside six months and relevant to scroll-heavy sites.
-    - Watch for: scroll timing, text reveals, and React integration.
-
-12. [How to build a stacking card effect on scroll in React](https://www.youtube.com/watch?v=BYZW3Ok3n10) - xplodivity, 2026-01-31
-    - Older than 90 days, still inside six months.
-    - Watch for: section rhythm and card choreography.
+5. [I Built A Micro-Version Of A $1B SaaS. Now I Make $50K/Month](https://www.youtube.com/watch?v=Nnpz1wsTjBI) - Starter Story, 2026-05-28
+   - Watch for: niche selection and focused scope.
 
 ## Channels To Watch
 
-Use these channels as discovery feeds, not as permission to watch stale videos. Sort by newest first and keep the same six-month rule.
-
-### Codex And Agent Work
+Sort by newest first and keep the same freshness rule.
 
 - [OpenAI Developers / Codex videos](https://developers.openai.com/codex/videos)
 - [OpenAI Codex docs](https://developers.openai.com/codex/app)
-- [Developers Digest](https://www.youtube.com/@DevelopersDigest)
-- [Riley Brown](https://www.youtube.com/@rileybrownai/videos)
-- [Tech With Tim](https://www.youtube.com/@TechWithTim)
-- [Skill Leap AI](https://www.youtube.com/@SkillLeapAI)
-
-### Code-First Web Craft
-
-- [JavaScript Mastery](https://www.youtube.com/@javascriptmastery)
-- [PedroTech](https://www.youtube.com/@PedroTechnologies)
-- [Coder Coder](https://www.youtube.com/@TheCoderCoder)
-- [Pixel Grid UI](https://www.youtube.com/@PixelGridUI)
-- [GSAP Learning](https://www.youtube.com/@GreenSockLearning)
-- [Malewicz](https://www.youtube.com/@MalewiczHype)
-- [Self-Made Web Designer](https://www.youtube.com/@SelfMadeWebDesigner)
-
-### Non-YouTube Reference Feed
-
-- [Codrops](https://tympanus.net/codrops/)
-  - Keep this because Blueprint Factory needs creative frontend references. Use it for reference analysis, animation patterns, and visual ideas, not as a Figma workflow.
+- [Matthew Berman](https://youtube.com/@matthew_berman)
+- [Starter Story](https://youtube.com/@starterstory)
+- [Robin Ebers](https://youtube.com/@robinebers)
 
 ## Blueprint Factory Training Prompt
 
@@ -214,6 +153,6 @@ A trained builder should be able to say:
 - The first pass clones structure and craft; the second pass translates brand, copy, assets, and goals.
 - We do not use Figma as part of this factory onboarding path.
 - Every site needs brief, art direction, asset log, deploy notes, screenshots, and visual review.
-- Animation matters only when it supports the signature moment.
+- Agent loops are useful only when they are bounded and reviewed.
 - A task is not done until the build, screenshots, motion evidence, and Beauty Pass prove it.
 
