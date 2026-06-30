@@ -29,6 +29,7 @@ Meaning:
 - Clone the visual donor first.
 - Capture donor desktop and mobile screenshots.
 - Write the donor topology.
+- Write the clone implementation plan: pages, flows, states, animation mechanisms, assets, and stack decision.
 - Translate the donor into the new brand.
 - Build, screenshot, motion-check, beauty-pass, and prepare for review.
 
@@ -126,6 +127,8 @@ Every site should have:
 - `deploy.md`
 - `qa/run-log.md`
 - `qa/visual-review.md`
+- `references/reference-first/topology.md`
+- `references/reference-first/clone-plan.md`
 - desktop and mobile screenshots
 - motion capture when animation or scroll matters
 
@@ -136,6 +139,7 @@ Before building or adapting, save:
 - `sites/<slug>/references/reference-first/*-desktop.png`
 - `sites/<slug>/references/reference-first/*-mobile.png`
 - `sites/<slug>/references/reference-first/topology.md`
+- `sites/<slug>/references/reference-first/clone-plan.md`
 
 `topology.md` should describe:
 
@@ -147,6 +151,15 @@ Before building or adapting, save:
 - image/video strategy
 - interaction and motion model
 - exact moves to borrow
+
+`clone-plan.md` should describe:
+
+- all pages and routes that need cloning
+- every user flow and state to reproduce
+- animation and interaction mechanisms
+- responsive behavior across desktop, tablet, and mobile
+- asset/font/video strategy and licensing notes
+- the smallest correct implementation stack, including tools explicitly not needed
 
 ## Capability Packs
 

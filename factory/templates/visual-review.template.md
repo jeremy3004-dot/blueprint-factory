@@ -12,6 +12,16 @@ Primary donor:
 
 Secondary references:
 
+## Clone Plan Coverage
+
+Pages/routes:
+
+Flows/states:
+
+Animation mechanisms:
+
+Stack fit:
+
 ## Scores
 
 ## Highest Impact Next Fix

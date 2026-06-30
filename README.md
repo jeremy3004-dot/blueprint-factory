@@ -16,6 +16,7 @@ Required reference evidence:
 - at least one `*-desktop.png`
 - at least one `*-mobile.png`
 - `topology.md` describing the donor structure, interaction model, and moves to translate
+- `clone-plan.md` describing all pages, flows, states, animation mechanisms, assets, and the implementation stack needed to rebuild the donor faithfully
 
 Only after that should the site move into art direction, build, screenshots, motion, and Beauty Pass.
 

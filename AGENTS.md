@@ -9,6 +9,8 @@ Every site must have:
 - `art-direction.md` with one named signature moment
 - `asset-log.md`
 - `deploy.md`
+- `references/reference-first/topology.md`
+- `references/reference-first/clone-plan.md`
 - desktop and mobile screenshots
 - motion capture when animation or scroll experience matters
 - visual review
@@ -19,6 +21,7 @@ Every site must have:
 - Verify the clone against donor desktop and mobile screenshots before translating it into the client brand, assets, copy, and goals.
 - If no donor URL is provided and Jeremy asks the agent to choose, research at least three high-quality sector references and choose one 10/10 donor structure before build work.
 - Use website cloning/reverse-engineering discipline for the donor: capture desktop/mobile screenshots, map the page topology, identify the interaction model, and extract the layout rhythm, motion pattern, typography hierarchy, asset strategy, and responsive behavior.
+- Write `references/reference-first/clone-plan.md` before art direction or build work. It must list all pages/routes, all user flows, observed states, animation mechanisms, assets/fonts/video needs, and the smallest correct implementation stack.
 - Do not copy brand identity or protected content blindly for production. Clone the proven structure and quality bar first, then replace protected assets/content during the translation pass.
 - `art-direction.md` must name the primary donor, secondary references, and the exact moves being borrowed.
 - Beauty Pass must compare the build against the donor screenshots, not just against the agent's own taste.

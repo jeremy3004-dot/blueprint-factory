@@ -1,6 +1,14 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { hasNamedSignatureMoment, hasPassingVisualReview, nextActionForStatus, requiredSiteFiles, slugify } from "./blueprint";
+import {
+  hasConcreteClonePlan,
+  hasNamedSignatureMoment,
+  hasPassingVisualReview,
+  nextActionForStatus,
+  requiredReferenceFirstFiles,
+  requiredSiteFiles,
+  slugify
+} from "./blueprint";
 
 describe("slugify", () => {
   it("normalizes names into site slugs", () => {
@@ -18,6 +26,45 @@ describe("requiredSiteFiles", () => {
       "sites/demo/qa/run-log.md",
       "sites/demo/qa/visual-review.md"
     ]);
+  });
+});
+
+describe("requiredReferenceFirstFiles", () => {
+  it("requires donor screenshots, topology, and clone implementation planning", () => {
+    assert.deepEqual(requiredReferenceFirstFiles("demo"), [
+      "sites/demo/references/reference-first/topology.md",
+      "sites/demo/references/reference-first/clone-plan.md"
+    ]);
+  });
+});
+
+describe("hasConcreteClonePlan", () => {
+  it("fails when the implementation stack decision is still blank", () => {
+    const markdown = [
+      "# Clone Plan: demo",
+      "",
+      "## 6. Implementation Stack Decision",
+      "",
+      "Decision:",
+      "",
+      "## 7. Tooling Explicitly Not Needed"
+    ].join("\n");
+
+    assert.equal(hasConcreteClonePlan(markdown), false);
+  });
+
+  it("passes when the clone plan names a concrete build stack", () => {
+    const markdown = [
+      "# Clone Plan: demo",
+      "",
+      "## 6. Implementation Stack Decision",
+      "",
+      "Decision: Build in TypeScript + Next.js App Router + React + Tailwind/global CSS, with CSS transitions and a tiny IntersectionObserver layer for scroll reveals.",
+      "",
+      "## 7. Tooling Explicitly Not Needed"
+    ].join("\n");
+
+    assert.equal(hasConcreteClonePlan(markdown), true);
   });
 });
 
@@ -161,6 +208,36 @@ describe("hasPassingVisualReview", () => {
     assert.equal(hasPassingVisualReview(markdown), false);
   });
 
+  it("fails when clone plan coverage is missing", () => {
+    const markdown = [
+      "# Visual Review: demo",
+      "",
+      "## Latest Verdict",
+      "",
+      "Status: READY_FOR_REVIEW",
+      "",
+      "## Signature Moment Check",
+      "Lands in motion.",
+      "",
+      "## Reference Comparison",
+      "Named reference gaps are closed.",
+      "",
+      "## Scores",
+      "- First-screen impact: 4",
+      "- Signature moment: 4",
+      "- Typography: 4",
+      "- Layout and rhythm: 4",
+      "- Motion craft: 3",
+      "- Color and imagery: 4",
+      "- Mobile: 4",
+      "- Coherence: 4",
+      "",
+      "## Highest Impact Next Fix",
+      "Human review before production deploy."
+    ].join("\n");
+    assert.equal(hasPassingVisualReview(markdown), false);
+  });
+
   it("passes only with an explicit latest verdict and eight acceptable scores", () => {
     const markdown = [
       "# Visual Review: demo",
@@ -174,6 +251,9 @@ describe("hasPassingVisualReview", () => {
       "",
       "## Reference Comparison",
       "Named reference gaps are closed.",
+      "",
+      "## Clone Plan Coverage",
+      "Pages, flows, motion mechanisms, and stack fit are covered.",
       "",
       "## Scores",
       "- First-screen impact: 4",

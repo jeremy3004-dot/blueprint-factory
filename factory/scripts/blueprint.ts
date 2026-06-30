@@ -47,6 +47,13 @@ export function requiredSiteFiles(siteSlug: string): string[] {
   ];
 }
 
+export function requiredReferenceFirstFiles(siteSlug: string): string[] {
+  return [
+    `sites/${siteSlug}/references/reference-first/topology.md`,
+    `sites/${siteSlug}/references/reference-first/clone-plan.md`
+  ];
+}
+
 export function hasNamedSignatureMoment(markdown: string): boolean {
   const match = markdown.match(/## 3\. The signature moment \(required\)([\s\S]*?)(\n## |\n# |$)/);
   if (!match) return false;
@@ -65,12 +72,31 @@ export function hasNamedSignatureMoment(markdown: string): boolean {
   return firstContentLine.length > 20;
 }
 
+export function hasConcreteClonePlan(markdown: string): boolean {
+  const match = markdown.match(/## 6\. Implementation Stack Decision([\s\S]*?)(\n## |\n# |$)/);
+  if (!match) return false;
+
+  const decisionLine = match[1]
+    .split("\n")
+    .map((line) => line.trim())
+    .find((line) => line.toLowerCase().startsWith("decision:"));
+
+  if (!decisionLine) return false;
+
+  const decision = decisionLine.replace(/^decision:\s*/i, "").trim();
+  if (decision.length <= 40) return false;
+  if (decision.includes("<") || decision.toLowerCase().startsWith("todo")) return false;
+
+  return /\b(TypeScript|Next\.js|React|Tailwind|CSS|GSAP|Three\.js|WebGL|Lottie|Rive|Supabase|CMS|database)\b/i.test(decision);
+}
+
 export function hasPassingVisualReview(markdown: string): boolean {
   const latestVerdict = markdown.match(/## Latest Verdict\s+Status:\s*([A-Z_]+)/);
   if (!latestVerdict || latestVerdict[1] !== "READY_FOR_REVIEW") return false;
 
   if (!markdown.includes("## Signature Moment Check")) return false;
   if (!markdown.includes("## Reference Comparison")) return false;
+  if (!markdown.includes("## Clone Plan Coverage")) return false;
   if (!markdown.includes("## Highest Impact Next Fix")) return false;
   if (/Status:\s*(NOT_READY|NEEDS_HUMAN_BEAUTY_PASS|FAILED)/.test(markdown)) return false;
 
@@ -82,7 +108,12 @@ export function hasPassingVisualReview(markdown: string): boolean {
 
 async function hasReferenceFirstEvidence(siteSlug: string): Promise<boolean> {
   const referenceDir = path.join(rootDir, "sites", siteSlug, "references", "reference-first");
-  if (!(await fileExists(`sites/${siteSlug}/references/reference-first/topology.md`))) return false;
+  for (const requiredFile of requiredReferenceFirstFiles(siteSlug)) {
+    if (!(await fileExists(requiredFile))) return false;
+  }
+
+  const clonePlanPath = path.join(rootDir, "sites", siteSlug, "references", "reference-first", "clone-plan.md");
+  if (!hasConcreteClonePlan(await readFile(clonePlanPath, "utf8"))) return false;
 
   try {
     const entries = await readdir(referenceDir);
@@ -160,7 +191,7 @@ export function nextActionForStatus(status: SiteStatus): NextAction {
 async function createSite(siteSlug: string) {
   await mkdir(path.join(rootDir, "sites", siteSlug, "qa", "motion"), { recursive: true });
   await mkdir(path.join(rootDir, "sites", siteSlug, "assets"), { recursive: true });
-  await mkdir(path.join(rootDir, "sites", siteSlug, "references"), { recursive: true });
+  await mkdir(path.join(rootDir, "sites", siteSlug, "references", "reference-first"), { recursive: true });
   await mkdir(path.join(rootDir, "sites", siteSlug, "source-notes"), { recursive: true });
   await mkdir(path.join(rootDir, "sites", siteSlug, "screenshots"), { recursive: true });
   await copyTemplateDirectory(
@@ -174,6 +205,7 @@ async function createSite(siteSlug: string) {
   await copyTemplate("deploy.template.md", `sites/${siteSlug}/deploy.md`, siteSlug);
   await copyTemplate("run-log.template.md", `sites/${siteSlug}/qa/run-log.md`, siteSlug);
   await copyTemplate("visual-review.template.md", `sites/${siteSlug}/qa/visual-review.md`, siteSlug);
+  await copyTemplate("clone-plan.template.md", `sites/${siteSlug}/references/reference-first/clone-plan.md`, siteSlug);
 }
 
 async function siteStatus(siteSlug: string): Promise<SiteStatus> {
@@ -273,7 +305,7 @@ async function main() {
       await createSite(siteSlug);
       await appendRunLog(
         siteSlug,
-        "- Created site scaffold.\n- Next gate: run reference-first research and save donor screenshots plus topology notes under `references/reference-first/`."
+        "- Created site scaffold.\n- Next gate: run reference-first research and save donor screenshots, topology notes, and the clone plan under `references/reference-first/`."
       );
       console.log(`Created sites/${siteSlug}`);
       status = await siteStatus(siteSlug);
@@ -290,6 +322,7 @@ async function main() {
       console.log(`NEEDS_REFERENCE_FIRST: research at least three strong references for ${siteSlug}.`);
       console.log(`Save donor screenshots to sites/${siteSlug}/references/reference-first/ with *-desktop.png and *-mobile.png names.`);
       console.log(`Write the donor structure and borrowed moves to sites/${siteSlug}/references/reference-first/topology.md.`);
+      console.log(`Write the page inventory, flow map, animation audit, and stack decision to sites/${siteSlug}/references/reference-first/clone-plan.md.`);
       console.log("Then update art-direction.md with the primary donor, secondary references, and exact moves being translated.");
       return;
     }
@@ -417,6 +450,14 @@ async function main() {
     }
     if (!(await directoryHasFiles(`sites/${siteSlug}/qa/motion`))) {
       missingEvidence.push("qa/motion capture");
+    }
+    for (const requiredFile of requiredReferenceFirstFiles(siteSlug)) {
+      if (!(await fileExists(requiredFile))) missingEvidence.push(requiredFile);
+    }
+    const clonePlanRelativePath = `sites/${siteSlug}/references/reference-first/clone-plan.md`;
+    const clonePlanPath = path.join(rootDir, clonePlanRelativePath);
+    if ((await fileExists(clonePlanRelativePath)) && !hasConcreteClonePlan(await readFile(clonePlanPath, "utf8"))) {
+      missingEvidence.push("concrete clone-plan stack decision");
     }
 
     const reviewPath = path.join(rootDir, "sites", siteSlug, "qa", "visual-review.md");

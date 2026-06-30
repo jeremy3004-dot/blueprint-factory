@@ -61,6 +61,7 @@ List one primary 10/10 donor site and two to four secondary references, each wit
 - Primary donor: <name or url>. Clone-derived structure: <hero/section/motion/layout pattern to borrow>.
 - Donor screenshots captured: desktop <path>; mobile <path>.
 - Donor topology notes: <path>.
+- Donor clone plan: <path>. Stack decision: <one-sentence implementation stack from clone-plan.md>.
 
 - Reference 1: <name or url>. Steal: <the specific move>.
 - Reference 2: <name or url>. Steal: <the specific move>.

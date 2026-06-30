@@ -8,6 +8,7 @@ The Beauty Pass exists to catch the failure mode an AI builder is most prone to:
 
 - The site's `art-direction.md`, especially the signature moment and the reference comparanda.
 - Primary donor screenshots and topology notes from the reference-first clone pass.
+- The donor `clone-plan.md`, including page inventory, flow map, animation audit, asset strategy, and stack decision.
 - Desktop and mobile screenshots from `blueprint screenshots`.
 - A scroll-through video capture from `blueprint motion`, saved under `qa/motion/`.
 
@@ -24,6 +25,8 @@ If it is missing, weak, or feels like decorative filler, the site fails this che
 For each reference in `art-direction.md`, compare the site against the specific thing that reference was chosen to teach. Write the comparison in `qa/visual-review.md`.
 
 The primary donor comparison is mandatory. If there is no donor screenshot/topology evidence, the site cannot pass. The goal is not pixel-perfect plagiarism; the goal is to prove the build inherited a 10/10 structure, section rhythm, and interaction model before translating it into the client brand.
+
+The clone plan comparison is also mandatory. If the clone plan named inner pages, flows, states, animations, or stack requirements that were not built or explicitly deferred, the site cannot pass.
 
 For each one, record:
 
@@ -57,12 +60,14 @@ Any one of these blocks a pass:
 - Purposeless motion that does not serve the concept.
 - Mobile treated as an afterthought.
 - Inner pages or sections that feel like a different, lesser site than the homepage.
+- Missing donor-critical pages, flows, states, or animations named in `clone-plan.md`.
+- A build stack that is either too weak for the donor's real interactions or too heavy without a reason.
 
 ## The Loop
 
 1. Capture desktop and mobile screenshots and the scroll-through video.
 2. Run the signature-moment check. If it fails, that is the issue to fix.
-3. Run the reference comparison and score the dimensions.
+3. Run the reference and clone-plan comparison, then score the dimensions.
 4. Pick the single highest-impact issue.
 5. Make one focused change.
 6. Rebuild, recapture, and review again.
@@ -83,6 +88,7 @@ In `qa/visual-review.md`, for each pass:
 - The motion capture file referenced.
 - The signature-moment check result.
 - The reference comparison notes.
+- The clone-plan coverage notes.
 - The dimension scores.
 - The one change made this pass.
 - Whether the site now passes, has stalled, or needs the human gate.
