@@ -1,0 +1,1336 @@
+{
+  "title": "Luxury Resorts & Private Homes Worldwide | One&Only Resorts",
+  "location": "https://www.oneandonlyresorts.com/?utm_source=chatgpt.com",
+  "viewport": {
+    "width": 1440,
+    "height": 1100
+  },
+  "bodyClass": "",
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Your One&Only escape, your way",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "72px",
+        "fontWeight": "400",
+        "lineHeight": "90px",
+        "letterSpacing": "-1px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "90px",
+        "width": "1073.33px"
+      }
+    },
+    {
+      "tag": "h2",
+      "text": "Our global destinations",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "56px",
+        "fontWeight": "400",
+        "lineHeight": "72px",
+        "letterSpacing": "-1px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "72px",
+        "width": "754.656px"
+      }
+    },
+    {
+      "tag": "h3",
+      "text": "Shaped by the setting",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "52px",
+        "width": "405.344px"
+      }
+    },
+    {
+      "tag": "h3",
+      "text": "Journeys of discovery",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "52px",
+        "width": "850.672px"
+      }
+    },
+    {
+      "tag": "h3",
+      "text": "At home, here",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "52px",
+        "width": "405.328px"
+      }
+    },
+    {
+      "tag": "h3",
+      "text": "Our story",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "52px",
+        "width": "405.344px"
+      }
+    },
+    {
+      "tag": "h3",
+      "text": "Your One&Only stay, elevated",
+      "styles": {
+        "fontFamily": "\"Cormorant Garamond\", sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "52px",
+        "width": "850.672px"
+      }
+    }
+  ],
+  "buttons": [
+    "One&Only Global",
+    "Explore Destinations",
+    "Explore Destinations",
+    "Explore All Stays",
+    "Explore All Stays",
+    "Explore Experiences",
+    "Explore Experiences",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore Dining",
+    "Explore Dining",
+    "Explore Wellness",
+    "Explore Wellness",
+    "Explore Events",
+    "Explore Events",
+    "Explore",
+    "Explore",
+    "Explore",
+    "Explore",
+    "Explore",
+    "Explore",
+    "Explore Private Homes",
+    "Explore Private Homes",
+    "Explore Our Story",
+    "Explore Our Story",
+    "Explore All Offers",
+    "Explore All Offers",
+    "Our Story",
+    "Contact Us",
+    "Newsletter Sign Up",
+    "Destinations",
+    "Awards",
+    "Media Centre",
+    "Careers",
+    "Modify Booking",
+    "Website Terms",
+    "Privacy Policy",
+    "Instagram",
+    "Tiktok",
+    "YouTube",
+    "LinkedIn"
+  ],
+  "images": [
+    {
+      "src": "https://t.teads.tv/track?action=pageView&env=js-gtm&tag_version=8.13.0_086438b&provider=tag&buyer_pixel_id=14476&referer=https%3A%2F%2Fwww.oneandonlyresorts.com%2F%3Futm_source%3Dchatgpt.com&user_session_id=072c739f-8127-4d8f-a098-a6e8b675ad0c&hasConsent=true&cht=timeout",
+      "alt": "",
+      "width": 1,
+      "height": 1,
+      "className": ""
+    },
+    {
+      "src": "https://t.teads.tv/track?action=pageView&env=js-gtm&tag_version=8.13.0_086438b&provider=tag&buyer_pixel_id=14476&referer=https%3A%2F%2Fwww.oneandonlyresorts.com%2F%3Futm_source%3Dchatgpt.com&user_session_id=072c739f-8127-4d8f-a098-a6e8b675ad0c&hasConsent=true&cht=timeout",
+      "alt": "",
+      "width": 1,
+      "height": 1,
+      "className": ""
+    },
+    {
+      "src": "https://t.teads.tv/track?action=pageView&env=js-gtm&tag_version=8.13.0_086438b&provider=tag&buyer_pixel_id=14476&referer=https%3A%2F%2Fwww.oneandonlyresorts.com%2F%3Futm_source%3Dchatgpt.com&user_session_id=072c739f-8127-4d8f-a098-a6e8b675ad0c&hasConsent=true&cht=timeout",
+      "alt": "",
+      "width": 1,
+      "height": 1,
+      "className": ""
+    },
+    {
+      "src": "https://dam.kerzner.com/v/kerzner/OOBrandVideoOpener?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 810,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/02.%20Water%20Villa%20with%20Pool%20-%20c?poi=0.4128%2C0.4521%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 1078,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Portonovi_Accomm_VillaTwo_Livingroom_Pool_View_2559_MASTER?w=992&fmt=auto",
+      "alt": "",
+      "width": 960,
+      "height": 601,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/OO_Kea_Lifestyle_resort?poi=0.4518%2C0.4448%2C0%2C0&scaleFit=poi&w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_Mandarina_Wellness_Spa_Temazcal_Curandero_Wide_1924_MASTER?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 960,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/000196470003?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 955,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/9_OOPM_LIFESTYLE_GIRL_GUY_BOAT_009?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 2160,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/Burberry%20x%20One&Only%20Aesthesis%20Takeover(4)?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 2560,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/P1000548_1?w=1920&fmt=auto",
+      "alt": "",
+      "width": 1440,
+      "height": 959,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/RLH_Mandarina_Arch_Villa14_Pool_0419_MASTER?w=992&fmt=auto",
+      "alt": "",
+      "width": 960,
+      "height": 640,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/2024_09_ONE&ONLY_HR_%20(37)",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq Image-module__image__content--loading__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One-Only_Ke-a_Island_P2_311_One_Bedroom_Panoramic_Side_Pool_View_Alt_3921_MASTER-jpg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq Image-module__image__content--loading__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/37_OOPM_LIFESTYLE_FAMILY_BEACH_037",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq Image-module__image__content--loading__SwKLmq"
+    },
+    {
+      "src": "https://dam.kerzner.com/i/kerzner/One&Only_OneZa'abeel_P2_3814_Wellness_Suite_Livingroom_Wide-1623_MASTER",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "className": "Image-module__image__content__SwKLmq Image-module__image__content--object-fit--cover__SwKLmq Image-module__image__content--loading__SwKLmq"
+    },
+    {
+      "src": "https://cdn.cookielaw.org/logos/08e48dd8-04bf-4c87-bdc8-3a22e3c4bd17/018e3231-53ea-792f-b634-50422fbff0b3/9176ad25-8f80-475c-a737-4897be37895d/black-oo-brand-new.png",
+      "alt": "One and Only resorts logo",
+      "width": 400,
+      "height": 106,
+      "className": "ot-bnr-logo"
+    },
+    {
+      "src": "https://cdn.cookielaw.org/logos/08e48dd8-04bf-4c87-bdc8-3a22e3c4bd17/92f70006-a46c-417e-8d6e-222a84a4571d/d1e460d8-be43-41ad-8fc5-79c96dd58bbb/black-oo-brand-new.jpg",
+      "alt": "Company Logo",
+      "width": 400,
+      "height": 106,
+      "className": ""
+    },
+    {
+      "src": "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg",
+      "alt": "Powered by Onetrust",
+      "width": 568,
+      "height": 53,
+      "className": ""
+    },
+    {
+      "src": "https://bat.bing.com/action/0?ti=235000732&tm=gtm002&Ver=2&mid=cee4fa99-432d-43fe-ad41-681cf2bec4bd&bo=1&sid=10c5ceb0741f11f18eb9ab28ef0f5ccc&vid=10c5fd40741f11f1aaa1351574938ca8&vids=1&msclkid=N&pi=0&lg=en-US&sw=1440&sh=1100&sc=24&nwd=1&tl=Luxury%20Resorts%20%26%20Private%20Homes%20Worldwide%20%7C%20One%26Only%20Resorts&kw=one%26only%20resorts,%20luxury%20resort%20destinations,%20exclusive%20resorts,%20luxury%20holiday%20destinations,%20luxury%20resorts,%20luxury%20resorts%20destinations&p=https%3A%2F%2Fwww.oneandonlyresorts.com%2F%3Futm_source%3Dchatgpt.com&r=&lt=594&evt=pageLoad&sv=2&cdb=AQER&rn=863263",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "className": ""
+    }
+  ],
+  "videos": [
+    {
+      "poster": "",
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
+      "srcs": [
+        "https://dam.kerzner.com/v/kerzner/OOBrandVideoOpener/mp4_720p_b4000"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "index": 0,
+      "tag": "div",
+      "id": null,
+      "className": "WidgetContainer-module__widget-container__hNWXeG ProductHeroWidget-module__product-hero__9ynMvW Anchor-module__anchor__iuqgFa",
+      "text": "Sorry, your browser doesn't support embedded videos.One&Only Resorts and Private HomesYour One&Only escape, your wayWhere every stay unfolds with effortless freedom, authentic experiences and unscripted moments, crafted around how you want to feel, connect, discover and just be.",
+      "rect": {
+        "top": 96,
+        "left": 0,
+        "width": 1440,
+        "height": 1004
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "block",
+        "position": "relative",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "1004px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 1,
+      "tag": "div",
+      "id": null,
+      "className": "WidgetContainer-module__widget-container__content__hNWXeG WidgetContainer-module__widget-container__content--full-width__hNWXeG ProductHeroWidget-module__product-hero__content__9ynMvW",
+      "text": "One&Only Resorts and Private HomesYour One&Only escape, your wayWhere every stay unfolds with effortless freedom, authentic experiences and unscripted moments, crafted around how you want to feel, connect, discover and just be.",
+      "rect": {
+        "top": 96,
+        "left": 0,
+        "width": 1440,
+        "height": 1004
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "relative",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "1004px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 2,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq Grid-module__container--full-height__ceXQbq StandardTextVariation-module__product-hero-standard__text-container__pxmuqW",
+      "text": "One&Only Resorts and Private HomesYour One&Only escape, your wayWhere every stay unfolds with effortless freedom, authentic experiences and unscripted moments, crafted around how you want to feel, connect, discover and just be.",
+      "rect": {
+        "top": 96,
+        "left": 0,
+        "width": 1440,
+        "height": 1004
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px 72px",
+        "margin": "0px",
+        "height": "1004px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 3,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-10__ceXQbq Grid-module__item-md-column-span-10__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq StandardTextVariation-module__product-hero-standard__text-item_",
+      "text": "One&Only Resorts and Private HomesYour One&Only escape, your wayWhere every stay unfolds with effortless freedom, authentic experiences and unscripted moments, crafted around how you want to feel, connect, discover and just be.",
+      "rect": {
+        "top": 96,
+        "left": 183,
+        "width": 1073,
+        "height": 1004
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "1004px",
+        "width": "1073.33px"
+      }
+    },
+    {
+      "index": 4,
+      "tag": "div",
+      "id": null,
+      "className": "WidgetContainer-module__widget-container__hNWXeG ProductHeroWidget-module__product-hero__9ynMvW ProductHeroWidget-module__product-hero--with-paddings__9ynMvW Anchor-module__anchor__iuqgFa",
+      "text": "ONE&ONLY PORTFOLIOOur global destinationsFrom the beaches of One&Only Portonovi to One&Only Moonlight Basin's alpine peaks, the skyline of Dubai and Mexico's coastal rainforest, our resorts are positioned with intention. Let us take you there, then further. Explore Destinations",
+      "rect": {
+        "top": 1100,
+        "left": 0,
+        "width": 1440,
+        "height": 724
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "block",
+        "position": "relative",
+        "padding": "64px 72px",
+        "margin": "0px",
+        "height": "724px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 5,
+      "tag": "div",
+      "id": null,
+      "className": "WidgetContainer-module__widget-container__background__hNWXeG ProductHeroWidget-module__product-hero__background-with-paddings__9ynMvW",
+      "text": "",
+      "rect": {
+        "top": 1164,
+        "left": 72,
+        "width": 1296,
+        "height": 596
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "block",
+        "position": "absolute",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "596px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 6,
+      "tag": "div",
+      "id": null,
+      "className": "WidgetContainer-module__widget-container__content__hNWXeG WidgetContainer-module__widget-container__content--full-width__hNWXeG ProductHeroWidget-module__product-hero__content__9ynMvW ProductHeroWidget-module__product-he",
+      "text": "ONE&ONLY PORTFOLIOOur global destinationsFrom the beaches of One&Only Portonovi to One&Only Moonlight Basin's alpine peaks, the skyline of Dubai and Mexico's coastal rainforest, our resorts are positioned with intention. Let us take you there, then further. Explore Destinations",
+      "rect": {
+        "top": 1164,
+        "left": 72,
+        "width": 1296,
+        "height": 596
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "relative",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "596px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 7,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq Grid-module__container--responsive__ceXQbq StandardTextVariation-module__product-hero-oo-standard__pxmuqW",
+      "text": "ONE&ONLY PORTFOLIOOur global destinationsFrom the beaches of One&Only Portonovi to One&Only Moonlight Basin's alpine peaks, the skyline of Dubai and Mexico's coastal rainforest, our resorts are positioned with intention. Let us take you there, then further. Explore Destinations",
+      "rect": {
+        "top": 1414,
+        "left": 72,
+        "width": 1296,
+        "height": 346
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "absolute",
+        "padding": "64px 72px",
+        "margin": "0px",
+        "height": "346px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 8,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq StandardTextVariation-module__product-hero-oo-standard__container",
+      "text": "ONE&ONLY PORTFOLIOOur global destinationsFrom the beaches of One&Only Portonovi to One&Only Moonlight Basin's alpine peaks, the skyline of Dubai and Mexico's coastal rainforest, our resorts are positioned with intention. Let us take you there, then further. Explore Destinations",
+      "rect": {
+        "top": 1478,
+        "left": 144,
+        "width": 755,
+        "height": 218
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "218px",
+        "width": "754.656px"
+      }
+    },
+    {
+      "index": 9,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq FeatureCardsWidget-module__feature-single-card__Y2s0fW",
+      "text": "STAYSShaped by the settingArtful rooms, suites and villas are crafted to reflect each destination’s unique character, promising seclusion and soulful space to connect. Explore All Stays",
+      "rect": {
+        "top": 1888,
+        "left": 0,
+        "width": 1440,
+        "height": 580
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "24px 72px",
+        "margin": "0px",
+        "height": "579.656px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 10,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq FeatureCardsWidget-module__feature-single-card__media__Y2s0fW",
+      "text": "",
+      "rect": {
+        "top": 1912,
+        "left": 72,
+        "width": 851,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "850.656px"
+      }
+    },
+    {
+      "index": 11,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item--align-center__ceXQbq Grid-module__item-lg-column-span-4__ceXQbq Grid-module__item-md-column-span-4__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "STAYSShaped by the settingArtful rooms, suites and villas are crafted to reflect each destination’s unique character, promising seclusion and soulful space to connect. Explore All Stays",
+      "rect": {
+        "top": 1912,
+        "left": 963,
+        "width": 405,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "405.344px"
+      }
+    },
+    {
+      "index": 12,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq FoldingCarouselWidget-module__folding-carousel-widget__header__XGAyea",
+      "text": "ExperiencesJourneys of discoveryVenture outside the ordinary with curated adventures on land and at sea. Uncover the natural, cultural and culinary wonders of the world around. Explore Experiences",
+      "rect": {
+        "top": 2572,
+        "left": 0,
+        "width": 1440,
+        "height": 202
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px 72px",
+        "margin": "0px 0px 48px",
+        "height": "202px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 13,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item--align-center__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "ExperiencesJourneys of discoveryVenture outside the ordinary with curated adventures on land and at sea. Uncover the natural, cultural and culinary wonders of the world around. Explore Experiences",
+      "rect": {
+        "top": 2572,
+        "left": 295,
+        "width": 851,
+        "height": 202
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "202px",
+        "width": "850.672px"
+      }
+    },
+    {
+      "index": 14,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq",
+      "text": "",
+      "rect": {
+        "top": 3605,
+        "left": 0,
+        "width": 1440,
+        "height": 80
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px 72px",
+        "margin": "0px",
+        "height": "80px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 15,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-4__ceXQbq Grid-module__item-md-column-span-4__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "",
+      "rect": {
+        "top": 3605,
+        "left": 517,
+        "width": 405,
+        "height": 80
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "80px",
+        "width": "405.328px"
+      }
+    },
+    {
+      "index": 16,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq Grid-module__container--no-paddings__ceXQbq CardCarouselWidget-module__card-carousel__slider__DmDxBa",
+      "text": "Mediterranean escapesSummer, unscriptedAt One&Only’s Mediterranean resorts in Greece and Montenegro, summer reveals the truest expression of escape: a way of living that is sunlit, spontaneous and beautifully unscripted. Fall into a gentle rhythm where each day unfolds at your own pace. ExploreINSPIRED BY ATHENSBurberry x One&Only AesthesisBritish heritage meets Greek glamour at One&Only Aesthesis as Burberry brings its signature style to the Athenian Riviera this summer. Explore the exclusive collaboration across our Athens resort, from the pool to the tennis court. ExploreMAGIC OF MEXICOChase the sunSlow mornings. Golden sunsets. Barefoot evenings on the beach. Summer in Mexico sets its ow",
+      "rect": {
+        "top": 3813,
+        "left": 72,
+        "width": 1296,
+        "height": 785
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "784.656px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 17,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-12__ceXQbq Grid-module__item-md-column-span-12__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "Mediterranean escapesSummer, unscriptedAt One&Only’s Mediterranean resorts in Greece and Montenegro, summer reveals the truest expression of escape: a way of living that is sunlit, spontaneous and beautifully unscripted. Fall into a gentle rhythm where each day unfolds at your own pace. ExploreINSPIRED BY ATHENSBurberry x One&Only AesthesisBritish heritage meets Greek glamour at One&Only Aesthesis as Burberry brings its signature style to the Athenian Riviera this summer. Explore the exclusive collaboration across our Athens resort, from the pool to the tennis court. ExploreMAGIC OF MEXICOChase the sunSlow mornings. Golden sunsets. Barefoot evenings on the beach. Summer in Mexico sets its ow",
+      "rect": {
+        "top": 3813,
+        "left": 72,
+        "width": 1296,
+        "height": 785
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "784.656px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 18,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq FeatureCardsWidget-module__feature-single-card__Y2s0fW",
+      "text": "ONE&ONLY PRIVATE HOMESAt home, hereImmerse in the One&Only lifestyle with an ultra-luxury flagship residence, available to purchase in unrivalled resort communities. Explore Private Homes",
+      "rect": {
+        "top": 4725,
+        "left": 0,
+        "width": 1440,
+        "height": 580
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "24px 72px",
+        "margin": "0px",
+        "height": "579.656px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 19,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item--align-center__ceXQbq Grid-module__item-lg-column-span-4__ceXQbq Grid-module__item-md-column-span-4__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "ONE&ONLY PRIVATE HOMESAt home, hereImmerse in the One&Only lifestyle with an ultra-luxury flagship residence, available to purchase in unrivalled resort communities. Explore Private Homes",
+      "rect": {
+        "top": 4749,
+        "left": 72,
+        "width": 405,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "405.328px"
+      }
+    },
+    {
+      "index": 20,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq FeatureCardsWidget-module__feature-single-card__media__Y2s0fW",
+      "text": "",
+      "rect": {
+        "top": 4749,
+        "left": 517,
+        "width": 851,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "850.672px"
+      }
+    },
+    {
+      "index": 21,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq FeatureCardsWidget-module__feature-single-card__Y2s0fW",
+      "text": "ABOUT USOur storyExplore the ethos that drives every decision and follow our journey so far. Discover what makes One&Only what it is today. Explore Our Story",
+      "rect": {
+        "top": 5305,
+        "left": 0,
+        "width": 1440,
+        "height": 580
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "24px 72px",
+        "margin": "0px",
+        "height": "579.656px",
+        "width": "1440px"
+      }
+    },
+    {
+      "index": 22,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq FeatureCardsWidget-module__feature-single-card__media__Y2s0fW",
+      "text": "",
+      "rect": {
+        "top": 5329,
+        "left": 72,
+        "width": 851,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "850.656px"
+      }
+    },
+    {
+      "index": 23,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item--align-center__ceXQbq Grid-module__item-lg-column-span-4__ceXQbq Grid-module__item-md-column-span-4__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "ABOUT USOur storyExplore the ethos that drives every decision and follow our journey so far. Discover what makes One&Only what it is today. Explore Our Story",
+      "rect": {
+        "top": 5329,
+        "left": 963,
+        "width": 405,
+        "height": 532
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "531.656px",
+        "width": "405.344px"
+      }
+    },
+    {
+      "index": 24,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq Grid-module__container--no-paddings__ceXQbq CardCarouselWidget-module__card-carousel__header__DmDxBa",
+      "text": "EXCLUSIVE OFFERSYour One&Only stay, elevatedThoughtfully curated, our seasonal and exclusive savings, packages and privileges bring added benefits to your stay, wherever you choose to travel. Explore All Offers",
+      "rect": {
+        "top": 5989,
+        "left": 72,
+        "width": 1296,
+        "height": 202
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px 0px 48px",
+        "height": "202px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 25,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item--align-center__ceXQbq Grid-module__item-lg-column-span-8__ceXQbq Grid-module__item-md-column-span-8__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "EXCLUSIVE OFFERSYour One&Only stay, elevatedThoughtfully curated, our seasonal and exclusive savings, packages and privileges bring added benefits to your stay, wherever you choose to travel. Explore All Offers",
+      "rect": {
+        "top": 5989,
+        "left": 295,
+        "width": 851,
+        "height": 202
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "202px",
+        "width": "850.672px"
+      }
+    },
+    {
+      "index": 26,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__container__ceXQbq Grid-module__container--no-paddings__ceXQbq CardCarouselWidget-module__card-carousel__slider__DmDxBa",
+      "text": "EXTEND YOUR STAYNight On UsEnjoy more time to explore at your leisure with an additional night on us when you secure your booking. Minimum stays apply. CURATED BENEFITSFamily EscapeTreat your tribe to an unforgettable escape, elevated with exclusive discounts, curated experiences and thoughtful extras for all ages. ADVANCED RESERVATIONSBook Now and SaveBuild the anticipation for your next getaway and get up to 30% savings on your room rate when you plan your stay in advance.",
+      "rect": {
+        "top": 6239,
+        "left": 72,
+        "width": 1296,
+        "height": 683
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "grid",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "682.656px",
+        "width": "1296px"
+      }
+    },
+    {
+      "index": 27,
+      "tag": "div",
+      "id": null,
+      "className": "Grid-module__item__ceXQbq Grid-module__item-lg-column-span-12__ceXQbq Grid-module__item-md-column-span-12__ceXQbq Grid-module__item-sm-column-span-4__ceXQbq",
+      "text": "EXTEND YOUR STAYNight On UsEnjoy more time to explore at your leisure with an additional night on us when you secure your booking. Minimum stays apply. CURATED BENEFITSFamily EscapeTreat your tribe to an unforgettable escape, elevated with exclusive discounts, curated experiences and thoughtful extras for all ages. ADVANCED RESERVATIONSBook Now and SaveBuild the anticipation for your next getaway and get up to 30% savings on your room rate when you plan your stay in advance.",
+      "rect": {
+        "top": 6239,
+        "left": 72,
+        "width": 1296,
+        "height": 683
+      },
+      "styles": {
+        "fontFamily": "\"DM Sans\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "0.5px",
+        "color": "rgb(66, 66, 66)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "textTransform": "none",
+        "display": "flex",
+        "position": "static",
+        "padding": "0px",
+        "margin": "0px",
+        "height": "682.656px",
+        "width": "1296px"
+      }
+    }
+  ],
+  "navText": "One&Only Global",
+  "bodyText": "<iframe height=\"0\" src=\"https://www.googletagmanager.com/ns.html?id=GTM-K7CPMM9\" style=\"display:none;visibility:hidden\" width=\"0\"></iframe>One&Only Global :root { --bprogress-color: var(--progress-bar-color); --bprogress-height: 4px; --bprogress-spinner-size: 18px; --bprogress-spinner-animation-duration: 400ms; --bprogress-spinner-border-size: 2px; --bprogress-box-shadow: 0 0 10px var(--progress-bar-color), 0 0 5px var(--progress-bar-color); --bprogress-z-index: 99999; --bprogress-spinner-top: 15px; --bprogress-spinner-bottom: auto; --bprogress-spinner-right: 15px; --bprogress-spinner-left: auto; } .bprogress { width: 0; height: 0; pointer-events: none; z-index: var(--bprogress-z-index); } .bprogress .bar { background: var(--bprogress-color); position: fixed; z-index: var(--bprogress-z-index); top: 0; left: 0; width: 100%; height: var(--bprogress-height); } /* Fancy blur effect */ .bprogress .peg { display: block; position: absolute; right: 0; width: 100px; height: 100%; box-shadow: var(--bprogress-box-shadow); opacity: 1.0; transform: rotate(3deg) translate(0px, -4px); } /* Remove these to get rid of the spinner */ .bprogress .spinner { display: block; position: fixed; z-index: var(--bprogress-z-index); top: var(--bprogress-spinner-top); bottom: var(--bprogress-spinner-bottom); right: var(--bprogress-spinner-right); left: var(--bprogress-spinner-left); } .bprogress .spinner-icon { width: var(--bprogress-spinner-size); height: var(--bprogress-spinner-size); box-sizing: border-box; border: solid var(--bprogress-spinner-border-size) transparent; border-top-color: var(--bprogress-color); border-left-color: var(--bprogress-color); border-radius: 50%; -webkit-animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; } .bprogress-custom-parent { overflow: hidden; position: relative; } .bprogress-custom-parent .bprogress .spinner, .bprogress-custom-parent .bprogress .bar { position: absolute; } .bprogress .indeterminate { position: fixed; top: 0; left: 0; width: 100%; height: var(--bprogress-height); overflow: hidden; } .bprogress .indeterminate .inc, .bprogress .indeterminate .dec { position: absolute; top: 0; height: 100%; background-color: var(--bprogress-color); } .bprogress .indeterminate .inc { animation: bprogress-indeterminate-increase 2s infinite; } .bprogress .indeterminate .dec { animation: bprogress-indeterminate-decrease 2s 0.5s infinite; } @-webkit-keyframes bprogress-spinner { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } } @keyframes bprogress-spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } @keyframes bprogress-indeterminate-increase { from { left: -5%; width: 5%; } to { left: 130%; width: 100%; } } @keyframes bprogress-indeterminate-decrease { from { left: -80%; width: 80%; } to { left: 110%; width: 10%; } } Sorry, your browser doesn't support embedded videos.One&Only Resorts and Private HomesYour One&Only escape, your wayWhere every stay unfolds with effortless freedom, authentic experiences and unscripted moments, crafted around how you want to feel, connect, discover and just be. ONE&ONLY PORTFOLIOOur global destinationsFrom the beaches of One&Only Portonovi to One&Only Moonlight Basin's alpine peaks, the skyline of Dubai and Mexico's coastal rainforest, our resorts are positioned with intention. Let us take you there, then further. Explore DestinationsSTAYSShaped by the settingArtful rooms, suites and villas are crafted to reflect each destination’s unique character, promising seclusion and soulful space to connect. Explore All StaysExperiencesJourneys of discoveryVenture outside the ordinary with curated adventures on land and at sea. Uncover the natural, cultural and culinary wonders of the world around. Explore ExperiencesSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service. Explore EventsSavourCelebrated chefs, immersive culinary journeys and a spirit of innovation define our dining and drinking outposts, renowned for a reason. Explore DiningResetBalance body, mind and spirit at world-leading spas, where wellbeing treatments and holistic health rituals champion wellbeing from the inside out. Explore WellnessCelebrateThe stage is yours to set. Host showstopping parties, intimate weddings and landmark reunions with us, orchestrated with One&Only style and signature service."
+}

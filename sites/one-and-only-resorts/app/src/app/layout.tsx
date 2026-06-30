@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import "./globals.css";
+
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-display"
+});
+
+const sans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans"
+});
+
+export const metadata: Metadata = {
+  title: "One&Only Resorts Clone | Blueprint Factory",
+  description: "A reference-first One&Only homepage clone built for local visual review."
+};
+
+export default function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
+    </html>
+  );
+}
