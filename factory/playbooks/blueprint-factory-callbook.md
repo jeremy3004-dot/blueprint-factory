@@ -176,6 +176,23 @@ Use for:
 
 Do not use it as a visual style. It is a capability donor.
 
+### Blueprint Animate
+
+Use when a site needs premium animation, scroll storytelling, WebGL/3D, or a stronger signature moment.
+
+Call phrase:
+
+```text
+$blueprint-animate for <site or slug>
+```
+
+Meaning:
+
+- Research donor and technique references before inventing.
+- Write a motion brief with one named signature moment.
+- Choose the smallest fitting motion tool.
+- Verify desktop, mobile, reduced motion, and motion capture before Beauty Pass.
+
 ## Save And Deploy Calls
 
 ### Save To Main
@@ -317,4 +334,3 @@ When using this callbook, Codex should:
 - Work in small verified phases.
 - Preserve unrelated dirty work.
 - Ask before production deploys, paid services, external messages, destructive cleanup, or major art-direction changes.
-
