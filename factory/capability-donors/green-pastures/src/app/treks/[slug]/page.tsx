@@ -10,6 +10,7 @@ import {
   getRouteDossierFacts,
   sanitizeSourceCopy,
 } from "@/lib/operator-dossier";
+import { getVisibleItineraryItems } from "@/lib/itinerary";
 import {
   getPayloadOperatorSourceRoute,
   getPayloadTrekBySlug,
@@ -44,6 +45,7 @@ export default async function TrekDetailPage({
   const sourceExcludes = getSanitizedSourceItems(sourceRoute?.excludeItems ?? [], [
     "Mineral water, discretionary drinks, tips, souvenirs, and traveler insurance should still be budgeted separately.",
   ]);
+  const visibleItinerary = getVisibleItineraryItems(sourceRoute?.itinerary ?? []);
 
   return (
     <main className="pb-24">
@@ -207,11 +209,11 @@ export default async function TrekDetailPage({
           <div className="border-t border-white/10 pt-6">
             <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr]">
               <div className="space-y-8">
-                {sourceRoute.itinerary.length > 0 ? (
-                  <div className="space-y-4">
-                    <p className="section-kicker">Itinerary preview</p>
+                {visibleItinerary.length > 0 ? (
+                  <div id="full-itinerary" className="scroll-mt-24 space-y-4">
+                    <p className="section-kicker">Full itinerary</p>
                     <div className="space-y-4">
-                      {sourceRoute.itinerary.slice(0, 4).map((item) => (
+                      {visibleItinerary.map((item) => (
                         <article
                           key={`${item.day ?? "x"}-${item.title}`}
                           className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 first:lg:min-h-[18rem]"

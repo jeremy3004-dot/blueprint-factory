@@ -553,7 +553,7 @@ export function RouteMapExplorer({
             ))}
           </div>
           <Link
-            href={`/treks/${trek.slug}#package-options`}
+            href={`/treks/${trek.slug}#full-itinerary`}
             className="mt-5 inline-flex w-full items-center justify-between rounded-lg border border-white/12 bg-white/[0.035] px-4 py-3 text-sm text-white transition hover:border-amber-300/35"
           >
             View all stages

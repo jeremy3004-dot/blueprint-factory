@@ -1166,72 +1166,213 @@
   },
   {
     "slug": "mount-manaslu-trek-tsum-valleymanaslu",
-    "title": "Mount Manaslu Trek (Tsum Valley/Manaslu)",
-    "updatedAt": "May 12, 2024",
-    "minDurationDays": 17,
-    "maxDurationDays": 20,
-    "durationType": "17-20 days",
-    "costUsd": null,
-    "sourceDifficulty": "Streneous",
-    "highestAltitudeM": 5100,
-    "seasonWindow": null,
-    "groupSize": null,
-    "accommodation": null,
-    "activity": null,
+    "title": "Manaslu Circuit and Tsum Valley Trek",
+    "updatedAt": "Jun 30, 2026",
+    "minDurationDays": 19,
+    "maxDurationDays": 19,
+    "durationType": "19 days",
+    "costUsd": 2600,
+    "sourceDifficulty": "Strenuous",
+    "highestAltitudeM": 5106,
+    "seasonWindow": "Best in autumn, with spring possible once the Larkya La approach is stable.",
+    "groupSize": "Private or small guided groups; restricted-area rules require licensed guide support.",
+    "accommodation": "Kathmandu hotel and remote teahouses.",
+    "activity": "Restricted-area trekking, Buddhist culture, high-pass crossing",
     "description": [
-      "The Manaslu Valley Trek is more remote and spectacular than other treks, with rough steep tracks and limited accommodation. It is culturally fascinating with strong continuing links to Tibet in the upper Budi Gandaki river. The Tsum Valley, and Larkya La (5100m) provides a challenge and the views of Mt. Manaslu the eighth highest mountain in the world are marvelous and close. The trek around Manaslu can be done as a tea house trek except for the night before the Larkya La. The remote Tsum Valley side-trip should not be missed, with friendly hospitable people, a thriving Buddhist culture and untouched wildlife. Tsum comes from the Tibetan word 'Tsombo', which means vivid and we can only agree. The people are poor, since they have been by passed by development for centuries, but this means their unique culture has remained intact."
+      "A full Manaslu and Tsum Valley program that starts in Kathmandu, follows the Budhi Gandaki corridor into the Tsum branch, returns to the main Manaslu trail, and finishes with the Larkya La crossing.",
+      "The trip is best suited to trekkers who want the monastery culture of Tsum Valley and the bigger expedition feel of Manaslu in one guided restricted-area itinerary."
     ],
     "pagedescription": null,
-    "highlights": [],
+    "highlights": [
+      "Complete 19-day route rather than a short preview",
+      "Tsum Valley monasteries, Mu Gompa, and Nile",
+      "Samagaun acclimatization before Samdo and Dharamsala",
+      "Larkya La crossing at 5,106m",
+      "Jeep-supported approach and exit logistics"
+    ],
     "includeItems": [
-      "Total of two nights' accommodation in Pokhara (before and after the trek) at the operator's guesthouse",
-      "Guide",
-      "Assistants, (maximum weight to carry is 12 kg for female assistant and 15 kg for male assistant).",
-      "3 meals per day, afternoon tea & snacks,",
-      "Accommodation for the duration of the trek (2 persons per room). However, during high season one room per two clients may not always be available. If this should happen, we request travelers to be flexible and share a triple or room with four beds.",
-      "Manaslu Park entry, TIMS fees and Special permit,"
+      "Kathmandu hotel nights around the trek",
+      "Licensed trekking guide and porter support",
+      "Remote teahouse accommodation during the trek",
+      "Three meals per day on trek",
+      "Manaslu restricted-area, Tsum Valley, MCAP, and ACAP permit handling",
+      "Private ground transport for the trailhead approach and exit"
     ],
     "excludeItems": [
       "Mineral water",
-      "Beverages- soft and hard",
-      "Extra dessert",
-      "Souvenirs",
-      "Tipping to staff",
-      "Any entry fee during cultural (monastery/temple heritage visit)"
+      "Soft and alcoholic drinks",
+      "Personal snacks and extra desserts",
+      "Souvenirs and personal gear",
+      "Tips for guide and porter team",
+      "Traveler insurance and emergency evacuation",
+      "Monastery, temple, or heritage entry donations when requested locally"
     ],
-    "facts": [],
+    "facts": [
+      {
+        "label": "Route style",
+        "value": "Tsum Valley extension plus Manaslu Circuit"
+      },
+      {
+        "label": "Highest point",
+        "value": "Larkya La, 5,106m"
+      },
+      {
+        "label": "Permit note",
+        "value": "Restricted-area permits and a licensed guide are required."
+      }
+    ],
     "itinerary": [
       {
         "day": 1,
-        "title": "Pokhara (820m) – Arughat (608m) – Machi Khola (869m)",
-        "details": "Arughat is 220 km from Pokhara and is 9/10 hours drive",
-        "duration": "8/9hrs drive",
-        "distance": "220kms/137mls",
-        "ascent": "212m descend 261m ascend"
+        "title": "Kathmandu arrival",
+        "details": "Arrive in Kathmandu, meet the Green Pastures team, and settle the briefing, gear check, and restricted-area paperwork before the road approach begins.",
+        "duration": "",
+        "distance": "",
+        "ascent": ""
       },
       {
         "day": 2,
-        "title": "Machi Khola (869m) – Philim (1570m)",
-        "details": "We reach Tatopani (Hot spring) and cross a bridge over the Budi Gandaki River. It is a gentle uphill and downhill walk until Dovan. Dovan is a small village with a few schools. After walking for 1 ½ hour from Dovan we will reach a cliff where we should be more careful as rocks are falling out. After crossing a bridge we will arrive at Jagat. Jagat is a restricted area. It is a small village where ethnic groups such as Gurung, Shahi, Chhetri, and Thakuri live. After Jagat, we enter Tsum Valley and walk through the gentle trail for ½ an hour until we reach a bridge passing small villages to reach Philim (1570m). Walking hours: 6",
-        "duration": "6hrs",
-        "distance": "8kms/5mls",
-        "ascent": "701m ascend"
+        "title": "Drive from Kathmandu to Machha Khola",
+        "details": "A long private-vehicle day leaves the city and follows the lower river road toward the Manaslu corridor. Expect changing road conditions and a practical overnight at Machha Khola.",
+        "duration": "8-10hrs drive",
+        "distance": "",
+        "ascent": ""
       },
       {
         "day": 3,
-        "title": "Philim (1570m) - Lokpa (2240m)",
-        "details": "Climbing uphill and downhill until Chisapani (Eklebhatli). We continue to walk through the forest and climb uphill until we reach Lokpa (2240m) Walking hours: 4",
-        "duration": "4hrs",
-        "distance": "6kms/3.72mls",
-        "ascent": "670m ascend"
+        "title": "Machha Khola to Jagat",
+        "details": "Walk through the lower Budhi Gandaki valley, crossing bridges, hot-spring country, and gorge sections before reaching Jagat, one of the first important restricted-area checkpoints.",
+        "duration": "6-7hrs",
+        "distance": "",
+        "ascent": ""
       },
       {
         "day": 4,
-        "title": "Lokpa (2240m) – Chukung Paro (3031m)",
-        "details": "We will pass through many bridges today. First, we start with a gentle walk and after passing the bridge, we climb steep uphill through the forest for 2 hours. The trail is narrow and we walk downhill to cross the bridge. We will walk uphill again until chumling village where we stop for lunch. We will walk gently and climb uphill to Chukurparo where we will have good views of Ganesh Himal 2 and 6, Tipu Himal. Walking hours: 7",
-        "duration": "7hrs",
-        "distance": "14kms/8.6mls",
-        "ascent": "791m ascend"
+        "title": "Jagat to Lokpa",
+        "details": "Continue through Salleri, Sirdibas, and Philim before turning toward the Tsum Valley branch. The landscape begins to feel quieter and more remote as you reach Lokpa.",
+        "duration": "5-6hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 5,
+        "title": "Lokpa to Chumling",
+        "details": "Descend and climb through forested side valleys into lower Tsum. Chumling is the first real cultural anchor of the extension, with monastery life and Ganesh Himal views nearby.",
+        "duration": "5-6hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 6,
+        "title": "Chumling to Chhokangparo",
+        "details": "Move higher into the open Tsum Valley, passing small settlements, mani walls, and cultivated terraces. The day ends in Chhokangparo, a strong base for the upper valley push.",
+        "duration": "5-6hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 7,
+        "title": "Chhokangparo to Nile",
+        "details": "Follow the valley toward Nile with time for local villages, cave and monastery options, and a slower high-valley rhythm. This is where the Tsum cultural story becomes the main event.",
+        "duration": "5-6hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 8,
+        "title": "Nile to Mu Gompa and back to Nile",
+        "details": "Visit Mu Gompa, the spiritual high point of the Tsum extension, then return to Nile. The day is deliberately protected for monastery time, altitude pacing, and weather flexibility.",
+        "duration": "5-6hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 9,
+        "title": "Nile to Chumling",
+        "details": "Retrace the upper Tsum valley with a different perspective, descending past villages, prayer walls, and river crossings before returning to Chumling.",
+        "duration": "6-7hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 10,
+        "title": "Chumling to Deng",
+        "details": "Leave the Tsum branch and rejoin the main Manaslu trail. The route follows forest and river sections toward Deng, where the circuit begins to feel more alpine.",
+        "duration": "6-7hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 11,
+        "title": "Deng to Namrung",
+        "details": "Climb through bamboo, pine, and village corridors with stronger mountain views and more Tibetan-influenced settlements. Namrung is a useful acclimatization step before Lho.",
+        "duration": "6-7hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 12,
+        "title": "Namrung to Lho",
+        "details": "A shorter but scenic day brings bigger Manaslu views, monastery stops, and a calmer pace. Lho is one of the route's best places to slow down and look up.",
+        "duration": "4-5hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 13,
+        "title": "Lho to Samagaun",
+        "details": "Trek through Shyala and into Samagaun beneath the Manaslu massif. The settlement becomes the main acclimatization base before Samdo and the high pass approach.",
+        "duration": "4-5hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 14,
+        "title": "Samagaun acclimatization",
+        "details": "Hold a full acclimatization day around Samagaun, with options toward Birendra Lake, Pungyen Gompa, or a gentler village-focused recovery schedule depending on conditions.",
+        "duration": "Flexible",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 15,
+        "title": "Samagaun to Samdo",
+        "details": "Move gradually toward the Tibetan border country and sleep at Samdo. This is a shorter stage by design, preserving energy before the high-pass sequence.",
+        "duration": "3-4hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 16,
+        "title": "Samdo to Dharamsala",
+        "details": "Climb to the last high staging point below Larkya La. Accommodation is basic, conditions are colder, and the guide team will confirm weather, timing, and pass readiness.",
+        "duration": "4-5hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 17,
+        "title": "Dharamsala to Bimthang via Larkya La",
+        "details": "Start early for the Larkya La crossing at 5,106m, then descend into the Bimthang side. This is the hardest and most important guided mountain day of the trek.",
+        "duration": "8-10hrs",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 18,
+        "title": "Bimthang to Dharapani and drive to Kathmandu",
+        "details": "Descend through the forested exit corridor toward Dharapani, then use the road connection for the long return toward Kathmandu when conditions allow.",
+        "duration": "5-6hrs trek + drive",
+        "distance": "",
+        "ascent": ""
+      },
+      {
+        "day": 19,
+        "title": "Kathmandu departure",
+        "details": "Final airport transfer or onward Nepal arrangements. Keep this day flexible if road, pass, or weather conditions require a buffer.",
+        "duration": "",
+        "distance": "",
+        "ascent": ""
       }
     ]
   },
