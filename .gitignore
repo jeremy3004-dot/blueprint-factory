@@ -7,3 +7,8 @@ dist/
 .DS_Store
 playwright-report/
 test-results/
+.gstack/
+.blueprint-search-nepal/
+.playwright-mcp/
+.claude/
+*.tsbuildinfo

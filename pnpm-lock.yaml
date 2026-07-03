@@ -23,9 +23,15 @@ importers:
       '@gsap/react':
         specifier: latest
         version: 2.1.2(gsap@3.15.0)(react@19.2.7)
+      '@types/leaflet':
+        specifier: ^1.9.21
+        version: 1.9.21
       gsap:
         specifier: latest
         version: 3.15.0
+      leaflet:
+        specifier: ^1.9.4
+        version: 1.9.4
       lenis:
         specifier: latest
         version: 1.3.23(react@19.2.7)
@@ -87,6 +93,68 @@ importers:
         version: 6.0.3
 
   sites/example-site/app:
+    dependencies:
+      '@gsap/react':
+        specifier: latest
+        version: 2.1.2(gsap@3.15.0)(react@19.2.7)
+      gsap:
+        specifier: latest
+        version: 3.15.0
+      lenis:
+        specifier: latest
+        version: 1.3.23(react@19.2.7)
+      next:
+        specifier: latest
+        version: 16.2.9(@playwright/test@1.61.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react:
+        specifier: latest
+        version: 19.2.7
+      react-dom:
+        specifier: latest
+        version: 19.2.7(react@19.2.7)
+    devDependencies:
+      '@tailwindcss/postcss':
+        specifier: latest
+        version: 4.3.1
+      tailwindcss:
+        specifier: latest
+        version: 4.3.1
+      typescript:
+        specifier: latest
+        version: 6.0.3
+
+  sites/four-seasons/app:
+    dependencies:
+      '@gsap/react':
+        specifier: latest
+        version: 2.1.2(gsap@3.15.0)(react@19.2.7)
+      gsap:
+        specifier: latest
+        version: 3.15.0
+      lenis:
+        specifier: latest
+        version: 1.3.23(react@19.2.7)
+      next:
+        specifier: latest
+        version: 16.2.9(@playwright/test@1.61.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react:
+        specifier: latest
+        version: 19.2.7
+      react-dom:
+        specifier: latest
+        version: 19.2.7(react@19.2.7)
+    devDependencies:
+      '@tailwindcss/postcss':
+        specifier: latest
+        version: 4.3.1
+      tailwindcss:
+        specifier: latest
+        version: 4.3.1
+      typescript:
+        specifier: latest
+        version: 6.0.3
+
+  sites/one-and-only-resorts/app:
     dependencies:
       '@gsap/react':
         specifier: latest
@@ -612,6 +680,12 @@ packages:
   '@tailwindcss/postcss@4.3.1':
     resolution: {integrity: sha512-dNJuNbdEJT/SWRuXTYP1WSamelsz3ztkUsdtWQPjrexysrTpaEPM40P/71knXiXLYEojqPOEGitVLLpPMS5T6A==}
 
+  '@types/geojson@7946.0.16':
+    resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
+
+  '@types/leaflet@1.9.21':
+    resolution: {integrity: sha512-TbAd9DaPGSnzp6QvtYngntMZgcRk+igFELwR2N99XZn7RXUdKgsXMR+28bUO0rPsWp8MIu/f47luLIQuSLYv/w==}
+
   '@types/node@26.0.0':
     resolution: {integrity: sha512-vf2YFi1iY9lHGwNJMs01biZFbKJkrZR1T6/MlzjhJLPdntOHLhTrDSnSVcdtvjihi4VQNlrFRIxLsDBlQpAipA==}
 
@@ -664,6 +738,9 @@ packages:
   jiti@2.7.0:
     resolution: {integrity: sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==}
     hasBin: true
+
+  leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
 
   lenis@1.3.23:
     resolution: {integrity: sha512-YxYq3TJqj9sJNv0V9SkyQHejt14xwyIwgDaaMK89Uf9SxQfIszu+gTQSSphh6BWlLTNVKvvXAGkg+Zf+oFIevg==}
@@ -1175,6 +1252,12 @@ snapshots:
       postcss: 8.5.15
       tailwindcss: 4.3.1
 
+  '@types/geojson@7946.0.16': {}
+
+  '@types/leaflet@1.9.21':
+    dependencies:
+      '@types/geojson': 7946.0.16
+
   '@types/node@26.0.0':
     dependencies:
       undici-types: 8.3.0
@@ -1238,6 +1321,8 @@ snapshots:
   gsap@3.15.0: {}
 
   jiti@2.7.0: {}
+
+  leaflet@1.9.4: {}
 
   lenis@1.3.23(react@19.2.7):
     optionalDependencies:
