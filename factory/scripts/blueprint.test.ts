@@ -105,6 +105,7 @@ describe("nextActionForStatus", () => {
         appExists: false,
         screenshotsReady: false,
         motionReady: false,
+        pagesReady: false,
         beautyReady: false
       }),
       "CREATE_SITE"
@@ -121,6 +122,7 @@ describe("nextActionForStatus", () => {
         appExists: true,
         screenshotsReady: false,
         motionReady: false,
+        pagesReady: false,
         beautyReady: false
       }),
       "NEEDS_ART_DIRECTION"
@@ -137,6 +139,7 @@ describe("nextActionForStatus", () => {
         appExists: true,
         screenshotsReady: false,
         motionReady: false,
+        pagesReady: false,
         beautyReady: false
       }),
       "NEEDS_REFERENCE_FIRST"
@@ -153,9 +156,27 @@ describe("nextActionForStatus", () => {
         appExists: true,
         screenshotsReady: true,
         motionReady: true,
+        pagesReady: true,
         beautyReady: false
       }),
       "RUN_BEAUTY"
+    );
+  });
+
+  it("blocks on page coverage before beauty", () => {
+    assert.equal(
+      nextActionForStatus({
+        exists: true,
+        missingFiles: [],
+        referenceReady: true,
+        artReady: true,
+        appExists: true,
+        screenshotsReady: true,
+        motionReady: true,
+        pagesReady: false,
+        beautyReady: false
+      }),
+      "NEEDS_PAGE_COVERAGE"
     );
   });
 });

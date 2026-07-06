@@ -237,3 +237,50 @@ verbatim proven code, then three parallel authoring agents that wrote the 12 fai
 Phase 5 — Multi-page coverage: make the clone plan's page inventory machine-readable with per-page
 status (`planned | built | deferred`), add a `pagesReady` gate to `siteStatus`, and make
 `blueprint screenshots` capture every built route (not just `/`).
+
+---
+
+## Phase 5 — Multi-page coverage enforcement ✅
+
+Date: 2026-07-06
+
+### What shipped
+
+Clone plans stop being aspirational — the factory now refuses to pass to Beauty while donor-critical
+pages are neither built nor explicitly deferred.
+
+- `factory/scripts/pages.ts` (new) — machine-readable page inventory (`sites/<slug>/pages.json`:
+  `{ pages: [{ route, title, status: planned|built|deferred, reason? }] }`) plus pure helpers:
+  `routeToDir`, `summarizePageCoverage` (ready = every page built-or-deferred AND every built page has
+  screenshots), `pageCoverageMessage`, and `buildPagePlan` (seeds a draft plan from the captured donor
+  nav inventory).
+- `blueprint.ts`: `SiteStatus` gains `pagesReady`; `nextActionForStatus` gains `NEEDS_PAGE_COVERAGE`,
+  inserted after motion and **before** `RUN_BEAUTY`. Coverage is enforced only when `pages.json`
+  exists (absent → single-page site, backward compatible — legacy sites are unaffected). `run` and
+  `status` print the coverage detail; `printStatus` shows a `pages:` line.
+- `blueprint screenshots <slug> <url>` now captures every **built** route from `pages.json` into
+  `screenshots/pages/<route>/` (desktop + mobile), in addition to the homepage shots.
+- `blueprint capture` seeds `pages.json` (all planned) from the harvested donor nav inventory, without
+  clobbering an existing curated plan on re-capture. This makes the "missing donor-critical pages"
+  Beauty Pass fail condition mechanically checkable.
+- Tests: `pages.test.ts` (7 new) + a new `nextActionForStatus` case; existing `SiteStatus` fixtures
+  updated with `pagesReady`. `pnpm test` → 74 pass.
+
+### How it was verified
+
+- Unit: `pnpm test` → 74 pass (67 + 7 new). `nextActionForStatus` returns `NEEDS_PAGE_COVERAGE` when
+  `pagesReady` is false and everything else is ready.
+- Live end-to-end on a throwaway fully-gated scratch site with a 5-page plan (1 built, 4 planned):
+  `blueprint status` reported `STATUS: NEEDS_PAGE_COVERAGE` and
+  `NEEDS_PAGE_COVERAGE: 4 pages planned but not built or deferred (/stay, /dine, /spa, /contact)` —
+  exactly the acceptance wording — instead of passing to Beauty. Marking 2 built (with shots) + 2
+  deferred flipped it to `RUN_BEAUTY`; deleting one built page's screenshot flipped it back with
+  `1 built page missing screenshots (/stay)`. Scratch site deleted after.
+- Backward compatibility: `bigmart` and `alpine-bloom` (no `pages.json`) still report `pages: covered`
+  — no existing gate was tightened for legacy single-page sites.
+
+### What's next
+
+Phase 6 — Preview deploy + operator dashboard: `blueprint deploy <slug> --preview` (real Vercel
+preview, never production, records URL in `deploy.md`) and `blueprint status` with no slug printing an
+all-sites table + writing `factory/STATUS.md`. The first Vercel preview deploy needs explicit approval.

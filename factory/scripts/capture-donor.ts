@@ -1,5 +1,6 @@
 import { chromium } from "@playwright/test";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -10,6 +11,7 @@ import {
   resilientGoto,
   scriptedScrollThrough
 } from "./browser-utils";
+import { buildPagePlan } from "./pages";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -561,6 +563,13 @@ export async function captureDonor(
   await writeFile(path.join(extractionDir, "assets.json"), JSON.stringify(assets, null, 2), "utf8");
   await writeFile(path.join(extractionDir, "animation-hints.json"), JSON.stringify(animationHints, null, 2), "utf8");
   await writeFile(path.join(extractionDir, "pages.json"), JSON.stringify(pages, null, 2), "utf8");
+
+  // Seed a machine-readable build plan (all planned; the agent then marks built/deferred).
+  // Never clobber an existing curated plan on re-capture.
+  const pagePlanPath = path.join(rootDir, "sites", slug, "pages.json");
+  if (!existsSync(pagePlanPath)) {
+    await writeFile(pagePlanPath, `${JSON.stringify(buildPagePlan(pages), null, 2)}\n`, "utf8");
+  }
 
   const draftData: DonorDraftData = {
     siteSlug: slug,

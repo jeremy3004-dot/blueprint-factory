@@ -1,4 +1,5 @@
 import { access, appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,6 +9,13 @@ import { runCompare } from "./compare";
 import { runChecks, summarizeChecks } from "./checks";
 import { runVerify } from "./verify";
 import { runTokens } from "./tokens";
+import {
+  pageCoverageMessage,
+  routeToDir,
+  summarizePageCoverage,
+  type PageCoverage,
+  type PagesFile
+} from "./pages";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -19,6 +27,7 @@ type SiteStatus = {
   appExists: boolean;
   screenshotsReady: boolean;
   motionReady: boolean;
+  pagesReady: boolean;
   beautyReady: boolean;
 };
 
@@ -31,6 +40,7 @@ type NextAction =
   | "NEEDS_PREVIEW_URL"
   | "CAPTURE_SCREENSHOTS"
   | "CAPTURE_MOTION"
+  | "NEEDS_PAGE_COVERAGE"
   | "RUN_BEAUTY"
   | "READY_FOR_HUMAN_REVIEW";
 
@@ -189,6 +199,7 @@ export function nextActionForStatus(status: SiteStatus): NextAction {
   if (!status.appExists) return "CREATE_APP";
   if (!status.screenshotsReady) return "CAPTURE_SCREENSHOTS";
   if (!status.motionReady) return "CAPTURE_MOTION";
+  if (!status.pagesReady) return "NEEDS_PAGE_COVERAGE";
   if (!status.beautyReady) return "RUN_BEAUTY";
   return "READY_FOR_HUMAN_REVIEW";
 }
@@ -224,6 +235,7 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
       appExists: false,
       screenshotsReady: false,
       motionReady: false,
+      pagesReady: false,
       beautyReady: false
     };
   }
@@ -237,6 +249,8 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
     ? await readFile(path.join(rootDir, visualReviewPath), "utf8")
     : "";
 
+  const coverage = await pageCoverageForSite(siteSlug);
+
   return {
     exists,
     missingFiles: await checkRequiredFiles(siteSlug),
@@ -247,8 +261,32 @@ async function siteStatus(siteSlug: string): Promise<SiteStatus> {
       (await fileExists(`sites/${siteSlug}/screenshots/desktop.png`)) &&
       (await fileExists(`sites/${siteSlug}/screenshots/mobile.png`)),
     motionReady: await directoryHasFiles(`sites/${siteSlug}/qa/motion`),
+    // No pages.json => single-page site, coverage not enforced (backward compatible).
+    pagesReady: coverage ? coverage.ready : true,
     beautyReady: hasPassingVisualReview(visualReview)
   };
+}
+
+async function readPagesFile(siteSlug: string): Promise<PagesFile | null> {
+  const relativePath = `sites/${siteSlug}/pages.json`;
+  if (!(await fileExists(relativePath))) return null;
+  try {
+    const parsed = JSON.parse(await readFile(path.join(rootDir, relativePath), "utf8")) as PagesFile;
+    return Array.isArray(parsed.pages) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Page coverage for a site, or null when the site has no machine-readable page plan (not enforced). */
+async function pageCoverageForSite(siteSlug: string): Promise<PageCoverage | null> {
+  const file = await readPagesFile(siteSlug);
+  if (!file) return null;
+  const hasShots = (route: string) => {
+    const dir = path.join(rootDir, "sites", siteSlug, "screenshots", "pages", routeToDir(route));
+    return existsSync(path.join(dir, "desktop.png")) && existsSync(path.join(dir, "mobile.png"));
+  };
+  return summarizePageCoverage(file.pages, hasShots);
 }
 
 async function appendRunLog(siteSlug: string, message: string) {
@@ -277,6 +315,7 @@ function printStatus(siteSlug: string, status: SiteStatus) {
   console.log(`app: ${status.appExists ? "present" : "missing"}`);
   console.log(`screenshots: ${status.screenshotsReady ? "ready" : "missing"}`);
   console.log(`motion: ${status.motionReady ? "ready" : "missing"}`);
+  console.log(`pages: ${status.pagesReady ? "covered" : "coverage incomplete"}`);
   console.log(`beauty: ${status.beautyReady ? "ready for human review" : "not ready"}`);
   if (status.missingFiles.length > 0) console.log(`missing files: ${status.missingFiles.join(", ")}`);
 }
@@ -298,7 +337,12 @@ async function main() {
   }
 
   if (command === "status") {
-    printStatus(siteSlug, await siteStatus(siteSlug));
+    const status = await siteStatus(siteSlug);
+    printStatus(siteSlug, status);
+    if (nextActionForStatus(status) === "NEEDS_PAGE_COVERAGE") {
+      const coverage = await pageCoverageForSite(siteSlug);
+      if (coverage) console.log(`NEEDS_PAGE_COVERAGE: ${pageCoverageMessage(coverage)}`);
+    }
     return;
   }
 
@@ -417,6 +461,15 @@ async function main() {
 
     status = await siteStatus(siteSlug);
     next = nextActionForStatus(status);
+
+    if (next === "NEEDS_PAGE_COVERAGE") {
+      const coverage = await pageCoverageForSite(siteSlug);
+      console.log(`NEEDS_PAGE_COVERAGE: ${coverage ? pageCoverageMessage(coverage) : "page plan incomplete"}`);
+      console.log(`Update sites/${siteSlug}/pages.json (mark each route built|deferred), then run: pnpm blueprint:screenshots ${siteSlug} ${url ?? "http://localhost:<port>"}`);
+      printStatus(siteSlug, status);
+      return;
+    }
+
     if (next === "RUN_BEAUTY") {
       const reviewPath = path.join(rootDir, "sites", siteSlug, "qa", "visual-review.md");
       const entry = [
@@ -547,7 +600,22 @@ async function main() {
     const outputDir = path.join(rootDir, "sites", siteSlug, "screenshots");
     await mkdir(outputDir, { recursive: true });
     await captureScreenshots(url, outputDir);
-    console.log(`Captured screenshots for ${siteSlug}.`);
+
+    // Capture every built route from the page plan into screenshots/pages/<route>/.
+    const pagesFile = await readPagesFile(siteSlug);
+    if (pagesFile) {
+      const built = pagesFile.pages.filter((page) => page.status === "built");
+      for (const page of built) {
+        const routeUrl = new URL(page.route, url).href;
+        const routeDir = path.join(outputDir, "pages", routeToDir(page.route));
+        await mkdir(routeDir, { recursive: true });
+        await captureScreenshots(routeUrl, routeDir);
+        console.log(`Captured ${page.route} -> screenshots/pages/${routeToDir(page.route)}/`);
+      }
+      console.log(`Captured home + ${built.length} built route(s) for ${siteSlug}.`);
+    } else {
+      console.log(`Captured screenshots for ${siteSlug}.`);
+    }
     return;
   }
 
