@@ -94,28 +94,54 @@ Meaning:
 Run these from the Blueprint Factory root.
 
 ```bash
+pnpm blueprint:capture <slug> <donor-url>
 pnpm blueprint:run <slug>
-pnpm blueprint:status <slug>
+pnpm blueprint:status [slug]
 pnpm blueprint:new <slug>
 pnpm blueprint:art <slug>
-pnpm blueprint:check <slug>
+pnpm blueprint:tokens <slug>
+pnpm blueprint:check <slug> [preview-url]
+pnpm blueprint:compare <slug> <preview-url>
+pnpm blueprint:verify <slug> <preview-url>
+pnpm blueprint:copydeck <slug>
 pnpm blueprint:screenshots <slug> <preview-url>
 pnpm blueprint:motion <slug> <preview-url>
 pnpm blueprint:beauty <slug>
-pnpm blueprint:deploy <slug>
+pnpm blueprint:deploy <slug> --preview
 ```
 
 Current command meanings:
 
+- `capture`: produce the full donor evidence pack automatically (multi-viewport screenshots with
+  auto-scroll + cookie-consent dismissal, per-section shots, a real scroll-through video plus a
+  reduced-motion variant, DOM/copy/token/asset/animation/page extraction) and auto-draft `topology.md`,
+  `clone-plan.md`, and `pages.json`. Step one for any new clone.
 - `run`: create/inspect a site and advance through the factory gates.
-- `status`: print the current next action.
+- `status`: with a slug, print that site's next action; with no slug, print the all-sites dashboard and
+  write `factory/STATUS.md`.
 - `new`: create the site scaffold.
 - `art`: check that art direction names a real signature moment.
-- `check`: verify required factory files exist.
-- `screenshots`: capture desktop and mobile screenshots from a preview URL.
-- `motion`: capture motion evidence from a preview URL.
+- `tokens`: curate the donor's colors and fonts into `app/tokens.json` (wired into the theme), swap
+  licensed donor fonts for open alternatives, and log the font decisions in `asset-log.md`.
+- `check`: typecheck → build → (with a preview URL) console-error scan → broken internal link check →
+  axe-core accessibility pass. Still fails if required factory files are missing.
+- `compare`: recapture the build and pixel-diff it against the donor per section; write
+  `qa/compare/report.md` (overall + per-section match, worst section first, structure/style scored
+  separately from raw pixel match) and side-by-side composites.
+- `verify`: the one-call QA chain — check → screenshots → motion → compare — ending with a
+  plain-language report.
+- `copydeck`: turn the donor's extracted copy into a two-column `copy-deck.md` (donor → brand) for
+  line-by-line translation.
+- `screenshots`: capture desktop and mobile screenshots from a preview URL, including every built route
+  listed in `pages.json`.
+- `motion`: capture motion evidence (scripted scroll-through + reduced-motion) from a preview URL.
 - `beauty`: append a beauty-pass review gate.
-- `deploy`: print deploy profile notes. Production deploys are intentionally manual/approved.
+- `deploy`: with `--preview`, build locally and deploy a shareable Vercel preview (never production),
+  verify it returns 200, and record the URL in `deploy.md`. Blocks while any reference-only asset would
+  ship. Production deploys stay manual and require explicit approval.
+
+Copy proven patterns from `factory/reference-library/` before writing motion or interactive components
+from scratch; contribute patterns that pass the Beauty Pass back to the library.
 
 ## Required Files Per Site
 

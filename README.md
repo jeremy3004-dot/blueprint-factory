@@ -20,6 +20,27 @@ Required reference evidence:
 
 Only after that should the site move into art direction, build, screenshots, motion, and Beauty Pass.
 
+## Commands
+
+The factory is driven by `pnpm blueprint:*` commands. Each one ends with a plain-language summary a
+non-technical owner can read.
+
+| Command | What it does |
+| ------- | ------------ |
+| `pnpm blueprint:capture <slug> <donor-url>` | Automated donor evidence pack: multi-viewport full-page screenshots (auto-scrolled, cookie-consent dismissed), per-section shots, a real scroll-through video (+ reduced-motion), DOM/copy/token/asset/animation/page extraction, and auto-drafted `topology.md` + `clone-plan.md` + `pages.json`. |
+| `pnpm blueprint:run <slug> [url]` | Advance the site through the factory gates (reference-first → art → build → screenshots → motion → page coverage → Beauty). |
+| `pnpm blueprint:status [slug]` | With a slug: that site's next gate. With no slug: an all-sites dashboard, also written to `factory/STATUS.md`. |
+| `pnpm blueprint:tokens <slug>` | Curate the donor's colors + fonts into `app/tokens.json` (wired into the theme); substitute licensed donor fonts for open ones and log it in `asset-log.md`. |
+| `pnpm blueprint:check <slug> [url]` | Typecheck → build → (with a URL) console-error scan → broken-link check → axe accessibility pass. |
+| `pnpm blueprint:compare <slug> <preview-url>` | Per-section pixel diff vs the donor, side-by-side composites, and `qa/compare/report.md` (worst section first; structure/style scored separately from pixel match). |
+| `pnpm blueprint:verify <slug> <preview-url>` | The full QA chain: check → screenshots → motion → compare, ending in a plain-language report. |
+| `pnpm blueprint:copydeck <slug>` | Turn the donor's extracted copy into a two-column `copy-deck.md` (donor → brand) for line-by-line translation. |
+| `pnpm blueprint:deploy <slug> --preview` | Build locally, deploy a shareable **Vercel preview** (never production), verify it, and record the URL in `deploy.md`. Blocks while any reference-only asset would ship. |
+| `pnpm blueprint:screenshots` / `:motion` / `:beauty` / `:art` / `:new` | Individual steps (screenshots captures every built route from `pages.json`). |
+
+Copy proven motion/component/section patterns from `factory/reference-library/` before inventing new
+ones; contribute passing patterns back (see its `README.md` and `AGENTS.md`).
+
 ## Green Pastures Pack
 
 For repeat company apps, use `factory/playbooks/green-pastures-pack.md`.
