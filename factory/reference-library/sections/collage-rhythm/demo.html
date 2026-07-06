@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>collage-rhythm — standalone demo</title>
+    <link rel="stylesheet" href="collage-rhythm.css" />
+    <style>
+      /* Demo page chrome only — not part of the pattern. */
+      body {
+        margin: 0;
+        padding: 64px clamp(20px, 6vw, 96px);
+        background: #fbf9f5;
+        color: #14110f;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+      .demo-intro {
+        max-width: 620px;
+      }
+      .demo-intro p {
+        margin: 0 0 8px;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        color: #0e6f63;
+      }
+      .demo-intro h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        font-size: clamp(30px, 5vw, 56px);
+        line-height: 1.02;
+      }
+      .demo-founder {
+        display: grid;
+        grid-template-columns: minmax(0, 460px) 1fr;
+        gap: clamp(32px, 6vw, 90px);
+        align-items: center;
+        margin-top: clamp(64px, 10vh, 130px);
+      }
+      .demo-founder .statement {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.6rem, 3vw, 2.6rem);
+        line-height: 1.2;
+      }
+      @media (max-width: 760px) {
+        .demo-founder {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section aria-label="Featured routes">
+      <div class="demo-intro">
+        <p>Adventures</p>
+        <h2>Hand-built routes across the great ranges</h2>
+      </div>
+
+      <div class="col-grid">
+        <a class="col-card" href="#">
+          <div class="col-frame">
+            <img src="https://picsum.photos/1200/900?random=21" alt="Annapurna circuit" />
+          </div>
+          <div class="col-body">
+            <span class="col-num">01</span>
+            <h3 class="col-title">Annapurna Circuit</h3>
+            <p class="col-note">A paced, supported loop through the heart of the range.</p>
+          </div>
+        </a>
+        <a class="col-card" href="#">
+          <div class="col-frame">
+            <img src="https://picsum.photos/900/1200?random=22" alt="Everest base camp" />
+          </div>
+          <div class="col-body">
+            <span class="col-num">02</span>
+            <h3 class="col-title">Everest Base Camp</h3>
+            <p class="col-note">The classic pilgrimage, led by women who know the trail.</p>
+          </div>
+        </a>
+        <a class="col-card" href="#">
+          <div class="col-frame">
+            <img src="https://picsum.photos/900/1200?random=23" alt="Manaslu" />
+          </div>
+          <div class="col-body">
+            <span class="col-num">03</span>
+            <h3 class="col-title">Manaslu Trek</h3>
+            <p class="col-note">Quieter trails, big horizons, deeply held pacing.</p>
+          </div>
+        </a>
+        <a class="col-card" href="#">
+          <div class="col-frame">
+            <img src="https://picsum.photos/900/1200?random=24" alt="Langtang" />
+          </div>
+          <div class="col-body">
+            <span class="col-num">04</span>
+            <h3 class="col-title">Langtang Valley</h3>
+            <p class="col-note">Rhododendron forests and glacial valleys, close to home.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="demo-founder" aria-label="A note from the founders">
+      <div class="col-founderArt" aria-hidden="true">
+        <div class="col-ph col-ph1">
+          <img src="https://picsum.photos/800/900?random=25" alt="" />
+        </div>
+        <div class="col-ph col-ph2">
+          <img src="https://picsum.photos/600/600?random=26" alt="" />
+        </div>
+        <div class="col-ph col-ph3">
+          <img src="https://picsum.photos/800/700?random=27" alt="" />
+        </div>
+        <div class="col-seal">
+          With
+          <br />
+          love
+        </div>
+      </div>
+      <div>
+        <p class="statement">
+          We started this as two women who wanted <em>more</em> from travel than
+          performance and pressure.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

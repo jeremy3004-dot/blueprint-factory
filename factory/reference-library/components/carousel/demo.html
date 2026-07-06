@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>carousel — standalone demo</title>
+    <link rel="stylesheet" href="carousel.css" />
+    <style>
+      /* Demo page chrome only — not part of the pattern. */
+      body {
+        margin: 0;
+        background: #050505;
+        color: #fff;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+      .demo-heading {
+        text-align: center;
+        padding: 48px 20px 0;
+      }
+      .demo-heading p {
+        margin: 0 0 6px;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .demo-heading h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        font-size: clamp(28px, 4vw, 48px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-heading">
+      <p>Featured</p>
+      <h2>Tab-filtered carousel</h2>
+    </div>
+
+    <section class="crs-root" data-carousel aria-label="Featured destinations">
+      <script type="application/json">
+        [
+          { "location": "Bora Bora", "type": "Resorts", "image": "https://picsum.photos/1200/900?random=1", "copy": "Turquoise water and quiet villas frame every morning on a private island." },
+          { "location": "Costa Rica", "type": "Resorts", "image": "https://picsum.photos/1200/900?random=2", "copy": "Jungle ridgelines, Pacific light, and days between adventure and total calm." },
+          { "location": "Lanai", "type": "Resorts", "image": "https://picsum.photos/1200/900?random=3", "copy": "A quieter Hawaiian retreat where garden paths and ocean views set the pace." },
+          { "location": "Fort Lauderdale", "type": "Residences", "image": "https://picsum.photos/1200/900?random=4", "copy": "A polished coastal address with easy beach days and warm Atlantic evenings." },
+          { "location": "Ko Olina", "type": "Residences", "image": "https://picsum.photos/1200/900?random=5", "copy": "Residential calm beside sheltered lagoons, with generous terraces." },
+          { "location": "Hualalai", "type": "Villas", "image": "https://picsum.photos/1200/900?random=6", "copy": "Lava rock, ocean air, and residential privacy — a slower Hawaiian arrival." },
+          { "location": "Punta Mita", "type": "Villas", "image": "https://picsum.photos/1200/900?random=7", "copy": "Open-air rooms, palms, and sunset water frame a private coastal home." }
+        ]
+      </script>
+    </section>
+
+    <script src="carousel.js"></script>
+  </body>
+</html>

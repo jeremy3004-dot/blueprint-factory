@@ -1,0 +1,82 @@
+/* ==========================================================================
+   marquee
+   A clean, continuous ticker strip. Two identical tracks sit side by side and
+   translate left by exactly one track width, so the seam is invisible and the
+   loop is seamless. Pure CSS — no JS.
+
+   NEW to the library: this pattern was not extracted from a donor site.
+   ========================================================================== */
+
+:root {
+  --mq-ease: linear;          /* a ticker should move at constant speed */
+  --mq-duration: 30s;         /* time for one full track to pass */
+  --mq-gap: 3rem;             /* space between items */
+}
+
+.mq-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Soft fade at both edges so items enter/exit without a hard cut. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* The moving element holds TWO copies of the track. Translating it by -50%
+   (one track's worth) lands the second copy exactly where the first began. */
+.mq-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: mq-scroll var(--mq-duration) var(--mq-ease) infinite;
+}
+
+/* Each copy is a flex row of items with a trailing gap. */
+.mq-group {
+  display: flex;
+  gap: var(--mq-gap);
+  padding-right: var(--mq-gap);
+  flex: 0 0 auto;
+}
+
+.mq-item {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1f211e;
+}
+
+/* Optional: pause on hover for readability. */
+.mq-marquee:hover .mq-track {
+  animation-play-state: paused;
+}
+
+@keyframes mq-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion: stop the scroll entirely and drop the edge mask so the full
+   strip is legible as a static row.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .mq-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .mq-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow-x: auto;
+  }
+}

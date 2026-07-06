@@ -1,0 +1,40 @@
+/* =========================================================================
+   scroll-reveal.css
+   One-shot reveal-on-scroll with per-item stagger via --delay.
+   Extracted from alpine-bloom (gold-standard reduced-motion handling).
+   Self-contained: no external imports, no build step.
+   ========================================================================= */
+
+:root {
+  /* Donor easing from alpine-bloom */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Any element flagged with data-reveal starts hidden + nudged down. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+
+/* The JS adds .in once the element scrolls into view (one-shot). */
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion: show everything instantly, no transitions, no delays.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

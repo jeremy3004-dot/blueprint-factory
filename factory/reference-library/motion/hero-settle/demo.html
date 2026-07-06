@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Settle — Demo</title>
+  <link rel="stylesheet" href="./hero-settle.css" />
+  <style>
+    /* Demo-only chrome. The pattern itself lives in hero-settle.css. */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #151412;
+      color: #151412;
+    }
+    .selectorCard p:first-child {
+      margin: 0 0 14px;
+      color: #d0342c;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .selectorCard h1 { margin: 0 0 20px; font-size: clamp(24px, 4vw, 34px); line-height: 1.1; }
+    .storeList { display: grid; gap: 10px; margin-bottom: 20px; }
+    .storeList button {
+      min-height: 40px;
+      border: 1px solid #151412;
+      border-radius: 999px;
+      background: transparent;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .storeList button:hover { background: #151412; color: #fff; }
+    .selectorCard a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 18px;
+      border: 1px solid #151412;
+      border-radius: 999px;
+      color: #151412;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .selectorCard a:hover { background: #151412; color: #fff; }
+  </style>
+</head>
+<body>
+  <section class="hero" aria-label="Store selector concept">
+    <img
+      class="heroImage"
+      src="https://picsum.photos/1200/800?random=31"
+      alt=""
+    />
+    <div class="selectorCard">
+      <p>Your Neighbor</p>
+      <h1>Select your nearest store.</h1>
+      <div class="storeList" aria-label="Example store choices">
+        <button type="button">Riverside</button>
+        <button type="button">Old Market</button>
+        <button type="button">Harbour Row</button>
+      </div>
+      <a href="#story">Open the app story</a>
+    </div>
+  </section>
+
+  <!-- No JS: the settle + rise play on load via CSS animations.
+       Reload to replay. Enable OS "Reduce Motion" to see the static variant
+       (this guard was added on top of the bigmart donor, which lacked it). -->
+</body>
+</html>

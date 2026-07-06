@@ -1,0 +1,59 @@
+/* ==========================================================================
+   parallax-media
+   A restrained hover zoom on imagery. The image sits inside a clipped frame
+   and eases up to scale(1.025) on hover with a slow 900ms transition.
+
+   Gated behind @media (hover: hover) so touch devices — which have no true
+   hover — never trigger it and never get stuck in a zoomed state.
+
+   Extracted from one-and-only-resorts (media hover zoom).
+   ========================================================================== */
+
+:root {
+  --pm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The frame clips the overflow so the scaled image grows *within* its box
+   rather than pushing the layout. */
+.pm-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.pm-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Hover zoom — only where a real pointer with hover exists.
+   Because the transform and its transition both live inside this query,
+   touch devices get a completely static image (inherently safe).
+   -------------------------------------------------------------------------- */
+@media (hover: hover) {
+  .pm-frame img {
+    transition: transform 900ms var(--pm-ease);
+  }
+
+  .pm-frame:hover img {
+    transform: scale(1.025);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion.
+   This effect is hover-only, so it is inherently safe on touch. But a pointer
+   user can still request reduced motion — so we also neutralize the zoom and
+   its easing here, leaving a fully static image.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .pm-frame img {
+    transition: none !important;
+  }
+
+  .pm-frame:hover img {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,225 @@
+/* ==========================================================================
+   collage-rhythm
+   An editorial section with two moves:
+   1. An asymmetric journey grid: a 3-column grid where the first tile spans
+      2 columns and uses a wide 16/11 frame while the rest are portrait 3/4.
+      Tiles carry a slow hover zoom.
+   2. An overlapping founder collage: three absolutely-positioned photos
+      (.ph1/.ph2/.ph3) stacked at different depths, with a rotated circular
+      .seal badge on top. A subtle :nth-child tilt gives the tiles a
+      hand-placed rhythm.
+
+   Extracted from alpine-bloom `.journeyGrid` / `.card` / `.founderArt`:
+   .card:first-child { grid-column: span 2 }, feature aspect 16/11 vs 3/4,
+   hover scale(1.06), and the absolutely-positioned .ph1/.ph2/.ph3 + rotated
+   .seal collage.
+
+   CSS-only. No JS.
+   ========================================================================== */
+
+:root {
+  --col-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --col-ink: #14110f;
+  --col-white: #ffffff;
+  --col-mint: #75dec9;
+  --col-pink: #ff16a2;
+  --col-paper-2: #f3efe7;
+}
+
+/* ---- Asymmetric feature grid ------------------------------------------- */
+.col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.4vw, 34px);
+  margin-top: clamp(30px, 5vh, 54px);
+}
+
+.col-grid .col-card:first-child {
+  grid-column: span 2;
+}
+
+.col-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--col-ink);
+  isolation: isolate;
+  color: inherit;
+  text-decoration: none;
+}
+
+.col-card .col-frame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.col-card:first-child .col-frame {
+  aspect-ratio: 16 / 11;
+}
+
+.col-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--col-ease);
+}
+
+.col-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 9, 8, 0) 38%,
+    rgba(10, 9, 8, 0.78) 100%
+  );
+  transition: opacity 0.5s var(--col-ease);
+}
+
+.col-card:hover img {
+  transform: scale(1.06);
+}
+
+.col-body {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: clamp(18px, 2vw, 30px);
+  color: var(--col-white);
+}
+
+.col-num {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--col-mint);
+}
+
+.col-title {
+  margin: 8px 0 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1;
+}
+
+.col-note {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---- Overlapping founder collage --------------------------------------- */
+.col-founderArt {
+  position: relative;
+  aspect-ratio: 4 / 5;
+}
+
+.col-founderArt .col-ph {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--col-paper-2);
+  box-shadow: 0 30px 60px -30px rgba(20, 17, 15, 0.45);
+}
+
+.col-founderArt .col-ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-founderArt .col-ph1 {
+  left: 0;
+  top: 4%;
+  width: 62%;
+  height: 64%;
+  z-index: 2;
+}
+
+.col-founderArt .col-ph2 {
+  right: 0;
+  top: 0;
+  width: 40%;
+  height: 44%;
+  z-index: 1;
+}
+
+.col-founderArt .col-ph3 {
+  right: 4%;
+  bottom: 0;
+  width: 52%;
+  height: 46%;
+  z-index: 3;
+}
+
+/* Hand-placed rhythm: a subtle :nth-child tilt across the collage tiles. */
+.col-founderArt .col-ph1 {
+  transform: rotate(-2deg);
+}
+
+.col-founderArt .col-ph:nth-child(2) {
+  transform: rotate(1.5deg);
+}
+
+.col-founderArt .col-ph:nth-child(3) {
+  transform: rotate(-1.2deg);
+}
+
+.col-founderArt .col-seal {
+  position: absolute;
+  left: 6%;
+  bottom: 4%;
+  z-index: 4;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: var(--col-pink);
+  color: var(--col-white);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.1;
+  transform: rotate(-8deg);
+  box-shadow: 0 20px 40px -16px rgba(255, 22, 162, 0.7);
+}
+
+/* ---- Responsive: stack the feature grid --------------------------------- */
+@media (max-width: 760px) {
+  .col-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-grid .col-card:first-child {
+    grid-column: auto;
+  }
+
+  .col-card:first-child .col-frame {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ---- Reduced motion ----------------------------------------------------
+   This section is layout-only; the static rotations (.col-seal, the :nth-child
+   tilt) are decorative and inherently safe — they don't animate. The only
+   motion is the slow hover zoom, so gate that here.
+   ------------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .col-card img {
+    transition-duration: 1ms;
+  }
+
+  .col-card:hover img {
+    transform: none;
+  }
+}

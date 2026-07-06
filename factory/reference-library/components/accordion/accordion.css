@@ -1,0 +1,97 @@
+/* ==========================================================================
+   accordion
+   Accessible single-open accordion. Each section has a <button> header with a
+   +/- glyph (via ::after) and a panel that shows only when its section is open.
+
+   Extracted from the one-and-only-resorts responsive footer accordion
+   (.footerLinks single-open state, +/- glyph, .isOpen ul { display: grid }).
+   ========================================================================== */
+
+:root {
+  --ac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ac-line: rgba(31, 33, 30, 0.12);
+  --ac-ink: #1f211e;
+  --ac-muted: #555852;
+}
+
+.ac-accordion {
+  display: grid;
+  max-width: 520px;
+}
+
+.ac-item {
+  border-top: 1px solid var(--ac-line);
+}
+
+.ac-item:last-child {
+  border-bottom: 1px solid var(--ac-line);
+}
+
+/* Header is a real <button> for keyboard + screen-reader semantics. */
+.ac-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--ac-ink);
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.ac-trigger:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* +/- glyph. Driven by aria-expanded so the visual always matches the a11y
+   state — no separate class needed. */
+.ac-trigger::after {
+  content: "+";
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 180ms var(--ac-ease);
+}
+
+.ac-trigger[aria-expanded="true"]::after {
+  content: "-";
+}
+
+/* Panel: hidden by default, revealed when open. The [hidden] attribute is
+   toggled by JS; the CSS just styles the two states. */
+.ac-panel {
+  display: none;
+  padding: 0 0 18px;
+}
+
+.ac-panel:not([hidden]) {
+  display: grid;
+  gap: 10px;
+}
+
+.ac-panel a {
+  color: var(--ac-muted);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.ac-panel a:hover {
+  color: var(--ac-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion: drop the glyph transition. Open/close is a display toggle
+   (no height animation) so there is nothing else to neutralize.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ac-trigger::after {
+    transition: none !important;
+  }
+}

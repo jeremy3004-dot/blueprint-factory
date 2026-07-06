@@ -1,0 +1,228 @@
+/* ==========================================================================
+   masthead-reveal
+   Solid masthead drops in, hero media de-blurs and settles, a white
+   "aperture" iris lifts away, and copy rises in a stagger. All effects are
+   mount-triggered CSS animations (no JS required).
+
+   Extracted from one-and-only-resorts (flagship masthead).
+   ========================================================================== */
+
+:root {
+  /* Shared easing token used by every move in this pattern. */
+  --mr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Solid masthead: slides down from above on load.
+   -------------------------------------------------------------------------- */
+.mr-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 40;
+  display: grid;
+  height: 96px;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 clamp(22px, 5vw, 72px);
+  color: #272722;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(31, 33, 30, 0.1);
+  animation: mr-headerIn 900ms var(--mr-ease) both;
+}
+
+.mr-header .mr-brand {
+  justify-self: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Hero stage. Layers stack via z-index inside an isolated context:
+     -5  fallback image  (below the video)
+     -4  video / image   (de-blur + settle, then slow breathing loop)
+     -3  veil            (darkening gradient for text legibility)
+     -1  aperture        (white iris that lifts away via box-shadow)
+      0  copy            (staggered headline + supporting text)
+   -------------------------------------------------------------------------- */
+.mr-hero {
+  position: relative;
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 96px 24px 0;
+  color: #ffffff;
+  isolation: isolate;
+}
+
+.mr-heroVideo,
+.mr-heroFallback,
+.mr-heroVeil,
+.mr-heroAperture {
+  position: absolute;
+  inset: 96px 0 0;
+  width: 100%;
+  height: calc(100% - 96px);
+}
+
+.mr-heroVideo,
+.mr-heroFallback {
+  z-index: -4;
+  object-fit: cover;
+  object-position: center;
+  /* De-blur + settle on entry, then an 18s breathing loop that starts once
+     the entry finishes (delay matches the entry duration). */
+  animation:
+    mr-heroImageIn 1800ms var(--mr-ease) both,
+    mr-heroBreath 18s ease-in-out 1800ms infinite alternate;
+}
+
+.mr-heroFallback {
+  z-index: -5;
+}
+
+.mr-heroVeil {
+  z-index: -3;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.42)),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.58));
+}
+
+/* The aperture. A single element whose inset box-shadow floods the whole
+   stage with white, then shrinks to zero — reading as an iris opening. */
+.mr-heroAperture {
+  z-index: -1;
+  pointer-events: none;
+  animation: mr-apertureLift 1500ms var(--mr-ease) 220ms both;
+}
+
+/* --------------------------------------------------------------------------
+   Copy: kicker, headline (line-by-line), and supporting paragraph, each on
+   its own delay to produce a staggered rise.
+   -------------------------------------------------------------------------- */
+.mr-heroCopy {
+  display: grid;
+  max-width: 980px;
+  justify-items: center;
+  margin-top: 76px;
+  text-align: center;
+}
+
+.mr-heroCopy .mr-kicker {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  animation: mr-copyRise 520ms var(--mr-ease) 160ms both;
+}
+
+.mr-heroCopy h1 {
+  margin: 10px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 92px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.mr-heroCopy h1 span {
+  display: block;
+  animation: mr-headlineLift 980ms var(--mr-ease) both;
+}
+
+.mr-heroCopy h1 span:nth-child(1) {
+  animation-delay: 220ms;
+}
+
+.mr-heroCopy h1 span:nth-child(2) {
+  animation-delay: 320ms;
+}
+
+.mr-heroCopy .mr-lede {
+  max-width: 660px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  animation: mr-copyRise 520ms var(--mr-ease) 420ms both;
+}
+
+/* --------------------------------------------------------------------------
+   Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes mr-headerIn {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes mr-heroImageIn {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes mr-heroBreath {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.035);
+  }
+}
+
+/* The iris: inset box-shadow floods the stage white, then collapses to 0. */
+@keyframes mr-apertureLift {
+  from {
+    box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.94);
+  }
+  to {
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes mr-headlineLift {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@keyframes mr-copyRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion: collapse every animation to a near-instant end-state so
+   the masthead, media and copy all appear already-settled with no motion.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .mr-header,
+  .mr-heroVideo,
+  .mr-heroFallback,
+  .mr-heroAperture,
+  .mr-heroCopy .mr-kicker,
+  .mr-heroCopy h1 span,
+  .mr-heroCopy .mr-lede {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

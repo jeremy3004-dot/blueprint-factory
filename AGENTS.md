@@ -31,6 +31,19 @@ Every site must have:
 - Green Pastures is the capability donor only. The visual donor and company brand rules still control the final look, copy, imagery, personas, and exclusions.
 - Do not hand-port from memory. Use the pack checklist and verify each capability phase before save or deploy.
 
-Sites under `sites/<slug>/app` are self-contained. Copy reusable patterns from `factory/reference-library/`; do not import shared runtime code from the factory.
+## Reference Library Rule
+
+`factory/reference-library/` holds proven, copy-paste motion/component/section patterns extracted from
+builds that passed the Beauty Pass (see its `README.md` for the index).
+
+- **Check the reference library before writing any motion or interactive component from scratch.** Agents
+  produce janky motion when they invent it and good motion when they copy a proven pattern. Start from the
+  closest pattern and adapt it.
+- **Contribute passing patterns back.** If you build a new motion/component/section pattern that clears the
+  Beauty Pass, add it to the library (code + README naming when-to-use, donor lineage, and reduced-motion
+  behavior; a runnable `demo.html`). This is what makes the factory compound — every clone improves the next.
+- **Copy from, never import.** Sites under `sites/<slug>/app` are self-contained: copy the pattern's
+  code into the site and adapt it. Do not import shared runtime code from the factory.
+- Every library pattern must handle `prefers-reduced-motion`; keep that true for anything you contribute.
 
 Ask before production deploys, paid service changes, external messages, destructive cleanup, major art-direction changes, or repo graduation.

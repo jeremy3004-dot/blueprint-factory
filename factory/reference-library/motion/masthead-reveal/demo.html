@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>masthead-reveal — demo</title>
+  <link rel="stylesheet" href="masthead-reveal.css" />
+  <style>
+    /* Demo-only page scaffolding (not part of the pattern). */
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+    .demo-scroll { height: 120vh; background: #f4f1ec; display: grid;
+      place-items: center; color: #6f716d; font-size: 12px;
+      letter-spacing: 0.24em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <header class="mr-header">
+    <span></span>
+    <a class="mr-brand" href="#">One&amp;Only</a>
+    <span></span>
+  </header>
+
+  <section class="mr-hero" aria-labelledby="hero-title">
+    <!-- Image used in place of a video so the demo works by double-click. -->
+    <img class="mr-heroVideo" src="https://picsum.photos/1600/900?random=11" alt="" />
+    <img class="mr-heroFallback" src="https://picsum.photos/1600/900?random=11" alt="" />
+    <div class="mr-heroVeil"></div>
+    <div class="mr-heroAperture" aria-hidden="true"></div>
+    <div class="mr-heroCopy">
+      <p class="mr-kicker">Reference Library</p>
+      <h1 id="hero-title">
+        <span>Your masthead reveal,</span>
+        <span>settled on load</span>
+      </h1>
+      <p class="mr-lede">
+        The header drops in, the media de-blurs and breathes, a white aperture
+        lifts away, and the copy rises in a stagger — all on mount.
+      </p>
+    </div>
+  </section>
+
+  <div class="demo-scroll">scroll area</div>
+</body>
+</html>

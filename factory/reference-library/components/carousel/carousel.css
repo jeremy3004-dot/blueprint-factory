@@ -1,0 +1,392 @@
+/* ==========================================================================
+   carousel
+   Tab-filtered prev/active/next carousel. A blurred full-bleed backdrop sits
+   behind three slots: the previous preview, the active card, and the next
+   preview. ARIA tablist filters the pool; dots + arrows move within a filter.
+
+   The entrance is a CSS trick: the active card and backdrop each run a
+   one-shot @keyframes on mount. Re-mounting the node (React `key=` swap, or
+   the .js controller replacing the elements) re-fires the animation, so every
+   navigation replays the fade/lift without any JS animation code.
+
+   Extracted from four-seasons `.propertyStage` featured carousel:
+   .propertyBackdrop / .propertyCard / .sidePreview / .carouselControls /
+   .propertyDots, and the propertyImageIn / propertyCardIn keyframes.
+   ========================================================================== */
+
+:root {
+  --crs-ease: cubic-bezier(0.2, 0, 0, 1);
+  --crs-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --crs-image-dur: 620ms;
+  --crs-card-dur: 520ms;
+}
+
+.crs-root {
+  color: #ffffff;
+}
+
+/* ---- Tabs: ARIA tablist with roving tabIndex --------------------------- */
+.crs-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 28px;
+}
+
+.crs-tabs button {
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 8px 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 180ms var(--crs-ease), transform 180ms var(--crs-ease);
+}
+
+.crs-tabs button.isActive {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ---- Stage: 3-slot grid over a blurred backdrop ------------------------ */
+.crs-stage {
+  position: relative;
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: minmax(180px, 300px) minmax(330px, 420px) minmax(180px, 300px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 4.8vw, 84px);
+  padding: 82px clamp(28px, 5vw, 94px);
+  isolation: isolate;
+}
+
+.crs-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.58;
+  filter: brightness(0.72);
+  animation: crs-imageIn var(--crs-image-dur) var(--crs-luxury) both;
+}
+
+.crs-stage::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 47%, rgba(255, 255, 255, 0.18), transparent 27%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.22) 50%, rgba(0, 0, 0, 0.66)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.12));
+}
+
+/* ---- Active card (center slot) ----------------------------------------- */
+.crs-card {
+  display: grid;
+  width: min(410px, 100%);
+  overflow: hidden;
+  background: #ffffff;
+  color: #050505;
+  animation: crs-cardIn var(--crs-card-dur) var(--crs-luxury) both;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+.crs-card-media {
+  width: 100%;
+  aspect-ratio: 1.42;
+  object-fit: cover;
+  filter: saturate(0.96);
+}
+
+.crs-card-body {
+  display: grid;
+  justify-items: center;
+  padding: 30px 34px 34px;
+}
+
+.crs-card-body p {
+  margin: 0 0 14px;
+  color: #767676;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.crs-card-body h3 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.crs-card-body span {
+  color: #444444;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.crs-card-body button {
+  margin-top: 30px;
+  background: #050505;
+  color: #ffffff;
+  border: 0;
+  padding: 14px 26px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---- Side previews (prev / next slots) --------------------------------- */
+.crs-preview {
+  position: relative;
+  display: grid;
+  min-height: 330px;
+  overflow: hidden;
+  place-items: start;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  padding: 34px 28px;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.28);
+  transition: border-color 220ms var(--crs-ease), transform 260ms var(--crs-luxury), opacity 220ms var(--crs-ease);
+}
+
+.crs-preview::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.26), transparent 42%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.08));
+}
+
+.crs-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 520ms var(--crs-luxury), filter 260ms var(--crs-ease);
+}
+
+.crs-preview span,
+.crs-preview strong {
+  position: relative;
+  z-index: 1;
+}
+
+.crs-preview span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.crs-preview strong {
+  align-self: end;
+  max-width: 210px;
+  font-size: clamp(16px, 1.6vw, 24px);
+  line-height: 1.25;
+}
+
+.crs-preview:hover,
+.crs-preview:focus-visible {
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px);
+}
+
+.crs-preview:hover img,
+.crs-preview:focus-visible img {
+  transform: scale(1.07);
+  filter: saturate(1.05);
+}
+
+/* ---- Arrow controls + counter ------------------------------------------ */
+.crs-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.crs-controls button {
+  width: 46px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: transparent;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 180ms var(--crs-ease), transform 180ms var(--crs-ease);
+}
+
+.crs-controls button span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0;
+}
+
+.crs-controls button:first-child span::before,
+.crs-controls button:last-child span::after {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-top: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+}
+
+.crs-controls button:first-child span::before {
+  margin-right: 6px;
+  transform: rotate(-45deg);
+}
+
+.crs-controls button:last-child span::after {
+  margin-left: 6px;
+  transform: rotate(135deg);
+}
+
+.crs-controls button:hover,
+.crs-controls button:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.crs-controls button:active {
+  transform: scale(0.96);
+}
+
+/* ---- Dots -------------------------------------------------------------- */
+.crs-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.crs-dots button {
+  position: relative;
+  width: 34px;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.crs-dots button::before {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  content: "";
+  background: rgba(255, 255, 255, 0.28);
+  transition: background 180ms var(--crs-ease), transform 180ms var(--crs-ease);
+}
+
+.crs-dots button.isActive::before,
+.crs-dots button:hover::before,
+.crs-dots button:focus-visible::before {
+  background: #ffffff;
+  transform: scaleY(1.35);
+}
+
+/* ---- Entrance keyframes (re-fire on remount) --------------------------- */
+@keyframes crs-imageIn {
+  from {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+  to {
+    opacity: 0.58;
+    transform: scale(1);
+  }
+}
+
+@keyframes crs-cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- Responsive: collapse to single center slot ------------------------ */
+@media (max-width: 900px) {
+  .crs-stage {
+    min-height: 620px;
+    grid-template-columns: minmax(0, 430px);
+    padding: 62px 24px;
+  }
+
+  .crs-preview {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .crs-tabs {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 18px 4px;
+  }
+
+  .crs-tabs button {
+    white-space: nowrap;
+  }
+
+  .crs-card {
+    width: min(100%, 370px);
+  }
+
+  .crs-card-body {
+    padding: 26px 24px 30px;
+  }
+
+  .crs-card-body h3 {
+    font-size: 28px;
+  }
+}
+
+/* ---- Reduced motion ----------------------------------------------------
+   Name the entrance/hover nodes explicitly: no transforms, and clamp the
+   entrance keyframe durations so the remount trick still swaps content but
+   without the fade/lift travel.
+   ------------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .crs-backdrop,
+  .crs-card {
+    animation-duration: 1ms;
+  }
+
+  .crs-backdrop,
+  .crs-card,
+  .crs-preview,
+  .crs-preview img,
+  .crs-dots button::before,
+  .crs-controls button,
+  .crs-tabs button {
+    transform: none;
+    transition-duration: 1ms;
+  }
+}

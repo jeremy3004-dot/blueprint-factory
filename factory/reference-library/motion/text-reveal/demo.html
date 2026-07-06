@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Reveal — Demo</title>
+  <link rel="stylesheet" href="./text-reveal.css" />
+  <style>
+    /* Demo-only chrome. The pattern itself lives in text-reveal.css. */
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; }
+    .masthead {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 clamp(24px, 6vw, 96px) clamp(48px, 10vh, 120px);
+      color: #fff;
+      overflow: hidden;
+      background: #14110d;
+    }
+    .masthead::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%),
+        url("https://picsum.photos/1200/800?random=21") center/cover no-repeat;
+    }
+    .masthead .textReveal { position: relative; z-index: 2; }
+    .textReveal p:first-child {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .textReveal p:last-child { color: rgba(255,255,255,0.82); }
+  </style>
+</head>
+<body>
+  <section class="masthead" aria-labelledby="hero-title">
+    <div class="textReveal">
+      <p>One&amp;Only Resorts and Private Homes</p>
+      <h1 id="hero-title">
+        <span>Your One&amp;Only escape,</span>
+        <span>your way</span>
+      </h1>
+      <p>
+        Where every stay unfolds with effortless freedom, authentic experiences
+        and unscripted moments, crafted around how you move, feel and connect.
+      </p>
+    </div>
+  </section>
+
+  <!-- No JS: the lift plays on load via CSS animations.
+       Reload the page to replay. Enable OS "Reduce Motion" to see the
+       static, no-animation variant. -->
+</body>
+</html>

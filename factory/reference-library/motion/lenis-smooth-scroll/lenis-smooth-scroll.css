@@ -1,0 +1,50 @@
+/* =========================================================================
+   lenis-smooth-scroll.css
+   Companion styles for the Lenis boot module.
+
+   Lenis drives scrolling in JS; these styles cover two things:
+   1. The recommended Lenis base styles (so momentum/anchor jumps behave).
+   2. A CSS `scroll-behavior: smooth` fallback for the buildless demo, where
+      Lenis may not be installed — you still get *some* smoothing.
+
+   Extracted alongside alpine-bloom's Lenis setup.
+   ========================================================================= */
+
+:root {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Native/CSS fallback: smooth anchor jumps when Lenis isn't running. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Recommended Lenis base styles. When Lenis is active it adds the
+   `lenis`/`lenis-smooth` classes to <html>; these keep native scroll
+   anchoring out of Lenis's way. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion: the JS already skips Lenis entirely. Here we also disable
+   the CSS smooth fallback so anchor jumps are instant.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

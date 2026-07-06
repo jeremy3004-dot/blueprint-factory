@@ -189,3 +189,51 @@ Phase 4 — Reference Library: create `factory/reference-library/` with ≥10 se
 motion/component/section patterns (each with code + README + reduced-motion behavior), seeded by
 extracting proven work from `four-seasons`, `one-and-only-resorts`, `bigmart`, `alpine-bloom`; add the
 "copy from the library before inventing; contribute passing patterns back" rule to `AGENTS.md`.
+
+---
+
+## Phase 4 — The Reference Library ✅
+
+Date: 2026-07-06
+
+### What shipped
+
+`factory/reference-library/` — **12 self-contained, copy-paste patterns**, each extracted (not
+reinvented) from real builds that passed the Beauty Pass. Every folder has: the code, a `README.md`
+(donor lineage, when to use, how it works, reduced-motion behavior, usage), and a standalone
+`demo.html` runnable by opening it in a browser (no build).
+
+- `motion/`: `scroll-reveal` (alpine-bloom + four-seasons), `text-reveal` (one-and-only),
+  `hero-settle` (bigmart — reduced-motion guard added, which bigmart lacked), `masthead-reveal`
+  (one-and-only aperture-iris flagship), `parallax-media` (one-and-only), `lenis-smooth-scroll`
+  (alpine-bloom).
+- `components/`: `carousel` (four-seasons — CSS + vanilla JS + React `.tsx`), `media-gallery`
+  (one-and-only — CSS + JS + `.tsx`), `accordion` (one-and-only footer, upgraded to real
+  aria-expanded semantics), `marquee` (new to the library — honestly labeled, not extracted).
+- `sections/`: `collage-rhythm` (alpine-bloom), `story-band` (bigmart).
+- `factory/reference-library/README.md` (index + ethos) and `demo/index.html` (links every pattern demo).
+- `AGENTS.md`: added the explicit Reference Library Rule — "check the library before writing any motion
+  or interactive component from scratch; contribute passing patterns back; copy from, never import;
+  keep reduced-motion handling."
+
+Seeded by dispatching four parallel read-only extraction agents (one per donor site) that returned the
+verbatim proven code, then three parallel authoring agents that wrote the 12 faithful pattern folders.
+
+### How it was verified
+
+- Structure: 12 folders each with README + code + demo; **every `*.css` contains a
+  `@media (prefers-reduced-motion: reduce)` block** (checked programmatically).
+- Runnable in isolation: served the library statically and confirmed HTTP 200 for `demo/index.html` and
+  every pattern demo; screenshotted the index, `carousel`, `masthead-reveal`, and `collage-rhythm` demos
+  — all render correctly (the vanilla-JS carousel builds its 3-slot stage/tabs/dots; the masthead intro
+  plays on load; the collage shows the asymmetric feature tile + rotated seal). No build step needed.
+- Extraction (not rewrite): patterns carry documented donor lineage and reuse the sites' real class
+  logic (e.g. four-seasons' key-remount entrance, alpine-bloom's `[data-reveal]`/`--delay` reveal,
+  one-and-only's `apertureLift` box-shadow iris).
+- `pnpm test` → 67 pass (no script changes; regression clean). No new dependencies.
+
+### What's next
+
+Phase 5 — Multi-page coverage: make the clone plan's page inventory machine-readable with per-page
+status (`planned | built | deferred`), add a `pagesReady` gate to `siteStatus`, and make
+`blueprint screenshots` capture every built route (not just `/`).

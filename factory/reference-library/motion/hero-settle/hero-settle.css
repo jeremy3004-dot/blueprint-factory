@@ -1,0 +1,85 @@
+/* =========================================================================
+   hero-settle.css
+   Full-bleed hero: a background image "settles" (fade + scale 1.03 -> 1)
+   while a foreground card rises, staggered after the image.
+   Extracted from bigmart (.heroImage / .selectorCard).
+
+   NOTE: bigmart shipped WITHOUT a prefers-reduced-motion guard. One has been
+   added here (see bottom of file) — required for this library.
+   Self-contained: no imports, no JS required (pure CSS on load).
+   ========================================================================= */
+
+:root {
+  /* Donor easing from bigmart (inlined there; promoted to a variable here) */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Background image settles: fades in and eases from a slight 1.03 zoom to 1. */
+.heroImage {
+  position: absolute;
+  inset: clamp(18px, 3vw, 44px);
+  width: calc(100% - clamp(36px, 6vw, 88px));
+  height: calc(100% - clamp(36px, 6vw, 88px));
+  object-fit: cover;
+  object-position: right center;
+  filter: saturate(1.05);
+  z-index: 0;
+  animation: imageSettle 1.2s var(--ease) both;
+}
+
+/* Foreground card rises after a 0.25s stagger. */
+.selectorCard {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 92vw);
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid rgba(21, 20, 18, 0.18);
+  background: rgba(255, 253, 246, 0.92);
+  box-shadow: 0 28px 80px rgba(21, 20, 18, 0.22);
+  text-align: center;
+  animation: cardRise 0.9s 0.25s var(--ease) both;
+}
+
+@keyframes imageSettle {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion: ADDED here (absent in the bigmart donor).
+   No settle, no rise, no zoom — both layers render at their final state.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .heroImage,
+  .selectorCard {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

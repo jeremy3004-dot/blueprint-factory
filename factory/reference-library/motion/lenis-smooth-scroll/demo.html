@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lenis Smooth Scroll — Demo</title>
+  <link rel="stylesheet" href="./lenis-smooth-scroll.css" />
+  <style>
+    /* Demo-only chrome. The pattern lives in the sibling .css/.js files. */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1712;
+      background: #fbf9f5;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      gap: 18px;
+      padding: 16px 24px;
+      background: rgba(251, 249, 245, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      font-size: 13px;
+    }
+    header a { color: #b4785a; text-decoration: none; font-weight: 600; }
+    section {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 40px;
+    }
+    section img { max-width: 640px; width: 100%; border-radius: 16px; display: block; }
+    .note {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 24px;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 14px;
+      color: #5c554a;
+    }
+    code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#one">One</a>
+    <a href="#two">Two</a>
+    <a href="#three">Three</a>
+  </header>
+
+  <p class="note">
+    Scroll with your wheel/trackpad or click the anchor links.
+    <br /><br />
+    <strong>About this demo:</strong> Lenis is an npm library
+    (<code>import Lenis from "lenis"</code>) and can't be installed in a
+    double-click, buildless page. So this demo loads Lenis from a CDN
+    <code>&lt;script&gt;</code> if it's reachable; the boot module in
+    <code>lenis-smooth-scroll.js</code> picks it up from <code>window.Lenis</code>.
+    If the CDN is blocked (offline), the module no-ops and you fall back to the
+    CSS <code>scroll-behavior: smooth</code> in <code>lenis-smooth-scroll.css</code>.
+    Either way, under OS "Reduce Motion" the module skips Lenis entirely and the
+    CSS forces instant scrolling.
+  </p>
+
+  <section id="one"><img src="https://picsum.photos/1200/800?random=41" alt="" /></section>
+  <section id="two"><img src="https://picsum.photos/1200/800?random=42" alt="" /></section>
+  <section id="three"><img src="https://picsum.photos/1200/800?random=43" alt="" /></section>
+
+  <!-- Optional: Lenis from CDN. If this loads, window.Lenis exists and the
+       boot module upgrades to true momentum smoothing. If it fails, the demo
+       still works via CSS smooth scroll. -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- The boot module. type="module" because it uses `export`. -->
+  <script type="module" src="./lenis-smooth-scroll.js"></script>
+</body>
+</html>

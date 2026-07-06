@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>parallax-media — demo</title>
+  <link rel="stylesheet" href="parallax-media.css" />
+  <style>
+    /* Demo-only scaffolding (not part of the pattern). */
+    body { margin: 0; padding: 48px; font-family: Arial, Helvetica, sans-serif;
+      background: #f4f1ec; color: #1f211e; }
+    h1 { font-size: 15px; letter-spacing: 0.24em; text-transform: uppercase;
+      font-weight: 700; margin: 0 0 6px; }
+    p.note { color: #6f716d; font-size: 13px; margin: 0 0 36px; max-width: 46ch; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid .pm-frame { aspect-ratio: 0.84; }
+  </style>
+</head>
+<body>
+  <h1>parallax-media</h1>
+  <p class="note">Hover any image — it eases up to a subtle 1.025 zoom over
+    900ms. On touch devices the effect never fires.</p>
+
+  <div class="grid">
+    <div class="pm-frame"><img src="https://picsum.photos/800/960?random=21" alt="" /></div>
+    <div class="pm-frame"><img src="https://picsum.photos/800/960?random=22" alt="" /></div>
+    <div class="pm-frame"><img src="https://picsum.photos/800/960?random=23" alt="" /></div>
+  </div>
+</body>
+</html>

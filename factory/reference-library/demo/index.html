@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blueprint Factory — Reference Library Demos</title>
+    <style>
+      :root {
+        --ink: #14110f;
+        --paper: #fbf9f5;
+        --line: #e6e0d5;
+        --accent: #ff16a2;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        padding: clamp(28px, 6vw, 80px);
+      }
+      header { max-width: 900px; margin: 0 auto 48px; }
+      h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 16px; }
+      p.lede { font-size: 1.05rem; line-height: 1.6; color: #4a4640; max-width: 640px; margin: 0; }
+      h2 { margin: 48px auto 16px; max-width: 1100px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.16em; color: #8a847a; }
+      .grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      a.card {
+        display: block;
+        padding: 22px 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+        transition: transform 260ms var(--ease), border-color 260ms var(--ease), box-shadow 260ms var(--ease);
+      }
+      a.card:hover, a.card:focus-visible {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 18px 40px -24px rgba(20, 17, 15, 0.5);
+      }
+      a.card h3 { margin: 0 0 6px; font-size: 1.1rem; }
+      a.card span { color: #8a847a; font-size: 0.85rem; }
+      a.card em { display: block; margin-top: 12px; font-style: normal; font-size: 0.78rem; color: var(--accent); }
+      footer { max-width: 1100px; margin: 56px auto 0; color: #8a847a; font-size: 0.85rem; }
+      @media (prefers-reduced-motion: reduce) {
+        a.card { transition: none; }
+        a.card:hover, a.card:focus-visible { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reference Library Demos</h1>
+      <p class="lede">
+        Each card opens a self-contained, buildless demo of one proven pattern. Every pattern handles
+        reduced motion and is copy-paste ready. Copy from the library before inventing; contribute
+        passing patterns back.
+      </p>
+    </header>
+
+    <h2>Motion</h2>
+    <div class="grid">
+      <a class="card" href="../motion/scroll-reveal/demo.html"><h3>Scroll Reveal</h3><span>One-shot IO reveal, staggered</span><em>alpine-bloom + four-seasons</em></a>
+      <a class="card" href="../motion/text-reveal/demo.html"><h3>Text Reveal</h3><span>Split-line headline lift</span><em>one-and-only-resorts</em></a>
+      <a class="card" href="../motion/hero-settle/demo.html"><h3>Hero Settle</h3><span>Image settle + card rise on load</span><em>bigmart</em></a>
+      <a class="card" href="../motion/masthead-reveal/demo.html"><h3>Masthead Reveal</h3><span>Aperture iris → living media</span><em>one-and-only-resorts</em></a>
+      <a class="card" href="../motion/parallax-media/demo.html"><h3>Parallax Media</h3><span>Restrained hover zoom</span><em>one-and-only-resorts</em></a>
+      <a class="card" href="../motion/lenis-smooth-scroll/demo.html"><h3>Lenis Smooth Scroll</h3><span>Smooth scroll, reduced-motion safe</span><em>alpine-bloom</em></a>
+    </div>
+
+    <h2>Components</h2>
+    <div class="grid">
+      <a class="card" href="../components/carousel/demo.html"><h3>Carousel</h3><span>Tab-filtered prev/active/next</span><em>four-seasons</em></a>
+      <a class="card" href="../components/media-gallery/demo.html"><h3>Media Gallery</h3><span>Folding gallery, active lift</span><em>one-and-only-resorts</em></a>
+      <a class="card" href="../components/accordion/demo.html"><h3>Accordion</h3><span>Accessible single-open</span><em>one-and-only-resorts</em></a>
+      <a class="card" href="../components/marquee/demo.html"><h3>Marquee</h3><span>Seamless CSS ticker</span><em>new to the library</em></a>
+    </div>
+
+    <h2>Sections</h2>
+    <div class="grid">
+      <a class="card" href="../sections/collage-rhythm/demo.html"><h3>Collage Rhythm</h3><span>Asymmetric editorial grid</span><em>alpine-bloom</em></a>
+      <a class="card" href="../sections/story-band/demo.html"><h3>Story Band</h3><span>Full-bleed editorial band</span><em>bigmart</em></a>
+    </div>
+
+    <footer>12 patterns. Open any demo directly, or see each pattern's README for copy-paste code and donor lineage.</footer>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+/* =========================================================================
+   text-reveal.css
+   Split-line headline lift: each line of a headline rises on its own delay,
+   with supporting copy rising after it.
+   Extracted from one-and-only-resorts masthead (.heroCopy).
+   Self-contained: no imports, no JS required (pure CSS on load).
+   ========================================================================= */
+
+:root {
+  /* Donor easing from one-and-only-resorts */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.textReveal {
+  /* container; sets typographic rhythm for the block */
+  max-width: 760px;
+}
+
+/* Eyebrow / first line of copy rises first. */
+.textReveal p:first-child {
+  animation: copyRise 520ms var(--ease) 160ms both;
+}
+
+.textReveal h1 {
+  margin: 10px 0 12px;
+  font-size: clamp(42px, 6vw, 92px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Each headline line is its own block so it can lift independently. */
+.textReveal h1 span {
+  display: block;
+  animation: headlineLift 980ms var(--ease) both;
+}
+
+/* Staggered per-line delays. Add more :nth-child rules for longer headlines. */
+.textReveal h1 span:nth-child(1) {
+  animation-delay: 220ms;
+}
+.textReveal h1 span:nth-child(2) {
+  animation-delay: 320ms;
+}
+.textReveal h1 span:nth-child(3) {
+  animation-delay: 420ms;
+}
+
+/* Trailing paragraph rises last. */
+.textReveal p:last-child {
+  max-width: 660px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  animation: copyRise 520ms var(--ease) 420ms both;
+}
+
+@keyframes headlineLift {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes copyRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion: no lift, everything visible at rest immediately.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .textReveal p:first-child,
+  .textReveal p:last-child,
+  .textReveal h1 span,
+  .textReveal h1 span:nth-child(1),
+  .textReveal h1 span:nth-child(2),
+  .textReveal h1 span:nth-child(3) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

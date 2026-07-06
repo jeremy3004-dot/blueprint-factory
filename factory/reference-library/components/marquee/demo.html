@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>marquee — demo</title>
+  <link rel="stylesheet" href="marquee.css" />
+  <style>
+    /* Demo-only scaffolding (not part of the pattern). */
+    body { margin: 0; padding: 48px 0; font-family: Arial, Helvetica, sans-serif;
+      background: #f8f5ef; color: #1f211e; }
+    h1 { font-size: 15px; letter-spacing: 0.24em; text-transform: uppercase;
+      font-weight: 700; margin: 0 0 6px; padding: 0 48px; }
+    p.note { color: #6f716d; font-size: 13px; margin: 0 0 32px; padding: 0 48px;
+      max-width: 46ch; }
+    .strip { padding: 20px 0; border-top: 1px solid rgba(31,33,30,.12);
+      border-bottom: 1px solid rgba(31,33,30,.12); }
+  </style>
+</head>
+<body>
+  <h1>marquee</h1>
+  <p class="note">A seamless continuous ticker — two duplicated tracks looping
+    via a CSS translateX. Hover to pause. Motion stops under reduced-motion.</p>
+
+  <div class="strip">
+    <div class="mq-marquee">
+      <div class="mq-track">
+        <!-- Copy A -->
+        <div class="mq-group" aria-hidden="false">
+          <span class="mq-item">Seamless Loop</span>
+          <span class="mq-item">Pure CSS</span>
+          <span class="mq-item">Duplicated Track</span>
+          <span class="mq-item">Pause On Hover</span>
+          <span class="mq-item">Reduced-Motion Safe</span>
+        </div>
+        <!-- Copy B (identical, hidden from AT to avoid double-reading) -->
+        <div class="mq-group" aria-hidden="true">
+          <span class="mq-item">Seamless Loop</span>
+          <span class="mq-item">Pure CSS</span>
+          <span class="mq-item">Duplicated Track</span>
+          <span class="mq-item">Pause On Hover</span>
+          <span class="mq-item">Reduced-Motion Safe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
