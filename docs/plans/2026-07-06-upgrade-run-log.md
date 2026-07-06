@@ -284,3 +284,44 @@ pages are neither built nor explicitly deferred.
 Phase 6 — Preview deploy + operator dashboard: `blueprint deploy <slug> --preview` (real Vercel
 preview, never production, records URL in `deploy.md`) and `blueprint status` with no slug printing an
 all-sites table + writing `factory/STATUS.md`. The first Vercel preview deploy needs explicit approval.
+
+---
+
+## Phase 6 — Preview deploy + operator dashboard ✅
+
+Date: 2026-07-06
+
+### What shipped
+
+The non-technical owner can now see every site at a glance and share a real preview link.
+
+- `factory/scripts/deploy.ts` (new) — `blueprint deploy <slug> --preview`: builds locally (gate), runs
+  `vercel deploy` (default target is PREVIEW — the code never passes `--prod`), verifies the URL returns
+  200, and records it in `deploy.md` (sets `Preview URL:` + a dated note, without touching the
+  production line). `blueprint deploy <slug> --prod` is a hard block (production stays behind the human
+  gate, always). Pure helpers `extractDeployUrl` / `recordPreviewUrl` are unit-tested.
+- `factory/scripts/status.ts` (new) + `blueprint status` with no slug — the all-sites dashboard: one
+  markdown table (next action, pages summary, compare desktop/mobile, last screenshot date, preview
+  URL) printed to the console and written to `factory/STATUS.md`. Pure helpers `parseCompareScore` /
+  `parsePreviewUrl` / `renderStatusTable` are unit-tested.
+- `blueprint run` now ends with a plain-language, non-technical summary of what happened and what the
+  next step is (matching `verify`/`compare`/`capture`/`tokens`/`deploy`).
+- Tests: `status.test.ts` + `deploy.test.ts` (9 new). `pnpm test` → 83 pass.
+
+### How it was verified
+
+- Unit: `pnpm test` → 83 pass (74 + 9 new).
+- Dashboard: `pnpm blueprint:status` (no slug) printed the 6-site table and wrote `factory/STATUS.md`
+  (e.g. four-seasons compare 51.7%/46.2%, one-and-only-resorts READY_FOR_HUMAN_REVIEW).
+- Live preview deploy (approved by the owner): `blueprint deploy example-site --preview` built locally,
+  created a Vercel **preview** at `https://app-ixotuibod-jeremys-projects-379e354f.vercel.app`, verified
+  HTTP 200, recorded it in `example-site/deploy.md`, and the dashboard then surfaced the URL. Production
+  path confirmed hard-blocked (`--prod` exits with a "requires explicit human approval" error).
+
+Note: the `--prod` guard means production is never automated. The ephemeral preview URL above is a
+share link only; nothing is in production.
+
+### What's next
+
+Phase 7 — Production asset + copy pipeline: make the deploy gate block while a production build contains
+`reference-only` assets; add the asset-replacement playbook and the donor→brand `copy-deck.md` workflow.

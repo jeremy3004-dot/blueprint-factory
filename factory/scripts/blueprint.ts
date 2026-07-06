@@ -1,4 +1,4 @@
-import { access, appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { access, appendFile, mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { spawn } from "node:child_process";
 import path from "node:path";
@@ -16,6 +16,8 @@ import {
   type PageCoverage,
   type PagesFile
 } from "./pages";
+import { parseCompareScore, parsePreviewUrl, renderStatusTable, type SiteRow } from "./status";
+import { runPreviewDeploy } from "./deploy";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -305,6 +307,23 @@ async function runCommand(command: string, args: string[]) {
   });
 }
 
+function plainLanguageForNext(siteSlug: string, next: NextAction): string {
+  switch (next) {
+    case "CREATE_SITE": return `${siteSlug} does not exist yet; it will be scaffolded.`;
+    case "REPAIR_REQUIRED_FILES": return `${siteSlug} is missing required factory files; they need to be restored before work continues.`;
+    case "NEEDS_REFERENCE_FIRST": return `${siteSlug} needs its donor evidence first — run blueprint capture to pull the donor's screenshots, design tokens, and page plan.`;
+    case "NEEDS_ART_DIRECTION": return `${siteSlug} has donor evidence; next an agent writes the art direction with one named signature moment before any build.`;
+    case "CREATE_APP": return `${siteSlug}'s app was missing and has been recreated from the template.`;
+    case "NEEDS_PREVIEW_URL": return `${siteSlug} built cleanly — start its preview server and re-run with the URL so we can capture and compare.`;
+    case "CAPTURE_SCREENSHOTS": return `${siteSlug} built — capture desktop and mobile screenshots so we can measure it against the donor.`;
+    case "CAPTURE_MOTION": return `${siteSlug} has screenshots; the scroll-through motion capture is next.`;
+    case "NEEDS_PAGE_COVERAGE": return `${siteSlug} still has pages to build or defer before the Beauty Pass — see the page list above.`;
+    case "RUN_BEAUTY": return `${siteSlug} has all of its evidence. The next step is the human Beauty Pass: watch the motion and compare against the donor. Nothing is deployed to production.`;
+    case "READY_FOR_HUMAN_REVIEW": return `${siteSlug} has passed its automated gates and is ready for your review. Nothing is deployed to production.`;
+    default: return `${siteSlug}: see the status above for the next action.`;
+  }
+}
+
 function printStatus(siteSlug: string, status: SiteStatus) {
   const next = nextActionForStatus(status);
   console.log(`SITE: ${siteSlug}`);
@@ -320,10 +339,74 @@ function printStatus(siteSlug: string, status: SiteStatus) {
   if (status.missingFiles.length > 0) console.log(`missing files: ${status.missingFiles.join(", ")}`);
 }
 
+async function pagesSummaryForRow(siteSlug: string): Promise<string> {
+  const file = await readPagesFile(siteSlug);
+  if (!file) return "single-page";
+  const built = file.pages.filter((p) => p.status === "built").length;
+  const planned = file.pages.filter((p) => p.status === "planned").length;
+  const deferred = file.pages.filter((p) => p.status === "deferred").length;
+  return `${built}b/${planned}p/${deferred}d`;
+}
+
+/** Build one dashboard row for a site. */
+async function buildSiteRow(siteSlug: string): Promise<SiteRow> {
+  const status = await siteStatus(siteSlug);
+  const nextAction = nextActionForStatus(status);
+
+  let lastScreenshot: string | null = null;
+  try {
+    const info = await stat(path.join(rootDir, "sites", siteSlug, "screenshots", "desktop.png"));
+    lastScreenshot = info.mtime.toISOString();
+  } catch {
+    lastScreenshot = null;
+  }
+
+  let compareDesktop: number | null = null;
+  let compareMobile: number | null = null;
+  try {
+    const report = await readFile(path.join(rootDir, "sites", siteSlug, "qa", "compare", "report.md"), "utf8");
+    const parsed = parseCompareScore(report);
+    compareDesktop = parsed.desktop;
+    compareMobile = parsed.mobile;
+  } catch {
+    // no compare report yet
+  }
+
+  let previewUrl: string | null = null;
+  try {
+    previewUrl = parsePreviewUrl(await readFile(path.join(rootDir, "sites", siteSlug, "deploy.md"), "utf8"));
+  } catch {
+    previewUrl = null;
+  }
+
+  return { slug: siteSlug, nextAction, lastScreenshot, compareDesktop, compareMobile, previewUrl, pages: await pagesSummaryForRow(siteSlug) };
+}
+
+/** The all-sites dashboard: print a table and write factory/STATUS.md. */
+async function runDashboard() {
+  const sitesDir = path.join(rootDir, "sites");
+  const entries = await readdir(sitesDir, { withFileTypes: true });
+  const slugs = entries.filter((e) => e.isDirectory() && !e.name.startsWith(".")).map((e) => e.name).sort();
+  const rows: SiteRow[] = [];
+  for (const slug of slugs) rows.push(await buildSiteRow(slug));
+
+  const generatedAt = new Date().toISOString();
+  const table = renderStatusTable(rows, generatedAt);
+  await writeFile(path.join(rootDir, "factory", "STATUS.md"), table, "utf8");
+  console.log(table);
+  console.log(`Wrote factory/STATUS.md (${rows.length} sites).`);
+}
+
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
     console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|tokens|screenshots|motion|beauty|deploy> <slug> [url]");
+    return;
+  }
+
+  // `status` with no slug is the all-sites dashboard.
+  if (command === "status" && !rawSlug) {
+    await runDashboard();
     return;
   }
 
@@ -485,7 +568,11 @@ async function main() {
       await appendRunLog(siteSlug, "- Beauty evidence is present. Stopped at human beauty pass gate.");
     }
 
-    printStatus(siteSlug, await siteStatus(siteSlug));
+    const finalStatus = await siteStatus(siteSlug);
+    printStatus(siteSlug, finalStatus);
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(plainLanguageForNext(siteSlug, nextActionForStatus(finalStatus)));
     return;
   }
 
@@ -677,10 +764,39 @@ async function main() {
   }
 
   if (command === "deploy") {
+    const wantsPreview = process.argv.includes("--preview");
+    const wantsProd = process.argv.includes("--prod") || process.argv.includes("--production");
     const deployPath = path.join(rootDir, "sites", siteSlug, "deploy.md");
     const deployNotes = await readFile(deployPath, "utf8");
-    console.log(`Deploy profile for ${siteSlug}: ${deployProfile(deployNotes)}`);
-    console.log("Production deploy is intentionally disabled in the first factory version.");
+
+    if (wantsProd) {
+      // Production stays behind the human gate — always.
+      console.error(`BLOCKED: production deploy for ${siteSlug} requires explicit human approval and is never automated.`);
+      console.error("Ask the owner, then follow the approved production release path in deploy.md.");
+      process.exit(1);
+    }
+
+    if (!wantsPreview) {
+      console.log(`Deploy profile for ${siteSlug}: ${deployProfile(deployNotes)}`);
+      console.log("Pass --preview for a shareable Vercel preview deploy (never production).");
+      console.log("Production deploy stays manual and requires explicit approval.");
+      return;
+    }
+
+    console.log(`Building ${siteSlug} and deploying a Vercel PREVIEW (never production) ...`);
+    const result = await runPreviewDeploy(siteSlug);
+    if (!result.url || !result.verified) {
+      console.error(`Preview deploy did not complete: ${result.detail}`);
+      process.exit(1);
+    }
+    await appendRunLog(siteSlug, `- Deployed Vercel preview: ${result.url} (verified 200). Recorded in deploy.md. Not production.`);
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(
+      `${siteSlug} is now live at a shareable preview link: ${result.url}. It passed a local build and ` +
+        `returned a healthy response, and the link is saved in deploy.md. This is a PREVIEW only — nothing ` +
+        `has gone to production, which still needs your explicit approval. Share the link to gather feedback.`
+    );
     return;
   }
 
