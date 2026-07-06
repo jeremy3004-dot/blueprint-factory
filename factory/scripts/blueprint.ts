@@ -18,6 +18,7 @@ import {
 } from "./pages";
 import { parseCompareScore, parsePreviewUrl, renderStatusTable, type SiteRow } from "./status";
 import { runPreviewDeploy } from "./deploy";
+import { checkProductionAssets, runCopyDeck } from "./assets";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -400,7 +401,7 @@ async function runDashboard() {
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
-    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|tokens|screenshots|motion|beauty|deploy> <slug> [url]");
+    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|tokens|copydeck|screenshots|motion|beauty|deploy> <slug> [url]");
     return;
   }
 
@@ -659,6 +660,20 @@ async function main() {
     return;
   }
 
+  if (command === "copydeck") {
+    const result = await runCopyDeck(siteSlug);
+    await appendRunLog(siteSlug, `- Generated copy-deck.md (${result.rowCount} donor lines) for donor→brand translation.`);
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(
+      `We turned the donor's extracted words into a two-column worksheet at sites/${siteSlug}/copy-deck.md ` +
+        `(${result.rowCount} lines). The left column is the donor's copy; fill the right column with the ` +
+        `brand's own words so nothing from the donor — names, claims, taglines — ships to production. ` +
+        `Brand rules can then be checked against this one file, line by line.`
+    );
+    return;
+  }
+
   if (command === "verify") {
     if (!url) {
       console.error("Usage: blueprint verify <slug> <preview-url>");
@@ -768,6 +783,20 @@ async function main() {
     const wantsProd = process.argv.includes("--prod") || process.argv.includes("--production");
     const deployPath = path.join(rootDir, "sites", siteSlug, "deploy.md");
     const deployNotes = await readFile(deployPath, "utf8");
+
+    // Legal gate: reference-only assets never ship. Hard block on production; block preview too
+    // unless explicitly overridden with --allow-reference-only (then warn).
+    const referenceOnly = await checkProductionAssets(siteSlug);
+    if (referenceOnly.length > 0 && (wantsProd || wantsPreview)) {
+      const allowOverride = process.argv.includes("--allow-reference-only");
+      if (wantsProd || !allowOverride) {
+        console.error(`BLOCKED: ${siteSlug} still ships ${referenceOnly.length} reference-only asset(s) — these must be replaced before deploy:`);
+        for (const asset of referenceOnly) console.error(`- ${asset}`);
+        console.error("Replace them (see factory/playbooks/asset-replacement.md), or pass --allow-reference-only for a preview-only warning.");
+        process.exit(1);
+      }
+      console.warn(`WARNING: ${siteSlug} still ships ${referenceOnly.length} reference-only asset(s); proceeding with PREVIEW only because --allow-reference-only was passed.`);
+    }
 
     if (wantsProd) {
       // Production stays behind the human gate — always.

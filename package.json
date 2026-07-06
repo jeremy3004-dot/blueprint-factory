@@ -13,6 +13,7 @@
     "blueprint:compare": "tsx factory/scripts/blueprint.ts compare",
     "blueprint:verify": "tsx factory/scripts/blueprint.ts verify",
     "blueprint:tokens": "tsx factory/scripts/blueprint.ts tokens",
+    "blueprint:copydeck": "tsx factory/scripts/blueprint.ts copydeck",
     "blueprint:screenshots": "tsx factory/scripts/blueprint.ts screenshots",
     "blueprint:motion": "tsx factory/scripts/blueprint.ts motion",
     "blueprint:beauty": "tsx factory/scripts/blueprint.ts beauty",
