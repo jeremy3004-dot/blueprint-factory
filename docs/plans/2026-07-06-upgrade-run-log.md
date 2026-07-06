@@ -73,3 +73,68 @@ Phase 2 — Visual Compare + real verification: `blueprint compare <slug> <previ
 (per-section pixel diff, side-by-side composites, worst-section-first report), upgraded
 `blueprint check` (typecheck → build → console-error → link check → axe a11y), and
 `blueprint verify` chaining the full QA loop with a plain-language report.
+
+---
+
+## Phase 2 — Visual Compare + real verification ✅
+
+Date: 2026-07-06
+
+### What shipped
+
+Objective "how close is the clone?" measurement plus real build verification.
+
+- `factory/scripts/compare.ts` (new) — `blueprint compare <slug> <preview-url>`:
+  - Recaptures the build (desktop + mobile, same auto-scroll discipline) and harvests its tokens,
+    headings, and section count.
+  - Per-section pixel diff by horizontal bands over the shared height (pngjs + pixelmatch, no resize
+    dep needed since donor/build share viewport width). Tolerates height differences by top-aligning
+    and comparing common-height bands.
+  - Side-by-side donor|build composites per viewport (`qa/compare/side-by-side-*.png`), worst-band
+    diff crops (`qa/compare/crops/`), and `qa/compare/report.md`: overall + per-section match %,
+    worst-sections-first fix list, and — per the honesty rule — structure and style-token scores
+    reported SEPARATELY from raw pixel match (translation is expected to drop color/imagery, not
+    structure). Tolerates legacy donor names (`*-desktop.png`) and missing donor evidence.
+- `factory/scripts/checks.ts` (new) — upgraded `blueprint check`: typecheck (`tsc --noEmit`) → build
+  (`next build`) → console-error scan → internal broken-link check → axe-core a11y quick pass, each
+  reported pass/fail. Browser checks run only when a preview URL is supplied. File-existence gate
+  (unchanged) still runs first.
+- `factory/scripts/verify.ts` (new) — `blueprint verify <slug> <preview-url>` chains
+  check → screenshots → motion → compare and ends with a plain-language, non-technical summary
+  written to `qa/verify-report.md`.
+- Tests: `compare.test.ts`, `checks.test.ts`, `verify.test.ts` (22 new, incl. real pixelmatch band
+  diffing on synthetic PNGs). `pnpm test` → 57 pass.
+- Docs/process: `beauty-pass-rubric.md` now requires the latest compare report as a Beauty Pass input
+  and mandates citing the match scores (with the honesty caveat). `visual-review.template.md` gained a
+  "Compare scores" block. No existing gate weakened — these add requirements.
+- New deps (devDependencies, factory root, justified): `pixelmatch` + `pngjs` (image band diff),
+  `@axe-core/playwright` (a11y). Also fixed a real template defect surfaced by the new typecheck:
+  `next-site` (and example-site) were missing `@types/react`/`@types/react-dom`/`@types/node`.
+
+### How it was verified
+
+- Unit: `pnpm test` → 57 pass (35 + 22 new).
+- Compare on four-seasons (served via `next dev`, compared against its donor screenshot):
+  per-section report produced (desktop 51.9%, mobile 27.1%). Controlled A/B break: hiding the
+  featured **carousel** (`propertyStage`, height preserved) dropped exactly that band —
+  **band 5: 18.5% → 9.3%** — while every other in-range band stayed **identical** (61.4/68.5/45.7/
+  8.5/95), overall dropped, and the broken section rose into the worst-sections fix list. The break
+  was then fully reverted (four-seasons `page.tsx` is pristine — no diff). Honesty note: band 7 (8.5%)
+  is a genuinely low-fidelity region of this loose stylistic clone and stays the standing #1 in every
+  run — the instrument reports true fidelity rather than being gamed by an artificial blank. The
+  height-truncation caveat (build taller than donor screenshot → footer below compared region) is a
+  known limit of band-diff when donor `sections/` are absent; real donor captures include `sections/`.
+- Verify end-to-end on example-site (the sandbox): all five checks PASS (typecheck, build,
+  console-errors, internal-links, a11y-axe), screenshots + motion captured, compare ran (reports
+  "no donor on file" honestly rather than a fake 0%), plain-language report written.
+- Regression: all pre-existing gate tests still pass.
+
+Notes: generated QA artifacts (composites, crops, build shots, videos, verify report) are left in the
+working tree as evidence but NOT committed (regenerable binaries). Mid-phase, an external process wiped
+`~/Library/Caches/ms-playwright`; reinstalled chromium + headless-shell + ffmpeg to continue.
+
+### What's next
+
+Phase 3 — Design tokens + fonts: `blueprint tokens <slug>` normalizes `extraction/tokens.json` into
+`app/tokens.json` wired into the Tailwind theme (and the `next-site` template), plus a donor-font →
+open-alternative substitution workflow recorded in `asset-log.md`.

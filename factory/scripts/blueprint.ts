@@ -4,6 +4,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { captureMotion, captureScreenshots } from "./capture";
 import { captureDonor } from "./capture-donor";
+import { runCompare } from "./compare";
+import { runChecks, summarizeChecks } from "./checks";
+import { runVerify } from "./verify";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -280,7 +283,7 @@ function printStatus(siteSlug: string, status: SiteStatus) {
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
-    console.log("Usage: blueprint <run|status|new|capture|art|check|screenshots|motion|beauty|deploy> <slug> [url]");
+    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|screenshots|motion|beauty|deploy> <slug> [url]");
     return;
   }
 
@@ -444,13 +447,73 @@ async function main() {
   }
 
   if (command === "check") {
+    // File-existence gate (unchanged) first — a build can't be trusted if the factory
+    // paperwork is missing.
     const missing = await checkRequiredFiles(siteSlug);
     if (missing.length > 0) {
       console.error(`NOT_READY: missing required files for ${siteSlug}`);
       for (const missingFile of missing) console.error(`- ${missingFile}`);
       process.exit(1);
     }
-    console.log(`READY: required factory files exist for ${siteSlug}.`);
+    console.log(`Required factory files exist for ${siteSlug}.`);
+
+    // Then the real checks: typecheck -> build -> (with a preview URL) console -> links -> a11y.
+    console.log(url ? `Running full check chain against ${url} ...` : "Running typecheck + build (pass a preview URL for console/link/a11y checks) ...");
+    const results = await runChecks(siteSlug, url);
+    for (const result of results) {
+      const label = result.skipped ? "SKIP" : result.pass ? "PASS" : "FAIL";
+      console.log(`[${label}] ${result.name}: ${result.detail}`);
+    }
+    const { allPassed, failed } = summarizeChecks(results);
+    if (!allPassed) {
+      console.error(`NOT_READY: ${failed.join(", ")} failed for ${siteSlug}.`);
+      process.exit(1);
+    }
+    console.log(`READY: all checks passed for ${siteSlug}.`);
+    return;
+  }
+
+  if (command === "compare") {
+    if (!url) {
+      console.error("Usage: blueprint compare <slug> <preview-url>");
+      process.exit(1);
+    }
+    console.log(`Comparing ${siteSlug} build (${url}) against the donor evidence ...`);
+    const result = await runCompare(siteSlug, url);
+    await appendRunLog(
+      siteSlug,
+      `- Visual compare vs donor: desktop ${result.overallDesktop}%, mobile ${result.overallMobile}%. Worst section: ${result.worstSectionLabel ?? "n/a"} (${result.worstSectionMatch ?? "n/a"}%). Report: qa/compare/report.md.`
+    );
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(
+      `The build matches the donor at ${result.overallDesktop ?? "n/a"}% on desktop` +
+        `${result.overallMobile !== null ? ` and ${result.overallMobile}% on mobile` : ""}. ` +
+        `${result.worstSectionLabel ? `The weakest area is "${result.worstSectionLabel}" (${result.worstSectionMatch}%) — fix that first. ` : ""}` +
+        `${result.structure ? `Structurally the build has ${result.structure.buildSectionCount} sections vs the donor's ${result.structure.donorSectionCount}. ` : ""}` +
+        `Pixel match is expected to drop on color/imagery after brand translation while structure stays high. ` +
+        `Full report and side-by-side composites are under sites/${siteSlug}/qa/compare/.`
+    );
+    return;
+  }
+
+  if (command === "verify") {
+    if (!url) {
+      console.error("Usage: blueprint verify <slug> <preview-url>");
+      process.exit(1);
+    }
+    console.log(`Verifying ${siteSlug} end-to-end against ${url} ...`);
+    const result = await runVerify(siteSlug, url);
+    for (const check of result.checks) {
+      const label = check.skipped ? "SKIP" : check.pass ? "PASS" : "FAIL";
+      console.log(`[${label}] ${check.name}: ${check.detail}`);
+    }
+    await appendRunLog(siteSlug, `- Ran verify: ${result.plainLanguage}`);
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(result.plainLanguage);
+    console.log("");
+    console.log(`Full report: ${path.relative(rootDir, result.reportPath)}`);
     return;
   }
 

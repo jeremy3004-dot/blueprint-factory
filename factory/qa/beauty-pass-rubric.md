@@ -11,6 +11,9 @@ The Beauty Pass exists to catch the failure mode an AI builder is most prone to:
 - The donor `clone-plan.md`, including page inventory, flow map, animation audit, asset strategy, and stack decision.
 - Desktop and mobile screenshots from `blueprint screenshots`.
 - A scroll-through video capture from `blueprint motion`, saved under `qa/motion/`.
+- The latest visual compare report from `blueprint compare`, saved at `qa/compare/report.md`. This
+  gives an objective per-section match score against the donor. If it is missing, run
+  `blueprint compare <slug> <preview-url>` before judging.
 
 If the motion capture is missing, stop and capture it before judging.
 
@@ -25,6 +28,12 @@ If it is missing, weak, or feels like decorative filler, the site fails this che
 For each reference in `art-direction.md`, compare the site against the specific thing that reference was chosen to teach. Write the comparison in `qa/visual-review.md`.
 
 The primary donor comparison is mandatory. If there is no donor screenshot/topology evidence, the site cannot pass. The goal is not pixel-perfect plagiarism; the goal is to prove the build inherited a 10/10 structure, section rhythm, and interaction model before translating it into the client brand.
+
+The Reference Comparison in `qa/visual-review.md` must cite the objective match scores from the latest
+`qa/compare/report.md` — overall and worst-section — not just prose. Read the compare score honestly:
+pixel match is a fidelity instrument for the clone stage, so after brand translation the color/imagery
+score is EXPECTED to drop while structure and section rhythm should stay high. Judge the structure/style
+scores, not the raw pixel number alone.
 
 The clone plan comparison is also mandatory. If the clone plan named inner pages, flows, states, animations, or stack requirements that were not built or explicitly deferred, the site cannot pass.
 
