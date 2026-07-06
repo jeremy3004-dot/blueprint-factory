@@ -138,3 +138,54 @@ working tree as evidence but NOT committed (regenerable binaries). Mid-phase, an
 Phase 3 — Design tokens + fonts: `blueprint tokens <slug>` normalizes `extraction/tokens.json` into
 `app/tokens.json` wired into the Tailwind theme (and the `next-site` template), plus a donor-font →
 open-alternative substitution workflow recorded in `asset-log.md`.
+
+---
+
+## Phase 3 — Design tokens + fonts ✅
+
+Date: 2026-07-06
+
+### What shipped
+
+Donor DNA now flows mechanically into the build instead of through prose.
+
+- `factory/scripts/tokens.ts` (new) — `blueprint tokens <slug>`:
+  - Reads the donor `extraction/tokens.json` and curates it into `app/tokens.json`: a semantic palette
+    (`pickPalette` classifies frequency-sorted donor colors into background/foreground/primary/accent/
+    muted by luminance + saturation), heading/body font choices, type scale, spacing, radii.
+  - Font matcher (`matchFont`): keeps already-open fonts, substitutes licensed donor fonts (SF Pro,
+    Helvetica, Canela, Freight, Circular…) for the closest open Google-Fonts equivalent, and
+    heuristically substitutes unmapped fonts (serif→Lora, sans→Inter) with a "verify" flag. Decisions
+    are appended to the site's `asset-log.md`.
+  - Also writes `app/tokens.donor.json` (immutable donor baseline) so brand translation can diff
+    donor vs brand later.
+- `factory/qa/font-substitutes.md` (new) — the curated licensed→open font map (the substitution
+  rationale), referenced from the asset log.
+- Template wiring (`factory/templates/next-site/`): ships a default `tokens.json`; `layout.tsx` injects
+  the tokens as `:root` CSS custom properties; `globals.css` reads `var(--color-*)` / `var(--font-*)`
+  with fallbacks. Every new site reads from tokens on day one.
+- `art-direction.template.md` gained a "Token translation (donor → brand)" section documenting the
+  `tokens.donor.json` → `tokens.json` diff workflow.
+- Tests: `tokens.test.ts` (10 new — color parsing, luminance/saturation, palette classification, font
+  matching, curation, CSS-var emission). `pnpm test` → 67 pass.
+
+### How it was verified
+
+- Unit: `pnpm test` → 67 pass (57 + 10 new).
+- `blueprint tokens demo-clone` (real Apple donor from Phase 1): curated background `#f5f5f7`,
+  primary `#0071e3` (Apple action blue), accent `#2997ff`; substituted SF Pro Display/Text → Inter;
+  the font decisions were written to `demo-clone/asset-log.md`; `tokens.json` + `tokens.donor.json`
+  written. (Acceptance part 3.)
+- Fresh site from the template (`blueprint new phase3-demo`), served: screenshotted the default render,
+  then changed only `app/tokens.json` (background `#111312`→`#f4efe6`, primary gold→`#d2361e` red),
+  re-screenshotted — the whole site visibly restyled (dark→light surface, gold→red accent/eyebrow/
+  hero line) with no code change. (Acceptance parts 1 + 2; before/after PNGs shown to the operator.)
+  Scratch site deleted after.
+- Regression: all prior gates/tests still pass.
+
+### What's next
+
+Phase 4 — Reference Library: create `factory/reference-library/` with ≥10 self-contained, copy-paste
+motion/component/section patterns (each with code + README + reduced-motion behavior), seeded by
+extracting proven work from `four-seasons`, `one-and-only-resorts`, `bigmart`, `alpine-bloom`; add the
+"copy from the library before inventing; contribute passing patterns back" rule to `AGENTS.md`.

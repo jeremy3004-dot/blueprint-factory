@@ -7,6 +7,7 @@ import { captureDonor } from "./capture-donor";
 import { runCompare } from "./compare";
 import { runChecks, summarizeChecks } from "./checks";
 import { runVerify } from "./verify";
+import { runTokens } from "./tokens";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -283,7 +284,7 @@ function printStatus(siteSlug: string, status: SiteStatus) {
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
-    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|screenshots|motion|beauty|deploy> <slug> [url]");
+    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|tokens|screenshots|motion|beauty|deploy> <slug> [url]");
     return;
   }
 
@@ -493,6 +494,27 @@ async function main() {
         `${result.structure ? `Structurally the build has ${result.structure.buildSectionCount} sections vs the donor's ${result.structure.donorSectionCount}. ` : ""}` +
         `Pixel match is expected to drop on color/imagery after brand translation while structure stays high. ` +
         `Full report and side-by-side composites are under sites/${siteSlug}/qa/compare/.`
+    );
+    return;
+  }
+
+  if (command === "tokens") {
+    const result = await runTokens(siteSlug);
+    await appendRunLog(
+      siteSlug,
+      `- Curated donor tokens into app/tokens.json. Fonts: heading ${result.tokens.fonts.heading.family}, body ${result.tokens.fonts.body.family}. Recorded font decisions in asset-log.md.`
+    );
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    const h = result.tokens.fonts.heading;
+    const b = result.tokens.fonts.body;
+    console.log(
+      `We turned the donor's design fingerprint into the site's tokens (colors + fonts) at ` +
+        `sites/${siteSlug}/app/tokens.json, and the site now renders from it. ` +
+        `Background ${result.tokens.colors.background}, primary ${result.tokens.colors.primary}, accent ${result.tokens.colors.accent}. ` +
+        `Headings use ${h.family}${h.substituted ? ` (a free stand-in for the donor's ${h.donor})` : ""} and body uses ${b.family}. ` +
+        `${h.substituted || b.substituted ? "Those font swaps avoid shipping a licensed donor font and are logged in asset-log.md. " : ""}` +
+        `Change any value in tokens.json to restyle the whole site.`
     );
     return;
   }
