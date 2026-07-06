@@ -7,6 +7,7 @@
     "blueprint:run": "tsx factory/scripts/blueprint.ts run",
     "blueprint:status": "tsx factory/scripts/blueprint.ts status",
     "blueprint:new": "tsx factory/scripts/blueprint.ts new",
+    "blueprint:capture": "tsx factory/scripts/blueprint.ts capture",
     "blueprint:art": "tsx factory/scripts/blueprint.ts art",
     "blueprint:check": "tsx factory/scripts/blueprint.ts check",
     "blueprint:screenshots": "tsx factory/scripts/blueprint.ts screenshots",

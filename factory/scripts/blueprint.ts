@@ -3,6 +3,7 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { captureMotion, captureScreenshots } from "./capture";
+import { captureDonor } from "./capture-donor";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -279,7 +280,7 @@ function printStatus(siteSlug: string, status: SiteStatus) {
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
-    console.log("Usage: blueprint <run|status|new|art|check|screenshots|motion|beauty|deploy> <slug> [url]");
+    console.log("Usage: blueprint <run|status|new|capture|art|check|screenshots|motion|beauty|deploy> <slug> [url]");
     return;
   }
 
@@ -294,6 +295,46 @@ async function main() {
 
   if (command === "status") {
     printStatus(siteSlug, await siteStatus(siteSlug));
+    return;
+  }
+
+  if (command === "capture") {
+    if (!url) {
+      console.error("Usage: blueprint capture <slug> <donor-url> [--pages N]");
+      process.exit(1);
+    }
+
+    // Capture is usually step one, so scaffold the site if it does not exist yet.
+    if (!(await fileExists(`sites/${siteSlug}`))) {
+      await createSite(siteSlug);
+      console.log(`Created sites/${siteSlug} scaffold.`);
+    }
+
+    const pagesFlagIndex = process.argv.indexOf("--pages");
+    const pages = pagesFlagIndex >= 0 ? Number(process.argv[pagesFlagIndex + 1]) : undefined;
+
+    console.log(`Capturing donor evidence for ${siteSlug} from ${url} ...`);
+    const result = await captureDonor(siteSlug, url, { pages });
+    await appendRunLog(
+      siteSlug,
+      `- Captured donor evidence pack from ${url} (${result.viewportsCaptured.length} viewports, ${result.sectionCount} sections, ${result.assetCount} assets, ${result.pageCount} pages).\n- Auto-drafted topology.md and clone-plan.md. Next gate: verify and complete the clone plan (set a real Decision: line), then art direction.`
+    );
+
+    const banner = result.cookieBannerHandled ? "A cookie banner was found and dismissed." : "No cookie banner needed dismissal.";
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(
+      `We captured the donor site (${result.donorUrl}) at ${result.viewportsCaptured.length} screen sizes and ` +
+        `saved ${result.sectionCount} section pictures, a scroll-through video, and a design fingerprint ` +
+        `(colors, fonts, spacing). ${banner} We found ${result.pageCount} inner page${result.pageCount === 1 ? "" : "s"} to consider ` +
+        `and ${result.assetCount} donor image${result.assetCount === 1 ? "" : "s"}/video${result.assetCount === 1 ? "" : "s"} ` +
+        `(all reference-only — none will ship). ` +
+        `${result.libraries.length ? `The donor appears to animate with ${result.libraries.join(", ")}. ` : "No animation library was detected. "}` +
+        `Draft topology.md and clone-plan.md are ready under sites/${siteSlug}/references/reference-first/ — ` +
+        `an agent now verifies them (especially the build stack) before art direction and build.`
+    );
+    console.log("");
+    console.log(`Evidence: ${path.relative(rootDir, result.referenceDir)}`);
     return;
   }
 
