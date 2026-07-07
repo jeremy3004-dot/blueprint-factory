@@ -1,0 +1,152 @@
+[
+  {
+    "path": "/",
+    "url": "https://pencilsofpromise.org/",
+    "label": "Skip to content",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://pencilsofpromise.org/about",
+    "label": "About Us",
+    "area": "header"
+  },
+  {
+    "path": "/about/financials",
+    "url": "https://pencilsofpromise.org/about/financials",
+    "label": "Financials",
+    "area": "header"
+  },
+  {
+    "path": "/about/our-people",
+    "url": "https://pencilsofpromise.org/about/our-people",
+    "label": "Our People",
+    "area": "header"
+  },
+  {
+    "path": "/about/press",
+    "url": "https://pencilsofpromise.org/about/press",
+    "label": "Press",
+    "area": "header"
+  },
+  {
+    "path": "/accessibility",
+    "url": "https://pencilsofpromise.org/accessibility",
+    "label": "Accessibility",
+    "area": "nav"
+  },
+  {
+    "path": "/blog",
+    "url": "https://pencilsofpromise.org/blog",
+    "label": "Blog",
+    "area": "header"
+  },
+  {
+    "path": "/contact",
+    "url": "https://pencilsofpromise.org/contact",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/es",
+    "url": "https://pencilsofpromise.org/es",
+    "label": "Español",
+    "area": "body"
+  },
+  {
+    "path": "/founding-story",
+    "url": "https://pencilsofpromise.org/founding-story",
+    "label": "Founding Story",
+    "area": "header"
+  },
+  {
+    "path": "/gala",
+    "url": "https://pencilsofpromise.org/gala",
+    "label": "Get Your Gala Tickets Now",
+    "area": "header"
+  },
+  {
+    "path": "/jobs",
+    "url": "https://pencilsofpromise.org/jobs",
+    "label": "Jobs",
+    "area": "header"
+  },
+  {
+    "path": "/lo",
+    "url": "https://pencilsofpromise.org/lo",
+    "label": "ພາສາລາວ",
+    "area": "body"
+  },
+  {
+    "path": "/marathon",
+    "url": "https://pencilsofpromise.org/marathon",
+    "label": "Run a Marathon",
+    "area": "header"
+  },
+  {
+    "path": "/our-work",
+    "url": "https://pencilsofpromise.org/our-work",
+    "label": "Our Work",
+    "area": "header"
+  },
+  {
+    "path": "/our-work/school-builds",
+    "url": "https://pencilsofpromise.org/our-work/school-builds",
+    "label": "School Builds",
+    "area": "header"
+  },
+  {
+    "path": "/our-work/teacher-support",
+    "url": "https://pencilsofpromise.org/our-work/teacher-support",
+    "label": "Teacher Support",
+    "area": "header"
+  },
+  {
+    "path": "/our-work/wash",
+    "url": "https://pencilsofpromise.org/our-work/wash",
+    "label": "WASH",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-donor-policy",
+    "url": "https://pencilsofpromise.org/privacy-donor-policy",
+    "label": "Privacy & Gift Policy",
+    "area": "nav"
+  },
+  {
+    "path": "/site-map",
+    "url": "https://pencilsofpromise.org/site-map",
+    "label": "Site Map",
+    "area": "nav"
+  },
+  {
+    "path": "/take-action/campaign",
+    "url": "https://pencilsofpromise.org/take-action/campaign",
+    "label": "Start a Campaign",
+    "area": "header"
+  },
+  {
+    "path": "/take-action/partner",
+    "url": "https://pencilsofpromise.org/take-action/partner",
+    "label": "Partner with Us",
+    "area": "header"
+  },
+  {
+    "path": "/take-action/spread-the-word",
+    "url": "https://pencilsofpromise.org/take-action/spread-the-word",
+    "label": "Brand Assets",
+    "area": "nav"
+  },
+  {
+    "path": "/the-cornerstone-fund",
+    "url": "https://pencilsofpromise.org/the-cornerstone-fund",
+    "label": "Recurring Giving",
+    "area": "header"
+  },
+  {
+    "path": "/ways-to-support",
+    "url": "https://pencilsofpromise.org/ways-to-support",
+    "label": "Ways to Support",
+    "area": "header"
+  }
+]

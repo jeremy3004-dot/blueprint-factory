@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "About Us",
+      "status": "planned"
+    },
+    {
+      "route": "/about/financials",
+      "title": "Financials",
+      "status": "planned"
+    },
+    {
+      "route": "/about/our-people",
+      "title": "Our People",
+      "status": "planned"
+    },
+    {
+      "route": "/about/press",
+      "title": "Press",
+      "status": "planned"
+    },
+    {
+      "route": "/accessibility",
+      "title": "Accessibility",
+      "status": "planned"
+    },
+    {
+      "route": "/blog",
+      "title": "Blog",
+      "status": "planned"
+    },
+    {
+      "route": "/contact",
+      "title": "Contact",
+      "status": "planned"
+    }
+  ]
+}

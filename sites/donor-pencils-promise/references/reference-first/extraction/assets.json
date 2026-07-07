@@ -1,0 +1,42 @@
+[
+  {
+    "type": "image",
+    "src": "https://cdn.userway.org/widgetapp/images/spin_wh.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "Spinner: White decorative",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.userway.org/widgetapp/images/body_wh.svg",
+    "width": 60,
+    "height": 60,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.userway.org/widgetapp/images/spin_wh.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "Spinner: White decorative",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn-coccc.nitrocdn.com/LLAwEKUtDnlQITnSVpWfHNfraSZYCcpa/assets/images/optimized/rev-6620a8e/pencilsofpromise.org/wp-content/uploads/2014/03/PoPLogo_color-01-01.png",
+    "width": 723,
+    "height": 209,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn-coccc.nitrocdn.com/LLAwEKUtDnlQITnSVpWfHNfraSZYCcpa/assets/images/optimized/rev-6620a8e/pencilsofpromise.org/wp-content/uploads/2021/05/pop-logo-white.svg",
+    "width": 300,
+    "height": 84,
+    "alt": "",
+    "referenceOnly": true
+  }
+]

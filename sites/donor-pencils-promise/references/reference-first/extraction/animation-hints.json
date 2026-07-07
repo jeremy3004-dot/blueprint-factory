@@ -1,0 +1,13 @@
+{
+  "libraries": [
+    "Swiper"
+  ],
+  "scriptSignals": [
+    "https://pencilsofpromise.org/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5"
+  ],
+  "globalsPresent": [
+    "Swiper"
+  ],
+  "hasAutoplayVideo": false,
+  "stickyOrFixedCount": 4
+}
