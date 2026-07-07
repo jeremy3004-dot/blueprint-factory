@@ -10,3 +10,10 @@
 - Docs-first rule says to run `docs:list` or repo equivalent when available. I checked `package.json`, `README.md`, `AGENTS.md`, and `factory/` references; no docs discovery command is exposed, so I used the required README/playbooks/rubric files directly.
 - Tried to generate a section contact sheet with a tiny Python/Pillow helper for faster screenshot review. It failed with `ModuleNotFoundError: No module named 'PIL'`. I did not add a dependency; continued with direct image inspection.
 - `blueprint:new` does not create `sites/<slug>/pages.json`, even though the job card and status gate use it for page coverage. I created `sites/everest-tours/pages.json` manually from the scoped page plan.
+
+## 2026-07-07 18:36 +0545
+
+- Build judgment call: I did not ship any donor images or copy in app code. The homepage structure follows the donor, but production-safe Unsplash placeholders are used from the first app implementation. This may lower raw pixel compare versus the donor; I will log compare scores honestly.
+- Reference-library patterns checked and adapted into local CSS: `scroll-reveal`, `text-reveal`, `hero-settle`, `parallax-media`, and accordion behavior via native `<details>`/footer-style controls. No import from `factory/`.
+- First app build command failed: `pnpm --dir sites/everest-tours/app build` returned `sh: next: command not found` and `Local package.json exists, but node_modules missing`. This is dependency installation state, not an app code error. Next step is `pnpm install` from the factory root.
+- `pnpm install --lockfile-only --filter everest-tours` still updated `pnpm-lock.yaml` with importer entries for all generated donor site apps, not only Everest. The workspace lockfile was stale for existing `sites/*/app` packages. I kept the lockfile sync rather than fighting pnpm, but this makes the Step 4 diff noisier than ideal.
