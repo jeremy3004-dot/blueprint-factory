@@ -1,0 +1,626 @@
+[
+  {
+    "type": "image",
+    "src": "https://cdn-cookieyes.com/assets/images/close.svg",
+    "width": 10,
+    "height": 10,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/07/brand-homepage-fallback.jpg?resize=564%2C682&ssl=1",
+    "width": 1692,
+    "height": 2046,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/14/2024/10/ATH-pc-DePasqualeMaffini-Sept202024-PoolsideHorizontal.jpg?resize=822%2C646&ssl=1",
+    "width": 822,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/14/2024/04/ATH-LOGO_White.png?fit=1991%2C876&ssl=1",
+    "width": 1991,
+    "height": 876,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/7/2021/08/mednium_skuyline_ace_brooklyn_2.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/7/2021/06/bk-stacked-1.svg",
+    "width": 170,
+    "height": 80,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/3/2021/06/KYO.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/3/2021/10/ky-stacked-01.svg",
+    "width": 264,
+    "height": 150,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/9/2021/06/NYC.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/9/2021/06/ny-stacked.svg",
+    "width": 250,
+    "height": 150,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/6/2023/08/000064740016-10-1-scaled.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/6/2021/06/PS-STACKED.svg",
+    "width": 259,
+    "height": 76,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/10/2021/06/SEA.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/10/2021/06/SE-STACKED.svg",
+    "width": 211,
+    "height": 69,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/13/2022/07/Flack_Ace_Hotel_19052098664-1.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/13/2021/09/ace-hotel-sydney-logo-white-600.png?fit=600%2C300&ssl=1",
+    "width": 600,
+    "height": 300,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/sites/8/2023/08/Ace-Hotel-Toronto-%E2%80%94-Lobby-Bar-2-%E2%80%94-William-Jess-Laird-%E2%80%94-July-2022-1-scaled.jpg?resize=474%2C646&ssl=1",
+    "width": 474,
+    "height": 646,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/uploads/sites/8/2021/09/TOR_logo-01.svg",
+    "width": 300,
+    "height": 89,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/brooklyn-alist-member-rate.jpg?fit=606%2C432&ssl=1",
+    "width": 606,
+    "height": 432,
+    "alt": "alist member rate",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/04/2026-Saturdays-Football-PAN.jpg?fit=603%2C432&ssl=1",
+    "width": 603,
+    "height": 432,
+    "alt": "2026 Saturdays Football",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/08/midsummer-offer.gif?fit=605%2C432&ssl=1",
+    "width": 605,
+    "height": 432,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/06/Pan-2024-LOS-Mailer-Header-1.gif?resize=474%2C428&ssl=1",
+    "width": 474,
+    "height": 428,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/08/PAN-2025-Update-to-Advanced-Purchase_MailerHeader-1.gif?fit=576%2C432&ssl=1",
+    "width": 576,
+    "height": 432,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/02/PAN-2023-PAN-Weekdaze-Offer-Collateral_PAN_R1_pan-opt.2-mailer.jpg?fit=576%2C432&ssl=1",
+    "width": 576,
+    "height": 432,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/07/JUL7-CYGCXf.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/PoolsidePitch-1-YscSFF.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/DragBingo_Card_Red2-Xbk00R.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/12/Ringmaster1_rays_lores-scaled-rQa5hn-scaled.jpg?fit=474%2C474&ssl=1",
+    "width": 474,
+    "height": 474,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/12/EDITABLE-TEMPLATE_-KYO-2025-Taco-Tuesday_9x16-1-scaled-wXXlcQ.jpg?fit=474%2C842&ssl=1",
+    "width": 474,
+    "height": 842,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/12/edited-tarot-1-D2ihC0.jpg?fit=474%2C412&ssl=1",
+    "width": 474,
+    "height": 412,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/TOR-2024-REMIX-Project-in-the-lobby-9x16-1-2jioED.png?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/02/Vintage-vinyl-Flyer-All-Vinyl-DJ-Night-PkRJT8.jpg?fit=474%2C670&ssl=1",
+    "width": 474,
+    "height": 670,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/JULY-POST-QUE-RICO-STORY-INMg53.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/Ace-VIntageVinyl_DJ-Dusty-brown-ze8Mfg.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/SOUND-WAVES-POOL-noQR-H5rfa4.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/01/Damian-Tiner-Fx5CqL.jpg?fit=474%2C613&ssl=1",
+    "width": 474,
+    "height": 613,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/EDITABLE-TEMPLATE-KYO-2025-Rare-Groove-Showcase_4x5-1-CBOE3K.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/02/edited-friday-2PwjVJ.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/07/TOR-2026-Late-Checkout-DJ-Ocho-4x5-v1-scaled-PbueFb-scaled.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/9x16_Announcement_Card-3-hRAoVX.png?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/05/Poolside-DJs-27-yImvhS.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/07/IMG_3272-EFaU4C.jpg?fit=474%2C432&ssl=1",
+    "width": 474,
+    "height": 432,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/05/ATH-2026-Summer-Series-2-7-89F1qd.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/EDITABLE-TEMPLATE-KYO-2025-Saturday-Night-Ace-4x5-3-4nGyBr.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/02/Sat-Sound-tommy-gCtj1Y.jpg?fit=474%2C614&ssl=1",
+    "width": 474,
+    "height": 614,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/TOR-2025-Lobby-Design-System_R1-XZEiIG.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/Untitled-13-September-2025-at-16.45.00-5-4-pWwWNF.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/05/Poolside-DJs-1-yT3nmv.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/Marina-Triantou-ATH-2025-Rise-Yoga-9x16-1-upCeOu.jpg?fit=474%2C843&ssl=1",
+    "width": 474,
+    "height": 843,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/0712MFflyer-ExMI7T.jpg?fit=474%2C474&ssl=1",
+    "width": 474,
+    "height": 474,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/CoyoteKaroake_1080x1350-orange-9r1RCg.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/06/5-things-saturdays-WC-featured.jpg?fit=474%2C613&ssl=1",
+    "width": 474,
+    "height": 613,
+    "alt": "Saturdays Football. Man playing with a soccer ball. He is juggling the ball of his head.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/05/2026-Brooklyn-PI-Guide-featured-e1780078888362.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "The Local's Guide to Brooklyn. Perfectly Imperfect x Ace Hotel",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/05/Mei-Semones-Lotus-Josephine.jpg?fit=474%2C709&ssl=1",
+    "width": 474,
+    "height": 709,
+    "alt": "Mei Semones Lotus Josephine",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/04/2026-ReaderStonesThrow-Cover2.jpg?fit=474%2C710&ssl=1",
+    "width": 474,
+    "height": 710,
+    "alt": "Ace Reader - Stones Throw’s Sonic Guide to Kyoto",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/03/AlbertHoang-Jan2026-Suite-1104-Exhibition-QuanThai.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "Albert Hoang Jan2026 Suite 1104 Exhibition Quan Thai",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2026/01/Madison-Cunningham-scaled.jpg?fit=474%2C581&ssl=1",
+    "width": 474,
+    "height": 581,
+    "alt": "Madison Cunningham",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/12/hermitage-foreshore-walk-5-1-scaled.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/11/mr-maurice-reader-header.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/11/cool-moms-header-scaled.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/09/mazzoli-featured-scaled.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/09/TV_ON_THE_RADIO_8-_-Photo-Credit_-Sumner-Dilworth_resized_1400.jpg?fit=474%2C603&ssl=1",
+    "width": 474,
+    "height": 603,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/08/header-image-scaled.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2025/07/latasha-header-scaled.jpg?fit=474%2C715&ssl=1",
+    "width": 474,
+    "height": 715,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/1999/07/PAN-2025-Summer-Series-Cover-Pool-Alt-View.jpg?fit=474%2C664&ssl=1",
+    "width": 474,
+    "height": 664,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/1900/03/greek-visions-header.jpg?fit=474%2C711&ssl=1",
+    "width": 474,
+    "height": 711,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/08/willem-verbeeck-featured.png?fit=474%2C391&ssl=1",
+    "width": 474,
+    "height": 391,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/07/corey-wash-featured.jpg?fit=474%2C321&ssl=1",
+    "width": 474,
+    "height": 321,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/03/Hyungi-7-2.jpg?fit=474%2C568&ssl=1",
+    "width": 474,
+    "height": 568,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/01/8_Founders_Horizontal_1_1500x.jpg?fit=474%2C316&ssl=1",
+    "width": 474,
+    "height": 316,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2024/01/Ace-Reader-Header-version-1-scaled.jpg?fit=474%2C331&ssl=1",
+    "width": 474,
+    "height": 331,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/12/TOR-%E2%80%94-pc-Justin-Yong%E2%80%94-110723-%E2%80%94-Ace-Reader-F.-Miller-%E2%80%94-Sam-James-Coffee-Bar-%E2%80%94-4-scaled.jpg?fit=474%2C593&ssl=1",
+    "width": 474,
+    "height": 593,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/11/a_20231024_0016-scaled.jpeg?fit=474%2C701&ssl=1",
+    "width": 474,
+    "height": 701,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/09/FUNCTION-Vogue-Reader-4-scaled.jpg?fit=474%2C316&ssl=1",
+    "width": 474,
+    "height": 316,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/09/000356060010-scaled.jpg?fit=474%2C618&ssl=1",
+    "width": 474,
+    "height": 617,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2023/06/preview.3000-7-scaled.jpg?fit=474%2C664&ssl=1",
+    "width": 474,
+    "height": 664,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://i0.wp.com/acehotel.com/wp-content/uploads/2021/09/Everything-is-okay.jpg?resize=1000%2C1167&ssl=1",
+    "width": 1000,
+    "height": 1167,
+    "alt": "A black banner with white text reads 'EVERYTHING IS GOING TO BE OKAY' above a row of empty wooden chairs.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://acehotel.com/wp-content/themes/ace-hotel/assets/images/seibu-logo.svg",
+    "width": 300,
+    "height": 150,
+    "alt": "Seibu Prince Hotels & Resorts",
+    "referenceOnly": true
+  }
+]

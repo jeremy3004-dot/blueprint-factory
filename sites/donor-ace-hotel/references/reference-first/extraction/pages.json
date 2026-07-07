@@ -1,0 +1,506 @@
+[
+  {
+    "path": "/",
+    "url": "https://acehotel.com/",
+    "label": "Reload Homepage",
+    "area": "header"
+  },
+  {
+    "path": "/a-list",
+    "url": "https://acehotel.com/a-list",
+    "label": "A-List",
+    "area": "header"
+  },
+  {
+    "path": "/accessibility",
+    "url": "https://acehotel.com/accessibility",
+    "label": "Accessibility",
+    "area": "header"
+  },
+  {
+    "path": "/ace-radio",
+    "url": "https://acehotel.com/ace-radio",
+    "label": "Ace Radio",
+    "area": "header"
+  },
+  {
+    "path": "/artist-in-residence",
+    "url": "https://acehotel.com/artist-in-residence",
+    "label": "Artist In Residence",
+    "area": "header"
+  },
+  {
+    "path": "/athens",
+    "url": "https://acehotel.com/athens",
+    "label": "Athens",
+    "area": "header"
+  },
+  {
+    "path": "/blog",
+    "url": "https://acehotel.com/blog",
+    "label": "View Ace Reader View Ace Reader",
+    "area": "body"
+  },
+  {
+    "path": "/brooklyn",
+    "url": "https://acehotel.com/brooklyn",
+    "label": "Brooklyn",
+    "area": "header"
+  },
+  {
+    "path": "/careers",
+    "url": "https://acehotel.com/careers",
+    "label": "Careers",
+    "area": "header"
+  },
+  {
+    "path": "/contact",
+    "url": "https://acehotel.com/contact",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/eat-drink",
+    "url": "https://acehotel.com/eat-drink",
+    "label": "Eat + Drink",
+    "area": "header"
+  },
+  {
+    "path": "/editorial",
+    "url": "https://acehotel.com/editorial",
+    "label": "Ace Reader",
+    "area": "header"
+  },
+  {
+    "path": "/editorial/5-things-with-elise-peterson",
+    "url": "https://acehotel.com/editorial/5-things-with-elise-peterson",
+    "label": "5 THINGS WITH ELISE PETERSON",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/5-things-with-saturdays-football",
+    "url": "https://acehotel.com/editorial/5-things-with-saturdays-football",
+    "label": "5 Things with Saturdays Football",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/a-swim-club-summer",
+    "url": "https://acehotel.com/editorial/a-swim-club-summer",
+    "label": "A Swim Club Summer",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/an-endless-art-practice",
+    "url": "https://acehotel.com/editorial/an-endless-art-practice",
+    "label": "An Endless Art Practice",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/archiving-australia-with-efficient-space",
+    "url": "https://acehotel.com/editorial/archiving-australia-with-efficient-space",
+    "label": "Archiving Australia with Efficient Space",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/ballroom-5-things-with-function",
+    "url": "https://acehotel.com/editorial/ballroom-5-things-with-function",
+    "label": "Ballroom: 5 Things with Function",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/corey-wash-walks-on-the-sunny-side",
+    "url": "https://acehotel.com/editorial/corey-wash-walks-on-the-sunny-side",
+    "label": "Corey Wash Walks on the “Sunny Side”",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/fantasma-paraiso-phantom-paradise",
+    "url": "https://acehotel.com/editorial/fantasma-paraiso-phantom-paradise",
+    "label": "Fantasma Paraiso / Phantom Paradise",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/five-things-with-missy-mazzoli",
+    "url": "https://acehotel.com/editorial/five-things-with-missy-mazzoli",
+    "label": "FIVE THINGS WITH MISSY MAZZOLI",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/flo-dills-guide-to-sydney",
+    "url": "https://acehotel.com/editorial/flo-dills-guide-to-sydney",
+    "label": "Flo Dill’s Guide to Sydney",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/for-the-culture-klancy-miller",
+    "url": "https://acehotel.com/editorial/for-the-culture-klancy-miller",
+    "label": "For the Culture: Klancy Miller",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/fran-millers-toronto-guide",
+    "url": "https://acehotel.com/editorial/fran-millers-toronto-guide",
+    "label": "Fran Miller’s Toronto Guide",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/greek-visions-finds-meaning-in-incoherence",
+    "url": "https://acehotel.com/editorial/greek-visions-finds-meaning-in-incoherence",
+    "label": "Greek Visions Finds Meaning in Incoherence",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/latasha-moves-differently-in-the-desert",
+    "url": "https://acehotel.com/editorial/latasha-moves-differently-in-the-desert",
+    "label": "Latashá Moves Differently in the Desert",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/packing-list-madison-cunningham",
+    "url": "https://acehotel.com/editorial/packing-list-madison-cunningham",
+    "label": "Packing List: Madison Cunningham",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/packing-list-mei-semones",
+    "url": "https://acehotel.com/editorial/packing-list-mei-semones",
+    "label": "Packing List: Mei Semones",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/paris-quixotic-projects-arrives-in-athens",
+    "url": "https://acehotel.com/editorial/paris-quixotic-projects-arrives-in-athens",
+    "label": "Paris’ Quixotic Projects Arrives in Athens",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/perfectly-imperfect-x-ace-hotel-the-locals-guide-to-brooklyn",
+    "url": "https://acehotel.com/editorial/perfectly-imperfect-x-ace-hotel-the-locals-guide-to-brooklyn",
+    "label": "Perfectly Imperfect x Ace Hotel: The Local’s Guide to Brooklyn",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/portraits-of-queer-living-5-things-with-quan-thai",
+    "url": "https://acehotel.com/editorial/portraits-of-queer-living-5-things-with-quan-thai",
+    "label": "PORTRAITS OF QUEER LIVING: 5 THINGS WITH QUAN THAI",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/sister-act",
+    "url": "https://acehotel.com/editorial/sister-act",
+    "label": "Sister Act",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/soy-sauce-is-like-a-fine-wine",
+    "url": "https://acehotel.com/editorial/soy-sauce-is-like-a-fine-wine",
+    "label": "Soy Sauce, Like a Fine Wine",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/stones-throws-sonic-guide-to-kyoto",
+    "url": "https://acehotel.com/editorial/stones-throws-sonic-guide-to-kyoto",
+    "label": "Stones Throw’s Sonic Guide to Kyoto",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/the-mister-behind-mr-maurices-italian",
+    "url": "https://acehotel.com/editorial/the-mister-behind-mr-maurices-italian",
+    "label": "The Mister Behind Mr. Maurice’s Italian",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/tv-on-the-radio-talk-brooklyn",
+    "url": "https://acehotel.com/editorial/tv-on-the-radio-talk-brooklyn",
+    "label": "TV on the Radio Talk Brooklyn",
+    "area": "body"
+  },
+  {
+    "path": "/editorial/willem-verbeecks-perfect-new-york-day",
+    "url": "https://acehotel.com/editorial/willem-verbeecks-perfect-new-york-day",
+    "label": "Willem Verbeeck’s Perfect New York Day",
+    "area": "body"
+  },
+  {
+    "path": "/faqs",
+    "url": "https://acehotel.com/faqs",
+    "label": "FAQs",
+    "area": "header"
+  },
+  {
+    "path": "/going-on/friday-nights-alright-djs-and-live-music-in-the-amigo-room-41",
+    "url": "https://acehotel.com/going-on/friday-nights-alright-djs-and-live-music-in-the-amigo-room-41",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/late-check-out-11",
+    "url": "https://acehotel.com/going-on/late-check-out-11",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/lets-bingo-again-30",
+    "url": "https://acehotel.com/going-on/lets-bingo-again-30",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/lets-bingo-again-tuesdays-7-10-pm-16",
+    "url": "https://acehotel.com/going-on/lets-bingo-again-tuesdays-7-10-pm-16",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/levis-fc-watch-party-5",
+    "url": "https://acehotel.com/going-on/levis-fc-watch-party-5",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/live-in-the-lobby-fridays-2-5-pm-26",
+    "url": "https://acehotel.com/going-on/live-in-the-lobby-fridays-2-5-pm-26",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/live-soccer-watch-party-5",
+    "url": "https://acehotel.com/going-on/live-soccer-watch-party-5",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/lobby-radio-3",
+    "url": "https://acehotel.com/going-on/lobby-radio-3",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/may-the-force-be-with-you-major-force-productions-x-conners-sewing-factory%ef%b8%8f",
+    "url": "https://acehotel.com/going-on/may-the-force-be-with-you-major-force-productions-x-conners-sewing-factory%ef%b8%8f",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/mic-drop-karaoke-with-kyle-43",
+    "url": "https://acehotel.com/going-on/mic-drop-karaoke-with-kyle-43",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/mintserf-installation-launch-event",
+    "url": "https://acehotel.com/going-on/mintserf-installation-launch-event",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/poolside-pitch-soccer-watch-parties-14",
+    "url": "https://acehotel.com/going-on/poolside-pitch-soccer-watch-parties-14",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/poolside-with-caelina-3",
+    "url": "https://acehotel.com/going-on/poolside-with-caelina-3",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/poolside-with-niclas-gillich-4",
+    "url": "https://acehotel.com/going-on/poolside-with-niclas-gillich-4",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/que-rico-8",
+    "url": "https://acehotel.com/going-on/que-rico-8",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/record-shop-rare-groove-special-dj-showcase-ryu-2",
+    "url": "https://acehotel.com/going-on/record-shop-rare-groove-special-dj-showcase-ryu-2",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/saturday-night-ace-hope-4",
+    "url": "https://acehotel.com/going-on/saturday-night-ace-hope-4",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/saturday-soundcheck-in-the-amigo-room-8-11-pm-37",
+    "url": "https://acehotel.com/going-on/saturday-soundcheck-in-the-amigo-room-8-11-pm-37",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/sound-waves-summer-dj-series-7",
+    "url": "https://acehotel.com/going-on/sound-waves-summer-dj-series-7",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/sounds-of-stms-10",
+    "url": "https://acehotel.com/going-on/sounds-of-stms-10",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/sunset-series-afterparty-2",
+    "url": "https://acehotel.com/going-on/sunset-series-afterparty-2",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/sunset-series-kaz-james",
+    "url": "https://acehotel.com/going-on/sunset-series-kaz-james",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/taco-tuesday-212",
+    "url": "https://acehotel.com/going-on/taco-tuesday-212",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/tarot-readings-at-the-amigo-room-68",
+    "url": "https://acehotel.com/going-on/tarot-readings-at-the-amigo-room-68",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/vintage-vinyl-thursdays-41",
+    "url": "https://acehotel.com/going-on/vintage-vinyl-thursdays-41",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/vintage-vinyl-w-dj-dusty-2",
+    "url": "https://acehotel.com/going-on/vintage-vinyl-w-dj-dusty-2",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/going-on/yoga-marina-triantou-from-hobnob-16",
+    "url": "https://acehotel.com/going-on/yoga-marina-triantou-from-hobnob-16",
+    "label": "Read More",
+    "area": "body"
+  },
+  {
+    "path": "/goings-on",
+    "url": "https://acehotel.com/goings-on",
+    "label": "Goings on",
+    "area": "header"
+  },
+  {
+    "path": "/kyoto",
+    "url": "https://acehotel.com/kyoto",
+    "label": "Kyoto",
+    "area": "header"
+  },
+  {
+    "path": "/new-york",
+    "url": "https://acehotel.com/new-york",
+    "label": "New York",
+    "area": "header"
+  },
+  {
+    "path": "/offer-redirect",
+    "url": "https://acehotel.com/offer-redirect",
+    "label": "Book Now This link opens in a new browser tab",
+    "area": "body"
+  },
+  {
+    "path": "/offers",
+    "url": "https://acehotel.com/offers",
+    "label": "Offers",
+    "area": "header"
+  },
+  {
+    "path": "/offers/book-direct",
+    "url": "https://acehotel.com/offers/book-direct",
+    "label": "Ace Member Rate",
+    "area": "body"
+  },
+  {
+    "path": "/offers/get-extra-credit",
+    "url": "https://acehotel.com/offers/get-extra-credit",
+    "label": "Get extra credit",
+    "area": "body"
+  },
+  {
+    "path": "/offers/hat-trick",
+    "url": "https://acehotel.com/offers/hat-trick",
+    "label": "HAT TRICK",
+    "area": "body"
+  },
+  {
+    "path": "/offers/make-it-last",
+    "url": "https://acehotel.com/offers/make-it-last",
+    "label": "Make it Last",
+    "area": "body"
+  },
+  {
+    "path": "/offers/pay-now-and-save",
+    "url": "https://acehotel.com/offers/pay-now-and-save",
+    "label": "Pay Now and Save",
+    "area": "body"
+  },
+  {
+    "path": "/offers/week-daze",
+    "url": "https://acehotel.com/offers/week-daze",
+    "label": "Week Daze",
+    "area": "body"
+  },
+  {
+    "path": "/palm-springs",
+    "url": "https://acehotel.com/palm-springs",
+    "label": "Palm Springs",
+    "area": "header"
+  },
+  {
+    "path": "/pet-friendly",
+    "url": "https://acehotel.com/pet-friendly",
+    "label": "Pet Friendly Hotels",
+    "area": "header"
+  },
+  {
+    "path": "/press-inquiries",
+    "url": "https://acehotel.com/press-inquiries",
+    "label": "Press Inquiries",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://acehotel.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "header"
+  },
+  {
+    "path": "/seattle",
+    "url": "https://acehotel.com/seattle",
+    "label": "Seattle",
+    "area": "header"
+  },
+  {
+    "path": "/sydney",
+    "url": "https://acehotel.com/sydney",
+    "label": "Sydney",
+    "area": "header"
+  },
+  {
+    "path": "/toronto",
+    "url": "https://acehotel.com/toronto",
+    "label": "Toronto",
+    "area": "header"
+  },
+  {
+    "path": "/weddings-at-ace",
+    "url": "https://acehotel.com/weddings-at-ace",
+    "label": "Weddings",
+    "area": "header"
+  }
+]

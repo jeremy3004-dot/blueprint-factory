@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/a-list",
+      "title": "A-List",
+      "status": "planned"
+    },
+    {
+      "route": "/accessibility",
+      "title": "Accessibility",
+      "status": "planned"
+    },
+    {
+      "route": "/ace-radio",
+      "title": "Ace Radio",
+      "status": "planned"
+    },
+    {
+      "route": "/artist-in-residence",
+      "title": "Artist In Residence",
+      "status": "planned"
+    },
+    {
+      "route": "/athens",
+      "title": "Athens",
+      "status": "planned"
+    },
+    {
+      "route": "/brooklyn",
+      "title": "Brooklyn",
+      "status": "planned"
+    },
+    {
+      "route": "/careers",
+      "title": "Careers",
+      "status": "planned"
+    }
+  ]
+}
