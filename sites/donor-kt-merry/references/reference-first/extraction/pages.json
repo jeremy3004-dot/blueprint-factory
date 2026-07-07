@@ -1,0 +1,122 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.abbyjiu.com/",
+    "label": "Home",
+    "area": "header"
+  },
+  {
+    "path": "/a-cancun-beach-wedding",
+    "url": "https://www.abbyjiu.com/a-cancun-beach-wedding",
+    "label": "A Cancun Beach Wedding",
+    "area": "body"
+  },
+  {
+    "path": "/a-chic-destination-wedding-on-the-amalfi-coast",
+    "url": "https://www.abbyjiu.com/a-chic-destination-wedding-on-the-amalfi-coast",
+    "label": "A Chic Wedding on the Amalfi Coast",
+    "area": "body"
+  },
+  {
+    "path": "/a-love-shack-fancy-inspired-wedding",
+    "url": "https://www.abbyjiu.com/a-love-shack-fancy-inspired-wedding",
+    "label": "Love Shack Fancy Inspired Wedding",
+    "area": "body"
+  },
+  {
+    "path": "/abbys-portfolio",
+    "url": "https://www.abbyjiu.com/abbys-portfolio",
+    "label": "Abby's Showcase",
+    "area": "body"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.abbyjiu.com/about",
+    "label": "About",
+    "area": "header"
+  },
+  {
+    "path": "/blog",
+    "url": "https://www.abbyjiu.com/blog",
+    "label": "Journal",
+    "area": "header"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.abbyjiu.com/contact",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/estate-wedding-in-horse-country",
+    "url": "https://www.abbyjiu.com/estate-wedding-in-horse-country",
+    "label": "Estate Wedding in Horse Country",
+    "area": "body"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.abbyjiu.com/faq",
+    "label": "FAQ",
+    "area": "header"
+  },
+  {
+    "path": "/iconic-meridian-house-wedding",
+    "url": "https://www.abbyjiu.com/iconic-meridian-house-wedding",
+    "label": "Iconic Wedding at Meridian House",
+    "area": "body"
+  },
+  {
+    "path": "/planner-testimonials/493xomel2p2t6hampuwj6worm7rjti",
+    "url": "https://www.abbyjiu.com/planner-testimonials/493xomel2p2t6hampuwj6worm7rjti",
+    "label": "Bride, Kayla Calloway",
+    "area": "body"
+  },
+  {
+    "path": "/planner-testimonials/79e7nniqcfwonewr0mcqx3196y0c4v",
+    "url": "https://www.abbyjiu.com/planner-testimonials/79e7nniqcfwonewr0mcqx3196y0c4v",
+    "label": "Laura Ritchie of Grit and Grace Inc.",
+    "area": "body"
+  },
+  {
+    "path": "/planner-testimonials/dc4r9hq2qu6hlv0dqpo03dnpqmfnwq",
+    "url": "https://www.abbyjiu.com/planner-testimonials/dc4r9hq2qu6hlv0dqpo03dnpqmfnwq",
+    "label": "Lauryn Prattes of Lauryn Prattes Events",
+    "area": "body"
+  },
+  {
+    "path": "/planner-testimonials/mr12fney614qt075gzuxxaunp961bl",
+    "url": "https://www.abbyjiu.com/planner-testimonials/mr12fney614qt075gzuxxaunp961bl",
+    "label": "Bride, Dani Mettel",
+    "area": "body"
+  },
+  {
+    "path": "/planner-testimonials/wtpz4zt7wu2q3qz90pno6hlh23h1ey",
+    "url": "https://www.abbyjiu.com/planner-testimonials/wtpz4zt7wu2q3qz90pno6hlh23h1ey",
+    "label": "Bride, Chelsea Carrol",
+    "area": "body"
+  },
+  {
+    "path": "/portfolio",
+    "url": "https://www.abbyjiu.com/portfolio",
+    "label": "Portfolio",
+    "area": "header"
+  },
+  {
+    "path": "/published",
+    "url": "https://www.abbyjiu.com/published",
+    "label": "Published",
+    "area": "header"
+  },
+  {
+    "path": "/services",
+    "url": "https://www.abbyjiu.com/services",
+    "label": "Services",
+    "area": "header"
+  },
+  {
+    "path": "/the-bride-wore-danielle-frankel-at-blue-hill-stone-barns",
+    "url": "https://www.abbyjiu.com/the-bride-wore-danielle-frankel-at-blue-hill-stone-barns",
+    "label": "The Bride Wore Danielle Frankel at Blue Hill Stone Barns",
+    "area": "body"
+  }
+]
