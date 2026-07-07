@@ -1,0 +1,742 @@
+[
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/static/media/RedLogo.f02834e8.svg",
+    "width": 122,
+    "height": 36,
+    "alt": "Crimson Logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/static/media/RedLogo.f02834e8.svg",
+    "width": 122,
+    "height": 36,
+    "alt": "Crimson Logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F2880x1622%2Fac45da1e88%2Fdesktop-background-gradient.png%2Fm%2F400x200%2Ffilters%3Aquality(75)&w=640&q=75",
+    "width": 250,
+    "height": 125,
+    "alt": "Desktop Background",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1692x2536%2F0fea42c715%2Ftablet-background-gradient.png&w=640&q=60",
+    "width": 400,
+    "height": 599,
+    "alt": "Mobile Background",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F804x1028%2F29c507b0b1%2Fjenna-stanford-05-edited-1.webp&w=256&q=75",
+    "width": 256,
+    "height": 327,
+    "alt": "Stanford Admit",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/166x30/7775679ff5/new-york-times.svg",
+    "width": 166,
+    "height": 30,
+    "alt": "publisher logo - 1",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/83x30/8d8e10c5e2/forbes.svg",
+    "width": 83,
+    "height": 30,
+    "alt": "publisher logo - 2",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/69x30/7703779dfd/npr.svg",
+    "width": 69,
+    "height": 30,
+    "alt": "publisher logo - 3",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/90x30/1f150cec89/bloomberg.svg",
+    "width": 90,
+    "height": 30,
+    "alt": "publisher logo - 4",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/83x30/12acc987c4/economist.svg",
+    "width": 83,
+    "height": 30,
+    "alt": "publisher logo - 5",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/158x30/3202e6e30b/washington-post.svg",
+    "width": 158,
+    "height": 30,
+    "alt": "publisher logo - 6",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/82x30/1344fdc853/time.svg",
+    "width": 82,
+    "height": 30,
+    "alt": "publisher logo - 7",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/172x30/cd9a7528c6/financial-times.svg",
+    "width": 172,
+    "height": 30,
+    "alt": "publisher logo - 8",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/112x30/b59ef76359/us-news.svg",
+    "width": 112,
+    "height": 30,
+    "alt": "publisher logo - 9",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/197x30/64ed3bb414/wall-street-journal.svg",
+    "width": 197,
+    "height": 30,
+    "alt": "publisher logo - 10",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/166x30/7775679ff5/new-york-times.svg",
+    "width": 166,
+    "height": 30,
+    "alt": "publisher logo - 1",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/83x30/8d8e10c5e2/forbes.svg",
+    "width": 83,
+    "height": 30,
+    "alt": "publisher logo - 2",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/69x30/7703779dfd/npr.svg",
+    "width": 69,
+    "height": 30,
+    "alt": "publisher logo - 3",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/90x30/1f150cec89/bloomberg.svg",
+    "width": 90,
+    "height": 30,
+    "alt": "publisher logo - 4",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/83x30/12acc987c4/economist.svg",
+    "width": 83,
+    "height": 30,
+    "alt": "publisher logo - 5",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/158x30/3202e6e30b/washington-post.svg",
+    "width": 158,
+    "height": 30,
+    "alt": "publisher logo - 6",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/82x30/1344fdc853/time.svg",
+    "width": 82,
+    "height": 30,
+    "alt": "publisher logo - 7",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/172x30/cd9a7528c6/financial-times.svg",
+    "width": 172,
+    "height": 30,
+    "alt": "publisher logo - 8",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/112x30/b59ef76359/us-news.svg",
+    "width": 112,
+    "height": 30,
+    "alt": "publisher logo - 9",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/197x30/64ed3bb414/wall-street-journal.svg",
+    "width": 197,
+    "height": 30,
+    "alt": "publisher logo - 10",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/1125x1620/46cb585bfd/student-card_avni_-yale_in-homepage.png",
+    "width": 1125,
+    "height": 1620,
+    "alt": "Student Results Head Shot",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/1125x1620/3e02bf80dc/student-card_aanika_oxford_in-homepage.png",
+    "width": 1125,
+    "height": 1620,
+    "alt": "Student Results Head Shot",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/1125x1620/8ba4201ced/student-card_-neev_cornell_in-homepage.png",
+    "width": 1125,
+    "height": 1620,
+    "alt": "Student Results Head Shot",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/750x1080/ce06b2c87e/4-student-card-michael-vanderbilt.jpg",
+    "width": 750,
+    "height": 1080,
+    "alt": "Student Results Head Shot",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmentors_room.888ff7b2.webp&w=3840&q=75",
+    "width": 3840,
+    "height": 2372,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F338e76c9f1%2Fyanlin-m.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Yanlin M.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1400x1663%2F64dff4867a%2Fprofile-image_kimberley-lindsay.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Kimberley L.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1400x1663%2Fb7f4276e6c%2Fprofile-image_devery-doran.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Devery D.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F7724cc753f%2Fibrahim-k.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Ibrahim K.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F915dffff99%2Fnoah-m.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Noah M.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F6c8b6bccf8%2Fdanac.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Dana C.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F0d036546ad%2Fsarah-t.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Sarah T.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmentors_room.888ff7b2.webp&w=3840&q=75",
+    "width": 3840,
+    "height": 2372,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F338e76c9f1%2Fyanlin-m.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Yanlin M.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1400x1663%2Fb7f4276e6c%2Fprofile-image_devery-doran.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Devery D.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F915dffff99%2Fnoah-m.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Noah M.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F0d036546ad%2Fsarah-t.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Sarah T.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1400x1663%2F64dff4867a%2Fprofile-image_kimberley-lindsay.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Kimberley L.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F7724cc753f%2Fibrahim-k.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Ibrahim K.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F800x950%2F6c8b6bccf8%2Fdanac.png&w=256&q=75",
+    "width": 256,
+    "height": 304,
+    "alt": "Dana C.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x960%2F27e5dc21da%2Fhome-winning-strategy_en.png&w=640&q=75",
+    "width": 640,
+    "height": 530,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F7fc658cc63%2Fhome-high-impact-capstone-project_en.png&w=640&q=75",
+    "width": 640,
+    "height": 543,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x961%2F525b1ed4f7%2Fhome-stand-out-research_en.png&w=640&q=75",
+    "width": 640,
+    "height": 531,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x960%2F2c1a73a9a3%2Fhome-honors-awards_en.png&w=640&q=75",
+    "width": 640,
+    "height": 530,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1158x961%2F28ef4c4326%2Fhome-essays_en.png&w=640&q=75",
+    "width": 640,
+    "height": 531,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F7196f49955%2Fhome-top-scoring-tutors_en.png&w=640&q=75",
+    "width": 640,
+    "height": 543,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F6795aac6ab%2Fhome-fao_en.png&w=640&q=75",
+    "width": 640,
+    "height": 543,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x960%2F27e5dc21da%2Fhome-winning-strategy_en.png&w=750&q=75",
+    "width": 750,
+    "height": 621,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F7fc658cc63%2Fhome-high-impact-capstone-project_en.png&w=750&q=75",
+    "width": 750,
+    "height": 636,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x961%2F525b1ed4f7%2Fhome-stand-out-research_en.png&w=750&q=75",
+    "width": 750,
+    "height": 622,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1159x960%2F2c1a73a9a3%2Fhome-honors-awards_en.png&w=750&q=75",
+    "width": 750,
+    "height": 621,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1158x961%2F28ef4c4326%2Fhome-essays_en.png&w=750&q=75",
+    "width": 750,
+    "height": 622,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F7196f49955%2Fhome-top-scoring-tutors_en.png&w=750&q=75",
+    "width": 750,
+    "height": 636,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1133x961%2F6795aac6ab%2Fhome-fao_en.png&w=750&q=75",
+    "width": 750,
+    "height": 636,
+    "alt": "Services Section Image",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F752x984%2Fe4c10e089a%2Favni-c_in_yale.png&w=1920&q=75",
+    "width": 564,
+    "height": 738,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F752x984%2F6b33c57742%2Faanika-d_usa_oxford.png&w=1920&q=75",
+    "width": 564,
+    "height": 738,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1050x1050%2F6f9d50a12b%2Fholly-c.jpg&w=1920&q=75",
+    "width": 787,
+    "height": 787,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1050x1050%2F9eb48033d0%2Fjames-n.jpg&w=1920&q=75",
+    "width": 787,
+    "height": 787,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F752x984%2Ff509896ff4%2Fneev-t_in_cornell.png&w=1920&q=75",
+    "width": 564,
+    "height": 738,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1050x1050%2F51416fe476%2Fziyan-l.jpg&w=1920&q=75",
+    "width": 787,
+    "height": 787,
+    "alt": "Testimonial",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F4320x1801%2F0ef7d8deb3%2Fupenn-desktop-1440.jpg&w=640&q=75",
+    "width": 460,
+    "height": 191,
+    "alt": "Event thumbnail",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F4320x1800%2F66970094ff%2Fucl-desktop-1440.jpg&w=640&q=75",
+    "width": 460,
+    "height": 191,
+    "alt": "Event thumbnail",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F2880x1200%2F67c2b20328%2Fstanford-2_desktop_1440.jpg&w=640&q=75",
+    "width": 460,
+    "height": 191,
+    "alt": "Event thumbnail",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F2880x1201%2F1cd4a25f25%2Fcolumbia-2_desktop_1440.jpg&w=640&q=75",
+    "width": 460,
+    "height": 191,
+    "alt": "Event thumbnail",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F2880x1200%2F10d781cda4%2Fprinceton_desktop_1440.jpg&w=640&q=75",
+    "width": 460,
+    "height": 191,
+    "alt": "Event thumbnail",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1286x876%2F5d3b79f10f%2Fwsj-article-image.jpg&w=828&q=75",
+    "width": 828,
+    "height": 564,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/197x30/64ed3bb414/wall-street-journal.svg",
+    "width": 197,
+    "height": 30,
+    "alt": "official article",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1200x628%2Fab94c07790%2Fwhat-are-ivy-league-schools-blog.jpg&w=256&q=75",
+    "width": 256,
+    "height": 134,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F5260x3507%2F37b18d3a97%2Flist-of-ecl.jpg&w=256&q=75",
+    "width": 256,
+    "height": 171,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1200x676%2F94330b5b4a%2Fwhat-is-a-good-sat-score.jpg&w=256&q=75",
+    "width": 256,
+    "height": 144,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crimsoneducation.org/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F64062%2F1496x846%2Fdd3d99fd92%2Fbr-latam-ptc7-header-3.png%2Fm%2F1080x400%2Ffilters%3Aquality(100)&w=1920&q=75",
+    "width": 810,
+    "height": 300,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/bff63d26e8/circle-facebook.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/bff63d26e8/circle-facebook.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/c9cdce8056/circle-youtube.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/c9cdce8056/circle-youtube.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/ff81b2168a/circle-instagram.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/ff81b2168a/circle-instagram.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/2d7fad5b0b/circle-linkedin.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/2d7fad5b0b/circle-linkedin.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/c9849b05b8/circle-x.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/c9849b05b8/circle-x.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/84fbb3457c/circle-tikok.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/84fbb3457c/circle-tikok.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/bff63d26e8/circle-facebook.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/bff63d26e8/circle-facebook.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/c9cdce8056/circle-youtube.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/c9cdce8056/circle-youtube.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/ff81b2168a/circle-instagram.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/ff81b2168a/circle-instagram.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/2d7fad5b0b/circle-linkedin.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/2d7fad5b0b/circle-linkedin.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/c9849b05b8/circle-x.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/c9849b05b8/circle-x.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://a.storyblok.com/f/64062/40x40/84fbb3457c/circle-tikok.svg",
+    "width": 40,
+    "height": 40,
+    "alt": "https://a.storyblok.com/f/64062/40x40/84fbb3457c/circle-tikok.svg",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.cookielaw.org/logos/7adb280a-5943-40cf-aa7e-fa104169424d/018eac28-1feb-7874-b582-d4762fc88b46/62dababb-49f3-4776-8c8e-862daf66cc5e/Icon_+_Stacked_Logo_Deep_Maroon.png",
+    "width": 997,
+    "height": 299,
+    "alt": "Company Logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg",
+    "width": 568,
+    "height": 53,
+    "alt": "Powered by Onetrust",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://bat.bing.com/action/0?ti=137011800&Ver=2&mid=a1bcbfbb-1ab8-4d2f-80bc-622d2f104d0f&bo=1&sid=a1b58b507a2211f197f7731fb037d7c5&vid=a1b58a707a2211f1b98f4746e8acf568&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=1100&sc=24&nwd=1&tl=Premier%20Overseas%20Education%20Consultants&p=https%3A%2F%2Fwww.crimsoneducation.org%2Fin&r=&lt=1904&evt=pageLoad&sv=2&cdb=AQET&rn=677514",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "video",
+    "src": "https://a.storyblok.com/f/64062/x/8653f69a97/new-header-video-compressed.mp4",
+    "autoplay": true,
+    "referenceOnly": true
+  },
+  {
+    "type": "video",
+    "src": "https://a.storyblok.com/f/64062/x/746cbc5b0e/reaction-video-compilation-small.mp4",
+    "autoplay": true,
+    "referenceOnly": true
+  }
+]

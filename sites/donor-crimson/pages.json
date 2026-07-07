@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/in",
+      "title": "/in",
+      "status": "planned"
+    },
+    {
+      "route": "/in/about-us",
+      "title": "Our StoryStarted by successful applicants. Trusted by families worldwide.",
+      "status": "planned"
+    },
+    {
+      "route": "/in/about-us/case-studies",
+      "title": "Student StoriesReal stories from students who worked 1:1 with our expert admissions team.",
+      "status": "planned"
+    },
+    {
+      "route": "/in/about-us/consultants",
+      "title": "Our ConsultantsExperienced mentors guiding your academic journey",
+      "status": "planned"
+    },
+    {
+      "route": "/in/about-us/student-results",
+      "title": "Our ResultsProven success in helping students reach top universities",
+      "status": "planned"
+    },
+    {
+      "route": "/in/admissions/fao-application-review",
+      "title": "Former Admission Officers ReviewApplying now? Get the world's most trusted admissions \"final check\"",
+      "status": "planned"
+    },
+    {
+      "route": "/in/admissions/ivy-league-college-consultant",
+      "title": "US Admissions ConsultingExpert guidance to help you get into your dream university with confidence",
+      "status": "planned"
+    }
+  ]
+}

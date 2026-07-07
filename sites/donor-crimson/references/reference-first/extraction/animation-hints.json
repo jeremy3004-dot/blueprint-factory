@@ -1,0 +1,10 @@
+{
+  "libraries": [],
+  "scriptSignals": [
+    "https://monitor.fraudblocker.com/p.js?sid=kGGhZhKaHUcfvqvn1JUNl&vid=e03fc6734f9edca9b17a6df5d68dd586&tz=Asia%2FKatmandu&os=Mac%20OS%2010.15.7&b=Chrome%20Headless%20149.0.7827.55&bo=1&audio=124.04347624466754&colorDepth=24&colorGamut=srgb&contrast=0&cookiesEnabled=true&cpuClass=&deviceMemory=32&domBlockers=&fonts=Arial%20Unicode%20MS%3BGill%20Sans%3BHelvetica%20Neue%3BMenlo&forcedColors=false&hardwareConcurrency=14&indexedDB=true&localStorage=true&openDatabase=false&pdfViewerEnabled=false&platform=MacIntel&plugins=&screenResolution=1440x1100&sessionStorage=true&touchSupport=%7B%22maxTouchPoints%22%3A0%2C%22touchEvent%22%3Afalse%2C%22touchStart%22%3Afalse%7D&vendor=Google%20Inc.&videoCard=%7B%22vendor%22%3A%22Google%20Inc.%20(Google)%22%2C%22renderer%22%3A%22ANGLE%20(Google%2C%20Vulkan%201.3.0%20(SwiftShader%20Device%20(LLVM%2010.0.0)%20(0x0000C0DE))%2C%20SwiftShader%20driver)%22%7D",
+    "https://monitor.fraudblocker.com/b.js?sid=kGGhZhKaHUcfvqvn1JUNl&vid=e03fc6734f9edca9b17a6df5d68dd586&tz=Asia%2FKatmandu&os=Mac%20OS%2010.15.7&b=Chrome%20Headless%20149.0.7827.55&bo=1&audio=124.04347624466754&colorDepth=24&colorGamut=srgb&contrast=0&cookiesEnabled=true&cpuClass=&deviceMemory=32&domBlockers=&fonts=Arial%20Unicode%20MS%3BGill%20Sans%3BHelvetica%20Neue%3BMenlo&forcedColors=false&hardwareConcurrency=14&indexedDB=true&localStorage=true&openDatabase=false&pdfViewerEnabled=false&platform=MacIntel&plugins=&screenResolution=1440x1100&sessionStorage=true&touchSupport=%7B%22maxTouchPoints%22%3A0%2C%22touchEvent%22%3Afalse%2C%22touchStart%22%3Afalse%7D&vendor=Google%20Inc.&videoCard=%7B%22vendor%22%3A%22Google%20Inc.%20(Google)%22%2C%22renderer%22%3A%22ANGLE%20(Google%2C%20Vulkan%201.3.0%20(SwiftShader%20Device%20(LLVM%2010.0.0)%20(0x0000C0DE))%2C%20SwiftShader%20driver)%22%7D"
+  ],
+  "globalsPresent": [],
+  "hasAutoplayVideo": true,
+  "stickyOrFixedCount": 12
+}

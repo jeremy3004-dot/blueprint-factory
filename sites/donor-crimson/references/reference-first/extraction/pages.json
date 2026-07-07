@@ -1,0 +1,212 @@
+[
+  {
+    "path": "/in",
+    "url": "https://www.crimsoneducation.org/in",
+    "label": "",
+    "area": "nav"
+  },
+  {
+    "path": "/in/about-us",
+    "url": "https://www.crimsoneducation.org/in/about-us",
+    "label": "Our StoryStarted by successful applicants. Trusted by families worldwide.",
+    "area": "nav"
+  },
+  {
+    "path": "/in/about-us/case-studies",
+    "url": "https://www.crimsoneducation.org/in/about-us/case-studies",
+    "label": "Student StoriesReal stories from students who worked 1:1 with our expert admissions team.",
+    "area": "nav"
+  },
+  {
+    "path": "/in/about-us/consultants",
+    "url": "https://www.crimsoneducation.org/in/about-us/consultants",
+    "label": "Our ConsultantsExperienced mentors guiding your academic journey",
+    "area": "nav"
+  },
+  {
+    "path": "/in/about-us/our-mentors",
+    "url": "https://www.crimsoneducation.org/in/about-us/our-mentors",
+    "label": "Meet All Our Mentors",
+    "area": "body"
+  },
+  {
+    "path": "/in/about-us/student-results",
+    "url": "https://www.crimsoneducation.org/in/about-us/student-results",
+    "label": "Our ResultsProven success in helping students reach top universities",
+    "area": "nav"
+  },
+  {
+    "path": "/in/admissions/fao-application-review",
+    "url": "https://www.crimsoneducation.org/in/admissions/fao-application-review",
+    "label": "Former Admission Officers ReviewApplying now? Get the world's most trusted admissions \"final check\"",
+    "area": "nav"
+  },
+  {
+    "path": "/in/admissions/ivy-league-college-consultant",
+    "url": "https://www.crimsoneducation.org/in/admissions/ivy-league-college-consultant",
+    "label": "US Admissions ConsultingExpert guidance to help you get into your dream university with confidence",
+    "area": "nav"
+  },
+  {
+    "path": "/in/admissions/middle-school-university-prep",
+    "url": "https://www.crimsoneducation.org/in/admissions/middle-school-university-prep",
+    "label": "University Prep for 11–14 Year OldsEarly preparation to set students up for success in future university admissions",
+    "area": "nav"
+  },
+  {
+    "path": "/in/admissions/oxbridge-applications-consultant",
+    "url": "https://www.crimsoneducation.org/in/admissions/oxbridge-applications-consultant",
+    "label": "UK Admissions ConsultingStep-by-step support for applying to top UK",
+    "area": "nav"
+  },
+  {
+    "path": "/in/admissions/postgrad",
+    "url": "https://www.crimsoneducation.org/in/admissions/postgrad",
+    "label": "Post Grad Admissions ConsultingStrategic help for graduates aiming at competitive master’s or PhD programs",
+    "area": "nav"
+  },
+  {
+    "path": "/in/blog",
+    "url": "https://www.crimsoneducation.org/in/blog",
+    "label": "ArticlesExpert insights and tips on university admissions",
+    "area": "nav"
+  },
+  {
+    "path": "/in/blog/extracurricular-activities-list",
+    "url": "https://www.crimsoneducation.org/in/blog/extracurricular-activities-list",
+    "label": "September 26150 Extracurricular Activity Examples From Accepted Students",
+    "area": "body"
+  },
+  {
+    "path": "/in/blog/good-sat-score",
+    "url": "https://www.crimsoneducation.org/in/blog/good-sat-score",
+    "label": "September 15What Is a Good SAT Score for Top Universities in 2025?",
+    "area": "body"
+  },
+  {
+    "path": "/in/blog/how-to-get-into-an-ivy-league-school",
+    "url": "https://www.crimsoneducation.org/in/blog/how-to-get-into-an-ivy-league-school",
+    "label": "November 08How To Get Into An Ivy League School? The Essential Guide",
+    "area": "body"
+  },
+  {
+    "path": "/in/blog/wsj-reflections-jamie",
+    "url": "https://www.crimsoneducation.org/in/blog/wsj-reflections-jamie",
+    "label": "The Guru Who Says He Can Get Your 11-Year-Old Into Harvard",
+    "area": "body"
+  },
+  {
+    "path": "/in/campaigns/class-of-2030-crimson-results",
+    "url": "https://www.crimsoneducation.org/in/campaigns/class-of-2030-crimson-results",
+    "label": "View Now",
+    "area": "body"
+  },
+  {
+    "path": "/in/careers",
+    "url": "https://www.crimsoneducation.org/in/careers",
+    "label": "All Careers",
+    "area": "nav"
+  },
+  {
+    "path": "/in/careers/admissions",
+    "url": "https://www.crimsoneducation.org/in/careers/admissions",
+    "label": "Join Our Admissions TeamEmpower ambitious students to reach their dream universities",
+    "area": "nav"
+  },
+  {
+    "path": "/in/contact",
+    "url": "https://www.crimsoneducation.org/in/contact",
+    "label": "Get Started",
+    "area": "nav"
+  },
+  {
+    "path": "/in/events",
+    "url": "https://www.crimsoneducation.org/in/events",
+    "label": "Events",
+    "area": "nav"
+  },
+  {
+    "path": "/in/events/aug-6-jamie-beaton-ggn",
+    "url": "https://www.crimsoneducation.org/in/events/aug-6-jamie-beaton-ggn",
+    "label": "Thursday, August 6 · 6:15 PM NPTIn-Person EventWall Street Journal’s “Guru of Ivy League Admissions” Is Coming to GurugramSign Up →",
+    "area": "body"
+  },
+  {
+    "path": "/in/events/aug-7-jamie-beaton-chn",
+    "url": "https://www.crimsoneducation.org/in/events/aug-7-jamie-beaton-chn",
+    "label": "Friday, August 7 · 5:45 PM NPTIn-Person EventWall Street Journal’s “Guru of Ivy League Admissions” Is Coming to ChennaiSign Up →",
+    "area": "body"
+  },
+  {
+    "path": "/in/events/aug-8-jamie-beaton-blr",
+    "url": "https://www.crimsoneducation.org/in/events/aug-8-jamie-beaton-blr",
+    "label": "Saturday, August 8 · 6:15 PM NPTIn-Person EventWall Street Journal’s “Guru of Ivy League Admissions” Is Coming to BengaluruSign Up →",
+    "area": "body"
+  },
+  {
+    "path": "/in/events/aug-8-jamie-beaton-hyd",
+    "url": "https://www.crimsoneducation.org/in/events/aug-8-jamie-beaton-hyd",
+    "label": "Saturday, August 8 · 10:45 AM NPTIn-Person EventWall Street Journal’s “Guru of Ivy League Admissions” Is Coming to HyderabadSign Up →",
+    "area": "body"
+  },
+  {
+    "path": "/in/events/aug-9-jamie-beaton-mum",
+    "url": "https://www.crimsoneducation.org/in/events/aug-9-jamie-beaton-mum",
+    "label": "Sunday, August 9 · 11:45 AM NPTIn-Person EventWall Street Journal’s “Guru of Ivy League Admissions” Is Coming to MumbaiSign Up →",
+    "area": "body"
+  },
+  {
+    "path": "/in/how-to-get-into",
+    "url": "https://www.crimsoneducation.org/in/how-to-get-into",
+    "label": "University Profiles Admissions guides, requirements, acceptance rates, and tips for top universities",
+    "area": "nav"
+  },
+  {
+    "path": "/in/policies/privacy-policy",
+    "url": "https://www.crimsoneducation.org/in/policies/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/in/policies/terms-and-conditions",
+    "url": "https://www.crimsoneducation.org/in/policies/terms-and-conditions",
+    "label": "Terms Of Use",
+    "area": "footer"
+  },
+  {
+    "path": "/in/practice-tests/act",
+    "url": "https://www.crimsoneducation.org/in/practice-tests/act",
+    "label": "ACT Practice TestsExpert insights and tips on university admissions",
+    "area": "nav"
+  },
+  {
+    "path": "/in/practice-tests/sat",
+    "url": "https://www.crimsoneducation.org/in/practice-tests/sat",
+    "label": "SAT Practice Tests",
+    "area": "nav"
+  },
+  {
+    "path": "/in/services/athletics",
+    "url": "https://www.crimsoneducation.org/in/services/athletics",
+    "label": "Athletics Recruitment Consulting",
+    "area": "nav"
+  },
+  {
+    "path": "/in/services/essay-review",
+    "url": "https://www.crimsoneducation.org/in/services/essay-review",
+    "label": "Essay Review",
+    "area": "nav"
+  },
+  {
+    "path": "/in/services/eu-universities",
+    "url": "https://www.crimsoneducation.org/in/services/eu-universities",
+    "label": "EU Admissions Consulting",
+    "area": "nav"
+  },
+  {
+    "path": "/in/services/online-tutoring/sat",
+    "url": "https://www.crimsoneducation.org/in/services/online-tutoring/sat",
+    "label": "SAT Tutoring",
+    "area": "nav"
+  }
+]
