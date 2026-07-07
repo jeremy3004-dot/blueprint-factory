@@ -1,0 +1,1088 @@
+[
+  {
+    "path": "/",
+    "url": "https://thehoxton.com/",
+    "label": "The Hoxton Logo",
+    "area": "header"
+  },
+  {
+    "path": "/about-us",
+    "url": "https://thehoxton.com/about-us",
+    "label": "Our Story",
+    "area": "footer"
+  },
+  {
+    "path": "/accessibility",
+    "url": "https://thehoxton.com/accessibility",
+    "label": "Accessibility",
+    "area": "footer"
+  },
+  {
+    "path": "/amsterdam",
+    "url": "https://thehoxton.com/amsterdam",
+    "label": "View all Amsterdam properties",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam-lloyd/get-hitched",
+    "url": "https://thehoxton.com/amsterdam-lloyd/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht",
+    "url": "https://thehoxton.com/amsterdam/herengracht",
+    "label": "Amsterdam, Herengracht (Central)",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht/lottis-restaurant",
+    "url": "https://thehoxton.com/amsterdam/herengracht/lottis-restaurant",
+    "label": "Restaurants & Bars",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht/meeting-spaces",
+    "url": "https://thehoxton.com/amsterdam/herengracht/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht/parties-and-celebrations",
+    "url": "https://thehoxton.com/amsterdam/herengracht/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht/private-dining",
+    "url": "https://thehoxton.com/amsterdam/herengracht/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/herengracht/rooms",
+    "url": "https://thehoxton.com/amsterdam/herengracht/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/lloyd",
+    "url": "https://thehoxton.com/amsterdam/lloyd",
+    "label": "Amsterdam, Lloyd (Eastern Docklands)",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/lloyd/barbue-restaurant",
+    "url": "https://thehoxton.com/amsterdam/lloyd/barbue-restaurant",
+    "label": "Barbue",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/lloyd/meeting-spaces",
+    "url": "https://thehoxton.com/amsterdam/lloyd/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/lloyd/parties-and-celebrations",
+    "url": "https://thehoxton.com/amsterdam/lloyd/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/amsterdam/lloyd/rooms",
+    "url": "https://thehoxton.com/amsterdam/lloyd/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/bengaluru-city",
+    "url": "https://thehoxton.com/bengaluru-city",
+    "label": "India",
+    "area": "header"
+  },
+  {
+    "path": "/brussels",
+    "url": "https://thehoxton.com/brussels",
+    "label": "Brussels",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/cantina-valentina",
+    "url": "https://thehoxton.com/brussels/cantina-valentina",
+    "label": "Cantina Valentina",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/meeting-spaces",
+    "url": "https://thehoxton.com/brussels/meeting-spaces",
+    "label": "The Apartment",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/parties-and-celebrations",
+    "url": "https://thehoxton.com/brussels/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/private-dining",
+    "url": "https://thehoxton.com/brussels/private-dining",
+    "label": "The Loft",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/rooms",
+    "url": "https://thehoxton.com/brussels/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/brussels/tope-restaurant",
+    "url": "https://thehoxton.com/brussels/tope-restaurant",
+    "label": "Tope",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg",
+    "url": "https://thehoxton.com/charlottenburg",
+    "label": "Berlin, Charlottenburg",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg/meeting-spaces",
+    "url": "https://thehoxton.com/charlottenburg/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg/parties-and-celebrations",
+    "url": "https://thehoxton.com/charlottenburg/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg/private-dining",
+    "url": "https://thehoxton.com/charlottenburg/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg/rooms",
+    "url": "https://thehoxton.com/charlottenburg/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/charlottenburg/the-wintergarden",
+    "url": "https://thehoxton.com/charlottenburg/the-wintergarden",
+    "label": "Restaurants & Bars",
+    "area": "header"
+  },
+  {
+    "path": "/chicago",
+    "url": "https://thehoxton.com/chicago",
+    "label": "Chicago, Fulton Market",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/cabra-restaurant",
+    "url": "https://thehoxton.com/chicago/cabra-restaurant",
+    "label": "Cabra",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/cira-restaurant",
+    "url": "https://thehoxton.com/chicago/cira-restaurant",
+    "label": "Cira",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/lazy-bird-bar",
+    "url": "https://thehoxton.com/chicago/lazy-bird-bar",
+    "label": "Lazy Bird",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/meeting-spaces",
+    "url": "https://thehoxton.com/chicago/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/parties-and-celebrations",
+    "url": "https://thehoxton.com/chicago/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/pool",
+    "url": "https://thehoxton.com/chicago/pool",
+    "label": "Pool",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/private-dining",
+    "url": "https://thehoxton.com/chicago/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/chicago/rooms",
+    "url": "https://thehoxton.com/chicago/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/contact",
+    "url": "https://thehoxton.com/contact",
+    "label": "Contact",
+    "area": "footer"
+  },
+  {
+    "path": "/de",
+    "url": "https://thehoxton.com/de",
+    "label": "Deutsch",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la",
+    "url": "https://thehoxton.com/downtown-la",
+    "label": "Los Angeles, Downtown",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/inanna",
+    "url": "https://thehoxton.com/downtown-la/inanna",
+    "label": "Inanna Bar",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/meeting-spaces",
+    "url": "https://thehoxton.com/downtown-la/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/moonlarks-dinette",
+    "url": "https://thehoxton.com/downtown-la/moonlarks-dinette",
+    "label": "Moonlark's Dinette",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/parties-and-celebrations",
+    "url": "https://thehoxton.com/downtown-la/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/pool",
+    "url": "https://thehoxton.com/downtown-la/pool",
+    "label": "Pool",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/private-dining",
+    "url": "https://thehoxton.com/downtown-la/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/downtown-la/rooms",
+    "url": "https://thehoxton.com/downtown-la/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/dublin",
+    "url": "https://thehoxton.com/dublin",
+    "label": "Dublin",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/cantina-valentina",
+    "url": "https://thehoxton.com/dublin/cantina-valentina",
+    "label": "Cantina Valentina",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/dollars",
+    "url": "https://thehoxton.com/dublin/dollars",
+    "label": "Dollars",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/get-hitched",
+    "url": "https://thehoxton.com/dublin/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/library-bar",
+    "url": "https://thehoxton.com/dublin/library-bar",
+    "label": "The Library Bar",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/meeting-spaces",
+    "url": "https://thehoxton.com/dublin/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/private-dining",
+    "url": "https://thehoxton.com/dublin/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/rooms",
+    "url": "https://thehoxton.com/dublin/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/dublin/the-lobby-bar",
+    "url": "https://thehoxton.com/dublin/the-lobby-bar",
+    "label": "The Lobby Bar",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh",
+    "url": "https://thehoxton.com/edinburgh",
+    "label": "Edinburgh",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh-get-hitched",
+    "url": "https://thehoxton.com/edinburgh-get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh/house",
+    "url": "https://thehoxton.com/edinburgh/house",
+    "label": "House",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh/meeting-spaces",
+    "url": "https://thehoxton.com/edinburgh/meeting-spaces",
+    "label": "Meetings & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh/patatino",
+    "url": "https://thehoxton.com/edinburgh/patatino",
+    "label": "Patatino",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh/rooms",
+    "url": "https://thehoxton.com/edinburgh/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/edinburgh/the-get-together",
+    "url": "https://thehoxton.com/edinburgh/the-get-together",
+    "label": "The Get Together",
+    "area": "header"
+  },
+  {
+    "path": "/enquiry-form/meetings-and-celebrations",
+    "url": "https://thehoxton.com/enquiry-form/meetings-and-celebrations",
+    "label": "Meetings & Celebrations",
+    "area": "footer"
+  },
+  {
+    "path": "/enquiry-form/patatino-group-booking",
+    "url": "https://thehoxton.com/enquiry-form/patatino-group-booking",
+    "label": "Group Bookings",
+    "area": "header"
+  },
+  {
+    "path": "/es",
+    "url": "https://thehoxton.com/es",
+    "label": "Español",
+    "area": "header"
+  },
+  {
+    "path": "/eu",
+    "url": "https://thehoxton.com/eu",
+    "label": "Europe",
+    "area": "header"
+  },
+  {
+    "path": "/faqs",
+    "url": "https://thehoxton.com/faqs",
+    "label": "FAQs",
+    "area": "header"
+  },
+  {
+    "path": "/flexible-travel",
+    "url": "https://thehoxton.com/flexible-travel",
+    "label": "Travel uncertain? We’ve got you with flexible cancellation",
+    "area": "header"
+  },
+  {
+    "path": "/florence/meeting-spaces",
+    "url": "https://thehoxton.com/florence/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/fr",
+    "url": "https://thehoxton.com/fr",
+    "label": "Français",
+    "area": "header"
+  },
+  {
+    "path": "/hox-hounds",
+    "url": "https://thehoxton.com/hox-hounds",
+    "label": "Read more",
+    "area": "body"
+  },
+  {
+    "path": "/hox-kids",
+    "url": "https://thehoxton.com/hox-kids",
+    "label": "Learn more",
+    "area": "body"
+  },
+  {
+    "path": "/it",
+    "url": "https://thehoxton.com/it",
+    "label": "Italiano",
+    "area": "header"
+  },
+  {
+    "path": "/italy",
+    "url": "https://thehoxton.com/italy",
+    "label": "View all Italy properties",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence",
+    "url": "https://thehoxton.com/italy/florence",
+    "label": "Florence",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence/alassio-restaurant",
+    "url": "https://thehoxton.com/italy/florence/alassio-restaurant",
+    "label": "Alassio",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence/enoteca-violetta-bar",
+    "url": "https://thehoxton.com/italy/florence/enoteca-violetta-bar",
+    "label": "Enoteca Violetta",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence/get-hitched",
+    "url": "https://thehoxton.com/italy/florence/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence/house",
+    "url": "https://thehoxton.com/italy/florence/house",
+    "label": "House",
+    "area": "header"
+  },
+  {
+    "path": "/italy/florence/rooms",
+    "url": "https://thehoxton.com/italy/florence/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome",
+    "url": "https://thehoxton.com/italy/rome",
+    "label": "Rome",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/cugino-restaurant",
+    "url": "https://thehoxton.com/italy/rome/cugino-restaurant",
+    "label": "Cugino",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/elio-restaurant",
+    "url": "https://thehoxton.com/italy/rome/elio-restaurant",
+    "label": "Elio",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/get-hitched",
+    "url": "https://thehoxton.com/italy/rome/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/meeting-spaces",
+    "url": "https://thehoxton.com/italy/rome/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/parties-and-celebrations",
+    "url": "https://thehoxton.com/italy/rome/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/private-dining",
+    "url": "https://thehoxton.com/italy/rome/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/italy/rome/rooms",
+    "url": "https://thehoxton.com/italy/rome/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/london",
+    "url": "https://thehoxton.com/london",
+    "label": "View all London properties",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn",
+    "url": "https://thehoxton.com/london/holborn",
+    "label": "London, Holborn",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/get-hitched",
+    "url": "https://thehoxton.com/london/holborn/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/meeting-spaces",
+    "url": "https://thehoxton.com/london/holborn/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/parties-and-celebrations",
+    "url": "https://thehoxton.com/london/holborn/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/private-dining",
+    "url": "https://thehoxton.com/london/holborn/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/rondo-restaurant",
+    "url": "https://thehoxton.com/london/holborn/rondo-restaurant",
+    "label": "Rondo",
+    "area": "header"
+  },
+  {
+    "path": "/london/holborn/rooms",
+    "url": "https://thehoxton.com/london/holborn/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush",
+    "url": "https://thehoxton.com/london/shepherds-bush",
+    "label": "London, Shepherd's Bush",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/chets-restaurant",
+    "url": "https://thehoxton.com/london/shepherds-bush/chets-restaurant",
+    "label": "Restaurants & Bars",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/get-hitched",
+    "url": "https://thehoxton.com/london/shepherds-bush/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/meeting-spaces",
+    "url": "https://thehoxton.com/london/shepherds-bush/meeting-spaces",
+    "label": "Meetings Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/parties-and-celebrations",
+    "url": "https://thehoxton.com/london/shepherds-bush/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/private-dining",
+    "url": "https://thehoxton.com/london/shepherds-bush/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/london/shepherds-bush/rooms",
+    "url": "https://thehoxton.com/london/shepherds-bush/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch",
+    "url": "https://thehoxton.com/london/shoreditch",
+    "label": "London, Shoreditch",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/get-hitched",
+    "url": "https://thehoxton.com/london/shoreditch/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/il-bambini-club",
+    "url": "https://thehoxton.com/london/shoreditch/il-bambini-club",
+    "label": "Il Bambini Club",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/llama-inn-restaurant",
+    "url": "https://thehoxton.com/london/shoreditch/llama-inn-restaurant",
+    "label": "Llama Inn",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/meeting-spaces",
+    "url": "https://thehoxton.com/london/shoreditch/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/parties-and-celebrations",
+    "url": "https://thehoxton.com/london/shoreditch/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/private-dining",
+    "url": "https://thehoxton.com/london/shoreditch/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/london/shoreditch/rooms",
+    "url": "https://thehoxton.com/london/shoreditch/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark",
+    "url": "https://thehoxton.com/london/southwark",
+    "label": "London, Southwark",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/albie-restaurant",
+    "url": "https://thehoxton.com/london/southwark/albie-restaurant",
+    "label": "Albie",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/get-hitched",
+    "url": "https://thehoxton.com/london/southwark/get-hitched",
+    "label": "Weddings",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/meeting-spaces",
+    "url": "https://thehoxton.com/london/southwark/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/parties-and-celebrations",
+    "url": "https://thehoxton.com/london/southwark/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/private-dining",
+    "url": "https://thehoxton.com/london/southwark/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/rooms",
+    "url": "https://thehoxton.com/london/southwark/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/london/southwark/seabird-restaurant",
+    "url": "https://thehoxton.com/london/southwark/seabird-restaurant",
+    "label": "Seabird",
+    "area": "header"
+  },
+  {
+    "path": "/meetings-and-events",
+    "url": "https://thehoxton.com/meetings-and-events",
+    "label": "Meetings & Events",
+    "area": "header"
+  },
+  {
+    "path": "/mention-me",
+    "url": "https://thehoxton.com/mention-me",
+    "label": "Give your pals a great feeling with 15% off their first Hox stay. INVITE NOW",
+    "area": "header"
+  },
+  {
+    "path": "/nl",
+    "url": "https://thehoxton.com/nl",
+    "label": "Nederlands",
+    "area": "header"
+  },
+  {
+    "path": "/offers",
+    "url": "https://thehoxton.com/offers",
+    "label": "Global Offers",
+    "area": "header"
+  },
+  {
+    "path": "/offers/beat-boring-with-dis-loyalty",
+    "url": "https://thehoxton.com/offers/beat-boring-with-dis-loyalty",
+    "label": "Join Dis-loyalty",
+    "area": "header"
+  },
+  {
+    "path": "/offers/book-via-thehoxton-com",
+    "url": "https://thehoxton.com/offers/book-via-thehoxton-com",
+    "label": "View Offer",
+    "area": "body"
+  },
+  {
+    "path": "/paris",
+    "url": "https://thehoxton.com/paris",
+    "label": "Paris",
+    "area": "header"
+  },
+  {
+    "path": "/paris/jacques-bar",
+    "url": "https://thehoxton.com/paris/jacques-bar",
+    "label": "Jacques' Bar",
+    "area": "header"
+  },
+  {
+    "path": "/paris/meeting-spaces",
+    "url": "https://thehoxton.com/paris/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/paris/parties-and-celebrations",
+    "url": "https://thehoxton.com/paris/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/paris/planche-wine-bar",
+    "url": "https://thehoxton.com/paris/planche-wine-bar",
+    "label": "Planche",
+    "area": "header"
+  },
+  {
+    "path": "/paris/pool",
+    "url": "https://thehoxton.com/paris/pool",
+    "label": "Pool",
+    "area": "header"
+  },
+  {
+    "path": "/paris/private-dining",
+    "url": "https://thehoxton.com/paris/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/paris/rivie-restaurant",
+    "url": "https://thehoxton.com/paris/rivie-restaurant",
+    "label": "Rivié",
+    "area": "header"
+  },
+  {
+    "path": "/paris/rooms",
+    "url": "https://thehoxton.com/paris/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou",
+    "url": "https://thehoxton.com/poblenou",
+    "label": "Barcelona, Poblenou",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/four-corners-restaurant",
+    "url": "https://thehoxton.com/poblenou/four-corners-restaurant",
+    "label": "Four Corners",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/meeting-spaces",
+    "url": "https://thehoxton.com/poblenou/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/parties-and-celebrations",
+    "url": "https://thehoxton.com/poblenou/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/pool",
+    "url": "https://thehoxton.com/poblenou/pool",
+    "label": "Pool",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/private-dining",
+    "url": "https://thehoxton.com/poblenou/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/rooms",
+    "url": "https://thehoxton.com/poblenou/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/poblenou/tope-restaurant",
+    "url": "https://thehoxton.com/poblenou/tope-restaurant",
+    "label": "Tope",
+    "area": "header"
+  },
+  {
+    "path": "/portland",
+    "url": "https://thehoxton.com/portland",
+    "label": "Portland, Oregon",
+    "area": "header"
+  },
+  {
+    "path": "/portland/2nw5-basement-bar",
+    "url": "https://thehoxton.com/portland/2nw5-basement-bar",
+    "label": "2NW5",
+    "area": "header"
+  },
+  {
+    "path": "/portland/lovely-rita-restaurant",
+    "url": "https://thehoxton.com/portland/lovely-rita-restaurant",
+    "label": "Deadstock Coffee",
+    "area": "header"
+  },
+  {
+    "path": "/portland/meeting-spaces",
+    "url": "https://thehoxton.com/portland/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/portland/pamana",
+    "url": "https://thehoxton.com/portland/pamana",
+    "label": "Pamana",
+    "area": "header"
+  },
+  {
+    "path": "/portland/parties-and-celebrations",
+    "url": "https://thehoxton.com/portland/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/portland/private-dining",
+    "url": "https://thehoxton.com/portland/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/portland/rooms",
+    "url": "https://thehoxton.com/portland/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/portland/tope-restaurant",
+    "url": "https://thehoxton.com/portland/tope-restaurant",
+    "label": "Tope",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://thehoxton.com/privacy-policy",
+    "label": "Terms & Policies",
+    "area": "footer"
+  },
+  {
+    "path": "/see-all-hotels",
+    "url": "https://thehoxton.com/see-all-hotels",
+    "label": "See all Hotels",
+    "area": "header"
+  },
+  {
+    "path": "/summer-city-break-itinerary",
+    "url": "https://thehoxton.com/summer-city-break-itinerary",
+    "label": "Summer City Breaks",
+    "area": "header"
+  },
+  {
+    "path": "/the-good-stuff",
+    "url": "https://thehoxton.com/the-good-stuff",
+    "label": "The Good Stuff",
+    "area": "footer"
+  },
+  {
+    "path": "/the-localist",
+    "url": "https://thehoxton.com/the-localist",
+    "label": "Blog",
+    "area": "header"
+  },
+  {
+    "path": "/tv-and-film-production",
+    "url": "https://thehoxton.com/tv-and-film-production",
+    "label": "TV & Film Production",
+    "area": "header"
+  },
+  {
+    "path": "/uk",
+    "url": "https://thehoxton.com/uk",
+    "label": "UK & Ireland",
+    "area": "header"
+  },
+  {
+    "path": "/us",
+    "url": "https://thehoxton.com/us",
+    "label": "USA",
+    "area": "header"
+  },
+  {
+    "path": "/vienna",
+    "url": "https://thehoxton.com/vienna",
+    "label": "Vienna",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/bouvier-restaurant",
+    "url": "https://thehoxton.com/vienna/bouvier-restaurant",
+    "label": "Bouvier",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/cayo-coco-rooftop-bar",
+    "url": "https://thehoxton.com/vienna/cayo-coco-rooftop-bar",
+    "label": "Cayo Coco",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/meeting-spaces",
+    "url": "https://thehoxton.com/vienna/meeting-spaces",
+    "label": "Meetings & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/pool",
+    "url": "https://thehoxton.com/vienna/pool",
+    "label": "Pool",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/rooms",
+    "url": "https://thehoxton.com/vienna/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/salon-paradise-cocktail-bar",
+    "url": "https://thehoxton.com/vienna/salon-paradise-cocktail-bar",
+    "label": "Salon Paradise",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/the-apartment",
+    "url": "https://thehoxton.com/vienna/the-apartment",
+    "label": "The Apartment",
+    "area": "header"
+  },
+  {
+    "path": "/vienna/the-auditorium",
+    "url": "https://thehoxton.com/vienna/the-auditorium",
+    "label": "The Auditorium",
+    "area": "header"
+  },
+  {
+    "path": "/whats-on",
+    "url": "https://thehoxton.com/whats-on",
+    "label": "What’s On",
+    "area": "header"
+  },
+  {
+    "path": "/why-stay-at-the-hoxton-hotels",
+    "url": "https://thehoxton.com/why-stay-at-the-hoxton-hotels",
+    "label": "Why Book With Us?",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg",
+    "url": "https://thehoxton.com/williamsburg",
+    "label": "New York, Williamsburg",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/jaffa-bar",
+    "url": "https://thehoxton.com/williamsburg/jaffa-bar",
+    "label": "Jaffa Cocktail and Raw Bar",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/kfar-restaurant",
+    "url": "https://thehoxton.com/williamsburg/kfar-restaurant",
+    "label": "K'Far",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/laser-wolf-restaurant",
+    "url": "https://thehoxton.com/williamsburg/laser-wolf-restaurant",
+    "label": "Laser Wolf",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/meeting-spaces",
+    "url": "https://thehoxton.com/williamsburg/meeting-spaces",
+    "label": "Meeting Spaces",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/parties-and-celebrations",
+    "url": "https://thehoxton.com/williamsburg/parties-and-celebrations",
+    "label": "Parties & Celebrations",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/private-dining",
+    "url": "https://thehoxton.com/williamsburg/private-dining",
+    "label": "Private Dining",
+    "area": "header"
+  },
+  {
+    "path": "/williamsburg/rooms",
+    "url": "https://thehoxton.com/williamsburg/rooms",
+    "label": "Bedrooms",
+    "area": "header"
+  }
+]

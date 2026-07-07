@@ -1,0 +1,11 @@
+{
+  "libraries": [
+    "Swiper"
+  ],
+  "scriptSignals": [],
+  "globalsPresent": [
+    "Swiper"
+  ],
+  "hasAutoplayVideo": true,
+  "stickyOrFixedCount": 8
+}

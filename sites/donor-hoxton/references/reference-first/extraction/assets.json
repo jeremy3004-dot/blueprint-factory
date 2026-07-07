@@ -1,0 +1,456 @@
+[
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/01/amsterdam-h-gallery-1.jpg",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/02/20-off-stays-in-London.jpg",
+    "width": 1000,
+    "height": 1000,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/hoxton-florence-neighbourhood-hero.jpg?resize=1024,1024",
+    "width": 1024,
+    "height": 1024,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/rome-fountain.jpg",
+    "width": 1000,
+    "height": 800,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/03/TH-Nav-Berlin-nav-page-hero.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "The Lobby in The Hoxton Charlottenburg in Berlin Germany.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/09/Amsterdam_h.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/Paris-pool-2.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/Vienna-pool.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/Barcelona-pool-2.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/04/TH-Brussels-home-page-location.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "The Hoxton Brussels Lower ground lobby with colour interior design and tons of natural light.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/01/hoxton-florence-alassio-opening-interior-3.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "Alassio open terrace with a courtyard view, abundant natural light, shaded areas, and lush greenery.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/03/TH-Nav-Rome-nav-page-hero.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "The lobby at The Hoxton Rome Italy.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/08/Lloyd-restaurant.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/03/TH-Nav-Berlin-nav-page-hero.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "The Lobby in The Hoxton Charlottenburg in Berlin Germany.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/09/Amsterdam_h.jpg?resize=500,750&quality=70",
+    "width": 500,
+    "height": 750,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "The Hoxton Brussels Lower ground lobby with colour interior design and tons of natural light.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "Alassio open terrace with a courtyard view, abundant natural light, shaded areas, and lush greenery.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "The lobby at The Hoxton Rome Italy.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page5.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page2.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page3.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page4.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page5.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Presstigieux-61.jpg?resize=768,512",
+    "width": 768,
+    "height": 512,
+    "alt": "Two people enjoying a drink at a party",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/01/Hoxton-Barc-Lodon-Collab-1400-x-1000-Medium.jpeg",
+    "width": 768,
+    "height": 548,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Presstigieux-61.jpg?resize=768,512",
+    "width": 768,
+    "height": 512,
+    "alt": "Two people enjoying a drink at a party",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/01/Hoxton-Barc-Lodon-Collab-1400-x-1000-Medium.jpeg",
+    "width": 768,
+    "height": 548,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page5.jpg?quality=70",
+    "width": 1080,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page.jpg?quality=70",
+    "width": 1080,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page2.jpg?quality=70",
+    "width": 1080,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page3.jpg?quality=70",
+    "width": 1080,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page4.jpg?quality=70",
+    "width": 1080,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page5.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/10/Global-offer-page.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Presstigieux-61.jpg?quality=70",
+    "width": 1500,
+    "height": 1000,
+    "alt": "Two people enjoying a drink at a party",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/01/Hoxton-Barc-Lodon-Collab-1400-x-1000-Medium.jpeg?quality=70",
+    "width": 640,
+    "height": 457,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Presstigieux-61.jpg?quality=70",
+    "width": 1500,
+    "height": 1000,
+    "alt": "Two people enjoying a drink at a party",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2025/01/Hoxton-Barc-Lodon-Collab-1400-x-1000-Medium.jpeg?quality=70",
+    "width": 640,
+    "height": 457,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/04/hox-hounds-800x800-3.jpg?resize=768,768",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/Hox-kids-homepage.jpg",
+    "width": 768,
+    "height": 768,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2024/04/hox-hounds-800x800-3.jpg?quality=70",
+    "width": 800,
+    "height": 800,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/06/Hox-kids-homepage.jpg?quality=70",
+    "width": 600,
+    "height": 600,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/News-coming.png?resize=300,300",
+    "width": 240,
+    "height": 240,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Placeholder-illustration.png?w=120",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/08/the_hoxton_logo_4.svg?w=144",
+    "width": 300,
+    "height": 50,
+    "alt": "The Hoxton logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Placeholder-illustration.png?w=120",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "living room area in The Hoxton Brussels.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Placeholder-illustration.png?w=240&quality=70",
+    "width": 120,
+    "height": 120,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/",
+    "width": 0,
+    "height": 0,
+    "alt": "Pantry area in The Hoxton Southwark",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2020/06/Placeholder-illustration.png?w=240&quality=70",
+    "width": 120,
+    "height": 120,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://pixel.wp.com/g.gif?v=ext&blog=181736508&post=30363&tz=0&srv=thehoxton.com&hp=vip&j=1%3A14.0&host=thehoxton.com&ref=&fcp=0&rand=0.5360564285768178",
+    "width": 6,
+    "height": 5,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "video",
+    "src": "https://thehoxton.com/wp-content/uploads/sites/5/2026/05/SUMMER-2026.mp4",
+    "autoplay": true,
+    "referenceOnly": true
+  }
+]

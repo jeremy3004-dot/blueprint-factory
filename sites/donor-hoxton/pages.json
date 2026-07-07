@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam",
+      "title": "View all Amsterdam properties",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam-lloyd/get-hitched",
+      "title": "Weddings",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam/herengracht",
+      "title": "Amsterdam, Herengracht (Central)",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam/herengracht/lottis-restaurant",
+      "title": "Restaurants & Bars",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam/herengracht/meeting-spaces",
+      "title": "Meeting Spaces",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam/herengracht/parties-and-celebrations",
+      "title": "Parties & Celebrations",
+      "status": "planned"
+    },
+    {
+      "route": "/amsterdam/herengracht/private-dining",
+      "title": "Private Dining",
+      "status": "planned"
+    }
+  ]
+}
