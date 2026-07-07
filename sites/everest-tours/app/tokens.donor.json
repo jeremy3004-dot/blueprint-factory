@@ -1,33 +1,36 @@
 {
   "generatedFrom": "extraction/tokens.json",
   "colors": {
-    "background": "#132B3A",
-    "foreground": "#F7F3EA",
-    "primary": "#D99A2B",
-    "accent": "#8FB6C2",
-    "muted": "#6F7F86",
-    "surface": "#F7F3EA",
-    "surfaceDark": "#223F50",
-    "ink": "#102431",
+    "background": "#000000",
+    "foreground": "#ffffff",
+    "primary": "#0066cc",
+    "accent": "#ff3520",
+    "muted": "#52575c",
     "palette": [
-      "#132B3A",
-      "#223F50",
-      "#F7F3EA",
-      "#D99A2B",
-      "#8FB6C2",
-      "#6F7F86"
+      "#000000",
+      "#52575c",
+      "#ffffff",
+      "#444444",
+      "#2f2f2f",
+      "#adadad",
+      "rgba(0, 0, 0, 0.2)",
+      "#e7247a",
+      "#379c8a",
+      "#cccccc",
+      "#cacccf",
+      "#333333"
     ]
   },
   "fonts": {
     "heading": {
       "role": "heading",
       "donor": "AlternateGotNo1D",
-      "family": "Oswald",
-      "stack": "\"Oswald\", \"Arial Narrow\", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "family": "Inter",
+      "stack": "\"Inter\", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
       "source": "Google Fonts",
       "license": "open",
       "substituted": true,
-      "note": "open condensed sans substitute for donor display role"
+      "note": "unmapped donor font; verify the substitution and add it to font-substitutes.md"
     },
     "body": {
       "role": "body",
