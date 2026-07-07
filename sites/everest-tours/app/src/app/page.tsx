@@ -39,7 +39,7 @@ function Footer() {
   return (
     <footer className="footer" id="enquire">
       <section>
-        <h3>Everest Tours</h3>
+        <p className="display displaySmall">Everest Tours</p>
         <p>The people who know the mountain. Premium small-group treks and cultural journeys from Kathmandu.</p>
         <form className="newsletter">
           <input aria-label="Email address" placeholder="you@example.com" />
@@ -139,7 +139,7 @@ export default function Home() {
       <section className="section darkBand">
         <div>
           <p className="eyebrow">Explore our trips</p>
-          <h2>Remarkable routes with a grounded plan</h2>
+          <p className="display displayMedium">Remarkable routes with a grounded plan</p>
           <p>
             The mountains are unpredictable. The itinerary should not be. These signature treks leave room for
             altitude, weather, and the judgment of guides who walk these paths every season.
@@ -151,7 +151,7 @@ export default function Home() {
               <img src={trek.image} alt="" />
               <div className="trekCardContent">
                 <p className="eyebrow">{trek.days}</p>
-                <h3>{trek.title}</h3>
+                <p className="display displaySmall">{trek.title}</p>
                 <p>{trek.price}</p>
               </div>
             </Link>
@@ -172,7 +172,7 @@ export default function Home() {
         <img src={images.stars} alt="Night sky above a mountain route" />
         <div className="storyBandContent">
           <p className="eyebrow">Footsteps</p>
-          <h2>Walk with people who read the route</h2>
+          <p className="display displayMedium">Walk with people who read the route</p>
           <p>Weather, altitude, trail repairs, lodge capacity, and group energy all matter. We plan for them.</p>
         </div>
       </section>
@@ -180,7 +180,7 @@ export default function Home() {
       <section className="section editorialSplit" id="guides">
         <div className="copyBlock" data-reveal>
           <p className="eyebrow">What we do and why we do it</p>
-          <h2>Expert does not have to be loud</h2>
+          <p className="display displayMedium">Expert does not have to be loud</p>
           <p>
             Everest Tours is built around calm decisions: realistic days, conservative altitude profiles, and
             guides empowered to slow down when the mountain asks for it.
@@ -198,7 +198,7 @@ export default function Home() {
         </div>
         <div className="copyBlock" data-reveal>
           <p className="eyebrow">Pursuit of feeling</p>
-          <h2>Not every great Nepal journey is a summit story</h2>
+          <p className="display displayMedium">Not every great Nepal journey is a summit story</p>
           <p>
             We pair mountain days with Kathmandu courtyards, monastery visits, family-run lodges, and slow time in
             villages where the route has a human scale.
@@ -210,7 +210,7 @@ export default function Home() {
       <section className="section editorialSplit">
         <div className="copyBlock">
           <p className="eyebrow">Our guide to trekking in Nepal</p>
-          <h2>Good planning is part of the experience</h2>
+          <p className="display displayMedium">Good planning is part of the experience</p>
           <p>
             We brief guests on altitude, insurance, tipping, kit, food hygiene, domestic flights, and weather
             buffers before they leave home. The goal is not to remove adventure. It is to remove avoidable doubt.
@@ -237,9 +237,15 @@ export default function Home() {
       </section>
 
       <section className="ctaBand">
-        <h2>So, ready to start?</h2>
+        <p className="display displayMedium">So, ready to start?</p>
         <p>Tell us when you want to travel and how you want the mountain to feel.</p>
         <a className="buttonDark" href="#enquire">Get in touch</a>
+      </section>
+
+      <section className="footerMarks" aria-label="Operating notes">
+        <span>Kathmandu office</span>
+        <span>Licensed guide partners</span>
+        <span>Permit-first planning</span>
       </section>
 
       <Footer />

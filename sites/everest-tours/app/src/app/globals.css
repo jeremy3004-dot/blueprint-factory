@@ -50,8 +50,9 @@ img {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 22px clamp(18px, 4vw, 56px);
-  color: #fff;
-  mix-blend-mode: difference;
+  background: rgba(16, 36, 49, 0.86);
+  color: var(--color-surface, #f7f3ea);
+  box-shadow: 0 12px 40px rgba(4, 15, 22, 0.18);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
@@ -157,8 +158,20 @@ h3,
   text-transform: uppercase;
 }
 
+.displayMedium {
+  font-size: clamp(34px, 5vw, 62px);
+}
+
+.displaySmall {
+  font-size: clamp(23px, 3vw, 35px);
+}
+
 h1 {
   font-size: clamp(46px, 7vw, 92px);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
 }
 
 h2 {
@@ -250,7 +263,7 @@ p {
 .metaGrid strong {
   display: block;
   margin-bottom: 8px;
-  color: var(--color-primary);
+  color: #8a5200;
   font-family: var(--font-heading);
   font-size: 28px;
 }
@@ -267,8 +280,8 @@ p {
 }
 
 .journeyTabs span:first-child {
-  color: var(--color-primary);
-  border-bottom: 2px solid var(--color-primary);
+  color: #8a5200;
+  border-bottom: 2px solid #8a5200;
 }
 
 .cardGrid {
@@ -336,7 +349,7 @@ p {
 
 .tripRail {
   display: grid;
-  grid-auto-columns: minmax(260px, 340px);
+  grid-auto-columns: minmax(290px, 380px);
   grid-auto-flow: column;
   gap: 20px;
   overflow-x: auto;
@@ -345,7 +358,7 @@ p {
 }
 
 .trekCard {
-  min-height: 440px;
+  min-height: 500px;
   position: relative;
   overflow: hidden;
   scroll-snap-align: start;
@@ -421,6 +434,20 @@ p {
   background: var(--color-primary);
   color: var(--color-ink);
   text-align: center;
+}
+
+.footerMarks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding: 22px 18px;
+  background: #0a161e;
+  color: rgba(247, 243, 234, 0.58);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
 }
 
 .footer {
