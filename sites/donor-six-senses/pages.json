@@ -1,0 +1,39 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "About Kamalaya",
+      "status": "planned"
+    },
+    {
+      "route": "/dining-at-kamalaya",
+      "title": "Restaurants & Cuisine",
+      "status": "planned"
+    },
+    {
+      "route": "/immunity-resilience",
+      "title": "Resilience & Immunity",
+      "status": "planned"
+    },
+    {
+      "route": "/services-facilities",
+      "title": "FACILITIES",
+      "status": "planned"
+    },
+    {
+      "route": "/special-offer-kamalaya",
+      "title": "OFFERS",
+      "status": "planned"
+    },
+    {
+      "route": "/wellness-retreats",
+      "title": "Explore Wellness Programs by selecting your Personal Wellness Goals",
+      "status": "planned"
+    }
+  ]
+}

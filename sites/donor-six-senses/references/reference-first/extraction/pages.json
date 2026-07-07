@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.kamalaya.com/",
+    "label": "HOME",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.kamalaya.com/about",
+    "label": "About Kamalaya",
+    "area": "header"
+  },
+  {
+    "path": "/dining-at-kamalaya",
+    "url": "https://www.kamalaya.com/dining-at-kamalaya",
+    "label": "Restaurants & Cuisine",
+    "area": "header"
+  },
+  {
+    "path": "/immunity-resilience",
+    "url": "https://www.kamalaya.com/immunity-resilience",
+    "label": "Resilience & Immunity",
+    "area": "header"
+  },
+  {
+    "path": "/services-facilities",
+    "url": "https://www.kamalaya.com/services-facilities",
+    "label": "FACILITIES",
+    "area": "header"
+  },
+  {
+    "path": "/special-offer-kamalaya",
+    "url": "https://www.kamalaya.com/special-offer-kamalaya",
+    "label": "OFFERS",
+    "area": "header"
+  },
+  {
+    "path": "/wellness-retreats",
+    "url": "https://www.kamalaya.com/wellness-retreats",
+    "label": "Explore Wellness Programs by selecting your Personal Wellness Goals",
+    "area": "header"
+  }
+]
