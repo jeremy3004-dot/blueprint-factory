@@ -1,0 +1,386 @@
+[
+  {
+    "path": "/",
+    "url": "https://onyxcoffeelab.com/",
+    "label": "Skip to content",
+    "area": "header"
+  },
+  {
+    "path": "/account/login",
+    "url": "https://onyxcoffeelab.com/account/login",
+    "label": "Login",
+    "area": "header"
+  },
+  {
+    "path": "/cart",
+    "url": "https://onyxcoffeelab.com/cart",
+    "label": "0",
+    "area": "header"
+  },
+  {
+    "path": "/collections/accessories",
+    "url": "https://onyxcoffeelab.com/collections/accessories",
+    "label": "Accessories",
+    "area": "body"
+  },
+  {
+    "path": "/collections/all-merch",
+    "url": "https://onyxcoffeelab.com/collections/all-merch",
+    "label": "All Merch",
+    "area": "body"
+  },
+  {
+    "path": "/collections/apparel",
+    "url": "https://onyxcoffeelab.com/collections/apparel",
+    "label": "Apparel",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/barista-provisions",
+    "url": "https://onyxcoffeelab.com/collections/barista-provisions",
+    "label": "Barista Provisions",
+    "area": "body"
+  },
+  {
+    "path": "/collections/chocolate-covered",
+    "url": "https://onyxcoffeelab.com/collections/chocolate-covered",
+    "label": "Chocolate Covered",
+    "area": "body"
+  },
+  {
+    "path": "/collections/coffee",
+    "url": "https://onyxcoffeelab.com/collections/coffee",
+    "label": "Coffee",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/coffee-archive",
+    "url": "https://onyxcoffeelab.com/collections/coffee-archive",
+    "label": "Archive",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/collaborations",
+    "url": "https://onyxcoffeelab.com/collections/collaborations",
+    "label": "Collaborations",
+    "area": "body"
+  },
+  {
+    "path": "/collections/colombia-coffees",
+    "url": "https://onyxcoffeelab.com/collections/colombia-coffees",
+    "label": "Colombia Known for innovation and resilience, Colombia's coffee history dates back to the early 19th century. View Coffees →",
+    "area": "body"
+  },
+  {
+    "path": "/collections/cometeer",
+    "url": "https://onyxcoffeelab.com/collections/cometeer",
+    "label": "Cometeer",
+    "area": "body"
+  },
+  {
+    "path": "/collections/doyenne",
+    "url": "https://onyxcoffeelab.com/collections/doyenne",
+    "label": "Doyenne",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/drinkware",
+    "url": "https://onyxcoffeelab.com/collections/drinkware",
+    "label": "Drinkware",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/ecuador-coffees",
+    "url": "https://onyxcoffeelab.com/collections/ecuador-coffees",
+    "label": "Ecuador Ecuador’s coffee production is shaped by its incredible biodiversity, volcanic soils, and varied microclimates across the Andes, Amazon, and coastal regions. View Coffees →",
+    "area": "body"
+  },
+  {
+    "path": "/collections/equipment",
+    "url": "https://onyxcoffeelab.com/collections/equipment",
+    "label": "Equipment",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/gift-subscriptions",
+    "url": "https://onyxcoffeelab.com/collections/gift-subscriptions",
+    "label": "Subscriptions",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/instant-coffee",
+    "url": "https://onyxcoffeelab.com/collections/instant-coffee",
+    "label": "Specialty Instant",
+    "area": "body"
+  },
+  {
+    "path": "/collections/matcha",
+    "url": "https://onyxcoffeelab.com/collections/matcha",
+    "label": "Matcha",
+    "area": "body"
+  },
+  {
+    "path": "/collections/peru-coffees",
+    "url": "https://onyxcoffeelab.com/collections/peru-coffees",
+    "label": "Peru Peru offers some of the best offerings for us to enjoy. Known for care and craftsmanship, these offerings are sure to be enjoyed. View Coffees →",
+    "area": "body"
+  },
+  {
+    "path": "/collections/red",
+    "url": "https://onyxcoffeelab.com/collections/red",
+    "label": "Explore (ONYX)RED",
+    "area": "body"
+  },
+  {
+    "path": "/collections/special",
+    "url": "https://onyxcoffeelab.com/collections/special",
+    "label": "Box Sets",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/tea",
+    "url": "https://onyxcoffeelab.com/collections/tea",
+    "label": "Tea",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/tea-box-sets",
+    "url": "https://onyxcoffeelab.com/collections/tea-box-sets",
+    "label": "Box Sets",
+    "area": "body"
+  },
+  {
+    "path": "/collections/terroir",
+    "url": "https://onyxcoffeelab.com/collections/terroir",
+    "label": "Chocolate",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/traditional-bars",
+    "url": "https://onyxcoffeelab.com/collections/traditional-bars",
+    "label": "Traditional Bars",
+    "area": "body"
+  },
+  {
+    "path": "/pages/bentonville",
+    "url": "https://onyxcoffeelab.com/pages/bentonville",
+    "label": "Bentonville",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/brew-guides",
+    "url": "https://onyxcoffeelab.com/pages/brew-guides",
+    "label": "Brew Guides",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/doyenne-cafe",
+    "url": "https://onyxcoffeelab.com/pages/doyenne-cafe",
+    "label": "Doyenne",
+    "area": "body"
+  },
+  {
+    "path": "/pages/equipment-repair",
+    "url": "https://onyxcoffeelab.com/pages/equipment-repair",
+    "label": "Espresso Repair",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/faq",
+    "url": "https://onyxcoffeelab.com/pages/faq",
+    "label": "FAQ",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/fay-square",
+    "url": "https://onyxcoffeelab.com/pages/fay-square",
+    "label": "Fay Square",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/fayetteville",
+    "url": "https://onyxcoffeelab.com/pages/fayetteville",
+    "label": "Gregg St",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/find-my-roast",
+    "url": "https://onyxcoffeelab.com/pages/find-my-roast",
+    "label": "Find My Roast",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/grind-size-calculator",
+    "url": "https://onyxcoffeelab.com/pages/grind-size-calculator",
+    "label": "Grind Sizes",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/help-me-brew",
+    "url": "https://onyxcoffeelab.com/pages/help-me-brew",
+    "label": "Help Me Brew",
+    "area": "body"
+  },
+  {
+    "path": "/pages/help-me-choose",
+    "url": "https://onyxcoffeelab.com/pages/help-me-choose",
+    "label": "Help Me Choose",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/jobs",
+    "url": "https://onyxcoffeelab.com/pages/jobs",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/locations",
+    "url": "https://onyxcoffeelab.com/pages/locations",
+    "label": "See Our Cafes",
+    "area": "body"
+  },
+  {
+    "path": "/pages/our-story",
+    "url": "https://onyxcoffeelab.com/pages/our-story",
+    "label": "Awards",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/privacy",
+    "url": "https://onyxcoffeelab.com/pages/privacy",
+    "label": "Privacy Statement",
+    "area": "body"
+  },
+  {
+    "path": "/pages/private-events",
+    "url": "https://onyxcoffeelab.com/pages/private-events",
+    "label": "Private Events",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/quick-order",
+    "url": "https://onyxcoffeelab.com/pages/quick-order",
+    "label": "In a hurry?",
+    "area": "body"
+  },
+  {
+    "path": "/pages/rogers",
+    "url": "https://onyxcoffeelab.com/pages/rogers",
+    "label": "Rogers",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/springdale",
+    "url": "https://onyxcoffeelab.com/pages/springdale",
+    "label": "Springdale",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/subscribe",
+    "url": "https://onyxcoffeelab.com/pages/subscribe",
+    "label": "Subscriptions",
+    "area": "body"
+  },
+  {
+    "path": "/pages/subscribe-tea",
+    "url": "https://onyxcoffeelab.com/pages/subscribe-tea",
+    "label": "Tea",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/support",
+    "url": "https://onyxcoffeelab.com/pages/support",
+    "label": "Help Center",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/terms",
+    "url": "https://onyxcoffeelab.com/pages/terms",
+    "label": "Terms & Conditions",
+    "area": "body"
+  },
+  {
+    "path": "/pages/the-momentary",
+    "url": "https://onyxcoffeelab.com/pages/the-momentary",
+    "label": "Momentary",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/wholesale",
+    "url": "https://onyxcoffeelab.com/pages/wholesale",
+    "label": "Wholesale",
+    "area": "footer"
+  },
+  {
+    "path": "/policies/privacy-policy",
+    "url": "https://onyxcoffeelab.com/policies/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/policies/terms-of-service",
+    "url": "https://onyxcoffeelab.com/policies/terms-of-service",
+    "label": "Terms of Use",
+    "area": "footer"
+  },
+  {
+    "path": "/products/cafe-expressions",
+    "url": "https://onyxcoffeelab.com/products/cafe-expressions",
+    "label": "Cafe Expressions",
+    "area": "body"
+  },
+  {
+    "path": "/products/circadian",
+    "url": "https://onyxcoffeelab.com/products/circadian",
+    "label": "Circadian",
+    "area": "body"
+  },
+  {
+    "path": "/products/colombia-la-riviera-sudan-rume-26",
+    "url": "https://onyxcoffeelab.com/products/colombia-la-riviera-sudan-rume-26",
+    "label": "Explore The Offering",
+    "area": "body"
+  },
+  {
+    "path": "/products/decaf-ethiopia-suke-quto-26",
+    "url": "https://onyxcoffeelab.com/products/decaf-ethiopia-suke-quto-26",
+    "label": "Explore This Offering",
+    "area": "body"
+  },
+  {
+    "path": "/products/echelon",
+    "url": "https://onyxcoffeelab.com/products/echelon",
+    "label": "Echelon",
+    "area": "footer"
+  },
+  {
+    "path": "/products/echelon-2025",
+    "url": "https://onyxcoffeelab.com/products/echelon-2025",
+    "label": "Echelon 2026",
+    "area": "body"
+  },
+  {
+    "path": "/products/gift-card",
+    "url": "https://onyxcoffeelab.com/products/gift-card",
+    "label": "Gift Cards",
+    "area": "footer"
+  },
+  {
+    "path": "/products/roasters-choice",
+    "url": "https://onyxcoffeelab.com/products/roasters-choice",
+    "label": "Roaster's Choice",
+    "area": "footer"
+  },
+  {
+    "path": "/products/sipping-chocolate-powder",
+    "url": "https://onyxcoffeelab.com/products/sipping-chocolate-powder",
+    "label": "Sipping Chocolate",
+    "area": "body"
+  },
+  {
+    "path": "/products/usa-cycling",
+    "url": "https://onyxcoffeelab.com/products/usa-cycling",
+    "label": "EXPLORE THE COLLAB",
+    "area": "body"
+  }
+]

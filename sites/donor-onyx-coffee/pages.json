@@ -1,0 +1,19 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/account/login",
+      "title": "Login",
+      "status": "planned"
+    },
+    {
+      "route": "/cart",
+      "title": "0",
+      "status": "planned"
+    }
+  ]
+}
