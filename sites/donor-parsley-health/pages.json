@@ -1,0 +1,39 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/care",
+      "title": "Complete Care",
+      "status": "planned"
+    },
+    {
+      "route": "/care/conditions",
+      "title": "Conditions",
+      "status": "planned"
+    },
+    {
+      "route": "/join/care",
+      "title": "Join Now",
+      "status": "planned"
+    },
+    {
+      "route": "/labs",
+      "title": "Clinical Lab Review",
+      "status": "planned"
+    },
+    {
+      "route": "/store",
+      "title": "Supplements",
+      "status": "planned"
+    },
+    {
+      "route": "/why-it-works",
+      "title": "Our Approach",
+      "status": "planned"
+    }
+  ]
+}

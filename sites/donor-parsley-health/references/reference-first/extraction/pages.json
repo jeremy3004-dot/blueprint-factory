@@ -1,0 +1,302 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.parsleyhealth.com/",
+    "label": "",
+    "area": "nav"
+  },
+  {
+    "path": "/accessibility-statement",
+    "url": "https://www.parsleyhealth.com/accessibility-statement",
+    "label": "Accessibility Statement",
+    "area": "footer"
+  },
+  {
+    "path": "/blog",
+    "url": "https://www.parsleyhealth.com/blog",
+    "label": "Blog",
+    "area": "footer"
+  },
+  {
+    "path": "/blog/functional-testing-at-parsley-health",
+    "url": "https://www.parsleyhealth.com/blog/functional-testing-at-parsley-health",
+    "label": "It's Not \"All In Your Head.\" Diagnose Unexplained Symptoms with Functional Testing at Parsley Health.",
+    "area": "body"
+  },
+  {
+    "path": "/blog/is-functional-medicine-legit",
+    "url": "https://www.parsleyhealth.com/blog/is-functional-medicine-legit",
+    "label": "Is Functional Medicine Legit? Your Ultimate Guide To How It Works",
+    "area": "body"
+  },
+  {
+    "path": "/blog/parsley-health-primary-care-provider-difference",
+    "url": "https://www.parsleyhealth.com/blog/parsley-health-primary-care-provider-difference",
+    "label": "What’s the Difference Between a Primary Care Provider (PCP) and Parsley Health?",
+    "area": "body"
+  },
+  {
+    "path": "/care",
+    "url": "https://www.parsleyhealth.com/care",
+    "label": "Complete Care",
+    "area": "nav"
+  },
+  {
+    "path": "/care/autoimmune-disease-treatment",
+    "url": "https://www.parsleyhealth.com/care/autoimmune-disease-treatment",
+    "label": "Autoimmune & Inflammation",
+    "area": "body"
+  },
+  {
+    "path": "/care/conditions",
+    "url": "https://www.parsleyhealth.com/care/conditions",
+    "label": "Conditions",
+    "area": "nav"
+  },
+  {
+    "path": "/care/detox",
+    "url": "https://www.parsleyhealth.com/care/detox",
+    "label": "Detox & Environmental Exposure",
+    "area": "body"
+  },
+  {
+    "path": "/care/hormonal-imbalance-treatment",
+    "url": "https://www.parsleyhealth.com/care/hormonal-imbalance-treatment",
+    "label": "Hormone Health & Balance",
+    "area": "body"
+  },
+  {
+    "path": "/care/improve-gut-health",
+    "url": "https://www.parsleyhealth.com/care/improve-gut-health",
+    "label": "Gut & Digestive Health",
+    "area": "body"
+  },
+  {
+    "path": "/care/longevity",
+    "url": "https://www.parsleyhealth.com/care/longevity",
+    "label": "Longevity & Healthspan",
+    "area": "body"
+  },
+  {
+    "path": "/care/menopause-peri",
+    "url": "https://www.parsleyhealth.com/care/menopause-peri",
+    "label": "Perimenopause & Menopause",
+    "area": "body"
+  },
+  {
+    "path": "/care/mental-health",
+    "url": "https://www.parsleyhealth.com/care/mental-health",
+    "label": "Mental & Emotional Health",
+    "area": "body"
+  },
+  {
+    "path": "/care/metabolic-health",
+    "url": "https://www.parsleyhealth.com/care/metabolic-health",
+    "label": "Metabolic Health",
+    "area": "body"
+  },
+  {
+    "path": "/care/metabolic-heart-rate",
+    "url": "https://www.parsleyhealth.com/care/metabolic-heart-rate",
+    "label": "Heart Health",
+    "area": "body"
+  },
+  {
+    "path": "/care/reproductive-health",
+    "url": "https://www.parsleyhealth.com/care/reproductive-health",
+    "label": "Fertility, Pregnancy, & Postpartum",
+    "area": "body"
+  },
+  {
+    "path": "/care/unexplained-illness",
+    "url": "https://www.parsleyhealth.com/care/unexplained-illness",
+    "label": "Unexplained Symptoms",
+    "area": "body"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.parsleyhealth.com/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/clinical-membership-terms",
+    "url": "https://www.parsleyhealth.com/clinical-membership-terms",
+    "label": "Clinical Membership",
+    "area": "footer"
+  },
+  {
+    "path": "/company",
+    "url": "https://www.parsleyhealth.com/company",
+    "label": "About Parsley",
+    "area": "footer"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.parsleyhealth.com/contact",
+    "label": "Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.parsleyhealth.com/faq",
+    "label": "FAQs",
+    "area": "footer"
+  },
+  {
+    "path": "/how-it-works",
+    "url": "https://www.parsleyhealth.com/how-it-works",
+    "label": "How It Works",
+    "area": "footer"
+  },
+  {
+    "path": "/insurance",
+    "url": "https://www.parsleyhealth.com/insurance",
+    "label": "Pricing & Insurance",
+    "area": "footer"
+  },
+  {
+    "path": "/join/care",
+    "url": "https://www.parsleyhealth.com/join/care",
+    "label": "Join Now",
+    "area": "nav"
+  },
+  {
+    "path": "/join/get-labs",
+    "url": "https://www.parsleyhealth.com/join/get-labs",
+    "label": "Book a lab review",
+    "area": "footer"
+  },
+  {
+    "path": "/la",
+    "url": "https://www.parsleyhealth.com/la",
+    "label": "Los Angeles",
+    "area": "footer"
+  },
+  {
+    "path": "/labs",
+    "url": "https://www.parsleyhealth.com/labs",
+    "label": "Clinical Lab Review",
+    "area": "nav"
+  },
+  {
+    "path": "/labs/how-it-works",
+    "url": "https://www.parsleyhealth.com/labs/how-it-works",
+    "label": "How It Works",
+    "area": "footer"
+  },
+  {
+    "path": "/labs/what-we-test",
+    "url": "https://www.parsleyhealth.com/labs/what-we-test",
+    "label": "What We Test",
+    "area": "footer"
+  },
+  {
+    "path": "/labs/why-our-providers",
+    "url": "https://www.parsleyhealth.com/labs/why-our-providers",
+    "label": "Why Our Providers",
+    "area": "footer"
+  },
+  {
+    "path": "/locations",
+    "url": "https://www.parsleyhealth.com/locations",
+    "label": "Virtual",
+    "area": "footer"
+  },
+  {
+    "path": "/lp/create",
+    "url": "https://www.parsleyhealth.com/lp/create",
+    "label": "Creators",
+    "area": "footer"
+  },
+  {
+    "path": "/membership-terms",
+    "url": "https://www.parsleyhealth.com/membership-terms",
+    "label": "Terms & Conditions",
+    "area": "footer"
+  },
+  {
+    "path": "/notice-of-privacy-practices",
+    "url": "https://www.parsleyhealth.com/notice-of-privacy-practices",
+    "label": "Notice of Privacy Practices",
+    "area": "footer"
+  },
+  {
+    "path": "/nutrition-coaching",
+    "url": "https://www.parsleyhealth.com/nutrition-coaching",
+    "label": "Nutrition Coaching",
+    "area": "footer"
+  },
+  {
+    "path": "/ny",
+    "url": "https://www.parsleyhealth.com/ny",
+    "label": "NYC",
+    "area": "footer"
+  },
+  {
+    "path": "/our-services",
+    "url": "https://www.parsleyhealth.com/our-services",
+    "label": "What We Offer",
+    "area": "footer"
+  },
+  {
+    "path": "/press",
+    "url": "https://www.parsleyhealth.com/press",
+    "label": "Press",
+    "area": "footer"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://www.parsleyhealth.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/providers",
+    "url": "https://www.parsleyhealth.com/providers",
+    "label": "Our Clinicians",
+    "area": "footer"
+  },
+  {
+    "path": "/quiz",
+    "url": "https://www.parsleyhealth.com/quiz",
+    "label": "Parsley Symptom Index",
+    "area": "footer"
+  },
+  {
+    "path": "/reviews",
+    "url": "https://www.parsleyhealth.com/reviews",
+    "label": "Reviews",
+    "area": "footer"
+  },
+  {
+    "path": "/robin-berzin-md",
+    "url": "https://www.parsleyhealth.com/robin-berzin-md",
+    "label": "Dr. Robin Berzin",
+    "area": "footer"
+  },
+  {
+    "path": "/store",
+    "url": "https://www.parsleyhealth.com/store",
+    "label": "Supplements",
+    "area": "nav"
+  },
+  {
+    "path": "/store/collections/best-sellers",
+    "url": "https://www.parsleyhealth.com/store/collections/best-sellers",
+    "label": "See all",
+    "area": "body"
+  },
+  {
+    "path": "/terms-of-use",
+    "url": "https://www.parsleyhealth.com/terms-of-use",
+    "label": "Terms of Use",
+    "area": "footer"
+  },
+  {
+    "path": "/why-it-works",
+    "url": "https://www.parsleyhealth.com/why-it-works",
+    "label": "Our Approach",
+    "area": "nav"
+  }
+]
