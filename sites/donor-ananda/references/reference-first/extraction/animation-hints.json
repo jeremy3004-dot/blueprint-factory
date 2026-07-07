@@ -1,0 +1,16 @@
+{
+  "libraries": [
+    "GSAP",
+    "Swiper"
+  ],
+  "scriptSignals": [
+    "https://kamalaya.com/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5"
+  ],
+  "globalsPresent": [
+    "gsap",
+    "TweenMax",
+    "Swiper"
+  ],
+  "hasAutoplayVideo": false,
+  "stickyOrFixedCount": 4
+}
