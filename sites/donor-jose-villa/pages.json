@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "About",
+      "status": "planned"
+    },
+    {
+      "route": "/blog",
+      "title": "Journal",
+      "status": "planned"
+    },
+    {
+      "route": "/contact",
+      "title": "Contact",
+      "status": "planned"
+    },
+    {
+      "route": "/faq",
+      "title": "FAQ",
+      "status": "planned"
+    },
+    {
+      "route": "/portfolio",
+      "title": "Portfolio",
+      "status": "planned"
+    },
+    {
+      "route": "/published",
+      "title": "Published",
+      "status": "planned"
+    },
+    {
+      "route": "/services",
+      "title": "Services",
+      "status": "planned"
+    }
+  ]
+}
