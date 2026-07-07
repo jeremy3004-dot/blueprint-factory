@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "Folder: About",
+      "status": "planned"
+    },
+    {
+      "route": "/events",
+      "title": "Events",
+      "status": "planned"
+    },
+    {
+      "route": "/giftcards",
+      "title": "Gift Cards",
+      "status": "planned"
+    },
+    {
+      "route": "/magic-farms",
+      "title": "Magic Farms",
+      "status": "planned"
+    },
+    {
+      "route": "/ourrestaurant",
+      "title": "About Us",
+      "status": "planned"
+    },
+    {
+      "route": "/shop",
+      "title": "Folder: Shop",
+      "status": "planned"
+    },
+    {
+      "route": "/stories",
+      "title": "Stories",
+      "status": "planned"
+    }
+  ]
+}

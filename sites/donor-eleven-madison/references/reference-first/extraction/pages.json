@@ -1,0 +1,92 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.elevenmadisonpark.com/",
+    "label": "Skip to Content",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.elevenmadisonpark.com/about",
+    "label": "Folder: About",
+    "area": "header"
+  },
+  {
+    "path": "/accessibility-statement",
+    "url": "https://www.elevenmadisonpark.com/accessibility-statement",
+    "label": "Accessibility Statement",
+    "area": "footer"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.elevenmadisonpark.com/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/cart",
+    "url": "https://www.elevenmadisonpark.com/cart",
+    "label": "0",
+    "area": "body"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.elevenmadisonpark.com/contact",
+    "label": "Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/events",
+    "url": "https://www.elevenmadisonpark.com/events",
+    "label": "Events",
+    "area": "header"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.elevenmadisonpark.com/faq",
+    "label": "FAQs",
+    "area": "footer"
+  },
+  {
+    "path": "/giftcards",
+    "url": "https://www.elevenmadisonpark.com/giftcards",
+    "label": "Gift Cards",
+    "area": "header"
+  },
+  {
+    "path": "/magic-farms",
+    "url": "https://www.elevenmadisonpark.com/magic-farms",
+    "label": "Magic Farms",
+    "area": "header"
+  },
+  {
+    "path": "/ourrestaurant",
+    "url": "https://www.elevenmadisonpark.com/ourrestaurant",
+    "label": "About Us",
+    "area": "header"
+  },
+  {
+    "path": "/press-and-accolades",
+    "url": "https://www.elevenmadisonpark.com/press-and-accolades",
+    "label": "Press & Accolades",
+    "area": "footer"
+  },
+  {
+    "path": "/shop",
+    "url": "https://www.elevenmadisonpark.com/shop",
+    "label": "Folder: Shop",
+    "area": "header"
+  },
+  {
+    "path": "/stories",
+    "url": "https://www.elevenmadisonpark.com/stories",
+    "label": "Stories",
+    "area": "header"
+  },
+  {
+    "path": "/team",
+    "url": "https://www.elevenmadisonpark.com/team",
+    "label": "Team",
+    "area": "header"
+  }
+]
