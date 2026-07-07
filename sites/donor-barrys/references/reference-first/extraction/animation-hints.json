@@ -1,0 +1,13 @@
+{
+  "libraries": [
+    "Swiper"
+  ],
+  "scriptSignals": [
+    "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+  ],
+  "globalsPresent": [
+    "Swiper"
+  ],
+  "hasAutoplayVideo": true,
+  "stickyOrFixedCount": 4
+}

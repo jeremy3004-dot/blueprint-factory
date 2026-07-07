@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/ar",
+      "title": "Arabic",
+      "status": "planned"
+    },
+    {
+      "route": "/da",
+      "title": "Danish",
+      "status": "planned"
+    },
+    {
+      "route": "/es",
+      "title": "Spanish",
+      "status": "planned"
+    },
+    {
+      "route": "/fr",
+      "title": "French",
+      "status": "planned"
+    },
+    {
+      "route": "/it",
+      "title": "Italian",
+      "status": "planned"
+    },
+    {
+      "route": "/my-account",
+      "title": "my account",
+      "status": "planned"
+    },
+    {
+      "route": "/studios",
+      "title": "Book Your First Class",
+      "status": "planned"
+    }
+  ]
+}

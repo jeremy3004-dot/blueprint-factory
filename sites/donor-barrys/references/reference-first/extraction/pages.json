@@ -1,0 +1,170 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.barrys.com/",
+    "label": "download the app",
+    "area": "nav"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.barrys.com/about",
+    "label": "About Us",
+    "area": "body"
+  },
+  {
+    "path": "/accessibility-statement",
+    "url": "https://www.barrys.com/accessibility-statement",
+    "label": "Accessibility Statement",
+    "area": "body"
+  },
+  {
+    "path": "/ar",
+    "url": "https://www.barrys.com/ar",
+    "label": "Arabic",
+    "area": "nav"
+  },
+  {
+    "path": "/become-a-global-partner",
+    "url": "https://www.barrys.com/become-a-global-partner",
+    "label": "Franchise",
+    "area": "body"
+  },
+  {
+    "path": "/blog",
+    "url": "https://www.barrys.com/blog",
+    "label": "Blogs",
+    "area": "body"
+  },
+  {
+    "path": "/booking",
+    "url": "https://www.barrys.com/booking",
+    "label": "Gift Cards",
+    "area": "body"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.barrys.com/careers",
+    "label": "Careers",
+    "area": "body"
+  },
+  {
+    "path": "/community-events",
+    "url": "https://www.barrys.com/community-events",
+    "label": "Community Events",
+    "area": "body"
+  },
+  {
+    "path": "/contact-us",
+    "url": "https://www.barrys.com/contact-us",
+    "label": "Contact Us",
+    "area": "body"
+  },
+  {
+    "path": "/cookie-policy",
+    "url": "https://www.barrys.com/cookie-policy",
+    "label": "Cookie Policy",
+    "area": "body"
+  },
+  {
+    "path": "/corporate-events",
+    "url": "https://www.barrys.com/corporate-events",
+    "label": "Corporate Events",
+    "area": "body"
+  },
+  {
+    "path": "/da",
+    "url": "https://www.barrys.com/da",
+    "label": "Danish",
+    "area": "nav"
+  },
+  {
+    "path": "/es",
+    "url": "https://www.barrys.com/es",
+    "label": "Spanish",
+    "area": "nav"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.barrys.com/faq",
+    "label": "FAQ",
+    "area": "body"
+  },
+  {
+    "path": "/fr",
+    "url": "https://www.barrys.com/fr",
+    "label": "French",
+    "area": "nav"
+  },
+  {
+    "path": "/fuel-bar",
+    "url": "https://www.barrys.com/fuel-bar",
+    "label": "Fuel Bar",
+    "area": "body"
+  },
+  {
+    "path": "/instructors",
+    "url": "https://www.barrys.com/instructors",
+    "label": "Instructors",
+    "area": "body"
+  },
+  {
+    "path": "/it",
+    "url": "https://www.barrys.com/it",
+    "label": "Italian",
+    "area": "nav"
+  },
+  {
+    "path": "/my-account",
+    "url": "https://www.barrys.com/my-account",
+    "label": "my account",
+    "area": "nav"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://www.barrys.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "body"
+  },
+  {
+    "path": "/ride-faq",
+    "url": "https://www.barrys.com/ride-faq",
+    "label": "Barrys Ride",
+    "area": "body"
+  },
+  {
+    "path": "/studios",
+    "url": "https://www.barrys.com/studios",
+    "label": "Book Your First Class",
+    "area": "nav"
+  },
+  {
+    "path": "/studios-coming-soon",
+    "url": "https://www.barrys.com/studios-coming-soon",
+    "label": "Global Expansion",
+    "area": "body"
+  },
+  {
+    "path": "/sv",
+    "url": "https://www.barrys.com/sv",
+    "label": "Swedish",
+    "area": "nav"
+  },
+  {
+    "path": "/terms-of-service",
+    "url": "https://www.barrys.com/terms-of-service",
+    "label": "Terms of Service",
+    "area": "body"
+  },
+  {
+    "path": "/the-lifestyle",
+    "url": "https://www.barrys.com/the-lifestyle",
+    "label": "THE LIFESTYLE",
+    "area": "nav"
+  },
+  {
+    "path": "/the-workout",
+    "url": "https://www.barrys.com/the-workout",
+    "label": "THE WORKOUT",
+    "area": "nav"
+  }
+]
