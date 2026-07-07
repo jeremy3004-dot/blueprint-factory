@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/260707",
+      "title": "Tuesday 260707",
+      "status": "planned"
+    },
+    {
+      "route": "/army-ignited",
+      "title": "Military Resources",
+      "status": "planned"
+    },
+    {
+      "route": "/certificate-courses/level-1",
+      "title": "Level 1 Certificate Course",
+      "status": "planned"
+    },
+    {
+      "route": "/crossfit-is-the-cure",
+      "title": "CrossFit Is the Cure",
+      "status": "planned"
+    },
+    {
+      "route": "/crossfit-movements",
+      "title": "Movements",
+      "status": "planned"
+    },
+    {
+      "route": "/education/about",
+      "title": "Courses",
+      "status": "planned"
+    },
+    {
+      "route": "/education/explore-courses",
+      "title": "Explore All Courses",
+      "status": "planned"
+    }
+  ]
+}

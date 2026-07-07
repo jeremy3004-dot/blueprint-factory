@@ -1,0 +1,224 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.crossfit.com/",
+    "label": "",
+    "area": "header"
+  },
+  {
+    "path": "/260707",
+    "url": "https://www.crossfit.com/260707",
+    "label": "Tuesday 260707",
+    "area": "header"
+  },
+  {
+    "path": "/army-ignited",
+    "url": "https://www.crossfit.com/army-ignited",
+    "label": "Military Resources",
+    "area": "header"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.crossfit.com/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/certificate-courses",
+    "url": "https://www.crossfit.com/certificate-courses",
+    "label": "Certificate Courses",
+    "area": "footer"
+  },
+  {
+    "path": "/certificate-courses/level-1",
+    "url": "https://www.crossfit.com/certificate-courses/level-1",
+    "label": "Level 1 Certificate Course",
+    "area": "header"
+  },
+  {
+    "path": "/certifications",
+    "url": "https://www.crossfit.com/certifications",
+    "label": "Certifications",
+    "area": "footer"
+  },
+  {
+    "path": "/contact-us",
+    "url": "https://www.crossfit.com/contact-us",
+    "label": "Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/cookie-policy",
+    "url": "https://www.crossfit.com/cookie-policy",
+    "label": "Cookie Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/courses-near-you",
+    "url": "https://www.crossfit.com/courses-near-you",
+    "label": "Courses Near You",
+    "area": "footer"
+  },
+  {
+    "path": "/crossfit-is-the-cure",
+    "url": "https://www.crossfit.com/crossfit-is-the-cure",
+    "label": "CrossFit Is the Cure",
+    "area": "header"
+  },
+  {
+    "path": "/crossfit-movements",
+    "url": "https://www.crossfit.com/crossfit-movements",
+    "label": "Movements",
+    "area": "header"
+  },
+  {
+    "path": "/disclaimer",
+    "url": "https://www.crossfit.com/disclaimer",
+    "label": "Disclaimer",
+    "area": "footer"
+  },
+  {
+    "path": "/education/about",
+    "url": "https://www.crossfit.com/education/about",
+    "label": "Courses",
+    "area": "header"
+  },
+  {
+    "path": "/education/explore-courses",
+    "url": "https://www.crossfit.com/education/explore-courses",
+    "label": "Explore All Courses",
+    "area": "header"
+  },
+  {
+    "path": "/education/resources",
+    "url": "https://www.crossfit.com/education/resources",
+    "label": "Coaching Resources",
+    "area": "header"
+  },
+  {
+    "path": "/essentials/movements",
+    "url": "https://www.crossfit.com/essentials/movements",
+    "label": "Movements",
+    "area": "footer"
+  },
+  {
+    "path": "/essentials/the-crossfit-effect",
+    "url": "https://www.crossfit.com/essentials/the-crossfit-effect",
+    "label": "The CrossFit Effect",
+    "area": "header"
+  },
+  {
+    "path": "/essentials/the-front-squat",
+    "url": "https://www.crossfit.com/essentials/the-front-squat",
+    "label": "The Front Squat",
+    "area": "body"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.crossfit.com/faq",
+    "label": "FAQ",
+    "area": "footer"
+  },
+  {
+    "path": "/field-leaders",
+    "url": "https://www.crossfit.com/field-leaders",
+    "label": "Field Leaders",
+    "area": "footer"
+  },
+  {
+    "path": "/foundation",
+    "url": "https://www.crossfit.com/foundation",
+    "label": "Foundation",
+    "area": "footer"
+  },
+  {
+    "path": "/get-started",
+    "url": "https://www.crossfit.com/get-started",
+    "label": "Get Started",
+    "area": "footer"
+  },
+  {
+    "path": "/global-mentor-program",
+    "url": "https://www.crossfit.com/global-mentor-program",
+    "label": "Global Mentor Program",
+    "area": "footer"
+  },
+  {
+    "path": "/heroes",
+    "url": "https://www.crossfit.com/heroes",
+    "label": "Hero Workouts",
+    "area": "header"
+  },
+  {
+    "path": "/iptheft",
+    "url": "https://www.crossfit.com/iptheft",
+    "label": "Report IP Theft",
+    "area": "footer"
+  },
+  {
+    "path": "/map",
+    "url": "https://www.crossfit.com/map",
+    "label": "Find a Gym",
+    "area": "header"
+  },
+  {
+    "path": "/media",
+    "url": "https://www.crossfit.com/media",
+    "label": "Media",
+    "area": "header"
+  },
+  {
+    "path": "/open-crossfit-gym",
+    "url": "https://www.crossfit.com/open-crossfit-gym",
+    "label": "Open a CrossFit Gym",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://www.crossfit.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/private-course",
+    "url": "https://www.crossfit.com/private-course",
+    "label": "Private Courses",
+    "area": "header"
+  },
+  {
+    "path": "/promotional-terms-and-conditions",
+    "url": "https://www.crossfit.com/promotional-terms-and-conditions",
+    "label": "Promotional Terms and Conditions",
+    "area": "footer"
+  },
+  {
+    "path": "/scholarship-program-inquiry",
+    "url": "https://www.crossfit.com/scholarship-program-inquiry",
+    "label": "Scholarship Program",
+    "area": "footer"
+  },
+  {
+    "path": "/terms-and-conditions",
+    "url": "https://www.crossfit.com/terms-and-conditions",
+    "label": "Terms & Conditions",
+    "area": "footer"
+  },
+  {
+    "path": "/what-is-crossfit",
+    "url": "https://www.crossfit.com/what-is-crossfit",
+    "label": "Getting Started",
+    "area": "header"
+  },
+  {
+    "path": "/wod",
+    "url": "https://www.crossfit.com/wod",
+    "label": "Workout of the Day",
+    "area": "header"
+  },
+  {
+    "path": "/workout",
+    "url": "https://www.crossfit.com/workout",
+    "label": "Workouts",
+    "area": "header"
+  }
+]

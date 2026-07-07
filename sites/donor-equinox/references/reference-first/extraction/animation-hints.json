@@ -1,0 +1,9 @@
+{
+  "libraries": [],
+  "scriptSignals": [
+    "https://px.mountain.com/st?ga_tracking_id=G-YMP4SGMLNT&ga_client_id=924914722.1783444462&shpt=CrossFit%20%7C%20CrossFit%3A%20The%20Path%20to%20Better%20Health%20%7C%20CrossFit&dcm_cid=924914722.1783444462&available_ga=%5B%7B%22id%22%3A%22G-YMP4SGMLNT%22%2C%22sess_id%22%3A%221783444461%22%7D%5D&ga_info=%7B%22status%22%3A%22OK%22%2C%22available_ga%22%3A%5B%7B%22id%22%3A%22G-YMP4SGMLNT%22%2C%22sess_id%22%3A%221783444461%22%7D%5D%2C%22hardcoded_ga%22%3A%22G-YMP4SGMLNT%22%2C%22ga_tracking_id%22%3A%22G-YMP4SGMLNT%22%2C%22ga_client_id%22%3A%22924914722.1783444462%22%2C%22shpt%22%3A%22CrossFit%20%7C%20CrossFit%3A%20The%20Path%20to%20Better%20Health%20%7C%20CrossFit%22%2C%22dcm_cid%22%3A%22924914722.1783444462%22%2C%22mntnis%22%3A%22RBgCN6bhZvMxElDhW24vSzeJlZwD6N1k%22%2C%22execution_workflow%22%3A%7B%22iteration%22%3A5%2C%22getClientIdByCookie%22%3A%22OK%22%2C%22shpt%22%3A%22OK%22%2C%22dcm_cid%22%3A%22OK%22%7D%7D&hardcoded_ga=G-YMP4SGMLNT&meta_tag_data=%5B%7B%22description.content%22%3A%22CrossFit%20offers%20a%20results-based%2C%20community-driven%20approach%20that%20helps%20you%20build%20fitness%20and%20improve%20your%20health.%20Learn%20more%20about%20CrossFit%20here!%22%7D%5D&dxver=4.0.0&shaid=35115&plh=https%3A%2F%2Fwww.crossfit.com%2F&cb=232630513987207&shoid=924914722.1783444462&shadditional=googletagmanager%3Dtrue%2Csegment%3Dtrue%2Cga4%3Dtrue&hc_ga_tr_id=G-YMP4SGMLNT"
+  ],
+  "globalsPresent": [],
+  "hasAutoplayVideo": true,
+  "stickyOrFixedCount": 6
+}

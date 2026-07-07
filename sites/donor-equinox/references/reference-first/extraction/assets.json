@@ -1,0 +1,248 @@
+[
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29121527/No-Gimmicks.-Just-What-Works.svg",
+    "width": 132,
+    "height": 132,
+    "alt": "No Gimmicks. Just What Works.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29121530/Hard-Work-Scaled-to-You.svg",
+    "width": 140,
+    "height": 140,
+    "alt": "Hard Work, Scaled to You.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29121528/Community-That-Holds-You-Accountable.svg",
+    "width": 172,
+    "height": 97,
+    "alt": "Community That Holds You Accountable.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29120934/crossfit-global-map.png",
+    "width": 700,
+    "height": 461,
+    "alt": "CrossFit Global Gym Map",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115637/What-Is-CrossFit.png",
+    "width": 1440,
+    "height": 1080,
+    "alt": "What Is CrossFit?",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115609/Become-a-Coach.png",
+    "width": 1440,
+    "height": 1080,
+    "alt": "Become a Coach",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115621/Gear-Built-for-the-Work.png",
+    "width": 1440,
+    "height": 1080,
+    "alt": "Gear Built for the Work",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115614/Cristina-CrossFit-Marshfield-USA.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Cristina, CrossFit Marshfield, USA",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115612/Constantin-Nero-CrossFit-Strasbourg-France.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Constantin, Nero CrossFit Strasbourg, France",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115626/Marta-CrossFit-Ponferrada-Spain.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Marta, CrossFit Ponferrada, Spain",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115623/Luana-CrossFit-Floripa-Brazil.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Luana, CrossFit Floripa, Brazil",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115649/Yuriko-CrossFit-Kyoto-Japan.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Yuriko, CrossFit Kyoto, Japan",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115652/%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B5%E1%84%8B%E1%85%B3%E1%86%AB-CFGN-Nonhyeon-South-Korea.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Lim Si-eun, CFGN Nonhyeon, South Korea",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115614/Cristina-CrossFit-Marshfield-USA.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Cristina, CrossFit Marshfield, USA",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115612/Constantin-Nero-CrossFit-Strasbourg-France.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Constantin, Nero CrossFit Strasbourg, France",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115626/Marta-CrossFit-Ponferrada-Spain.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Marta, CrossFit Ponferrada, Spain",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115623/Luana-CrossFit-Floripa-Brazil.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Luana, CrossFit Floripa, Brazil",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115649/Yuriko-CrossFit-Kyoto-Japan.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Yuriko, CrossFit Kyoto, Japan",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115652/%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B5%E1%84%8B%E1%85%B3%E1%86%AB-CFGN-Nonhyeon-South-Korea.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Lim Si-eun, CFGN Nonhyeon, South Korea",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115614/Cristina-CrossFit-Marshfield-USA.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Cristina, CrossFit Marshfield, USA",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115612/Constantin-Nero-CrossFit-Strasbourg-France.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Constantin, Nero CrossFit Strasbourg, France",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115626/Marta-CrossFit-Ponferrada-Spain.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Marta, CrossFit Ponferrada, Spain",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115623/Luana-CrossFit-Floripa-Brazil.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Luana, CrossFit Floripa, Brazil",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115649/Yuriko-CrossFit-Kyoto-Japan.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Yuriko, CrossFit Kyoto, Japan",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/06/29115652/%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B5%E1%84%8B%E1%85%B3%E1%86%AB-CFGN-Nonhyeon-South-Korea.png",
+    "width": 1440,
+    "height": 1440,
+    "alt": "Lim Si-eun, CFGN Nonhyeon, South Korea",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2023/08/01124920/Apple_download.svg",
+    "width": 90,
+    "height": 27,
+    "alt": "Download from the App store",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2023/08/01124734/GooglePlay_download.svg",
+    "width": 87,
+    "height": 26,
+    "alt": "Google Play",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.crossfit.com/wp-content/uploads/2026/07/05060025/260707app-1024x575.png",
+    "width": 1024,
+    "height": 575,
+    "alt": "front squat",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://bat.bing.com/action/0?ti=97119785&tm=gtm002&Ver=2&mid=4beb24d5-2571-4f4d-bac5-8d8c988ae77d&bo=1&sid=4c38fa707a2711f1a8da0bdf04797270&vid=4c3905a07a2711f182bef7e904b5ef39&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=1100&sc=24&nwd=1&tl=CrossFit%20%7C%20CrossFit%3A%20The%20Path%20to%20Better%20Health%20%7C%20CrossFit&p=https%3A%2F%2Fwww.crossfit.com%2F&r=&lt=146&evt=pageLoad&sv=2&cdb=ARoT&rn=814144",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://bat.bing.com/action/0?ti=97125786&tm=gtm002&Ver=2&mid=3e1522aa-97a5-4301-8383-307d85b73bf6&bo=1&sid=4c38fa707a2711f1a8da0bdf04797270&vid=4c3905a07a2711f182bef7e904b5ef39&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=1100&sc=24&nwd=1&tl=CrossFit%20%7C%20CrossFit%3A%20The%20Path%20to%20Better%20Health%20%7C%20CrossFit&p=https%3A%2F%2Fwww.crossfit.com%2F&r=&lt=146&evt=pageLoad&sv=2&cdb=ARoT&rn=924406",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "video",
+    "src": "",
+    "autoplay": true,
+    "referenceOnly": true
+  }
+]
