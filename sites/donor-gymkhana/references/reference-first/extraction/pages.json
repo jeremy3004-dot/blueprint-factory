@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/",
+    "url": "https://gymkhanalondon.com/",
+    "label": "Gymkhana",
+    "area": "header"
+  },
+  {
+    "path": "/food-and-drink",
+    "url": "https://gymkhanalondon.com/food-and-drink",
+    "label": "Learn more",
+    "area": "body"
+  },
+  {
+    "path": "/impact-and-careers",
+    "url": "https://gymkhanalondon.com/impact-and-careers",
+    "label": "Impact & Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/locations",
+    "url": "https://gymkhanalondon.com/locations",
+    "label": "Explore",
+    "area": "body"
+  },
+  {
+    "path": "/news",
+    "url": "https://gymkhanalondon.com/news",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/news/42-reopens-after-winter-break-16th-january",
+    "url": "https://gymkhanalondon.com/news/42-reopens-after-winter-break-16th-january",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/news/february-late-night-dj-programme-at-42",
+    "url": "https://gymkhanalondon.com/news/february-late-night-dj-programme-at-42",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/news/gymkhana-announces-dubai-opening-this-september",
+    "url": "https://gymkhanalondon.com/news/gymkhana-announces-dubai-opening-this-september",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/news/gymkhana-sister-restaurant-ambassadors-clubhouse-earns-1-michelin-star",
+    "url": "https://gymkhanalondon.com/news/gymkhana-sister-restaurant-ambassadors-clubhouse-earns-1-michelin-star",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/newsletter",
+    "url": "https://gymkhanalondon.com/newsletter",
+    "label": "Newsletter Signup",
+    "area": "footer"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://gymkhanalondon.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/story",
+    "url": "https://gymkhanalondon.com/story",
+    "label": "Read more",
+    "area": "body"
+  }
+]

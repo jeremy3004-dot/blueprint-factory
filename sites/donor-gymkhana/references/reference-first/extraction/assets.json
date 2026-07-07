@@ -1,0 +1,90 @@
+[
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F596d2bed16b537c89c95d668cdb9461f0722e9ae-2731x4096.jpg&w=1920&q=75",
+    "width": 1440,
+    "height": 2160,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F691ff232f39ce5dceafb5dc90cf37c5dbeb44e94-3000x2250.jpg&w=256&q=75",
+    "width": 150,
+    "height": 112,
+    "alt": "Private Dining Room at Gymkhana Dubai",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F8e9afd2dee4affff7234f00112f867f642222c21-4000x2668.jpg&w=256&q=75",
+    "width": 150,
+    "height": 99,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F306828f63ce77aec4ededdd779143372b3f8b669-5464x8192.jpg&w=256&q=75",
+    "width": 150,
+    "height": 225,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F44f06668165a845c84bd29f2e0441ca9f35f7e05-4480x3360.jpg&w=3840&q=75",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F4ae5c94aaec42560361a3246a5ab0b844061c880-6096x4064.jpg&w=1920&q=75",
+    "width": 1440,
+    "height": 960,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F0a65432b02eece4d639e69b9dbdd6ef189b1c313-6110x4073.jpg&w=1920&q=75",
+    "width": 1440,
+    "height": 960,
+    "alt": "Tandoori Masala Lamb Chops, Walnut Chutney",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F255f530edf5b72bd11b773365e698569385a22e7-6254x4169.jpg&w=1920&q=75",
+    "width": 1440,
+    "height": 960,
+    "alt": "Kasoori Chicken Tikka, Moong Sprouts & Kasundi Kachumber",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2Fb11ec7949b5e4416ebd16fcce96f2aba3883fee1-5938x3959.jpg&w=1920&q=75",
+    "width": 1440,
+    "height": 960,
+    "alt": "Kid Goat Methi Keema, Salli, Pao",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbvejtimx%2Fproduction%2F5a7b468d17702bc3cc9d17b6a318f984a4961533-1333x2000.jpg&w=1920&q=75",
+    "width": 999,
+    "height": 1500,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://gymkhanarestaurants.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fcrest.3384d788.png&w=256&q=75&dpl=dpl_6euPN1AKmF6bUMftZbykHh8V8R8c",
+    "width": 175,
+    "height": 157,
+    "alt": "Gymkhana",
+    "referenceOnly": true
+  }
+]
