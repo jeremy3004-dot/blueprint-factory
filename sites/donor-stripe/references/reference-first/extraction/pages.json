@@ -1,0 +1,644 @@
+[
+  {
+    "path": "/",
+    "url": "https://stripe.com/",
+    "label": "",
+    "area": "header"
+  },
+  {
+    "path": "/annual-updates/2025",
+    "url": "https://stripe.com/annual-updates/2025",
+    "label": "Read the letter",
+    "area": "body"
+  },
+  {
+    "path": "/atlas",
+    "url": "https://stripe.com/atlas",
+    "label": "Atlas",
+    "area": "footer"
+  },
+  {
+    "path": "/authorization-boost",
+    "url": "https://stripe.com/authorization-boost",
+    "label": "Authorization Boost",
+    "area": "footer"
+  },
+  {
+    "path": "/billing",
+    "url": "https://stripe.com/billing",
+    "label": "Billing",
+    "area": "footer"
+  },
+  {
+    "path": "/billing/subscriptions",
+    "url": "https://stripe.com/billing/subscriptions",
+    "label": "Subscriptions",
+    "area": "footer"
+  },
+  {
+    "path": "/billing/usage-based-billing",
+    "url": "https://stripe.com/billing/usage-based-billing",
+    "label": "Usage-based billing",
+    "area": "footer"
+  },
+  {
+    "path": "/blog",
+    "url": "https://stripe.com/blog",
+    "label": "Blog",
+    "area": "footer"
+  },
+  {
+    "path": "/blog/introducing-our-agentic-commerce-solutions",
+    "url": "https://stripe.com/blog/introducing-our-agentic-commerce-solutions",
+    "label": "Read more",
+    "area": "body"
+  },
+  {
+    "path": "/capital",
+    "url": "https://stripe.com/capital",
+    "label": "Capital",
+    "area": "footer"
+  },
+  {
+    "path": "/capital/platforms",
+    "url": "https://stripe.com/capital/platforms",
+    "label": "Capital for platforms",
+    "area": "footer"
+  },
+  {
+    "path": "/climate",
+    "url": "https://stripe.com/climate",
+    "label": "Climate",
+    "area": "footer"
+  },
+  {
+    "path": "/connect",
+    "url": "https://stripe.com/connect",
+    "label": "Connect",
+    "area": "footer"
+  },
+  {
+    "path": "/contact/sales",
+    "url": "https://stripe.com/contact/sales",
+    "label": "Contact sales",
+    "area": "header"
+  },
+  {
+    "path": "/cookie-settings",
+    "url": "https://stripe.com/cookie-settings",
+    "label": "Cookie settings",
+    "area": "footer"
+  },
+  {
+    "path": "/crypto-onramp",
+    "url": "https://stripe.com/crypto-onramp",
+    "label": "Crypto Onramp",
+    "area": "footer"
+  },
+  {
+    "path": "/customers",
+    "url": "https://stripe.com/customers",
+    "label": "Customer stories",
+    "area": "footer"
+  },
+  {
+    "path": "/customers/amazon",
+    "url": "https://stripe.com/customers/amazon",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/anthropic",
+    "url": "https://stripe.com/customers/anthropic",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/browserbase",
+    "url": "https://stripe.com/customers/browserbase",
+    "label": "Browserbase offers usage-based billing for an AI agent browser with Stripe.Read Browserbase’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/crypto-com-spotlight",
+    "url": "https://stripe.com/customers/crypto-com-spotlight",
+    "label": "View announcement",
+    "area": "body"
+  },
+  {
+    "path": "/customers/cursor",
+    "url": "https://stripe.com/customers/cursor",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/decagon",
+    "url": "https://stripe.com/customers/decagon",
+    "label": "Decagon decreases support costs by 65% with Stripe-integrated agents.Read Decagon’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/elevenlabs",
+    "url": "https://stripe.com/customers/elevenlabs",
+    "label": "ElevenLabs grows into a $3B AI audio leader with Stripe.Watch the video",
+    "area": "body"
+  },
+  {
+    "path": "/customers/figma",
+    "url": "https://stripe.com/customers/figma",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/gamma",
+    "url": "https://stripe.com/customers/gamma",
+    "label": "Gamma expands to $100M ARR and 70 million users with Stripe.Read Gamma’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/hertz",
+    "url": "https://stripe.com/customers/hertz",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/instacart",
+    "url": "https://stripe.com/customers/instacart",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/jobber",
+    "url": "https://stripe.com/customers/jobber",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/le-monde",
+    "url": "https://stripe.com/customers/le-monde",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/lightspeed-terminal",
+    "url": "https://stripe.com/customers/lightspeed-terminal",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/linear",
+    "url": "https://stripe.com/customers/linear",
+    "label": "Linear partners with Stripe to handle billing and payments.Read Linear’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/lovable",
+    "url": "https://stripe.com/customers/lovable",
+    "label": "Lovable grows into a vibe-coding juggernaut with Stripe.Read Lovable’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/mindbody",
+    "url": "https://stripe.com/customers/mindbody",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/ramp",
+    "url": "https://stripe.com/customers/ramp",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/runway",
+    "url": "https://stripe.com/customers/runway",
+    "label": "Runway protects developer time with no-code solutions from Stripe.Read Runway’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/shopify",
+    "url": "https://stripe.com/customers/shopify",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/customers/substack",
+    "url": "https://stripe.com/customers/substack",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/supabase",
+    "url": "https://stripe.com/customers/supabase",
+    "label": "Supabase delivers its backend-as-a-service to 150 countries with Stripe.Read Supabase’s story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/urbn",
+    "url": "https://stripe.com/customers/urbn",
+    "label": "Read the story",
+    "area": "body"
+  },
+  {
+    "path": "/customers/woo",
+    "url": "https://stripe.com/customers/woo",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/data-pipeline",
+    "url": "https://stripe.com/data-pipeline",
+    "label": "Data Pipeline",
+    "area": "footer"
+  },
+  {
+    "path": "/enterprise",
+    "url": "https://stripe.com/enterprise",
+    "label": "Stripe for enterprises",
+    "area": "header"
+  },
+  {
+    "path": "/financial-connections",
+    "url": "https://stripe.com/financial-connections",
+    "label": "Financial Connections",
+    "area": "footer"
+  },
+  {
+    "path": "/guides",
+    "url": "https://stripe.com/guides",
+    "label": "Guides",
+    "area": "footer"
+  },
+  {
+    "path": "/guides/best-practices-for-launching-and-scaling-platform-payments",
+    "url": "https://stripe.com/guides/best-practices-for-launching-and-scaling-platform-payments",
+    "label": "Read the guide",
+    "area": "body"
+  },
+  {
+    "path": "/guides/introduction-to-monetizing-payments",
+    "url": "https://stripe.com/guides/introduction-to-monetizing-payments",
+    "label": "Read the guide",
+    "area": "body"
+  },
+  {
+    "path": "/guides/introduction-to-risk-management",
+    "url": "https://stripe.com/guides/introduction-to-risk-management",
+    "label": "Read the guide",
+    "area": "body"
+  },
+  {
+    "path": "/identity",
+    "url": "https://stripe.com/identity",
+    "label": "Identity",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/insurance",
+    "url": "https://stripe.com/industries/insurance",
+    "label": "Insurance",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/media-entertainment",
+    "url": "https://stripe.com/industries/media-entertainment",
+    "label": "Media and entertainment",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/nonprofits",
+    "url": "https://stripe.com/industries/nonprofits",
+    "label": "Nonprofits",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/public-sector",
+    "url": "https://stripe.com/industries/public-sector",
+    "label": "Public sector",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/retail",
+    "url": "https://stripe.com/industries/retail",
+    "label": "Retail",
+    "area": "footer"
+  },
+  {
+    "path": "/industries/travel",
+    "url": "https://stripe.com/industries/travel",
+    "label": "Hospitality, travel, and leisure",
+    "area": "footer"
+  },
+  {
+    "path": "/invoicing",
+    "url": "https://stripe.com/invoicing",
+    "label": "Invoicing",
+    "area": "footer"
+  },
+  {
+    "path": "/issuing",
+    "url": "https://stripe.com/issuing",
+    "label": "Issuing",
+    "area": "footer"
+  },
+  {
+    "path": "/jobs",
+    "url": "https://stripe.com/jobs",
+    "label": "Jobs",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/restricted-businesses",
+    "url": "https://stripe.com/legal/restricted-businesses",
+    "label": "Prohibited and restricted businesses",
+    "area": "footer"
+  },
+  {
+    "path": "/lp/how-retailers-drive-growth",
+    "url": "https://stripe.com/lp/how-retailers-drive-growth",
+    "label": "Get the report",
+    "area": "body"
+  },
+  {
+    "path": "/lp/vertical-saas-benchmark-2025",
+    "url": "https://stripe.com/lp/vertical-saas-benchmark-2025",
+    "label": "Get the data",
+    "area": "body"
+  },
+  {
+    "path": "/managed-payments",
+    "url": "https://stripe.com/managed-payments",
+    "label": "Managed Payments",
+    "area": "footer"
+  },
+  {
+    "path": "/newsroom",
+    "url": "https://stripe.com/newsroom",
+    "label": "Newsroom",
+    "area": "footer"
+  },
+  {
+    "path": "/newsroom/news/bfcm2025",
+    "url": "https://stripe.com/newsroom/news/bfcm2025",
+    "label": "See the numbers",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom/news/google-and-stripe",
+    "url": "https://stripe.com/newsroom/news/google-and-stripe",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom/news/nvidia-collaboration-with-stripe",
+    "url": "https://stripe.com/newsroom/news/nvidia-collaboration-with-stripe",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom/news/stripe-and-uber",
+    "url": "https://stripe.com/newsroom/news/stripe-and-uber",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom/news/stripe-ford-agreement",
+    "url": "https://stripe.com/newsroom/news/stripe-ford-agreement",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom/news/stripe-openai-instant-checkout",
+    "url": "https://stripe.com/newsroom/news/stripe-openai-instant-checkout",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/partners",
+    "url": "https://stripe.com/partners",
+    "label": "Stripe Partner ecosystem",
+    "area": "footer"
+  },
+  {
+    "path": "/payments",
+    "url": "https://stripe.com/payments",
+    "label": "Payments",
+    "area": "footer"
+  },
+  {
+    "path": "/payments/checkout",
+    "url": "https://stripe.com/payments/checkout",
+    "label": "Checkout",
+    "area": "footer"
+  },
+  {
+    "path": "/payments/elements",
+    "url": "https://stripe.com/payments/elements",
+    "label": "Elements",
+    "area": "footer"
+  },
+  {
+    "path": "/payments/link",
+    "url": "https://stripe.com/payments/link",
+    "label": "Link",
+    "area": "footer"
+  },
+  {
+    "path": "/payments/payment-links",
+    "url": "https://stripe.com/payments/payment-links",
+    "label": "Payment links",
+    "area": "footer"
+  },
+  {
+    "path": "/payments/payment-methods",
+    "url": "https://stripe.com/payments/payment-methods",
+    "label": "Payment methods",
+    "area": "footer"
+  },
+  {
+    "path": "/payouts",
+    "url": "https://stripe.com/payouts",
+    "label": "Global Payouts",
+    "area": "footer"
+  },
+  {
+    "path": "/pricing",
+    "url": "https://stripe.com/pricing",
+    "label": "Pricing",
+    "area": "header"
+  },
+  {
+    "path": "/privacy",
+    "url": "https://stripe.com/privacy",
+    "label": "Privacy and terms",
+    "area": "footer"
+  },
+  {
+    "path": "/professional-services",
+    "url": "https://stripe.com/professional-services",
+    "label": "Professional services",
+    "area": "footer"
+  },
+  {
+    "path": "/radar",
+    "url": "https://stripe.com/radar",
+    "label": "Radar",
+    "area": "footer"
+  },
+  {
+    "path": "/resources/more",
+    "url": "https://stripe.com/resources/more",
+    "label": "More resources",
+    "area": "footer"
+  },
+  {
+    "path": "/revenue-recognition",
+    "url": "https://stripe.com/revenue-recognition",
+    "label": "Revenue Recognition",
+    "area": "footer"
+  },
+  {
+    "path": "/roadmap",
+    "url": "https://stripe.com/roadmap",
+    "label": "Product roadmap",
+    "area": "footer"
+  },
+  {
+    "path": "/sessions",
+    "url": "https://stripe.com/sessions",
+    "label": "Sessions annual conference",
+    "area": "footer"
+  },
+  {
+    "path": "/sessions/2026",
+    "url": "https://stripe.com/sessions/2026",
+    "label": "Watch now",
+    "area": "body"
+  },
+  {
+    "path": "/sigma",
+    "url": "https://stripe.com/sigma",
+    "label": "Stripe Sigma",
+    "area": "footer"
+  },
+  {
+    "path": "/sitemap",
+    "url": "https://stripe.com/sitemap",
+    "label": "Sitemap",
+    "area": "footer"
+  },
+  {
+    "path": "/spc/licenses",
+    "url": "https://stripe.com/spc/licenses",
+    "label": "Licenses",
+    "area": "footer"
+  },
+  {
+    "path": "/startups",
+    "url": "https://stripe.com/startups",
+    "label": "Stripe for startups",
+    "area": "header"
+  },
+  {
+    "path": "/support-plans",
+    "url": "https://stripe.com/support-plans",
+    "label": "Managed support plans",
+    "area": "footer"
+  },
+  {
+    "path": "/tax",
+    "url": "https://stripe.com/tax",
+    "label": "Tax",
+    "area": "footer"
+  },
+  {
+    "path": "/terminal",
+    "url": "https://stripe.com/terminal",
+    "label": "Terminal",
+    "area": "footer"
+  },
+  {
+    "path": "/treasury",
+    "url": "https://stripe.com/treasury",
+    "label": "Treasury",
+    "area": "footer"
+  },
+  {
+    "path": "/treasury/platforms",
+    "url": "https://stripe.com/treasury/platforms",
+    "label": "Treasury for platforms",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/agentic-commerce",
+    "url": "https://stripe.com/use-cases/agentic-commerce",
+    "label": "Agentic commerce",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/ai",
+    "url": "https://stripe.com/use-cases/ai",
+    "label": "AI companies",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/creator-economy",
+    "url": "https://stripe.com/use-cases/creator-economy",
+    "label": "Creator economy",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/crypto",
+    "url": "https://stripe.com/use-cases/crypto",
+    "label": "Crypto",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/ecommerce",
+    "url": "https://stripe.com/use-cases/ecommerce",
+    "label": "Ecommerce",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/embedded-finance",
+    "url": "https://stripe.com/use-cases/embedded-finance",
+    "label": "Embedded finance",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/finance-automation",
+    "url": "https://stripe.com/use-cases/finance-automation",
+    "label": "Finance automation",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/global-businesses",
+    "url": "https://stripe.com/use-cases/global-businesses",
+    "label": "Global businesses",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/in-app-payments",
+    "url": "https://stripe.com/use-cases/in-app-payments",
+    "label": "In-app payments",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/marketplaces",
+    "url": "https://stripe.com/use-cases/marketplaces",
+    "label": "Marketplaces",
+    "area": "footer"
+  },
+  {
+    "path": "/use-cases/platforms",
+    "url": "https://stripe.com/use-cases/platforms",
+    "label": "Stripe for platforms",
+    "area": "header"
+  },
+  {
+    "path": "/use-cases/saas",
+    "url": "https://stripe.com/use-cases/saas",
+    "label": "SaaS",
+    "area": "footer"
+  }
+]

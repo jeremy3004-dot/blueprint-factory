@@ -1,0 +1,284 @@
+[
+  {
+    "path": "/",
+    "url": "https://linear.app/",
+    "label": "Skip to content →",
+    "area": "footer"
+  },
+  {
+    "path": "/about",
+    "url": "https://linear.app/about",
+    "label": "About",
+    "area": "footer"
+  },
+  {
+    "path": "/agents",
+    "url": "https://linear.app/agents",
+    "label": "Agents",
+    "area": "footer"
+  },
+  {
+    "path": "/asks",
+    "url": "https://linear.app/asks",
+    "label": "Asks",
+    "area": "footer"
+  },
+  {
+    "path": "/blog",
+    "url": "https://linear.app/blog",
+    "label": "Blog",
+    "area": "footer"
+  },
+  {
+    "path": "/brand",
+    "url": "https://linear.app/brand",
+    "label": "Brand",
+    "area": "footer"
+  },
+  {
+    "path": "/build",
+    "url": "https://linear.app/build",
+    "label": "Build",
+    "area": "footer"
+  },
+  {
+    "path": "/careers",
+    "url": "https://linear.app/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/changelog",
+    "url": "https://linear.app/changelog",
+    "label": "Changelog",
+    "area": "footer"
+  },
+  {
+    "path": "/changelog/2026-06-04-team-documents",
+    "url": "https://linear.app/changelog/2026-06-04-team-documents",
+    "label": "Team documentsImportant team context doesn’t always belong in a specific issue, project, or initiative. Teams also need a dedicated place for the notes, docs, and shared references that support their work over time. Now, every team has a page to keep its context organized and easy to access.Jun 3, 2026",
+    "area": "body"
+  },
+  {
+    "path": "/changelog/2026-06-11-coding-sessions",
+    "url": "https://linear.app/changelog/2026-06-11-coding-sessions",
+    "label": "Coding sessions in LinearEarlier this year, we launched Linear Agent, giving teams a new way to plan and coordinate their issues and projects. Since then, we've added Code Intelligence to extend that understanding to the codebase, and MCP support to bring all of your context together.Jun 10, 2026",
+    "area": "body"
+  },
+  {
+    "path": "/changelog/2026-06-18-agent-assisted-project-updates",
+    "url": "https://linear.app/changelog/2026-06-18-agent-assisted-project-updates",
+    "label": "Agent assisted project updatesProject and initiative updates keep teams aligned, but writing them means pulling out recent changes from issues, documents, and discussions.Jun 17, 2026",
+    "area": "body"
+  },
+  {
+    "path": "/changelog/2026-07-02-initiative-properties",
+    "url": "https://linear.app/changelog/2026-07-02-initiative-properties",
+    "label": "Initiative propertiesInitiatives define your company's high-level goals and organize the projects that contribute to them. To help you manage initiatives as your roadmap grows, we've added a new set of focused initiative properties:Jun 30, 2026",
+    "area": "body"
+  },
+  {
+    "path": "/coding-sessions",
+    "url": "https://linear.app/coding-sessions",
+    "label": "Coding Sessions",
+    "area": "footer"
+  },
+  {
+    "path": "/contact",
+    "url": "https://linear.app/contact",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/contact/sales",
+    "url": "https://linear.app/contact/sales",
+    "label": "Contact sales",
+    "area": "body"
+  },
+  {
+    "path": "/customer-requests",
+    "url": "https://linear.app/customer-requests",
+    "label": "Customer Requests",
+    "area": "footer"
+  },
+  {
+    "path": "/customers",
+    "url": "https://linear.app/customers",
+    "label": "Customers",
+    "area": "header"
+  },
+  {
+    "path": "/customers/openai",
+    "url": "https://linear.app/customers/openai",
+    "label": "You’ll probably build a better product, just because of the craft that using Linear infuses on your brain.Gabriel PealOpenAI",
+    "area": "body"
+  },
+  {
+    "path": "/customers/opendoor",
+    "url": "https://linear.app/customers/opendoor",
+    "label": "Linear is excellent, just excellent. It has the right opinions for fast moving teams.Kaz NejatianOpendoor",
+    "area": "body"
+  },
+  {
+    "path": "/customers/ramp",
+    "url": "https://linear.app/customers/ramp",
+    "label": "Our speed is intense and Linear helps us be action biased.Nik KoblovRamp",
+    "area": "body"
+  },
+  {
+    "path": "/developers",
+    "url": "https://linear.app/developers",
+    "label": "Developers",
+    "area": "footer"
+  },
+  {
+    "path": "/diffs",
+    "url": "https://linear.app/diffs",
+    "label": "Diffs",
+    "area": "footer"
+  },
+  {
+    "path": "/docs",
+    "url": "https://linear.app/docs",
+    "label": "Docs",
+    "area": "header"
+  },
+  {
+    "path": "/download",
+    "url": "https://linear.app/download",
+    "label": "Download",
+    "area": "footer"
+  },
+  {
+    "path": "/dpa",
+    "url": "https://linear.app/dpa",
+    "label": "DPA",
+    "area": "footer"
+  },
+  {
+    "path": "/enterprise",
+    "url": "https://linear.app/enterprise",
+    "label": "Enterprise",
+    "area": "footer"
+  },
+  {
+    "path": "/homepage",
+    "url": "https://linear.app/homepage",
+    "label": "",
+    "area": "header"
+  },
+  {
+    "path": "/insights",
+    "url": "https://linear.app/insights",
+    "label": "Insights",
+    "area": "footer"
+  },
+  {
+    "path": "/intake",
+    "url": "https://linear.app/intake",
+    "label": "Intake",
+    "area": "footer"
+  },
+  {
+    "path": "/integrations",
+    "url": "https://linear.app/integrations",
+    "label": "Integrations",
+    "area": "footer"
+  },
+  {
+    "path": "/join-slack",
+    "url": "https://linear.app/join-slack",
+    "label": "Community",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/aup",
+    "url": "https://linear.app/legal/aup",
+    "label": "AUP",
+    "area": "footer"
+  },
+  {
+    "path": "/login",
+    "url": "https://linear.app/login",
+    "label": "Open app",
+    "area": "header"
+  },
+  {
+    "path": "/method",
+    "url": "https://linear.app/method",
+    "label": "Method",
+    "area": "footer"
+  },
+  {
+    "path": "/mobile",
+    "url": "https://linear.app/mobile",
+    "label": "Mobile",
+    "area": "footer"
+  },
+  {
+    "path": "/monitor",
+    "url": "https://linear.app/monitor",
+    "label": "Monitor",
+    "area": "footer"
+  },
+  {
+    "path": "/now",
+    "url": "https://linear.app/now",
+    "label": "Now",
+    "area": "header"
+  },
+  {
+    "path": "/plan",
+    "url": "https://linear.app/plan",
+    "label": "Plan",
+    "area": "footer"
+  },
+  {
+    "path": "/pricing",
+    "url": "https://linear.app/pricing",
+    "label": "Pricing",
+    "area": "header"
+  },
+  {
+    "path": "/privacy",
+    "url": "https://linear.app/privacy",
+    "label": "Privacy",
+    "area": "footer"
+  },
+  {
+    "path": "/quality",
+    "url": "https://linear.app/quality",
+    "label": "Quality",
+    "area": "footer"
+  },
+  {
+    "path": "/security",
+    "url": "https://linear.app/security",
+    "label": "Security",
+    "area": "footer"
+  },
+  {
+    "path": "/signup",
+    "url": "https://linear.app/signup",
+    "label": "Sign up",
+    "area": "header"
+  },
+  {
+    "path": "/startups",
+    "url": "https://linear.app/startups",
+    "label": "Startups",
+    "area": "footer"
+  },
+  {
+    "path": "/switch",
+    "url": "https://linear.app/switch",
+    "label": "Switch",
+    "area": "footer"
+  },
+  {
+    "path": "/terms",
+    "url": "https://linear.app/terms",
+    "label": "Terms",
+    "area": "footer"
+  }
+]

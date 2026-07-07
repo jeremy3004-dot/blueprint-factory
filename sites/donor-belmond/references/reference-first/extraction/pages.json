@@ -1,0 +1,398 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.belmond.com/",
+    "label": "Belmond",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.belmond.com/about",
+    "label": "About Belmond",
+    "area": "footer"
+  },
+  {
+    "path": "/boats/europe/france/les-bateaux-belmond",
+    "url": "https://www.belmond.com/boats/europe/france/les-bateaux-belmond",
+    "label": "France - Les Bateaux Belmond",
+    "area": "header"
+  },
+  {
+    "path": "/boats/europe/france/les-bateaux-belmond/marguerite",
+    "url": "https://www.belmond.com/boats/europe/france/les-bateaux-belmond/marguerite",
+    "label": "Discover Marguerite",
+    "area": "body"
+  },
+  {
+    "path": "/contact-us",
+    "url": "https://www.belmond.com/contact-us",
+    "label": "Contact Us",
+    "area": "header"
+  },
+  {
+    "path": "/corporate-social-responsibility",
+    "url": "https://www.belmond.com/corporate-social-responsibility",
+    "label": "Environmental, social and governance",
+    "area": "footer"
+  },
+  {
+    "path": "/destinations",
+    "url": "https://www.belmond.com/destinations",
+    "label": "Destinations",
+    "area": "header"
+  },
+  {
+    "path": "/development",
+    "url": "https://www.belmond.com/development",
+    "label": "Development",
+    "area": "footer"
+  },
+  {
+    "path": "/digital-accessibility-statement",
+    "url": "https://www.belmond.com/digital-accessibility-statement",
+    "label": "Digital accessibility statement and plan",
+    "area": "footer"
+  },
+  {
+    "path": "/discover-a-new-pace-of-travel",
+    "url": "https://www.belmond.com/discover-a-new-pace-of-travel",
+    "label": "Learn more",
+    "area": "body"
+  },
+  {
+    "path": "/experiences",
+    "url": "https://www.belmond.com/experiences",
+    "label": "Experiences",
+    "area": "header"
+  },
+  {
+    "path": "/gift-cards",
+    "url": "https://www.belmond.com/gift-cards",
+    "label": "Gift cards",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/africa/south-africa/cape-town/belmond-mount-nelson-hotel",
+    "url": "https://www.belmond.com/hotels/africa/south-africa/cape-town/belmond-mount-nelson-hotel",
+    "label": "South Africa, Cape Town - Mount Nelson",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/asia/bali/belmond-jimbaran-puri",
+    "url": "https://www.belmond.com/hotels/asia/bali/belmond-jimbaran-puri",
+    "label": "Indonesia, Bali - Jimbaran Puri",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/amalfi-coast/belmond-hotel-caruso",
+    "url": "https://www.belmond.com/hotels/europe/italy/amalfi-coast/belmond-hotel-caruso",
+    "label": "Italy, Amalfi Coast - Caruso",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/amalfi-coast/belmond-hotel-caruso/offers",
+    "url": "https://www.belmond.com/hotels/europe/italy/amalfi-coast/belmond-hotel-caruso/offers",
+    "label": "Take me there",
+    "area": "body"
+  },
+  {
+    "path": "/hotels/europe/italy/amalfi-coast/belmond-villa-margherita",
+    "url": "https://www.belmond.com/hotels/europe/italy/amalfi-coast/belmond-villa-margherita",
+    "label": "Italy, Amalfi Coast - Villa Margherita",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/costa-smeralda/belmond-romazzino",
+    "url": "https://www.belmond.com/hotels/europe/italy/costa-smeralda/belmond-romazzino",
+    "label": "Italy, Costa Smeralda - Romazzino",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/florence/belmond-villa-san-michele",
+    "url": "https://www.belmond.com/hotels/europe/italy/florence/belmond-villa-san-michele",
+    "label": "Italy, Florence - Villa San Michele",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/portofino/belmond-hotel-splendido",
+    "url": "https://www.belmond.com/hotels/europe/italy/portofino/belmond-hotel-splendido",
+    "label": "Italy, Portofino - Splendido",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/portofino/belmond-splendido-mare",
+    "url": "https://www.belmond.com/hotels/europe/italy/portofino/belmond-splendido-mare",
+    "label": "Italy, Portofino - Splendido Mare",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/taormina/belmond-grand-hotel-timeo",
+    "url": "https://www.belmond.com/hotels/europe/italy/taormina/belmond-grand-hotel-timeo",
+    "label": "Italy, Taormina - Grand Hotel Timeo",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/taormina/belmond-villa-sant-andrea",
+    "url": "https://www.belmond.com/hotels/europe/italy/taormina/belmond-villa-sant-andrea",
+    "label": "Italy, Taormina Mare - Villa Sant'Andrea",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/tuscany/belmond-castello-di-casole",
+    "url": "https://www.belmond.com/hotels/europe/italy/tuscany/belmond-castello-di-casole",
+    "label": "Italy, Tuscany - Castello di Casole",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/italy/tuscany/belmond-castello-di-casole/offers",
+    "url": "https://www.belmond.com/hotels/europe/italy/tuscany/belmond-castello-di-casole/offers",
+    "label": "Take me there",
+    "area": "body"
+  },
+  {
+    "path": "/hotels/europe/italy/venice/belmond-hotel-cipriani",
+    "url": "https://www.belmond.com/hotels/europe/italy/venice/belmond-hotel-cipriani",
+    "label": "Italy, Venice - Hotel Cipriani",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/mallorca/deia/belmond-la-residencia",
+    "url": "https://www.belmond.com/hotels/europe/mallorca/deia/belmond-la-residencia",
+    "label": "Spain, Mallorca - La Residencia",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/portugal/madeira/belmond-reids-palace",
+    "url": "https://www.belmond.com/hotels/europe/portugal/madeira/belmond-reids-palace",
+    "label": "Portugal, Madeira - Reid's Palace",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/uk/london/belmond-cadogan-hotel",
+    "url": "https://www.belmond.com/hotels/europe/uk/london/belmond-cadogan-hotel",
+    "label": "UK, London - The Cadogan",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/europe/uk/oxfordshire/belmond-le-manoir-aux-quat-saisons",
+    "url": "https://www.belmond.com/hotels/europe/uk/oxfordshire/belmond-le-manoir-aux-quat-saisons",
+    "label": "UK, Oxfordshire - Le Manoir aux Quat’Saisons",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/north-america/caribbean/anguilla/belmond-cap-juluca",
+    "url": "https://www.belmond.com/hotels/north-america/caribbean/anguilla/belmond-cap-juluca",
+    "label": "Caribbean, Anguilla - Cap Juluca",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/north-america/caribbean/st-martin/belmond-la-samanna",
+    "url": "https://www.belmond.com/hotels/north-america/caribbean/st-martin/belmond-la-samanna",
+    "label": "Caribbean, St Martin - La Samanna",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/north-america/mexico/riviera-maya/belmond-maroma-resort-and-spa",
+    "url": "https://www.belmond.com/hotels/north-america/mexico/riviera-maya/belmond-maroma-resort-and-spa",
+    "label": "Mexico, Riviera Maya - Maroma",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/north-america/mexico/riviera-maya/belmond-maroma-resort-and-spa/offers",
+    "url": "https://www.belmond.com/hotels/north-america/mexico/riviera-maya/belmond-maroma-resort-and-spa/offers",
+    "label": "Take me there",
+    "area": "body"
+  },
+  {
+    "path": "/hotels/north-america/mexico/san-miguel-de-allende/belmond-casa-de-sierra-nevada",
+    "url": "https://www.belmond.com/hotels/north-america/mexico/san-miguel-de-allende/belmond-casa-de-sierra-nevada",
+    "label": "Mexico, San Miguel de Allende - Casa de Sierra Nevada",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/brazil/iguassu-falls/belmond-hotel-das-cataratas",
+    "url": "https://www.belmond.com/hotels/south-america/brazil/iguassu-falls/belmond-hotel-das-cataratas",
+    "label": "Brazil, Iguassu Falls - Hotel das Cataratas",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/brazil/rio-de-janeiro/belmond-copacabana-palace",
+    "url": "https://www.belmond.com/hotels/south-america/brazil/rio-de-janeiro/belmond-copacabana-palace",
+    "label": "Brazil, Rio de Janeiro - Copacabana Palace",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/colca-canyon/belmond-las-casitas",
+    "url": "https://www.belmond.com/hotels/south-america/peru/colca-canyon/belmond-las-casitas",
+    "label": "Peru, Colca Canyon - Las Casitas",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/cusco/belmond-hotel-monasterio",
+    "url": "https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio",
+    "label": "Peru, Cusco - Monasterio",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/cusco/belmond-palacio-nazarenas",
+    "url": "https://www.belmond.com/hotels/south-america/peru/cusco/belmond-palacio-nazarenas",
+    "label": "Peru, Cusco - Palacio Nazarenas",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/lima/belmond-miraflores-park",
+    "url": "https://www.belmond.com/hotels/south-america/peru/lima/belmond-miraflores-park",
+    "label": "Peru, Lima - Miraflores Park",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/machu-picchu/belmond-sanctuary-lodge",
+    "url": "https://www.belmond.com/hotels/south-america/peru/machu-picchu/belmond-sanctuary-lodge",
+    "label": "Peru, Machu Picchu - Sanctuary Lodge",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/south-america/peru/sacred-valley/belmond-hotel-rio-sagrado",
+    "url": "https://www.belmond.com/hotels/south-america/peru/sacred-valley/belmond-hotel-rio-sagrado",
+    "label": "Peru, Sacred Valley - Rio Sagrado",
+    "area": "header"
+  },
+  {
+    "path": "/legal/cookies-policy",
+    "url": "https://www.belmond.com/legal/cookies-policy",
+    "label": "Cookie policy",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/terms-and-conditions",
+    "url": "https://www.belmond.com/legal/terms-and-conditions",
+    "label": "T&Cs",
+    "area": "header"
+  },
+  {
+    "path": "/occasions",
+    "url": "https://www.belmond.com/occasions",
+    "label": "Occasions",
+    "area": "header"
+  },
+  {
+    "path": "/offers",
+    "url": "https://www.belmond.com/offers",
+    "label": "Offers",
+    "area": "header"
+  },
+  {
+    "path": "/packages-and-tours",
+    "url": "https://www.belmond.com/packages-and-tours",
+    "label": "Packages & Tours",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://www.belmond.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "header"
+  },
+  {
+    "path": "/restaurants/europe/italy/florence/ristorante-la-loggia",
+    "url": "https://www.belmond.com/restaurants/europe/italy/florence/ristorante-la-loggia",
+    "label": "Italy, Florence - Ristorante La Loggia",
+    "area": "header"
+  },
+  {
+    "path": "/restaurants/europe/uk/london/the-lalee",
+    "url": "https://www.belmond.com/restaurants/europe/uk/london/the-lalee",
+    "label": "UK, London - The Lalee",
+    "area": "header"
+  },
+  {
+    "path": "/rvb-books",
+    "url": "https://www.belmond.com/rvb-books",
+    "label": "View the collection",
+    "area": "body"
+  },
+  {
+    "path": "/safaris",
+    "url": "https://www.belmond.com/safaris",
+    "label": "Botswana, Belmond Safaris",
+    "area": "header"
+  },
+  {
+    "path": "/safaris/africa/botswana/belmond-eagle-island-lodge",
+    "url": "https://www.belmond.com/safaris/africa/botswana/belmond-eagle-island-lodge",
+    "label": "Botswana, Okavango Delta - Eagle Island Lodge",
+    "area": "header"
+  },
+  {
+    "path": "/safaris/africa/botswana/belmond-savute-elephant-lodge",
+    "url": "https://www.belmond.com/safaris/africa/botswana/belmond-savute-elephant-lodge",
+    "label": "Botswana, Chobe National Park - Savute Elephant Lodge",
+    "area": "header"
+  },
+  {
+    "path": "/signature-suites-and-villas",
+    "url": "https://www.belmond.com/signature-suites-and-villas",
+    "label": "Signature Suites & Villas",
+    "area": "header"
+  },
+  {
+    "path": "/stories",
+    "url": "https://www.belmond.com/stories",
+    "label": "Stories",
+    "area": "header"
+  },
+  {
+    "path": "/stories/celia-baz-luhrmann-catherine-martin",
+    "url": "https://www.belmond.com/stories/celia-baz-luhrmann-catherine-martin",
+    "label": "READ THE STORY",
+    "area": "body"
+  },
+  {
+    "path": "/trains/asia/eastern-and-oriental-express",
+    "url": "https://www.belmond.com/trains/asia/eastern-and-oriental-express",
+    "label": "Southeast Asia - Eastern & Oriental Express",
+    "area": "header"
+  },
+  {
+    "path": "/trains/europe/scotland/belmond-royal-scotsman",
+    "url": "https://www.belmond.com/trains/europe/scotland/belmond-royal-scotsman",
+    "label": "UK, Scotland - Royal Scotsman",
+    "area": "header"
+  },
+  {
+    "path": "/trains/europe/uk/belmond-british-pullman",
+    "url": "https://www.belmond.com/trains/europe/uk/belmond-british-pullman",
+    "label": "UK, England - British Pullman",
+    "area": "header"
+  },
+  {
+    "path": "/trains/europe/uk/belmond-british-pullman/celia",
+    "url": "https://www.belmond.com/trains/europe/uk/belmond-british-pullman/celia",
+    "label": "Discover and Book Celia",
+    "area": "body"
+  },
+  {
+    "path": "/trains/europe/uk/britannic-explorer",
+    "url": "https://www.belmond.com/trains/europe/uk/britannic-explorer",
+    "label": "UK, England - Britannic Explorer",
+    "area": "header"
+  },
+  {
+    "path": "/trains/europe/venice-simplon-orient-express",
+    "url": "https://www.belmond.com/trains/europe/venice-simplon-orient-express",
+    "label": "Europe - Venice Simplon-Orient-Express",
+    "area": "header"
+  },
+  {
+    "path": "/trains/south-america/peru/belmond-andean-explorer",
+    "url": "https://www.belmond.com/trains/south-america/peru/belmond-andean-explorer",
+    "label": "Peru - Andean Explorer",
+    "area": "header"
+  },
+  {
+    "path": "/trains/south-america/peru/belmond-hiram-bingham",
+    "url": "https://www.belmond.com/trains/south-america/peru/belmond-hiram-bingham",
+    "label": "Peru - Hiram Bingham",
+    "area": "header"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/contact",
+      "title": "Contact",
+      "status": "planned"
+    },
+    {
+      "route": "/customers",
+      "title": "Customers",
+      "status": "planned"
+    },
+    {
+      "route": "/docs",
+      "title": "Docs",
+      "status": "planned"
+    },
+    {
+      "route": "/homepage",
+      "title": "/homepage",
+      "status": "planned"
+    },
+    {
+      "route": "/login",
+      "title": "Open app",
+      "status": "planned"
+    },
+    {
+      "route": "/now",
+      "title": "Now",
+      "status": "planned"
+    },
+    {
+      "route": "/pricing",
+      "title": "Pricing",
+      "status": "planned"
+    }
+  ]
+}

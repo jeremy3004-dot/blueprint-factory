@@ -1,0 +1,496 @@
+[
+  {
+    "type": "image",
+    "src": "https://t.teads.tv/track?action=pageView&env=js-web&tag_version=8.13.2_67c210e&provider=tag&advertiser_id=17311&referer=https%3A%2F%2Fwww.belmond.com%2F&user_session_id=db0245f2-2073-4176-8d54-f6027c98de6d&hasConsent=true&cht=timeout",
+    "width": 1,
+    "height": 1,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/icon-linkedin-new.svg",
+    "width": 24,
+    "height": 24,
+    "alt": "LinkedIn",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/icon-google.svg",
+    "width": 24,
+    "height": 24,
+    "alt": "Google",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_1600x1111/photos/spl/spl-gst-pool30.jpg",
+    "width": 1600,
+    "height": 1111,
+    "alt": "View over orange and white parasols to the pool, where two guests enjoy a sun-kissed swim and others sunbathe at the side.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/video/upload/w_1920,ar_16:9,c_fill,g_auto/f_auto,q_auto/v1736418989/videos/BEL/bel-cam-slow-luxury-se-loop02.jpg",
+    "width": 1920,
+    "height": 1080,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x835/photos/vsm/vsm-ext31.jpg",
+    "width": 960,
+    "height": 835,
+    "alt": "A man on a red vespa drives along the road towards Villa San Michele, in an angled shot taken from behind a lemon tree.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x835/photos/bex/bex-ext01.jpg",
+    "width": 960,
+    "height": 835,
+    "alt": "A long passenger train curves through a grassy landscape at sunset, with wildflowers and small rocks along the railway. The sky is soft orange and pink, and the scene feels calm and peaceful.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x835/photos/aif/aif-mgr-gst-lounge01.jpg",
+    "width": 960,
+    "height": 835,
+    "alt": "Two curved green sofas, yellow tub chair, lounge chair and coffee tables create a cosy living area in a chic, bright space.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x835/photos/mag/mag-bel-as-seen-by-book04.jpg",
+    "width": 960,
+    "height": 835,
+    "alt": "Nine books lie scattered on a surface, with geometrically patterned two-tone covers and titles pertaining to Belmond hotels.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x835/photos/pul/pul-celia-baz-catherine01.jpg",
+    "width": 960,
+    "height": 835,
+    "alt": "Baz Luhrmann, in black, and Catherine Martin in burgundy with glasses, look through designs in a busy art studio.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_640x798/photos/car/car-din-bar16.jpg",
+    "width": 640,
+    "height": 798,
+    "alt": "Coffee table in a shaded alcove with open arches framing the view of the Amalfi Coast",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_640x798/photos/saf/saf-sel-ext-view03.jpg",
+    "width": 640,
+    "height": 798,
+    "alt": "A man in a white robe and slippers reclines in a lounger on the deck of his accommodation, gazing at a passing elephant.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_640x798/photos/cdc/cdc-ext01.jpg",
+    "width": 640,
+    "height": 798,
+    "alt": "Aerial view of a sprawling castle with an outdoor pool and open-air amphitheatre",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_640x798/photos/mar/mar-gst-pool36.jpg",
+    "width": 640,
+    "height": 798,
+    "alt": "Watched over by a bank of towering palms, a woman stands in the pool alone, smoothing her hair as ripples fan out around her.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/f_auto/t_960x667/photos/cdc/cdc-gst-garden04.jpg",
+    "width": 960,
+    "height": 667,
+    "alt": "Two women in red, one in a dress, the other in skirt and crop top, wear huge straw hats, obscuring their faces in the garden.",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/img/wcag-calendar/calendar-button.svg",
+    "width": 150,
+    "height": 150,
+    "alt": "Arrival date calendar picker",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/img/wcag-calendar/calendar-button.svg",
+    "width": 150,
+    "height": 150,
+    "alt": "Departure date calendar picker",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/misc/logo-abta.svg",
+    "width": 265,
+    "height": 150,
+    "alt": "ABTA",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/photos/cip/320x266/cip-ext01_320x266.jpg",
+    "width": 320,
+    "height": 266,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/photos/vso/320x266/vso-stf-steward08_320x266.jpg",
+    "width": 320,
+    "height": 266,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/photos/aif/320x266/aif-peo-ext02_320x266.jpg",
+    "width": 320,
+    "height": 266,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/assets/photos/saf/320x266/saf-eil-acc03_320x266.jpg",
+    "width": 320,
+    "height": 266,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/map-africa.svg",
+    "width": 135,
+    "height": 150,
+    "alt": "Africa",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/map-europe.svg",
+    "width": 127,
+    "height": 150,
+    "alt": "Europe",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/map-america-north.svg",
+    "width": 150,
+    "height": 150,
+    "alt": "North America",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/map-america-south.svg",
+    "width": 102,
+    "height": 150,
+    "alt": "South America",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/map-asia.svg",
+    "width": 275,
+    "height": 150,
+    "alt": "Southeast Asia",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/car/car-gst-pool03.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Caruso",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/vma/vma-acc-suite-miramare-living-room01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Villa Margherita",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/rom/rom-ext01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Romazzino",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/vsm/vsm-ext02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Villa San Michele",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/spl/spl-ext01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Splendido",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/des/des-europe-italy-portofino04.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Splendido Mare",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cat/cat-ext-aerial01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Hotel das Cataratas",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/ght/ght-ext-view02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Grand Hotel Timeo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/vsa/vsa-ext02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Villa Sant'Andrea",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cdc/cdc-cam-legend06.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Castello di Casole",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cip/cip-ext03.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Hotel Cipriani",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/col/col-gst-pool02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Las Casitas",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cop/cop-ext07.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Copacabana Palace",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/csn/csn-acc-suite-presidential-terrace01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Casa de Sierra Nevada",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/jpb/jpb-gst-beach07.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Jimbaran Puri",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/las/las-ext02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "La Samanna",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/lrs/lrs-ext01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "La Residencia",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/mar/mar-ext-aerial04.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Maroma",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/mnh/mnh-ext06.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Mount Nelson",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/mon/mon-gst-courtyard08.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Monasterio",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/mph/mph-ext-aerial01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Miraflores Park",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/des/des-south-america-peru-machu-picchu01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Sanctuary Lodge",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/mqs/mqs-ext04.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Le Manoir aux Quat’Saisons",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/naz/naz-gst-pool04.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Palacio Nazarenas",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/rds/rds-ext07.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Reid's Palace",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/rsg/rsg-ext01.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Rio Sagrado",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cad/cad-gst-lobby04.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "The Cadogan",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://img.belmond.com/image/upload/f_auto,t_320x222/photos/cap/cap-ext-beach02.jpg",
+    "width": 320,
+    "height": 222,
+    "alt": "Cap Juluca",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/wcag-calendar/calendar-button.svg",
+    "width": 150,
+    "height": 150,
+    "alt": "Arrival Date Calendar Picker",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://www.belmond.com/dist/icons/wcag-calendar/calendar-button.svg",
+    "width": 150,
+    "height": 150,
+    "alt": "Departure Date Calendar Picker",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://tag.yieldoptimizer.com/ps/ps?cnv_a=6159&cnv_cpid=6956&t=i&p=6094&cnv_pg=1&cnv_cu=undefined&cnv_fx1=undefined&cnv_fx2=undefined&cnv_fx3=undefined&cnv_fx4=undefined&cnv_fx5=undefined&cnv_fx6=&cnv_fx7=&cnv_fx8=&cnv_otf=undefined&cnv_hcf=undefined&cnv_hid=undefined&cnv_hod=undefined&cnv_hna=undefined&cnv_hrm=undefined&cnv_hcd=undefined&cnv_hcy=undefined&cnv_hcr=undefined&cnv_dateFormat=yyyy-MM-dd",
+    "width": 1,
+    "height": 1,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://bat.bing.com/action/0?ti=5713206&tm=gtm002&Ver=2&mid=a4a93393-e49d-43d5-ab8f-c891560d4684&bo=3&sid=8ec5d75079ea11f1876a4775e52dd544&vid=8ec5eaa079ea11f19cf5439b2d7704e1&vids=0&msclkid=N&pi=0&lg=en-US&sw=1440&sh=1100&sc=24&nwd=1&tl=Belmond%20%7C%20Luxury%20Hotels,%20Trains,%20River%20Cruises%20and%20Safaris&p=https%3A%2F%2Fwww.belmond.com%2F&r=&lt=236&evt=pageLoad&sv=2&asc=G&cdb=AQAS&rn=47067",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.cookielaw.org/logos/static/ot_company_logo.png",
+    "width": 2042,
+    "height": 280,
+    "alt": "Company Logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg",
+    "width": 568,
+    "height": 53,
+    "alt": "Powered by Onetrust",
+    "referenceOnly": true
+  },
+  {
+    "type": "video",
+    "src": "https://img.belmond.com/video/upload/w_1920,ar_16:9,c_fill,g_auto/f_auto,q_auto/v1736418989/videos/BEL/bel-cam-slow-luxury-se-loop02.mp4",
+    "autoplay": true,
+    "referenceOnly": true
+  }
+]

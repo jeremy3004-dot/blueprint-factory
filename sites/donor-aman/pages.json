@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us",
+      "title": "- Aman",
+      "status": "planned"
+    },
+    {
+      "route": "/active-adventure",
+      "title": "Active Adventure",
+      "status": "planned"
+    },
+    {
+      "route": "/aman-beverly-hills",
+      "title": "Aman Beverly HillsBeverly Hills – Opening 2027",
+      "status": "planned"
+    },
+    {
+      "route": "/aman-group",
+      "title": "Aman Group",
+      "status": "planned"
+    },
+    {
+      "route": "/aman-interiors",
+      "title": "- Aman Interiors",
+      "status": "planned"
+    },
+    {
+      "route": "/aman-maldives",
+      "title": "Aman MaldivesRepublic of Maldives",
+      "status": "planned"
+    },
+    {
+      "route": "/aman-spa-connaught",
+      "title": "Aman Spa at The ConnaughtLondon",
+      "status": "planned"
+    }
+  ]
+}

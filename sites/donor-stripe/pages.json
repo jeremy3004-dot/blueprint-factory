@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/contact/sales",
+      "title": "Contact sales",
+      "status": "planned"
+    },
+    {
+      "route": "/enterprise",
+      "title": "Stripe for enterprises",
+      "status": "planned"
+    },
+    {
+      "route": "/pricing",
+      "title": "Pricing",
+      "status": "planned"
+    },
+    {
+      "route": "/startups",
+      "title": "Stripe for startups",
+      "status": "planned"
+    },
+    {
+      "route": "/use-cases/platforms",
+      "title": "Stripe for platforms",
+      "status": "planned"
+    }
+  ]
+}

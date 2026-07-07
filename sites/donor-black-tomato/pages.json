@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us",
+      "title": "About",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/5-reasons-to-book-with-us",
+      "title": "5 reasons to book with us",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/awards",
+      "title": "Our Awards",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/client-testimonials",
+      "title": "Client testimonials",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/how-it-all-works",
+      "title": "How it all works",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/our-people",
+      "title": "Our team",
+      "status": "planned"
+    },
+    {
+      "route": "/about-us/press",
+      "title": "In the press",
+      "status": "planned"
+    }
+  ]
+}

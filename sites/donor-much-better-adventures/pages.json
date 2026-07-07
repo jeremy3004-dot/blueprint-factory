@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "Our Story",
+      "status": "planned"
+    },
+    {
+      "route": "/about/content-policy",
+      "title": "Content Policy",
+      "status": "planned"
+    },
+    {
+      "route": "/about/our-hosts",
+      "title": "Meet Our Hosts",
+      "status": "planned"
+    },
+    {
+      "route": "/about/our-team",
+      "title": "Meet the Team",
+      "status": "planned"
+    },
+    {
+      "route": "/about/sustainability",
+      "title": "Our Impact",
+      "status": "planned"
+    },
+    {
+      "route": "/explore",
+      "title": "View All Adventures",
+      "status": "planned"
+    },
+    {
+      "route": "/explore/arctic-adventures",
+      "title": "Arctic Adventures",
+      "status": "planned"
+    }
+  ]
+}

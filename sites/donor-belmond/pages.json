@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/boats/europe/france/les-bateaux-belmond",
+      "title": "France - Les Bateaux Belmond",
+      "status": "planned"
+    },
+    {
+      "route": "/contact-us",
+      "title": "Contact Us",
+      "status": "planned"
+    },
+    {
+      "route": "/destinations",
+      "title": "Destinations",
+      "status": "planned"
+    },
+    {
+      "route": "/experiences",
+      "title": "Experiences",
+      "status": "planned"
+    },
+    {
+      "route": "/gift-cards",
+      "title": "Gift cards",
+      "status": "planned"
+    },
+    {
+      "route": "/hotels/africa/south-africa/cape-town/belmond-mount-nelson-hotel",
+      "title": "South Africa, Cape Town - Mount Nelson",
+      "status": "planned"
+    },
+    {
+      "route": "/hotels/asia/bali/belmond-jimbaran-puri",
+      "title": "Indonesia, Bali - Jimbaran Puri",
+      "status": "planned"
+    }
+  ]
+}

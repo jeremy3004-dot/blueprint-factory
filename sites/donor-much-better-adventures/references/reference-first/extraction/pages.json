@@ -1,0 +1,1202 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.muchbetteradventures.com/",
+    "label": "",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.muchbetteradventures.com/about",
+    "label": "Our Story",
+    "area": "nav"
+  },
+  {
+    "path": "/about/b-corp",
+    "url": "https://www.muchbetteradventures.com/about/b-corp",
+    "label": "Learn More",
+    "area": "footer"
+  },
+  {
+    "path": "/about/book-with-confidence",
+    "url": "https://www.muchbetteradventures.com/about/book-with-confidence",
+    "label": "Book With Confidence",
+    "area": "body"
+  },
+  {
+    "path": "/about/by-departure-month",
+    "url": "https://www.muchbetteradventures.com/about/by-departure-month",
+    "label": "By Departure Month",
+    "area": "body"
+  },
+  {
+    "path": "/about/content-policy",
+    "url": "https://www.muchbetteradventures.com/about/content-policy",
+    "label": "Content Policy",
+    "area": "nav"
+  },
+  {
+    "path": "/about/much-better-adventures-reviews",
+    "url": "https://www.muchbetteradventures.com/about/much-better-adventures-reviews",
+    "label": "Reviews",
+    "area": "body"
+  },
+  {
+    "path": "/about/our-community",
+    "url": "https://www.muchbetteradventures.com/about/our-community",
+    "label": "Our Community",
+    "area": "body"
+  },
+  {
+    "path": "/about/our-hosts",
+    "url": "https://www.muchbetteradventures.com/about/our-hosts",
+    "label": "Meet Our Hosts",
+    "area": "nav"
+  },
+  {
+    "path": "/about/our-team",
+    "url": "https://www.muchbetteradventures.com/about/our-team",
+    "label": "Meet the Team",
+    "area": "nav"
+  },
+  {
+    "path": "/about/sustainability",
+    "url": "https://www.muchbetteradventures.com/about/sustainability",
+    "label": "Our Impact",
+    "area": "nav"
+  },
+  {
+    "path": "/about/trip-level",
+    "url": "https://www.muchbetteradventures.com/about/trip-level",
+    "label": "Trip Levels",
+    "area": "body"
+  },
+  {
+    "path": "/about/why-adventure-with-us",
+    "url": "https://www.muchbetteradventures.com/about/why-adventure-with-us",
+    "label": "Why Travel With Us",
+    "area": "body"
+  },
+  {
+    "path": "/explore",
+    "url": "https://www.muchbetteradventures.com/explore",
+    "label": "View All Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/adventure-challenges-uk",
+    "url": "https://www.muchbetteradventures.com/explore/adventure-challenges-uk",
+    "label": "UK Adventure Challenges",
+    "area": "body"
+  },
+  {
+    "path": "/explore/africa",
+    "url": "https://www.muchbetteradventures.com/explore/africa",
+    "label": "View All Africa",
+    "area": "body"
+  },
+  {
+    "path": "/explore/albania",
+    "url": "https://www.muchbetteradventures.com/explore/albania",
+    "label": "Albania",
+    "area": "body"
+  },
+  {
+    "path": "/explore/arctic-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/arctic-adventures",
+    "label": "Arctic Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/argentina",
+    "url": "https://www.muchbetteradventures.com/explore/argentina",
+    "label": "Argentina",
+    "area": "body"
+  },
+  {
+    "path": "/explore/armenia",
+    "url": "https://www.muchbetteradventures.com/explore/armenia",
+    "label": "Armenia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/asia",
+    "url": "https://www.muchbetteradventures.com/explore/asia",
+    "label": "View All Asia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/belize",
+    "url": "https://www.muchbetteradventures.com/explore/belize",
+    "label": "Belize",
+    "area": "body"
+  },
+  {
+    "path": "/explore/best-sellers",
+    "url": "https://www.muchbetteradventures.com/explore/best-sellers",
+    "label": "Best Sellers",
+    "area": "header"
+  },
+  {
+    "path": "/explore/bhutan",
+    "url": "https://www.muchbetteradventures.com/explore/bhutan",
+    "label": "Bhutan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/big-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/big-adventures",
+    "label": "Big Adventures",
+    "area": "body"
+  },
+  {
+    "path": "/explore/bosnia-and-herzegovina",
+    "url": "https://www.muchbetteradventures.com/explore/bosnia-and-herzegovina",
+    "label": "Bosnia and Herzegovina",
+    "area": "body"
+  },
+  {
+    "path": "/explore/botswana",
+    "url": "https://www.muchbetteradventures.com/explore/botswana",
+    "label": "Botswana",
+    "area": "body"
+  },
+  {
+    "path": "/explore/brazil",
+    "url": "https://www.muchbetteradventures.com/explore/brazil",
+    "label": "Brazil",
+    "area": "body"
+  },
+  {
+    "path": "/explore/cambodia",
+    "url": "https://www.muchbetteradventures.com/explore/cambodia",
+    "label": "Cambodia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/canada",
+    "url": "https://www.muchbetteradventures.com/explore/canada",
+    "label": "Canada",
+    "area": "body"
+  },
+  {
+    "path": "/explore/canyoning",
+    "url": "https://www.muchbetteradventures.com/explore/canyoning",
+    "label": "Canyoning",
+    "area": "body"
+  },
+  {
+    "path": "/explore/central-america",
+    "url": "https://www.muchbetteradventures.com/explore/central-america",
+    "label": "View All Central America",
+    "area": "body"
+  },
+  {
+    "path": "/explore/centre-based-trips",
+    "url": "https://www.muchbetteradventures.com/explore/centre-based-trips",
+    "label": "Centre Based Trips",
+    "area": "header"
+  },
+  {
+    "path": "/explore/challenging",
+    "url": "https://www.muchbetteradventures.com/explore/challenging",
+    "label": "Level 5ChallengingBuilt for those who want a big, rewarding physical challenge",
+    "area": "body"
+  },
+  {
+    "path": "/explore/challenging-tough",
+    "url": "https://www.muchbetteradventures.com/explore/challenging-tough",
+    "label": "Level 6Challenging-ToughFor experienced adventurers ready for consistently hard days",
+    "area": "body"
+  },
+  {
+    "path": "/explore/chile",
+    "url": "https://www.muchbetteradventures.com/explore/chile",
+    "label": "Chile",
+    "area": "body"
+  },
+  {
+    "path": "/explore/china",
+    "url": "https://www.muchbetteradventures.com/explore/china",
+    "label": "China",
+    "area": "body"
+  },
+  {
+    "path": "/explore/christmas-and-new-year",
+    "url": "https://www.muchbetteradventures.com/explore/christmas-and-new-year",
+    "label": "Christmas and New Year",
+    "area": "header"
+  },
+  {
+    "path": "/explore/colombia",
+    "url": "https://www.muchbetteradventures.com/explore/colombia",
+    "label": "Colombia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/cool-sleeps",
+    "url": "https://www.muchbetteradventures.com/explore/cool-sleeps",
+    "label": "Cool Sleeps",
+    "area": "header"
+  },
+  {
+    "path": "/explore/costa-rica",
+    "url": "https://www.muchbetteradventures.com/explore/costa-rica",
+    "label": "Costa Rica",
+    "area": "body"
+  },
+  {
+    "path": "/explore/croatia",
+    "url": "https://www.muchbetteradventures.com/explore/croatia",
+    "label": "Croatia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/cuba",
+    "url": "https://www.muchbetteradventures.com/explore/cuba",
+    "label": "Cuba",
+    "area": "body"
+  },
+  {
+    "path": "/explore/cycling",
+    "url": "https://www.muchbetteradventures.com/explore/cycling",
+    "label": "Cycling",
+    "area": "body"
+  },
+  {
+    "path": "/explore/desert-and-dunes",
+    "url": "https://www.muchbetteradventures.com/explore/desert-and-dunes",
+    "label": "Desert and Dunes",
+    "area": "header"
+  },
+  {
+    "path": "/explore/dog-sledding",
+    "url": "https://www.muchbetteradventures.com/explore/dog-sledding",
+    "label": "Dog Sledding",
+    "area": "body"
+  },
+  {
+    "path": "/explore/e-biking",
+    "url": "https://www.muchbetteradventures.com/explore/e-biking",
+    "label": "E-Biking",
+    "area": "body"
+  },
+  {
+    "path": "/explore/early-bird-discount",
+    "url": "https://www.muchbetteradventures.com/explore/early-bird-discount",
+    "label": "Early Bird Discounts",
+    "area": "body"
+  },
+  {
+    "path": "/explore/easy",
+    "url": "https://www.muchbetteradventures.com/explore/easy",
+    "label": "Easy Adventures",
+    "area": "body"
+  },
+  {
+    "path": "/explore/easy-moderate",
+    "url": "https://www.muchbetteradventures.com/explore/easy-moderate",
+    "label": "Level 2Easy-ModeratePerfect for adventurers looking to gently step things up",
+    "area": "body"
+  },
+  {
+    "path": "/explore/ecuador",
+    "url": "https://www.muchbetteradventures.com/explore/ecuador",
+    "label": "Ecuador",
+    "area": "body"
+  },
+  {
+    "path": "/explore/egypt",
+    "url": "https://www.muchbetteradventures.com/explore/egypt",
+    "label": "Egypt",
+    "area": "body"
+  },
+  {
+    "path": "/explore/epic-weekends",
+    "url": "https://www.muchbetteradventures.com/explore/epic-weekends",
+    "label": "Epic Weekends",
+    "area": "body"
+  },
+  {
+    "path": "/explore/estonia",
+    "url": "https://www.muchbetteradventures.com/explore/estonia",
+    "label": "Estonia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/europe",
+    "url": "https://www.muchbetteradventures.com/explore/europe",
+    "label": "View All Europe",
+    "area": "body"
+  },
+  {
+    "path": "/explore/everest-base-camp-tours",
+    "url": "https://www.muchbetteradventures.com/explore/everest-base-camp-tours",
+    "label": "Everest Base Camp",
+    "area": "body"
+  },
+  {
+    "path": "/explore/expeditions",
+    "url": "https://www.muchbetteradventures.com/explore/expeditions",
+    "label": "Expeditions",
+    "area": "header"
+  },
+  {
+    "path": "/explore/finland",
+    "url": "https://www.muchbetteradventures.com/explore/finland",
+    "label": "Finland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/foodie-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/foodie-adventures",
+    "label": "Foodie Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/france",
+    "url": "https://www.muchbetteradventures.com/explore/france",
+    "label": "France",
+    "area": "body"
+  },
+  {
+    "path": "/explore/georgia",
+    "url": "https://www.muchbetteradventures.com/explore/georgia",
+    "label": "Georgia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/get-there-by-train",
+    "url": "https://www.muchbetteradventures.com/explore/get-there-by-train",
+    "label": "Get There By Train",
+    "area": "header"
+  },
+  {
+    "path": "/explore/ghana",
+    "url": "https://www.muchbetteradventures.com/explore/ghana",
+    "label": "Ghana",
+    "area": "body"
+  },
+  {
+    "path": "/explore/greece",
+    "url": "https://www.muchbetteradventures.com/explore/greece",
+    "label": "Greece",
+    "area": "body"
+  },
+  {
+    "path": "/explore/greenland",
+    "url": "https://www.muchbetteradventures.com/explore/greenland",
+    "label": "Greenland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/guatemala",
+    "url": "https://www.muchbetteradventures.com/explore/guatemala",
+    "label": "Guatemala",
+    "area": "body"
+  },
+  {
+    "path": "/explore/hiking",
+    "url": "https://www.muchbetteradventures.com/explore/hiking",
+    "label": "Hiking",
+    "area": "body"
+  },
+  {
+    "path": "/explore/homestays",
+    "url": "https://www.muchbetteradventures.com/explore/homestays",
+    "label": "Homestays",
+    "area": "header"
+  },
+  {
+    "path": "/explore/hot-springs-saunas",
+    "url": "https://www.muchbetteradventures.com/explore/hot-springs-saunas",
+    "label": "Saunas and Hot Springs",
+    "area": "body"
+  },
+  {
+    "path": "/explore/hut-to-hut-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/hut-to-hut-adventures",
+    "label": "Hut to Hut Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/iceland",
+    "url": "https://www.muchbetteradventures.com/explore/iceland",
+    "label": "Iceland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/iconic-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/iconic-adventures",
+    "label": "Iconic Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/india",
+    "url": "https://www.muchbetteradventures.com/explore/india",
+    "label": "India",
+    "area": "body"
+  },
+  {
+    "path": "/explore/indonesia",
+    "url": "https://www.muchbetteradventures.com/explore/indonesia",
+    "label": "Indonesia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/island-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/island-adventures",
+    "label": "Island Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/italy",
+    "url": "https://www.muchbetteradventures.com/explore/italy",
+    "label": "Italy",
+    "area": "body"
+  },
+  {
+    "path": "/explore/japan",
+    "url": "https://www.muchbetteradventures.com/explore/japan",
+    "label": "Japan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/jordan",
+    "url": "https://www.muchbetteradventures.com/explore/jordan",
+    "label": "Jordan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/jungle-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/jungle-adventures",
+    "label": "Jungle Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/kayaking",
+    "url": "https://www.muchbetteradventures.com/explore/kayaking",
+    "label": "Kayaking",
+    "area": "body"
+  },
+  {
+    "path": "/explore/kenya",
+    "url": "https://www.muchbetteradventures.com/explore/kenya",
+    "label": "Kenya",
+    "area": "body"
+  },
+  {
+    "path": "/explore/kilimanjaro",
+    "url": "https://www.muchbetteradventures.com/explore/kilimanjaro",
+    "label": "Mount Kilimanjaro",
+    "area": "body"
+  },
+  {
+    "path": "/explore/kosovo",
+    "url": "https://www.muchbetteradventures.com/explore/kosovo",
+    "label": "Kosovo",
+    "area": "body"
+  },
+  {
+    "path": "/explore/kyrgyzstan",
+    "url": "https://www.muchbetteradventures.com/explore/kyrgyzstan",
+    "label": "Kyrgyzstan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/last-minute-departures",
+    "url": "https://www.muchbetteradventures.com/explore/last-minute-departures",
+    "label": "Last Minute Deals",
+    "area": "body"
+  },
+  {
+    "path": "/explore/madagascar",
+    "url": "https://www.muchbetteradventures.com/explore/madagascar",
+    "label": "Madagascar",
+    "area": "body"
+  },
+  {
+    "path": "/explore/malaysia",
+    "url": "https://www.muchbetteradventures.com/explore/malaysia",
+    "label": "Malaysia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/maldives",
+    "url": "https://www.muchbetteradventures.com/explore/maldives",
+    "label": "Maldives",
+    "area": "body"
+  },
+  {
+    "path": "/explore/moderate",
+    "url": "https://www.muchbetteradventures.com/explore/moderate",
+    "label": "Level 3ModerateFor active people who want to explore more wild and adventurous places",
+    "area": "body"
+  },
+  {
+    "path": "/explore/moderate-challenging",
+    "url": "https://www.muchbetteradventures.com/explore/moderate-challenging",
+    "label": "Level 4Moderate-ChallengingCreated for adventurers ready to take on a few longer, more demanding days",
+    "area": "body"
+  },
+  {
+    "path": "/explore/mongolia",
+    "url": "https://www.muchbetteradventures.com/explore/mongolia",
+    "label": "Mongolia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/montenegro",
+    "url": "https://www.muchbetteradventures.com/explore/montenegro",
+    "label": "Montenegro",
+    "area": "body"
+  },
+  {
+    "path": "/explore/morocco",
+    "url": "https://www.muchbetteradventures.com/explore/morocco",
+    "label": "Morocco",
+    "area": "body"
+  },
+  {
+    "path": "/explore/mountain-climbing",
+    "url": "https://www.muchbetteradventures.com/explore/mountain-climbing",
+    "label": "Mountain Climbing",
+    "area": "body"
+  },
+  {
+    "path": "/explore/multi-activity",
+    "url": "https://www.muchbetteradventures.com/explore/multi-activity",
+    "label": "Multi Activity",
+    "area": "body"
+  },
+  {
+    "path": "/explore/namibia",
+    "url": "https://www.muchbetteradventures.com/explore/namibia",
+    "label": "Namibia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/nepal",
+    "url": "https://www.muchbetteradventures.com/explore/nepal",
+    "label": "Nepal",
+    "area": "body"
+  },
+  {
+    "path": "/explore/new-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/new-adventures",
+    "label": "New Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/new-zealand",
+    "url": "https://www.muchbetteradventures.com/explore/new-zealand",
+    "label": "New Zealand",
+    "area": "body"
+  },
+  {
+    "path": "/explore/north-america",
+    "url": "https://www.muchbetteradventures.com/explore/north-america",
+    "label": "View All North America",
+    "area": "body"
+  },
+  {
+    "path": "/explore/north-macedonia",
+    "url": "https://www.muchbetteradventures.com/explore/north-macedonia",
+    "label": "North Macedonia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/northern-lights",
+    "url": "https://www.muchbetteradventures.com/explore/northern-lights",
+    "label": "Northern Lights",
+    "area": "body"
+  },
+  {
+    "path": "/explore/norway",
+    "url": "https://www.muchbetteradventures.com/explore/norway",
+    "label": "Norway",
+    "area": "body"
+  },
+  {
+    "path": "/explore/oman",
+    "url": "https://www.muchbetteradventures.com/explore/oman",
+    "label": "Oman",
+    "area": "body"
+  },
+  {
+    "path": "/explore/outdoor-skills",
+    "url": "https://www.muchbetteradventures.com/explore/outdoor-skills",
+    "label": "Outdoor Skills",
+    "area": "body"
+  },
+  {
+    "path": "/explore/pakistan",
+    "url": "https://www.muchbetteradventures.com/explore/pakistan",
+    "label": "Pakistan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/peaks-over-4000m",
+    "url": "https://www.muchbetteradventures.com/explore/peaks-over-4000m",
+    "label": "Peaks Over 4000m",
+    "area": "header"
+  },
+  {
+    "path": "/explore/peru",
+    "url": "https://www.muchbetteradventures.com/explore/peru",
+    "label": "Peru",
+    "area": "body"
+  },
+  {
+    "path": "/explore/philippines",
+    "url": "https://www.muchbetteradventures.com/explore/philippines",
+    "label": "Philippines",
+    "area": "body"
+  },
+  {
+    "path": "/explore/poland",
+    "url": "https://www.muchbetteradventures.com/explore/poland",
+    "label": "Poland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/portugal",
+    "url": "https://www.muchbetteradventures.com/explore/portugal",
+    "label": "Portugal",
+    "area": "body"
+  },
+  {
+    "path": "/explore/premium",
+    "url": "https://www.muchbetteradventures.com/explore/premium",
+    "label": "Premium",
+    "area": "header"
+  },
+  {
+    "path": "/explore/private-group-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/private-group-adventures",
+    "label": "Private Groups",
+    "area": "body"
+  },
+  {
+    "path": "/explore/rafting",
+    "url": "https://www.muchbetteradventures.com/explore/rafting",
+    "label": "Rafting",
+    "area": "body"
+  },
+  {
+    "path": "/explore/reunion",
+    "url": "https://www.muchbetteradventures.com/explore/reunion",
+    "label": "Réunion",
+    "area": "body"
+  },
+  {
+    "path": "/explore/rewilding-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/rewilding-adventures",
+    "label": "Rewilding Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/rock-climbing",
+    "url": "https://www.muchbetteradventures.com/explore/rock-climbing",
+    "label": "Rock Climbing",
+    "area": "body"
+  },
+  {
+    "path": "/explore/romania",
+    "url": "https://www.muchbetteradventures.com/explore/romania",
+    "label": "Romania",
+    "area": "body"
+  },
+  {
+    "path": "/explore/rwanda",
+    "url": "https://www.muchbetteradventures.com/explore/rwanda",
+    "label": "Rwanda",
+    "area": "body"
+  },
+  {
+    "path": "/explore/sailing",
+    "url": "https://www.muchbetteradventures.com/explore/sailing",
+    "label": "Sailing",
+    "area": "body"
+  },
+  {
+    "path": "/explore/sao-tome-and-principe",
+    "url": "https://www.muchbetteradventures.com/explore/sao-tome-and-principe",
+    "label": "São Tomé and Príncipe",
+    "area": "body"
+  },
+  {
+    "path": "/explore/scotland",
+    "url": "https://www.muchbetteradventures.com/explore/scotland",
+    "label": "Scotland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/slovakia",
+    "url": "https://www.muchbetteradventures.com/explore/slovakia",
+    "label": "Slovakia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/slovenia",
+    "url": "https://www.muchbetteradventures.com/explore/slovenia",
+    "label": "Slovenia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/snorkelling",
+    "url": "https://www.muchbetteradventures.com/explore/snorkelling",
+    "label": "Snorkelling",
+    "area": "body"
+  },
+  {
+    "path": "/explore/snowshoeing",
+    "url": "https://www.muchbetteradventures.com/explore/snowshoeing",
+    "label": "Snowshoeing",
+    "area": "body"
+  },
+  {
+    "path": "/explore/south-africa",
+    "url": "https://www.muchbetteradventures.com/explore/south-africa",
+    "label": "South Africa",
+    "area": "body"
+  },
+  {
+    "path": "/explore/south-america",
+    "url": "https://www.muchbetteradventures.com/explore/south-america",
+    "label": "View All South America",
+    "area": "body"
+  },
+  {
+    "path": "/explore/spain",
+    "url": "https://www.muchbetteradventures.com/explore/spain",
+    "label": "Spain",
+    "area": "body"
+  },
+  {
+    "path": "/explore/sri-lanka",
+    "url": "https://www.muchbetteradventures.com/explore/sri-lanka",
+    "label": "Sri Lanka",
+    "area": "body"
+  },
+  {
+    "path": "/explore/stand-up-paddleboarding",
+    "url": "https://www.muchbetteradventures.com/explore/stand-up-paddleboarding",
+    "label": "Stand Up Paddle",
+    "area": "body"
+  },
+  {
+    "path": "/explore/sub-zero",
+    "url": "https://www.muchbetteradventures.com/explore/sub-zero",
+    "label": "Sub Zero",
+    "area": "header"
+  },
+  {
+    "path": "/explore/surfing",
+    "url": "https://www.muchbetteradventures.com/explore/surfing",
+    "label": "Surfing",
+    "area": "body"
+  },
+  {
+    "path": "/explore/sweden",
+    "url": "https://www.muchbetteradventures.com/explore/sweden",
+    "label": "Sweden",
+    "area": "body"
+  },
+  {
+    "path": "/explore/switzerland",
+    "url": "https://www.muchbetteradventures.com/explore/switzerland",
+    "label": "Switzerland",
+    "area": "body"
+  },
+  {
+    "path": "/explore/taiwan",
+    "url": "https://www.muchbetteradventures.com/explore/taiwan",
+    "label": "Taiwan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/tajikistan",
+    "url": "https://www.muchbetteradventures.com/explore/tajikistan",
+    "label": "Tajikistan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/tanzania",
+    "url": "https://www.muchbetteradventures.com/explore/tanzania",
+    "label": "Tanzania",
+    "area": "body"
+  },
+  {
+    "path": "/explore/thailand",
+    "url": "https://www.muchbetteradventures.com/explore/thailand",
+    "label": "Thailand",
+    "area": "body"
+  },
+  {
+    "path": "/explore/the-alps",
+    "url": "https://www.muchbetteradventures.com/explore/the-alps",
+    "label": "The Alps",
+    "area": "body"
+  },
+  {
+    "path": "/explore/the-balkans",
+    "url": "https://www.muchbetteradventures.com/explore/the-balkans",
+    "label": "Balkans",
+    "area": "body"
+  },
+  {
+    "path": "/explore/tough",
+    "url": "https://www.muchbetteradventures.com/explore/tough",
+    "label": "Level 7ToughThe ultimate test for highly experienced adventurers seeking maximum challenge",
+    "area": "body"
+  },
+  {
+    "path": "/explore/tunisia",
+    "url": "https://www.muchbetteradventures.com/explore/tunisia",
+    "label": "Tunisia",
+    "area": "body"
+  },
+  {
+    "path": "/explore/turkey",
+    "url": "https://www.muchbetteradventures.com/explore/turkey",
+    "label": "Turkey",
+    "area": "body"
+  },
+  {
+    "path": "/explore/ultimate-adventures",
+    "url": "https://www.muchbetteradventures.com/explore/ultimate-adventures",
+    "label": "Ultimate Adventures",
+    "area": "header"
+  },
+  {
+    "path": "/explore/united-kingdom",
+    "url": "https://www.muchbetteradventures.com/explore/united-kingdom",
+    "label": "United Kingdom",
+    "area": "body"
+  },
+  {
+    "path": "/explore/united-states",
+    "url": "https://www.muchbetteradventures.com/explore/united-states",
+    "label": "United States",
+    "area": "body"
+  },
+  {
+    "path": "/explore/uzbekistan",
+    "url": "https://www.muchbetteradventures.com/explore/uzbekistan",
+    "label": "Uzbekistan",
+    "area": "body"
+  },
+  {
+    "path": "/explore/vietnam",
+    "url": "https://www.muchbetteradventures.com/explore/vietnam",
+    "label": "Vietnam",
+    "area": "body"
+  },
+  {
+    "path": "/explore/volcano-treks",
+    "url": "https://www.muchbetteradventures.com/explore/volcano-treks",
+    "label": "Volcano Treks",
+    "area": "header"
+  },
+  {
+    "path": "/explore/wild-swimming",
+    "url": "https://www.muchbetteradventures.com/explore/wild-swimming",
+    "label": "Wild Swimming",
+    "area": "body"
+  },
+  {
+    "path": "/explore/wild-swims-and-cool-dips",
+    "url": "https://www.muchbetteradventures.com/explore/wild-swims-and-cool-dips",
+    "label": "Wild Swims and Cool Dips",
+    "area": "header"
+  },
+  {
+    "path": "/explore/wildlife-watching",
+    "url": "https://www.muchbetteradventures.com/explore/wildlife-watching",
+    "label": "Wildlife Watching",
+    "area": "body"
+  },
+  {
+    "path": "/explore/winter-sun",
+    "url": "https://www.muchbetteradventures.com/explore/winter-sun",
+    "label": "Winter Sun",
+    "area": "header"
+  },
+  {
+    "path": "/explore/yoga",
+    "url": "https://www.muchbetteradventures.com/explore/yoga",
+    "label": "Yoga",
+    "area": "body"
+  },
+  {
+    "path": "/explore/zimbabwe",
+    "url": "https://www.muchbetteradventures.com/explore/zimbabwe",
+    "label": "Zimbabwe",
+    "area": "body"
+  },
+  {
+    "path": "/explorer",
+    "url": "https://www.muchbetteradventures.com/explorer",
+    "label": "Take me there",
+    "area": "body"
+  },
+  {
+    "path": "/giftcards",
+    "url": "https://www.muchbetteradventures.com/giftcards",
+    "label": "Gift Cards",
+    "area": "body"
+  },
+  {
+    "path": "/magazine",
+    "url": "https://www.muchbetteradventures.com/magazine",
+    "label": "Read All Articles...",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/features",
+    "url": "https://www.muchbetteradventures.com/magazine/features",
+    "label": "Features",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/guides",
+    "url": "https://www.muchbetteradventures.com/magazine/guides",
+    "label": "Guides",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/community",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/community",
+    "label": "Community Stories",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/mountain-mindset",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/mountain-mindset",
+    "label": "Mountain Mindset",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/packing-prep",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/packing-prep",
+    "label": "Packing & Prep",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/the-tourism-leakage-series",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/the-tourism-leakage-series",
+    "label": "Tourism Leakage",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/trail-setting-stories",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/trail-setting-stories",
+    "label": "Trail Setting Stories",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/travel-better",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/travel-better",
+    "label": "Travel Better",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/unlocking-adventure",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/unlocking-adventure",
+    "label": "Unlocking Adventure",
+    "area": "body"
+  },
+  {
+    "path": "/magazine/tag/what-i-wish-i-knew",
+    "url": "https://www.muchbetteradventures.com/magazine/tag/what-i-wish-i-knew",
+    "label": "Travel Tips",
+    "area": "body"
+  },
+  {
+    "path": "/products/10003-adventures-trek-the-matterhorn-circuit",
+    "url": "https://www.muchbetteradventures.com/products/10003-adventures-trek-the-matterhorn-circuit",
+    "label": "Trek the Matterhorn Circuit in a Weekend3 nights from£1,054£948Level 54.8 (40 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10037-adventures-guatemala-5-volcano-challenge",
+    "url": "https://www.muchbetteradventures.com/products/10037-adventures-guatemala-5-volcano-challenge",
+    "label": "Guatemala 5 Volcano Challenge9 nights from£1,718£1,460Level 64.9 (228 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10042-adventures-250km-self-powered-coast-to-coast-expedition-in-costa-rica",
+    "url": "https://www.muchbetteradventures.com/products/10042-adventures-250km-self-powered-coast-to-coast-expedition-in-costa-rica",
+    "label": "250km Coast to Coast Expedition through Costa Rica11 nights from£2,803Level 55.0 (221 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10423-adventures-the-3-peaks-challenge-in-morocco",
+    "url": "https://www.muchbetteradventures.com/products/10423-adventures-the-3-peaks-challenge-in-morocco",
+    "label": "The 3 Peaks Challenge in Morocco 4 nights from£492£443Level 64.8 (168 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10484-adventures-trek-the-tour-du-mont-blanc-in-a-week",
+    "url": "https://www.muchbetteradventures.com/products/10484-adventures-trek-the-tour-du-mont-blanc-in-a-week",
+    "label": "Trek the Tour du Mont Blanc in a Week6 nights from£1,629£1,548Level 54.8 (71 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10540-adventures-coast-to-coast-traverse-madeira",
+    "url": "https://www.muchbetteradventures.com/products/10540-adventures-coast-to-coast-traverse-madeira",
+    "label": "Coast to Coast Traverse of Madeira 6 nights from£1,377Level 44.8 (197 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10592-adventures-hike-sup-kayak-montenegro-coast",
+    "url": "https://www.muchbetteradventures.com/products/10592-adventures-hike-sup-kayak-montenegro-coast",
+    "label": "SUP, Hike and Kayak Montenegro's Coast5 nights from£1,373£1,304Level 24.8 (68 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10727-adventures-hike-bike-prosecco-hills-italy",
+    "url": "https://www.muchbetteradventures.com/products/10727-adventures-hike-bike-prosecco-hills-italy",
+    "label": "Hike, E-Bike and Wine in Italy's Prosecco Hills5 nights from£1,301Level 24.9 (137 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10767-adventures-trek-choquequirao-to-machu-picchu",
+    "url": "https://www.muchbetteradventures.com/products/10767-adventures-trek-choquequirao-to-machu-picchu",
+    "label": "Trek Choquequirao to Machu Picchu11 nights from£1,539£1,385Level 54.9 (17 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10775-adventures-hiking-durmitor-montenegro",
+    "url": "https://www.muchbetteradventures.com/products/10775-adventures-hiking-durmitor-montenegro",
+    "label": "The 3 Peaks Challenge in Montenegro4 nights from£950£855Level 44.8 (38 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10808-adventures-salkantay-machu-picchu-amazon",
+    "url": "https://www.muchbetteradventures.com/products/10808-adventures-salkantay-machu-picchu-amazon",
+    "label": "Trek to Machu Picchu and Go to the Amazon10 nights from£1,733Level 54.8 (18 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10967-adventures-cycling-tour-northern-vietnam",
+    "url": "https://www.muchbetteradventures.com/products/10967-adventures-cycling-tour-northern-vietnam",
+    "label": "Cycle the Highlands of Northern Vietnam9 nights from£1,638Level 54.9 (17 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/10995-adventures-sri-lanka-safari-hiking-tour",
+    "url": "https://www.muchbetteradventures.com/products/10995-adventures-sri-lanka-safari-hiking-tour",
+    "label": "Premium: Hike, Safari and Explore in Sri Lanka10 nights from£2,803Level 15.0 (13 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/11037-adventures-hike-explore-silk-road-uzbekistan",
+    "url": "https://www.muchbetteradventures.com/products/11037-adventures-hike-explore-silk-road-uzbekistan",
+    "label": "Hike and Explore the Silk Road in Uzbekistan9 nights from£1,394Level 35.0 (34 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/11098-adventures-greek-islands-sailing-cyclades",
+    "url": "https://www.muchbetteradventures.com/products/11098-adventures-greek-islands-sailing-cyclades",
+    "label": "Premium: Sail and Explore Greek Islands in a Week7 nights from£3,251£2,926Level 1",
+    "area": "body"
+  },
+  {
+    "path": "/products/11103-adventures-trekking-pakistan-karakoram-mountains",
+    "url": "https://www.muchbetteradventures.com/products/11103-adventures-trekking-pakistan-karakoram-mountains",
+    "label": "Trek the Giants of Pakistan’s Karakoram Mountains14 nights from£2,280Level 5",
+    "area": "body"
+  },
+  {
+    "path": "/products/11139-adventures-cycling-silk-road-uzbekistan",
+    "url": "https://www.muchbetteradventures.com/products/11139-adventures-cycling-silk-road-uzbekistan",
+    "label": "Cycle the Silk Road in Uzbekistan8 nights from£2,182£1,964Level 4",
+    "area": "body"
+  },
+  {
+    "path": "/products/11141-adventures-cycle-length-wild-taiwan",
+    "url": "https://www.muchbetteradventures.com/products/11141-adventures-cycle-length-wild-taiwan",
+    "label": "Cycle the Length of Wild Taiwan10 nights from£3,679£3,311Level 4",
+    "area": "body"
+  },
+  {
+    "path": "/products/11146-adventures-wildlife-indian-himalaya-snow-leopards",
+    "url": "https://www.muchbetteradventures.com/products/11146-adventures-wildlife-indian-himalaya-snow-leopards",
+    "label": "Track Snow Leopards in the Indian Himalayas10 nights from£2,945£2,651Level 3",
+    "area": "body"
+  },
+  {
+    "path": "/products/11148-adventures-gorilla-wildlife-rwanda",
+    "url": "https://www.muchbetteradventures.com/products/11148-adventures-gorilla-wildlife-rwanda",
+    "label": "Wildlife Adventure in Rwanda9 nights from£3,980£3,582Level 2",
+    "area": "body"
+  },
+  {
+    "path": "/products/11158-adventures-argentina-tour-buenos-aires-salta",
+    "url": "https://www.muchbetteradventures.com/products/11158-adventures-argentina-tour-buenos-aires-salta",
+    "label": "The Ultimate Adventure Through Argentina10 nights from£3,725£3,352Level 1",
+    "area": "body"
+  },
+  {
+    "path": "/products/11159-adventures-amalfi-coast-hiking-italy",
+    "url": "https://www.muchbetteradventures.com/products/11159-adventures-amalfi-coast-hiking-italy",
+    "label": "Hike and Explore the Amalfi Coast6 nights from£2,040£1,836Level 3",
+    "area": "body"
+  },
+  {
+    "path": "/products/11161-adventures-madeira-hiking-premium",
+    "url": "https://www.muchbetteradventures.com/products/11161-adventures-madeira-hiking-premium",
+    "label": "Premium: Hike the Trails of Madeira5 nights from£2,632£2,369Level 3",
+    "area": "body"
+  },
+  {
+    "path": "/products/11163-adventures-uzbekistan-silk-road-tour",
+    "url": "https://www.muchbetteradventures.com/products/11163-adventures-uzbekistan-silk-road-tour",
+    "label": "Premium: The Ultimate Adventure Through Uzbekistan10 nights from£2,894£2,605Level 1",
+    "area": "body"
+  },
+  {
+    "path": "/products/11165-adventures-rajasthan-golden-triangle-premium",
+    "url": "https://www.muchbetteradventures.com/products/11165-adventures-rajasthan-golden-triangle-premium",
+    "label": "Premium: The Ultimate Adventure Through Rajasthan11 nights from£2,728£2,455Level 1",
+    "area": "body"
+  },
+  {
+    "path": "/products/8226-adventures-hike-kayak-and-wild-camp-the-norwegian-fjords",
+    "url": "https://www.muchbetteradventures.com/products/8226-adventures-hike-kayak-and-wild-camp-the-norwegian-fjords",
+    "label": "Hike, Kayak and Wild Camp the Norwegian Fjords in a Weekend3 nights from£738Level 44.9 (1256 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/8665-adventures-trek-the-tour-du-mont-blanc-in-a-long-weekend",
+    "url": "https://www.muchbetteradventures.com/products/8665-adventures-trek-the-tour-du-mont-blanc-in-a-long-weekend",
+    "label": "Trek the Tour du Mont Blanc in a Weekend: The Hut-to-Hut Edition3 nights from£915Level 54.9 (319 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/8798-adventures-hiking-bear-watching-romania",
+    "url": "https://www.muchbetteradventures.com/products/8798-adventures-hiking-bear-watching-romania",
+    "label": "Hiking and Bear Watching in Romania3 nights from£758£683Level 14.8 (214 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/8801-adventures-snowdon-challenge",
+    "url": "https://www.muchbetteradventures.com/products/8801-adventures-snowdon-challenge",
+    "label": "The Snowdon Challenge1 nights from£304£274Level 44.8 (216 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/products/8914-adventures-sup-hike-and-paraglide-in-slovenia",
+    "url": "https://www.muchbetteradventures.com/products/8914-adventures-sup-hike-and-paraglide-in-slovenia",
+    "label": "SUP, Hike and Paraglide in Slovenia3 nights from£915£824Level 24.8 (92 reviews)",
+    "area": "body"
+  },
+  {
+    "path": "/wishlist",
+    "url": "https://www.muchbetteradventures.com/wishlist",
+    "label": "",
+    "area": "header"
+  }
+]
