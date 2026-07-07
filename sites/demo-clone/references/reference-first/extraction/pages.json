@@ -1,0 +1,980 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.apple.com/",
+    "label": "Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/ar/ipad-pro-space-black.usdz",
+    "url": "https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/ar/ipad-pro-space-black.usdz",
+    "label": "View in your space",
+    "area": "header"
+  },
+  {
+    "path": "/accessibility",
+    "url": "https://www.apple.com/accessibility",
+    "label": "Accessibility",
+    "area": "nav"
+  },
+  {
+    "path": "/accessibility/assistive-technologies",
+    "url": "https://www.apple.com/accessibility/assistive-technologies",
+    "label": "Assistive Technologies",
+    "area": "nav"
+  },
+  {
+    "path": "/airplay",
+    "url": "https://www.apple.com/airplay",
+    "label": "AirPlay",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods",
+    "url": "https://www.apple.com/airpods",
+    "label": "AirPods",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods-4",
+    "url": "https://www.apple.com/airpods-4",
+    "label": "AirPods 4",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods-max",
+    "url": "https://www.apple.com/airpods-max",
+    "label": "AirPods Max 2",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods-pro",
+    "url": "https://www.apple.com/airpods-pro",
+    "label": "AirPods Pro 3",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods-pro/hearing-health",
+    "url": "https://www.apple.com/airpods-pro/hearing-health",
+    "label": "Hearing Health",
+    "area": "nav"
+  },
+  {
+    "path": "/airpods/compare",
+    "url": "https://www.apple.com/airpods/compare",
+    "label": "Compare AirPods",
+    "area": "nav"
+  },
+  {
+    "path": "/airtag",
+    "url": "https://www.apple.com/airtag",
+    "label": "AirTag",
+    "area": "nav"
+  },
+  {
+    "path": "/app-store",
+    "url": "https://www.apple.com/app-store",
+    "label": "App Store",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-arcade",
+    "url": "https://www.apple.com/apple-arcade",
+    "label": "Apple Arcade",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-books",
+    "url": "https://www.apple.com/apple-books",
+    "label": "Apple Books",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-card",
+    "url": "https://www.apple.com/apple-card",
+    "label": "Apple Card",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-card/monthly-installments",
+    "url": "https://www.apple.com/apple-card/monthly-installments",
+    "label": "Learn more about Apple Card Monthly Installments",
+    "area": "body"
+  },
+  {
+    "path": "/apple-cash",
+    "url": "https://www.apple.com/apple-cash",
+    "label": "Apple Cash",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-creator-studio",
+    "url": "https://www.apple.com/apple-creator-studio",
+    "label": "Apple Creator Studio",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-events",
+    "url": "https://www.apple.com/apple-events",
+    "label": "Events",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-fitness-plus",
+    "url": "https://www.apple.com/apple-fitness-plus",
+    "label": "Apple Fitness+",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-intelligence",
+    "url": "https://www.apple.com/apple-intelligence",
+    "label": "Apple Intelligence and Siri",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-music",
+    "url": "https://www.apple.com/apple-music",
+    "label": "Apple Music",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-news",
+    "url": "https://www.apple.com/apple-news",
+    "label": "Apple News+",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-one",
+    "url": "https://www.apple.com/apple-one",
+    "label": "Apple One",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-pay",
+    "url": "https://www.apple.com/apple-pay",
+    "label": "Apple Pay",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-pencil",
+    "url": "https://www.apple.com/apple-pencil",
+    "label": "Apple Pencil",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-podcasts",
+    "url": "https://www.apple.com/apple-podcasts",
+    "label": "Apple Podcasts",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-tv",
+    "url": "https://www.apple.com/apple-tv",
+    "label": "Apple TV",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-tv-4k",
+    "url": "https://www.apple.com/apple-tv-4k",
+    "label": "Apple TV 4K",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-tv-app",
+    "url": "https://www.apple.com/apple-tv-app",
+    "label": "Apple TV app",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-vision-pro",
+    "url": "https://www.apple.com/apple-vision-pro",
+    "label": "Vision",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-vision-pro/specs",
+    "url": "https://www.apple.com/apple-vision-pro/specs",
+    "label": "Tech Specs",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-for-your-kids",
+    "url": "https://www.apple.com/apple-watch-for-your-kids",
+    "label": "Apple Watch For Your Kids",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-hermes",
+    "url": "https://www.apple.com/apple-watch-hermes",
+    "label": "Apple Watch Hermès",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-nike",
+    "url": "https://www.apple.com/apple-watch-nike",
+    "label": "Apple Watch Nike",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-se-3",
+    "url": "https://www.apple.com/apple-watch-se-3",
+    "label": "Apple Watch SE 3",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-series-11",
+    "url": "https://www.apple.com/apple-watch-series-11",
+    "label": "Apple Watch Series 11",
+    "area": "nav"
+  },
+  {
+    "path": "/apple-watch-ultra-3",
+    "url": "https://www.apple.com/apple-watch-ultra-3",
+    "label": "Apple Watch Ultra 3",
+    "area": "nav"
+  },
+  {
+    "path": "/applecare",
+    "url": "https://www.apple.com/applecare",
+    "label": "AppleCare",
+    "area": "nav"
+  },
+  {
+    "path": "/apps",
+    "url": "https://www.apple.com/apps",
+    "label": "Apps by Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/batteries",
+    "url": "https://www.apple.com/batteries",
+    "label": "apple.com/batteries",
+    "area": "footer"
+  },
+  {
+    "path": "/business",
+    "url": "https://www.apple.com/business",
+    "label": "Apple and Business",
+    "area": "nav"
+  },
+  {
+    "path": "/business/enterprise/apple-vision-pro",
+    "url": "https://www.apple.com/business/enterprise/apple-vision-pro",
+    "label": "Apple Vision Pro for Enterprise",
+    "area": "nav"
+  },
+  {
+    "path": "/business/mac",
+    "url": "https://www.apple.com/business/mac",
+    "label": "Mac for Business",
+    "area": "nav"
+  },
+  {
+    "path": "/careers/us",
+    "url": "https://www.apple.com/careers/us",
+    "label": "Career Opportunities",
+    "area": "nav"
+  },
+  {
+    "path": "/choose-country-region",
+    "url": "https://www.apple.com/choose-country-region",
+    "label": "United States",
+    "area": "footer"
+  },
+  {
+    "path": "/compliance",
+    "url": "https://www.apple.com/compliance",
+    "label": "Ethics & Compliance",
+    "area": "nav"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.apple.com/contact",
+    "label": "Contact Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/displays",
+    "url": "https://www.apple.com/displays",
+    "label": "Displays",
+    "area": "nav"
+  },
+  {
+    "path": "/diversity",
+    "url": "https://www.apple.com/diversity",
+    "label": "Inclusion and Diversity",
+    "area": "nav"
+  },
+  {
+    "path": "/education",
+    "url": "https://www.apple.com/education",
+    "label": "Education",
+    "area": "nav"
+  },
+  {
+    "path": "/education-initiative",
+    "url": "https://www.apple.com/education-initiative",
+    "label": "Education",
+    "area": "nav"
+  },
+  {
+    "path": "/education/k12/how-to-buy",
+    "url": "https://www.apple.com/education/k12/how-to-buy",
+    "label": "Shop for K-12",
+    "area": "nav"
+  },
+  {
+    "path": "/entertainment",
+    "url": "https://www.apple.com/entertainment",
+    "label": "Entertainment",
+    "area": "nav"
+  },
+  {
+    "path": "/environment",
+    "url": "https://www.apple.com/environment",
+    "label": "Environment",
+    "area": "nav"
+  },
+  {
+    "path": "/final-cut-pro-for-ipad",
+    "url": "https://www.apple.com/final-cut-pro-for-ipad",
+    "label": "Learn more about Final Cut Pro for iPad",
+    "area": "body"
+  },
+  {
+    "path": "/government",
+    "url": "https://www.apple.com/government",
+    "label": "Apple and Government",
+    "area": "nav"
+  },
+  {
+    "path": "/healthcare",
+    "url": "https://www.apple.com/healthcare",
+    "label": "Apple and Healthcare",
+    "area": "nav"
+  },
+  {
+    "path": "/home-app",
+    "url": "https://www.apple.com/home-app",
+    "label": "Home app",
+    "area": "nav"
+  },
+  {
+    "path": "/homepod-2nd-generation",
+    "url": "https://www.apple.com/homepod-2nd-generation",
+    "label": "HomePod",
+    "area": "nav"
+  },
+  {
+    "path": "/homepod-mini",
+    "url": "https://www.apple.com/homepod-mini",
+    "label": "HomePod mini",
+    "area": "nav"
+  },
+  {
+    "path": "/icloud",
+    "url": "https://www.apple.com/icloud",
+    "label": "iCloud+",
+    "area": "nav"
+  },
+  {
+    "path": "/imac",
+    "url": "https://www.apple.com/imac",
+    "label": "iMac",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad",
+    "url": "https://www.apple.com/ipad",
+    "label": "Explore all iPad",
+    "area": "header"
+  },
+  {
+    "path": "/ipad-11",
+    "url": "https://www.apple.com/ipad-11",
+    "label": "iPad",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad-air",
+    "url": "https://www.apple.com/ipad-air",
+    "label": "iPad Air",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad-keyboards",
+    "url": "https://www.apple.com/ipad-keyboards",
+    "label": "Keyboards",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad-mini",
+    "url": "https://www.apple.com/ipad-mini",
+    "label": "iPad mini",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad-pro",
+    "url": "https://www.apple.com/ipad-pro",
+    "label": "iPad Pro",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad-pro/specs",
+    "url": "https://www.apple.com/ipad-pro/specs",
+    "label": "Tech Specs",
+    "area": "nav"
+  },
+  {
+    "path": "/ipad/cellular",
+    "url": "https://www.apple.com/ipad/cellular",
+    "label": "apple.com/ipad/cellular",
+    "area": "footer"
+  },
+  {
+    "path": "/ipad/compare",
+    "url": "https://www.apple.com/ipad/compare",
+    "label": "Compare iPad",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone",
+    "url": "https://www.apple.com/iphone",
+    "label": "iPhone",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone-17",
+    "url": "https://www.apple.com/iphone-17",
+    "label": "iPhone 17",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone-17-pro",
+    "url": "https://www.apple.com/iphone-17-pro",
+    "label": "iPhone 17 Pro",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone-17e",
+    "url": "https://www.apple.com/iphone-17e",
+    "label": "iPhone 17e",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone-air",
+    "url": "https://www.apple.com/iphone-air",
+    "label": "iPhone Air",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone/compare",
+    "url": "https://www.apple.com/iphone/compare",
+    "label": "Compare iPhone",
+    "area": "nav"
+  },
+  {
+    "path": "/iphone/switch",
+    "url": "https://www.apple.com/iphone/switch",
+    "label": "Switch from Android",
+    "area": "nav"
+  },
+  {
+    "path": "/leadership",
+    "url": "https://www.apple.com/leadership",
+    "label": "Apple Leadership",
+    "area": "nav"
+  },
+  {
+    "path": "/legal",
+    "url": "https://www.apple.com/legal",
+    "label": "Legal",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/internet-services/terms/site.html",
+    "url": "https://www.apple.com/legal/internet-services/terms/site.html",
+    "label": "Terms of Use",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/privacy",
+    "url": "https://www.apple.com/legal/privacy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/logic-pro-for-ipad",
+    "url": "https://www.apple.com/logic-pro-for-ipad",
+    "label": "Learn more about Logic Pro for iPad",
+    "area": "body"
+  },
+  {
+    "path": "/mac",
+    "url": "https://www.apple.com/mac",
+    "label": "Mac",
+    "area": "nav"
+  },
+  {
+    "path": "/mac-mini",
+    "url": "https://www.apple.com/mac-mini",
+    "label": "Mac mini",
+    "area": "nav"
+  },
+  {
+    "path": "/mac-studio",
+    "url": "https://www.apple.com/mac-studio",
+    "label": "Mac Studio",
+    "area": "nav"
+  },
+  {
+    "path": "/mac/compare",
+    "url": "https://www.apple.com/mac/compare",
+    "label": "Compare Mac",
+    "area": "nav"
+  },
+  {
+    "path": "/mac/mac-does-that",
+    "url": "https://www.apple.com/mac/mac-does-that",
+    "label": "Switch from PC to Mac",
+    "area": "nav"
+  },
+  {
+    "path": "/macbook-air",
+    "url": "https://www.apple.com/macbook-air",
+    "label": "MacBook Air",
+    "area": "nav"
+  },
+  {
+    "path": "/macbook-neo",
+    "url": "https://www.apple.com/macbook-neo",
+    "label": "MacBook Neo",
+    "area": "nav"
+  },
+  {
+    "path": "/macbook-pro",
+    "url": "https://www.apple.com/macbook-pro",
+    "label": "MacBook Pro",
+    "area": "nav"
+  },
+  {
+    "path": "/macos/continuity",
+    "url": "https://www.apple.com/macos/continuity",
+    "label": "Better with iPhone",
+    "area": "nav"
+  },
+  {
+    "path": "/newsroom",
+    "url": "https://www.apple.com/newsroom",
+    "label": "Newsroom",
+    "area": "nav"
+  },
+  {
+    "path": "/os/ios",
+    "url": "https://www.apple.com/os/ios",
+    "label": "iOS 27 Preview",
+    "area": "nav"
+  },
+  {
+    "path": "/os/ipados",
+    "url": "https://www.apple.com/os/ipados",
+    "label": "iPadOS 27 Preview",
+    "area": "nav"
+  },
+  {
+    "path": "/os/macos",
+    "url": "https://www.apple.com/os/macos",
+    "label": "macOS 27 Preview",
+    "area": "nav"
+  },
+  {
+    "path": "/os/visionos",
+    "url": "https://www.apple.com/os/visionos",
+    "label": "visionOS 27 Preview",
+    "area": "nav"
+  },
+  {
+    "path": "/os/watchos",
+    "url": "https://www.apple.com/os/watchos",
+    "label": "watchOS 27 Preview",
+    "area": "nav"
+  },
+  {
+    "path": "/privacy",
+    "url": "https://www.apple.com/privacy",
+    "label": "iPhone Privacy",
+    "area": "nav"
+  },
+  {
+    "path": "/r/store/government",
+    "url": "https://www.apple.com/r/store/government",
+    "label": "Government",
+    "area": "nav"
+  },
+  {
+    "path": "/racial-equity-justice-initiative",
+    "url": "https://www.apple.com/racial-equity-justice-initiative",
+    "label": "Racial Equity and Justice",
+    "area": "nav"
+  },
+  {
+    "path": "/retail",
+    "url": "https://www.apple.com/retail",
+    "label": "Find a Store",
+    "area": "nav"
+  },
+  {
+    "path": "/retail/business",
+    "url": "https://www.apple.com/retail/business",
+    "label": "Business",
+    "area": "nav"
+  },
+  {
+    "path": "/retail/geniusbar",
+    "url": "https://www.apple.com/retail/geniusbar",
+    "label": "Genius Bar",
+    "area": "nav"
+  },
+  {
+    "path": "/retail/instore-shopping-session/session-selection",
+    "url": "https://www.apple.com/retail/instore-shopping-session/session-selection",
+    "label": "Book a Demo",
+    "area": "nav"
+  },
+  {
+    "path": "/services",
+    "url": "https://www.apple.com/services",
+    "label": "Explore Entertainment",
+    "area": "nav"
+  },
+  {
+    "path": "/sitemap",
+    "url": "https://www.apple.com/sitemap",
+    "label": "Site Map",
+    "area": "footer"
+  },
+  {
+    "path": "/supply-chain",
+    "url": "https://www.apple.com/supply-chain",
+    "label": "Supply Chain Innovation",
+    "area": "nav"
+  },
+  {
+    "path": "/support/products/ipad",
+    "url": "https://www.apple.com/support/products/ipad",
+    "label": "AppleCare+ for iPad",
+    "area": "body"
+  },
+  {
+    "path": "/today",
+    "url": "https://www.apple.com/today",
+    "label": "Today at Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/today/camp",
+    "url": "https://www.apple.com/today/camp",
+    "label": "Apple Camp",
+    "area": "nav"
+  },
+  {
+    "path": "/today/groups",
+    "url": "https://www.apple.com/today/groups",
+    "label": "Group Reservations",
+    "area": "nav"
+  },
+  {
+    "path": "/tv-home",
+    "url": "https://www.apple.com/tv-home",
+    "label": "TV & Home",
+    "area": "nav"
+  },
+  {
+    "path": "/us_epp_55499/store",
+    "url": "https://www.apple.com/us_epp_55499/store",
+    "label": "Shop for Federal Employees",
+    "area": "nav"
+  },
+  {
+    "path": "/us_epp_67909/store",
+    "url": "https://www.apple.com/us_epp_67909/store",
+    "label": "Shop for State and Local Employees",
+    "area": "nav"
+  },
+  {
+    "path": "/us-edu/shop/goto/salespolicies/edu",
+    "url": "https://www.apple.com/us-edu/shop/goto/salespolicies/edu",
+    "label": "Terms",
+    "area": "footer"
+  },
+  {
+    "path": "/us/search",
+    "url": "https://www.apple.com/us/search",
+    "label": "",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/accessories/all_accessories/beats_featured",
+    "url": "https://www.apple.com/us/shop/goto/accessories/all_accessories/beats_featured",
+    "label": "Beats",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/accessories/all_accessories/headphones_speakers",
+    "url": "https://www.apple.com/us/shop/goto/accessories/all_accessories/headphones_speakers",
+    "label": "Shop AirPods",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/accessories/all_accessories/made_by_apple",
+    "url": "https://www.apple.com/us/shop/goto/accessories/all_accessories/made_by_apple",
+    "label": "Made by Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/account",
+    "url": "https://www.apple.com/us/shop/goto/account",
+    "label": "Apple Store Account",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/airpods/accessories",
+    "url": "https://www.apple.com/us/shop/goto/airpods/accessories",
+    "label": "AirPods",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/bag",
+    "url": "https://www.apple.com/us/shop/goto/bag",
+    "label": "0+",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_accessories",
+    "url": "https://www.apple.com/us/shop/goto/buy_accessories",
+    "label": "Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_homepod/homepod",
+    "url": "https://www.apple.com/us/shop/goto/buy_homepod/homepod",
+    "label": "Shop HomePod",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_homepod/homepod_mini",
+    "url": "https://www.apple.com/us/shop/goto/buy_homepod/homepod_mini",
+    "label": "Shop HomePod mini",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_ipad",
+    "url": "https://www.apple.com/us/shop/goto/buy_ipad",
+    "label": "Shop iPad",
+    "area": "header"
+  },
+  {
+    "path": "/us/shop/goto/buy_ipad/ipad_air",
+    "url": "https://www.apple.com/us/shop/goto/buy_ipad/ipad_air",
+    "label": "Buy",
+    "area": "body"
+  },
+  {
+    "path": "/us/shop/goto/buy_iphone",
+    "url": "https://www.apple.com/us/shop/goto/buy_iphone",
+    "label": "iPhone",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_iphone/carrier_offers",
+    "url": "https://www.apple.com/us/shop/goto/buy_iphone/carrier_offers",
+    "label": "Carrier Deals at Apple",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_iphone/iphone_16",
+    "url": "https://www.apple.com/us/shop/goto/buy_iphone/iphone_16",
+    "label": "iPhone 16",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_mac",
+    "url": "https://www.apple.com/us/shop/goto/buy_mac",
+    "label": "Mac",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_tv/apple_tv_4k",
+    "url": "https://www.apple.com/us/shop/goto/buy_tv/apple_tv_4k",
+    "label": "Shop Apple TV 4K",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_vision",
+    "url": "https://www.apple.com/us/shop/goto/buy_vision",
+    "label": "Apple Vision Pro",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/buy_watch",
+    "url": "https://www.apple.com/us/shop/goto/buy_watch",
+    "label": "Apple Watch",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/educationrouting",
+    "url": "https://www.apple.com/us/shop/goto/educationrouting",
+    "label": "Education",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/engraving",
+    "url": "https://www.apple.com/us/shop/goto/engraving",
+    "label": "Learn more about engraving your iPad",
+    "area": "body"
+  },
+  {
+    "path": "/us/shop/goto/eppstore/veteransandmilitary",
+    "url": "https://www.apple.com/us/shop/goto/eppstore/veteransandmilitary",
+    "label": "Veterans and Military",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/giftcards",
+    "url": "https://www.apple.com/us/shop/goto/giftcards",
+    "label": "Gift Cards",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/help",
+    "url": "https://www.apple.com/us/shop/goto/help",
+    "label": "Shopping Help",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/help/sales_refunds",
+    "url": "https://www.apple.com/us/shop/goto/help/sales_refunds",
+    "label": "Sales and Refunds",
+    "area": "footer"
+  },
+  {
+    "path": "/us/shop/goto/ipad_pro/select",
+    "url": "https://www.apple.com/us/shop/goto/ipad_pro/select",
+    "label": "Buy iPad Pro",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/ipad/accessories",
+    "url": "https://www.apple.com/us/shop/goto/ipad/accessories",
+    "label": "iPad Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/iphone/accessories",
+    "url": "https://www.apple.com/us/shop/goto/iphone/accessories",
+    "label": "iPhone Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/mac/accessories",
+    "url": "https://www.apple.com/us/shop/goto/mac/accessories",
+    "label": "Mac Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/order/list",
+    "url": "https://www.apple.com/us/shop/goto/order/list",
+    "label": "Order Status",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/payment_plan",
+    "url": "https://www.apple.com/us/shop/goto/payment_plan",
+    "label": "Financing",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/personal_setup",
+    "url": "https://www.apple.com/us/shop/goto/personal_setup",
+    "label": "Personal Setup",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/product/MW5G3",
+    "url": "https://www.apple.com/us/shop/goto/product/MW5G3",
+    "label": "Shop Siri Remote",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/shipping_pickup",
+    "url": "https://www.apple.com/us/shop/goto/shipping_pickup",
+    "label": "Learn more, delivery and pickup options",
+    "area": "body"
+  },
+  {
+    "path": "/us/shop/goto/smart_home/accessories",
+    "url": "https://www.apple.com/us/shop/goto/smart_home/accessories",
+    "label": "TV & Home Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/special_deals",
+    "url": "https://www.apple.com/us/shop/goto/special_deals",
+    "label": "Certified Refurbished",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/store",
+    "url": "https://www.apple.com/us/shop/goto/store",
+    "label": "Store",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/trade_in",
+    "url": "https://www.apple.com/us/shop/goto/trade_in",
+    "label": "Apple Trade In",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/vision/accessories",
+    "url": "https://www.apple.com/us/shop/goto/vision/accessories",
+    "label": "Apple Vision Pro Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/watch/accessories",
+    "url": "https://www.apple.com/us/shop/goto/watch/accessories",
+    "label": "Apple Watch Accessories",
+    "area": "nav"
+  },
+  {
+    "path": "/us/shop/goto/watch/bands",
+    "url": "https://www.apple.com/us/shop/goto/watch/bands",
+    "label": "Apple Watch Bands",
+    "area": "nav"
+  },
+  {
+    "path": "/wallet",
+    "url": "https://www.apple.com/wallet",
+    "label": "Wallet, Pay, Card",
+    "area": "nav"
+  },
+  {
+    "path": "/watch",
+    "url": "https://www.apple.com/watch",
+    "label": "Watch",
+    "area": "nav"
+  },
+  {
+    "path": "/watch/compare",
+    "url": "https://www.apple.com/watch/compare",
+    "label": "Compare Watch",
+    "area": "nav"
+  },
+  {
+    "path": "/watch/why-apple-watch",
+    "url": "https://www.apple.com/watch/why-apple-watch",
+    "label": "Why Apple Watch",
+    "area": "nav"
+  }
+]
