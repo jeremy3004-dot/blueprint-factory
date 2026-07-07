@@ -1,0 +1,1328 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.blacktomato.com/",
+    "label": "Visit our UK site",
+    "area": "header"
+  },
+  {
+    "path": "/about-us",
+    "url": "https://www.blacktomato.com/about-us",
+    "label": "About",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/5-reasons-to-book-with-us",
+    "url": "https://www.blacktomato.com/about-us/5-reasons-to-book-with-us",
+    "label": "5 reasons to book with us",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/awards",
+    "url": "https://www.blacktomato.com/about-us/awards",
+    "label": "Our Awards",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/client-testimonials",
+    "url": "https://www.blacktomato.com/about-us/client-testimonials",
+    "label": "Client testimonials",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/how-it-all-works",
+    "url": "https://www.blacktomato.com/about-us/how-it-all-works",
+    "label": "How it all works",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/our-people",
+    "url": "https://www.blacktomato.com/about-us/our-people",
+    "label": "Our team",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/press",
+    "url": "https://www.blacktomato.com/about-us/press",
+    "label": "In the press",
+    "area": "header"
+  },
+  {
+    "path": "/about-us/why-not-just-do-it-yourself",
+    "url": "https://www.blacktomato.com/about-us/why-not-just-do-it-yourself",
+    "label": "Why not just do it yourself?",
+    "area": "header"
+  },
+  {
+    "path": "/agatha-christie",
+    "url": "https://www.blacktomato.com/agatha-christie",
+    "label": "Agatha Christie",
+    "area": "header"
+  },
+  {
+    "path": "/auberge-itineraries",
+    "url": "https://www.blacktomato.com/auberge-itineraries",
+    "label": "Take the Open Road",
+    "area": "header"
+  },
+  {
+    "path": "/auberge-road-trips",
+    "url": "https://www.blacktomato.com/auberge-road-trips",
+    "label": "Remarkable Drives of Discovery",
+    "area": "header"
+  },
+  {
+    "path": "/blink",
+    "url": "https://www.blacktomato.com/blink",
+    "label": "Blink",
+    "area": "header"
+  },
+  {
+    "path": "/boredom",
+    "url": "https://www.blacktomato.com/boredom",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/bring-it-back",
+    "url": "https://www.blacktomato.com/bring-it-back",
+    "label": "Bring it Back",
+    "area": "header"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.blacktomato.com/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/cookie-policy",
+    "url": "https://www.blacktomato.com/cookie-policy",
+    "label": "cookie policy page",
+    "area": "header"
+  },
+  {
+    "path": "/destinations",
+    "url": "https://www.blacktomato.com/destinations",
+    "label": "Destinations",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/africa",
+    "url": "https://www.blacktomato.com/destinations/africa",
+    "label": "Africa",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/anguilla",
+    "url": "https://www.blacktomato.com/destinations/anguilla",
+    "label": "Anguilla",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/antarctica",
+    "url": "https://www.blacktomato.com/destinations/antarctica",
+    "label": "Antarctica",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/antigua",
+    "url": "https://www.blacktomato.com/destinations/antigua",
+    "label": "Antigua",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/arctic",
+    "url": "https://www.blacktomato.com/destinations/arctic",
+    "label": "Arctic Circle",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/argentina",
+    "url": "https://www.blacktomato.com/destinations/argentina",
+    "label": "Argentina",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/asia",
+    "url": "https://www.blacktomato.com/destinations/asia",
+    "label": "Asia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/australasia",
+    "url": "https://www.blacktomato.com/destinations/australasia",
+    "label": "Australasia & Oceania",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/australia",
+    "url": "https://www.blacktomato.com/destinations/australia",
+    "label": "Australia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/austria",
+    "url": "https://www.blacktomato.com/destinations/austria",
+    "label": "Austria",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/barbados",
+    "url": "https://www.blacktomato.com/destinations/barbados",
+    "label": "Barbados",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/belgium",
+    "url": "https://www.blacktomato.com/destinations/belgium",
+    "label": "Belgium",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/belize",
+    "url": "https://www.blacktomato.com/destinations/belize",
+    "label": "Belize",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/bhutan",
+    "url": "https://www.blacktomato.com/destinations/bhutan",
+    "label": "Bhutan",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/bolivia",
+    "url": "https://www.blacktomato.com/destinations/bolivia",
+    "label": "Bolivia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/borneo",
+    "url": "https://www.blacktomato.com/destinations/borneo",
+    "label": "Borneo",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/botswana",
+    "url": "https://www.blacktomato.com/destinations/botswana",
+    "label": "Botswana",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/brazil",
+    "url": "https://www.blacktomato.com/destinations/brazil",
+    "label": "Brazil",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/brazil/the-rhythm-of-water",
+    "url": "https://www.blacktomato.com/destinations/brazil/the-rhythm-of-water",
+    "label": "The Rhythm of water",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/british-virgin-islands",
+    "url": "https://www.blacktomato.com/destinations/british-virgin-islands",
+    "label": "The British Virgin Islands",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/cambodia",
+    "url": "https://www.blacktomato.com/destinations/cambodia",
+    "label": "Cambodia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/canada",
+    "url": "https://www.blacktomato.com/destinations/canada",
+    "label": "Canada",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/caribbean",
+    "url": "https://www.blacktomato.com/destinations/caribbean",
+    "label": "Caribbean",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/chile",
+    "url": "https://www.blacktomato.com/destinations/chile",
+    "label": "Chile",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/china-asia",
+    "url": "https://www.blacktomato.com/destinations/china-asia",
+    "label": "China",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/colombia",
+    "url": "https://www.blacktomato.com/destinations/colombia",
+    "label": "Colombia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/congo",
+    "url": "https://www.blacktomato.com/destinations/congo",
+    "label": "Congo",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/costarica",
+    "url": "https://www.blacktomato.com/destinations/costarica",
+    "label": "Costa Rica",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/croatia",
+    "url": "https://www.blacktomato.com/destinations/croatia",
+    "label": "Croatia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/cuba",
+    "url": "https://www.blacktomato.com/destinations/cuba",
+    "label": "Cuba",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/czech-republic",
+    "url": "https://www.blacktomato.com/destinations/czech-republic",
+    "label": "Czech Republic",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/denmark",
+    "url": "https://www.blacktomato.com/destinations/denmark",
+    "label": "Denmark",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/ecuador-the-galapagos",
+    "url": "https://www.blacktomato.com/destinations/ecuador-the-galapagos",
+    "label": "Ecuador & the Galapagos",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/ecuador-the-galapagos/journey-into-nature",
+    "url": "https://www.blacktomato.com/destinations/ecuador-the-galapagos/journey-into-nature",
+    "label": "Ecuador & Galápagos: a journey into nature",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/egypt",
+    "url": "https://www.blacktomato.com/destinations/egypt",
+    "label": "Egypt",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/england",
+    "url": "https://www.blacktomato.com/destinations/england",
+    "label": "England",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/ethiopia",
+    "url": "https://www.blacktomato.com/destinations/ethiopia",
+    "label": "Ethiopia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/europe",
+    "url": "https://www.blacktomato.com/destinations/europe",
+    "label": "Europe",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/fiji",
+    "url": "https://www.blacktomato.com/destinations/fiji",
+    "label": "Fiji",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/finland",
+    "url": "https://www.blacktomato.com/destinations/finland",
+    "label": "Finland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/france",
+    "url": "https://www.blacktomato.com/destinations/france",
+    "label": "France",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/france/the-lost-generation",
+    "url": "https://www.blacktomato.com/destinations/france/the-lost-generation",
+    "label": "The Lost Generation",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/french-polynesia",
+    "url": "https://www.blacktomato.com/destinations/french-polynesia",
+    "label": "French Polynesia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/georgia",
+    "url": "https://www.blacktomato.com/destinations/georgia",
+    "label": "Georgia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/germany",
+    "url": "https://www.blacktomato.com/destinations/germany",
+    "label": "Germany",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/greece",
+    "url": "https://www.blacktomato.com/destinations/greece",
+    "label": "Greece",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/greece/family-getaway-to-greece",
+    "url": "https://www.blacktomato.com/destinations/greece/family-getaway-to-greece",
+    "label": "Athens, Mykonos and Crete: A Luxury Family Discovery in Greece",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/greenland",
+    "url": "https://www.blacktomato.com/destinations/greenland",
+    "label": "Greenland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/grenada",
+    "url": "https://www.blacktomato.com/destinations/grenada",
+    "label": "Grenada",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/guatemala",
+    "url": "https://www.blacktomato.com/destinations/guatemala",
+    "label": "Guatemala",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/hungary",
+    "url": "https://www.blacktomato.com/destinations/hungary",
+    "label": "Hungary",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/iceland",
+    "url": "https://www.blacktomato.com/destinations/iceland",
+    "label": "Iceland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/iceland/a-reykjavik-weekend-iceland",
+    "url": "https://www.blacktomato.com/destinations/iceland/a-reykjavik-weekend-iceland",
+    "label": "Iceland: A Luxury Trip Chasing the Northern Lights",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/india",
+    "url": "https://www.blacktomato.com/destinations/india",
+    "label": "India",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/indian-ocean",
+    "url": "https://www.blacktomato.com/destinations/indian-ocean",
+    "label": "Indian Ocean",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/indian-subcontinent",
+    "url": "https://www.blacktomato.com/destinations/indian-subcontinent",
+    "label": "Indian Subcontinent",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/indonesia",
+    "url": "https://www.blacktomato.com/destinations/indonesia",
+    "label": "Indonesia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/ireland",
+    "url": "https://www.blacktomato.com/destinations/ireland",
+    "label": "Ireland & Northern Ireland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/israel",
+    "url": "https://www.blacktomato.com/destinations/israel",
+    "label": "Israel",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/italy",
+    "url": "https://www.blacktomato.com/destinations/italy",
+    "label": "Italy",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/italy/rome-florence-and-venice",
+    "url": "https://www.blacktomato.com/destinations/italy/rome-florence-and-venice",
+    "label": "Highlights of Italy: A luxury holiday in Rome, Florence & Venice",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/jamaica",
+    "url": "https://www.blacktomato.com/destinations/jamaica",
+    "label": "Jamaica",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/japan",
+    "url": "https://www.blacktomato.com/destinations/japan",
+    "label": "Japan",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/japan/tokyo-learn-the-way-of-the-ninja",
+    "url": "https://www.blacktomato.com/destinations/japan/tokyo-learn-the-way-of-the-ninja",
+    "label": "Tokyo & Kyoto: A Japan family holiday",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/jordan",
+    "url": "https://www.blacktomato.com/destinations/jordan",
+    "label": "Jordan",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/kenya",
+    "url": "https://www.blacktomato.com/destinations/kenya",
+    "label": "Kenya",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/kenya/ultimate-family-safari",
+    "url": "https://www.blacktomato.com/destinations/kenya/ultimate-family-safari",
+    "label": "Kenya: The Ultimate Family Safari",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/laos",
+    "url": "https://www.blacktomato.com/destinations/laos",
+    "label": "Laos",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/latin-america",
+    "url": "https://www.blacktomato.com/destinations/latin-america",
+    "label": "Latin America",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/lithuania",
+    "url": "https://www.blacktomato.com/destinations/lithuania",
+    "label": "Lithuania",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/macau",
+    "url": "https://www.blacktomato.com/destinations/macau",
+    "label": "Macau",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/madagascar",
+    "url": "https://www.blacktomato.com/destinations/madagascar",
+    "label": "Madagascar",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/malawi",
+    "url": "https://www.blacktomato.com/destinations/malawi",
+    "label": "Malawi",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/malaysia",
+    "url": "https://www.blacktomato.com/destinations/malaysia",
+    "label": "Malaysia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/maldives",
+    "url": "https://www.blacktomato.com/destinations/maldives",
+    "label": "The Maldives",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/mauritius",
+    "url": "https://www.blacktomato.com/destinations/mauritius",
+    "label": "Mauritius",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/mexico",
+    "url": "https://www.blacktomato.com/destinations/mexico",
+    "label": "Mexico",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/middle-east",
+    "url": "https://www.blacktomato.com/destinations/middle-east",
+    "label": "Middle East",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/mongolia",
+    "url": "https://www.blacktomato.com/destinations/mongolia",
+    "label": "Mongolia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/montenegro",
+    "url": "https://www.blacktomato.com/destinations/montenegro",
+    "label": "Montenegro",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/morocco",
+    "url": "https://www.blacktomato.com/destinations/morocco",
+    "label": "Morocco",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/morocco/a-journey-into-morocco",
+    "url": "https://www.blacktomato.com/destinations/morocco/a-journey-into-morocco",
+    "label": "A Journey into Morocco",
+    "area": "body"
+  },
+  {
+    "path": "/destinations/mozambique",
+    "url": "https://www.blacktomato.com/destinations/mozambique",
+    "label": "Mozambique",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/mustique",
+    "url": "https://www.blacktomato.com/destinations/mustique",
+    "label": "Mustique",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/myanmar",
+    "url": "https://www.blacktomato.com/destinations/myanmar",
+    "label": "Myanmar",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/namibia",
+    "url": "https://www.blacktomato.com/destinations/namibia",
+    "label": "Namibia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/nepal",
+    "url": "https://www.blacktomato.com/destinations/nepal",
+    "label": "Nepal",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/netherlands",
+    "url": "https://www.blacktomato.com/destinations/netherlands",
+    "label": "Netherlands",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/newzealand",
+    "url": "https://www.blacktomato.com/destinations/newzealand",
+    "label": "New Zealand",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/nicaragua",
+    "url": "https://www.blacktomato.com/destinations/nicaragua",
+    "label": "Nicaragua",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/north-america",
+    "url": "https://www.blacktomato.com/destinations/north-america",
+    "label": "North America",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/norway",
+    "url": "https://www.blacktomato.com/destinations/norway",
+    "label": "Norway",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/oman",
+    "url": "https://www.blacktomato.com/destinations/oman",
+    "label": "Oman",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/panama",
+    "url": "https://www.blacktomato.com/destinations/panama",
+    "label": "Panama",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/papua-new-guinea",
+    "url": "https://www.blacktomato.com/destinations/papua-new-guinea",
+    "label": "Papua New Guinea",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/peru",
+    "url": "https://www.blacktomato.com/destinations/peru",
+    "label": "Peru",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/philippines",
+    "url": "https://www.blacktomato.com/destinations/philippines",
+    "label": "The Philippines",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/portugal",
+    "url": "https://www.blacktomato.com/destinations/portugal",
+    "label": "Portugal",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/qatar",
+    "url": "https://www.blacktomato.com/destinations/qatar",
+    "label": "Qatar",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/reunion-island",
+    "url": "https://www.blacktomato.com/destinations/reunion-island",
+    "label": "Réunion Island",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/romania",
+    "url": "https://www.blacktomato.com/destinations/romania",
+    "label": "Romania",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/rwanda",
+    "url": "https://www.blacktomato.com/destinations/rwanda",
+    "label": "Rwanda",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/scotland",
+    "url": "https://www.blacktomato.com/destinations/scotland",
+    "label": "Scotland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/seychelles",
+    "url": "https://www.blacktomato.com/destinations/seychelles",
+    "label": "The Seychelles",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/singapore",
+    "url": "https://www.blacktomato.com/destinations/singapore",
+    "label": "Singapore",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/slovenia",
+    "url": "https://www.blacktomato.com/destinations/slovenia",
+    "label": "Slovenia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/south-east-asia",
+    "url": "https://www.blacktomato.com/destinations/south-east-asia",
+    "label": "South East Asia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/south-korea",
+    "url": "https://www.blacktomato.com/destinations/south-korea",
+    "label": "South Korea",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/south-pacific",
+    "url": "https://www.blacktomato.com/destinations/south-pacific",
+    "label": "South Pacific",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/southafrica",
+    "url": "https://www.blacktomato.com/destinations/southafrica",
+    "label": "South Africa",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/spain",
+    "url": "https://www.blacktomato.com/destinations/spain",
+    "label": "Spain",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/sri-lanka",
+    "url": "https://www.blacktomato.com/destinations/sri-lanka",
+    "label": "Sri Lanka",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/st-barths",
+    "url": "https://www.blacktomato.com/destinations/st-barths",
+    "label": "St Barths",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/st-lucia",
+    "url": "https://www.blacktomato.com/destinations/st-lucia",
+    "label": "St Lucia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/st-vincent-and-the-grenadines",
+    "url": "https://www.blacktomato.com/destinations/st-vincent-and-the-grenadines",
+    "label": "St Vincent and the Grenadines",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/sweden",
+    "url": "https://www.blacktomato.com/destinations/sweden",
+    "label": "Sweden",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/switzerland",
+    "url": "https://www.blacktomato.com/destinations/switzerland",
+    "label": "Switzerland",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/taiwan",
+    "url": "https://www.blacktomato.com/destinations/taiwan",
+    "label": "Taiwan",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/tanzania",
+    "url": "https://www.blacktomato.com/destinations/tanzania",
+    "label": "Tanzania & Zanzibar",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/thailand",
+    "url": "https://www.blacktomato.com/destinations/thailand",
+    "label": "Thailand",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/the-bahamas",
+    "url": "https://www.blacktomato.com/destinations/the-bahamas",
+    "label": "Bahamas",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/the-cook-islands",
+    "url": "https://www.blacktomato.com/destinations/the-cook-islands",
+    "label": "The Cook Islands",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/turkey",
+    "url": "https://www.blacktomato.com/destinations/turkey",
+    "label": "Turkey",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/turks-and-caicos",
+    "url": "https://www.blacktomato.com/destinations/turks-and-caicos",
+    "label": "Turks and Caicos",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/uae",
+    "url": "https://www.blacktomato.com/destinations/uae",
+    "label": "The United Arab Emirates",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/uganda",
+    "url": "https://www.blacktomato.com/destinations/uganda",
+    "label": "Uganda",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/united-kingdom-ireland",
+    "url": "https://www.blacktomato.com/destinations/united-kingdom-ireland",
+    "label": "UK",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/uruguay",
+    "url": "https://www.blacktomato.com/destinations/uruguay",
+    "label": "Uruguay",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/usa",
+    "url": "https://www.blacktomato.com/destinations/usa",
+    "label": "The USA",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/vietnam",
+    "url": "https://www.blacktomato.com/destinations/vietnam",
+    "label": "Vietnam",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/zambia",
+    "url": "https://www.blacktomato.com/destinations/zambia",
+    "label": "Zambia",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/zimbabwe",
+    "url": "https://www.blacktomato.com/destinations/zimbabwe",
+    "label": "Zimbabwe",
+    "area": "header"
+  },
+  {
+    "path": "/drone-the-world",
+    "url": "https://www.blacktomato.com/drone-the-world",
+    "label": "Drone the World",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types",
+    "url": "https://www.blacktomato.com/experience-types",
+    "label": "Experiences",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/adventure-holidays",
+    "url": "https://www.blacktomato.com/experience-types/adventure-holidays",
+    "label": "Adventure Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/beach-holidays-2",
+    "url": "https://www.blacktomato.com/experience-types/beach-holidays-2",
+    "label": "Beach Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/couples-holidays",
+    "url": "https://www.blacktomato.com/experience-types/couples-holidays",
+    "label": "Couples Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/eclipse-travel",
+    "url": "https://www.blacktomato.com/experience-types/eclipse-travel",
+    "label": "Eclipse Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/family-holidays",
+    "url": "https://www.blacktomato.com/experience-types/family-holidays",
+    "label": "Family Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/family-holidays/teen-travel",
+    "url": "https://www.blacktomato.com/experience-types/family-holidays/teen-travel",
+    "label": "Travel With Teens",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/family-holidays/travel-grown-up-family",
+    "url": "https://www.blacktomato.com/experience-types/family-holidays/travel-grown-up-family",
+    "label": "Grown Up Family Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/family-holidays/travel-multi-generational-family",
+    "url": "https://www.blacktomato.com/experience-types/family-holidays/travel-multi-generational-family",
+    "label": "Multi Generational Trips",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/food-travel",
+    "url": "https://www.blacktomato.com/experience-types/food-travel",
+    "label": "Food Travel",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/luxury-anniversary-trips",
+    "url": "https://www.blacktomato.com/experience-types/luxury-anniversary-trips",
+    "label": "Anniversary Trips",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/luxury-group-holidays",
+    "url": "https://www.blacktomato.com/experience-types/luxury-group-holidays",
+    "label": "Group Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/luxury-honeymoons",
+    "url": "https://www.blacktomato.com/experience-types/luxury-honeymoons",
+    "label": "Honeymoons",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/luxury-train-travel",
+    "url": "https://www.blacktomato.com/experience-types/luxury-train-travel",
+    "label": "Train Travel",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/remote-destinations",
+    "url": "https://www.blacktomato.com/experience-types/remote-destinations",
+    "label": "Remote Destinations",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/safari-holidays",
+    "url": "https://www.blacktomato.com/experience-types/safari-holidays",
+    "label": "Safari Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/slow-travel-holidays",
+    "url": "https://www.blacktomato.com/experience-types/slow-travel-holidays",
+    "label": "Slow Travel",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/solo-holidays",
+    "url": "https://www.blacktomato.com/experience-types/solo-holidays",
+    "label": "Solo Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/experience-types/unusual-holidays",
+    "url": "https://www.blacktomato.com/experience-types/unusual-holidays",
+    "label": "Unusual Holidays",
+    "area": "header"
+  },
+  {
+    "path": "/faq",
+    "url": "https://www.blacktomato.com/faq",
+    "label": "Frequently Asked Questions",
+    "area": "footer"
+  },
+  {
+    "path": "/feelings-engine",
+    "url": "https://www.blacktomato.com/feelings-engine",
+    "label": "The Feelings Engine",
+    "area": "header"
+  },
+  {
+    "path": "/field-trip",
+    "url": "https://www.blacktomato.com/field-trip",
+    "label": "Field Trip",
+    "area": "header"
+  },
+  {
+    "path": "/footsteps",
+    "url": "https://www.blacktomato.com/footsteps",
+    "label": "Footsteps",
+    "area": "header"
+  },
+  {
+    "path": "/get-in-touch",
+    "url": "https://www.blacktomato.com/get-in-touch",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/get-lost",
+    "url": "https://www.blacktomato.com/get-lost",
+    "label": "Get Lost",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations",
+    "url": "https://www.blacktomato.com/inspirations",
+    "label": "Inspirations",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/guides",
+    "url": "https://www.blacktomato.com/inspirations/category/guides",
+    "label": "Guides",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/news",
+    "url": "https://www.blacktomato.com/inspirations/category/news",
+    "label": "News",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/podcast",
+    "url": "https://www.blacktomato.com/inspirations/category/podcast",
+    "label": "Podcast",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/stories",
+    "url": "https://www.blacktomato.com/inspirations/category/stories",
+    "label": "Stories",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/trends",
+    "url": "https://www.blacktomato.com/inspirations/category/trends",
+    "label": "Trends",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/category/videos",
+    "url": "https://www.blacktomato.com/inspirations/category/videos",
+    "label": "Videos",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/episode-10-ash-bhardwaj",
+    "url": "https://www.blacktomato.com/inspirations/episode-10-ash-bhardwaj",
+    "label": "Episode 10 - Ash Bhardwaj",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/episode-11-unlocking-the-emotional-journey-of-travel-with-philippe-zuber-ceo-of-kerzner",
+    "url": "https://www.blacktomato.com/inspirations/episode-11-unlocking-the-emotional-journey-of-travel-with-philippe-zuber-ceo-of-kerzner",
+    "label": "Episode 11 - Philippe Zuber",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/episode-12-jeremy-langmead-curiosity-luxury-and-the-joy-of-getting-lost",
+    "url": "https://www.blacktomato.com/inspirations/episode-12-jeremy-langmead-curiosity-luxury-and-the-joy-of-getting-lost",
+    "label": "Episode 12 - Jeremy Langmead",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/episode-13-anant-sharma-gift-of-boredom",
+    "url": "https://www.blacktomato.com/inspirations/episode-13-anant-sharma-gift-of-boredom",
+    "label": "Episode 13 - Anant Sharma",
+    "area": "header"
+  },
+  {
+    "path": "/inspirations/our-values-and-what-they-mean-to-us",
+    "url": "https://www.blacktomato.com/inspirations/our-values-and-what-they-mean-to-us",
+    "label": "Watch the film",
+    "area": "body"
+  },
+  {
+    "path": "/inspirations/ultimate-guide-to-luxury-travel",
+    "url": "https://www.blacktomato.com/inspirations/ultimate-guide-to-luxury-travel",
+    "label": "Continue Reading",
+    "area": "body"
+  },
+  {
+    "path": "/james-bond",
+    "url": "https://www.blacktomato.com/james-bond",
+    "label": "Black Tomato x 007",
+    "area": "header"
+  },
+  {
+    "path": "/make-an-enquiry",
+    "url": "https://www.blacktomato.com/make-an-enquiry",
+    "label": "Enquire Now",
+    "area": "header"
+  },
+  {
+    "path": "/moment",
+    "url": "https://www.blacktomato.com/moment",
+    "label": "See You in the Moment",
+    "area": "header"
+  },
+  {
+    "path": "/most-popular",
+    "url": "https://www.blacktomato.com/most-popular",
+    "label": "Most Popular",
+    "area": "header"
+  },
+  {
+    "path": "/our-booking-conditions",
+    "url": "https://www.blacktomato.com/our-booking-conditions",
+    "label": "Booking conditions",
+    "area": "footer"
+  },
+  {
+    "path": "/our-privacy-policy",
+    "url": "https://www.blacktomato.com/our-privacy-policy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/press-room",
+    "url": "https://www.blacktomato.com/press-room",
+    "label": "Press Room",
+    "area": "footer"
+  },
+  {
+    "path": "/proposal-service",
+    "url": "https://www.blacktomato.com/proposal-service",
+    "label": "Proposal Service",
+    "area": "header"
+  },
+  {
+    "path": "/pursuit-of-feeling",
+    "url": "https://www.blacktomato.com/pursuit-of-feeling",
+    "label": "Pursuit of Feeling",
+    "area": "header"
+  },
+  {
+    "path": "/regenerative-travel",
+    "url": "https://www.blacktomato.com/regenerative-travel",
+    "label": "Regenerative travel",
+    "area": "header"
+  },
+  {
+    "path": "/set-jetting",
+    "url": "https://www.blacktomato.com/set-jetting",
+    "label": "Set Jetting",
+    "area": "header"
+  },
+  {
+    "path": "/sitemap",
+    "url": "https://www.blacktomato.com/sitemap",
+    "label": "Sitemap",
+    "area": "footer"
+  },
+  {
+    "path": "/story",
+    "url": "https://www.blacktomato.com/story",
+    "label": "Take me on a Story",
+    "area": "header"
+  },
+  {
+    "path": "/tasting-notes",
+    "url": "https://www.blacktomato.com/tasting-notes",
+    "label": "Tasting Notes",
+    "area": "header"
+  },
+  {
+    "path": "/the-great-american-view",
+    "url": "https://www.blacktomato.com/the-great-american-view",
+    "label": "The Great American View",
+    "area": "header"
+  },
+  {
+    "path": "/the-trip-finder",
+    "url": "https://www.blacktomato.com/the-trip-finder",
+    "label": "Trip finder",
+    "area": "header"
+  },
+  {
+    "path": "/the-trip-finder/results",
+    "url": "https://www.blacktomato.com/the-trip-finder/results",
+    "label": "Trip Finder",
+    "area": "header"
+  },
+  {
+    "path": "/travel-insurance",
+    "url": "https://www.blacktomato.com/travel-insurance",
+    "label": "Travel Insurance",
+    "area": "footer"
+  },
+  {
+    "path": "/us",
+    "url": "https://www.blacktomato.com/us",
+    "label": "Visit our US site",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now",
+    "url": "https://www.blacktomato.com/where-travel-now",
+    "label": "By Month",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/april",
+    "url": "https://www.blacktomato.com/where-travel-now/april",
+    "label": "April",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/august",
+    "url": "https://www.blacktomato.com/where-travel-now/august",
+    "label": "August",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/december",
+    "url": "https://www.blacktomato.com/where-travel-now/december",
+    "label": "December",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/february",
+    "url": "https://www.blacktomato.com/where-travel-now/february",
+    "label": "February",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/january",
+    "url": "https://www.blacktomato.com/where-travel-now/january",
+    "label": "January",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/july",
+    "url": "https://www.blacktomato.com/where-travel-now/july",
+    "label": "July",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/june",
+    "url": "https://www.blacktomato.com/where-travel-now/june",
+    "label": "June",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/march",
+    "url": "https://www.blacktomato.com/where-travel-now/march",
+    "label": "March",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/may",
+    "url": "https://www.blacktomato.com/where-travel-now/may",
+    "label": "May",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/november",
+    "url": "https://www.blacktomato.com/where-travel-now/november",
+    "label": "November",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/october",
+    "url": "https://www.blacktomato.com/where-travel-now/october",
+    "label": "October",
+    "area": "header"
+  },
+  {
+    "path": "/where-travel-now/september",
+    "url": "https://www.blacktomato.com/where-travel-now/september",
+    "label": "September",
+    "area": "header"
+  }
+]
