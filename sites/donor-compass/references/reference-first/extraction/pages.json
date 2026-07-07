@@ -1,0 +1,518 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.compass.com/",
+    "label": "Compass",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.compass.com/about",
+    "label": "About Us",
+    "area": "footer"
+  },
+  {
+    "path": "/about/offices",
+    "url": "https://www.compass.com/about/offices",
+    "label": "Offices",
+    "area": "footer"
+  },
+  {
+    "path": "/about/team",
+    "url": "https://www.compass.com/about/team",
+    "label": "Team",
+    "area": "footer"
+  },
+  {
+    "path": "/agents",
+    "url": "https://www.compass.com/agents",
+    "label": "Find an Agent",
+    "area": "nav"
+  },
+  {
+    "path": "/agents-compass",
+    "url": "https://www.compass.com/agents-compass",
+    "label": "Join as an Agent",
+    "area": "nav"
+  },
+  {
+    "path": "/agents-compass/sales-manager",
+    "url": "https://www.compass.com/agents-compass/sales-manager",
+    "label": "Sales Leadership",
+    "area": "footer"
+  },
+  {
+    "path": "/calculators/mortgage-calculator",
+    "url": "https://www.compass.com/calculators/mortgage-calculator",
+    "label": "Mortgage Calculator",
+    "area": "footer"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.compass.com/careers",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/coming-soon",
+    "url": "https://www.compass.com/coming-soon",
+    "label": "Compass Coming Soon",
+    "area": "footer"
+  },
+  {
+    "path": "/coming-soon/listings",
+    "url": "https://www.compass.com/coming-soon/listings",
+    "label": "Coming Soon",
+    "area": "nav"
+  },
+  {
+    "path": "/commercial",
+    "url": "https://www.compass.com/commercial",
+    "label": "Commercial",
+    "area": "footer"
+  },
+  {
+    "path": "/compass-cares",
+    "url": "https://www.compass.com/compass-cares",
+    "label": "Compass Cares",
+    "area": "footer"
+  },
+  {
+    "path": "/compass-listings",
+    "url": "https://www.compass.com/compass-listings",
+    "label": "Compass Listings",
+    "area": "nav"
+  },
+  {
+    "path": "/concierge",
+    "url": "https://www.compass.com/concierge",
+    "label": "Concierge",
+    "area": "footer"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.compass.com/contact",
+    "label": "Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/development",
+    "url": "https://www.compass.com/development",
+    "label": "Current Developments",
+    "area": "nav"
+  },
+  {
+    "path": "/diversity-inclusion",
+    "url": "https://www.compass.com/diversity-inclusion",
+    "label": "Diversity & Inclusion",
+    "area": "footer"
+  },
+  {
+    "path": "/for-rent",
+    "url": "https://www.compass.com/for-rent",
+    "label": "Rent",
+    "area": "nav"
+  },
+  {
+    "path": "/homedetails/1271-Bushwick-Ave-Brooklyn-NY-11207/20QOOP_pid",
+    "url": "https://www.compass.com/homedetails/1271-Bushwick-Ave-Brooklyn-NY-11207/20QOOP_pid",
+    "label": "1271 Bushwick AvenueBushwick",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/143-Milton-St-Brooklyn-NY-11222/20T41H_pid",
+    "url": "https://www.compass.com/homedetails/143-Milton-St-Brooklyn-NY-11222/20T41H_pid",
+    "label": "143 Milton StreetGreenpoint",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/150-Joralemon-St-Unit-7A-Brooklyn-NY-11201/2051X0_pid",
+    "url": "https://www.compass.com/homedetails/150-Joralemon-St-Unit-7A-Brooklyn-NY-11201/2051X0_pid",
+    "label": "150 Joralemon Street, Unit 7ABrooklyn Heights",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/33-Greenwich-Ave-Unit-3G-Manhattan-NY-10014/211379_pid",
+    "url": "https://www.compass.com/homedetails/33-Greenwich-Ave-Unit-3G-Manhattan-NY-10014/211379_pid",
+    "label": "33 Greenwich Avenue, Unit 3GWest Village",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/360-Clinton-Ave-Unit-3S-Brooklyn-NY-11238/20T5XJ_pid",
+    "url": "https://www.compass.com/homedetails/360-Clinton-Ave-Unit-3S-Brooklyn-NY-11238/20T5XJ_pid",
+    "label": "360 Clinton Avenue, Unit 3SClinton Hill",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/415-Leonard-St-Unit-6BC-Brooklyn-NY-11222/20FHUC_pid",
+    "url": "https://www.compass.com/homedetails/415-Leonard-St-Unit-6BC-Brooklyn-NY-11222/20FHUC_pid",
+    "label": "415 Leonard Street, Unit 6BCWilliamsburg",
+    "area": "body"
+  },
+  {
+    "path": "/homedetails/500-W-18th-St-Unit-W9D-Manhattan-NY-10011/20D6HE_pid",
+    "url": "https://www.compass.com/homedetails/500-W-18th-St-Unit-W9D-Manhattan-NY-10011/20D6HE_pid",
+    "label": "500 West 18th Street, Unit W9DChelsea",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale",
+    "url": "https://www.compass.com/homes-for-sale",
+    "label": "Buy",
+    "area": "nav"
+  },
+  {
+    "path": "/homes-for-sale/beverly-hills-ca",
+    "url": "https://www.compass.com/homes-for-sale/beverly-hills-ca",
+    "label": "Beverly Hills Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/brooklyn-ny",
+    "url": "https://www.compass.com/homes-for-sale/brooklyn-ny",
+    "label": "Brooklyn Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/chicago-il",
+    "url": "https://www.compass.com/homes-for-sale/chicago-il",
+    "label": "Chicago Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/los-angeles-ca",
+    "url": "https://www.compass.com/homes-for-sale/los-angeles-ca",
+    "label": "Los Angeles Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/manhattan-ny",
+    "url": "https://www.compass.com/homes-for-sale/manhattan-ny",
+    "label": "Manhattan Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/miami-fl",
+    "url": "https://www.compass.com/homes-for-sale/miami-fl",
+    "label": "Miami Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/naples-fl",
+    "url": "https://www.compass.com/homes-for-sale/naples-fl",
+    "label": "Naples Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/oakland-ca",
+    "url": "https://www.compass.com/homes-for-sale/oakland-ca",
+    "label": "Oakland Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/pasadena-ca",
+    "url": "https://www.compass.com/homes-for-sale/pasadena-ca",
+    "label": "Pasadena Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/philadelphia-pa",
+    "url": "https://www.compass.com/homes-for-sale/philadelphia-pa",
+    "label": "Philadelphia Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/port-st-lucie-fl",
+    "url": "https://www.compass.com/homes-for-sale/port-st-lucie-fl",
+    "label": "Port St. Lucie Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/queens-ny",
+    "url": "https://www.compass.com/homes-for-sale/queens-ny",
+    "label": "Queens Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/sacramento-ca",
+    "url": "https://www.compass.com/homes-for-sale/sacramento-ca",
+    "label": "Sacramento Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/san-antonio-tx",
+    "url": "https://www.compass.com/homes-for-sale/san-antonio-tx",
+    "label": "San Antonio Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/san-diego-ca",
+    "url": "https://www.compass.com/homes-for-sale/san-diego-ca",
+    "label": "San Diego Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/san-francisco-ca",
+    "url": "https://www.compass.com/homes-for-sale/san-francisco-ca",
+    "label": "San Francisco Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/san-jose-ca",
+    "url": "https://www.compass.com/homes-for-sale/san-jose-ca",
+    "label": "San Jose Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/santa-rosa-ca",
+    "url": "https://www.compass.com/homes-for-sale/santa-rosa-ca",
+    "label": "Santa Rosa Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/seattle-wa",
+    "url": "https://www.compass.com/homes-for-sale/seattle-wa",
+    "label": "Seattle Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/homes-for-sale/washington-dc",
+    "url": "https://www.compass.com/homes-for-sale/washington-dc",
+    "label": "Washington DC Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/legal/california-applicant-privacy-rights",
+    "url": "https://www.compass.com/legal/california-applicant-privacy-rights",
+    "label": "Notice for California Applicants",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/california-privacy-notice",
+    "url": "https://www.compass.com/legal/california-privacy-notice",
+    "label": "Your CA Privacy Rights",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/privacy-center",
+    "url": "https://www.compass.com/legal/privacy-center",
+    "label": "Do Not Sell or Share My Personal Information",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/responsible-disclosure",
+    "url": "https://www.compass.com/legal/responsible-disclosure",
+    "label": "Responsible Disclosure",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/scam-avoidance",
+    "url": "https://www.compass.com/legal/scam-avoidance",
+    "label": "Scam Avoidance",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/terms-of-service",
+    "url": "https://www.compass.com/legal/terms-of-service",
+    "label": "Terms of Service",
+    "area": "footer"
+  },
+  {
+    "path": "/legal/trust-center",
+    "url": "https://www.compass.com/legal/trust-center",
+    "label": "Privacy Center",
+    "area": "footer"
+  },
+  {
+    "path": "/neighborhood-guides",
+    "url": "https://www.compass.com/neighborhood-guides",
+    "label": "Neighborhood Guides",
+    "area": "footer"
+  },
+  {
+    "path": "/neighborhood-guides/nyc",
+    "url": "https://www.compass.com/neighborhood-guides/nyc",
+    "label": "View More Neighborhoods",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/carroll-gardens",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/carroll-gardens",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/1cMyMygbXyKAIGcqE4oK22/9eaa0d98c134d7fedeb14694bdfe296c/Carroll-Gardens_Thumb-Large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> Carroll Gardens",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/murray-hill",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/murray-hill",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/3OJTKIXSLeqS8W6EWMGiCy/e348e41114dcdcd2866c9424cada77e0/murray-hill-thumb-large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> Murray Hill",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/soho",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/soho",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/1w7AAoGZ32YUwWI6yEYoM8/33f3de66bb7100bfaa772b74b9a7200e/soho-thumb-large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> SoHo",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/upper-west-side",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/upper-west-side",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/2YxVs4EaKsaUSAcOGq22y0/d479dbadd3d42ace447d5c6ced779d0a/Upper-West_Thumb-Large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> Upper West Side",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/west-village",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/west-village",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/5PJq50CKI0EoOaiiy0IS8M/37cc6b200078dd15c1ec68a08d86756d/West-Village_Thumb-Large_Thumb-Large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> West Village",
+    "area": "body"
+  },
+  {
+    "path": "/neighborhood-guides/nyc/williamsburg",
+    "url": "https://www.compass.com/neighborhood-guides/nyc/williamsburg",
+    "label": "<style> .homepage-featuredGuideImage.lazyload { display: none; } </style> <img class=\"homepage-featuredGuideImage\" src=\"//images.ctfassets.net/ypfe9l9zihcg/1UMva2y6ycuUgICEEoAouQ/a01495288d97a7cef06aefdff927f559/Williamsburg_Thumb_Large_Thumb-Large.jpg?fm=jpg&amp;fl=progressive&amp;q=85\"/> Williamsburg",
+    "area": "body"
+  },
+  {
+    "path": "/newsroom",
+    "url": "https://www.compass.com/newsroom",
+    "label": "Newsroom",
+    "area": "footer"
+  },
+  {
+    "path": "/private-exclusives",
+    "url": "https://www.compass.com/private-exclusives",
+    "label": "Private Exclusives",
+    "area": "nav"
+  },
+  {
+    "path": "/recently-sold",
+    "url": "https://www.compass.com/recently-sold",
+    "label": "Recently Sold Homes",
+    "area": "footer"
+  },
+  {
+    "path": "/research/market-outlook",
+    "url": "https://www.compass.com/research/market-outlook",
+    "label": "Market Outlook",
+    "area": "footer"
+  },
+  {
+    "path": "/se",
+    "url": "https://www.compass.com/se",
+    "label": "Sports & Entertainment",
+    "area": "footer"
+  },
+  {
+    "path": "/sell",
+    "url": "https://www.compass.com/sell",
+    "label": "Sell",
+    "area": "nav"
+  },
+  {
+    "path": "/sitemap",
+    "url": "https://www.compass.com/sitemap",
+    "label": "Sitemap",
+    "area": "footer"
+  },
+  {
+    "path": "/sitemap/az",
+    "url": "https://www.compass.com/sitemap/az",
+    "label": "Arizona Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/ca",
+    "url": "https://www.compass.com/sitemap/ca",
+    "label": "California Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/co",
+    "url": "https://www.compass.com/sitemap/co",
+    "label": "Colorado Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/ct",
+    "url": "https://www.compass.com/sitemap/ct",
+    "label": "Connecticut Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/dc",
+    "url": "https://www.compass.com/sitemap/dc",
+    "label": "DC Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/fl",
+    "url": "https://www.compass.com/sitemap/fl",
+    "label": "Florida Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/ga",
+    "url": "https://www.compass.com/sitemap/ga",
+    "label": "Georgia Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/il",
+    "url": "https://www.compass.com/sitemap/il",
+    "label": "Illinois Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/ma",
+    "url": "https://www.compass.com/sitemap/ma",
+    "label": "Massachusetts Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/md",
+    "url": "https://www.compass.com/sitemap/md",
+    "label": "Maryland Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/nj",
+    "url": "https://www.compass.com/sitemap/nj",
+    "label": "New Jersey Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/ny",
+    "url": "https://www.compass.com/sitemap/ny",
+    "label": "New York Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/pa",
+    "url": "https://www.compass.com/sitemap/pa",
+    "label": "Pennsylvania Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/tn",
+    "url": "https://www.compass.com/sitemap/tn",
+    "label": "Tennessee Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/tx",
+    "url": "https://www.compass.com/sitemap/tx",
+    "label": "Texas Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/va",
+    "url": "https://www.compass.com/sitemap/va",
+    "label": "Virginia Real Estate",
+    "area": "body"
+  },
+  {
+    "path": "/sitemap/wa",
+    "url": "https://www.compass.com/sitemap/wa",
+    "label": "Washington Real Estate",
+    "area": "body"
+  }
+]

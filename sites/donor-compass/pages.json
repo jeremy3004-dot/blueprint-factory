@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/agents",
+      "title": "Find an Agent",
+      "status": "planned"
+    },
+    {
+      "route": "/agents-compass",
+      "title": "Join as an Agent",
+      "status": "planned"
+    },
+    {
+      "route": "/coming-soon/listings",
+      "title": "Coming Soon",
+      "status": "planned"
+    },
+    {
+      "route": "/compass-listings",
+      "title": "Compass Listings",
+      "status": "planned"
+    },
+    {
+      "route": "/development",
+      "title": "Current Developments",
+      "status": "planned"
+    },
+    {
+      "route": "/for-rent",
+      "title": "Rent",
+      "status": "planned"
+    },
+    {
+      "route": "/homes-for-sale",
+      "title": "Buy",
+      "status": "planned"
+    }
+  ]
+}
