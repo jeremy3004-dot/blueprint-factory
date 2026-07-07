@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/about",
+      "title": "Explore charity: water at a glance",
+      "status": "planned"
+    },
+    {
+      "route": "/about/financials",
+      "title": "See our financialsLearn how your gift is being used to bring clean water to people who need it.",
+      "status": "planned"
+    },
+    {
+      "route": "/about/scott-harrison-story",
+      "title": "Meet the founderSee how Scott Harrison's decision to reset his life inspired charity: water.",
+      "status": "planned"
+    },
+    {
+      "route": "/account/login",
+      "title": "Sign in",
+      "status": "planned"
+    },
+    {
+      "route": "/donate/the-spring",
+      "title": "Give monthlyJoin the global community serving people with clean water every month.",
+      "status": "planned"
+    },
+    {
+      "route": "/donate/water-project-sponsorship",
+      "title": "Sponsor a water projectTransform an entire community or school with a gift of $10,000 or more.",
+      "status": "planned"
+    },
+    {
+      "route": "/experience",
+      "title": "Visit the Experience LabExplore humanity’s search for water through virtual reality, holograms, and immersive video.",
+      "status": "planned"
+    }
+  ]
+}

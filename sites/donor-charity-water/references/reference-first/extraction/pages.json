@@ -1,0 +1,194 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.charitywater.org/",
+    "label": "",
+    "area": "nav"
+  },
+  {
+    "path": "/about",
+    "url": "https://www.charitywater.org/about",
+    "label": "Explore charity: water at a glance",
+    "area": "nav"
+  },
+  {
+    "path": "/about/executive-team",
+    "url": "https://www.charitywater.org/about/executive-team",
+    "label": "Meet the executive team",
+    "area": "footer"
+  },
+  {
+    "path": "/about/financials",
+    "url": "https://www.charitywater.org/about/financials",
+    "label": "See our financialsLearn how your gift is being used to bring clean water to people who need it.",
+    "area": "nav"
+  },
+  {
+    "path": "/about/jobs",
+    "url": "https://www.charitywater.org/about/jobs",
+    "label": "Careers",
+    "area": "footer"
+  },
+  {
+    "path": "/about/request-speaker",
+    "url": "https://www.charitywater.org/about/request-speaker",
+    "label": "Request a Speaker",
+    "area": "footer"
+  },
+  {
+    "path": "/about/scott-harrison-story",
+    "url": "https://www.charitywater.org/about/scott-harrison-story",
+    "label": "Meet the founderSee how Scott Harrison's decision to reset his life inspired charity: water.",
+    "area": "nav"
+  },
+  {
+    "path": "/account/login",
+    "url": "https://www.charitywater.org/account/login",
+    "label": "Sign in",
+    "area": "nav"
+  },
+  {
+    "path": "/account/register",
+    "url": "https://www.charitywater.org/account/register",
+    "label": "Create an account",
+    "area": "footer"
+  },
+  {
+    "path": "/advisor-toolkit/advisor",
+    "url": "https://www.charitywater.org/advisor-toolkit/advisor",
+    "label": "Advisors",
+    "area": "footer"
+  },
+  {
+    "path": "/brand-partnerships",
+    "url": "https://www.charitywater.org/brand-partnerships",
+    "label": "Partner with us",
+    "area": "body"
+  },
+  {
+    "path": "/contact",
+    "url": "https://www.charitywater.org/contact",
+    "label": "Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/crypto",
+    "url": "https://www.charitywater.org/crypto",
+    "label": "Donate crypto",
+    "area": "body"
+  },
+  {
+    "path": "/donate",
+    "url": "https://www.charitywater.org/donate",
+    "label": "Give",
+    "area": "footer"
+  },
+  {
+    "path": "/donate/in-honor-of",
+    "url": "https://www.charitywater.org/donate/in-honor-of",
+    "label": "Give in Someone's Honor",
+    "area": "footer"
+  },
+  {
+    "path": "/donate/the-spring",
+    "url": "https://www.charitywater.org/donate/the-spring",
+    "label": "Give monthlyJoin the global community serving people with clean water every month.",
+    "area": "nav"
+  },
+  {
+    "path": "/donate/water-project-sponsorship",
+    "url": "https://www.charitywater.org/donate/water-project-sponsorship",
+    "label": "Sponsor a water projectTransform an entire community or school with a gift of $10,000 or more.",
+    "area": "nav"
+  },
+  {
+    "path": "/experience",
+    "url": "https://www.charitywater.org/experience",
+    "label": "Visit the Experience LabExplore humanity’s search for water through virtual reality, holograms, and immersive video.",
+    "area": "nav"
+  },
+  {
+    "path": "/football",
+    "url": "https://www.charitywater.org/football",
+    "label": "Join us",
+    "area": "body"
+  },
+  {
+    "path": "/fundraise",
+    "url": "https://www.charitywater.org/fundraise",
+    "label": "Fundraise for clean waterSupport clean water projects by raising funds for people in need.",
+    "area": "nav"
+  },
+  {
+    "path": "/get-involved",
+    "url": "https://www.charitywater.org/get-involved",
+    "label": "See all ways to make an impact",
+    "area": "nav"
+  },
+  {
+    "path": "/get-involved/kids",
+    "url": "https://www.charitywater.org/get-involved/kids",
+    "label": "Students & Teachers",
+    "area": "footer"
+  },
+  {
+    "path": "/global-water-crisis",
+    "url": "https://www.charitywater.org/global-water-crisis",
+    "label": "Why Water?",
+    "area": "nav"
+  },
+  {
+    "path": "/how-we-work",
+    "url": "https://www.charitywater.org/how-we-work",
+    "label": "How we workLearn about how we build long-term sustainable water projects.",
+    "area": "nav"
+  },
+  {
+    "path": "/mailing_list_subscribers/new",
+    "url": "https://www.charitywater.org/mailing_list_subscribers/new",
+    "label": "Get our emails to stay in the know",
+    "area": "nav"
+  },
+  {
+    "path": "/our-approach/100-percent-model",
+    "url": "https://www.charitywater.org/our-approach/100-percent-model",
+    "label": "The 100% ModelLearn how donors cover our operations, so 100% of donations fund clean water.",
+    "area": "nav"
+  },
+  {
+    "path": "/our-work",
+    "url": "https://www.charitywater.org/our-work",
+    "label": "Our workSee our funded water projects and proof of impact.",
+    "area": "nav"
+  },
+  {
+    "path": "/partnerships",
+    "url": "https://www.charitywater.org/partnerships",
+    "label": "Become a brand partnerWork closely with our team to develop initiatives with undeniable impact.",
+    "area": "nav"
+  },
+  {
+    "path": "/privacy",
+    "url": "https://www.charitywater.org/privacy",
+    "label": "Privacy policy",
+    "area": "footer"
+  },
+  {
+    "path": "/responsible-disclosure-process",
+    "url": "https://www.charitywater.org/responsible-disclosure-process",
+    "label": "responsible disclosure process",
+    "area": "footer"
+  },
+  {
+    "path": "/the-tributary",
+    "url": "https://www.charitywater.org/the-tributary",
+    "label": "Explore legacy and asset givingMake a lasting gift through legacy or non‑cash giving to help ensure everyone has access to clean water.",
+    "area": "nav"
+  },
+  {
+    "path": "/tiny-heroes",
+    "url": "https://www.charitywater.org/tiny-heroes",
+    "label": "Tiny Heroes",
+    "area": "footer"
+  }
+]
