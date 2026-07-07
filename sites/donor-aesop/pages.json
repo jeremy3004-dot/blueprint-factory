@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/all",
+      "title": "Shop All",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens",
+      "title": "Men's Shoes",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens-active-shoes",
+      "title": "Active",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens-apparel",
+      "title": "Men's Apparel",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens-bestsellers",
+      "title": "Bestsellers",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens-dasher-nz-cl",
+      "title": "DASHER NZ COLLECTION",
+      "status": "planned"
+    },
+    {
+      "route": "/collections/mens-loungers",
+      "title": "Slip Ons",
+      "status": "planned"
+    }
+  ]
+}

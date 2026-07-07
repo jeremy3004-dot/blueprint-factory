@@ -1,0 +1,452 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.allbirds.com/",
+    "label": "Customer Favorites",
+    "area": "header"
+  },
+  {
+    "path": "/blogs/news",
+    "url": "https://www.allbirds.com/blogs/news",
+    "label": "Press",
+    "area": "footer"
+  },
+  {
+    "path": "/blogs/the-perch",
+    "url": "https://www.allbirds.com/blogs/the-perch",
+    "label": "Our Blog",
+    "area": "footer"
+  },
+  {
+    "path": "/collections/all",
+    "url": "https://www.allbirds.com/collections/all",
+    "label": "Shop All",
+    "area": "header"
+  },
+  {
+    "path": "/collections/best-for-traveling-mens",
+    "url": "https://www.allbirds.com/collections/best-for-traveling-mens",
+    "label": "Shop Men",
+    "area": "body"
+  },
+  {
+    "path": "/collections/best-for-traveling-womens",
+    "url": "https://www.allbirds.com/collections/best-for-traveling-womens",
+    "label": "Shop Women",
+    "area": "body"
+  },
+  {
+    "path": "/collections/mens",
+    "url": "https://www.allbirds.com/collections/mens",
+    "label": "Men's Shoes",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-active-shoes",
+    "url": "https://www.allbirds.com/collections/mens-active-shoes",
+    "label": "Active",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-apparel",
+    "url": "https://www.allbirds.com/collections/mens-apparel",
+    "label": "Men's Apparel",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-bestsellers",
+    "url": "https://www.allbirds.com/collections/mens-bestsellers",
+    "label": "Bestsellers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-dasher-nz-cl",
+    "url": "https://www.allbirds.com/collections/mens-dasher-nz-cl",
+    "label": "DASHER NZ COLLECTION",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-loungers",
+    "url": "https://www.allbirds.com/collections/mens-loungers",
+    "label": "Slip Ons",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-mizzles",
+    "url": "https://www.allbirds.com/collections/mens-mizzles",
+    "label": "All-Weather",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-new-arrivals",
+    "url": "https://www.allbirds.com/collections/mens-new-arrivals",
+    "label": "New Arrivals",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-sandals",
+    "url": "https://www.allbirds.com/collections/mens-sandals",
+    "label": "Sandals",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-slippers",
+    "url": "https://www.allbirds.com/collections/mens-slippers",
+    "label": "Slippers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-sneakers",
+    "url": "https://www.allbirds.com/collections/mens-sneakers",
+    "label": "Sneakers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-socks",
+    "url": "https://www.allbirds.com/collections/mens-socks",
+    "label": "Socks",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-terralux-cl",
+    "url": "https://www.allbirds.com/collections/mens-terralux-cl",
+    "label": "LEATHER ALTERNATIVES",
+    "area": "header"
+  },
+  {
+    "path": "/collections/mens-varsity-collection",
+    "url": "https://www.allbirds.com/collections/mens-varsity-collection",
+    "label": "VARSITY COLLECTION",
+    "area": "header"
+  },
+  {
+    "path": "/collections/new-arrivals-26",
+    "url": "https://www.allbirds.com/collections/new-arrivals-26",
+    "label": "New Arrivals",
+    "area": "header"
+  },
+  {
+    "path": "/collections/sale-mens",
+    "url": "https://www.allbirds.com/collections/sale-mens",
+    "label": "Men",
+    "area": "header"
+  },
+  {
+    "path": "/collections/sale-mens-apparel",
+    "url": "https://www.allbirds.com/collections/sale-mens-apparel",
+    "label": "Sale Apparel",
+    "area": "header"
+  },
+  {
+    "path": "/collections/sale-womens",
+    "url": "https://www.allbirds.com/collections/sale-womens",
+    "label": "Women",
+    "area": "header"
+  },
+  {
+    "path": "/collections/sale-womens-apparel",
+    "url": "https://www.allbirds.com/collections/sale-womens-apparel",
+    "label": "Sale Apparel",
+    "area": "header"
+  },
+  {
+    "path": "/collections/shop-all-26",
+    "url": "https://www.allbirds.com/collections/shop-all-26",
+    "label": "Shop All",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens",
+    "url": "https://www.allbirds.com/collections/womens",
+    "label": "Women's Shoes",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-active-shoes",
+    "url": "https://www.allbirds.com/collections/womens-active-shoes",
+    "label": "Active",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-apparel",
+    "url": "https://www.allbirds.com/collections/womens-apparel",
+    "label": "Women's Apparel",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-bestsellers",
+    "url": "https://www.allbirds.com/collections/womens-bestsellers",
+    "label": "Bestsellers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-dasher-nz-cl",
+    "url": "https://www.allbirds.com/collections/womens-dasher-nz-cl",
+    "label": "DASHER NZ COLLECTION",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-flats",
+    "url": "https://www.allbirds.com/collections/womens-flats",
+    "label": "Flats",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-loungers",
+    "url": "https://www.allbirds.com/collections/womens-loungers",
+    "label": "Slip Ons",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-mizzles",
+    "url": "https://www.allbirds.com/collections/womens-mizzles",
+    "label": "All-Weather",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-new-arrivals",
+    "url": "https://www.allbirds.com/collections/womens-new-arrivals",
+    "label": "New Arrivals",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-sandals",
+    "url": "https://www.allbirds.com/collections/womens-sandals",
+    "label": "Sandals",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-sneakers",
+    "url": "https://www.allbirds.com/collections/womens-sneakers",
+    "label": "Sneakers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-socks",
+    "url": "https://www.allbirds.com/collections/womens-socks",
+    "label": "Socks",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-spring-colors",
+    "url": "https://www.allbirds.com/collections/womens-spring-colors",
+    "label": "Shop Women",
+    "area": "body"
+  },
+  {
+    "path": "/collections/womens-trainers",
+    "url": "https://www.allbirds.com/collections/womens-trainers",
+    "label": "Trainers",
+    "area": "header"
+  },
+  {
+    "path": "/collections/womens-varsity-airy",
+    "url": "https://www.allbirds.com/collections/womens-varsity-airy",
+    "label": "VARSITY Airy",
+    "area": "header"
+  },
+  {
+    "path": "/pages/bulk-ordering",
+    "url": "https://www.allbirds.com/pages/bulk-ordering",
+    "label": "site",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/community-offers",
+    "url": "https://www.allbirds.com/pages/community-offers",
+    "label": "Community Offers",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/help",
+    "url": "https://www.allbirds.com/pages/help",
+    "label": "FAQ/Contact Us",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/materials",
+    "url": "https://www.allbirds.com/pages/materials",
+    "label": "Our Materials",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/menu-image-list/nav-tiles-sale-spend-and-save",
+    "url": "https://www.allbirds.com/pages/menu-image-list/nav-tiles-sale-spend-and-save",
+    "label": "Shop All",
+    "area": "header"
+  },
+  {
+    "path": "/pages/menu-image-list/new-arrivals-list",
+    "url": "https://www.allbirds.com/pages/menu-image-list/new-arrivals-list",
+    "label": "Shoes",
+    "area": "header"
+  },
+  {
+    "path": "/pages/our-story",
+    "url": "https://www.allbirds.com/pages/our-story",
+    "label": "Our Story",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/patents",
+    "url": "https://www.allbirds.com/pages/patents",
+    "label": "Patents",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/refer-a-friend",
+    "url": "https://www.allbirds.com/pages/refer-a-friend",
+    "label": "Refer-a-friend Program",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/returns-exchanges",
+    "url": "https://www.allbirds.com/pages/returns-exchanges",
+    "label": "Returns/Exchanges",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/shoe-care",
+    "url": "https://www.allbirds.com/pages/shoe-care",
+    "label": "Shoe Care",
+    "area": "footer"
+  },
+  {
+    "path": "/pages/sustainability",
+    "url": "https://www.allbirds.com/pages/sustainability",
+    "label": "Sustainability",
+    "area": "footer"
+  },
+  {
+    "path": "/products/anytime-ankle-sock-blizzard",
+    "url": "https://www.allbirds.com/products/anytime-ankle-sock-blizzard",
+    "label": "Anytime Ankle Sock$16+1013 colors",
+    "area": "body"
+  },
+  {
+    "path": "/products/anytime-crew-sock-natural-black",
+    "url": "https://www.allbirds.com/products/anytime-crew-sock-natural-black",
+    "label": "Anytime Crew Sock$18+1417 colors",
+    "area": "body"
+  },
+  {
+    "path": "/products/anytime-no-show-heel-grip",
+    "url": "https://www.allbirds.com/products/anytime-no-show-heel-grip",
+    "label": "Anytime No Show Heel Grip Sock$14+36 colors",
+    "area": "body"
+  },
+  {
+    "path": "/products/anytime-no-show-sock-blizzard",
+    "url": "https://www.allbirds.com/products/anytime-no-show-sock-blizzard",
+    "label": "Anytime No Show Sock$14+710 colors",
+    "area": "body"
+  },
+  {
+    "path": "/products/mens-cruiser-medium-grey",
+    "url": "https://www.allbirds.com/products/mens-cruiser-medium-grey",
+    "label": "Cruiser",
+    "area": "header"
+  },
+  {
+    "path": "/products/mens-dasher-nz-natural-black-blizzard",
+    "url": "https://www.allbirds.com/products/mens-dasher-nz-natural-black-blizzard",
+    "label": "SHOP MEN",
+    "area": "body"
+  },
+  {
+    "path": "/products/mens-runner-nz-slip-on",
+    "url": "https://www.allbirds.com/products/mens-runner-nz-slip-on",
+    "label": "Men's Runner NZ Slip OnAnthracite$105",
+    "area": "body"
+  },
+  {
+    "path": "/products/mens-runner-nz-slip-on-dark-navy",
+    "url": "https://www.allbirds.com/products/mens-runner-nz-slip-on-dark-navy",
+    "label": "Men's Runner NZ Slip OnDark Navy$105",
+    "area": "body"
+  },
+  {
+    "path": "/products/mens-runner-nz-slip-on-mushroom",
+    "url": "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
+    "label": "Runner NZ",
+    "area": "header"
+  },
+  {
+    "path": "/products/mens-tree-runner-nz-medium-grey",
+    "url": "https://www.allbirds.com/products/mens-tree-runner-nz-medium-grey",
+    "label": "Tree Runner NZ",
+    "area": "header"
+  },
+  {
+    "path": "/products/mens-varsity-mushroom",
+    "url": "https://www.allbirds.com/products/mens-varsity-mushroom",
+    "label": "Varsity",
+    "area": "header"
+  },
+  {
+    "path": "/products/womens-cruiser-canvas-port",
+    "url": "https://www.allbirds.com/products/womens-cruiser-canvas-port",
+    "label": "Canvas Cruiser",
+    "area": "header"
+  },
+  {
+    "path": "/products/womens-cruiser-canvas-sea-spray",
+    "url": "https://www.allbirds.com/products/womens-cruiser-canvas-sea-spray",
+    "label": "Women's Canvas CruiserSea Spray$75",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-cruiser-slip-on-blizzard",
+    "url": "https://www.allbirds.com/products/womens-cruiser-slip-on-blizzard",
+    "label": "Women's Cruiser Slip OnBlizzard$100",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-cruiser-slip-on-canvas",
+    "url": "https://www.allbirds.com/products/womens-cruiser-slip-on-canvas",
+    "label": "Women's Canvas Cruiser Slip OnWarm White$75",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-dasher-nz-blizzard",
+    "url": "https://www.allbirds.com/products/womens-dasher-nz-blizzard",
+    "label": "SHOP WOMEN",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-runner-nz-slip-on",
+    "url": "https://www.allbirds.com/products/womens-runner-nz-slip-on",
+    "label": "Women's Runner NZ Slip OnAnthracite$105",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-runner-nz-slip-on-dark-navy",
+    "url": "https://www.allbirds.com/products/womens-runner-nz-slip-on-dark-navy",
+    "label": "Women's Runner NZ Slip OnDark Navy$105",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-runner-nz-slip-on-mushroom",
+    "url": "https://www.allbirds.com/products/womens-runner-nz-slip-on-mushroom",
+    "label": "Women's Runner NZ Slip OnMushroom$105",
+    "area": "body"
+  },
+  {
+    "path": "/products/womens-tree-runner-nz-medium-grey",
+    "url": "https://www.allbirds.com/products/womens-tree-runner-nz-medium-grey",
+    "label": "Tree Runner NZ",
+    "area": "header"
+  },
+  {
+    "path": "/products/womens-varsity-cruiser-mushroom",
+    "url": "https://www.allbirds.com/products/womens-varsity-cruiser-mushroom",
+    "label": "Varsity Cruiser",
+    "area": "header"
+  },
+  {
+    "path": "/search",
+    "url": "https://www.allbirds.com/search",
+    "label": "Search Allbirds",
+    "area": "header"
+  }
+]
