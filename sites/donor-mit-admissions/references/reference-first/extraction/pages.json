@@ -1,0 +1,440 @@
+[
+  {
+    "path": "/",
+    "url": "https://mitadmissions.org/",
+    "label": "Skip to content ↓",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://mitadmissions.org/about",
+    "label": "About",
+    "area": "footer"
+  },
+  {
+    "path": "/afford",
+    "url": "https://mitadmissions.org/afford",
+    "label": "Afford",
+    "area": "header"
+  },
+  {
+    "path": "/afford/cost-aid-basics/access-affordability",
+    "url": "https://mitadmissions.org/afford/cost-aid-basics/access-affordability",
+    "label": "Cost & affordability",
+    "area": "header"
+  },
+  {
+    "path": "/afford/cost-aid-basics/financial-aid-calculators",
+    "url": "https://mitadmissions.org/afford/cost-aid-basics/financial-aid-calculators",
+    "label": "Estimate your cost",
+    "area": "header"
+  },
+  {
+    "path": "/afford/cost-aid-basics/how-to-apply-for-aid",
+    "url": "https://mitadmissions.org/afford/cost-aid-basics/how-to-apply-for-aid",
+    "label": "How to apply for aid",
+    "area": "header"
+  },
+  {
+    "path": "/apply",
+    "url": "https://mitadmissions.org/apply",
+    "label": "Apply",
+    "area": "header"
+  },
+  {
+    "path": "/apply/firstyear",
+    "url": "https://mitadmissions.org/apply/firstyear",
+    "label": "First-year applicants",
+    "area": "header"
+  },
+  {
+    "path": "/apply/parents-educators",
+    "url": "https://mitadmissions.org/apply/parents-educators",
+    "label": "Parents & educators",
+    "area": "header"
+  },
+  {
+    "path": "/apply/prepare",
+    "url": "https://mitadmissions.org/apply/prepare",
+    "label": "Preparing for MIT",
+    "area": "header"
+  },
+  {
+    "path": "/apply/process",
+    "url": "https://mitadmissions.org/apply/process",
+    "label": "Understanding the process",
+    "area": "header"
+  },
+  {
+    "path": "/apply/transfer",
+    "url": "https://mitadmissions.org/apply/transfer",
+    "label": "Transfer applicants",
+    "area": "header"
+  },
+  {
+    "path": "/blogs",
+    "url": "https://mitadmissions.org/blogs",
+    "label": "Latest blogs",
+    "area": "header"
+  },
+  {
+    "path": "/blogs/author/aiden",
+    "url": "https://mitadmissions.org/blogs/author/aiden",
+    "label": "Aiden H. '28",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/allisone",
+    "url": "https://mitadmissions.org/blogs/author/allisone",
+    "label": "Allison E. '27",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/anika",
+    "url": "https://mitadmissions.org/blogs/author/anika",
+    "label": "Anika H. '26, MEng '27",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/boheng",
+    "url": "https://mitadmissions.org/blogs/author/boheng",
+    "label": "Boheng C. '28",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/kayode",
+    "url": "https://mitadmissions.org/blogs/author/kayode",
+    "label": "Kayode D. '27",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/petey",
+    "url": "https://mitadmissions.org/blogs/author/petey",
+    "label": "Chris Peterson SM '13",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/richard",
+    "url": "https://mitadmissions.org/blogs/author/richard",
+    "label": "Richard O. '28",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/sara",
+    "url": "https://mitadmissions.org/blogs/author/sara",
+    "label": "Sara N. '28",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/uzay",
+    "url": "https://mitadmissions.org/blogs/author/uzay",
+    "label": "Uzay G. '26",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/author/victor",
+    "url": "https://mitadmissions.org/blogs/author/victor",
+    "label": "Victor D. '27",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/bloggers/student-bloggers",
+    "url": "https://mitadmissions.org/blogs/bloggers/student-bloggers",
+    "label": "Meet the bloggers",
+    "area": "header"
+  },
+  {
+    "path": "/blogs/category/best-of-the-blogs",
+    "url": "https://mitadmissions.org/blogs/category/best-of-the-blogs",
+    "label": "Best of the blogs",
+    "area": "header"
+  },
+  {
+    "path": "/blogs/entry/a-moveable-feast",
+    "url": "https://mitadmissions.org/blogs/entry/a-moveable-feast",
+    "label": "A moveable feast",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/a-wedding-of-all-time",
+    "url": "https://mitadmissions.org/blogs/entry/a-wedding-of-all-time",
+    "label": "A Wedding of All Time I walked Tim the beaver down the aisle",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/be-a-blogger-2026",
+    "url": "https://mitadmissions.org/blogs/entry/be-a-blogger-2026",
+    "label": "learn more",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/crossovers-in-socal",
+    "url": "https://mitadmissions.org/blogs/entry/crossovers-in-socal",
+    "label": "crossovers in socal MIT Students Visit Caltech and UCLA",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/guest-post-designing-the-2025-east-campus-rollercoaster",
+    "url": "https://mitadmissions.org/blogs/entry/guest-post-designing-the-2025-east-campus-rollercoaster",
+    "label": "[Guest Post] Designing the 2025 East Campus Rollercoaster by Zack I. ‘27",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/how-the-world-cup-will-conclude",
+    "url": "https://mitadmissions.org/blogs/entry/how-the-world-cup-will-conclude",
+    "label": "How the World Cup Will Conclude Backed by Science",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/i-went-to-a-world-cup-game",
+    "url": "https://mitadmissions.org/blogs/entry/i-went-to-a-world-cup-game",
+    "label": "I went to a World Cup Game!!!! and why I think it's just like Pokemon",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/letterboxd-for-movies-i-watched-on-the-plane",
+    "url": "https://mitadmissions.org/blogs/entry/letterboxd-for-movies-i-watched-on-the-plane",
+    "label": "Letterboxd for movies i watched on the plane Do I... lack media literacy?",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/school-break-thoughts",
+    "url": "https://mitadmissions.org/blogs/entry/school-break-thoughts",
+    "label": "school break thoughts",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/short-story-from-last-summer",
+    "url": "https://mitadmissions.org/blogs/entry/short-story-from-last-summer",
+    "label": "Short Story from Last Summer",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/the-misadventures-of-carl",
+    "url": "https://mitadmissions.org/blogs/entry/the-misadventures-of-carl",
+    "label": "The Misadventures of Carl I may have acquired a shopping cart...",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/there-are-too-many-hass-classes-i-want-to-take",
+    "url": "https://mitadmissions.org/blogs/entry/there-are-too-many-hass-classes-i-want-to-take",
+    "label": "There Are Too Many HASS Classes I Want To Take What’s a Boy to Do",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/entry/what-does-the-end-of-high-school-mean-for-you",
+    "url": "https://mitadmissions.org/blogs/entry/what-does-the-end-of-high-school-mean-for-you",
+    "label": "what does the end of high school mean, for you? the days pass so slow; the months pass so fast",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/landing",
+    "url": "https://mitadmissions.org/blogs/landing",
+    "label": "Blogs",
+    "area": "header"
+  },
+  {
+    "path": "/blogs/tag/among-us-skibidi-toilet",
+    "url": "https://mitadmissions.org/blogs/tag/among-us-skibidi-toilet",
+    "label": "#among us skibidi toilet",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/anxiety",
+    "url": "https://mitadmissions.org/blogs/tag/anxiety",
+    "label": "#anxiety",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/california",
+    "url": "https://mitadmissions.org/blogs/tag/california",
+    "label": "#california",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/can-you-tell-that-i-have-anxiety",
+    "url": "https://mitadmissions.org/blogs/tag/can-you-tell-that-i-have-anxiety",
+    "label": "#can you tell that i have ANXIETY",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/east-campus",
+    "url": "https://mitadmissions.org/blogs/tag/east-campus",
+    "label": "#East Campus",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/endings",
+    "url": "https://mitadmissions.org/blogs/tag/endings",
+    "label": "#endings",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/high-school",
+    "url": "https://mitadmissions.org/blogs/tag/high-school",
+    "label": "#High School",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/i-was-given-the-ability-to-post-on-the-mit-admissions-blogs-and-i-choose-to-write-about-pokemon",
+    "url": "https://mitadmissions.org/blogs/tag/i-was-given-the-ability-to-post-on-the-mit-admissions-blogs-and-i-choose-to-write-about-pokemon",
+    "label": "#I was given the ability to post on the MIT Admissions blogs and I choose to write about pokemon.",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/pokemon",
+    "url": "https://mitadmissions.org/blogs/tag/pokemon",
+    "label": "#pokemon",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/shenanigans",
+    "url": "https://mitadmissions.org/blogs/tag/shenanigans",
+    "label": "#shenanigans",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/takingabreak",
+    "url": "https://mitadmissions.org/blogs/tag/takingabreak",
+    "label": "#takingabreak",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/what-a-time-to-be-alive",
+    "url": "https://mitadmissions.org/blogs/tag/what-a-time-to-be-alive",
+    "label": "#What a time to be alive",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/world-cup",
+    "url": "https://mitadmissions.org/blogs/tag/world-cup",
+    "label": "#World Cup",
+    "area": "body"
+  },
+  {
+    "path": "/blogs/tag/you-can-do-this-too-apply-to-be-a-blogger-right-neow",
+    "url": "https://mitadmissions.org/blogs/tag/you-can-do-this-too-apply-to-be-a-blogger-right-neow",
+    "label": "#YOU CAN DO THIS TOO APPLY TO BE A BLOGGER RIGHT NEOW",
+    "area": "body"
+  },
+  {
+    "path": "/discover",
+    "url": "https://mitadmissions.org/discover",
+    "label": "Discover",
+    "area": "header"
+  },
+  {
+    "path": "/discover/about-mit",
+    "url": "https://mitadmissions.org/discover/about-mit",
+    "label": "About MIT",
+    "area": "header"
+  },
+  {
+    "path": "/discover/learn-more",
+    "url": "https://mitadmissions.org/discover/learn-more",
+    "label": "Learn more",
+    "area": "header"
+  },
+  {
+    "path": "/discover/learn-more/email-newsletters",
+    "url": "https://mitadmissions.org/discover/learn-more/email-newsletters",
+    "label": "newsletter",
+    "area": "body"
+  },
+  {
+    "path": "/discover/life-culture",
+    "url": "https://mitadmissions.org/discover/life-culture",
+    "label": "Life & culture",
+    "area": "header"
+  },
+  {
+    "path": "/discover/the-mit-education",
+    "url": "https://mitadmissions.org/discover/the-mit-education",
+    "label": "The MIT education",
+    "area": "header"
+  },
+  {
+    "path": "/en-espanol",
+    "url": "https://mitadmissions.org/en-espanol",
+    "label": "En Español",
+    "area": "footer"
+  },
+  {
+    "path": "/explore-on-your-own",
+    "url": "https://mitadmissions.org/explore-on-your-own",
+    "label": "Explore MIT on your own",
+    "area": "header"
+  },
+  {
+    "path": "/feed",
+    "url": "https://mitadmissions.org/feed",
+    "label": "RSS",
+    "area": "body"
+  },
+  {
+    "path": "/group-tours",
+    "url": "https://mitadmissions.org/group-tours",
+    "label": "Request a group tour",
+    "area": "header"
+  },
+  {
+    "path": "/help",
+    "url": "https://mitadmissions.org/help",
+    "label": "Help",
+    "area": "header"
+  },
+  {
+    "path": "/help/contact",
+    "url": "https://mitadmissions.org/help/contact",
+    "label": "Contact us",
+    "area": "header"
+  },
+  {
+    "path": "/help/faq",
+    "url": "https://mitadmissions.org/help/faq",
+    "label": "FAQs",
+    "area": "header"
+  },
+  {
+    "path": "/jobs",
+    "url": "https://mitadmissions.org/jobs",
+    "label": "Jobs",
+    "area": "footer"
+  },
+  {
+    "path": "/maps-directions-parking",
+    "url": "https://mitadmissions.org/maps-directions-parking",
+    "label": "Maps, directions, parking",
+    "area": "header"
+  },
+  {
+    "path": "/mit-visits-you",
+    "url": "https://mitadmissions.org/mit-visits-you",
+    "label": "MIT visits you",
+    "area": "header"
+  },
+  {
+    "path": "/online-info-sessions",
+    "url": "https://mitadmissions.org/online-info-sessions",
+    "label": "Online info sessions",
+    "area": "header"
+  },
+  {
+    "path": "/policies",
+    "url": "https://mitadmissions.org/policies",
+    "label": "Policies",
+    "area": "footer"
+  },
+  {
+    "path": "/schedule-your-visit",
+    "url": "https://mitadmissions.org/schedule-your-visit",
+    "label": "Schedule your campus visit",
+    "area": "header"
+  },
+  {
+    "path": "/visit",
+    "url": "https://mitadmissions.org/visit",
+    "label": "Visit",
+    "area": "header"
+  }
+]

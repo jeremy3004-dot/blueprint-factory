@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/afford",
+      "title": "Afford",
+      "status": "planned"
+    },
+    {
+      "route": "/afford/cost-aid-basics/access-affordability",
+      "title": "Cost & affordability",
+      "status": "planned"
+    },
+    {
+      "route": "/afford/cost-aid-basics/financial-aid-calculators",
+      "title": "Estimate your cost",
+      "status": "planned"
+    },
+    {
+      "route": "/afford/cost-aid-basics/how-to-apply-for-aid",
+      "title": "How to apply for aid",
+      "status": "planned"
+    },
+    {
+      "route": "/apply",
+      "title": "Apply",
+      "status": "planned"
+    },
+    {
+      "route": "/apply/firstyear",
+      "title": "First-year applicants",
+      "status": "planned"
+    },
+    {
+      "route": "/apply/parents-educators",
+      "title": "Parents & educators",
+      "status": "planned"
+    }
+  ]
+}
