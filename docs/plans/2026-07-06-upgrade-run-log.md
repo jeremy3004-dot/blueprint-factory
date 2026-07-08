@@ -457,3 +457,22 @@ Date: 2026-07-08
 - After Item 4: `pnpm test` → 110 pass.
 - New tests cover starter page seeding, route markers in donor copy, planned/built route filtering, and
   `--all` disabling that filter.
+
+---
+
+## Everest First-Job Strengthening — Item 5 ✅
+
+Date: 2026-07-08
+
+### What shipped
+
+- Translation compare reports now keep the heading metric structural: level/order hierarchy only.
+- Exact heading text overlap remains available in clone-stage reports, where copied text is still a
+  fidelity signal, and is omitted from translation-stage reports.
+
+### How it was verified
+
+- Before Item 5: `pnpm test` → 110 pass.
+- After Item 5: `pnpm test` → 111 pass.
+- New test confirms translation-stage reports omit exact heading text overlap while preserving heading
+  hierarchy scoring.

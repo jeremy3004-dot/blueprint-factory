@@ -234,4 +234,10 @@ describe("buildCompareReport", () => {
     assert.ok(md.includes("Structure score: 88%"));
     assert.ok(md.includes("Donor-palette coverage in build: 50%"));
   });
+
+  it("omits exact heading text overlap in translation-stage reports", () => {
+    const md = buildCompareReport({ ...data, stage: "translation" });
+    assert.ok(md.includes("Heading hierarchy match"));
+    assert.equal(md.includes("Heading text overlap"), false);
+  });
 });

@@ -221,7 +221,9 @@ export function buildCompareReport(data: CompareReportData): string {
     lines.push(`- Structure score: ${data.structure.structureScorePercent}% (${scoreLabel(data.structure.structureScorePercent)})`);
     lines.push(`- Donor sections: ${data.structure.donorSectionCount} · Build sections: ${data.structure.buildSectionCount} (delta ${data.structure.sectionCountDelta >= 0 ? "+" : ""}${data.structure.sectionCountDelta})`);
     lines.push(`- Heading hierarchy match: ${data.structure.headingHierarchyMatchPercent}% (${data.structure.buildHeadingCount} build vs ${data.structure.donorHeadingCount} donor headings)`);
-    lines.push(`- Heading text overlap (clone-stage info): ${data.structure.headingTextOverlapPercent}%`);
+    if (data.stage === "clone") {
+      lines.push(`- Heading text overlap (clone-stage info): ${data.structure.headingTextOverlapPercent}%`);
+    }
     lines.push(`- Grayscale row-profile rhythm: ${data.structure.bandCorrelationPercent}%`);
     lines.push(`- Media/text band agreement: ${data.structure.mediaAgreementPercent}%`);
     lines.push("");
