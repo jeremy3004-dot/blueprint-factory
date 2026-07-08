@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { captureMotion, captureScreenshots } from "./capture";
 import { runChecks, summarizeChecks, type CheckResult } from "./checks";
 import { runCompare, type CompareResult } from "./compare";
+import { checkProtectedPreview, protectedPreviewMessage } from "./protected-preview";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -92,6 +93,21 @@ export async function runVerify(
 ): Promise<VerifyResult> {
   const at = options.comparedAt ?? new Date().toISOString();
   const siteDir = path.join(rootDir, "sites", slug);
+  const reportPath = path.join(siteDir, "qa", "verify-report.md");
+
+  const protectedCheck = await checkProtectedPreview(url);
+  if (protectedCheck.protected) {
+    const checks = [{ name: "preview-protection", pass: false, detail: protectedPreviewMessage() }];
+    return {
+      slug,
+      checks,
+      compare: null,
+      screenshotsCaptured: false,
+      motionCaptured: false,
+      reportPath,
+      plainLanguage: `${protectedPreviewMessage()}. I did not overwrite the previous verify report because the hosted page is not the site.`
+    };
+  }
 
   // 1. typecheck -> build -> console -> links -> a11y
   const checks = await runChecks(slug, url);
@@ -116,7 +132,6 @@ export async function runVerify(
   }
 
   const plain = plainLanguageSummary(slug, checks, compare);
-  const reportPath = path.join(siteDir, "qa", "verify-report.md");
   await writeFile(reportPath, renderReport(slug, checks, compare, plain, at), "utf8");
 
   return {

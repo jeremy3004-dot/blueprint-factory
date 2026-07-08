@@ -393,3 +393,26 @@ Date: 2026-07-08
 - After Item 1: `pnpm test` → 99 pass.
 - New tests cover explicit/auto stage detection, synthetic translation structure scoring, and
   heading-level matching that survives translated copy.
+
+---
+
+## Everest First-Job Strengthening — Item 2 ✅
+
+Date: 2026-07-08
+
+### What shipped
+
+- Added a Vercel protected-preview detector for 401/403 responses and login/auth interstitial HTML.
+- `blueprint check`, `compare`, and `verify` now fail with
+  `PREVIEW_PROTECTED: owner must disable Vercel Deployment Protection` instead of grading the login
+  page.
+- `verify` returns the protected-preview failure without overwriting the previous verify report.
+- `deploy` records whether a preview is publicly shareable or protected, names the Vercel project after
+  the site slug, and fails protected previews after recording the state.
+
+### How it was verified
+
+- Before Item 2: `pnpm test` → 99 pass.
+- After Item 2: `pnpm test` → 103 pass.
+- New tests cover status-based detection, fixture HTML detection, local-preview non-detection, and
+  deploy shareability notes.

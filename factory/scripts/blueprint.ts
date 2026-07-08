@@ -870,7 +870,12 @@ async function main() {
       console.error(`Preview deploy did not complete: ${result.detail}`);
       process.exit(1);
     }
-    await appendRunLog(siteSlug, `- Deployed Vercel preview: ${result.url} (verified 200). Recorded in deploy.md. Not production.`);
+    if (result.shareability === "protected") {
+      await appendRunLog(siteSlug, `- Deployed Vercel preview: ${result.url}, but it is protected. Recorded in deploy.md. Not production.`);
+      console.error("PREVIEW_PROTECTED: owner must disable Vercel Deployment Protection");
+      process.exit(1);
+    }
+    await appendRunLog(siteSlug, `- Deployed Vercel preview: ${result.url} (verified 200, shareable). Recorded in deploy.md. Not production.`);
     console.log("");
     console.log("PLAIN-LANGUAGE SUMMARY");
     console.log(

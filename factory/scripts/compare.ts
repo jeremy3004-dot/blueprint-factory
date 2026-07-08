@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { autoScroll, dismissCookieConsent, installEvalShim, resilientGoto } from "./browser-utils";
 import { detectAnimationLibraries, extractTokens, type DonorTokens, type RawStyleHarvest } from "./capture-donor";
+import { checkProtectedPreview, protectedPreviewMessage } from "./protected-preview";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -464,6 +465,8 @@ export async function runCompare(
   const bandCount = options.bands ?? 8;
   const comparedAt = options.comparedAt ?? new Date().toISOString();
   const siteDir = path.join(rootDir, "sites", slug);
+  const protectedCheck = await checkProtectedPreview(previewUrl);
+  if (protectedCheck.protected) throw new Error(protectedPreviewMessage());
   const referenceDir = path.join(siteDir, "references", "reference-first");
   const compareDir = path.join(siteDir, "qa", "compare");
   const cropsDir = path.join(compareDir, "crops");

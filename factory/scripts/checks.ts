@@ -4,6 +4,7 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { autoScroll, dismissCookieConsent, installEvalShim, resilientGoto } from "./browser-utils";
+import { checkProtectedPreview, protectedPreviewMessage } from "./protected-preview";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -163,6 +164,11 @@ export async function runChecks(slug: string, url?: string): Promise<CheckResult
   results.push(await runTypecheck(slug));
   results.push(await runBuild(slug));
   if (url) {
+    const protectedCheck = await checkProtectedPreview(url);
+    if (protectedCheck.protected) {
+      results.push({ name: "preview-protection", pass: false, detail: protectedPreviewMessage() });
+      return results;
+    }
     results.push(await scanConsoleErrors(url));
     results.push(await checkInternalLinks(url));
     results.push(await axeQuickPass(url));

@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { checkProtectedPreview } from "./protected-preview";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -17,14 +18,16 @@ export function extractDeployUrl(vercelOutput: string): string | null {
 }
 
 /** Record a verified preview URL into deploy.md (sets the Preview URL field + a dated note). */
-export function recordPreviewUrl(deployMd: string, url: string, date: string): string {
+export type PreviewShareability = "shareable" | "protected";
+
+export function recordPreviewUrl(deployMd: string, url: string, date: string, shareability: PreviewShareability = "shareable"): string {
   let out = deployMd;
   if (/^Preview URL:.*$/m.test(out)) {
     out = out.replace(/^Preview URL:.*$/m, `Preview URL: ${url}`);
   } else {
     out += `\nPreview URL: ${url}\n`;
   }
-  out += `\n### Preview deploy ${date}\n\n- ${url} (Vercel **preview**, verified HTTP 200). Not production.\n`;
+  out += `\n### Preview deploy ${date}\n\n- ${url} (Vercel **preview**, verified HTTP 200). Not production.\n- Public shareability: ${shareability}.\n`;
   return out;
 }
 
@@ -43,7 +46,7 @@ function run(command: string, args: string[], cwd: string): Promise<{ code: numb
   });
 }
 
-export type DeployResult = { url: string | null; verified: boolean; detail: string };
+export type DeployResult = { url: string | null; verified: boolean; detail: string; shareability?: PreviewShareability };
 
 /**
  * Deploy a real Vercel PREVIEW (never production), verify it returns 200, and record it in deploy.md.
@@ -60,17 +63,20 @@ export async function runPreviewDeploy(slug: string): Promise<DeployResult> {
   }
 
   // 2. Vercel preview deploy (default target is preview; we NEVER pass --prod).
-  const deploy = await run("vercel", ["deploy", "--yes"], appDir);
+  const deploy = await run("vercel", ["deploy", "--yes", "--name", slug], appDir);
   const url = extractDeployUrl(deploy.output);
   if (!url) {
     return { url: null, verified: false, detail: `no preview URL in Vercel output:\n${deploy.output.split("\n").slice(-10).join("\n")}` };
   }
 
-  // 3. Verify the URL returns 200.
+  // 3. Verify the URL returns 200 and is publicly shareable.
   let verified = false;
+  let shareability: PreviewShareability = "shareable";
   try {
     const response = await fetch(url, { method: "GET" });
     verified = response.status >= 200 && response.status < 400;
+    const protectedCheck = await checkProtectedPreview(url);
+    shareability = protectedCheck.protected ? "protected" : "shareable";
   } catch (error) {
     return { url, verified: false, detail: `deployed to ${url} but verification failed: ${error instanceof Error ? error.message : String(error)}` };
   }
@@ -79,10 +85,10 @@ export async function runPreviewDeploy(slug: string): Promise<DeployResult> {
   const deployMdPath = path.join(rootDir, "sites", slug, "deploy.md");
   try {
     const deployMd = await readFile(deployMdPath, "utf8");
-    await writeFile(deployMdPath, recordPreviewUrl(deployMd, url, new Date().toISOString()), "utf8");
+    await writeFile(deployMdPath, recordPreviewUrl(deployMd, url, new Date().toISOString(), shareability), "utf8");
   } catch {
     // deploy.md missing — non-fatal; the URL is still returned
   }
 
-  return { url, verified, detail: verified ? `preview live and verified at ${url}` : `deployed to ${url} but did not return 200` };
+  return { url, verified, shareability, detail: verified ? `preview live and verified at ${url} (${shareability})` : `deployed to ${url} but did not return 200` };
 }
