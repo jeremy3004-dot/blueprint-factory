@@ -16,7 +16,14 @@ import {
   type PageCoverage,
   type PagesFile
 } from "./pages";
-import { parseCompareScore, parsePreviewUrl, renderStatusTable, type SiteRow } from "./status";
+import {
+  isDonorShelfSlug,
+  parseCompareScore,
+  parsePreviewUrl,
+  renderStatusTable,
+  type DonorShelfRow,
+  type SiteRow
+} from "./status";
 import { runPreviewDeploy } from "./deploy";
 import { checkProductionAssets, runCopyDeck } from "./assets";
 
@@ -383,19 +390,56 @@ async function buildSiteRow(siteSlug: string): Promise<SiteRow> {
   return { slug: siteSlug, nextAction, lastScreenshot, compareDesktop, compareMobile, previewUrl, pages: await pagesSummaryForRow(siteSlug) };
 }
 
+async function readDonorShelfFields(): Promise<Map<string, string>> {
+  try {
+    const markdown = await readFile(path.join(rootDir, "docs", "donor-shelf.md"), "utf8");
+    const fields = new Map<string, string>();
+    for (const line of markdown.split("\n")) {
+      const match = line.match(/^\|\s*`(donor-[^`]+)`\s*\|\s*([^|]+?)\s*\|/);
+      if (match) fields.set(match[1], match[2].trim());
+    }
+    return fields;
+  } catch {
+    return new Map();
+  }
+}
+
+async function donorUrlForSite(siteSlug: string): Promise<string> {
+  try {
+    const topology = await readFile(path.join(rootDir, "sites", siteSlug, "references", "reference-first", "topology.md"), "utf8");
+    return topology.match(/^Donor URL:\s*(\S+)\s*$/m)?.[1] ?? "—";
+  } catch {
+    return "—";
+  }
+}
+
+async function buildDonorShelfRow(siteSlug: string, fields: Map<string, string>): Promise<DonorShelfRow> {
+  return {
+    slug: siteSlug,
+    field: fields.get(siteSlug) ?? "Donor shelf",
+    url: await donorUrlForSite(siteSlug),
+    pages: await pagesSummaryForRow(siteSlug)
+  };
+}
+
 /** The all-sites dashboard: print a table and write factory/STATUS.md. */
 async function runDashboard() {
   const sitesDir = path.join(rootDir, "sites");
   const entries = await readdir(sitesDir, { withFileTypes: true });
   const slugs = entries.filter((e) => e.isDirectory() && !e.name.startsWith(".")).map((e) => e.name).sort();
   const rows: SiteRow[] = [];
-  for (const slug of slugs) rows.push(await buildSiteRow(slug));
+  const donorRows: DonorShelfRow[] = [];
+  const donorFields = await readDonorShelfFields();
+  for (const slug of slugs) {
+    if (isDonorShelfSlug(slug)) donorRows.push(await buildDonorShelfRow(slug, donorFields));
+    else rows.push(await buildSiteRow(slug));
+  }
 
   const generatedAt = new Date().toISOString();
-  const table = renderStatusTable(rows, generatedAt);
+  const table = renderStatusTable(rows, generatedAt, donorRows);
   await writeFile(path.join(rootDir, "factory", "STATUS.md"), table, "utf8");
   console.log(table);
-  console.log(`Wrote factory/STATUS.md (${rows.length} sites).`);
+  console.log(`Wrote factory/STATUS.md (${rows.length} client sites, ${donorRows.length} donor shelf entries).`);
 }
 
 async function main() {

@@ -11,6 +11,17 @@ export type SiteRow = {
   pages: string;
 };
 
+export type DonorShelfRow = {
+  slug: string;
+  field: string;
+  url: string;
+  pages: string;
+};
+
+export function isDonorShelfSlug(slug: string): boolean {
+  return slug.startsWith("donor-");
+}
+
 /** Pull the overall desktop/mobile match from a compare report.md. */
 export function parseCompareScore(reportMd: string): { desktop: number | null; mobile: number | null } {
   const desktop = reportMd.match(/^-\s*desktop:\s*([\d.]+)%/mi);
@@ -36,12 +47,14 @@ function score(desktop: number | null, mobile: number | null): string {
   return `${desktop ?? "—"}% / ${mobile ?? "—"}%`;
 }
 
-/** Render the all-sites markdown table. */
-export function renderStatusTable(rows: SiteRow[], generatedAt: string): string {
+/** Render the operator dashboard. */
+export function renderStatusTable(rows: SiteRow[], generatedAt: string, donorRows: DonorShelfRow[] = []): string {
   const lines: string[] = [];
-  lines.push("# Blueprint Factory — All Sites");
+  lines.push("# Blueprint Factory — Status");
   lines.push("");
   lines.push(`Generated: ${generatedAt}`);
+  lines.push("");
+  lines.push("## Client Sites");
   lines.push("");
   lines.push("| Site | Next action | Pages | Compare (d/m) | Last screenshot | Preview URL |");
   lines.push("| ---- | ----------- | ----- | ------------- | --------------- | ----------- |");
@@ -50,9 +63,22 @@ export function renderStatusTable(rows: SiteRow[], generatedAt: string): string 
       `| ${row.slug} | ${row.nextAction} | ${row.pages} | ${score(row.compareDesktop, row.compareMobile)} | ${shortDate(row.lastScreenshot)} | ${row.previewUrl ?? "—"} |`
     );
   }
+  if (donorRows.length > 0) {
+    lines.push("");
+    lines.push("## Donor Shelf");
+    lines.push("");
+    lines.push("| Donor | Field | Evidence URL | Pages |");
+    lines.push("| ----- | ----- | ------------ | ----- |");
+    for (const row of donorRows) {
+      lines.push(`| ${row.slug} | ${row.field} | ${row.url} | ${row.pages} |`);
+    }
+  }
   lines.push("");
   lines.push("Compare (d/m) is the donor pixel-match at the clone stage (desktop / mobile). Nothing is");
   lines.push("deployed to production — Preview URL is a shareable Vercel preview only.");
+  if (donorRows.length > 0) {
+    lines.push("Donor Shelf rows are reference evidence packs, not client builds.");
+  }
   lines.push("");
   return lines.join("\n");
 }
