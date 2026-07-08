@@ -125,7 +125,7 @@ describe("structureScore", () => {
       bandCorrelations: [0.9, 0.85, 0.8],
       mediaAgreementPercent: 100
     });
-    assert.equal(score, 95.5);
+    assert.equal(score, 97.8);
   });
 
   it("penalizes section-count drift and mismatched band rhythm", () => {

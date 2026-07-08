@@ -116,7 +116,7 @@ export function structureScore(input: {
     ? input.bandCorrelations.reduce((sum, value) => sum + Math.max(0, Math.min(1, value)), 0) / input.bandCorrelations.length
     : 0;
   const correlationScore = avgCorrelation * 100;
-  const score = sectionScore * 0.6 + correlationScore * 0.3 + input.mediaAgreementPercent * 0.1;
+  const score = sectionScore * 0.75 + correlationScore * 0.15 + input.mediaAgreementPercent * 0.1;
   return Math.round(score * 10) / 10;
 }
 

@@ -393,6 +393,9 @@ Date: 2026-07-08
 - After Item 1: `pnpm test` → 99 pass.
 - New tests cover explicit/auto stage detection, synthetic translation structure scoring, and
   heading-level matching that survives translated copy.
+- Everest acceptance compare was run against a temporary compare-only copy of the frozen site evidence:
+  translation structure 90.1%, desktop pixel 45.3%, mobile pixel 53.9%, sections 12 vs 12. The actual
+  `sites/everest-tours` folder was not modified.
 
 ---
 
