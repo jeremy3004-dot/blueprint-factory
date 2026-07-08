@@ -6,6 +6,10 @@ export type PageStatus = "planned" | "built" | "deferred";
 export type PagePlanEntry = { route: string; title?: string; status: PageStatus; reason?: string };
 export type PagesFile = { pages: PagePlanEntry[] };
 
+export function starterPagesFile(): PagesFile {
+  return { pages: [{ route: "/", title: "Home", status: "planned" }] };
+}
+
 /** Map a route to a screenshot sub-directory name. "/" -> "home", "/treks/manaslu" -> "treks-manaslu". */
 export function routeToDir(route: string): string {
   const trimmed = route.replace(/^\/+|\/+$/g, "").replace(/\//g, "-");

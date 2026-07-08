@@ -1,6 +1,7 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import type { PagesFile } from "./pages";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -77,35 +78,47 @@ export async function checkProductionAssets(slug: string): Promise<string[]> {
 // Copy deck (pure)
 // ---------------------------------------------------------------------------
 
-export type CopyRow = { kind: "Heading" | "CTA" | "Body"; donor: string };
+export type CopyRow = { kind: "Heading" | "CTA" | "Body"; donor: string; route?: string };
 
 /** Parse an extraction/copy.md into ordered copy rows (headings, CTAs, body). */
 export function parseCopyRows(copyMd: string): CopyRow[] {
   const rows: CopyRow[] = [];
+  let currentRoute: string | undefined;
+  const row = (kind: CopyRow["kind"], donor: string): CopyRow =>
+    currentRoute ? { kind, donor, route: currentRoute } : { kind, donor };
   for (const raw of copyMd.split("\n")) {
     const line = raw.trim();
     if (!line) continue;
+    const routeMarker = line.match(/^<!--\s*route:\s*([^>]+?)\s*-->$/i) ?? line.match(/^##\s*Route:\s*(\S+)/i);
+    if (routeMarker) {
+      currentRoute = routeMarker[1].trim();
+      continue;
+    }
     if (line.startsWith("# ")) continue; // the file's own title
     if (/^extracted from /i.test(line)) continue; // provenance note
     const heading = line.match(/^#{2,6}\s+(.*)$/);
     if (heading) {
-      rows.push({ kind: "Heading", donor: heading[1].trim() });
+      rows.push(row("Heading", heading[1].trim()));
       continue;
     }
     const cta = line.match(/^-\s*\[(?:a|button)\]\s*(.*)$/i);
     if (cta) {
-      rows.push({ kind: "CTA", donor: cta[1].trim() });
+      rows.push(row("CTA", cta[1].trim()));
       continue;
     }
     if (line.startsWith("- [")) continue; // other tagged list markers
-    rows.push({ kind: "Body", donor: line });
+    rows.push(row("Body", line));
   }
   return rows;
 }
 
 /** Build a donor→brand two-column copy deck from extracted donor copy. */
-export function buildCopyDeck(copyMd: string, slug: string, limit = 400): string {
-  const rows = parseCopyRows(copyMd).slice(0, limit);
+export function buildCopyDeck(copyMd: string, slug: string, options: { limit?: number; routes?: string[] | null } | number = {}): string {
+  const normalized = typeof options === "number" ? { limit: options, routes: null } : options;
+  const routeSet = normalized.routes ? new Set(normalized.routes) : null;
+  const rows = parseCopyRows(copyMd)
+    .filter((row) => !routeSet || !row.route || routeSet.has(row.route))
+    .slice(0, normalized.limit ?? 400);
   const lines: string[] = [];
   lines.push(`# Copy Deck: ${slug}`);
   lines.push("");
@@ -125,7 +138,12 @@ export function buildCopyDeck(copyMd: string, slug: string, limit = 400): string
 
 export type CopyDeckResult = { slug: string; deckPath: string; rowCount: number };
 
-export async function runCopyDeck(slug: string): Promise<CopyDeckResult> {
+export function copyDeckRoutes(pages: PagesFile | null, all: boolean): string[] | null {
+  if (all || !pages) return null;
+  return pages.pages.filter((page) => page.status === "planned" || page.status === "built").map((page) => page.route);
+}
+
+export async function runCopyDeck(slug: string, options: { all?: boolean; pages?: PagesFile | null } = {}): Promise<CopyDeckResult> {
   const copyPath = path.join(rootDir, "sites", slug, "references", "reference-first", "extraction", "copy.md");
   let copyMd: string;
   try {
@@ -133,8 +151,10 @@ export async function runCopyDeck(slug: string): Promise<CopyDeckResult> {
   } catch {
     throw new Error(`No donor copy at ${path.relative(rootDir, copyPath)}. Run \`blueprint capture ${slug} <donor-url>\` first.`);
   }
-  const deck = buildCopyDeck(copyMd, slug);
+  const routes = copyDeckRoutes(options.pages ?? null, Boolean(options.all));
+  const rowCount = parseCopyRows(copyMd).filter((row) => !routes || !row.route || routes.includes(row.route)).length;
+  const deck = buildCopyDeck(copyMd, slug, { routes });
   const deckPath = path.join(rootDir, "sites", slug, "copy-deck.md");
   await writeFile(deckPath, deck, "utf8");
-  return { slug, deckPath, rowCount: parseCopyRows(copyMd).length };
+  return { slug, deckPath, rowCount };
 }

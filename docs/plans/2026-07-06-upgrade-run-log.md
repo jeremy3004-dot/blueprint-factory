@@ -437,3 +437,23 @@ Date: 2026-07-08
 - After Item 3: `pnpm test` → 106 pass.
 - New tests cover donor-name normalization, topology/clone-plan header rewriting, and page-plan seeding
   from donor inventory.
+
+---
+
+## Everest First-Job Strengthening — Item 4 ✅
+
+Date: 2026-07-08
+
+### What shipped
+
+- `blueprint new` now seeds a starter `pages.json` with a planned homepage.
+- `blueprint new` prints the next dependency/build command when a fresh site needs local dependencies.
+- `blueprint copydeck` now defaults to planned/built routes from `pages.json`; `--all` keeps the full
+  donor extraction available when needed.
+
+### How it was verified
+
+- Before Item 4: `pnpm test` → 106 pass.
+- After Item 4: `pnpm test` → 110 pass.
+- New tests cover starter page seeding, route markers in donor copy, planned/built route filtering, and
+  `--all` disabling that filter.

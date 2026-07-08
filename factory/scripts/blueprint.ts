@@ -13,6 +13,7 @@ import {
   pageCoverageMessage,
   routeToDir,
   summarizePageCoverage,
+  starterPagesFile,
   type PageCoverage,
   type PagesFile
 } from "./pages";
@@ -233,6 +234,7 @@ async function createSite(siteSlug: string) {
   await copyTemplate("run-log.template.md", `sites/${siteSlug}/qa/run-log.md`, siteSlug);
   await copyTemplate("visual-review.template.md", `sites/${siteSlug}/qa/visual-review.md`, siteSlug);
   await copyTemplate("clone-plan.template.md", `sites/${siteSlug}/references/reference-first/clone-plan.md`, siteSlug);
+  await writeFile(path.join(rootDir, "sites", siteSlug, "pages.json"), JSON.stringify(starterPagesFile(), null, 2) + "\n", "utf8");
 }
 
 async function siteStatus(siteSlug: string): Promise<SiteStatus> {
@@ -462,6 +464,7 @@ async function main() {
   if (command === "new") {
     await createSite(siteSlug);
     console.log(`Created sites/${siteSlug}`);
+    console.log(`Install/build hint: run pnpm install from the factory root if dependencies are missing, then pnpm --filter ${siteSlug} build.`);
     return;
   }
 
@@ -738,7 +741,8 @@ async function main() {
   }
 
   if (command === "copydeck") {
-    const result = await runCopyDeck(siteSlug);
+    const all = process.argv.includes("--all");
+    const result = await runCopyDeck(siteSlug, { all, pages: await readPagesFile(siteSlug) });
     await appendRunLog(siteSlug, `- Generated copy-deck.md (${result.rowCount} donor lines) for donor→brand translation.`);
     console.log("");
     console.log("PLAIN-LANGUAGE SUMMARY");

@@ -1,6 +1,6 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { buildCopyDeck, findReferenceOnlyAssets, parseCopyRows } from "./assets";
+import { buildCopyDeck, copyDeckRoutes, findReferenceOnlyAssets, parseCopyRows } from "./assets";
 
 describe("findReferenceOnlyAssets", () => {
   it("flags assets staged under a reference-only path", () => {
@@ -47,6 +47,11 @@ describe("parseCopyRows", () => {
       { kind: "CTA", donor: "Explore resorts" }
     ]);
   });
+
+  it("tracks route markers when donor copy contains page sections", () => {
+    const rows = parseCopyRows(["<!-- route: / -->", "## Home hero", "<!-- route: /about -->", "## About hero"].join("\n"));
+    assert.deepEqual(rows.map((row) => row.route), ["/", "/about"]);
+  });
 });
 
 describe("buildCopyDeck", () => {
@@ -62,5 +67,26 @@ describe("buildCopyDeck", () => {
   it("escapes pipes in donor copy", () => {
     const deck = buildCopyDeck("Price | value", "demo");
     assert.ok(deck.includes("Price \\| value"));
+  });
+
+  it("defaults to planned/built routes and excludes deferred route copy", () => {
+    const md = ["<!-- route: / -->", "## Home", "<!-- route: /privacy -->", "## Privacy"].join("\n");
+    const deck = buildCopyDeck(md, "demo", { routes: ["/"] });
+    assert.ok(deck.includes("Home"));
+    assert.equal(deck.includes("Privacy"), false);
+  });
+});
+
+describe("copyDeckRoutes", () => {
+  it("uses planned and built routes by default, with --all disabling filtering", () => {
+    const pages = {
+      pages: [
+        { route: "/", status: "built" as const },
+        { route: "/about", status: "planned" as const },
+        { route: "/privacy", status: "deferred" as const }
+      ]
+    };
+    assert.deepEqual(copyDeckRoutes(pages, false), ["/", "/about"]);
+    assert.equal(copyDeckRoutes(pages, true), null);
   });
 });

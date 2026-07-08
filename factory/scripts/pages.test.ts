@@ -2,6 +2,7 @@ import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
 import {
   buildPagePlan,
+  starterPagesFile,
   pageCoverageMessage,
   routeToDir,
   summarizePageCoverage,
@@ -74,5 +75,11 @@ describe("buildPagePlan", () => {
     const donor = Array.from({ length: 20 }, (_, i) => ({ path: `/p${i}`, label: `P${i}`, area: "nav" }));
     const plan = buildPagePlan(donor, 5);
     assert.equal(plan.pages.length, 5); // home + 4
+  });
+});
+
+describe("starterPagesFile", () => {
+  it("seeds a fresh site with a planned homepage", () => {
+    assert.deepEqual(starterPagesFile(), { pages: [{ route: "/", title: "Home", status: "planned" }] });
   });
 });
