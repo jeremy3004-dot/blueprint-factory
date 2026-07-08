@@ -33,9 +33,12 @@ else from evidence. A supervisor reviews your work afterward, so keep an honest 
 - **Client name:** [CLIENT NAME]  → site slug: lowercase-hyphenated version of the name.
 - **Client's current website:** [URL OF THEIR EXISTING SITE]
 
-Optional overrides (delete these lines if not needed):
-- **Donor override:** [donor-NAME from the shelf, if the owner already picked one]
-- **Special requests:** [anything specific the owner asked for]
+Optional — delete both lines if you have nothing to say:
+- **Copy the look of a specific site?** Normally the worker picks the best-matching donor from the
+  shelf for you. Only fill this if you already know which one you want (see `factory/DONOR-SHELF.md`
+  for the list): [e.g. donor-aman — or delete this line]
+- **Anything else, in your own words:** [e.g. "they need a WhatsApp button", "owner hates red",
+  "show prices in euros" — or delete this line]
 
 ### What you derive yourself (do not ask the owner for these)
 
