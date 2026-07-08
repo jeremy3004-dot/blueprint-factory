@@ -33,7 +33,11 @@ export function plainLanguageSummary(
   }
 
   if (compare && compare.donorFound && compare.overallDesktop !== null) {
-    sentences.push(`The build matches the donor at ${compare.overallDesktop}% on desktop${compare.overallMobile !== null ? ` and ${compare.overallMobile}% on mobile` : ""} (pixel fidelity for the clone stage).`);
+    if (compare.stage === "translation") {
+      sentences.push(`The translation-stage structure score is ${compare.headlineScore ?? "n/a"}%; raw pixel match is ${compare.overallDesktop}% on desktop${compare.overallMobile !== null ? ` and ${compare.overallMobile}% on mobile` : ""}, which is informational after brand translation.`);
+    } else {
+      sentences.push(`The clone-stage pixel score is ${compare.headlineScore ?? compare.overallDesktop}% on desktop${compare.overallMobile !== null ? ` and ${compare.overallMobile}% on mobile` : ""}.`);
+    }
     if (compare.worstSectionLabel) {
       sentences.push(`The weakest area is "${compare.worstSectionLabel}" at ${compare.worstSectionMatch}% — fix that first.`);
     }
@@ -66,6 +70,8 @@ function renderReport(slug: string, checks: CheckResult[], compare: CompareResul
   if (compare) {
     lines.push("## Visual Compare");
     lines.push("");
+    lines.push(`- Stage: ${compare.stage}`);
+    lines.push(`- Headline score: ${compare.headlineScore ?? "n/a"}%`);
     lines.push(`- Desktop match: ${compare.overallDesktop ?? "n/a"}%`);
     lines.push(`- Mobile match: ${compare.overallMobile ?? "n/a"}%`);
     if (compare.worstSectionLabel) lines.push(`- Worst section: ${compare.worstSectionLabel} (${compare.worstSectionMatch}%)`);

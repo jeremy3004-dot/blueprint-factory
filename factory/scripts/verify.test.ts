@@ -7,6 +7,8 @@ const compare: CompareResult = {
   slug: "demo",
   reportPath: "sites/demo/qa/compare/report.md",
   donorFound: true,
+  stage: "clone",
+  headlineScore: 88.4,
   overallDesktop: 88.4,
   overallMobile: 71.2,
   worstSectionLabel: "Section band 5 (y 3600–4500)",
@@ -17,7 +19,11 @@ const compare: CompareResult = {
     sectionCountDelta: -1,
     donorHeadingCount: 12,
     buildHeadingCount: 11,
-    headingHierarchyMatchPercent: 75
+    headingHierarchyMatchPercent: 75,
+    headingTextOverlapPercent: 60,
+    structureScorePercent: 82,
+    bandCorrelationPercent: 75,
+    mediaAgreementPercent: 80
   },
   tokens: null
 };

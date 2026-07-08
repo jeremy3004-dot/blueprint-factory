@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { captureMotion, captureScreenshots } from "./capture";
 import { captureDonor } from "./capture-donor";
-import { runCompare } from "./compare";
+import { runCompare, type CompareStage } from "./compare";
 import { runChecks, summarizeChecks } from "./checks";
 import { runVerify } from "./verify";
 import { runTokens } from "./tokens";
@@ -661,23 +661,31 @@ async function main() {
 
   if (command === "compare") {
     if (!url) {
-      console.error("Usage: blueprint compare <slug> <preview-url>");
+      console.error("Usage: blueprint compare <slug> <preview-url> [--stage clone|translation]");
+      process.exit(1);
+    }
+    const stageFlagIndex = process.argv.indexOf("--stage");
+    const stage = stageFlagIndex >= 0 ? process.argv[stageFlagIndex + 1] : undefined;
+    if (stage && stage !== "clone" && stage !== "translation") {
+      console.error("Usage: --stage must be clone or translation");
       process.exit(1);
     }
     console.log(`Comparing ${siteSlug} build (${url}) against the donor evidence ...`);
-    const result = await runCompare(siteSlug, url);
+    const result = await runCompare(siteSlug, url, { stage: stage as CompareStage | undefined });
     await appendRunLog(
       siteSlug,
-      `- Visual compare vs donor: desktop ${result.overallDesktop}%, mobile ${result.overallMobile}%. Worst section: ${result.worstSectionLabel ?? "n/a"} (${result.worstSectionMatch ?? "n/a"}%). Report: qa/compare/report.md.`
+      `- Visual compare vs donor (${result.stage} stage): headline ${result.headlineScore ?? "n/a"}%, desktop pixel ${result.overallDesktop}%, mobile pixel ${result.overallMobile}%. Worst section: ${result.worstSectionLabel ?? "n/a"} (${result.worstSectionMatch ?? "n/a"}%). Report: qa/compare/report.md.`
     );
     console.log("");
     console.log("PLAIN-LANGUAGE SUMMARY");
+    const scoreKind = result.stage === "translation" ? "structure" : "pixel";
     console.log(
-      `The build matches the donor at ${result.overallDesktop ?? "n/a"}% on desktop` +
+      `Compare used the ${result.stage} stage, so the headline score is ${result.headlineScore ?? "n/a"}% ${scoreKind} match. ` +
+        `The raw pixel match is ${result.overallDesktop ?? "n/a"}% on desktop` +
         `${result.overallMobile !== null ? ` and ${result.overallMobile}% on mobile` : ""}. ` +
         `${result.worstSectionLabel ? `The weakest area is "${result.worstSectionLabel}" (${result.worstSectionMatch}%) — fix that first. ` : ""}` +
         `${result.structure ? `Structurally the build has ${result.structure.buildSectionCount} sections vs the donor's ${result.structure.donorSectionCount}. ` : ""}` +
-        `Pixel match is expected to drop on color/imagery after brand translation while structure stays high. ` +
+        `${result.stage === "translation" ? "After translation, 40-60% pixel match is expected and informational only. " : "Clone-stage target is at least 85% pixel match. "}` +
         `Full report and side-by-side composites are under sites/${siteSlug}/qa/compare/.`
     );
     return;

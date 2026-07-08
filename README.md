@@ -32,7 +32,7 @@ non-technical owner can read.
 | `pnpm blueprint:status [slug]` | With a slug: that site's next gate. With no slug: an all-sites dashboard, also written to `factory/STATUS.md`. |
 | `pnpm blueprint:tokens <slug>` | Curate the donor's colors + fonts into `app/tokens.json` (wired into the theme); substitute licensed donor fonts for open ones and log it in `asset-log.md`. |
 | `pnpm blueprint:check <slug> [url]` | Typecheck → build → (with a URL) console-error scan → broken-link check → axe accessibility pass. |
-| `pnpm blueprint:compare <slug> <preview-url>` | Per-section pixel diff vs the donor, side-by-side composites, and `qa/compare/report.md` (worst section first; structure/style scored separately from pixel match). |
+| `pnpm blueprint:compare <slug> <preview-url> [--stage clone\|translation]` | Per-section compare vs the donor, side-by-side composites, and `qa/compare/report.md`. Clone stage is pixel-led; translation stage leads with structure while raw pixel match is informational. |
 | `pnpm blueprint:verify <slug> <preview-url>` | The full QA chain: check → screenshots → motion → compare, ending in a plain-language report. |
 | `pnpm blueprint:copydeck <slug>` | Turn the donor's extracted copy into a two-column `copy-deck.md` (donor → brand) for line-by-line translation. |
 | `pnpm blueprint:deploy <slug> --preview` | Build locally, deploy a shareable **Vercel preview** (never production), verify it, and record the URL in `deploy.md`. Blocks while any reference-only asset would ship. |

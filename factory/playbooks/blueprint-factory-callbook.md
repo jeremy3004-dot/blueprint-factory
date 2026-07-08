@@ -125,9 +125,10 @@ Current command meanings:
   licensed donor fonts for open alternatives, and log the font decisions in `asset-log.md`.
 - `check`: typecheck → build → (with a preview URL) console-error scan → broken internal link check →
   axe-core accessibility pass. Still fails if required factory files are missing.
-- `compare`: recapture the build and pixel-diff it against the donor per section; write
-  `qa/compare/report.md` (overall + per-section match, worst section first, structure/style scored
-  separately from raw pixel match) and side-by-side composites.
+- `compare`: recapture the build and compare it against the donor per section; write
+  `qa/compare/report.md` and side-by-side composites. Use `--stage clone` for the pixel-led clone gate
+  (target >=85% pixel) and `--stage translation` after brand translation, where the headline score is
+  structure (target >=85%) and raw pixel match is expected to drop into the 40-60% range.
 - `verify`: the one-call QA chain — check → screenshots → motion → compare — ending with a
   plain-language report.
 - `copydeck`: turn the donor's extracted copy into a two-column `copy-deck.md` (donor → brand) for

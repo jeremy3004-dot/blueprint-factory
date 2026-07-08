@@ -62,6 +62,8 @@ export function compareTokens(donor: DonorTokens, build: DonorTokens, topN = 8):
   };
 }
 
+export type CompareStage = "clone" | "translation";
+
 export type StructureComparison = {
   donorSectionCount: number;
   buildSectionCount: number;
@@ -69,27 +71,96 @@ export type StructureComparison = {
   donorHeadingCount: number;
   buildHeadingCount: number;
   headingHierarchyMatchPercent: number;
+  headingTextOverlapPercent: number;
+  structureScorePercent: number;
+  bandCorrelationPercent: number;
+  mediaAgreementPercent: number;
 };
 
-/** Structural checks: section counts and heading-hierarchy overlap (order-sensitive prefix match). */
+export function detectCompareStage(explicitStage?: string, copyDeckMd = ""): CompareStage {
+  if (explicitStage === "clone" || explicitStage === "translation") return explicitStage;
+  for (const line of copyDeckMd.split("\n")) {
+    if (!line.trim().startsWith("|")) continue;
+    const cells = line.split("|").map((cell) => cell.trim());
+    const brand = cells[4] ?? "";
+    if (!brand || /brand copy/i.test(brand) || /^-+$/.test(brand) || /todo/i.test(brand)) continue;
+    return "translation";
+  }
+  return "clone";
+}
+
+export function headingStructure(headings: string[]): string[] {
+  return headings
+    .map((heading) => heading.match(/^(h[1-6])\s*:/i)?.[1]?.toLowerCase())
+    .filter((level): level is string => Boolean(level));
+}
+
+function normalizedHeadingText(headings: string[]): string[] {
+  return headings.map((heading) => heading.replace(/^h[1-6]\s*:\s*/i, "").trim().toLowerCase()).filter(Boolean);
+}
+
+function percentFromMatches(matches: number, total: number): number {
+  return total ? Math.round((matches / total) * 1000) / 10 : 0;
+}
+
+export function structureScore(input: {
+  donorSectionCount: number;
+  buildSectionCount: number;
+  bandCorrelations: number[];
+  mediaAgreementPercent: number;
+}): number {
+  const maxSections = Math.max(input.donorSectionCount, input.buildSectionCount, 1);
+  const sectionScore = Math.max(0, 100 - (Math.abs(input.donorSectionCount - input.buildSectionCount) / maxSections) * 100);
+  const avgCorrelation = input.bandCorrelations.length
+    ? input.bandCorrelations.reduce((sum, value) => sum + Math.max(0, Math.min(1, value)), 0) / input.bandCorrelations.length
+    : 0;
+  const correlationScore = avgCorrelation * 100;
+  const score = sectionScore * 0.6 + correlationScore * 0.3 + input.mediaAgreementPercent * 0.1;
+  return Math.round(score * 10) / 10;
+}
+
+/** Structural checks: section counts and heading-level overlap. Text overlap is clone-stage info only. */
 export function compareStructure(
   donorSectionCount: number,
   buildSectionCount: number,
   donorHeadings: string[],
-  buildHeadings: string[]
+  buildHeadings: string[],
+  bandCorrelations: number[] = [],
+  mediaAgreementPercent = 0
 ): StructureComparison {
-  const len = Math.max(donorHeadings.length, buildHeadings.length);
-  let matched = 0;
-  for (let i = 0; i < Math.min(donorHeadings.length, buildHeadings.length); i += 1) {
-    if (donorHeadings[i].trim().toLowerCase() === buildHeadings[i].trim().toLowerCase()) matched += 1;
+  let donorLevels = headingStructure(donorHeadings);
+  let buildLevels = headingStructure(buildHeadings);
+  if (donorLevels.length === 0 && buildLevels.length === 0) {
+    donorLevels = normalizedHeadingText(donorHeadings);
+    buildLevels = normalizedHeadingText(buildHeadings);
   }
+  const hierarchyLen = Math.max(donorLevels.length, buildLevels.length);
+  let hierarchyMatched = 0;
+  for (let i = 0; i < Math.min(donorLevels.length, buildLevels.length); i += 1) {
+    if (donorLevels[i] === buildLevels[i]) hierarchyMatched += 1;
+  }
+
+  const textLen = Math.max(donorHeadings.length, buildHeadings.length);
+  let textMatched = 0;
+  for (let i = 0; i < Math.min(donorHeadings.length, buildHeadings.length); i += 1) {
+    const donor = donorHeadings[i].replace(/^h[1-6]\s*:\s*/i, "").trim().toLowerCase();
+    const build = buildHeadings[i].replace(/^h[1-6]\s*:\s*/i, "").trim().toLowerCase();
+    if (donor && donor === build) textMatched += 1;
+  }
+  const bandCorrelationPercent = bandCorrelations.length
+    ? Math.round((bandCorrelations.reduce((sum, value) => sum + Math.max(0, Math.min(1, value)), 0) / bandCorrelations.length) * 1000) / 10
+    : 0;
   return {
     donorSectionCount,
     buildSectionCount,
     sectionCountDelta: buildSectionCount - donorSectionCount,
     donorHeadingCount: donorHeadings.length,
     buildHeadingCount: buildHeadings.length,
-    headingHierarchyMatchPercent: len ? Math.round((matched / len) * 1000) / 10 : 0
+    headingHierarchyMatchPercent: percentFromMatches(hierarchyMatched, hierarchyLen),
+    headingTextOverlapPercent: percentFromMatches(textMatched, textLen),
+    structureScorePercent: structureScore({ donorSectionCount, buildSectionCount, bandCorrelations, mediaAgreementPercent }),
+    bandCorrelationPercent,
+    mediaAgreementPercent
   };
 }
 
@@ -100,6 +171,7 @@ export type CompareReportData = {
   donorUrl: string;
   previewUrl: string;
   comparedAt: string;
+  stage: CompareStage;
   viewports: ViewportReport[];
   tokens: TokenComparison | null;
   structure: StructureComparison | null;
@@ -117,18 +189,24 @@ function scoreLabel(pct: number): string {
  * on purpose while structure/rhythm should stay high. */
 export function buildCompareReport(data: CompareReportData): string {
   const lines: string[] = [];
+  const canonical = data.viewports.find((v) => v.viewport === "desktop") ?? data.viewports[0];
+  const headlineScore = data.stage === "translation" ? data.structure?.structureScorePercent ?? 0 : canonical?.overall ?? 0;
   lines.push(`# Visual Compare Report: ${data.slug}`);
   lines.push("");
   lines.push(`Donor: ${data.donorUrl}`);
   lines.push(`Build: ${data.previewUrl}`);
   lines.push(`Compared: ${data.comparedAt}`);
+  lines.push(`Stage: ${data.stage}`);
+  lines.push(`Headline score: ${headlineScore}% (${data.stage === "translation" ? "structure" : "pixel"}; target >=85%)`);
   lines.push("");
-  lines.push("> Pixel match is a fidelity instrument for the CLONE stage. After brand translation,");
-  lines.push("> color/imagery match is EXPECTED to drop while structure and rhythm should stay high.");
-  lines.push("> Read the structure/style section below alongside the pixel scores, not instead of them.");
+  if (data.stage === "translation") {
+    lines.push("> Translation stage leads with STRUCTURE: section-count match, grayscale row-profile rhythm,");
+    lines.push("> and media/text band agreement. Pixel match is informational only here; 40-60% is expected");
+    lines.push("> after replacing donor imagery, colors, and copy.");
+  } else {
+    lines.push("> Clone stage is pixel-led. Target >=85% pixel match before translation.");
+  }
   lines.push("");
-
-  const canonical = data.viewports.find((v) => v.viewport === "desktop") ?? data.viewports[0];
   lines.push("## Overall Pixel Match");
   lines.push("");
   for (const vp of data.viewports) {
@@ -139,8 +217,12 @@ export function buildCompareReport(data: CompareReportData): string {
   if (data.structure) {
     lines.push("## Structure (should stay high through translation)");
     lines.push("");
+    lines.push(`- Structure score: ${data.structure.structureScorePercent}% (${scoreLabel(data.structure.structureScorePercent)})`);
     lines.push(`- Donor sections: ${data.structure.donorSectionCount} · Build sections: ${data.structure.buildSectionCount} (delta ${data.structure.sectionCountDelta >= 0 ? "+" : ""}${data.structure.sectionCountDelta})`);
     lines.push(`- Heading hierarchy match: ${data.structure.headingHierarchyMatchPercent}% (${data.structure.buildHeadingCount} build vs ${data.structure.donorHeadingCount} donor headings)`);
+    lines.push(`- Heading text overlap (clone-stage info): ${data.structure.headingTextOverlapPercent}%`);
+    lines.push(`- Grayscale row-profile rhythm: ${data.structure.bandCorrelationPercent}%`);
+    lines.push(`- Media/text band agreement: ${data.structure.mediaAgreementPercent}%`);
     lines.push("");
   }
 
@@ -238,6 +320,66 @@ export function diffByBands(donor: PNG, build: PNG, bandCount: number): BandDiff
   return { bands, diffImages };
 }
 
+function grayscaleRowProfile(src: PNG, y0: number, y1: number, width: number): number[] {
+  const profile: number[] = [];
+  for (let y = y0; y < y1; y += 1) {
+    let sum = 0;
+    for (let x = 0; x < width; x += 1) {
+      const idx = (y * src.width + x) * 4;
+      sum += src.data[idx] * 0.299 + src.data[idx + 1] * 0.587 + src.data[idx + 2] * 0.114;
+    }
+    profile.push(sum / Math.max(1, width));
+  }
+  return profile;
+}
+
+function correlation(a: number[], b: number[]): number {
+  const len = Math.min(a.length, b.length);
+  if (len === 0) return 0;
+  const aa = a.slice(0, len);
+  const bb = b.slice(0, len);
+  const meanA = aa.reduce((sum, value) => sum + value, 0) / len;
+  const meanB = bb.reduce((sum, value) => sum + value, 0) / len;
+  let numerator = 0;
+  let denomA = 0;
+  let denomB = 0;
+  for (let i = 0; i < len; i += 1) {
+    const da = aa[i] - meanA;
+    const db = bb[i] - meanB;
+    numerator += da * db;
+    denomA += da * da;
+    denomB += db * db;
+  }
+  if (denomA === 0 && denomB === 0) return 1;
+  if (denomA === 0 || denomB === 0) return 0;
+  return Math.max(-1, Math.min(1, numerator / Math.sqrt(denomA * denomB)));
+}
+
+function grayscaleVariance(src: PNG, y0: number, y1: number, width: number): number {
+  const values = grayscaleRowProfile(src, y0, y1, width);
+  if (values.length === 0) return 0;
+  const mean = values.reduce((sum, value) => sum + value, 0) / values.length;
+  return values.reduce((sum, value) => sum + (value - mean) ** 2, 0) / values.length;
+}
+
+function bandRhythm(donor: PNG, build: PNG, bands: BandScore[]): { correlations: number[]; mediaAgreementPercent: number } {
+  const width = Math.min(donor.width, build.width);
+  const correlations: number[] = [];
+  let agreement = 0;
+  for (const band of bands) {
+    const donorProfile = grayscaleRowProfile(donor, band.y0, band.y1, width);
+    const buildProfile = grayscaleRowProfile(build, band.y0, band.y1, width);
+    correlations.push(Math.max(0, correlation(donorProfile, buildProfile)));
+    const donorMedia = grayscaleVariance(donor, band.y0, band.y1, width) > 120;
+    const buildMedia = grayscaleVariance(build, band.y0, band.y1, width) > 120;
+    if (donorMedia === buildMedia) agreement += 1;
+  }
+  return {
+    correlations,
+    mediaAgreementPercent: bands.length ? Math.round((agreement / bands.length) * 1000) / 10 : 0
+  };
+}
+
 /** Paste donor | build side by side into one PNG (white gutter). No resize; caps height for sanity. */
 export function compositeSideBySide(donor: PNG, build: PNG, gap = 24, maxHeight = 8000): PNG {
   const height = Math.min(maxHeight, Math.max(donor.height, build.height));
@@ -303,6 +445,8 @@ export type CompareResult = {
   slug: string;
   reportPath: string;
   donorFound: boolean;
+  stage: CompareStage;
+  headlineScore: number | null;
   overallDesktop: number | null;
   overallMobile: number | null;
   worstSectionLabel: string | null;
@@ -315,7 +459,7 @@ export type CompareResult = {
 export async function runCompare(
   slug: string,
   previewUrl: string,
-  options: { bands?: number; comparedAt?: string } = {}
+  options: { bands?: number; comparedAt?: string; stage?: CompareStage } = {}
 ): Promise<CompareResult> {
   const bandCount = options.bands ?? 8;
   const comparedAt = options.comparedAt ?? new Date().toISOString();
@@ -358,6 +502,8 @@ export async function runCompare(
   }
 
   const viewports: ViewportReport[] = [];
+  let desktopBandCorrelations: number[] = [];
+  let desktopMediaAgreement = 0;
   for (const viewport of ["desktop", "mobile"] as const) {
     const donorPath = await findDonorShot(referenceDir, viewport);
     const buildPath = path.join(buildShotDir, `${viewport}.png`);
@@ -368,6 +514,11 @@ export async function runCompare(
     const donorPng = await readPng(donorPath);
     const buildPng = await readPng(buildPath);
     const { bands, diffImages } = diffByBands(donorPng, buildPng, bandCount);
+    if (viewport === "desktop") {
+      const rhythm = bandRhythm(donorPng, buildPng, bands);
+      desktopBandCorrelations = rhythm.correlations;
+      desktopMediaAgreement = rhythm.mediaAgreementPercent;
+    }
     const overall = overallMatch(bands);
     const note =
       donorPng.width !== buildPng.width ? `widths differ (donor ${donorPng.width} vs build ${buildPng.width}); compared common width` : undefined;
@@ -404,14 +555,22 @@ export async function runCompare(
   const tokens = donorTokens && buildTokens ? compareTokens(donorTokens, buildTokens) : null;
   const structure =
     donorSectionCount || buildSectionCount || donorHeadings.length || buildHeadings.length
-      ? compareStructure(donorSectionCount, buildSectionCount, donorHeadings, buildHeadings)
+      ? compareStructure(donorSectionCount, buildSectionCount, donorHeadings, buildHeadings, desktopBandCorrelations, desktopMediaAgreement)
       : null;
+  let copyDeck = "";
+  try {
+    copyDeck = await readFile(path.join(siteDir, "copy-deck.md"), "utf8");
+  } catch {
+    copyDeck = "";
+  }
+  const stage = detectCompareStage(options.stage, copyDeck);
 
   const reportData: CompareReportData = {
     slug,
     donorUrl: await readDonorUrl(referenceDir),
     previewUrl,
     comparedAt,
+    stage,
     viewports,
     tokens,
     structure
@@ -431,6 +590,8 @@ export async function runCompare(
     overallMobile: mobile ? mobile.overall : null,
     worstSectionLabel: worstBand ? worstBand.label : null,
     worstSectionMatch: worstBand ? worstBand.matchPercent : null,
+    stage,
+    headlineScore: stage === "translation" ? structure?.structureScorePercent ?? null : desktop?.overall ?? null,
     structure,
     tokens
   };
@@ -469,7 +630,7 @@ async function harvestBuildFacts(page: import("@playwright/test").Page): Promise
     return { colorCounts, headingFonts, bodyFonts, uiFonts, fontSizesPx, sectionPaddingsPx, radiiPx, shadows };
   });
   const headings = await page.evaluate(() =>
-    Array.from(document.querySelectorAll("h1, h2, h3")).map((h) => (h.textContent || "").replace(/\s+/g, " ").trim()).filter(Boolean)
+    Array.from(document.querySelectorAll("h1, h2, h3")).map((h) => `${h.tagName.toLowerCase()}: ${(h.textContent || "").replace(/\s+/g, " ").trim()}`).filter(Boolean)
   );
   const sectionCount = await page.evaluate(
     () => document.querySelectorAll("main > section, main > div, body > section, section[class]").length
@@ -484,7 +645,10 @@ async function readDonorHeadings(referenceDir: string): Promise<string[]> {
     return copy
       .split("\n")
       .filter((line) => /^#{1,3}\s+/.test(line))
-      .map((line) => line.replace(/^#{1,3}\s+/, "").trim())
+      .map((line) => {
+        const level = line.match(/^(#{1,3})\s+/)?.[1].length ?? 1;
+        return `h${level}: ${line.replace(/^#{1,3}\s+/, "").trim()}`;
+      })
       .filter(Boolean);
   } catch {
     return [];

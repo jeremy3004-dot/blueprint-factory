@@ -6,9 +6,12 @@ import {
   compareStructure,
   compareTokens,
   compositeSideBySide,
+  detectCompareStage,
   diffByBands,
+  headingStructure,
   matchPercent,
   overallMatch,
+  structureScore,
   worstSections,
   type CompareReportData
 } from "./compare";
@@ -86,6 +89,60 @@ describe("compareStructure", () => {
     // 2 of 3 headings match in order
     assert.equal(cmp.headingHierarchyMatchPercent, 66.7);
   });
+
+  it("matches translated headings by level/order instead of exact text", () => {
+    const cmp = compareStructure(3, 3, ["h1: Luxury treks", "h2: Featured journeys"], ["h1: Everest Tours", "h2: Signature departures"]);
+    assert.equal(cmp.headingHierarchyMatchPercent, 100);
+    assert.equal(cmp.headingTextOverlapPercent, 0);
+  });
+});
+
+describe("detectCompareStage", () => {
+  it("uses an explicit stage when supplied", () => {
+    assert.equal(detectCompareStage("translation", ""), "translation");
+  });
+
+  it("auto-detects translation when copy deck has filled brand rows", () => {
+    const deck = [
+      "| # | Type | Donor copy | Brand copy |",
+      "| - | ---- | ---------- | ---------- |",
+      "| 1 | Heading | Donor line | Everest Tours line |"
+    ].join("\n");
+    assert.equal(detectCompareStage(undefined, deck), "translation");
+  });
+
+  it("defaults to clone when brand rows are still TODO", () => {
+    const deck = "| 1 | Heading | Donor line | <!-- TODO --> |";
+    assert.equal(detectCompareStage(undefined, deck), "clone");
+  });
+});
+
+describe("structureScore", () => {
+  it("scores translated synthetic bands strongly when section count and rhythm match", () => {
+    const score = structureScore({
+      donorSectionCount: 12,
+      buildSectionCount: 12,
+      bandCorrelations: [0.9, 0.85, 0.8],
+      mediaAgreementPercent: 100
+    });
+    assert.equal(score, 95.5);
+  });
+
+  it("penalizes section-count drift and mismatched band rhythm", () => {
+    const score = structureScore({
+      donorSectionCount: 12,
+      buildSectionCount: 8,
+      bandCorrelations: [0.2, 0.1],
+      mediaAgreementPercent: 50
+    });
+    assert.equal(score < 70, true);
+  });
+});
+
+describe("headingStructure", () => {
+  it("keeps only heading levels for translation-stage matching", () => {
+    assert.deepEqual(headingStructure(["h1: Hero", "h2: Proof", "Plain"]), ["h1", "h2"]);
+  });
 });
 
 describe("diffByBands", () => {
@@ -130,6 +187,7 @@ describe("buildCompareReport", () => {
     donorUrl: "https://example.com",
     previewUrl: "http://localhost:3000",
     comparedAt: "2026-07-06T00:00:00.000Z",
+    stage: "clone",
     viewports: [
       {
         viewport: "desktop",
@@ -156,7 +214,11 @@ describe("buildCompareReport", () => {
       sectionCountDelta: -1,
       donorHeadingCount: 10,
       buildHeadingCount: 9,
-      headingHierarchyMatchPercent: 80
+      headingHierarchyMatchPercent: 80,
+      headingTextOverlapPercent: 30,
+      structureScorePercent: 88,
+      bandCorrelationPercent: 75,
+      mediaAgreementPercent: 90
     }
   };
 
@@ -169,6 +231,7 @@ describe("buildCompareReport", () => {
     const idx1 = md.indexOf("Section band 1 (y 0–900) — 90%");
     assert.ok(idx2 > -1 && idx2 < idx1);
     assert.ok(md.includes("Structure (should stay high"));
+    assert.ok(md.includes("Structure score: 88%"));
     assert.ok(md.includes("Donor-palette coverage in build: 50%"));
   });
 });

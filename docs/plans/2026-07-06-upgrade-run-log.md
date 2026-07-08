@@ -367,3 +367,29 @@ becomes mechanical.
 
 Phases 1–7 are complete. Phase 8 is explicitly deferred (not built). Final step: update `README.md` and
 the callbook with the new commands and write the whole-upgrade summary.
+
+---
+
+## Everest First-Job Strengthening — Item 1 ✅
+
+Date: 2026-07-08
+
+### What shipped
+
+- `blueprint compare` accepts `--stage clone|translation`; clone remains pixel-led, while translation
+  leads with a structure score.
+- Auto stage detection uses a filled `copy-deck.md` brand column when no stage is supplied.
+- Translation structure score combines section-count match, desktop grayscale row-profile rhythm, and
+  media/text band agreement. Raw pixel match remains in the report but is labeled informational after
+  translation.
+- Heading comparison now uses structural level/order matching for translated builds; exact text overlap
+  remains clone-stage information only.
+- `blueprint verify` summaries now lead with the stage-appropriate score.
+- README and callbook document `compare --stage`.
+
+### How it was verified
+
+- Baseline before Item 1: `pnpm test` → 92 pass.
+- After Item 1: `pnpm test` → 99 pass.
+- New tests cover explicit/auto stage detection, synthetic translation structure scoring, and
+  heading-level matching that survives translated copy.
