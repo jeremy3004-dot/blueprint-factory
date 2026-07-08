@@ -30,6 +30,7 @@ non-technical owner can read.
 | `pnpm blueprint:capture <slug> <donor-url>` | Automated donor evidence pack: multi-viewport full-page screenshots (auto-scrolled, cookie-consent dismissed), per-section shots, a real scroll-through video (+ reduced-motion), DOM/copy/token/asset/animation/page extraction, and auto-drafted `topology.md` + `clone-plan.md` + `pages.json`. |
 | `pnpm blueprint:run <slug> [url]` | Advance the site through the factory gates (reference-first → art → build → screenshots → motion → page coverage → Beauty). |
 | `pnpm blueprint:status [slug]` | With a slug: that site's next gate. With no slug: an all-sites dashboard, also written to `factory/STATUS.md`. |
+| `pnpm blueprint:adopt <client-slug> <donor-name>` | Scaffold a client site from a donor shelf pack: copy reference-first evidence, rewrite headers for the client, and seed `pages.json`. |
 | `pnpm blueprint:tokens <slug>` | Curate the donor's colors + fonts into `app/tokens.json` (wired into the theme); substitute licensed donor fonts for open ones and log it in `asset-log.md`. |
 | `pnpm blueprint:check <slug> [url]` | Typecheck → build → (with a URL) console-error scan → broken-link check → axe accessibility pass. |
 | `pnpm blueprint:compare <slug> <preview-url> [--stage clone\|translation]` | Per-section compare vs the donor, side-by-side composites, and `qa/compare/report.md`. Clone stage is pixel-led; translation stage leads with structure while raw pixel match is informational. |

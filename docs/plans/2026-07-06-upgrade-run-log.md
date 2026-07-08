@@ -416,3 +416,24 @@ Date: 2026-07-08
 - After Item 2: `pnpm test` → 103 pass.
 - New tests cover status-based detection, fixture HTML detection, local-preview non-detection, and
   deploy shareability notes.
+
+---
+
+## Everest First-Job Strengthening — Item 3 ✅
+
+Date: 2026-07-08
+
+### What shipped
+
+- Added `blueprint adopt <client-slug> <donor-name>` / `pnpm blueprint:adopt`.
+- The command scaffolds a client if needed, copies the donor shelf reference-first pack, rewrites the
+  topology and clone-plan titles for the client while preserving donor name and URL, and seeds
+  `pages.json` from the donor page inventory.
+- README and callbook now document the adopt command.
+
+### How it was verified
+
+- Before Item 3: `pnpm test` → 103 pass.
+- After Item 3: `pnpm test` → 106 pass.
+- New tests cover donor-name normalization, topology/clone-plan header rewriting, and page-plan seeding
+  from donor inventory.

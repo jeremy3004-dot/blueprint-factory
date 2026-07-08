@@ -26,6 +26,7 @@ import {
 } from "./status";
 import { runPreviewDeploy } from "./deploy";
 import { checkProductionAssets, runCopyDeck } from "./assets";
+import { runAdopt } from "./adopt";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -445,7 +446,7 @@ async function runDashboard() {
 async function main() {
   const [command, rawSlug, url] = process.argv.slice(2);
   if (!command) {
-    console.log("Usage: blueprint <run|status|new|capture|art|check|compare|verify|tokens|copydeck|screenshots|motion|beauty|deploy> <slug> [url]");
+    console.log("Usage: blueprint <run|status|new|adopt|capture|art|check|compare|verify|tokens|copydeck|screenshots|motion|beauty|deploy> <slug> [url]");
     return;
   }
 
@@ -461,6 +462,30 @@ async function main() {
   if (command === "new") {
     await createSite(siteSlug);
     console.log(`Created sites/${siteSlug}`);
+    return;
+  }
+
+  if (command === "adopt") {
+    if (!url) {
+      console.error("Usage: blueprint adopt <client-slug> <donor-name>");
+      process.exit(1);
+    }
+    if (!(await fileExists(`sites/${siteSlug}`))) {
+      await createSite(siteSlug);
+      console.log(`Created sites/${siteSlug} scaffold.`);
+    }
+    const result = await runAdopt(siteSlug, url);
+    await appendRunLog(
+      siteSlug,
+      `- Adopted donor shelf pack ${result.donorSlug}: copied reference-first evidence, rewrote client headers, and seeded pages.json (${result.pageCount} planned page(s)).`
+    );
+    console.log("");
+    console.log("PLAIN-LANGUAGE SUMMARY");
+    console.log(
+      `${siteSlug} now has a client scaffold using ${result.donorSlug} as the reference donor. ` +
+        `The donor screenshots, topology, clone plan, and extraction files were copied into ${result.referenceDir}, ` +
+        `the headers now name the client while keeping the donor name and URL, and pages.json starts with ${result.pageCount} planned page(s).`
+    );
     return;
   }
 

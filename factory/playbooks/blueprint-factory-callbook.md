@@ -120,6 +120,9 @@ Current command meanings:
 - `status`: with a slug, print that site's next action; with no slug, print the all-sites dashboard and
   write `factory/STATUS.md`.
 - `new`: create the site scaffold.
+- `adopt`: create a client scaffold from an existing donor shelf pack, copy its reference-first
+  evidence, rewrite the topology/clone-plan headers for the client while preserving donor facts, and
+  seed `pages.json`.
 - `art`: check that art direction names a real signature moment.
 - `tokens`: curate the donor's colors and fonts into `app/tokens.json` (wired into the theme), swap
   licensed donor fonts for open alternatives, and log the font decisions in `asset-log.md`.
