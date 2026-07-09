@@ -1,0 +1,207 @@
+/* Guided product tour — dark charcoal + green accent */
+
+.tour-welcome-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(62, 207, 142, 0.25);
+  background: rgba(62, 207, 142, 0.08);
+}
+
+.tour-welcome-banner p {
+  margin: 0;
+  flex: 1 1 12rem;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.tour-welcome-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+body.tour-active {
+  overflow: hidden;
+}
+
+.tour-root {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  pointer-events: none;
+}
+
+.tour-root:not(.hidden) {
+  pointer-events: auto;
+}
+
+.tour-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tour-highlight {
+  position: fixed;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 9999px rgba(0, 0, 0, 0.72),
+    0 0 24px rgba(62, 207, 142, 0.35);
+  pointer-events: none;
+  transition: top 0.2s ease, left 0.2s ease, width 0.2s ease, height 0.2s ease;
+  z-index: 12001;
+}
+
+.tour-popover {
+  position: fixed;
+  z-index: 12002;
+  width: min(360px, calc(100vw - 24px));
+  padding: 1rem 1.1rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  pointer-events: auto;
+}
+
+.tour-popover.placement-center {
+  max-width: 420px;
+  width: min(420px, calc(100vw - 24px));
+}
+
+.tour-counter {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tour-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.tour-body {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.tour-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tour-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.tour-skip {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.tour-back:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.tour-arrow {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.tour-arrow.arrow-bottom {
+  border-bottom: none;
+  border-right: none;
+}
+
+.tour-arrow.arrow-top {
+  border-top: none;
+  border-left: none;
+}
+
+.tour-arrow.arrow-right {
+  border-top: none;
+  border-right: none;
+}
+
+.tour-arrow.arrow-left {
+  border-bottom: none;
+  border-left: none;
+}
+
+/* Settings panel */
+.settings-panel {
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settings-card {
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.settings-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.settings-card p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.settings-tour-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.settings-tour-row .primary-btn {
+  flex-shrink: 0;
+}
+
+.tour-completed-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tour-completed-label input {
+  accent-color: var(--accent);
+}

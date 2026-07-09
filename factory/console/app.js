@@ -1,5 +1,7 @@
 /** Blueprint Factory Operator Console — client app */
 
+import { bindTourUi, initTour } from "./tour.js";
+
 let state = { clients: [], donors: [], prospects: [], prospectFilters: null, tasks: [], jobs: [], stats: {} };
 let hostedMode = false;
 let matchmakerSelectedDonor = null;
@@ -20,6 +22,7 @@ const views = {
   "build-sites": { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
   projects: { title: "My Projects", sub: "Client sites and where each one stands" },
   inbox: { title: "Activity", sub: "Jobs and tasks in progress" },
+  settings: { title: "Settings", sub: "Console preferences and guided tour" },
   review: { title: "Review project", sub: "See the full picture before you decide" },
   // legacy keys kept for data-goto / commission strip fallbacks
   matchmaker: { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
@@ -2619,6 +2622,9 @@ $("#prospect-add-form")?.addEventListener("submit", async (e) => {
   }
 });
 
+initTour({ switchView });
+bindTourUi();
+
 loadData()
   .then(() => {
     if (!parseHashRoute()) {
@@ -2626,5 +2632,5 @@ loadData()
     }
   })
   .catch(() => {
-  $("#project-grid").innerHTML = `<div class="empty">Could not reach the console server. Run <code>pnpm blueprint:console</code> from the factory root.</div>`;
-});
+    $("#project-grid").innerHTML = `<div class="empty">Could not reach the console server. Run <code>pnpm blueprint:console</code> from the factory root.</div>`;
+  });
