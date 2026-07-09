@@ -1041,6 +1041,80 @@ body {
   cursor: pointer;
 }
 
+/* Build Sites — two equal start options */
+.build-sites-lead {
+  margin: 0 0 1.25rem;
+}
+
+.build-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.build-option-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.build-option-header {
+  margin-bottom: 1rem;
+}
+
+.build-option-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.build-option-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.build-option-sub {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+#view-build-sites .job-form {
+  max-width: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  flex: 1;
+}
+
+#view-build-sites .job-intro {
+  max-width: none;
+  margin-bottom: 1rem;
+}
+
+#view-build-sites .task-result {
+  max-width: none;
+  margin-top: 1rem;
+}
+
+#view-build-sites .matchmaker-layout {
+  flex: 1;
+  min-height: 0;
+}
+
 /* Matchmaker */
 .matchmaker-hint {
   margin-bottom: 1rem;
@@ -1073,7 +1147,8 @@ body {
   justify-content: space-between;
 }
 
-.matchmaker-pane-head h2 {
+.matchmaker-pane-head h2,
+.matchmaker-pane-head h3 {
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
@@ -1304,6 +1379,14 @@ body {
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .build-options {
+    grid-template-columns: 1fr;
+  }
+
+  .build-option-card {
+    min-height: auto;
   }
 
   .matchmaker-layout {

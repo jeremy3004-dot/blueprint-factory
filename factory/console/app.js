@@ -14,11 +14,11 @@ const views = {
   today: { title: "Today", sub: "What needs your attention right now" },
   prospects: { title: "Find Clients", sub: "Browse, filter, favorite, and add Nepal leads" },
   donors: { title: "Design Library", sub: "Pre-captured reference sites to clone from" },
-  "build-sites": { title: "Build Sites", sub: "Start a client build — pick a design or pair with a lead" },
+  "build-sites": { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
   projects: { title: "My Projects", sub: "Client sites and where each one stands" },
   inbox: { title: "Activity", sub: "Jobs and tasks in progress" },
   // legacy keys kept for data-goto / commission strip fallbacks
-  matchmaker: { title: "Build Sites", sub: "Start a client build — pick a design or pair with a lead" },
+  matchmaker: { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
   restock: { title: "Design Library", sub: "Add new world-class designs to the library" },
   "new-job": { title: "Build Sites", sub: "Two blanks — name and website. Worker derives the rest." }
 };
@@ -1410,7 +1410,7 @@ function updateJobFormMode() {
   $("#client-website-field")?.classList.toggle("hidden", !isCloneJob);
   form.querySelector('[name="donorShelfSlug"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
   form.querySelector('[name="notes"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
-  $(".job-intro")?.classList.toggle("hidden", !isCloneJob);
+  $("#build-option-form .job-intro")?.classList.toggle("hidden", !isCloneJob);
 }
 
 function prefillTask({ clientName, taskType, donorShelfSlug, clientWebsite }) {
