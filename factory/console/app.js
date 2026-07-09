@@ -540,6 +540,243 @@ function renderToday() {
   }
 }
 
+function reviewPrimaryActionsHtml(c) {
+  const slug = c.slug;
+  const action = c.nextAction;
+
+  if (action === "NEEDS_REFERENCE_FIRST") {
+    return `
+      <button type="button" class="primary-btn" data-review-action="pick-design" data-slug="${slug}">Pick a design</button>
+      <button type="button" class="ghost-btn" data-review-action="continue" data-slug="${slug}">Create continue task</button>
+    `;
+  }
+  if (action === "NEEDS_ART_DIRECTION") {
+    return `<button type="button" class="primary-btn" data-review-action="continue" data-slug="${slug}">Create art direction task</button>`;
+  }
+  if (action === "RUN_BEAUTY") {
+    const preview = c.previewUrl
+      ? `<a class="ghost-btn" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>`
+      : "";
+    return `
+      ${preview}
+      <button type="button" class="primary-btn" data-review-action="continue" data-slug="${slug}">Run beauty pass in Cursor</button>
+    `;
+  }
+  if (action === "READY_FOR_HUMAN_REVIEW") {
+    const preview = c.previewUrl
+      ? `<a class="ghost-btn" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>`
+      : "";
+    const copy = c.previewUrl
+      ? `<button type="button" class="primary-btn" data-review-action="copy-link" data-url="${c.previewUrl}">Send to client</button>`
+      : "";
+    return `
+      ${preview}
+      ${copy}
+      <button type="button" class="ghost-btn" data-review-action="looks-good">Looks good</button>
+    `;
+  }
+  if (action === "NEEDS_PAGE_COVERAGE" || action === "REPAIR_REQUIRED_FILES") {
+    return `<button type="button" class="primary-btn" data-review-action="continue" data-slug="${slug}">Create continue task</button>`;
+  }
+  return `<button type="button" class="primary-btn" data-review-action="continue" data-slug="${slug}">Create continue task</button>`;
+}
+
+function bindReviewActions(root, c) {
+  root.querySelectorAll("[data-review-action]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const action = btn.dataset.reviewAction;
+      const slug = btn.dataset.slug ?? c.slug;
+      if (action === "pick-design") {
+        closeReviewPage({ skipHash: true });
+        switchView("donors");
+        return;
+      }
+      if (action === "continue") {
+        prefillTask({ clientName: slug, taskType: "continue_site" });
+        closeReviewPage({ skipHash: true });
+        switchView("build-sites");
+        return;
+      }
+      if (action === "copy-link") {
+        void copyClientLink(btn.dataset.url);
+        return;
+      }
+      if (action === "looks-good") {
+        showToast("Marked as reviewed — send the preview when you're ready", { type: "success" });
+      }
+    });
+  });
+
+  root.querySelectorAll("[data-review-copy]").forEach((btn) => {
+    btn.addEventListener("click", () => void copyClientLink(btn.dataset.reviewCopy));
+  });
+}
+
+async function renderReviewPage() {
+  const root = $("#review-content");
+  if (!root) return;
+
+  const c = findClientBySlug(reviewProjectSlug);
+  if (!c) {
+    root.innerHTML = `<div class="empty">Project not found. <button type="button" class="link-btn" id="review-missing-back">← Back to Today</button></div>`;
+    $("#review-missing-back")?.addEventListener("click", () => closeReviewPage());
+    return;
+  }
+
+  const mobileUrl = guessMobileThumbnail(c.thumbnail, c.slug);
+  const hasMobile = c.thumbnail ? await imageExists(mobileUrl) : false;
+  const desktopUrl = c.thumbnail;
+  const initialDevice = desktopUrl ? "desktop" : hasMobile ? "mobile" : "desktop";
+  const initialUrl = initialDevice === "mobile" && hasMobile ? mobileUrl : desktopUrl;
+
+  root.innerHTML = `
+    <div class="review-hero">
+      <div class="review-hero-media${initialDevice === "mobile" ? " review-hero-mobile" : ""}" id="review-hero-media">
+        ${initialUrl ? `<img src="${initialUrl}" alt="${escapeHtml(c.title)} screenshot" id="review-hero-img" />` : `<div class="placeholder">No screenshot yet</div>`}
+      </div>
+      ${
+        hasMobile && desktopUrl
+          ? `<div class="review-device-toggle" id="review-device-toggle">
+              <button type="button" class="${initialDevice === "desktop" ? "active" : ""}" data-device="desktop">Desktop</button>
+              <button type="button" class="${initialDevice === "mobile" ? "active" : ""}" data-device="mobile">Mobile</button>
+            </div>`
+          : ""
+      }
+    </div>
+
+    <div class="review-header">
+      <h2>${escapeHtml(c.title)}</h2>
+      ${ownerBucketChip(c)}
+      ${chipForAction(c.nextAction)}
+    </div>
+    <p class="review-slug muted">Build: ${escapeHtml(c.slug)}</p>
+    <p class="review-next-action">${escapeHtml(c.nextActionPlain)}</p>
+
+    ${
+      c.previewUrl
+        ? `<div class="review-section">
+            <h4>Preview</h4>
+            <div class="review-preview-actions">
+              <a class="primary-btn" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>
+              <button type="button" class="ghost-btn" data-review-copy="${c.previewUrl}">Copy link for client</button>
+            </div>
+          </div>`
+        : ""
+    }
+
+    ${
+      c.compareDesktop != null
+        ? `<div class="review-section">
+            <h4>Donor match</h4>
+            <div class="review-scores">
+              <div class="review-score"><strong>${c.compareDesktop}%</strong><span>Desktop</span></div>
+              <div class="review-score"><strong>${c.compareMobile ?? "—"}%</strong><span>Mobile</span></div>
+            </div>
+          </div>`
+        : ""
+    }
+
+    <div class="review-actions">${reviewPrimaryActionsHtml(c)}</div>
+
+    ${
+      c.briefExcerpt
+        ? `<div class="review-section review-brief">
+            <h4>Brief</h4>
+            <p>${sanitizeExcerpt(c.briefExcerpt)}</p>
+          </div>`
+        : ""
+    }
+
+    <div class="review-section">
+      <h4>Build detail</h4>
+      <div class="status-grid">
+        <div><strong>References</strong>${c.status.referenceReady ? "Ready" : "Missing"}</div>
+        <div><strong>Art direction</strong>${c.status.artReady ? "Ready" : "Missing"}</div>
+        <div><strong>App</strong>${c.status.appExists ? "Present" : "Missing"}</div>
+        <div><strong>Screenshots</strong>${c.status.screenshotsReady ? "Ready" : "Missing"}</div>
+        <div><strong>Motion</strong>${c.status.motionReady ? "Ready" : "Missing"}</div>
+        <div><strong>Pages</strong>${c.pages}</div>
+      </div>
+      ${
+        c.donorSlug || c.donorUrl
+          ? `<p class="muted" style="margin:0.75rem 0 0">Visual donor: ${escapeHtml(c.donorSlug ?? "")}${
+              c.donorUrl ? ` · <a href="${c.donorUrl}" target="_blank" rel="noreferrer">${escapeHtml(c.donorUrl)}</a>` : ""
+            }</p>`
+          : ""
+      }
+    </div>
+  `;
+
+  bindReviewActions(root, c);
+
+  const toggle = $("#review-device-toggle");
+  if (toggle && desktopUrl && hasMobile) {
+    const media = $("#review-hero-media");
+    const img = $("#review-hero-img");
+    toggle.querySelectorAll("[data-device]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const device = btn.dataset.device;
+        toggle.querySelectorAll("[data-device]").forEach((b) => b.classList.toggle("active", b === btn));
+        media.classList.toggle("review-hero-mobile", device === "mobile");
+        if (img) img.src = device === "mobile" ? mobileUrl : desktopUrl;
+      });
+    });
+  }
+}
+
+function showReviewPage(slug, options = {}) {
+  const client = findClientBySlug(slug);
+  if (!client) {
+    showToast("Project not found", { type: "error" });
+    return;
+  }
+
+  closeDrawer();
+  if (!options.fromHash && !reviewProjectSlug) {
+    reviewReturnView = document.querySelector(".nav-btn.active")?.dataset.view ?? "today";
+  }
+  reviewProjectSlug = slug;
+
+  document.querySelectorAll(".view").forEach((view) => {
+    view.classList.toggle("active", view.id === "view-review");
+  });
+  document.querySelector(".main")?.classList.add("review-mode");
+
+  const meta = views.review;
+  $("#view-title").textContent = meta.title;
+  $("#view-subtitle").textContent = meta.sub;
+  $("#sidebar").classList.remove("open");
+
+  if (!options.fromHash) {
+    const nextHash = `#review/${encodeURIComponent(slug)}`;
+    if (location.hash !== nextHash) {
+      history.pushState({ reviewSlug: slug }, "", nextHash);
+    }
+  }
+
+  void renderReviewPage();
+}
+
+function closeReviewPage(options = {}) {
+  reviewProjectSlug = null;
+  document.querySelector(".main")?.classList.remove("review-mode");
+
+  if (!options.skipHash && location.hash.startsWith("#review/")) {
+    history.pushState(null, "", location.pathname + location.search);
+  }
+
+  switchView(reviewReturnView || "today");
+}
+
+function parseHashRoute() {
+  const raw = location.hash.slice(1);
+  if (!raw.startsWith("review/")) return false;
+  const slug = decodeURIComponent(raw.slice("review/".length));
+  if (!slug) return false;
+  showReviewPage(slug, { fromHash: true });
+  return true;
+}
+
 function projectCardActions(c) {
   if (!c.previewUrl) return "";
   return `
@@ -590,6 +827,11 @@ function renderProjects() {
           ${c.previewUrl ? "<span>Preview live</span>" : ""}
         </div>
         ${c.briefExcerpt ? `<p class="card-excerpt">${sanitizeExcerpt(c.briefExcerpt)}</p>` : ""}
+        ${
+          OWNER_ACTION_STATUSES.has(c.nextAction) || c.nextAction === "READY_FOR_HUMAN_REVIEW"
+            ? `<button type="button" class="ghost-btn card-review-btn" data-slug="${c.slug}" onclick="event.stopPropagation()">Review</button>`
+            : ""
+        }
         ${projectCardActions(c)}
       </div>
     </article>
@@ -601,6 +843,13 @@ function renderProjects() {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       void copyClientLink(btn.dataset.previewUrl);
+    });
+  });
+
+  grid.querySelectorAll(".card-review-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showReviewPage(btn.dataset.slug);
     });
   });
 }
@@ -1453,6 +1702,14 @@ function setBuildSitesMode(mode) {
 }
 
 function switchView(name) {
+  if (reviewProjectSlug) {
+    reviewProjectSlug = null;
+    document.querySelector(".main")?.classList.remove("review-mode");
+    if (location.hash.startsWith("#review/")) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+
   const requestedBuildMode =
     name === "matchmaker" ? "pair" : name === "new-job" ? "form" : null;
   if (name === "matchmaker" || name === "new-job") name = "build-sites";
@@ -1864,6 +2121,7 @@ async function loadData() {
   populateDonorSelect();
   initRestockSectors();
   scheduleJobPolling();
+  if (reviewProjectSlug) void renderReviewPage();
 }
 
 function showHostedBanner(note) {
@@ -1889,6 +2147,19 @@ $("#refresh-btn").addEventListener("click", async () => {
     showToast("Data refreshed");
   } catch {
     showToast("Refresh failed");
+  }
+});
+
+$("#review-back")?.addEventListener("click", () => closeReviewPage());
+
+window.addEventListener("popstate", () => {
+  if (location.hash.startsWith("#review/")) {
+    const slug = decodeURIComponent(location.hash.slice("#review/".length));
+    showReviewPage(slug, { fromHash: true });
+  } else if (reviewProjectSlug) {
+    reviewProjectSlug = null;
+    document.querySelector(".main")?.classList.remove("review-mode");
+    switchView(reviewReturnView || "today");
   }
 });
 
@@ -2348,6 +2619,12 @@ $("#prospect-add-form")?.addEventListener("submit", async (e) => {
   }
 });
 
-loadData().catch(() => {
+loadData()
+  .then(() => {
+    if (!parseHashRoute()) {
+      // default Today view
+    }
+  })
+  .catch(() => {
   $("#project-grid").innerHTML = `<div class="empty">Could not reach the console server. Run <code>pnpm blueprint:console</code> from the factory root.</div>`;
 });
