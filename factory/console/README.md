@@ -106,6 +106,11 @@ Future: Cursor automations can watch `factory/inbox/` for new `Status: pending` 
 | `pnpm blueprint:console:snapshot` | Export snapshot.json only |
 | `pnpm blueprint:console:deploy` | Snapshot + deploy to Vercel preview |
 
+### Guided tour
+
+New operators can take a **2-minute product tour** from **Settings → Start tour**, or from the first-visit banner.
+Step copy and targets live in `factory/console/tour-steps.js` — see `factory/console/TOUR.md` when you change nav or workflows.
+
 ### Job API (local server)
 
 - `POST /api/jobs/prospect-search` — `{ lane, region?, notes? }`
