@@ -25,7 +25,7 @@ const views = {
 
 const statusLabels = {
   READY_FOR_HUMAN_REVIEW: { label: "Ready for review", class: "ready" },
-  NEEDS_REFERENCE_FIRST: { label: "Needs donor", class: "warn" },
+  NEEDS_REFERENCE_FIRST: { label: "Pick a design", class: "warn" },
   NEEDS_ART_DIRECTION: { label: "Needs art direction", class: "warn" },
   CREATE_APP: { label: "Needs app", class: "muted" },
   CAPTURE_SCREENSHOTS: { label: "Needs screenshots", class: "muted" },
@@ -125,10 +125,10 @@ function jobStatusChip(status) {
 
 function kindLabel(kind) {
   const map = {
-    prospect_search: "Prospect search",
-    shelf_capture: "Donor capture",
-    shelf_restock: "Shelf restock",
-    clone_pair: "Clone job"
+    prospect_search: "Lead search",
+    shelf_capture: "Save design",
+    shelf_restock: "Add designs",
+    clone_pair: "Client build"
   };
   return map[kind] ?? kind;
 }
@@ -189,6 +189,46 @@ function ownerBucketChip(client) {
   };
   const info = map[bucket];
   return `<span class="chip ${info.class}">${info.label}</span>`;
+}
+
+function handoffButtonHtml(kind) {
+  const map = {
+    scout: { label: "Next: pick a design and start a build", view: "build-sites" },
+    build: { label: "We're building — check Today when it's ready", view: "today" },
+    review: { label: "Copy link to send to the client", view: "today", focus: "today-ready" }
+  };
+  const info = map[kind];
+  if (!info) return "";
+  const attrs = [`data-handoff-view="${info.view}"`];
+  if (info.focus) attrs.push(`data-handoff-focus="${info.focus}"`);
+  return `<button type="button" class="ghost-btn handoff-btn" ${attrs.join(" ")}>${info.label}</button>`;
+}
+
+function appendHandoff(resultEl, kind) {
+  if (!resultEl) return;
+  let row = resultEl.querySelector(".handoff-row");
+  if (!row) {
+    resultEl.insertAdjacentHTML("beforeend", `<div class="handoff-row">${handoffButtonHtml(kind)}</div>`);
+  } else {
+    row.innerHTML = handoffButtonHtml(kind);
+  }
+  bindHandoffButtons(resultEl);
+}
+
+function bindHandoffButtons(root = document) {
+  root.querySelectorAll(".handoff-btn").forEach((btn) => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", () => {
+      switchView(btn.dataset.handoffView);
+      const focus = btn.dataset.handoffFocus;
+      if (focus) {
+        requestAnimationFrame(() => {
+          document.getElementById(focus)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    });
+  });
 }
 
 function formatDate(iso) {
@@ -337,7 +377,7 @@ function renderSidebarStats() {
   const activeJobs = s.activeJobs ?? 0;
   el.innerHTML = `
     <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="today" data-stat-focus="today-ready"><strong>${s.readyForReview ?? 0}</strong><span>Ready for your review</span></button>
-    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="prospects"><strong>${s.prospectCount ?? 0}</strong><span>Nepal prospects</span></button>
+    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="prospects"><strong>${s.prospectCount ?? 0}</strong><span>Nepal leads</span></button>
     <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="projects"><strong>${s.clientCount ?? 0}</strong><span>Client projects</span></button>
     <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="inbox"><strong>${(s.pendingTasks ?? 0) + activeJobs}</strong><span>Inbox / jobs</span></button>
   `;
@@ -705,7 +745,7 @@ function renderProspects() {
   if (!items.length) {
     const { since } = collectProspectFilterParams();
     const total = state.prospects?.length ?? 0;
-    let emptyHint = "No prospects match these filters. Try clearing sector chips or lowering the score minimum.";
+    let emptyHint = "No leads match these filters. Try clearing sector chips or lowering the score minimum.";
     if (total > 0 && since && since !== "all") {
       const sinceLabels = { today: "Today", week: "This week", month: "This month", year: "This year" };
       emptyHint = `No leads were added ${sinceLabels[since] ?? since.toLowerCase()} — you still have ${total} in the list. Switch the date filter to “Any time” to see them, or scout new leads.`;
@@ -772,7 +812,7 @@ function renderDonors() {
   }
 
   if (!items.length) {
-    grid.innerHTML = `<div class="empty">No donors found.</div>`;
+    grid.innerHTML = `<div class="empty">No designs found.</div>`;
     return;
   }
 
@@ -782,7 +822,7 @@ function renderDonors() {
     <article class="card" data-slug="${d.slug}" data-kind="donor">
       <div class="card-thumb">${thumbHtml(d.thumbnail, d.slug)}</div>
       <div class="card-body">
-        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
+        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Ready to use" : "Incomplete"}</span>
         <h3 class="card-title">${d.field}</h3>
         <div class="card-meta"><span>${d.url}</span></div>
         ${d.nepalFit ? `<p class="card-excerpt">${sanitizeExcerpt(d.nepalFit)}</p>` : ""}
@@ -827,7 +867,7 @@ function renderInbox() {
   const activeCount = jobs.filter((j) => j.status === "queued" || j.status === "running").length;
 
   if (!jobs.length && !tasks.length) {
-    list.innerHTML = `<div class="empty">No jobs yet. Commission a prospect search, donor capture, or matchmaker pair.</div>`;
+    list.innerHTML = `<div class="empty">No activity yet. Start a lead search, save a design, or begin a client build.</div>`;
     return;
   }
 
@@ -868,7 +908,7 @@ function renderInbox() {
     <div class="inbox-item job-item${failedClass}${activeClass}${highlightClass}" data-job-id="${j.id}">
       <div class="inbox-item-head">
         <div>
-          <div class="inbox-kind">${isProspectSearch ? "Prospect search" : kindLabel(j.kind)}</div>
+          <div class="inbox-kind">${isProspectSearch ? "Lead search" : kindLabel(j.kind)}</div>
           <h3>${inboxJobTitle(j)}</h3>
           <div class="muted inbox-meta">${inboxJobMeta(j)}</div>
         </div>
@@ -912,7 +952,7 @@ function renderInbox() {
         </div>
         <button class="ghost-btn inbox-view-btn" data-copy-task="${encodeURIComponent(t.callPhrase)}">Copy phrase</button>
       </div>
-      ${isProspectTask ? "" : `<pre class="inbox-task-phrase">${t.callPhrase || "No call phrase"}</pre>`}
+      ${isProspectTask ? "" : `<pre class="inbox-task-phrase">${t.callPhrase || "No instructions"}</pre>`}
     </div>
   `;
     })
@@ -923,7 +963,7 @@ function renderInbox() {
   list.querySelectorAll("[data-copy-task]").forEach((btn) => {
     btn.addEventListener("click", async () => {
       await navigator.clipboard.writeText(decodeURIComponent(btn.dataset.copyTask));
-      showToast("Call phrase copied");
+      showToast("Instructions copied");
     });
   });
 
@@ -989,7 +1029,7 @@ function renderMatchmakerDonorCard(d) {
     <article class="match-card donor-card${selected}" draggable="true" data-donor-slug="${d.slug}">
       <div class="match-card-thumb">${thumbHtml(d.thumbnail, d.slug)}</div>
       <div class="match-card-body">
-        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
+        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Ready to use" : "Incomplete"}</span>
         <h3 class="match-card-title">${d.field}</h3>
         ${d.nepalFit ? `<p class="match-card-excerpt">${sanitizeExcerpt(d.nepalFit)}</p>` : ""}
       </div>
@@ -1035,7 +1075,7 @@ function setupMatchmakerDragDrop() {
       matchmakerSelectedDonor = matchmakerSelectedDonor === slug ? null : slug;
       renderMatchmaker();
       if (matchmakerSelectedDonor) {
-        showToast("Donor selected — tap a prospect to pair");
+        showToast("Design selected — tap a lead to pair");
       }
     });
   });
@@ -1081,13 +1121,13 @@ function renderMatchmaker() {
   const prospects = filterMatchmakerProspects();
 
   if (!donors.length) {
-    donorGrid.innerHTML = `<div class="empty">No donors on the shelf. Stock one from the Donor Shelf tab.</div>`;
+    donorGrid.innerHTML = `<div class="empty">No designs in the library yet. Add one from the Design Library panel.</div>`;
   } else {
     donorGrid.innerHTML = donors.map(renderMatchmakerDonorCard).join("");
   }
 
   if (!prospects.length) {
-    prospectGrid.innerHTML = `<div class="empty">No prospects found. Export leads to <code>prospects/nepal-leads.csv</code> with <code>blueprint-search-nepal</code>.</div>`;
+    prospectGrid.innerHTML = `<div class="empty">No leads found. Export leads to <code>prospects/nepal-leads.csv</code> with <code>blueprint-search-nepal</code>.</div>`;
   } else {
     prospectGrid.innerHTML = prospects.map(renderMatchmakerProspectCard).join("");
   }
@@ -1302,7 +1342,7 @@ function openDrawer(slug, kind, prospectId) {
       ${d.teaches ? `<div class="drawer-section"><h4>What it teaches</h4><p>${escapeHtml(d.teaches)}</p></div>` : ""}
       ${d.nepalFit ? `<div class="drawer-section"><h4>Nepal client fit</h4><p>${sanitizeExcerpt(d.nepalFit)}</p></div>` : ""}
       <div class="drawer-actions">
-        <button class="primary" data-action="use-donor" data-slug="${d.slug}">Use this donor</button>
+        <button class="primary" data-action="use-donor" data-slug="${d.slug}">Use this design</button>
       </div>
     `;
   }
@@ -1463,14 +1503,14 @@ function jobStartHint(job) {
       : "No URLs detected — shelf restock task created for Cursor beauty audition.";
   }
   if (job.kind === "shelf_restock") {
-    return "Restock commissioned — open the inbox task in Cursor. Worker researches, beauty-auditions, and captures donors.";
+    return "Add designs started — open the Activity task in Cursor. Worker researches, checks phone and desktop, and saves designs.";
   }
-  return "Clone job started — check Inbox for adopt progress.";
+  return "Client build started — check Activity for progress.";
 }
 
 async function submitJob(endpoint, payload, { onSuccess, resultEl, messageEl, submitBtn, idleLabel } = {}) {
   if (hostedMode) {
-    showToast("Commission jobs only run on local console", { type: "error" });
+    showToast("Background jobs only run on local console", { type: "error" });
     return null;
   }
 
@@ -1538,9 +1578,9 @@ function updateHostedUi() {
     restockNotice?.classList.remove("hidden");
     prospectSearchNotice?.classList.remove("hidden");
     prospectAddNotice?.classList.remove("hidden");
-    if (submit) submit.textContent = "Generate call phrase";
-    if (restockSubmit) restockSubmit.textContent = "Generate call phrase";
-    if (matchmakerSubmit) matchmakerSubmit.textContent = "Generate call phrase";
+    if (submit) submit.textContent = "Generate instructions for Cursor";
+    if (restockSubmit) restockSubmit.textContent = "Generate instructions for Cursor";
+    if (matchmakerSubmit) matchmakerSubmit.textContent = "Generate instructions for Cursor";
     if (prospectSearchSubmit) {
       prospectSearchSubmit.disabled = true;
       prospectSearchSubmit.title = "Available on your local console only";
@@ -1555,7 +1595,7 @@ function updateHostedUi() {
     prospectSearchNotice?.classList.add("hidden");
     prospectAddNotice?.classList.add("hidden");
     if (submit) submit.textContent = "Create task in inbox";
-    if (restockSubmit) restockSubmit.textContent = "Find & capture donors";
+    if (restockSubmit) restockSubmit.textContent = "Find & save designs";
     if (matchmakerSubmit) matchmakerSubmit.textContent = "Run clone job";
     if (prospectSearchSubmit) {
       prospectSearchSubmit.disabled = false;
@@ -1868,7 +1908,7 @@ async function submitTask(payload, resultEl, phraseEl, copyBtnId) {
     }
     if (res.status === 501 || hostedMode) {
       const phrase = buildLocalCallPhrase(payload);
-      showToast(hostedMode ? "Copy call phrase into Cursor" : "Use local console to create inbox tasks");
+      showToast(hostedMode ? "Copy instructions into Cursor" : "Use local console to create inbox tasks");
       phraseEl.textContent = phrase;
       resultEl.classList.remove("hidden");
       document.getElementById(copyBtnId).onclick = async () => {
@@ -1919,6 +1959,7 @@ $("#job-form").addEventListener("submit", async (e) => {
       switchView("inbox");
       loadData();
     };
+    appendHandoff($("#task-result"), payload.taskType === "review" ? "review" : "build");
   }
 });
 
@@ -1953,7 +1994,7 @@ $("#restock-form")?.addEventListener("submit", async (e) => {
   if (!hostedMode) {
     const job = await submitJob("/api/jobs/shelf-restock", commission, {
       submitBtn: $("#restock-submit"),
-      idleLabel: "Find & capture donors",
+      idleLabel: "Find & save designs",
       resultEl,
       messageEl,
       onSuccess: (job) => {
@@ -1985,7 +2026,7 @@ $("#restock-form")?.addEventListener("submit", async (e) => {
     await navigator.clipboard.writeText(phrase);
     showToast("Copied to clipboard");
   };
-  showToast("Copy call phrase into Cursor", { type: "success" });
+  showToast("Copy instructions into Cursor", { type: "success" });
 });
 
 $("#restock-urls-form")?.addEventListener("submit", async (e) => {
@@ -2019,7 +2060,7 @@ $("#restock-urls-form")?.addEventListener("submit", async (e) => {
       { request: urls.join("\n"), urls, notes: notes || undefined },
       {
         submitBtn: $("#restock-urls-submit"),
-        idleLabel: "Capture URLs directly",
+        idleLabel: "Save URLs directly",
         resultEl,
         messageEl,
         onSuccess: (job) => {
@@ -2044,7 +2085,7 @@ $("#restock-urls-form")?.addEventListener("submit", async (e) => {
   await submitTask(payload, resultEl, phraseEl, "copy-restock-call-phrase");
   phraseEl?.classList.remove("hidden");
   copyBtn?.classList.remove("hidden");
-  if (messageEl) messageEl.textContent = "Copy call phrase into Cursor to run capture.";
+  if (messageEl) messageEl.textContent = "Copy instructions into Cursor to save the design.";
 });
 
 $("#matchmaker-modal-close")?.addEventListener("click", closeMatchmakerModal);
@@ -2091,7 +2132,8 @@ $("#matchmaker-form")?.addEventListener("submit", async (e) => {
       onSuccess: () => {
         form.classList.add("hidden");
         $("#matchmaker-call-phrase").textContent =
-          "Clone job started — adopt may run automatically. Continue in Cursor for full build.";
+          "Client build started — check Activity for progress.";
+        appendHandoff($("#matchmaker-result"), "build");
       }
     });
     if (job) {
@@ -2117,6 +2159,7 @@ $("#matchmaker-form")?.addEventListener("submit", async (e) => {
 
   if (task) {
     form.classList.add("hidden");
+    appendHandoff($("#matchmaker-result"), "build");
     $("#matchmaker-view-inbox").onclick = () => {
       closeMatchmakerModal();
       switchView("inbox");
@@ -2141,11 +2184,12 @@ $("#prospect-search-form")?.addEventListener("submit", async (e) => {
     { lane, region: region || undefined, notes: notes || undefined },
     {
       submitBtn: $("#prospect-search-submit"),
-      idleLabel: "Commission search",
+      idleLabel: "Start search",
       resultEl: $("#prospect-search-result"),
       messageEl: $("#prospect-search-message"),
       onSuccess: () => {
         $("#prospect-search-inbox").onclick = () => switchView("inbox");
+        appendHandoff($("#prospect-search-result"), "scout");
       }
     }
   );

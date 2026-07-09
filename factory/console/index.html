@@ -35,7 +35,7 @@
         <div class="sidebar-stats" id="sidebar-stats"></div>
 
         <footer class="sidebar-foot">
-          <p>Commission searches and captures from the console. Long clone jobs still finish in Cursor.</p>
+          <p>Start searches and save designs from the console. Long client builds still finish in Cursor.</p>
           <p class="sidebar-link muted"><code>factory/playbooks/master-clone-job-prompt.md</code></p>
           <button class="ghost-btn" id="refresh-btn">Refresh data</button>
         </footer>
@@ -62,7 +62,7 @@
           <button type="button" class="commission-card" data-goto="donors" data-focus="add-designs-panel">
             <span class="commission-icon">📦</span>
             <span class="commission-label">Add designs</span>
-            <span class="commission-desc">Beauty audition + capture</span>
+            <span class="commission-desc">Check phone and desktop, then save</span>
           </button>
           <button type="button" class="commission-card" data-goto="build-sites">
             <span class="commission-icon">⚡</span>
@@ -80,7 +80,7 @@
           </div>
           <div class="today-section">
             <h2>Needs your decision</h2>
-            <p class="view-hint muted">Builds waiting on you — pick a donor, review art direction, or run the beauty pass.</p>
+            <p class="view-hint muted">Builds waiting on you — pick a design, review art direction, or run the beauty pass.</p>
             <div class="today-list" id="today-decision-list"></div>
           </div>
           <div class="today-section">
@@ -96,7 +96,7 @@
             <select id="project-filter">
               <option value="all">All statuses</option>
               <option value="READY_FOR_HUMAN_REVIEW">Ready for review</option>
-              <option value="NEEDS_REFERENCE_FIRST">Needs donor</option>
+              <option value="NEEDS_REFERENCE_FIRST">Pick a design</option>
               <option value="RUN_BEAUTY">Needs beauty pass</option>
               <option value="with-preview">Has preview link</option>
             </select>
@@ -107,7 +107,7 @@
         <!-- Build Sites -->
         <section class="view" id="view-build-sites">
           <div class="hosted-notice hidden" id="hosted-job-notice">
-            Hosted snapshot mode: you can still build a call phrase here and copy it into Cursor.
+            Hosted snapshot mode: you can still build instructions here and copy them into Cursor.
             Inbox file creation only works on your local console at
             <a href="http://blueprint.local:4177">blueprint.local</a>.
           </div>
@@ -146,8 +146,8 @@
             <p class="muted">Copy this into Cursor chat, or tell the agent to read the inbox file.</p>
             <pre id="task-call-phrase"></pre>
             <div class="result-actions">
-              <button class="primary-btn" id="copy-call-phrase">Copy call phrase</button>
-              <button class="ghost-btn" id="view-inbox">View inbox</button>
+              <button class="primary-btn" id="copy-call-phrase">Copy instructions for Cursor</button>
+              <button class="ghost-btn" id="view-inbox">View Activity</button>
             </div>
           </div>
 
@@ -195,7 +195,7 @@
               <form class="job-form compact" id="prospect-search-form">
                 <div class="form-grid">
                   <label>
-                    Search lane <span class="required">*</span>
+                    What to search for <span class="required">*</span>
                     <input name="lane" required placeholder="e.g. Pokhara restaurants" />
                   </label>
                   <label>
@@ -208,12 +208,14 @@
                   </label>
                 </div>
                 <div class="form-actions">
-                  <button type="submit" class="ghost-btn" id="prospect-search-submit">Commission search</button>
+                  <button type="submit" class="ghost-btn" id="prospect-search-submit">Start search</button>
                 </div>
               </form>
               <div class="task-result hidden" id="prospect-search-result">
                 <p class="muted" id="prospect-search-message"></p>
-                <button class="ghost-btn" id="prospect-search-inbox">View in inbox</button>
+                <div class="result-actions">
+                  <button class="ghost-btn" id="prospect-search-inbox">View Activity</button>
+                </div>
               </div>
             </details>
           </div>
@@ -296,13 +298,13 @@
             <div class="commission-banner highlight">
               <p class="muted">
                 Pick <strong>sectors</strong>, set how many world-class sites to find in each, and
-                commission a worker. The agent researches candidates, runs a <em>beauty audition</em> on desktop
-                and mobile, scores them, and captures winners. <strong>Research and capture run in
+                commission a worker. The agent researches candidates, checks it looks great on phone and desktop,
+                scores them, and saves winners. <strong>Research and capture run in
                 Cursor</strong> — this console creates a structured inbox task immediately.
               </p>
             </div>
             <div class="hosted-notice hidden" id="hosted-restock-notice">
-              Hosted snapshot mode: build a commission and copy the call phrase into Cursor. Inbox file creation
+              Hosted snapshot mode: build instructions and copy them into Cursor. Inbox file creation
               only works on your local console at
               <a href="http://blueprint.local:4177">blueprint.local</a>.
             </div>
@@ -359,18 +361,18 @@
               </div>
               <div class="restock-summary hidden" id="restock-summary" aria-live="polite"></div>
               <div class="form-actions">
-                <button type="submit" class="primary-btn" id="restock-submit">Find &amp; capture donors</button>
+                <button type="submit" class="primary-btn" id="restock-submit">Find &amp; save designs</button>
               </div>
             </form>
             <details class="restock-advanced">
               <summary>I already have URLs</summary>
               <p class="muted">
-                Paste explicit donor URLs to run <code>pnpm blueprint:capture</code> automatically — skip the
-                research commission above.
+                Paste design URLs to run <code>pnpm blueprint:capture</code> automatically — skip the
+                research step above.
               </p>
               <form class="job-form compact" id="restock-urls-form">
                 <label class="full">
-                  Donor URLs <span class="required">*</span>
+                  Design URLs <span class="required">*</span>
                   <textarea
                     name="urls"
                     rows="3"
@@ -382,17 +384,17 @@
                   <input name="notes" placeholder="e.g. batch name, sector hint" />
                 </label>
                 <div class="form-actions">
-                  <button type="submit" class="ghost-btn" id="restock-urls-submit">Capture URLs directly</button>
+                  <button type="submit" class="ghost-btn" id="restock-urls-submit">Save URLs directly</button>
                 </div>
               </form>
             </details>
             <div class="task-result hidden" id="restock-result">
-              <h3>Restock commissioned</h3>
+              <h3>Design search started</h3>
               <p class="muted" id="restock-result-message"></p>
               <pre id="restock-call-phrase" class="hidden"></pre>
               <div class="result-actions">
-                <button class="primary-btn hidden" id="copy-restock-call-phrase">Copy call phrase</button>
-                <button class="ghost-btn" id="view-restock-inbox">View in inbox</button>
+                <button class="primary-btn hidden" id="copy-restock-call-phrase">Copy instructions for Cursor</button>
+                <button class="ghost-btn" id="view-restock-inbox">View Activity</button>
               </div>
             </div>
           </details>
@@ -419,7 +421,7 @@
     <div class="modal-backdrop hidden" id="matchmaker-modal-backdrop"></div>
     <div class="modal hidden" id="matchmaker-modal" role="dialog" aria-labelledby="matchmaker-modal-title">
       <button class="modal-close" id="matchmaker-modal-close" aria-label="Close">×</button>
-      <h2 id="matchmaker-modal-title">Create clone job</h2>
+      <h2 id="matchmaker-modal-title">Start a client build</h2>
       <p class="match-preview" id="matchmaker-preview"></p>
       <form class="job-form compact" id="matchmaker-form">
         <div class="form-grid">
@@ -432,7 +434,7 @@
             <input name="clientWebsite" type="url" required />
           </label>
           <label class="full">
-            Donor override
+            Design
             <input name="donorShelfSlug" readonly />
           </label>
           <label class="full">
@@ -446,15 +448,15 @@
         </div>
         <div class="form-actions modal-actions">
           <button type="button" class="ghost-btn modal-cancel" id="matchmaker-cancel">Cancel</button>
-          <button type="submit" class="primary-btn" id="matchmaker-submit">Create clone job</button>
+          <button type="submit" class="primary-btn" id="matchmaker-submit">Start build</button>
         </div>
       </form>
       <div class="task-result hidden" id="matchmaker-result">
         <h3>Task created</h3>
         <pre id="matchmaker-call-phrase"></pre>
         <div class="result-actions">
-          <button class="primary-btn" id="matchmaker-copy-phrase">Copy call phrase</button>
-          <button class="ghost-btn" id="matchmaker-view-inbox">View inbox</button>
+          <button class="primary-btn" id="matchmaker-copy-phrase">Copy instructions for Cursor</button>
+          <button class="ghost-btn" id="matchmaker-view-inbox">View Activity</button>
         </div>
       </div>
     </div>
