@@ -64,7 +64,7 @@
             <span class="commission-label">Add designs</span>
             <span class="commission-desc">Check phone and desktop, then save</span>
           </button>
-          <button type="button" class="commission-card" data-goto="build-sites">
+          <button type="button" class="commission-card" data-goto="build-sites" data-build-mode="pair">
             <span class="commission-icon">⚡</span>
             <span class="commission-label">Start a build</span>
             <span class="commission-desc">Pair design + lead</span>
@@ -112,85 +112,79 @@
             <a href="http://blueprint.local:4177">blueprint.local</a>.
           </div>
 
-          <p class="view-hint muted build-sites-lead">
-            Two ways to start a client build — use either option below.
-          </p>
+          <div class="build-mode-bar">
+            <div class="build-mode-tabs" role="tablist" aria-label="How to start a build">
+              <button type="button" class="build-mode-tab active" data-build-mode="form" role="tab" aria-selected="true">
+                Enter client details
+              </button>
+              <button type="button" class="build-mode-tab" data-build-mode="pair" role="tab" aria-selected="false">
+                Drag design onto lead
+              </button>
+            </div>
+          </div>
 
-          <div class="build-options">
-            <article class="build-option-card" id="build-option-form">
-              <header class="build-option-header">
-                <span class="build-option-label">Option 1</span>
-                <h2 class="build-option-title">Fill in details</h2>
-                <p class="build-option-sub muted">
-                  Client name, website, optional design — create a task in the inbox.
-                </p>
-              </header>
-              <p class="job-intro">
-                Fill in <strong>two blanks</strong> — client name and their current website. Optionally pick a design from the library.
-                See <code>factory/playbooks/master-clone-job-prompt.md</code>.
-              </p>
-              <form class="job-form" id="job-form">
-                <input type="hidden" name="taskType" value="new_site" />
-                <div class="form-grid">
-                  <label>
-                    Client name <span class="required">*</span>
-                    <input name="clientName" required placeholder="Everest Tours" />
-                  </label>
-                  <label class="full" id="client-website-field">
-                    Client's current website <span class="required">*</span>
-                    <input name="clientWebsite" type="url" placeholder="https://everesttours.com.np" />
-                  </label>
-                  <label class="full">
-                    Copy the look of a specific site? <span class="optional">(optional)</span>
-                    <select name="donorShelfSlug" id="donor-shelf-select">
-                      <option value="">— worker picks from shelf —</option>
-                    </select>
-                  </label>
-                  <label class="full">
-                    Anything else <span class="optional">(optional)</span>
-                    <textarea name="notes" rows="3" placeholder="e.g. they need a WhatsApp button, owner hates red, show prices in euros"></textarea>
-                  </label>
-                </div>
-                <div class="form-actions">
-                  <button type="submit" class="primary-btn">Create task in inbox</button>
-                </div>
-              </form>
-              <div class="task-result hidden" id="task-result">
-                <h3>Task created</h3>
-                <p class="muted">Copy this into Cursor chat, or tell the agent to read the inbox file.</p>
-                <pre id="task-call-phrase"></pre>
-                <div class="result-actions">
-                  <button class="primary-btn" id="copy-call-phrase">Copy instructions for Cursor</button>
-                  <button class="ghost-btn" id="view-inbox">View Activity</button>
-                </div>
+          <div class="build-mode-panel active" id="build-mode-form" data-build-mode="form" role="tabpanel">
+            <p class="job-intro">
+              Fill in <strong>two blanks</strong> — client name and their current website. Optionally pick a design from the library.
+              See <code>factory/playbooks/master-clone-job-prompt.md</code>.
+            </p>
+            <form class="job-form" id="job-form">
+              <input type="hidden" name="taskType" value="new_site" />
+              <div class="form-grid">
+                <label>
+                  Client name <span class="required">*</span>
+                  <input name="clientName" required placeholder="Everest Tours" />
+                </label>
+                <label class="full" id="client-website-field">
+                  Client's current website <span class="required">*</span>
+                  <input name="clientWebsite" type="url" placeholder="https://everesttours.com.np" />
+                </label>
+                <label class="full">
+                  Copy the look of a specific site? <span class="optional">(optional)</span>
+                  <select name="donorShelfSlug" id="donor-shelf-select">
+                    <option value="">— worker picks from shelf —</option>
+                  </select>
+                </label>
+                <label class="full">
+                  Anything else <span class="optional">(optional)</span>
+                  <textarea name="notes" rows="3" placeholder="e.g. they need a WhatsApp button, owner hates red, show prices in euros"></textarea>
+                </label>
               </div>
-            </article>
+              <div class="form-actions">
+                <button type="submit" class="primary-btn">Create task in inbox</button>
+              </div>
+            </form>
+            <div class="task-result hidden" id="task-result">
+              <h3>Task created</h3>
+              <p class="muted">Copy this into Cursor chat, or tell the agent to read the inbox file.</p>
+              <pre id="task-call-phrase"></pre>
+              <div class="result-actions">
+                <button class="primary-btn" id="copy-call-phrase">Copy instructions for Cursor</button>
+                <button class="ghost-btn" id="view-inbox">View Activity</button>
+              </div>
+            </div>
+          </div>
 
-            <article class="build-option-card" id="build-option-pair">
-              <header class="build-option-header">
-                <span class="build-option-label">Option 2</span>
-                <h2 class="build-option-title">Drag a design onto a lead</h2>
-                <p class="build-option-sub muted">
-                  Pair from the design library and leads list. On mobile, tap a design then tap a lead.
-                </p>
-              </header>
-              <div class="matchmaker-layout">
-                <div class="matchmaker-pane" id="matchmaker-donors">
-                  <div class="matchmaker-pane-head">
-                    <h3>Design library</h3>
-                    <input type="search" id="matchmaker-donor-search" placeholder="Search designs…" />
-                  </div>
-                  <div class="matchmaker-cards" id="matchmaker-donor-cards"></div>
+          <div class="build-mode-panel" id="build-mode-pair" data-build-mode="pair" role="tabpanel" hidden>
+            <p class="view-hint muted matchmaker-hint">
+              Drag a design onto a lead to pair them. On mobile, tap a design then tap a lead.
+            </p>
+            <div class="matchmaker-layout">
+              <div class="matchmaker-pane" id="matchmaker-donors">
+                <div class="matchmaker-pane-head">
+                  <h2>Design library</h2>
+                  <input type="search" id="matchmaker-donor-search" placeholder="Search designs…" />
                 </div>
-                <div class="matchmaker-pane" id="matchmaker-prospects">
-                  <div class="matchmaker-pane-head">
-                    <h3>Leads</h3>
-                    <input type="search" id="matchmaker-prospect-search" placeholder="Search leads…" />
-                  </div>
-                  <div class="matchmaker-cards" id="matchmaker-prospect-cards"></div>
-                </div>
+                <div class="matchmaker-cards" id="matchmaker-donor-cards"></div>
               </div>
-            </article>
+              <div class="matchmaker-pane" id="matchmaker-prospects">
+                <div class="matchmaker-pane-head">
+                  <h2>Leads</h2>
+                  <input type="search" id="matchmaker-prospect-search" placeholder="Search leads…" />
+                </div>
+                <div class="matchmaker-cards" id="matchmaker-prospect-cards"></div>
+              </div>
+            </div>
           </div>
         </section>
 

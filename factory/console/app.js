@@ -7,6 +7,7 @@ let jobPollTimer = null;
 let toastTimer = null;
 let highlightJobId = null;
 let prospectView = "all";
+let buildSitesMode = "form";
 let prospectSectorFilter = new Set();
 let prospectFiltersReady = false;
 
@@ -1380,7 +1381,24 @@ function closeDrawer() {
   $("#drawer-backdrop").classList.add("hidden");
 }
 
+function setBuildSitesMode(mode) {
+  buildSitesMode = mode === "pair" ? "pair" : "form";
+  document.querySelectorAll(".build-mode-tab").forEach((btn) => {
+    const active = btn.dataset.buildMode === buildSitesMode;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+  document.querySelectorAll(".build-mode-panel").forEach((panel) => {
+    const active = panel.dataset.buildMode === buildSitesMode;
+    panel.classList.toggle("active", active);
+    panel.hidden = !active;
+  });
+  if (buildSitesMode === "pair") renderMatchmaker();
+}
+
 function switchView(name) {
+  const requestedBuildMode =
+    name === "matchmaker" ? "pair" : name === "new-job" ? "form" : null;
   if (name === "matchmaker" || name === "new-job") name = "build-sites";
   if (name === "restock") name = "donors";
 
@@ -1395,7 +1413,8 @@ function switchView(name) {
   $("#view-subtitle").textContent = meta.sub;
   $("#sidebar").classList.remove("open");
   if (name === "build-sites" || name === "matchmaker" || name === "new-job") {
-    renderMatchmaker();
+    if (requestedBuildMode) setBuildSitesMode(requestedBuildMode);
+    else setBuildSitesMode(buildSitesMode);
     updateJobFormMode();
   }
   if (name === "prospects") renderProspects();
@@ -1410,7 +1429,7 @@ function updateJobFormMode() {
   $("#client-website-field")?.classList.toggle("hidden", !isCloneJob);
   form.querySelector('[name="donorShelfSlug"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
   form.querySelector('[name="notes"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
-  $("#build-option-form .job-intro")?.classList.toggle("hidden", !isCloneJob);
+  $("#build-mode-form .job-intro")?.classList.toggle("hidden", !isCloneJob);
 }
 
 function prefillTask({ clientName, taskType, donorShelfSlug, clientWebsite }) {
@@ -1824,6 +1843,9 @@ document.querySelectorAll(".prospect-tab").forEach((btn) => {
     renderProspects();
   });
 });
+document.querySelectorAll(".build-mode-tab").forEach((btn) => {
+  btn.addEventListener("click", () => setBuildSitesMode(btn.dataset.buildMode));
+});
 $("#donor-search").addEventListener("input", renderDonors);
 $("#matchmaker-donor-search")?.addEventListener("input", renderMatchmaker);
 $("#matchmaker-prospect-search")?.addEventListener("input", renderMatchmaker);
@@ -1831,7 +1853,9 @@ $("#matchmaker-prospect-search")?.addEventListener("input", renderMatchmaker);
 document.body.addEventListener("click", (e) => {
   const goto = e.target.closest("[data-goto]");
   if (goto) {
+    const buildMode = goto.dataset.buildMode;
     switchView(goto.dataset.goto);
+    if (buildMode) setBuildSitesMode(buildMode);
     const focus = goto.dataset.focus;
     if (focus) {
       requestAnimationFrame(() => {

@@ -1041,78 +1041,54 @@ body {
   cursor: pointer;
 }
 
-/* Build Sites — two equal start options */
-.build-sites-lead {
-  margin: 0 0 1.25rem;
+/* Build Sites — top toggle, one full-page mode at a time */
+.build-mode-bar {
+  margin-bottom: 1.25rem;
 }
 
-.build-options {
+.build-mode-tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  align-items: stretch;
-}
-
-.build-option-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 560px;
+  gap: 0.35rem;
+  padding: 0.25rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
+  border-radius: 12px;
 }
 
-.build-option-header {
-  margin-bottom: 1rem;
-}
-
-.build-option-label {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-.build-option-title {
-  margin: 0 0 0.4rem;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.15;
-}
-
-.build-option-sub {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-
-#view-build-sites .job-form {
-  max-width: none;
+.build-mode-tab {
+  border: 0;
   background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  flex: 1;
+  color: var(--muted);
+  padding: 0.7rem 1rem;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
 }
 
-#view-build-sites .job-intro {
-  max-width: none;
-  margin-bottom: 1rem;
+.build-mode-tab:hover:not(.active) {
+  color: var(--text);
 }
 
-#view-build-sites .task-result {
-  max-width: none;
-  margin-top: 1rem;
+.build-mode-tab.active {
+  background: var(--surface-2);
+  color: var(--text);
 }
 
-#view-build-sites .matchmaker-layout {
-  flex: 1;
-  min-height: 0;
+.build-mode-panel {
+  display: none;
+}
+
+.build-mode-panel.active {
+  display: block;
+}
+
+#build-mode-pair.active .matchmaker-layout {
+  min-height: calc(100vh - 220px);
 }
 
 /* Matchmaker */
@@ -1381,12 +1357,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .build-options {
-    grid-template-columns: 1fr;
-  }
-
-  .build-option-card {
-    min-height: auto;
+  .build-mode-tab {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.5rem;
   }
 
   .matchmaker-layout {
