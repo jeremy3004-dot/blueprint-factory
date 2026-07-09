@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
@@ -124,6 +124,10 @@
                 Creates a Cursor scout task and refreshes <code>prospects/nepal-leads.csv</code> from the local database.
                 AI web search runs in Cursor, not here.
               </p>
+              <div class="hosted-notice hidden" id="hosted-prospect-search-notice">
+                Available on your local console only — scout searches need the local server at
+                <a href="http://blueprint.local:4177">blueprint.local</a>.
+              </div>
               <form class="job-form compact" id="prospect-search-form">
                 <div class="form-grid">
                   <label>
@@ -180,6 +184,10 @@
               Name + website (or Maps link). Console auto-imports with placeholder scores when the scout script is installed;
               full demand and website-pain rating still runs in Cursor.
             </p>
+            <div class="hosted-notice hidden" id="hosted-prospect-add-notice">
+              Available on your local console only — manual add needs the local server at
+              <a href="http://blueprint.local:4177">blueprint.local</a>.
+            </div>
             <form class="job-form compact" id="prospect-add-form">
               <div class="form-grid">
                 <label>

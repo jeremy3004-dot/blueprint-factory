@@ -175,6 +175,128 @@ function scoreClass(score) {
   return "muted";
 }
 
+const CLIENT_REGION_PATTERNS = {
+  kathmandu: [/kathmandu/i, /thamel/i, /goldhunga/i, /jyatha/i, /paknajol/i, /raniban/i, /saat ghumti/i],
+  pokhara: [/pokhara/i],
+  chitwan: [/chitwan/i, /sauraha/i, /narayani/i],
+  lalitpur: [/lalitpur/i, /patan/i],
+  bandipur: [/bandipur/i],
+  bardia: [/bardia/i, /bheri/i]
+};
+
+const CLIENT_SECTOR_PATTERNS = {
+  trekking: [/trek/i, /expedition/i, /climbing/i, /peak/i, /mountain/i, /mustang/i, /annapurna/i, /everest/i],
+  tourism: [/tour/i, /travel/i, /operator/i, /attraction/i],
+  hospitality: [/hotel/i, /boutique/i, /resort/i, /inn/i, /stay/i, /heritage home/i, /lodge/i],
+  wellness: [/yoga/i, /ayurveda/i, /meditation/i, /retreat/i, /spa/i, /wellness/i, /detox/i],
+  adventure: [/paragliding/i, /rafting/i, /bungee/i, /heli/i, /safari/i, /adventure/i],
+  food: [/cooking/i, /restaurant/i, /cafe/i, /food/i, /dining/i],
+  tech: [/tech/i, /saas/i, /software/i, /\bai\b/i, /digital/i, /startup/i],
+  business: [/ngo/i, /nonprofit/i, /export/i, /real estate/i, /education/i, /fitness/i, /gym/i, /wedding/i]
+};
+
+const CLIENT_PROSPECT_REGIONS = [
+  { id: "kathmandu", label: "Kathmandu" },
+  { id: "pokhara", label: "Pokhara" },
+  { id: "chitwan", label: "Chitwan" },
+  { id: "lalitpur", label: "Lalitpur" },
+  { id: "bandipur", label: "Bandipur" },
+  { id: "bardia", label: "Bardia" },
+  { id: "other", label: "Other" }
+];
+
+const CLIENT_PROSPECT_SECTORS = [
+  { id: "trekking", label: "Trekking" },
+  { id: "tourism", label: "Tourism" },
+  { id: "hospitality", label: "Hospitality" },
+  { id: "wellness", label: "Wellness" },
+  { id: "adventure", label: "Adventure" },
+  { id: "food", label: "Food & dining" },
+  { id: "tech", label: "Tech / AI" },
+  { id: "business", label: "Business" },
+  { id: "other", label: "Other" }
+];
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function sanitizeExcerpt(text) {
+  if (!text) return "";
+  let s = String(text).trim();
+  s = s.replace(/^#{1,6}\s+/gm, "");
+  s = s.replace(/\*\*([^*]+)\*\*/g, "$1");
+  s = s.replace(/\*([^*]+)\*/g, "$1");
+  s = s.replace(/`([^`]+)`/g, "$1");
+  s = s.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  s = s.replace(/<[^>]+>/g, "");
+  const lines = s
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0 && !/^#{1,6}\s/.test(line));
+  const content = lines[0] ?? "";
+  if (!content) return "";
+  const sentence = content.match(/[^.!?]+[.!?]+/);
+  const excerpt = sentence ? sentence[0].trim() : content.slice(0, 160);
+  return escapeHtml(excerpt);
+}
+
+function inferProspectRegion(location) {
+  const text = (location ?? "").trim();
+  if (!text) return "other";
+  for (const [id, patterns] of Object.entries(CLIENT_REGION_PATTERNS)) {
+    if (patterns.some((pattern) => pattern.test(text))) return id;
+  }
+  return "other";
+}
+
+function inferProspectSectors(category, businessNotes) {
+  const text = `${category ?? ""} ${businessNotes ?? ""}`.toLowerCase();
+  const matched = Object.entries(CLIENT_SECTOR_PATTERNS)
+    .filter(([, patterns]) => patterns.some((pattern) => pattern.test(text)))
+    .map(([id]) => id);
+  return matched.length ? [...new Set(matched)] : ["other"];
+}
+
+function prospectRegion(p) {
+  if (p.region && p.region !== "other") return p.region;
+  return inferProspectRegion(p.location);
+}
+
+function prospectSectors(p) {
+  if (p.sectors?.length && !(p.sectors.length === 1 && p.sectors[0] === "other" && !p.category)) {
+    return p.sectors;
+  }
+  return inferProspectSectors(p.category, p.businessNotes);
+}
+
+function enrichProspect(p) {
+  return { ...p, region: prospectRegion(p), sectors: prospectSectors(p) };
+}
+
+function deriveProspectFilterMeta(prospects) {
+  const regionCounts = {};
+  const sectorCounts = {};
+  for (const region of CLIENT_PROSPECT_REGIONS) regionCounts[region.id] = 0;
+  for (const sector of CLIENT_PROSPECT_SECTORS) sectorCounts[sector.id] = 0;
+  for (const p of prospects) {
+    regionCounts[p.region] = (regionCounts[p.region] ?? 0) + 1;
+    for (const sectorId of p.sectors) {
+      sectorCounts[sectorId] = (sectorCounts[sectorId] ?? 0) + 1;
+    }
+  }
+  return {
+    regions: CLIENT_PROSPECT_REGIONS,
+    sectors: CLIENT_PROSPECT_SECTORS,
+    regionCounts,
+    sectorCounts
+  };
+}
+
 function renderSidebarStats() {
   const el = $("#sidebar-stats");
   const s = state.stats ?? {};
@@ -220,7 +342,6 @@ function renderProjects() {
       <div class="card-body">
         ${chipForAction(c.nextAction)}
         <h3 class="card-title">${c.title}</h3>
-        <div class="card-slug">${c.slug}</div>
         <div class="card-meta">
           <span>${c.pages}</span>
           ${
@@ -230,7 +351,7 @@ function renderProjects() {
           }
           ${c.previewUrl ? "<span>Preview live</span>" : ""}
         </div>
-        ${c.briefExcerpt ? `<p class="card-excerpt">${c.briefExcerpt}</p>` : ""}
+        ${c.briefExcerpt ? `<p class="card-excerpt">${sanitizeExcerpt(c.briefExcerpt)}</p>` : ""}
       </div>
     </article>
   `
@@ -278,8 +399,10 @@ function applyLocalProspectFilters(items) {
   }
 
   if (starredOnly) items = items.filter((p) => p.starred);
-  if (region && region !== "all") items = items.filter((p) => p.region === region);
-  if (sectors.length) items = items.filter((p) => p.sectors?.some((s) => sectors.includes(s)));
+  if (region && region !== "all") items = items.filter((p) => prospectRegion(p) === region);
+  if (sectors.length) {
+    items = items.filter((p) => prospectSectors(p).some((sectorId) => sectors.includes(sectorId)));
+  }
 
   if (minScore > 0) items = items.filter((p) => p.score >= minScore);
 
@@ -334,22 +457,27 @@ function initProspectFilters() {
   if (prospectFiltersReady) return;
   const regionSelect = $("#prospect-region-filter");
   const chips = $("#prospect-sector-chips");
-  const meta = state.prospectFilters;
+  const meta = state.prospectFilters ?? deriveProspectFilterMeta(state.prospects ?? []);
   if (!regionSelect || !meta) return;
 
   const currentRegion = regionSelect.value || "all";
   regionSelect.innerHTML =
     `<option value="all">All regions</option>` +
     (meta.regions ?? [])
+      .filter((r) => (meta.regionCounts?.[r.id] ?? 0) > 0 || r.id === "other")
       .map((r) => {
         const count = meta.regionCounts?.[r.id] ?? 0;
         return `<option value="${r.id}">${r.label} (${count})</option>`;
       })
       .join("");
-  regionSelect.value = currentRegion;
+  regionSelect.value = [...regionSelect.options].some((opt) => opt.value === currentRegion)
+    ? currentRegion
+    : "all";
 
   if (chips) {
-    chips.innerHTML = (meta.sectors ?? [])
+    const visibleSectors = (meta.sectors ?? []).filter((s) => (meta.sectorCounts?.[s.id] ?? 0) > 0);
+    chips.classList.toggle("hidden", visibleSectors.length === 0);
+    chips.innerHTML = visibleSectors
       .map((s) => {
         const count = meta.sectorCounts?.[s.id] ?? 0;
         const active = prospectSectorFilter.has(s.id) ? " active" : "";
@@ -415,20 +543,27 @@ function renderProspects() {
   });
 
   if (!items.length) {
-    grid.innerHTML = `<div class="empty">No prospects match these filters. Try clearing sector chips or lowering the score minimum.</div>`;
+    const { since } = collectProspectFilterParams();
+    const total = state.prospects?.length ?? 0;
+    let emptyHint = "No prospects match these filters. Try clearing sector chips or lowering the score minimum.";
+    if (total > 0 && since && since !== "all") {
+      const sinceLabels = { today: "Today", week: "This week", month: "This month", year: "This year" };
+      emptyHint = `No leads were added ${sinceLabels[since] ?? since.toLowerCase()} — you still have ${total} in the list. Switch the date filter to “Any time” to see them, or scout new leads.`;
+    }
+    grid.innerHTML = `<div class="empty">${emptyHint}</div>`;
     return;
   }
 
   grid.innerHTML = items
     .map((p) => {
-      const pain = p.websiteIssues || p.websiteNotes || "";
       const starClass = p.starred ? " starred" : "";
       const starLabel = p.starred ? "Remove from favorites" : "Add to favorites";
-      const sectorTags = (p.sectors ?? [])
+      const sectorTags = prospectSectors(p)
         .filter((s) => s !== "other")
         .slice(0, 2)
         .map((s) => `<span class="sector-tag">${sectorLabel(s)}</span>`)
         .join("");
+      const pain = sanitizeExcerpt(p.websiteIssues || p.websiteNotes || "");
       return `
     <article class="card prospect-card${starClass}" data-prospect-id="${p.id}" data-kind="prospect">
       <button type="button" class="prospect-star-btn" data-star-id="${p.id}" aria-label="${starLabel}" title="${starLabel}">
@@ -444,7 +579,7 @@ function renderProspects() {
         <h3 class="card-title">${p.name}</h3>
         <div class="card-meta">
           <span>${p.category}</span>
-          <span>${regionLabel(p.region)}</span>
+          <span>${regionLabel(prospectRegion(p))}</span>
           ${sectorTags}
         </div>
         ${pain ? `<p class="card-excerpt">${pain}</p>` : ""}
@@ -489,9 +624,8 @@ function renderDonors() {
       <div class="card-body">
         <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
         <h3 class="card-title">${d.field}</h3>
-        <div class="card-slug">${d.slug}</div>
         <div class="card-meta"><span>${d.url}</span></div>
-        ${d.nepalFit ? `<p class="card-excerpt">${d.nepalFit}</p>` : ""}
+        ${d.nepalFit ? `<p class="card-excerpt">${sanitizeExcerpt(d.nepalFit)}</p>` : ""}
       </div>
     </article>
   `
@@ -697,15 +831,14 @@ function renderMatchmakerDonorCard(d) {
       <div class="match-card-body">
         <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
         <h3 class="match-card-title">${d.field}</h3>
-        <div class="match-card-meta">${d.slug}</div>
-        ${d.nepalFit ? `<p class="match-card-excerpt">${d.nepalFit}</p>` : ""}
+        ${d.nepalFit ? `<p class="match-card-excerpt">${sanitizeExcerpt(d.nepalFit)}</p>` : ""}
       </div>
     </article>
   `;
 }
 
 function renderMatchmakerProspectCard(p) {
-  const pain = p.websiteIssues || p.websiteNotes || "";
+  const pain = sanitizeExcerpt(p.websiteIssues || p.websiteNotes || "");
   return `
     <article class="match-card prospect-card" data-prospect-id="${p.id}">
       <div class="match-card-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
@@ -868,7 +1001,7 @@ function openDrawer(slug, kind, prospectId) {
     content.innerHTML = `
       <div class="drawer-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
       <h2>${p.name}</h2>
-      <div class="slug">${p.category} · ${p.location}</div>
+      <div class="slug muted">${p.category} · ${p.location}</div>
       <span class="chip ${scoreClass(p.score)}">Total score ${p.score}</span>
       ${tierBadgeHtml(p.tier)}
       <button type="button" class="ghost-btn drawer-star-btn" data-drawer-star="${p.id}">
@@ -893,7 +1026,7 @@ function openDrawer(slug, kind, prospectId) {
 
       ${
         p.websiteIssues || p.websiteNotes
-          ? `<div class="drawer-section"><h4>Website pain</h4><p>${p.websiteIssues || p.websiteNotes}</p></div>`
+          ? `<div class="drawer-section"><h4>Website pain</h4><p>${sanitizeExcerpt(p.websiteIssues || p.websiteNotes)}</p></div>`
           : ""
       }
 
@@ -952,9 +1085,9 @@ function openDrawer(slug, kind, prospectId) {
     const c = item;
     content.innerHTML = `
       <h2>${c.title}</h2>
-      <div class="slug">${c.slug}</div>
+      <div class="slug muted">Reference: ${c.slug}</div>
       ${chipForAction(c.nextAction)}
-      <p>${c.nextActionPlain}</p>
+      <p>${escapeHtml(c.nextActionPlain)}</p>
 
       <div class="drawer-section">
         <h4>Status</h4>
@@ -994,10 +1127,10 @@ function openDrawer(slug, kind, prospectId) {
     const d = item;
     content.innerHTML = `
       <h2>${d.field}</h2>
-      <div class="slug">${d.slug}</div>
+      <div class="slug muted">Reference: ${d.slug}</div>
       <p><a href="${d.url}" target="_blank" rel="noreferrer">${d.url}</a></p>
-      ${d.teaches ? `<div class="drawer-section"><h4>What it teaches</h4><p>${d.teaches}</p></div>` : ""}
-      ${d.nepalFit ? `<div class="drawer-section"><h4>Nepal client fit</h4><p>${d.nepalFit}</p></div>` : ""}
+      ${d.teaches ? `<div class="drawer-section"><h4>What it teaches</h4><p>${escapeHtml(d.teaches)}</p></div>` : ""}
+      ${d.nepalFit ? `<div class="drawer-section"><h4>Nepal client fit</h4><p>${sanitizeExcerpt(d.nepalFit)}</p></div>` : ""}
       <div class="drawer-actions">
         <button class="primary" data-action="use-donor" data-slug="${d.slug}">Use this donor</button>
       </div>
@@ -1216,18 +1349,43 @@ function updateHostedUi() {
   const submit = $("#job-form button[type=submit]");
   const restockSubmit = $("#restock-submit");
   const matchmakerSubmit = $("#matchmaker-submit");
+  const prospectSearchSubmit = $("#prospect-search-submit");
+  const prospectAddSubmit = $("#prospect-add-submit");
+  const prospectSearchNotice = $("#hosted-prospect-search-notice");
+  const prospectAddNotice = $("#hosted-prospect-add-notice");
+
   if (hostedMode) {
     notice?.classList.remove("hidden");
     restockNotice?.classList.remove("hidden");
+    prospectSearchNotice?.classList.remove("hidden");
+    prospectAddNotice?.classList.remove("hidden");
     if (submit) submit.textContent = "Generate call phrase";
     if (restockSubmit) restockSubmit.textContent = "Generate call phrase";
     if (matchmakerSubmit) matchmakerSubmit.textContent = "Generate call phrase";
+    if (prospectSearchSubmit) {
+      prospectSearchSubmit.disabled = true;
+      prospectSearchSubmit.title = "Available on your local console only";
+    }
+    if (prospectAddSubmit) {
+      prospectAddSubmit.disabled = true;
+      prospectAddSubmit.title = "Available on your local console only";
+    }
   } else {
     notice?.classList.add("hidden");
     restockNotice?.classList.add("hidden");
+    prospectSearchNotice?.classList.add("hidden");
+    prospectAddNotice?.classList.add("hidden");
     if (submit) submit.textContent = "Create task in inbox";
     if (restockSubmit) restockSubmit.textContent = "Find & capture donors";
     if (matchmakerSubmit) matchmakerSubmit.textContent = "Run clone job";
+    if (prospectSearchSubmit) {
+      prospectSearchSubmit.disabled = false;
+      prospectSearchSubmit.title = "";
+    }
+    if (prospectAddSubmit) {
+      prospectAddSubmit.disabled = false;
+      prospectAddSubmit.title = "";
+    }
   }
 }
 
@@ -1380,6 +1538,8 @@ async function loadData() {
 
   const data = await res.json();
   state = data;
+  state.prospects = (state.prospects ?? []).map(enrichProspect);
+  state.prospectFilters = state.prospectFilters ?? deriveProspectFilterMeta(state.prospects);
   hostedMode = data.mode === "snapshot" || window.location.hostname.endsWith(".vercel.app");
 
   if (hostedMode) showHostedBanner(data.snapshotNote);
