@@ -91,9 +91,12 @@ export type ConsoleTask = {
 
 export type ConsoleProspect = {
   id: string;
+  csvId: string | null;
   name: string;
   category: string;
   location: string;
+  region: string;
+  sectors: string[];
   websiteUrl: string;
   mapsUrl: string | null;
   rating: string | null;
@@ -112,6 +115,12 @@ export type ConsoleProspect = {
   contactEmail: string | null;
   phone: string | null;
   thumbnail: string | null;
+  starred: boolean;
+  tier: 0 | 1 | 2;
+  favoritedAt: string | null;
+  updatedAt: string | null;
+  firstSeenAt: string | null;
+  manuallyAdded?: boolean;
 };
 
 export type NewTaskInput = {
@@ -466,6 +475,8 @@ export async function gatherConsoleData() {
 
   const tasks = await listTasks();
   const prospects = await readProspects();
+  const { buildProspectFilterMeta } = await import("./console-prospects.ts");
+  const prospectFilters = buildProspectFilterMeta(prospects);
   const { listJobs } = await import("./console-jobs.ts");
   const jobs = await listJobs();
   const activeJobs = jobs.filter((j) => j.status === "queued" || j.status === "running").length;
@@ -474,6 +485,7 @@ export async function gatherConsoleData() {
     clients,
     donors,
     prospects,
+    prospectFilters,
     tasks,
     jobs,
     stats: {
@@ -681,48 +693,87 @@ function scoreFromRow(row: Record<string, string>): ConsoleProspect["scores"] {
   };
 }
 
+export function prospectIdFromRow(row: Record<string, string>): string {
+  const canonical = row.canonical_key?.trim();
+  if (canonical) return canonical;
+  const csvId = row.id?.trim();
+  if (csvId) return `id-${csvId}`;
+  return slugify(row.name?.trim() ?? "unknown");
+}
+
 export function prospectFromRow(row: Record<string, string>): ConsoleProspect {
   const scores = scoreFromRow(row);
   const name = row.name?.trim() ?? "Unknown";
+  const category = row.category?.trim() ?? "";
+  const location = row.location?.trim() ?? "";
+  const totalScore = Number(row.total_score) || scores.websitePain + scores.demand + scores.premiumFit + scores.access;
+
+  // Lazy import avoided — infer inline via dynamic import at readProspects
   return {
-    id: slugify(name),
+    id: prospectIdFromRow(row),
+    csvId: row.id?.trim() || null,
     name,
-    category: row.category?.trim() ?? "",
-    location: row.location?.trim() ?? "",
+    category,
+    location,
+    region: "other",
+    sectors: ["other"],
     websiteUrl: row.website_url?.trim() ?? "",
     mapsUrl: row.maps_url?.trim() || null,
     rating: row.rating?.trim() || null,
     reviewCount: row.review_count?.trim() || null,
     status: row.status?.trim() || "new",
-    score: scores.websitePain + scores.demand + scores.premiumFit + scores.access,
+    score: totalScore,
     scores,
     websiteNotes: row.website_notes?.trim() || null,
     websiteIssues: row.website_issues?.trim() || null,
     businessNotes: row.business_notes?.trim() || null,
     contactEmail: row.contact_email?.trim() || null,
     phone: row.phone?.trim() || null,
-    thumbnail: prospectThumbnailFromPath(screenshotPathFromRow(row))
+    thumbnail: prospectThumbnailFromPath(screenshotPathFromRow(row)),
+    starred: false,
+    tier: 0,
+    favoritedAt: null,
+    updatedAt: row.updated_at?.trim() || null,
+    firstSeenAt: row.first_seen_at?.trim() || null
   };
 }
 
 export async function readProspects(): Promise<ConsoleProspect[]> {
   const csvPath = path.join(rootDir, "prospects", "nepal-leads.csv");
   try {
+    const { applyOverrides, inferRegion, inferSectors, readProspectOverrides } = await import(
+      "./console-prospects.ts"
+    );
+    const overrides = await readProspectOverrides();
     const content = await readFile(csvPath, "utf8");
     const rows = parseCsv(content);
     const prospects = await Promise.all(
       rows.map(async (row) => {
-        const prospect = prospectFromRow(row);
-        const thumbnail = (await resolveProspectThumbnail(row)) ?? prospect.thumbnail;
-        return { ...prospect, thumbnail };
+        const base = prospectFromRow(row);
+        const thumbnail = (await resolveProspectThumbnail(row)) ?? base.thumbnail;
+        const enriched = applyOverrides(
+          {
+            ...base,
+            thumbnail,
+            region: inferRegion(base.location),
+            sectors: inferSectors(base.category, base.businessNotes)
+          },
+          overrides
+        );
+        return enriched;
       })
     );
     return prospects
-      .filter((p) => p.name && p.websiteUrl)
+      .filter((p) => p.name && (p.websiteUrl || p.mapsUrl))
       .sort((a, b) => b.score - a.score);
   } catch {
     return [];
   }
+}
+
+export async function findProspectById(id: string): Promise<ConsoleProspect | null> {
+  const prospects = await readProspects();
+  return prospects.find((p) => p.id === id) ?? null;
 }
 
 function buildCallPhrase(input: NewTaskInput, slug: string): string {

@@ -9,9 +9,21 @@ import {
   gatherConsoleData,
   getSiteDetail,
   listTasks,
+  readProspects,
+  findProspectById,
   resolveAssetPath,
   type NewTaskInput
 } from "./console-data";
+import {
+  addManualProspect,
+  buildProspectFilterMeta,
+  filterProspects,
+  parseProspectQuery,
+  readProspectOverrides,
+  toggleProspectStar,
+  validateManualProspectInput,
+  type ProspectTier
+} from "./console-prospects";
 import {
   createJob,
   getJob,
@@ -74,6 +86,59 @@ async function serveStatic(res: ServerResponse, relativePath: string) {
 async function handleRequest(req: IncomingMessage, res: ServerResponse) {
   const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
   const { pathname } = url;
+
+  if (req.method === "GET" && pathname === "/api/prospects") {
+    const params = parseProspectQuery(url);
+    const prospects = await readProspects();
+    const filtered = filterProspects(prospects, params);
+    sendJson(res, 200, {
+      prospects: filtered,
+      total: prospects.length,
+      count: filtered.length,
+      filters: buildProspectFilterMeta(prospects),
+      applied: params
+    });
+    return;
+  }
+
+  if (req.method === "POST" && pathname.startsWith("/api/prospects/") && pathname.endsWith("/star")) {
+    const id = decodeURIComponent(pathname.slice("/api/prospects/".length, -"/star".length));
+    try {
+      const body = JSON.parse(await readBody(req)) as { tier?: ProspectTier };
+      const entry = await toggleProspectStar(id, { tier: body.tier });
+      const prospect = await findProspectById(id);
+      if (!prospect) {
+        sendJson(res, 404, { error: "Prospect not found" });
+        return;
+      }
+      sendJson(res, 200, {
+        id,
+        starred: entry?.starred ?? false,
+        tier: entry?.tier ?? 0,
+        favoritedAt: entry?.favoritedAt ?? null,
+        prospect: {
+          ...prospect,
+          starred: entry?.starred ?? false,
+          tier: entry?.tier ?? 0,
+          favoritedAt: entry?.favoritedAt ?? null
+        }
+      });
+    } catch (error) {
+      sendJson(res, 400, { error: error instanceof Error ? error.message : "Invalid request" });
+    }
+    return;
+  }
+
+  if (req.method === "POST" && pathname === "/api/prospects/add") {
+    try {
+      const input = validateManualProspectInput(JSON.parse(await readBody(req)));
+      const result = await addManualProspect(input, findProspectById);
+      sendJson(res, 201, result);
+    } catch (error) {
+      sendJson(res, 400, { error: error instanceof Error ? error.message : "Invalid request" });
+    }
+    return;
+  }
 
   if (req.method === "GET" && pathname === "/api/data") {
     sendJson(res, 200, await gatherConsoleData());

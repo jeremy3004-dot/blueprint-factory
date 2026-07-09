@@ -1,16 +1,19 @@
 /** Blueprint Factory Operator Console — client app */
 
-let state = { clients: [], donors: [], prospects: [], tasks: [], jobs: [], stats: {} };
+let state = { clients: [], donors: [], prospects: [], prospectFilters: null, tasks: [], jobs: [], stats: {} };
 let hostedMode = false;
 let matchmakerSelectedDonor = null;
 let jobPollTimer = null;
 let toastTimer = null;
 let highlightJobId = null;
+let prospectView = "all";
+let prospectSectorFilter = new Set();
+let prospectFiltersReady = false;
 
 const views = {
   projects: { title: "Projects", sub: "Client sites and where each one stands" },
   matchmaker: { title: "Matchmaker", sub: "Pair a donor structure with a weak-website prospect" },
-  prospects: { title: "Prospects", sub: "Nepal leads scored for website rebuild opportunity" },
+  prospects: { title: "Prospects", sub: "Browse, filter, favorite, and add Nepal leads" },
   donors: { title: "Donor Shelf", sub: "Pre-captured reference sites to clone from" },
   restock: {
     title: "Restock",
@@ -235,41 +238,214 @@ function renderProjects() {
     .join("");
 }
 
-function renderProspects() {
-  const q = $("#prospect-search").value.trim().toLowerCase();
-  const filter = $("#prospect-filter").value;
-  const grid = $("#prospect-grid");
-  let items = [...(state.prospects ?? [])];
+function tierBadgeHtml(tier) {
+  if (tier >= 2) return `<span class="chip accent tier-badge">Top pick</span>`;
+  if (tier >= 1) return `<span class="chip ready tier-badge">Favorite</span>`;
+  return "";
+}
+
+function collectProspectFilterParams() {
+  const region = $("#prospect-region-filter")?.value ?? "all";
+  const since = $("#prospect-time-filter")?.value ?? "all";
+  const minScore = Number($("#prospect-min-score")?.value ?? 0);
+  const starredOnly = $("#prospect-starred-only")?.checked ?? false;
+  const q = $("#prospect-search")?.value.trim() ?? "";
+  const sectors = [...prospectSectorFilter];
+
+  const params = new URLSearchParams();
+  params.set("view", prospectView);
+  if (region && region !== "all") params.set("region", region);
+  if (since && since !== "all") params.set("since", since);
+  if (minScore > 0) params.set("minScore", String(minScore));
+  if (starredOnly) params.set("starred", "true");
+  if (q) params.set("q", q);
+  if (sectors.length) params.set("sector", sectors.join(","));
+
+  return { params, region, since, minScore, starredOnly, q, sectors };
+}
+
+function applyLocalProspectFilters(items) {
+  const { region, since, minScore, starredOnly, q, sectors } = collectProspectFilterParams();
+
+  if (prospectView === "favorites") {
+    items = items.filter((p) => p.starred);
+  } else if (prospectView === "recent") {
+    items = [...items].sort((a, b) => {
+      const aTime = a.updatedAt ?? a.firstSeenAt ?? "";
+      const bTime = b.updatedAt ?? b.firstSeenAt ?? "";
+      return bTime.localeCompare(aTime);
+    });
+  }
+
+  if (starredOnly) items = items.filter((p) => p.starred);
+  if (region && region !== "all") items = items.filter((p) => p.region === region);
+  if (sectors.length) items = items.filter((p) => p.sectors?.some((s) => sectors.includes(s)));
+
+  if (minScore > 0) items = items.filter((p) => p.score >= minScore);
+
+  if (since && since !== "all") {
+    const now = new Date();
+    const start = new Date(now);
+    start.setHours(0, 0, 0, 0);
+    if (since === "week") start.setDate(start.getDate() - 7);
+    else if (since === "month") start.setMonth(start.getMonth() - 1);
+    else if (since === "year") start.setFullYear(start.getFullYear() - 1);
+    items = items.filter((p) => {
+      const stamp = p.updatedAt ?? p.firstSeenAt;
+      return stamp && new Date(stamp) >= start;
+    });
+  }
 
   if (q) {
+    const needle = q.toLowerCase();
     items = items.filter(
       (p) =>
-        p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.location.toLowerCase().includes(q) ||
-        (p.websiteIssues ?? "").toLowerCase().includes(q)
+        p.name.toLowerCase().includes(needle) ||
+        p.category.toLowerCase().includes(needle) ||
+        p.location.toLowerCase().includes(needle) ||
+        (p.websiteIssues ?? "").toLowerCase().includes(needle) ||
+        (p.businessNotes ?? "").toLowerCase().includes(needle)
     );
   }
-  if (filter !== "all") items = items.filter((p) => p.status === filter);
+
+  if (prospectView === "favorites") {
+    items.sort((a, b) => {
+      if (b.tier !== a.tier) return b.tier - a.tier;
+      return (b.favoritedAt ?? "").localeCompare(a.favoritedAt ?? "") || b.score - a.score;
+    });
+  } else if (prospectView !== "recent") {
+    items.sort((a, b) => b.score - a.score);
+  }
+
+  return items;
+}
+
+function regionLabel(regionId) {
+  const meta = state.prospectFilters?.regions?.find((r) => r.id === regionId);
+  return meta?.label ?? regionId;
+}
+
+function sectorLabel(sectorId) {
+  const meta = state.prospectFilters?.sectors?.find((s) => s.id === sectorId);
+  return meta?.label ?? sectorId;
+}
+
+function initProspectFilters() {
+  if (prospectFiltersReady) return;
+  const regionSelect = $("#prospect-region-filter");
+  const chips = $("#prospect-sector-chips");
+  const meta = state.prospectFilters;
+  if (!regionSelect || !meta) return;
+
+  const currentRegion = regionSelect.value || "all";
+  regionSelect.innerHTML =
+    `<option value="all">All regions</option>` +
+    (meta.regions ?? [])
+      .map((r) => {
+        const count = meta.regionCounts?.[r.id] ?? 0;
+        return `<option value="${r.id}">${r.label} (${count})</option>`;
+      })
+      .join("");
+  regionSelect.value = currentRegion;
+
+  if (chips) {
+    chips.innerHTML = (meta.sectors ?? [])
+      .map((s) => {
+        const count = meta.sectorCounts?.[s.id] ?? 0;
+        const active = prospectSectorFilter.has(s.id) ? " active" : "";
+        return `<button type="button" class="sector-chip${active}" data-sector="${s.id}">${s.label} <span class="chip-count">${count}</span></button>`;
+      })
+      .join("");
+
+    chips.querySelectorAll("[data-sector]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.sector;
+        if (prospectSectorFilter.has(id)) prospectSectorFilter.delete(id);
+        else prospectSectorFilter.add(id);
+        initProspectFilters();
+        renderProspects();
+      });
+    });
+  }
+
+  prospectFiltersReady = true;
+}
+
+async function toggleProspectStar(prospectId, tier) {
+  if (hostedMode) {
+    showToast("Favorites only persist on local console", { type: "error" });
+    return;
+  }
+
+  try {
+    const res = await fetchWithAuth(`/api/prospects/${encodeURIComponent(prospectId)}/star`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(tier != null ? { tier } : {})
+    });
+    if (!res.ok) {
+      showToast("Could not update favorite", { type: "error" });
+      return;
+    }
+    const data = await res.json();
+    const idx = state.prospects.findIndex((p) => p.id === prospectId);
+    if (idx >= 0 && data.prospect) {
+      state.prospects[idx] = data.prospect;
+    }
+    renderProspects();
+    showToast(data.starred ? "Added to favorites" : "Removed from favorites", { type: "success" });
+  } catch {
+    showToast("Could not update favorite", { type: "error" });
+  }
+}
+
+function renderProspects() {
+  initProspectFilters();
+  const grid = $("#prospect-grid");
+  const items = applyLocalProspectFilters([...(state.prospects ?? [])]);
+  const hint = $("#prospect-count-hint");
+
+  if (hint) {
+    const favCount = (state.prospects ?? []).filter((p) => p.starred).length;
+    hint.textContent = `Showing ${items.length} of ${state.prospects?.length ?? 0} leads · ${favCount} favorites`;
+  }
+
+  document.querySelectorAll(".prospect-tab").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.prospectView === prospectView);
+  });
 
   if (!items.length) {
-    grid.innerHTML = `<div class="empty">No prospects found. Export leads to <code>prospects/nepal-leads.csv</code>.</div>`;
+    grid.innerHTML = `<div class="empty">No prospects match these filters. Try clearing sector chips or lowering the score minimum.</div>`;
     return;
   }
 
   grid.innerHTML = items
     .map((p) => {
       const pain = p.websiteIssues || p.websiteNotes || "";
+      const starClass = p.starred ? " starred" : "";
+      const starLabel = p.starred ? "Remove from favorites" : "Add to favorites";
+      const sectorTags = (p.sectors ?? [])
+        .filter((s) => s !== "other")
+        .slice(0, 2)
+        .map((s) => `<span class="sector-tag">${sectorLabel(s)}</span>`)
+        .join("");
       return `
-    <article class="card" data-prospect-id="${p.id}" data-kind="prospect">
+    <article class="card prospect-card${starClass}" data-prospect-id="${p.id}" data-kind="prospect">
+      <button type="button" class="prospect-star-btn" data-star-id="${p.id}" aria-label="${starLabel}" title="${starLabel}">
+        ${p.starred ? "★" : "☆"}
+      </button>
       <div class="card-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
       <div class="card-body">
-        <span class="chip ${scoreClass(p.score)}">Score ${p.score}</span>
+        <div class="prospect-card-chips">
+          <span class="chip ${scoreClass(p.score)}">Score ${p.score}</span>
+          ${tierBadgeHtml(p.tier)}
+          ${p.manuallyAdded ? `<span class="chip muted">Manual</span>` : ""}
+        </div>
         <h3 class="card-title">${p.name}</h3>
         <div class="card-meta">
           <span>${p.category}</span>
-          <span>${p.location}</span>
-          <span class="status-tag">${p.status}</span>
+          <span>${regionLabel(p.region)}</span>
+          ${sectorTags}
         </div>
         ${pain ? `<p class="card-excerpt">${pain}</p>` : ""}
       </div>
@@ -277,6 +453,13 @@ function renderProspects() {
   `;
     })
     .join("");
+
+  grid.querySelectorAll("[data-star-id]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      void toggleProspectStar(btn.dataset.starId);
+    });
+  });
 }
 
 function renderDonors() {
@@ -316,6 +499,33 @@ function renderDonors() {
     .join("");
 }
 
+function prospectSearchJobSummary(job) {
+  const input = job.input ?? {};
+  return {
+    lane: input.lane || job.title.replace(/^Prospect search —\s*/, ""),
+    region: input.region || null,
+    notes: input.notes || null
+  };
+}
+
+function inboxJobTitle(job) {
+  if (job.kind === "prospect_search") {
+    const { lane, region } = prospectSearchJobSummary(job);
+    return region ? `${lane} · ${region}` : lane;
+  }
+  return job.title;
+}
+
+function inboxJobMeta(job) {
+  if (job.kind === "prospect_search") {
+    const { region } = prospectSearchJobSummary(job);
+    const parts = [kindLabel(job.kind), formatDate(job.createdAt)];
+    if (region) parts.unshift(region);
+    return parts.join(" · ");
+  }
+  return `${kindLabel(job.kind)} · ${formatDate(job.createdAt)}`;
+}
+
 function renderInbox() {
   const list = $("#inbox-list");
   const jobs = sortJobs(state.jobs ?? []);
@@ -338,34 +548,47 @@ function renderInbox() {
       const failedClass = j.status === "failed" ? " job-failed" : "";
       const activeClass = isActive ? " job-active" : "";
       const highlightClass = j.id === highlightJobId ? " job-highlight" : "";
-      const resultLine = j.result?.message ? `<p class="muted">${j.result.message}</p>` : "";
+      const isProspectSearch = j.kind === "prospect_search";
+      const resultLine = j.result?.message
+        ? `<p class="job-result-line muted">${j.result.message}</p>`
+        : "";
       const errorLine = j.error ? `<p class="job-error">${j.error}</p>` : "";
       const failHelp =
-        j.status === "failed"
-          ? `<p class="job-help muted">Check the log below. Capture jobs need <code>pnpm blueprint:capture</code> in terminal. Prospect search needs <code>python3</code> and the blueprint-search-nepal skill.</p>`
-          : "";
+        j.status === "failed" && isProspectSearch
+          ? `<p class="job-help muted">Prospect search needs <code>python3</code> and the blueprint-search-nepal skill. Open the scout task in Cursor.</p>`
+          : j.status === "failed"
+            ? `<p class="job-help muted">Check the log below. Capture jobs need <code>pnpm blueprint:capture</code> in terminal.</p>`
+            : "";
       const viewBtn =
         j.status === "done" && j.result?.viewTarget
-          ? `<button class="ghost-btn" style="width:auto;margin:0" data-view-results="${j.result.viewTarget}">View results</button>`
+          ? `<button class="ghost-btn inbox-view-btn" data-view-results="${j.result.viewTarget}">${
+              j.result.viewTarget === "prospects" ? "View prospects" : "View results"
+            }</button>`
           : "";
       const detailsOpen = isActive || j.id === highlightJobId ? " open" : "";
+      const scoutNote =
+        isProspectSearch && j.status === "done"
+          ? `<p class="job-help muted">CSV refreshed from local database. New AI scouting still runs via the inbox task in Cursor.</p>`
+          : "";
       return `
     <div class="inbox-item job-item${failedClass}${activeClass}${highlightClass}" data-job-id="${j.id}">
-      <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;">
+      <div class="inbox-item-head">
         <div>
-          <h3>${j.title}</h3>
-          <div class="muted">${j.id} · ${kindLabel(j.kind)} · ${formatDate(j.createdAt)}</div>
+          <div class="inbox-kind">${isProspectSearch ? "Prospect search" : kindLabel(j.kind)}</div>
+          <h3>${inboxJobTitle(j)}</h3>
+          <div class="muted inbox-meta">${inboxJobMeta(j)}</div>
         </div>
-        <div style="display:flex;gap:0.5rem;align-items:center;">
+        <div class="inbox-item-actions">
           ${jobStatusChip(j.status)}
           ${viewBtn}
         </div>
       </div>
       ${resultLine}
+      ${scoutNote}
       ${errorLine}
       ${failHelp}
       <details${detailsOpen}>
-        <summary>${isActive ? "Live log" : "Log tail"}</summary>
+        <summary>${isActive ? "Live log" : "Log"}</summary>
         <pre class="job-log" data-job-log="${j.id}">${isActive ? "Loading…" : "Expand to load"}</pre>
       </details>
     </div>
@@ -374,20 +597,31 @@ function renderInbox() {
     .join("");
 
   const taskItems = tasks
-    .map(
-      (t) => `
-    <div class="inbox-item">
-      <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+    .map((t) => {
+      const isProspectTask = t.type === "prospect_search" || t.type === "prospect_rating";
+      const summary = isProspectTask
+        ? t.title.replace(/^Task:\s*/i, "").replace(/^Prospect search —\s*/i, "").replace(/^Rate manual prospect —\s*/i, "")
+        : t.title;
+      const typeLabel =
+        t.type === "prospect_search"
+          ? "Scout task"
+          : t.type === "prospect_rating"
+            ? "Rate prospect"
+            : t.type;
+      return `
+    <div class="inbox-item inbox-task-item">
+      <div class="inbox-item-head">
         <div>
-          <h3>${t.title}</h3>
-          <div class="muted">${t.filename} · ${t.type} · ${t.status}</div>
+          <div class="inbox-kind">Cursor task</div>
+          <h3>${summary}</h3>
+          <div class="muted inbox-meta">${typeLabel} · ${t.status} · ${formatDate(t.createdAt)}</div>
         </div>
-        <button class="ghost-btn" style="width:auto;margin:0" data-copy-task="${encodeURIComponent(t.callPhrase)}">Copy</button>
+        <button class="ghost-btn inbox-view-btn" data-copy-task="${encodeURIComponent(t.callPhrase)}">Copy phrase</button>
       </div>
-      <pre>${t.callPhrase || "No call phrase"}</pre>
+      ${isProspectTask ? "" : `<pre class="inbox-task-phrase">${t.callPhrase || "No call phrase"}</pre>`}
     </div>
-  `
-    )
+  `;
+    })
     .join("");
 
   list.innerHTML = activeBanner + jobItems + taskItems;
@@ -636,6 +870,10 @@ function openDrawer(slug, kind, prospectId) {
       <h2>${p.name}</h2>
       <div class="slug">${p.category} · ${p.location}</div>
       <span class="chip ${scoreClass(p.score)}">Total score ${p.score}</span>
+      ${tierBadgeHtml(p.tier)}
+      <button type="button" class="ghost-btn drawer-star-btn" data-drawer-star="${p.id}">
+        ${p.starred ? "★ Favorited" : "☆ Add to favorites"}
+      </button>
 
       <div class="drawer-section">
         <h4>Score breakdown</h4>
@@ -688,6 +926,13 @@ function openDrawer(slug, kind, prospectId) {
       });
       switchView("new-job");
       closeDrawer();
+    });
+
+    content.querySelector("[data-drawer-star]")?.addEventListener("click", (e) => {
+      const id = e.currentTarget.dataset.drawerStar;
+      void toggleProspectStar(id).then(() => {
+        openDrawer(null, "prospect", id);
+      });
     });
 
     drawer.classList.remove("hidden");
@@ -804,6 +1049,7 @@ function switchView(name) {
   $("#view-subtitle").textContent = meta.sub;
   $("#sidebar").classList.remove("open");
   if (name === "matchmaker") renderMatchmaker();
+  if (name === "prospects") renderProspects();
 }
 
 function updateJobFormMode() {
@@ -1143,6 +1389,7 @@ async function loadData() {
     : `Updated ${formatDate(data.generatedAt)}`;
 
   updateHostedUi();
+  prospectFiltersReady = false;
   renderSidebarStats();
   renderProjects();
   renderProspects();
@@ -1182,8 +1429,21 @@ $("#refresh-btn").addEventListener("click", async () => {
 
 $("#project-search").addEventListener("input", renderProjects);
 $("#project-filter").addEventListener("change", renderProjects);
-$("#prospect-search").addEventListener("input", renderProspects);
-$("#prospect-filter").addEventListener("change", renderProspects);
+$("#prospect-search")?.addEventListener("input", renderProspects);
+$("#prospect-region-filter")?.addEventListener("change", renderProspects);
+$("#prospect-time-filter")?.addEventListener("change", renderProspects);
+$("#prospect-min-score")?.addEventListener("input", (e) => {
+  const label = $("#prospect-min-score-label");
+  if (label) label.textContent = e.target.value;
+  renderProspects();
+});
+$("#prospect-starred-only")?.addEventListener("change", renderProspects);
+document.querySelectorAll(".prospect-tab").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    prospectView = btn.dataset.prospectView ?? "all";
+    renderProspects();
+  });
+});
 $("#donor-search").addEventListener("input", renderDonors);
 $("#matchmaker-donor-search")?.addEventListener("input", renderMatchmaker);
 $("#matchmaker-prospect-search")?.addEventListener("input", renderMatchmaker);
@@ -1201,6 +1461,7 @@ document.body.addEventListener("click", (e) => {
     return;
   }
   if (e.target.closest(".match-card")) return;
+  if (e.target.closest(".prospect-star-btn")) return;
   const card = e.target.closest(".card");
   if (!card) return;
   if (card.dataset.kind === "prospect") {
@@ -1540,7 +1801,7 @@ $("#prospect-search-form")?.addEventListener("submit", async (e) => {
     { lane, region: region || undefined, notes: notes || undefined },
     {
       submitBtn: $("#prospect-search-submit"),
-      idleLabel: "Run search",
+      idleLabel: "Commission search",
       resultEl: $("#prospect-search-result"),
       messageEl: $("#prospect-search-message"),
       onSuccess: () => {
@@ -1548,6 +1809,63 @@ $("#prospect-search-form")?.addEventListener("submit", async (e) => {
       }
     }
   );
+});
+
+$("#prospect-add-form")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (hostedMode) {
+    showToast("Manual add only works on local console", { type: "error" });
+    return;
+  }
+
+  const form = e.target;
+  const payload = {
+    name: form.name.value.trim(),
+    website: form.website.value.trim(),
+    location: form.location.value.trim() || undefined,
+    category: form.category.value.trim() || undefined
+  };
+
+  if (!payload.name || !payload.website) {
+    showToast("Name and website are required", { type: "error" });
+    return;
+  }
+
+  const submitBtn = $("#prospect-add-submit");
+  setButtonLoading(submitBtn, true, "Rate & add");
+
+  try {
+    const res = await fetchWithAuth("/api/prospects/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      let err = {};
+      try {
+        err = await res.json();
+      } catch {
+        // ignore
+      }
+      showToast(err.error ?? "Could not add prospect", { type: "error" });
+      return;
+    }
+
+    const result = await res.json();
+    const resultEl = $("#prospect-add-result");
+    const messageEl = $("#prospect-add-message");
+    if (resultEl) resultEl.classList.remove("hidden");
+    if (messageEl) messageEl.textContent = result.message;
+
+    await loadData();
+    showToast(`${payload.name} added`, { type: "success" });
+    form.reset();
+  } catch {
+    showToast("Could not add prospect", { type: "error" });
+  } finally {
+    setButtonLoading(submitBtn, false, "Rate & add");
+  }
 });
 
 loadData().catch(() => {

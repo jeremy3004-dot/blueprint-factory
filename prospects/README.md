@@ -28,8 +28,9 @@ python3 /Users/dev/.codex/skills/blueprint-search-nepal/scripts/blueprint_search
 
 Raw screenshots, SQLite, and run history live in `.blueprint-search-nepal/` (local/gitignored).
 
-The Operator Console **Prospects** tab (`pnpm blueprint:console`) reads `nepal-leads.csv` and can
-prefill a demo clone job from any lead.
+The Operator Console **Prospects** tab (`pnpm blueprint:console`) reads `nepal-leads.csv`, supports
+filtering/favorites via `prospects/overrides.json` (stars never mutate the CSV), and can prefill a
+demo clone job from any lead.
 
 Call phrase: *Scout Nepal prospects with blueprint-search-nepal and export to prospects/nepal-leads.csv*
 

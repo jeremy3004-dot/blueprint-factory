@@ -1291,3 +1291,227 @@ body {
     margin: 0 1rem 1rem;
   }
 }
+
+/* Prospects redesign */
+.prospects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 1.5rem 1rem;
+}
+
+.prospect-view-tabs {
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.prospect-tab {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.55rem 0.9rem;
+  border-radius: 9px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.prospect-tab.active {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.prospect-scout-panel,
+.prospect-add-panel {
+  flex: 1;
+  min-width: min(100%, 420px);
+  margin: 0 1.5rem 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.prospect-scout-panel summary,
+.prospect-add-panel summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.prospect-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0 1.5rem 0.75rem;
+}
+
+.prospect-filters input,
+.prospect-filters select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+}
+
+.prospect-filters input[type="search"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+.prospect-score-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.prospect-score-filter input[type="range"] {
+  width: 140px;
+  accent-color: var(--accent);
+}
+
+.prospect-starred-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.sector-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.5rem 1rem;
+}
+
+.sector-chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.sector-chip.active {
+  border-color: rgba(232, 165, 75, 0.5);
+  color: var(--accent);
+  background: rgba(232, 165, 75, 0.1);
+}
+
+.sector-chip .chip-count {
+  opacity: 0.7;
+}
+
+.card.prospect-card {
+  position: relative;
+}
+
+.card.prospect-card.starred {
+  border-color: rgba(232, 165, 75, 0.35);
+}
+
+.prospect-star-btn {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  border: 0;
+  background: rgba(12, 14, 18, 0.75);
+  color: var(--accent);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.prospect-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.sector-tag {
+  font-size: 0.75rem;
+  color: var(--accent-2);
+}
+
+.tier-badge {
+  font-size: 0.72rem;
+}
+
+.inbox-item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.inbox-kind {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.inbox-meta {
+  font-size: 0.85rem;
+}
+
+.inbox-item-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.inbox-view-btn {
+  width: auto;
+  margin: 0;
+}
+
+.inbox-task-phrase {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  max-height: 120px;
+  overflow: auto;
+}
+
+.job-result-line {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.drawer-star-btn {
+  margin-top: 0.5rem;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .prospects-toolbar,
+  .prospect-filters,
+  .sector-chips,
+  .prospect-scout-panel,
+  .prospect-add-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

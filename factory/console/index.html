@@ -55,7 +55,7 @@
         </header>
 
         <div class="commission-strip" id="commission-strip">
-          <button type="button" class="commission-card" data-goto="prospects" data-focus="prospect-commission">
+          <button type="button" class="commission-card" data-goto="prospects" data-focus="prospect-scout-panel">
             <span class="commission-icon">🔍</span>
             <span class="commission-label">Scout prospects</span>
             <span class="commission-desc">Find &amp; score Nepal leads</span>
@@ -112,58 +112,103 @@
 
         <!-- Prospects -->
         <section class="view" id="view-prospects">
-          <div class="commission-banner" id="prospect-commission">
-            <div class="commission-banner-head">
-              <h2>Commission Nepal prospect search</h2>
-              <p class="muted">
-                Refreshes <code>prospects/nepal-leads.csv</code> from the local scout database and creates a
-                Cursor task. <strong>AI web scouting runs in Cursor</strong>, not in this console.
-              </p>
+          <div class="prospects-toolbar">
+            <div class="prospect-view-tabs" role="tablist" aria-label="Prospect views">
+              <button type="button" class="prospect-tab active" data-prospect-view="all">All</button>
+              <button type="button" class="prospect-tab" data-prospect-view="favorites">Favorites</button>
+              <button type="button" class="prospect-tab" data-prospect-view="recent">Recent</button>
             </div>
-            <form class="job-form compact" id="prospect-search-form">
+            <details class="prospect-scout-panel" id="prospect-scout-panel">
+              <summary>Scout new leads</summary>
+              <p class="muted">
+                Creates a Cursor scout task and refreshes <code>prospects/nepal-leads.csv</code> from the local database.
+                AI web search runs in Cursor, not here.
+              </p>
+              <form class="job-form compact" id="prospect-search-form">
+                <div class="form-grid">
+                  <label>
+                    Search lane <span class="required">*</span>
+                    <input name="lane" required placeholder="e.g. Pokhara restaurants" />
+                  </label>
+                  <label>
+                    Region <span class="optional">(optional)</span>
+                    <input name="region" placeholder="e.g. Pokhara" />
+                  </label>
+                  <label class="full">
+                    Notes <span class="optional">(optional)</span>
+                    <input name="notes" placeholder="e.g. prioritize 4.5+ review count" />
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="ghost-btn" id="prospect-search-submit">Commission search</button>
+                </div>
+              </form>
+              <div class="task-result hidden" id="prospect-search-result">
+                <p class="muted" id="prospect-search-message"></p>
+                <button class="ghost-btn" id="prospect-search-inbox">View in inbox</button>
+              </div>
+            </details>
+          </div>
+
+          <div class="prospect-filters" id="prospect-filters">
+            <input type="search" id="prospect-search" placeholder="Search name, category, notes…" />
+            <select id="prospect-region-filter" aria-label="Filter by region">
+              <option value="all">All regions</option>
+            </select>
+            <select id="prospect-time-filter" aria-label="Filter by date added">
+              <option value="all">Any time</option>
+              <option value="today">Today</option>
+              <option value="week">This week</option>
+              <option value="month">This month</option>
+              <option value="year">This year</option>
+            </select>
+            <label class="prospect-score-filter">
+              <span>Min score <strong id="prospect-min-score-label">0</strong></span>
+              <input type="range" id="prospect-min-score" min="0" max="100" step="5" value="0" />
+            </label>
+            <label class="prospect-starred-toggle">
+              <input type="checkbox" id="prospect-starred-only" />
+              <span>Starred only</span>
+            </label>
+          </div>
+
+          <div class="sector-chips" id="prospect-sector-chips" aria-label="Filter by sector"></div>
+
+          <details class="prospect-add-panel" id="prospect-add-panel">
+            <summary>Add a specific business</summary>
+            <p class="muted">
+              Name + website (or Maps link). Console auto-imports with placeholder scores when the scout script is installed;
+              full demand and website-pain rating still runs in Cursor.
+            </p>
+            <form class="job-form compact" id="prospect-add-form">
               <div class="form-grid">
                 <label>
-                  Search lane <span class="required">*</span>
-                  <input
-                    name="lane"
-                    required
-                    placeholder="e.g. Pokhara trekking agencies"
-                  />
+                  Business name <span class="required">*</span>
+                  <input name="name" required placeholder="Everest Base Camp Treks" />
+                </label>
+                <label>
+                  Website or Maps URL <span class="required">*</span>
+                  <input name="website" required placeholder="https://example.com.np or Google Maps link" />
                 </label>
                 <label>
                   Region <span class="optional">(optional)</span>
-                  <input name="region" placeholder="e.g. Pokhara, Kathmandu" />
+                  <input name="location" placeholder="e.g. Pokhara" />
                 </label>
-                <label class="full">
-                  Notes <span class="optional">(optional)</span>
-                  <input name="notes" placeholder="e.g. prioritize operators with 4.5+ reviews" />
+                <label>
+                  Category <span class="optional">(optional)</span>
+                  <input name="category" placeholder="e.g. trekking operator" />
                 </label>
               </div>
               <div class="form-actions">
-                <button type="submit" class="primary-btn" id="prospect-search-submit">Run search</button>
+                <button type="submit" class="primary-btn" id="prospect-add-submit">Rate &amp; add</button>
               </div>
             </form>
-            <div class="task-result hidden" id="prospect-search-result">
-              <h3>Search commissioned</h3>
-              <p class="muted" id="prospect-search-message"></p>
-              <div class="result-actions">
-                <button class="ghost-btn" id="prospect-search-inbox">View in inbox</button>
-              </div>
+            <div class="task-result hidden" id="prospect-add-result">
+              <p class="muted" id="prospect-add-message"></p>
             </div>
-          </div>
-          <div class="filters">
-            <input type="search" id="prospect-search" placeholder="Search prospects…" />
-            <select id="prospect-filter">
-              <option value="all">All statuses</option>
-              <option value="new">New</option>
-              <option value="contacted">Contacted</option>
-              <option value="converted">Converted</option>
-            </select>
-          </div>
-          <p class="view-hint muted">
-            Nepal leads from <code>prospects/nepal-leads.csv</code>. Scout with
-            <code>blueprint-search-nepal</code> — see <code>prospects/README.md</code>.
-          </p>
+          </details>
+
+          <p class="view-hint muted" id="prospect-count-hint"></p>
           <div class="card-grid prospects" id="prospect-grid"></div>
         </section>
 
