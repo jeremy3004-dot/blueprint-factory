@@ -12,16 +12,15 @@ let prospectFiltersReady = false;
 
 const views = {
   today: { title: "Today", sub: "What needs your attention right now" },
-  projects: { title: "Projects", sub: "Client sites and where each one stands" },
-  matchmaker: { title: "Matchmaker", sub: "Pair a donor structure with a weak-website prospect" },
-  prospects: { title: "Prospects", sub: "Browse, filter, favorite, and add Nepal leads" },
-  donors: { title: "Donor Shelf", sub: "Pre-captured reference sites to clone from" },
-  restock: {
-    title: "Restock",
-    sub: "Pick sectors, set counts — worker finds, beauty-auditions, and captures donors."
-  },
-  "new-job": { title: "New Job", sub: "Two blanks — name and website. Worker derives the rest." },
-  inbox: { title: "Inbox", sub: "Pending tasks waiting for the builder" }
+  prospects: { title: "Find Clients", sub: "Browse, filter, favorite, and add Nepal leads" },
+  donors: { title: "Design Library", sub: "Pre-captured reference sites to clone from" },
+  "build-sites": { title: "Build Sites", sub: "Start a client build — pick a design or pair with a lead" },
+  projects: { title: "My Projects", sub: "Client sites and where each one stands" },
+  inbox: { title: "Activity", sub: "Jobs and tasks in progress" },
+  // legacy keys kept for data-goto / commission strip fallbacks
+  matchmaker: { title: "Build Sites", sub: "Start a client build — pick a design or pair with a lead" },
+  restock: { title: "Design Library", sub: "Add new world-class designs to the library" },
+  "new-job": { title: "Build Sites", sub: "Two blanks — name and website. Worker derives the rest." }
 };
 
 const statusLabels = {
@@ -155,6 +154,40 @@ const RESTOCK_MAX_PER_FIELD = 5;
 
 function chipForAction(action) {
   const info = statusLabels[action] ?? { label: action.replaceAll("_", " ").toLowerCase(), class: "muted" };
+  return `<span class="chip ${info.class}">${info.label}</span>`;
+}
+
+const NEEDS_YOU_ACTIONS = new Set([
+  "NEEDS_REFERENCE_FIRST",
+  "NEEDS_ART_DIRECTION",
+  "RUN_BEAUTY",
+  "NEEDS_PAGE_COVERAGE",
+  "REPAIR_REQUIRED_FILES"
+]);
+
+const WORKING_ACTIONS = new Set([
+  "CREATE_SITE",
+  "CREATE_APP",
+  "NEEDS_PREVIEW_URL",
+  "CAPTURE_SCREENSHOTS",
+  "CAPTURE_MOTION"
+]);
+
+function ownerBucketForClient(client) {
+  if (client.nextAction === "READY_FOR_HUMAN_REVIEW") return "ready";
+  if (NEEDS_YOU_ACTIONS.has(client.nextAction)) return "needsYou";
+  if (WORKING_ACTIONS.has(client.nextAction)) return "working";
+  return "working";
+}
+
+function ownerBucketChip(client) {
+  const bucket = ownerBucketForClient(client);
+  const map = {
+    ready: { label: "Ready to send", class: "ready" },
+    needsYou: { label: "Needs you", class: "warn" },
+    working: { label: "Working on it", class: "accent" }
+  };
+  const info = map[bucket];
   return `<span class="chip ${info.class}">${info.label}</span>`;
 }
 
@@ -459,7 +492,7 @@ function renderProjects() {
     <article class="card" data-slug="${c.slug}" data-kind="client">
       <div class="card-thumb">${thumbHtml(c.thumbnail, c.title)}</div>
       <div class="card-body">
-        ${chipForAction(c.nextAction)}
+        ${ownerBucketChip(c)}
         <h3 class="card-title">${c.title}</h3>
         <div class="card-meta">
           <span>${c.pages}</span>
@@ -1184,7 +1217,7 @@ function openDrawer(slug, kind, prospectId) {
         clientWebsite: decodeURIComponent(btn.dataset.url),
         taskType: "new_site"
       });
-      switchView("new-job");
+      switchView("build-sites");
       closeDrawer();
     });
 
@@ -1213,8 +1246,13 @@ function openDrawer(slug, kind, prospectId) {
     content.innerHTML = `
       <h2>${c.title}</h2>
       <div class="slug muted">Reference: ${c.slug}</div>
-      ${chipForAction(c.nextAction)}
+      ${ownerBucketChip(c)}
       <p>${escapeHtml(c.nextActionPlain)}</p>
+
+      <div class="drawer-section">
+        <h4>Build detail</h4>
+        ${chipForAction(c.nextAction)}
+      </div>
 
       <div class="drawer-section">
         <h4>Status</h4>
@@ -1274,20 +1312,20 @@ function openDrawer(slug, kind, prospectId) {
       const action = btn.dataset.action;
       const s = btn.dataset.slug;
       if (action === "use-donor") {
-        switchView("new-job");
+        switchView("build-sites");
         $("#donor-shelf-select").value = s;
         closeDrawer();
         return;
       }
       if (action === "continue") {
         prefillTask({ clientName: s, taskType: "continue_site" });
-        switchView("new-job");
+        switchView("build-sites");
         closeDrawer();
         return;
       }
       if (action === "review") {
         prefillTask({ clientName: s, taskType: "review" });
-        switchView("new-job");
+        switchView("build-sites");
         closeDrawer();
       }
     });
@@ -1303,19 +1341,26 @@ function closeDrawer() {
 }
 
 function switchView(name) {
+  if (name === "matchmaker" || name === "new-job") name = "build-sites";
+  if (name === "restock") name = "donors";
+
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.view === name);
   });
   document.querySelectorAll(".view").forEach((view) => {
     view.classList.toggle("active", view.id === `view-${name}`);
   });
-  const meta = views[name];
+  const meta = views[name] ?? views.today;
   $("#view-title").textContent = meta.title;
   $("#view-subtitle").textContent = meta.sub;
   $("#sidebar").classList.remove("open");
-  if (name === "matchmaker") renderMatchmaker();
+  if (name === "build-sites" || name === "matchmaker" || name === "new-job") {
+    renderMatchmaker();
+    updateJobFormMode();
+  }
   if (name === "prospects") renderProspects();
   if (name === "today") renderToday();
+  if (name === "donors" || name === "restock") initRestockSectors();
 }
 
 function updateJobFormMode() {

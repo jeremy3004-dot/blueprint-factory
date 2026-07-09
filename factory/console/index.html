@@ -25,13 +25,11 @@
 
         <nav class="nav">
           <button class="nav-btn active" data-view="today">Today</button>
-          <button class="nav-btn" data-view="projects">Projects</button>
-          <button class="nav-btn" data-view="matchmaker">Matchmaker</button>
-          <button class="nav-btn" data-view="prospects">Prospects</button>
-          <button class="nav-btn" data-view="donors">Donor Shelf</button>
-          <button class="nav-btn" data-view="restock">Restock</button>
-          <button class="nav-btn" data-view="new-job">New Job</button>
-          <button class="nav-btn" data-view="inbox">Inbox <span class="badge" id="inbox-badge">0</span></button>
+          <button class="nav-btn" data-view="prospects">Find Clients</button>
+          <button class="nav-btn" data-view="donors">Design Library</button>
+          <button class="nav-btn" data-view="build-sites">Build Sites</button>
+          <button class="nav-btn" data-view="projects">My Projects</button>
+          <button class="nav-btn" data-view="inbox">Activity <span class="badge" id="inbox-badge">0</span></button>
         </nav>
 
         <div class="sidebar-stats" id="sidebar-stats"></div>
@@ -58,18 +56,18 @@
         <div class="commission-strip" id="commission-strip">
           <button type="button" class="commission-card" data-goto="prospects" data-focus="prospect-scout-panel">
             <span class="commission-icon">🔍</span>
-            <span class="commission-label">Scout prospects</span>
+            <span class="commission-label">Scout leads</span>
             <span class="commission-desc">Find &amp; score Nepal leads</span>
           </button>
-          <button type="button" class="commission-card" data-goto="restock">
+          <button type="button" class="commission-card" data-goto="donors" data-focus="add-designs-panel">
             <span class="commission-icon">📦</span>
-            <span class="commission-label">Stock donors</span>
+            <span class="commission-label">Add designs</span>
             <span class="commission-desc">Beauty audition + capture</span>
           </button>
-          <button type="button" class="commission-card" data-goto="matchmaker">
+          <button type="button" class="commission-card" data-goto="build-sites">
             <span class="commission-icon">⚡</span>
-            <span class="commission-label">Match &amp; build</span>
-            <span class="commission-desc">Pair donor + prospect</span>
+            <span class="commission-label">Start a build</span>
+            <span class="commission-desc">Pair design + lead</span>
           </button>
         </div>
 
@@ -106,23 +104,70 @@
           <div class="card-grid" id="project-grid"></div>
         </section>
 
-        <!-- Matchmaker -->
-        <section class="view" id="view-matchmaker">
+        <!-- Build Sites -->
+        <section class="view" id="view-build-sites">
+          <div class="hosted-notice hidden" id="hosted-job-notice">
+            Hosted snapshot mode: you can still build a call phrase here and copy it into Cursor.
+            Inbox file creation only works on your local console at
+            <a href="http://blueprint.local:4177">blueprint.local</a>.
+          </div>
+          <p class="job-intro">
+            Fill in <strong>two blanks</strong> — client name and their current website. Optionally pick a design from the library.
+            See <code>factory/playbooks/master-clone-job-prompt.md</code>.
+          </p>
+          <form class="job-form" id="job-form">
+            <input type="hidden" name="taskType" value="new_site" />
+            <div class="form-grid">
+              <label>
+                Client name <span class="required">*</span>
+                <input name="clientName" required placeholder="Everest Tours" />
+              </label>
+              <label class="full" id="client-website-field">
+                Client's current website <span class="required">*</span>
+                <input name="clientWebsite" type="url" placeholder="https://everesttours.com.np" />
+              </label>
+              <label class="full">
+                Copy the look of a specific site? <span class="optional">(optional)</span>
+                <select name="donorShelfSlug" id="donor-shelf-select">
+                  <option value="">— worker picks from shelf —</option>
+                </select>
+              </label>
+              <label class="full">
+                Anything else <span class="optional">(optional)</span>
+                <textarea name="notes" rows="3" placeholder="e.g. they need a WhatsApp button, owner hates red, show prices in euros"></textarea>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">Create task in inbox</button>
+            </div>
+          </form>
+          <div class="task-result hidden" id="task-result">
+            <h3>Task created</h3>
+            <p class="muted">Copy this into Cursor chat, or tell the agent to read the inbox file.</p>
+            <pre id="task-call-phrase"></pre>
+            <div class="result-actions">
+              <button class="primary-btn" id="copy-call-phrase">Copy call phrase</button>
+              <button class="ghost-btn" id="view-inbox">View inbox</button>
+            </div>
+          </div>
+
+          <hr class="view-divider" />
+
           <p class="view-hint muted matchmaker-hint" id="matchmaker-hint">
-            Drag a donor onto a prospect to pair them. On mobile, tap a donor then tap a prospect.
+            Or drag a design onto a lead to pair them. On mobile, tap a design then tap a lead.
           </p>
           <div class="matchmaker-layout">
             <div class="matchmaker-pane" id="matchmaker-donors">
               <div class="matchmaker-pane-head">
-                <h2>Donor shelf</h2>
-                <input type="search" id="matchmaker-donor-search" placeholder="Search donors…" />
+                <h2>Design library</h2>
+                <input type="search" id="matchmaker-donor-search" placeholder="Search designs…" />
               </div>
               <div class="matchmaker-cards" id="matchmaker-donor-cards"></div>
             </div>
             <div class="matchmaker-pane" id="matchmaker-prospects">
               <div class="matchmaker-pane-head">
-                <h2>Prospects</h2>
-                <input type="search" id="matchmaker-prospect-search" placeholder="Search prospects…" />
+                <h2>Leads</h2>
+                <input type="search" id="matchmaker-prospect-search" placeholder="Search leads…" />
               </div>
               <div class="matchmaker-cards" id="matchmaker-prospect-cards"></div>
             </div>
@@ -239,176 +284,118 @@
           <div class="card-grid prospects" id="prospect-grid"></div>
         </section>
 
-        <!-- Donors -->
+        <!-- Design Library -->
         <section class="view" id="view-donors">
           <div class="filters">
-            <input type="search" id="donor-search" placeholder="Search donors by sector…" />
+            <input type="search" id="donor-search" placeholder="Search designs by sector…" />
           </div>
           <div class="card-grid donors" id="donor-grid"></div>
-          <p class="view-hint muted">
-            To add new donors, use the <button type="button" class="link-btn" data-goto="restock">Restock</button>
-            tab — beauty audition before capture. Browse existing donors here.
-          </p>
-        </section>
 
-        <!-- Restock shelf -->
-        <section class="view" id="view-restock">
-          <div class="commission-banner highlight">
-            <h2>Commission shelf restock</h2>
-            <p class="muted">
-              Pick donor-shelf <strong>sectors</strong>, set how many world-class sites to find in each, and
-              commission a worker. The agent researches candidates, runs a <em>beauty audition</em> on desktop
-              and mobile, scores them, and captures winners to the shelf. <strong>Research and capture run in
-              Cursor</strong> — this console creates a structured inbox task immediately.
-            </p>
-          </div>
-          <div class="hosted-notice hidden" id="hosted-restock-notice">
-            Hosted snapshot mode: build a commission and copy the call phrase into Cursor. Inbox file creation
-            only works on your local console at
-            <a href="http://blueprint.local:4177">blueprint.local</a>.
-          </div>
-          <p class="job-intro muted">
-            Worker runbook: <code>factory/playbooks/master-shelf-stocking-prompt.md</code>
-          </p>
-          <div class="restock-compare muted">
-            <p><strong>Restock</strong> finds and captures <em>new</em> world-class donors for the shelf.</p>
-            <p><strong>Matchmaker</strong> pairs an <em>existing</em> shelf donor with a prospect for a client clone job.</p>
-          </div>
-          <form class="job-form" id="restock-form">
-            <fieldset class="restock-fieldset">
-              <legend>Target areas <span class="required">*</span></legend>
-              <p class="fieldset-hint muted">Select sectors and how many donors to find in each (1–5 per field).</p>
-              <div class="restock-sector-grid" id="restock-sector-grid"></div>
-              <label class="restock-other-row">
-                <input type="checkbox" name="sector-other-enabled" id="restock-other-enabled" />
-                <span class="restock-sector-label">Other</span>
-                <input
-                  type="text"
-                  name="sector-other-field"
-                  id="restock-other-field"
-                  placeholder="e.g. paragliding operators"
-                  disabled
-                />
-                <input
-                  type="number"
-                  name="sector-other-count"
-                  id="restock-other-count"
-                  min="1"
-                  max="5"
-                  value="1"
-                  disabled
-                  aria-label="How many donors for Other"
-                />
-              </label>
-            </fieldset>
-            <div class="form-grid">
-              <label>
-                Total cap <span class="optional">(optional)</span>
-                <input
-                  type="number"
-                  name="totalCap"
-                  id="restock-total-cap"
-                  min="1"
-                  max="20"
-                  placeholder="e.g. 5"
-                />
-              </label>
-              <label class="full">
-                Notes <span class="optional">(optional)</span>
-                <textarea
-                  name="notes"
-                  rows="2"
-                  placeholder="e.g. prioritize sectors with no Nepal-fit donor yet, batch name: wellness-q3"
-                ></textarea>
-              </label>
+          <details class="add-designs-panel" id="add-designs-panel">
+            <summary>Add designs to the library</summary>
+            <div class="commission-banner highlight">
+              <p class="muted">
+                Pick <strong>sectors</strong>, set how many world-class sites to find in each, and
+                commission a worker. The agent researches candidates, runs a <em>beauty audition</em> on desktop
+                and mobile, scores them, and captures winners. <strong>Research and capture run in
+                Cursor</strong> — this console creates a structured inbox task immediately.
+              </p>
             </div>
-            <div class="restock-summary hidden" id="restock-summary" aria-live="polite"></div>
-            <div class="form-actions">
-              <button type="submit" class="primary-btn" id="restock-submit">Find &amp; capture donors</button>
+            <div class="hosted-notice hidden" id="hosted-restock-notice">
+              Hosted snapshot mode: build a commission and copy the call phrase into Cursor. Inbox file creation
+              only works on your local console at
+              <a href="http://blueprint.local:4177">blueprint.local</a>.
             </div>
-          </form>
-          <details class="restock-advanced">
-            <summary>I already have URLs</summary>
-            <p class="muted">
-              Paste explicit donor URLs to run <code>pnpm blueprint:capture</code> automatically — skip the
-              research commission above.
+            <p class="job-intro muted">
+              Worker runbook: <code>factory/playbooks/master-shelf-stocking-prompt.md</code>
             </p>
-            <form class="job-form compact" id="restock-urls-form">
-              <label class="full">
-                Donor URLs <span class="required">*</span>
-                <textarea
-                  name="urls"
-                  rows="3"
-                  placeholder="https://example.com&#10;https://other.com"
-                ></textarea>
-              </label>
-              <label class="full">
-                Notes <span class="optional">(optional)</span>
-                <input name="notes" placeholder="e.g. batch name, sector hint" />
-              </label>
+            <form class="job-form" id="restock-form">
+              <fieldset class="restock-fieldset">
+                <legend>Target areas <span class="required">*</span></legend>
+                <p class="fieldset-hint muted">Select sectors and how many designs to find in each (1–5 per field).</p>
+                <div class="restock-sector-grid" id="restock-sector-grid"></div>
+                <label class="restock-other-row">
+                  <input type="checkbox" name="sector-other-enabled" id="restock-other-enabled" />
+                  <span class="restock-sector-label">Other</span>
+                  <input
+                    type="text"
+                    name="sector-other-field"
+                    id="restock-other-field"
+                    placeholder="e.g. paragliding operators"
+                    disabled
+                  />
+                  <input
+                    type="number"
+                    name="sector-other-count"
+                    id="restock-other-count"
+                    min="1"
+                    max="5"
+                    value="1"
+                    disabled
+                    aria-label="How many donors for Other"
+                  />
+                </label>
+              </fieldset>
+              <div class="form-grid">
+                <label>
+                  Total cap <span class="optional">(optional)</span>
+                  <input
+                    type="number"
+                    name="totalCap"
+                    id="restock-total-cap"
+                    min="1"
+                    max="20"
+                    placeholder="e.g. 5"
+                  />
+                </label>
+                <label class="full">
+                  Notes <span class="optional">(optional)</span>
+                  <textarea
+                    name="notes"
+                    rows="2"
+                    placeholder="e.g. prioritize sectors with no Nepal-fit design yet, batch name: wellness-q3"
+                  ></textarea>
+                </label>
+              </div>
+              <div class="restock-summary hidden" id="restock-summary" aria-live="polite"></div>
               <div class="form-actions">
-                <button type="submit" class="ghost-btn" id="restock-urls-submit">Capture URLs directly</button>
+                <button type="submit" class="primary-btn" id="restock-submit">Find &amp; capture donors</button>
               </div>
             </form>
+            <details class="restock-advanced">
+              <summary>I already have URLs</summary>
+              <p class="muted">
+                Paste explicit donor URLs to run <code>pnpm blueprint:capture</code> automatically — skip the
+                research commission above.
+              </p>
+              <form class="job-form compact" id="restock-urls-form">
+                <label class="full">
+                  Donor URLs <span class="required">*</span>
+                  <textarea
+                    name="urls"
+                    rows="3"
+                    placeholder="https://example.com&#10;https://other.com"
+                  ></textarea>
+                </label>
+                <label class="full">
+                  Notes <span class="optional">(optional)</span>
+                  <input name="notes" placeholder="e.g. batch name, sector hint" />
+                </label>
+                <div class="form-actions">
+                  <button type="submit" class="ghost-btn" id="restock-urls-submit">Capture URLs directly</button>
+                </div>
+              </form>
+            </details>
+            <div class="task-result hidden" id="restock-result">
+              <h3>Restock commissioned</h3>
+              <p class="muted" id="restock-result-message"></p>
+              <pre id="restock-call-phrase" class="hidden"></pre>
+              <div class="result-actions">
+                <button class="primary-btn hidden" id="copy-restock-call-phrase">Copy call phrase</button>
+                <button class="ghost-btn" id="view-restock-inbox">View in inbox</button>
+              </div>
+            </div>
           </details>
-          <div class="task-result hidden" id="restock-result">
-            <h3>Restock commissioned</h3>
-            <p class="muted" id="restock-result-message"></p>
-            <pre id="restock-call-phrase" class="hidden"></pre>
-            <div class="result-actions">
-              <button class="primary-btn hidden" id="copy-restock-call-phrase">Copy call phrase</button>
-              <button class="ghost-btn" id="view-restock-inbox">View in inbox</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- New Job -->
-        <section class="view" id="view-new-job">
-          <div class="hosted-notice hidden" id="hosted-job-notice">
-            Hosted snapshot mode: you can still build a call phrase here and copy it into Cursor.
-            Inbox file creation only works on your local console at
-            <a href="http://blueprint.local:4177">blueprint.local</a>.
-          </div>
-          <p class="job-intro">
-            Fill in <strong>two blanks</strong> — client name and their current website. The worker
-            derives tone, colors, facts, donor pick, and scope from evidence. See
-            <code>factory/playbooks/master-clone-job-prompt.md</code>.
-          </p>
-          <form class="job-form" id="job-form">
-            <input type="hidden" name="taskType" value="new_site" />
-            <div class="form-grid">
-              <label>
-                Client name <span class="required">*</span>
-                <input name="clientName" required placeholder="Everest Tours" />
-              </label>
-              <label class="full" id="client-website-field">
-                Client's current website <span class="required">*</span>
-                <input name="clientWebsite" type="url" placeholder="https://everesttours.com.np" />
-              </label>
-              <label class="full">
-                Copy the look of a specific site? <span class="optional">(optional)</span>
-                <select name="donorShelfSlug" id="donor-shelf-select">
-                  <option value="">— worker picks from shelf —</option>
-                </select>
-              </label>
-              <label class="full">
-                Anything else <span class="optional">(optional)</span>
-                <textarea name="notes" rows="3" placeholder="e.g. they need a WhatsApp button, owner hates red, show prices in euros"></textarea>
-              </label>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="primary-btn">Create task in inbox</button>
-            </div>
-          </form>
-          <div class="task-result hidden" id="task-result">
-            <h3>Task created</h3>
-            <p class="muted">Copy this into Cursor chat, or tell the agent to read the inbox file.</p>
-            <pre id="task-call-phrase"></pre>
-            <div class="result-actions">
-              <button class="primary-btn" id="copy-call-phrase">Copy call phrase</button>
-              <button class="ghost-btn" id="view-inbox">View inbox</button>
-            </div>
-          </div>
         </section>
 
         <!-- Inbox -->

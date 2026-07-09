@@ -259,6 +259,26 @@ body {
   font-size: 0.82rem;
 }
 
+.view-divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0 1.5rem;
+}
+
+.add-designs-panel {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.add-designs-panel > summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 .sidebar-foot {
   color: var(--muted);
   font-size: 0.8rem;
