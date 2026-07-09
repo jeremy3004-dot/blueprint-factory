@@ -10,6 +10,8 @@ let prospectView = "all";
 let buildSitesMode = "form";
 let prospectSectorFilter = new Set();
 let prospectFiltersReady = false;
+let reviewProjectSlug = null;
+let reviewReturnView = "today";
 
 const views = {
   today: { title: "Today", sub: "What needs your attention right now" },
@@ -18,6 +20,7 @@ const views = {
   "build-sites": { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
   projects: { title: "My Projects", sub: "Client sites and where each one stands" },
   inbox: { title: "Activity", sub: "Jobs and tasks in progress" },
+  review: { title: "Review project", sub: "See the full picture before you decide" },
   // legacy keys kept for data-goto / commission strip fallbacks
   matchmaker: { title: "Build Sites", sub: "Two ways to start — fill in details or drag a design onto a lead" },
   restock: { title: "Design Library", sub: "Add new world-class designs to the library" },
@@ -134,6 +137,22 @@ function kindLabel(kind) {
   return map[kind] ?? kind;
 }
 
+const CLONE_STAGE_LABELS = {
+  adopting: "Adopting design",
+  capturing_brand: "Saving brand from their website",
+  curating_tokens: "Setting colors & fonts",
+  installing: "Installing dependencies",
+  building: "Building site",
+  deploying: "Deploying preview",
+  complete: "Preview ready"
+};
+
+function cloneStageLabel(job) {
+  if (job.stage && CLONE_STAGE_LABELS[job.stage]) return CLONE_STAGE_LABELS[job.stage];
+  if (job.result?.stageLabel) return job.result.stageLabel;
+  return null;
+}
+
 /** Must match factory/scripts/shelf-restock-commission.ts DONOR_SHELF_SECTORS */
 const RESTOCK_SECTORS = [
   "Trekking / luxury adventure",
@@ -244,6 +263,31 @@ function thumbHtml(thumbnail, label) {
   return `<div class="placeholder">No screenshot yet</div>`;
 }
 
+function guessMobileThumbnail(desktopUrl, slug) {
+  if (desktopUrl) {
+    if (desktopUrl.endsWith("/screenshots/desktop.png")) {
+      return desktopUrl.replace("/screenshots/desktop.png", "/screenshots/mobile.png");
+    }
+    if (desktopUrl.includes("-desktop.png")) {
+      return desktopUrl.replace("-desktop.png", "-mobile.png");
+    }
+  }
+  return `/assets/sites/${slug}/screenshots/mobile.png`;
+}
+
+function imageExists(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = url;
+  });
+}
+
+function findClientBySlug(slug) {
+  return (state.clients ?? []).find((c) => c.slug === slug) ?? null;
+}
+
 function scoreClass(score) {
   if (score >= 85) return "ready";
   if (score >= 70) return "accent";
@@ -302,18 +346,22 @@ function escapeHtml(text) {
 
 function sanitizeExcerpt(text) {
   if (!text) return "";
-  let s = String(text).trim();
-  s = s.replace(/^#{1,6}\s+/gm, "");
-  s = s.replace(/\*\*([^*]+)\*\*/g, "$1");
-  s = s.replace(/\*([^*]+)\*/g, "$1");
-  s = s.replace(/`([^`]+)`/g, "$1");
-  s = s.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
-  s = s.replace(/<[^>]+>/g, "");
+  const s = String(text).trim();
+  // Drop whole heading lines using the raw text — while the "#" markers are
+  // still present — so a leading "## Audience" heading is skipped instead of
+  // surviving as a bare word once the markers are stripped.
   const lines = s
     .split(/\n+/)
     .map((line) => line.trim())
-    .filter((line) => line.length > 0 && !/^#{1,6}\s/.test(line));
-  const content = lines[0] ?? "";
+    .filter((line) => line.length > 0 && !/^#{1,6}(\s|$)/.test(line));
+  let content = lines[0] ?? "";
+  content = content
+    .replace(/^#{1,6}\s+/, "")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/<[^>]+>/g, "");
   if (!content) return "";
   const sentence = content.match(/[^.!?]+[.!?]+/);
   const excerpt = sentence ? sentence[0].trim() : content.slice(0, 160);
@@ -465,17 +513,14 @@ function renderToday() {
           <p class="muted today-row-plain">${escapeHtml(c.nextActionPlain)}</p>
         </div>
         <div class="today-row-actions">
-          <button type="button" class="ghost-btn today-goto" data-view="${viewForNextAction(c.nextAction)}" data-slug="${c.slug}">Review</button>
+          <button type="button" class="ghost-btn today-review" data-slug="${c.slug}">Review</button>
         </div>
       </div>
     `
       )
       .join("");
-    decisionEl.querySelectorAll(".today-goto").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        switchView(btn.dataset.view);
-        openDrawer(btn.dataset.slug, "client");
-      });
+    decisionEl.querySelectorAll(".today-review").forEach((btn) => {
+      btn.addEventListener("click", () => showReviewPage(btn.dataset.slug));
     });
   }
 
@@ -894,11 +939,14 @@ function renderInbox() {
           : j.status === "failed"
             ? `<p class="job-help muted">Check the log below. Capture jobs need <code>pnpm blueprint:capture</code> in terminal.</p>`
             : "";
-      const viewBtn =
-        j.status === "done" && j.result?.viewTarget
-          ? `<button class="ghost-btn inbox-view-btn" data-view-results="${j.result.viewTarget}">${
-              j.result.viewTarget === "prospects" ? "View prospects" : "View results"
-            }</button>`
+      const isClonePair = j.kind === "clone_pair";
+      const stageLine =
+        isClonePair && (isActive || j.stage)
+          ? `<p class="job-stage-line muted">${cloneStageLabel(j) ?? "Queued"}</p>`
+          : "";
+      const previewBtn =
+        j.status === "done" && j.result?.previewUrl
+          ? `<a class="primary-btn inbox-preview-btn" href="${j.result.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>`
           : "";
       const detailsOpen = isActive || j.id === highlightJobId ? " open" : "";
       const scoutNote =
@@ -915,9 +963,17 @@ function renderInbox() {
         </div>
         <div class="inbox-item-actions">
           ${jobStatusChip(j.status)}
-          ${viewBtn}
+          ${previewBtn}
+          ${
+            j.status === "done" && j.result?.viewTarget
+              ? `<button class="ghost-btn inbox-view-btn" data-view-results="${j.result.viewTarget}">${
+                  j.result.viewTarget === "prospects" ? "View prospects" : "View in projects"
+                }</button>`
+              : ""
+          }
         </div>
       </div>
+      ${stageLine}
       ${resultLine}
       ${scoutNote}
       ${errorLine}
@@ -1506,7 +1562,14 @@ async function refreshJobs() {
 
   if (prevActive > 0 && state.stats.activeJobs === 0) {
     await loadData();
-    showToast("Job finished — data refreshed", { type: "success" });
+    const finishedClone = state.jobs?.find(
+      (j) => j.kind === "clone_pair" && j.status === "done" && j.result?.previewUrl
+    );
+    if (finishedClone?.result?.previewUrl) {
+      showToast("Preview ready — open from Today or Activity", { type: "success", duration: 8000 });
+    } else {
+      showToast("Job finished — data refreshed", { type: "success" });
+    }
   }
 }
 
@@ -1524,7 +1587,10 @@ function jobStartHint(job) {
   if (job.kind === "shelf_restock") {
     return "Add designs started — open the Activity task in Cursor. Worker researches, checks phone and desktop, and saves designs.";
   }
-  return "Client build started — check Activity for progress.";
+  if (job.kind === "clone_pair") {
+    return "Building on your Mac — watch Activity for live progress.";
+  }
+  return "Job started — check Activity for progress.";
 }
 
 async function submitJob(endpoint, payload, { onSuccess, resultEl, messageEl, submitBtn, idleLabel } = {}) {
@@ -1615,7 +1681,7 @@ function updateHostedUi() {
     prospectAddNotice?.classList.add("hidden");
     if (submit) submit.textContent = "Create task in inbox";
     if (restockSubmit) restockSubmit.textContent = "Find & save designs";
-    if (matchmakerSubmit) matchmakerSubmit.textContent = "Run clone job";
+    if (matchmakerSubmit) matchmakerSubmit.textContent = "Start build";
     if (prospectSearchSubmit) {
       prospectSearchSubmit.disabled = false;
       prospectSearchSubmit.title = "";
@@ -2153,10 +2219,16 @@ $("#matchmaker-form")?.addEventListener("submit", async (e) => {
       submitBtn,
       idleLabel: originalLabel,
       resultEl: $("#matchmaker-result"),
-      onSuccess: () => {
+      messageEl: $("#matchmaker-result-message"),
+      onSuccess: (job) => {
         form.classList.add("hidden");
-        $("#matchmaker-call-phrase").textContent =
-          "Client build started — check Activity for progress.";
+        const resultEl = $("#matchmaker-result");
+        const h3 = resultEl?.querySelector("h3");
+        if (h3) h3.textContent = "Build started";
+        const messageEl = $("#matchmaker-result-message");
+        if (messageEl) messageEl.textContent = jobStartHint(job);
+        $("#matchmaker-call-phrase")?.classList.add("hidden");
+        $("#matchmaker-copy-phrase")?.classList.add("hidden");
         appendHandoff($("#matchmaker-result"), "build");
       }
     });

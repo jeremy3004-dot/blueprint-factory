@@ -11,7 +11,7 @@ The console can **run factory commands**, not just generate call phrases:
 |--------|-------|-------------------|-------------------|
 | **Scout prospects** | Prospects tab banner | Export CSV from scout DB | AI search for new lanes |
 | **Stock donors** | Restock tab | `blueprint:capture` for explicit URLs | Beauty audition, sector picks |
-| **Match & build** | Matchmaker | `blueprint:adopt` + inbox task | Full clone job |
+| **Match & build** | Matchmaker | adopt → capture → tokens → build → preview deploy | Art direction, pixel clone, Beauty Pass |
 
 Top **commission strip** (Scout prospects · Stock donors · Match & build) jumps to each workflow.
 

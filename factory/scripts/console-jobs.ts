@@ -19,6 +19,11 @@ import {
   type ConsoleProspect,
   type NewTaskInput
 } from "./console-data";
+import {
+  CLONE_STAGE_LABELS,
+  runClonePipeline,
+  type ClonePipelineStage
+} from "./console-clone-runner";
 
 export type JobStatus = "queued" | "running" | "done" | "failed";
 export type JobKind = "prospect_search" | "shelf_capture" | "shelf_restock" | "clone_pair";
@@ -54,12 +59,17 @@ export type ConsoleJob = {
   input: ProspectSearchInput | ShelfCaptureInput | ShelfRestockInput | ClonePairInput;
   taskFilename?: string;
   logFile: string;
+  stage?: ClonePipelineStage;
   result?: {
     message: string;
     prospectCount?: number;
     donorSlug?: string;
+    siteSlug?: string;
+    previewUrl?: string;
+    stageLabel?: string;
     viewTarget?: "prospects" | "donors" | "projects";
     automated?: boolean;
+    needsCursor?: boolean;
   };
   error?: string;
 };
@@ -138,7 +148,7 @@ async function saveJob(job: ConsoleJob) {
 
 async function updateJobStatus(
   id: string,
-  patch: Partial<Pick<ConsoleJob, "status" | "result" | "error" | "taskFilename">>
+  patch: Partial<Pick<ConsoleJob, "status" | "stage" | "result" | "error" | "taskFilename">>
 ) {
   const job = await getJob(id);
   if (!job) throw new Error("Job not found");
@@ -190,6 +200,10 @@ function buildJobMarkdown(job: ConsoleJob): string {
     if (input.notes?.trim()) lines.push(`- **Notes:** ${input.notes}`);
   }
 
+  if (job.stage && job.kind === "clone_pair") {
+    lines.push(`Stage: ${CLONE_STAGE_LABELS[job.stage] ?? job.stage}`, "");
+  }
+
   lines.push("", "## Log", "", `See factory/inbox/jobs/${job.id}.log`, "");
 
   if (job.result) {
@@ -199,6 +213,12 @@ function buildJobMarkdown(job: ConsoleJob): string {
     }
     if (job.result.donorSlug) {
       lines.push(`Donor slug: \`${job.result.donorSlug}\``, "");
+    }
+    if (job.result.siteSlug) {
+      lines.push(`Site slug: \`${job.result.siteSlug}\``, "");
+    }
+    if (job.result.previewUrl) {
+      lines.push(`Preview URL: ${job.result.previewUrl}`, "");
     }
   }
 
@@ -484,30 +504,54 @@ async function runClonePairJob(job: ConsoleJob) {
   );
 
   const { filename } = await createTask(taskInput);
-  await appendLog(job.id, `Created clone task: factory/inbox/${filename}`);
+  await appendLog(job.id, `Created clone task (Cursor fallback): factory/inbox/${filename}`);
+  await appendLog(job.id, "Starting automated pipeline on this Mac…");
 
-  const siteSlug = slugify(input.clientName);
-  await appendLog(job.id, `Running blueprint:adopt ${siteSlug} ${input.donorShelfSlug}…`);
-  const { code } = await runCommand(job.id, "pnpm", [
-    "blueprint:adopt",
-    siteSlug,
-    input.donorShelfSlug
-  ]);
+  const runPipelineCommand = (command: string, args: string[], options: { cwd?: string } = {}) =>
+    runCommand(job.id, command, args, options);
 
-  const adopted = code === 0;
+  try {
+    const pipeline = await runClonePipeline(input, runPipelineCommand, {
+      appendLog: (line) => appendLog(job.id, line),
+      updateStage: async (stage) => {
+        await updateJobStatus(job.id, { stage });
+      }
+    });
 
-  await updateJobStatus(job.id, {
-    status: "done",
-    taskFilename: filename,
-    result: {
-      message: adopted
-        ? `Clone job created and donor adopted for ${siteSlug}. Continue the full clone in Cursor.`
-        : `Clone job created for ${input.clientName}. Adopt step skipped or failed — continue in Cursor.`,
-      donorSlug: input.donorShelfSlug,
-      viewTarget: "projects",
-      automated: adopted
-    }
-  });
+    await updateJobStatus(job.id, {
+      status: "done",
+      stage: "complete",
+      taskFilename: filename,
+      result: {
+        message: pipeline.previewUrl
+          ? `Preview deployed for ${pipeline.siteSlug}. Open it from Today or My Projects. Pixel-perfect clone and Beauty Pass still run in Cursor when you want polish.`
+          : `Pipeline finished for ${pipeline.siteSlug} but no preview URL was recorded.`,
+        donorSlug: input.donorShelfSlug,
+        siteSlug: pipeline.siteSlug,
+        previewUrl: pipeline.previewUrl ?? undefined,
+        stageLabel: CLONE_STAGE_LABELS.complete,
+        viewTarget: "projects",
+        automated: pipeline.automated,
+        needsCursor: true
+      }
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    await appendLog(job.id, `Pipeline failed: ${message}`);
+    await updateJobStatus(job.id, {
+      status: "failed",
+      taskFilename: filename,
+      error: message,
+      result: {
+        message: `Automated build failed for ${slugify(input.clientName)}. Check the log below or continue from the inbox task in Cursor.`,
+        donorSlug: input.donorShelfSlug,
+        siteSlug: slugify(input.clientName),
+        viewTarget: "projects",
+        automated: false,
+        needsCursor: true
+      }
+    });
+  }
 }
 
 async function runJobById(id: string) {
@@ -634,6 +678,8 @@ export function validateShelfCaptureInput(body: unknown): ShelfCaptureInput {
 }
 
 export { validateShelfRestockCommission } from "./shelf-restock-commission";
+
+export { CLONE_STAGE_LABELS } from "./console-clone-runner";
 
 export function validateClonePairInput(body: unknown): ClonePairInput {
   if (!body || typeof body !== "object") throw new Error("Invalid body");

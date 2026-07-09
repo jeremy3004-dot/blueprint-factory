@@ -26,7 +26,7 @@ Job statuses: `queued` | `running` | `done` | `failed`
 |----------|-------------------------|-------------------------|
 | **prospect_search** | Exports `prospects/nepal-leads.csv` from local scout DB | AI scouting for new lanes (blueprint-search-nepal skill) |
 | **shelf_capture** | `pnpm blueprint:capture` when explicit URLs are provided | Beauty audition + sector scouting when no URLs |
-| **clone_pair** | `pnpm blueprint:adopt` + inbox task | Full clone build (reference-first, app, beauty pass) |
+| **clone_pair** | Full pipeline: adopt → brand capture → tokens → build → preview deploy | Art direction, pixel clone, compare, translation, Beauty Pass |
 
 ## Task file format
 
