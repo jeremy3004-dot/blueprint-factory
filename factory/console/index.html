@@ -24,7 +24,8 @@
         </div>
 
         <nav class="nav">
-          <button class="nav-btn active" data-view="projects">Projects</button>
+          <button class="nav-btn active" data-view="today">Today</button>
+          <button class="nav-btn" data-view="projects">Projects</button>
           <button class="nav-btn" data-view="matchmaker">Matchmaker</button>
           <button class="nav-btn" data-view="prospects">Prospects</button>
           <button class="nav-btn" data-view="donors">Donor Shelf</button>
@@ -46,8 +47,8 @@
         <header class="topbar">
           <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
           <div>
-            <h1 id="view-title">Projects</h1>
-            <p class="topbar-sub" id="view-subtitle">Client sites and where each one stands</p>
+            <h1 id="view-title">Today</h1>
+            <p class="topbar-sub" id="view-subtitle">What needs your attention right now</p>
           </div>
           <div class="topbar-actions">
             <span class="updated" id="updated-at">Loading…</span>
@@ -72,8 +73,26 @@
           </button>
         </div>
 
+        <!-- Today -->
+        <section class="view active" id="view-today">
+          <div class="today-section" id="today-ready">
+            <h2>Ready to send</h2>
+            <p class="view-hint muted">Projects with a live preview that passed automated review.</p>
+            <div class="today-list" id="today-ready-list"></div>
+          </div>
+          <div class="today-section">
+            <h2>Needs your decision</h2>
+            <p class="view-hint muted">Builds waiting on you — pick a donor, review art direction, or run the beauty pass.</p>
+            <div class="today-list" id="today-decision-list"></div>
+          </div>
+          <div class="today-section">
+            <h2>Working now</h2>
+            <div id="today-working"></div>
+          </div>
+        </section>
+
         <!-- Projects -->
-        <section class="view active" id="view-projects">
+        <section class="view" id="view-projects">
           <div class="filters">
             <input type="search" id="project-search" placeholder="Search projects…" />
             <select id="project-filter">

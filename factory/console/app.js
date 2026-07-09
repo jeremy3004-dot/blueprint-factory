@@ -11,6 +11,7 @@ let prospectSectorFilter = new Set();
 let prospectFiltersReady = false;
 
 const views = {
+  today: { title: "Today", sub: "What needs your attention right now" },
   projects: { title: "Projects", sub: "Client sites and where each one stands" },
   matchmaker: { title: "Matchmaker", sub: "Pair a donor structure with a weak-website prospect" },
   prospects: { title: "Prospects", sub: "Browse, filter, favorite, and add Nepal leads" },
@@ -302,14 +303,132 @@ function renderSidebarStats() {
   const s = state.stats ?? {};
   const activeJobs = s.activeJobs ?? 0;
   el.innerHTML = `
-    <div class="stat-pill"><strong>${s.clientCount ?? 0}</strong><span>Client projects</span></div>
-    <div class="stat-pill"><strong>${s.prospectCount ?? 0}</strong><span>Nepal prospects</span></div>
-    <div class="stat-pill"><strong>${s.readyForReview ?? 0}</strong><span>Ready for your review</span></div>
-    <div class="stat-pill"><strong>${(s.pendingTasks ?? 0) + activeJobs}</strong><span>Inbox / jobs</span></div>
+    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="today" data-stat-focus="today-ready"><strong>${s.readyForReview ?? 0}</strong><span>Ready for your review</span></button>
+    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="prospects"><strong>${s.prospectCount ?? 0}</strong><span>Nepal prospects</span></button>
+    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="projects"><strong>${s.clientCount ?? 0}</strong><span>Client projects</span></button>
+    <button type="button" class="stat-pill stat-pill-btn" data-stat-goto="inbox"><strong>${(s.pendingTasks ?? 0) + activeJobs}</strong><span>Inbox / jobs</span></button>
   `;
+  el.querySelectorAll("[data-stat-goto]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      switchView(btn.dataset.statGoto);
+      const focus = btn.dataset.statFocus;
+      if (focus) {
+        requestAnimationFrame(() => {
+          document.getElementById(focus)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    });
+  });
   const badge = $("#inbox-badge");
   badge.textContent = String((s.pendingTasks ?? 0) + activeJobs);
   badge.classList.toggle("active", activeJobs > 0);
+}
+
+const OWNER_ACTION_STATUSES = new Set([
+  "NEEDS_REFERENCE_FIRST",
+  "NEEDS_ART_DIRECTION",
+  "RUN_BEAUTY",
+  "NEEDS_PAGE_COVERAGE"
+]);
+
+function viewForNextAction(action) {
+  if (action === "NEEDS_REFERENCE_FIRST") return "donors";
+  if (action === "READY_FOR_HUMAN_REVIEW") return "projects";
+  return "projects";
+}
+
+async function copyClientLink(url) {
+  if (!url) return;
+  await navigator.clipboard.writeText(url);
+  showToast("Link copied — send it to the client", { type: "success" });
+}
+
+function renderToday() {
+  const readyEl = $("#today-ready-list");
+  const decisionEl = $("#today-decision-list");
+  const workingEl = $("#today-working");
+  if (!readyEl || !decisionEl || !workingEl) return;
+
+  const clients = state.clients ?? [];
+  const ready = clients.filter((c) => c.previewUrl && c.nextAction === "READY_FOR_HUMAN_REVIEW");
+  const needsDecision = clients.filter((c) => OWNER_ACTION_STATUSES.has(c.nextAction));
+
+  if (!ready.length) {
+    readyEl.innerHTML = `<div class="empty compact">Nothing ready to send yet — check back when a build has a preview link and passes review.</div>`;
+  } else {
+    readyEl.innerHTML = ready
+      .map(
+        (c) => `
+      <div class="today-row">
+        <div class="today-row-thumb">${thumbHtml(c.thumbnail, c.title)}</div>
+        <div class="today-row-body">
+          <strong>${c.title}</strong>
+          <span class="muted">${c.pages}</span>
+        </div>
+        <div class="today-row-actions">
+          <a class="ghost-btn" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>
+          <button type="button" class="primary-btn today-copy-link" data-preview-url="${c.previewUrl}">Copy link for client</button>
+        </div>
+      </div>
+    `
+      )
+      .join("");
+    readyEl.querySelectorAll(".today-copy-link").forEach((btn) => {
+      btn.addEventListener("click", () => void copyClientLink(btn.dataset.previewUrl));
+    });
+  }
+
+  if (!needsDecision.length) {
+    decisionEl.innerHTML = `<div class="empty compact">No decisions waiting — the builder has what it needs for now.</div>`;
+  } else {
+    decisionEl.innerHTML = needsDecision
+      .map(
+        (c) => `
+      <div class="today-row">
+        <div class="today-row-thumb">${thumbHtml(c.thumbnail, c.title)}</div>
+        <div class="today-row-body">
+          <strong>${c.title}</strong>
+          <p class="muted today-row-plain">${escapeHtml(c.nextActionPlain)}</p>
+        </div>
+        <div class="today-row-actions">
+          <button type="button" class="ghost-btn today-goto" data-view="${viewForNextAction(c.nextAction)}" data-slug="${c.slug}">Review</button>
+        </div>
+      </div>
+    `
+      )
+      .join("");
+    decisionEl.querySelectorAll(".today-goto").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        switchView(btn.dataset.view);
+        openDrawer(btn.dataset.slug, "client");
+      });
+    });
+  }
+
+  const activeJobs = (state.jobs ?? []).filter((j) => j.status === "queued" || j.status === "running");
+  if (!activeJobs.length) {
+    workingEl.innerHTML = `<div class="empty compact">Nothing running in the background.</div>`;
+  } else {
+    workingEl.innerHTML = `
+      <details class="today-working-details">
+        <summary>${activeJobs.length} job${activeJobs.length === 1 ? "" : "s"} working now</summary>
+        <ul class="today-working-list">
+          ${activeJobs.map((j) => `<li>${inboxJobTitle(j)} ${jobStatusChip(j.status)}</li>`).join("")}
+        </ul>
+        <button type="button" class="link-btn" data-goto="inbox">View Activity →</button>
+      </details>
+    `;
+  }
+}
+
+function projectCardActions(c) {
+  if (!c.previewUrl) return "";
+  return `
+    <div class="card-inline-actions">
+      <a class="ghost-btn card-preview-link" href="${c.previewUrl}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">Open preview</a>
+      <button type="button" class="ghost-btn card-copy-link" data-preview-url="${c.previewUrl}" onclick="event.stopPropagation()">Copy link for client</button>
+    </div>
+  `;
 }
 
 function renderProjects() {
@@ -352,11 +471,19 @@ function renderProjects() {
           ${c.previewUrl ? "<span>Preview live</span>" : ""}
         </div>
         ${c.briefExcerpt ? `<p class="card-excerpt">${sanitizeExcerpt(c.briefExcerpt)}</p>` : ""}
+        ${projectCardActions(c)}
       </div>
     </article>
   `
     )
     .join("");
+
+  grid.querySelectorAll(".card-copy-link").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      void copyClientLink(btn.dataset.previewUrl);
+    });
+  });
 }
 
 function tierBadgeHtml(tier) {
@@ -1116,13 +1243,18 @@ function openDrawer(slug, kind, prospectId) {
       <div class="drawer-actions">
         ${
           c.previewUrl
-            ? `<a class="primary" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>`
+            ? `<a class="primary" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>
+               <button type="button" class="ghost-btn" data-action="copy-preview" data-url="${c.previewUrl}">Copy link for client</button>`
             : ""
         }
         <button data-action="continue" data-slug="${c.slug}">Create continue task</button>
         <button data-action="review" data-slug="${c.slug}">Create review task</button>
       </div>
     `;
+
+    content.querySelector("[data-action=copy-preview]")?.addEventListener("click", () => {
+      void copyClientLink(c.previewUrl);
+    });
   } else {
     const d = item;
     content.innerHTML = `
@@ -1183,6 +1315,7 @@ function switchView(name) {
   $("#sidebar").classList.remove("open");
   if (name === "matchmaker") renderMatchmaker();
   if (name === "prospects") renderProspects();
+  if (name === "today") renderToday();
 }
 
 function updateJobFormMode() {
@@ -1252,6 +1385,7 @@ async function refreshJobs() {
   }
   renderSidebarStats();
   renderInbox();
+  renderToday();
   scheduleJobPolling();
 
   const activeLogPres = document.querySelectorAll(
@@ -1551,6 +1685,7 @@ async function loadData() {
   updateHostedUi();
   prospectFiltersReady = false;
   renderSidebarStats();
+  renderToday();
   renderProjects();
   renderProspects();
   renderDonors();
