@@ -1,0 +1,683 @@
+/* ============================================================
+   Blueprint Factory — Operator Console · Polish layer
+   Loaded AFTER styles.css. Refines depth, typography, motion and
+   iconography while preserving the charcoal + green identity.
+   Nothing here changes behaviour — visual craft only.
+   ============================================================ */
+
+:root {
+  /* Deepen the base and soften harsh pure-white text */
+  --bg: #191919;
+  --bg-2: #131313;
+  --surface: #232324;
+  --surface-2: #2b2b2d;
+  --surface-3: #333338;
+  --border: rgba(255, 255, 255, 0.075);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --hairline: rgba(255, 255, 255, 0.05);
+  --text: #f2f2f4;
+  --text-dim: #cbcbd2;
+  --muted: #98989f;
+  --faint: #6d6d76;
+  --accent-ink: #06231a;
+  --accent-soft: rgba(62, 207, 142, 0.13);
+  --accent-line: rgba(62, 207, 142, 0.28);
+  --accent-glow: rgba(62, 207, 142, 0.3);
+
+  /* Layered depth — replaces the single heavy uniform shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 34px 74px -30px rgba(0, 0, 0, 0.74);
+  --shadow-hover: 0 24px 52px -24px rgba(0, 0, 0, 0.66);
+  --shadow-accent: 0 22px 48px -24px rgba(62, 207, 142, 0.4);
+  --ring: 0 0 0 3px rgba(62, 207, 142, 0.32);
+
+  --radius-sm: 10px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Foundation ---------- */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  letter-spacing: -0.006em;
+  background:
+    radial-gradient(ellipse 90% 55% at 8% -12%, rgba(62, 207, 142, 0.11), transparent 60%),
+    radial-gradient(ellipse 70% 45% at 100% -8%, rgba(45, 212, 191, 0.07), transparent 55%),
+    radial-gradient(ellipse 120% 80% at 50% 120%, rgba(0, 0, 0, 0.35), transparent 60%),
+    var(--bg);
+}
+
+/* Very fine film grain for depth — sits behind all content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(62, 207, 142, 0.28);
+  color: #fff;
+}
+
+/* Slim, on-theme scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+  background-clip: padding-box;
+}
+
+/* Consistent, on-brand keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-color: var(--accent-line);
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  background:
+    linear-gradient(180deg, rgba(62, 207, 142, 0.04), transparent 22%),
+    rgba(22, 22, 22, 0.86);
+  border-right: 1px solid var(--hairline);
+  padding: 1.4rem 1.15rem;
+  gap: 1.35rem;
+}
+
+.brand {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.brand-mark {
+  border-radius: 13px;
+  box-shadow: 0 8px 20px -8px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.brand-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.brand-sub {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* Nav with leading icons + active accent bar */
+.nav {
+  gap: 0.15rem;
+}
+
+.nav-btn {
+  position: relative;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  padding: 0.62rem 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.nav-btn .nav-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.85;
+  transition: color 0.18s var(--ease), opacity 0.18s var(--ease), transform 0.2s var(--ease);
+}
+
+.nav-btn .badge {
+  margin-left: auto;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text);
+}
+
+.nav-btn:hover .nav-icon {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(90deg, var(--accent-soft), rgba(255, 255, 255, 0.015));
+  color: var(--text);
+}
+
+.nav-btn.active .nav-icon {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.nav-btn.active::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 1.05rem;
+  border-radius: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.badge {
+  box-shadow: 0 3px 8px -3px var(--accent-glow);
+  letter-spacing: 0.01em;
+}
+
+/* Stat pills */
+.sidebar-stats {
+  gap: 0.5rem;
+}
+
+.stat-pill {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent), var(--surface);
+  border-color: var(--hairline);
+  transition: border-color 0.18s var(--ease), transform 0.18s var(--ease), background 0.18s var(--ease);
+}
+
+.stat-pill strong {
+  font-size: 1.5rem;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-pill span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.stat-pill-btn:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, var(--accent-soft), transparent), var(--surface);
+}
+
+.sidebar-foot {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1rem;
+  font-size: 0.78rem;
+}
+
+.sidebar-foot code {
+  color: var(--faint);
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-btn {
+  background: linear-gradient(135deg, #46d99a, var(--accent-2));
+  box-shadow: 0 10px 24px -12px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition: transform 0.16s var(--ease), box-shadow 0.2s var(--ease), filter 0.2s var(--ease);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-accent), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  filter: saturate(1.06) brightness(1.03);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.97);
+}
+
+.ghost-btn {
+  border-color: var(--border-strong);
+  transition: border-color 0.18s var(--ease), background 0.18s var(--ease), transform 0.16s var(--ease);
+}
+
+.ghost-btn:hover {
+  border-color: var(--accent-line);
+  background: rgba(62, 207, 142, 0.06);
+  transform: translateY(-1px);
+}
+
+.link-btn:hover {
+  color: #66e0aa;
+}
+
+/* ---------- Topbar & headings ---------- */
+
+.topbar {
+  align-items: baseline;
+  margin-bottom: 1.6rem;
+}
+
+.topbar h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.topbar-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.updated {
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+.today-section h2,
+.stock-donor-panel h3,
+.commission-banner-head h2,
+.matchmaker-pane-head h2,
+.matchmaker-pane-head h3,
+.build-option-title,
+.restock-fieldset legend {
+  letter-spacing: -0.015em;
+}
+
+/* Small accent tick before the Today section headers */
+.today-section > h2 {
+  position: relative;
+  padding-left: 0.9rem;
+  font-size: 1.4rem;
+}
+
+.today-section > h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.28em;
+  bottom: 0.28em;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(var(--accent), var(--accent-2));
+}
+
+/* ---------- Commission strip (top quick actions) ---------- */
+
+.commission-strip {
+  gap: 0.85rem;
+  padding-top: 0.25rem;
+}
+
+.commission-card {
+  gap: 0.35rem;
+  padding: 1.05rem 1.1rem;
+  border-color: var(--hairline);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.022), transparent), var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.commission-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-line);
+  background: linear-gradient(180deg, var(--accent-soft), transparent), var(--surface);
+  box-shadow: var(--shadow-hover);
+}
+
+.commission-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.45rem;
+  border-radius: 12px;
+  background: linear-gradient(140deg, rgba(62, 207, 142, 0.2), rgba(45, 212, 191, 0.1));
+  color: var(--accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.commission-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.commission-card:hover .commission-icon {
+  color: #7ef0bd;
+}
+
+.commission-label {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.commission-desc {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+/* ---------- Cards (projects / donors / prospects) ---------- */
+
+.card {
+  border-color: var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform 0.22s var(--ease-out), border-color 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+
+.card::after {
+  /* subtle top edge highlight, as if lit from above */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card {
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-line);
+  box-shadow: var(--shadow-hover), 0 0 0 1px var(--accent-line);
+}
+
+.card-thumb {
+  background: linear-gradient(135deg, #232a34, #12161d);
+}
+
+.card-thumb img {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.card:hover .card-thumb img {
+  transform: scale(1.035);
+}
+
+.card-body {
+  padding: 1.05rem 1.1rem 1.15rem;
+}
+
+.card-title {
+  font-size: 1.08rem;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+}
+
+/* Slug becomes a quiet machine-label, not a shouty duplicate */
+.card-slug {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+.card-meta {
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-excerpt {
+  color: var(--text-dim);
+  opacity: 0.82;
+}
+
+/* Chips — a touch more refined */
+.chip {
+  padding: 0.28rem 0.6rem;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.chip.ready {
+  background: rgba(62, 207, 142, 0.14);
+  border-color: rgba(62, 207, 142, 0.22);
+}
+.chip.warn {
+  background: rgba(232, 196, 75, 0.14);
+  border-color: rgba(232, 196, 75, 0.22);
+}
+.chip.muted {
+  background: rgba(154, 163, 178, 0.12);
+  border-color: rgba(154, 163, 178, 0.16);
+}
+.chip.accent {
+  background: rgba(62, 207, 142, 0.14);
+  border-color: rgba(62, 207, 142, 0.22);
+}
+
+/* ---------- Today view rows ---------- */
+
+.today-list {
+  gap: 0.6rem;
+}
+
+.today-row {
+  padding: 0.85rem 1rem;
+  border-color: var(--hairline);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent), var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s var(--ease), border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+
+.today-row:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.today-row-thumb {
+  width: 84px;
+  height: 56px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.today-row-body strong {
+  letter-spacing: -0.008em;
+}
+
+.today-row-plain {
+  color: var(--muted);
+}
+
+/* ---------- Inputs & filters ---------- */
+
+.filters input,
+.filters select,
+.prospect-filters input,
+.prospect-filters select,
+.job-form input,
+.job-form select,
+.job-form textarea,
+.matchmaker-pane-head input {
+  background: var(--bg-2);
+  border-color: var(--border);
+  transition: border-color 0.16s var(--ease), box-shadow 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.filters input::placeholder,
+.prospect-filters input::placeholder,
+.job-form input::placeholder,
+.job-form textarea::placeholder {
+  color: var(--faint);
+}
+
+.filters input:hover,
+.prospect-filters input:hover,
+.job-form input:hover {
+  border-color: var(--border-strong);
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+/* ---------- Match cards ---------- */
+
+.match-card {
+  transition: border-color 0.16s var(--ease), box-shadow 0.16s var(--ease), transform 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.match-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+}
+
+/* ---------- Drawer, modal, toast — richer elevation ---------- */
+
+.drawer {
+  box-shadow: var(--shadow-lg);
+  border-left: 1px solid var(--border-strong);
+}
+
+.drawer-backdrop,
+.modal-backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.drawer h2,
+.modal h2 {
+  letter-spacing: -0.018em;
+}
+
+.modal {
+  box-shadow: var(--shadow-lg);
+}
+
+.toast {
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(8px);
+}
+
+/* ---------- Sector chips / tabs ---------- */
+
+.sector-chip,
+.prospect-tab {
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.sector-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text-dim);
+}
+
+.prospect-view-tabs {
+  background: var(--bg-2);
+}
+
+/* ---------- Empty states ---------- */
+
+.empty {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent);
+  border-color: var(--border);
+}
+
+/* ---------- Empty thumbnails feel intentional, not broken ---------- */
+
+.card-thumb .placeholder,
+.drawer-thumb .placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--faint);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(62, 207, 142, 0.12), transparent 55%),
+    radial-gradient(circle at 82% 92%, rgba(45, 212, 191, 0.08), transparent 52%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.022) 0 2px, transparent 2px 10px);
+}
+
+.card-thumb .placeholder::before,
+.drawer-thumb .placeholder::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  opacity: 0.55;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='15' rx='2'/%3E%3Cpath d='M3 15l5-4.5 4.5 4'/%3E%3Cpath d='M13.5 13l3-2.5 4.5 4'/%3E%3Ccircle cx='15' cy='9' r='1.4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='15' rx='2'/%3E%3Cpath d='M3 15l5-4.5 4.5 4'/%3E%3Cpath d='M13.5 13l3-2.5 4.5 4'/%3E%3Ccircle cx='15' cy='9' r='1.4'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Tiny thumbnails (Today rows): keep the texture, drop the label */
+.today-row-thumb .placeholder {
+  font-size: 0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(62, 207, 142, 0.14), transparent 60%),
+    var(--surface-3);
+}
+
+/* ---------- Motion: staggered entrance on stable views ---------- */
+
+@keyframes bf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .commission-strip .commission-card,
+  .sidebar-stats .stat-pill,
+  #view-today .today-section,
+  .today-row {
+    animation: bf-rise 0.5s var(--ease-out) both;
+  }
+
+  .commission-strip .commission-card:nth-child(2) { animation-delay: 0.05s; }
+  .commission-strip .commission-card:nth-child(3) { animation-delay: 0.1s; }
+
+  #view-today .today-section:nth-child(2) { animation-delay: 0.06s; }
+  #view-today .today-section:nth-child(3) { animation-delay: 0.12s; }
+
+  .today-row:nth-child(2) { animation-delay: 0.04s; }
+  .today-row:nth-child(3) { animation-delay: 0.08s; }
+  .today-row:nth-child(4) { animation-delay: 0.12s; }
+  .today-row:nth-child(n + 5) { animation-delay: 0.16s; }
+
+  .sidebar-stats .stat-pill:nth-child(2) { animation-delay: 0.05s; }
+  .sidebar-stats .stat-pill:nth-child(3) { animation-delay: 0.1s; }
+  .sidebar-stats .stat-pill:nth-child(4) { animation-delay: 0.15s; }
+}
