@@ -31,13 +31,25 @@ Here's the mental model. Keep this in your head and everything else makes sense:
 So when this guide mentions something like `capture` or `compare`, that's a tool **Claude runs for you**.
 You don't need to memorize any of them. You describe what you want; Claude picks the right tool.
 
-**The one phrase that starts a job** (say it to Claude in plain English, or paste this template):
+**Quick start** (say it to Claude in plain English, or paste this template):
 
 ```
 Build a site for [Client / Company name].
 Visual donor: [paste the URL of a beautiful site to copy the quality from]
 Brand rules: [their colors, who it's for, the tone, and anything that must NOT appear]
 ```
+
+**Real paid client jobs** use the master clone prompt — you only fill two blanks (client name + their
+current website). The worker figures out the rest. Open
+`factory/playbooks/master-clone-job-prompt.md`, fill in the Job Card, and send it. Or use the
+Operator Console **New Job** form (`pnpm blueprint:console`) to create an inbox task in that format.
+
+**Prospects, restocking, and client jobs:** The console **Prospects** tab shows Nepal leads from
+`prospects/nepal-leads.csv` (scouted with `blueprint-search-nepal` — prospecting only, not donor
+capture). The **Restock** tab stocks new world-class donors onto the shelf (one blank: URLs, a sector,
+or "your choice"; beauty audition before capture). **Matchmaker** pairs an existing shelf donor with a
+prospect for a demo clone. **New Job** is for paid client rebuilds — see
+`factory/playbooks/master-clone-job-prompt.md`.
 
 That's it. From there, Claude drives the machine.
 
@@ -187,12 +199,14 @@ it. It keeps you out of trouble.
 
 - **"Do I need to learn commands?"** No. Talk to Claude in plain English. It runs the tools.
 - **"Where do I see all my projects?"** Ask Claude for the status dashboard, or open `factory/STATUS.md`.
-- **"How do I start a new client site?"** Use the one phrase in Section 2.
+- **"How do I start a new client site?"** Quick phrase in Section 2, or the master prompt at
+  `factory/playbooks/master-clone-job-prompt.md` (two blanks only) for real paid jobs.
 - **"Can I show a client before they pay?"** Yes — that's the whole point. Get a preview link and send it.
 - **"What if I can't find a site to copy?"** Ask Claude to research three great ones in the client's
   sector and recommend the best.
 - **"What if the site needs bookings/admin, not just pages?"** Say "with Green Pastures Pack."
 - **"How do I make changes?"** Just describe them: "warmer," "bigger hero," "add a WhatsApp button."
+- **"Is there a visual dashboard?"** Yes — run `pnpm blueprint:console` and open http://localhost:4177. For a permanent bookmark that stays running, run `pnpm blueprint:console:install` and use http://blueprint.local:4177. To check status from anywhere, `pnpm blueprint:console:deploy` puts a password-protectable snapshot on Vercel.
 
 ---
 

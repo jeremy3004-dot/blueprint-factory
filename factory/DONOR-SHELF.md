@@ -1,6 +1,14 @@
-# Donor Shelf - pre-captured donors ready to clone
+# Donor Shelf — pre-captured donors ready to clone
 
-The canonical shelf index is now [`docs/donor-shelf.md`](../docs/donor-shelf.md).
+> **Canonical index:** [`docs/donor-shelf.md`](../docs/donor-shelf.md) — field, URL, capture date, what
+> each donor teaches, and Nepal client fit. Read that file for the full table.
+>
+> This stub exists so `factory/playbooks/master-clone-job-prompt.md` and other factory docs can point at
+> `factory/DONOR-SHELF.md` without breaking paths.
+
+To **stock a new donor**, use `factory/playbooks/master-shelf-stocking-prompt.md` (one blank: URLs,
+sector, or "your choice") or the Operator Console **Restock** tab. Shelf jobs beauty-audition before
+capture — no client build.
 
 Captured donor evidence lives under `sites/donor-*/references/reference-first/` and includes
 multi-viewport screenshots, section shots, motion capture, extracted DOM/copy/assets/tokens/pages,

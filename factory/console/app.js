@@ -1,0 +1,1555 @@
+/** Blueprint Factory Operator Console — client app */
+
+let state = { clients: [], donors: [], prospects: [], tasks: [], jobs: [], stats: {} };
+let hostedMode = false;
+let matchmakerSelectedDonor = null;
+let jobPollTimer = null;
+let toastTimer = null;
+let highlightJobId = null;
+
+const views = {
+  projects: { title: "Projects", sub: "Client sites and where each one stands" },
+  matchmaker: { title: "Matchmaker", sub: "Pair a donor structure with a weak-website prospect" },
+  prospects: { title: "Prospects", sub: "Nepal leads scored for website rebuild opportunity" },
+  donors: { title: "Donor Shelf", sub: "Pre-captured reference sites to clone from" },
+  restock: {
+    title: "Restock",
+    sub: "Pick sectors, set counts — worker finds, beauty-auditions, and captures donors."
+  },
+  "new-job": { title: "New Job", sub: "Two blanks — name and website. Worker derives the rest." },
+  inbox: { title: "Inbox", sub: "Pending tasks waiting for the builder" }
+};
+
+const statusLabels = {
+  READY_FOR_HUMAN_REVIEW: { label: "Ready for review", class: "ready" },
+  NEEDS_REFERENCE_FIRST: { label: "Needs donor", class: "warn" },
+  NEEDS_ART_DIRECTION: { label: "Needs art direction", class: "warn" },
+  CREATE_APP: { label: "Needs app", class: "muted" },
+  CAPTURE_SCREENSHOTS: { label: "Needs screenshots", class: "muted" },
+  CAPTURE_MOTION: { label: "Needs motion", class: "muted" },
+  NEEDS_PAGE_COVERAGE: { label: "Pages incomplete", class: "warn" },
+  RUN_BEAUTY: { label: "Beauty pass", class: "accent" },
+  CREATE_SITE: { label: "Not created", class: "muted" },
+  REPAIR_REQUIRED_FILES: { label: "Needs repair", class: "warn" },
+  NEEDS_PREVIEW_URL: { label: "Needs preview", class: "muted" }
+};
+
+function $(sel) {
+  return document.querySelector(sel);
+}
+
+function showToast(message, options = {}) {
+  const { type = "info", duration = type === "error" ? 5500 : 4000, actionLabel, onAction } = options;
+  const toast = $("#toast");
+  toast.className = "toast";
+  if (type === "error") toast.classList.add("toast-error");
+  else if (type === "success") toast.classList.add("toast-success");
+
+  toast.replaceChildren();
+  const text = document.createElement("span");
+  text.className = "toast-text";
+  text.textContent = message;
+  toast.appendChild(text);
+
+  if (actionLabel && onAction) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "toast-action";
+    btn.textContent = actionLabel;
+    btn.addEventListener("click", () => {
+      onAction();
+      toast.classList.add("hidden");
+    });
+    toast.appendChild(btn);
+  }
+
+  toast.classList.remove("hidden");
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.add("hidden"), duration);
+}
+
+function setButtonLoading(btn, loading, idleLabel) {
+  if (!btn) return;
+  btn.disabled = loading;
+  if (loading) {
+    if (!btn.dataset.idleLabel) btn.dataset.idleLabel = idleLabel || btn.textContent;
+    btn.classList.add("is-loading");
+    btn.textContent = "Running…";
+  } else {
+    btn.classList.remove("is-loading");
+    btn.textContent = btn.dataset.idleLabel || idleLabel || btn.textContent;
+  }
+}
+
+function sortJobs(jobs) {
+  const order = { running: 0, queued: 1, failed: 2, done: 3 };
+  return [...jobs].sort((a, b) => {
+    const sa = order[a.status] ?? 9;
+    const sb = order[b.status] ?? 9;
+    if (sa !== sb) return sa - sb;
+    return b.createdAt.localeCompare(a.createdAt);
+  });
+}
+
+function shortJobId(id) {
+  return id.length > 32 ? `${id.slice(0, 28)}…` : id;
+}
+
+async function loadJobLogTail(jobId, pre) {
+  try {
+    const res = await fetchWithAuth(`/api/jobs/${encodeURIComponent(jobId)}`);
+    if (res.ok) {
+      const data = await res.json();
+      pre.textContent = data.logTail || "(empty log)";
+      pre.dataset.loaded = "1";
+      return;
+    }
+  } catch {
+    // fall through
+  }
+  pre.textContent = "(could not load log)";
+}
+
+function jobStatusChip(status) {
+  const labels = {
+    queued: "Queued",
+    running: "Running",
+    done: "Done",
+    failed: "Failed"
+  };
+  return `<span class="chip job-${status}">${labels[status] ?? status}</span>`;
+}
+
+function kindLabel(kind) {
+  const map = {
+    prospect_search: "Prospect search",
+    shelf_capture: "Donor capture",
+    shelf_restock: "Shelf restock",
+    clone_pair: "Clone job"
+  };
+  return map[kind] ?? kind;
+}
+
+/** Must match factory/scripts/shelf-restock-commission.ts DONOR_SHELF_SECTORS */
+const RESTOCK_SECTORS = [
+  "Trekking / luxury adventure",
+  "Trekking / group adventure",
+  "Boutique hotels / ultra-luxury",
+  "Boutique hotels / mid-tier",
+  "Restaurants / cafes",
+  "Wellness / yoga retreats",
+  "NGOs / nonprofits",
+  "Real estate",
+  "Education",
+  "Coffee / tea / export",
+  "Gyms / fitness",
+  "Photographers / weddings",
+  "Tech / SaaS"
+];
+
+const RESTOCK_MAX_PER_FIELD = 5;
+
+function chipForAction(action) {
+  const info = statusLabels[action] ?? { label: action.replaceAll("_", " ").toLowerCase(), class: "muted" };
+  return `<span class="chip ${info.class}">${info.label}</span>`;
+}
+
+function formatDate(iso) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+}
+
+function thumbHtml(thumbnail, label) {
+  if (thumbnail) {
+    return `<img src="${thumbnail}" alt="${label}" loading="lazy" />`;
+  }
+  return `<div class="placeholder">No screenshot yet</div>`;
+}
+
+function scoreClass(score) {
+  if (score >= 85) return "ready";
+  if (score >= 70) return "accent";
+  return "muted";
+}
+
+function renderSidebarStats() {
+  const el = $("#sidebar-stats");
+  const s = state.stats ?? {};
+  const activeJobs = s.activeJobs ?? 0;
+  el.innerHTML = `
+    <div class="stat-pill"><strong>${s.clientCount ?? 0}</strong><span>Client projects</span></div>
+    <div class="stat-pill"><strong>${s.prospectCount ?? 0}</strong><span>Nepal prospects</span></div>
+    <div class="stat-pill"><strong>${s.readyForReview ?? 0}</strong><span>Ready for your review</span></div>
+    <div class="stat-pill"><strong>${(s.pendingTasks ?? 0) + activeJobs}</strong><span>Inbox / jobs</span></div>
+  `;
+  const badge = $("#inbox-badge");
+  badge.textContent = String((s.pendingTasks ?? 0) + activeJobs);
+  badge.classList.toggle("active", activeJobs > 0);
+}
+
+function renderProjects() {
+  const q = $("#project-search").value.trim().toLowerCase();
+  const filter = $("#project-filter").value;
+  const grid = $("#project-grid");
+
+  let items = [...state.clients];
+  if (q) {
+    items = items.filter(
+      (c) =>
+        c.slug.includes(q) ||
+        c.title.toLowerCase().includes(q) ||
+        (c.briefExcerpt ?? "").toLowerCase().includes(q)
+    );
+  }
+  if (filter === "with-preview") items = items.filter((c) => c.previewUrl);
+  else if (filter !== "all") items = items.filter((c) => c.nextAction === filter);
+
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty">No projects match. Try a new job or refresh.</div>`;
+    return;
+  }
+
+  grid.innerHTML = items
+    .map(
+      (c) => `
+    <article class="card" data-slug="${c.slug}" data-kind="client">
+      <div class="card-thumb">${thumbHtml(c.thumbnail, c.title)}</div>
+      <div class="card-body">
+        ${chipForAction(c.nextAction)}
+        <h3 class="card-title">${c.title}</h3>
+        <div class="card-slug">${c.slug}</div>
+        <div class="card-meta">
+          <span>${c.pages}</span>
+          ${
+            c.compareDesktop != null
+              ? `<span>Match ${c.compareDesktop}% / ${c.compareMobile ?? "—"}%</span>`
+              : ""
+          }
+          ${c.previewUrl ? "<span>Preview live</span>" : ""}
+        </div>
+        ${c.briefExcerpt ? `<p class="card-excerpt">${c.briefExcerpt}</p>` : ""}
+      </div>
+    </article>
+  `
+    )
+    .join("");
+}
+
+function renderProspects() {
+  const q = $("#prospect-search").value.trim().toLowerCase();
+  const filter = $("#prospect-filter").value;
+  const grid = $("#prospect-grid");
+  let items = [...(state.prospects ?? [])];
+
+  if (q) {
+    items = items.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.location.toLowerCase().includes(q) ||
+        (p.websiteIssues ?? "").toLowerCase().includes(q)
+    );
+  }
+  if (filter !== "all") items = items.filter((p) => p.status === filter);
+
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty">No prospects found. Export leads to <code>prospects/nepal-leads.csv</code>.</div>`;
+    return;
+  }
+
+  grid.innerHTML = items
+    .map((p) => {
+      const pain = p.websiteIssues || p.websiteNotes || "";
+      return `
+    <article class="card" data-prospect-id="${p.id}" data-kind="prospect">
+      <div class="card-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
+      <div class="card-body">
+        <span class="chip ${scoreClass(p.score)}">Score ${p.score}</span>
+        <h3 class="card-title">${p.name}</h3>
+        <div class="card-meta">
+          <span>${p.category}</span>
+          <span>${p.location}</span>
+          <span class="status-tag">${p.status}</span>
+        </div>
+        ${pain ? `<p class="card-excerpt">${pain}</p>` : ""}
+      </div>
+    </article>
+  `;
+    })
+    .join("");
+}
+
+function renderDonors() {
+  const q = $("#donor-search").value.trim().toLowerCase();
+  const grid = $("#donor-grid");
+  let items = [...state.donors];
+  if (q) {
+    items = items.filter(
+      (d) =>
+        d.slug.includes(q) ||
+        d.field.toLowerCase().includes(q) ||
+        (d.teaches ?? "").toLowerCase().includes(q) ||
+        (d.nepalFit ?? "").toLowerCase().includes(q)
+    );
+  }
+
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty">No donors found.</div>`;
+    return;
+  }
+
+  grid.innerHTML = items
+    .map(
+      (d) => `
+    <article class="card" data-slug="${d.slug}" data-kind="donor">
+      <div class="card-thumb">${thumbHtml(d.thumbnail, d.slug)}</div>
+      <div class="card-body">
+        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
+        <h3 class="card-title">${d.field}</h3>
+        <div class="card-slug">${d.slug}</div>
+        <div class="card-meta"><span>${d.url}</span></div>
+        ${d.nepalFit ? `<p class="card-excerpt">${d.nepalFit}</p>` : ""}
+      </div>
+    </article>
+  `
+    )
+    .join("");
+}
+
+function renderInbox() {
+  const list = $("#inbox-list");
+  const jobs = sortJobs(state.jobs ?? []);
+  const tasks = state.tasks ?? [];
+  const activeCount = jobs.filter((j) => j.status === "queued" || j.status === "running").length;
+
+  if (!jobs.length && !tasks.length) {
+    list.innerHTML = `<div class="empty">No jobs yet. Commission a prospect search, donor capture, or matchmaker pair.</div>`;
+    return;
+  }
+
+  const activeBanner =
+    activeCount > 0
+      ? `<div class="inbox-active-banner"><strong>${activeCount} job${activeCount === 1 ? "" : "s"} running</strong> — logs update every few seconds.</div>`
+      : "";
+
+  const jobItems = jobs
+    .map((j) => {
+      const isActive = j.status === "queued" || j.status === "running";
+      const failedClass = j.status === "failed" ? " job-failed" : "";
+      const activeClass = isActive ? " job-active" : "";
+      const highlightClass = j.id === highlightJobId ? " job-highlight" : "";
+      const resultLine = j.result?.message ? `<p class="muted">${j.result.message}</p>` : "";
+      const errorLine = j.error ? `<p class="job-error">${j.error}</p>` : "";
+      const failHelp =
+        j.status === "failed"
+          ? `<p class="job-help muted">Check the log below. Capture jobs need <code>pnpm blueprint:capture</code> in terminal. Prospect search needs <code>python3</code> and the blueprint-search-nepal skill.</p>`
+          : "";
+      const viewBtn =
+        j.status === "done" && j.result?.viewTarget
+          ? `<button class="ghost-btn" style="width:auto;margin:0" data-view-results="${j.result.viewTarget}">View results</button>`
+          : "";
+      const detailsOpen = isActive || j.id === highlightJobId ? " open" : "";
+      return `
+    <div class="inbox-item job-item${failedClass}${activeClass}${highlightClass}" data-job-id="${j.id}">
+      <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;">
+        <div>
+          <h3>${j.title}</h3>
+          <div class="muted">${j.id} · ${kindLabel(j.kind)} · ${formatDate(j.createdAt)}</div>
+        </div>
+        <div style="display:flex;gap:0.5rem;align-items:center;">
+          ${jobStatusChip(j.status)}
+          ${viewBtn}
+        </div>
+      </div>
+      ${resultLine}
+      ${errorLine}
+      ${failHelp}
+      <details${detailsOpen}>
+        <summary>${isActive ? "Live log" : "Log tail"}</summary>
+        <pre class="job-log" data-job-log="${j.id}">${isActive ? "Loading…" : "Expand to load"}</pre>
+      </details>
+    </div>
+  `;
+    })
+    .join("");
+
+  const taskItems = tasks
+    .map(
+      (t) => `
+    <div class="inbox-item">
+      <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+        <div>
+          <h3>${t.title}</h3>
+          <div class="muted">${t.filename} · ${t.type} · ${t.status}</div>
+        </div>
+        <button class="ghost-btn" style="width:auto;margin:0" data-copy-task="${encodeURIComponent(t.callPhrase)}">Copy</button>
+      </div>
+      <pre>${t.callPhrase || "No call phrase"}</pre>
+    </div>
+  `
+    )
+    .join("");
+
+  list.innerHTML = activeBanner + jobItems + taskItems;
+
+  list.querySelectorAll("[data-copy-task]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(decodeURIComponent(btn.dataset.copyTask));
+      showToast("Call phrase copied");
+    });
+  });
+
+  list.querySelectorAll("[data-view-results]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      switchView(btn.dataset.viewResults);
+      loadData();
+    });
+  });
+
+  list.querySelectorAll("details").forEach((details) => {
+    const pre = details.querySelector("[data-job-log]");
+    if (details.open && pre && !pre.dataset.loaded) {
+      void loadJobLogTail(pre.dataset.jobLog, pre);
+    }
+    details.addEventListener("toggle", async () => {
+      if (!details.open) return;
+      const logPre = details.querySelector("[data-job-log]");
+      if (!logPre || logPre.dataset.loaded) return;
+      await loadJobLogTail(logPre.dataset.jobLog, logPre);
+    });
+  });
+
+  if (highlightJobId) {
+    const el = list.querySelector(`[data-job-id="${CSS.escape(highlightJobId)}"]`);
+    el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+}
+
+function filterMatchmakerDonors() {
+  const q = $("#matchmaker-donor-search")?.value.trim().toLowerCase() ?? "";
+  let items = [...state.donors];
+  if (q) {
+    items = items.filter(
+      (d) =>
+        d.slug.includes(q) ||
+        d.field.toLowerCase().includes(q) ||
+        (d.teaches ?? "").toLowerCase().includes(q) ||
+        (d.nepalFit ?? "").toLowerCase().includes(q)
+    );
+  }
+  return items;
+}
+
+function filterMatchmakerProspects() {
+  const q = $("#matchmaker-prospect-search")?.value.trim().toLowerCase() ?? "";
+  let items = [...(state.prospects ?? [])];
+  if (q) {
+    items = items.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.location.toLowerCase().includes(q) ||
+        (p.websiteIssues ?? "").toLowerCase().includes(q)
+    );
+  }
+  return items;
+}
+
+function renderMatchmakerDonorCard(d) {
+  const selected = matchmakerSelectedDonor === d.slug ? " selected" : "";
+  return `
+    <article class="match-card donor-card${selected}" draggable="true" data-donor-slug="${d.slug}">
+      <div class="match-card-thumb">${thumbHtml(d.thumbnail, d.slug)}</div>
+      <div class="match-card-body">
+        <span class="chip ${d.hasEvidence ? "ready" : "warn"}">${d.hasEvidence ? "Evidence ready" : "Incomplete"}</span>
+        <h3 class="match-card-title">${d.field}</h3>
+        <div class="match-card-meta">${d.slug}</div>
+        ${d.nepalFit ? `<p class="match-card-excerpt">${d.nepalFit}</p>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+function renderMatchmakerProspectCard(p) {
+  const pain = p.websiteIssues || p.websiteNotes || "";
+  return `
+    <article class="match-card prospect-card" data-prospect-id="${p.id}">
+      <div class="match-card-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
+      <div class="match-card-body">
+        <span class="chip ${scoreClass(p.score)}">Score ${p.score}</span>
+        <h3 class="match-card-title">${p.name}</h3>
+        <div class="match-card-meta">${p.category} · ${p.location}</div>
+        ${pain ? `<p class="match-card-excerpt">${pain}</p>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+function setupMatchmakerDragDrop() {
+  const donorCards = document.querySelectorAll(".match-card.donor-card");
+  const prospectCards = document.querySelectorAll(".match-card.prospect-card");
+
+  donorCards.forEach((card) => {
+    card.addEventListener("dragstart", (e) => {
+      const slug = card.dataset.donorSlug;
+      e.dataTransfer.setData("text/donor-slug", slug);
+      e.dataTransfer.effectAllowed = "copy";
+      card.classList.add("dragging");
+    });
+    card.addEventListener("dragend", () => {
+      card.classList.remove("dragging");
+      document.querySelectorAll(".match-card.prospect-card.drop-target").forEach((el) => {
+        el.classList.remove("drop-target");
+      });
+    });
+    card.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const slug = card.dataset.donorSlug;
+      matchmakerSelectedDonor = matchmakerSelectedDonor === slug ? null : slug;
+      renderMatchmaker();
+      if (matchmakerSelectedDonor) {
+        showToast("Donor selected — tap a prospect to pair");
+      }
+    });
+  });
+
+  prospectCards.forEach((card) => {
+    card.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+      card.classList.add("drop-target");
+    });
+    card.addEventListener("dragleave", () => {
+      card.classList.remove("drop-target");
+    });
+    card.addEventListener("drop", (e) => {
+      e.preventDefault();
+      card.classList.remove("drop-target");
+      const donorSlug = e.dataTransfer.getData("text/donor-slug");
+      const prospectId = card.dataset.prospectId;
+      if (!donorSlug || !prospectId) return;
+      const donor = state.donors.find((d) => d.slug === donorSlug);
+      const prospect = state.prospects?.find((p) => p.id === prospectId);
+      if (donor && prospect) openMatchmakerModal(donor, prospect);
+    });
+    card.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!matchmakerSelectedDonor) return;
+      const donor = state.donors.find((d) => d.slug === matchmakerSelectedDonor);
+      const prospect = state.prospects?.find((p) => p.id === card.dataset.prospectId);
+      if (donor && prospect) {
+        openMatchmakerModal(donor, prospect);
+        matchmakerSelectedDonor = null;
+      }
+    });
+  });
+}
+
+function renderMatchmaker() {
+  const donorGrid = $("#matchmaker-donor-cards");
+  const prospectGrid = $("#matchmaker-prospect-cards");
+  if (!donorGrid || !prospectGrid) return;
+
+  const donors = filterMatchmakerDonors();
+  const prospects = filterMatchmakerProspects();
+
+  if (!donors.length) {
+    donorGrid.innerHTML = `<div class="empty">No donors on the shelf. Stock one from the Donor Shelf tab.</div>`;
+  } else {
+    donorGrid.innerHTML = donors.map(renderMatchmakerDonorCard).join("");
+  }
+
+  if (!prospects.length) {
+    prospectGrid.innerHTML = `<div class="empty">No prospects found. Export leads to <code>prospects/nepal-leads.csv</code> with <code>blueprint-search-nepal</code>.</div>`;
+  } else {
+    prospectGrid.innerHTML = prospects.map(renderMatchmakerProspectCard).join("");
+  }
+
+  setupMatchmakerDragDrop();
+}
+
+function buildMatchmakerPreviewLine(donor, prospect) {
+  return `Clone ${donor.field} structure for ${prospect.name}`;
+}
+
+function openMatchmakerModal(donor, prospect) {
+  const modal = $("#matchmaker-modal");
+  const backdrop = $("#matchmaker-modal-backdrop");
+  const form = $("#matchmaker-form");
+  const result = $("#matchmaker-result");
+
+  form.clientName.value = prospect.name;
+  form.clientWebsite.value = prospect.websiteUrl;
+  form.donorShelfSlug.value = donor.slug;
+  form.notes.value = "";
+
+  $("#matchmaker-preview").textContent = buildMatchmakerPreviewLine(donor, prospect);
+  updateMatchmakerTaskPreview(donor, prospect, "");
+
+  result.classList.add("hidden");
+  form.classList.remove("hidden");
+  modal.classList.remove("hidden");
+  backdrop.classList.remove("hidden");
+
+  form.dataset.donorSlug = donor.slug;
+  form.dataset.prospectId = prospect.id;
+}
+
+function closeMatchmakerModal() {
+  $("#matchmaker-modal").classList.add("hidden");
+  $("#matchmaker-modal-backdrop").classList.add("hidden");
+  matchmakerSelectedDonor = null;
+  renderMatchmaker();
+}
+
+function updateMatchmakerTaskPreview(donor, prospect, notes) {
+  const payload = {
+    clientName: prospect.name,
+    clientWebsite: prospect.websiteUrl,
+    donorShelfSlug: donor.slug,
+    notes: notes.trim(),
+    taskType: "new_site"
+  };
+  $("#matchmaker-task-preview").textContent = buildLocalCallPhrase(payload);
+}
+
+function populateDonorSelect() {
+  const select = $("#donor-shelf-select");
+  const current = select.value;
+  select.innerHTML =
+    `<option value="">— none —</option>` +
+    state.donors
+      .map((d) => `<option value="${d.slug}">${d.field} (${d.slug})</option>`)
+      .join("");
+  if (current) select.value = current;
+}
+
+function openDrawer(slug, kind, prospectId) {
+  if (kind === "prospect") {
+    const p = state.prospects?.find((x) => x.id === prospectId);
+    if (!p) return;
+    const drawer = $("#drawer");
+    const backdrop = $("#drawer-backdrop");
+    const content = $("#drawer-content");
+    content.innerHTML = `
+      <div class="drawer-thumb">${thumbHtml(p.thumbnail, p.name)}</div>
+      <h2>${p.name}</h2>
+      <div class="slug">${p.category} · ${p.location}</div>
+      <span class="chip ${scoreClass(p.score)}">Total score ${p.score}</span>
+
+      <div class="drawer-section">
+        <h4>Score breakdown</h4>
+        <div class="status-grid">
+          <div><strong>Website pain</strong>${p.scores.websitePain}</div>
+          <div><strong>Demand</strong>${p.scores.demand}</div>
+          <div><strong>Premium fit</strong>${p.scores.premiumFit}</div>
+          <div><strong>Access</strong>${p.scores.access}</div>
+        </div>
+      </div>
+
+      ${
+        p.rating || p.reviewCount
+          ? `<div class="drawer-section"><h4>Reviews</h4><p>${p.rating ? `${p.rating}★` : ""} ${p.reviewCount ? `(${p.reviewCount} reviews)` : ""}</p></div>`
+          : ""
+      }
+
+      ${
+        p.websiteIssues || p.websiteNotes
+          ? `<div class="drawer-section"><h4>Website pain</h4><p>${p.websiteIssues || p.websiteNotes}</p></div>`
+          : ""
+      }
+
+      ${
+        p.businessNotes
+          ? `<div class="drawer-section"><h4>Business notes</h4><p>${p.businessNotes}</p></div>`
+          : ""
+      }
+
+      <div class="drawer-section">
+        <h4>Links</h4>
+        <p>
+          <a href="${p.websiteUrl}" target="_blank" rel="noreferrer">${p.websiteUrl}</a>
+          ${p.mapsUrl ? `<br><a href="${p.mapsUrl}" target="_blank" rel="noreferrer">Maps / reviews</a>` : ""}
+        </p>
+        ${p.contactEmail || p.phone ? `<p class="muted">${p.contactEmail ?? ""} ${p.phone ?? ""}</p>` : ""}
+      </div>
+
+      <div class="drawer-actions">
+        <button class="primary" data-action="demo-job" data-name="${encodeURIComponent(p.name)}" data-url="${encodeURIComponent(p.websiteUrl)}">Start demo job</button>
+      </div>
+    `;
+
+    content.querySelector("[data-action=demo-job]")?.addEventListener("click", (e) => {
+      const btn = e.currentTarget;
+      prefillTask({
+        clientName: decodeURIComponent(btn.dataset.name),
+        clientWebsite: decodeURIComponent(btn.dataset.url),
+        taskType: "new_site"
+      });
+      switchView("new-job");
+      closeDrawer();
+    });
+
+    drawer.classList.remove("hidden");
+    backdrop.classList.remove("hidden");
+    return;
+  }
+
+  const item =
+    kind === "donor" ? state.donors.find((d) => d.slug === slug) : state.clients.find((c) => c.slug === slug);
+  if (!item) return;
+
+  const drawer = $("#drawer");
+  const backdrop = $("#drawer-backdrop");
+  const content = $("#drawer-content");
+
+  if (kind === "client") {
+    const c = item;
+    content.innerHTML = `
+      <h2>${c.title}</h2>
+      <div class="slug">${c.slug}</div>
+      ${chipForAction(c.nextAction)}
+      <p>${c.nextActionPlain}</p>
+
+      <div class="drawer-section">
+        <h4>Status</h4>
+        <div class="status-grid">
+          <div><strong>References</strong>${c.status.referenceReady ? "Ready" : "Missing"}</div>
+          <div><strong>Art direction</strong>${c.status.artReady ? "Ready" : "Missing"}</div>
+          <div><strong>App</strong>${c.status.appExists ? "Present" : "Missing"}</div>
+          <div><strong>Screenshots</strong>${c.status.screenshotsReady ? "Ready" : "Missing"}</div>
+          <div><strong>Motion</strong>${c.status.motionReady ? "Ready" : "Missing"}</div>
+          <div><strong>Pages</strong>${c.pages}</div>
+        </div>
+      </div>
+
+      ${
+        c.compareDesktop != null
+          ? `<div class="drawer-section"><h4>Donor match</h4><p>Desktop ${c.compareDesktop}% · Mobile ${c.compareMobile ?? "—"}%</p></div>`
+          : ""
+      }
+
+      ${
+        c.donorSlug || c.donorUrl
+          ? `<div class="drawer-section"><h4>Visual donor</h4><p>${c.donorSlug ?? ""} ${c.donorUrl ? `<br><a href="${c.donorUrl}" target="_blank" rel="noreferrer">${c.donorUrl}</a>` : ""}</p></div>`
+          : ""
+      }
+
+      <div class="drawer-actions">
+        ${
+          c.previewUrl
+            ? `<a class="primary" href="${c.previewUrl}" target="_blank" rel="noreferrer">Open preview</a>`
+            : ""
+        }
+        <button data-action="continue" data-slug="${c.slug}">Create continue task</button>
+        <button data-action="review" data-slug="${c.slug}">Create review task</button>
+      </div>
+    `;
+  } else {
+    const d = item;
+    content.innerHTML = `
+      <h2>${d.field}</h2>
+      <div class="slug">${d.slug}</div>
+      <p><a href="${d.url}" target="_blank" rel="noreferrer">${d.url}</a></p>
+      ${d.teaches ? `<div class="drawer-section"><h4>What it teaches</h4><p>${d.teaches}</p></div>` : ""}
+      ${d.nepalFit ? `<div class="drawer-section"><h4>Nepal client fit</h4><p>${d.nepalFit}</p></div>` : ""}
+      <div class="drawer-actions">
+        <button class="primary" data-action="use-donor" data-slug="${d.slug}">Use this donor</button>
+      </div>
+    `;
+  }
+
+  content.querySelectorAll("[data-action]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const action = btn.dataset.action;
+      const s = btn.dataset.slug;
+      if (action === "use-donor") {
+        switchView("new-job");
+        $("#donor-shelf-select").value = s;
+        closeDrawer();
+        return;
+      }
+      if (action === "continue") {
+        prefillTask({ clientName: s, taskType: "continue_site" });
+        switchView("new-job");
+        closeDrawer();
+        return;
+      }
+      if (action === "review") {
+        prefillTask({ clientName: s, taskType: "review" });
+        switchView("new-job");
+        closeDrawer();
+      }
+    });
+  });
+
+  drawer.classList.remove("hidden");
+  backdrop.classList.remove("hidden");
+}
+
+function closeDrawer() {
+  $("#drawer").classList.add("hidden");
+  $("#drawer-backdrop").classList.add("hidden");
+}
+
+function switchView(name) {
+  document.querySelectorAll(".nav-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.view === name);
+  });
+  document.querySelectorAll(".view").forEach((view) => {
+    view.classList.toggle("active", view.id === `view-${name}`);
+  });
+  const meta = views[name];
+  $("#view-title").textContent = meta.title;
+  $("#view-subtitle").textContent = meta.sub;
+  $("#sidebar").classList.remove("open");
+  if (name === "matchmaker") renderMatchmaker();
+}
+
+function updateJobFormMode() {
+  const form = $("#job-form");
+  const taskType = form.taskType.value;
+  const isCloneJob = taskType === "new_site";
+  $("#client-website-field")?.classList.toggle("hidden", !isCloneJob);
+  form.querySelector('[name="donorShelfSlug"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
+  form.querySelector('[name="notes"]')?.closest("label")?.classList.toggle("hidden", !isCloneJob);
+  $(".job-intro")?.classList.toggle("hidden", !isCloneJob);
+}
+
+function prefillTask({ clientName, taskType, donorShelfSlug, clientWebsite }) {
+  const form = $("#job-form");
+  form.clientName.value = clientName;
+  form.taskType.value = taskType ?? "new_site";
+  if (donorShelfSlug) form.donorShelfSlug.value = donorShelfSlug;
+  if (clientWebsite) form.clientWebsite.value = clientWebsite;
+  updateJobFormMode();
+}
+
+function authHeaders() {
+  const stored = sessionStorage.getItem("console-auth");
+  return stored ? { Authorization: stored } : {};
+}
+
+async function fetchWithAuth(url, options = {}) {
+  const headers = { ...authHeaders(), ...(options.headers || {}) };
+  let res = await fetch(url, { ...options, headers });
+
+  if (res.status === 401) {
+    const pass = window.prompt("Console password:");
+    if (!pass) throw new Error("Authentication required");
+    const auth = "Basic " + btoa(`owner:${pass}`);
+    sessionStorage.setItem("console-auth", auth);
+    res = await fetch(url, { ...options, headers: { ...options.headers, Authorization: auth } });
+  }
+
+  return res;
+}
+
+function scheduleJobPolling() {
+  const active = (state.jobs ?? []).some((j) => j.status === "queued" || j.status === "running");
+  if (active && !jobPollTimer) {
+    jobPollTimer = setInterval(() => {
+      refreshJobs().catch(() => {});
+    }, 3000);
+  } else if (!active && jobPollTimer) {
+    clearInterval(jobPollTimer);
+    jobPollTimer = null;
+  }
+}
+
+async function refreshJobs() {
+  const res = await fetchWithAuth("/api/jobs").catch(() => null);
+  if (!res?.ok) return;
+  const data = await res.json();
+  state.jobs = data.jobs ?? [];
+  const prevActive = state.stats?.activeJobs ?? 0;
+  state.stats = state.stats ?? {};
+  state.stats.activeJobs = state.jobs.filter((j) => j.status === "queued" || j.status === "running").length;
+  if (highlightJobId) {
+    const highlighted = state.jobs.find((j) => j.id === highlightJobId);
+    if (highlighted && (highlighted.status === "done" || highlighted.status === "failed")) {
+      highlightJobId = null;
+    }
+  }
+  renderSidebarStats();
+  renderInbox();
+  scheduleJobPolling();
+
+  const activeLogPres = document.querySelectorAll(
+    "#inbox-list details[open] [data-job-log]"
+  );
+  activeLogPres.forEach((pre) => {
+    const jobId = pre.dataset.jobLog;
+    const job = state.jobs.find((j) => j.id === jobId);
+    if (job && (job.status === "queued" || job.status === "running")) {
+      pre.dataset.loaded = "";
+      void loadJobLogTail(jobId, pre);
+    }
+  });
+
+  if (prevActive > 0 && state.stats.activeJobs === 0) {
+    await loadData();
+    showToast("Job finished — data refreshed", { type: "success" });
+  }
+}
+
+function jobStartHint(job) {
+  if (job.kind === "prospect_search") {
+    return "Refreshing CSV from local database and creating a Cursor scout task. AI web search runs in Cursor, not in the console.";
+  }
+  if (job.kind === "shelf_capture") {
+    const input = job.input ?? {};
+    const hasUrl = input.urls?.length || /https?:\/\//i.test(input.request ?? "");
+    return hasUrl
+      ? "Running blueprint:capture — watch the live log below."
+      : "No URLs detected — shelf restock task created for Cursor beauty audition.";
+  }
+  if (job.kind === "shelf_restock") {
+    return "Restock commissioned — open the inbox task in Cursor. Worker researches, beauty-auditions, and captures donors.";
+  }
+  return "Clone job started — check Inbox for adopt progress.";
+}
+
+async function submitJob(endpoint, payload, { onSuccess, resultEl, messageEl, submitBtn, idleLabel } = {}) {
+  if (hostedMode) {
+    showToast("Commission jobs only run on local console", { type: "error" });
+    return null;
+  }
+
+  setButtonLoading(submitBtn, true, idleLabel);
+
+  try {
+    const res = await fetchWithAuth(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      let err = {};
+      try {
+        err = await res.json();
+      } catch {
+        // ignore
+      }
+      showToast(err.error ?? "Could not start job", { type: "error" });
+      return null;
+    }
+
+    const { job } = await res.json();
+    highlightJobId = job.id;
+
+    state.jobs = [job, ...(state.jobs ?? []).filter((j) => j.id !== job.id)];
+    state.stats = state.stats ?? {};
+    state.stats.activeJobs = state.jobs.filter((j) => j.status === "queued" || j.status === "running").length;
+
+    if (resultEl) resultEl.classList.remove("hidden");
+    if (messageEl) messageEl.textContent = jobStartHint(job);
+
+    renderSidebarStats();
+    switchView("inbox");
+    renderInbox();
+    scheduleJobPolling();
+
+    showToast(`Job started — ${shortJobId(job.id)}`, { type: "success", duration: 5000 });
+
+    await refreshJobs();
+    onSuccess?.(job);
+    return job;
+  } catch (error) {
+    showToast(error instanceof Error ? error.message : "Could not start job", { type: "error" });
+    return null;
+  } finally {
+    setButtonLoading(submitBtn, false, idleLabel);
+  }
+}
+
+function updateHostedUi() {
+  const notice = $("#hosted-job-notice");
+  const restockNotice = $("#hosted-restock-notice");
+  const submit = $("#job-form button[type=submit]");
+  const restockSubmit = $("#restock-submit");
+  const matchmakerSubmit = $("#matchmaker-submit");
+  if (hostedMode) {
+    notice?.classList.remove("hidden");
+    restockNotice?.classList.remove("hidden");
+    if (submit) submit.textContent = "Generate call phrase";
+    if (restockSubmit) restockSubmit.textContent = "Generate call phrase";
+    if (matchmakerSubmit) matchmakerSubmit.textContent = "Generate call phrase";
+  } else {
+    notice?.classList.add("hidden");
+    restockNotice?.classList.add("hidden");
+    if (submit) submit.textContent = "Create task in inbox";
+    if (restockSubmit) restockSubmit.textContent = "Find & capture donors";
+    if (matchmakerSubmit) matchmakerSubmit.textContent = "Run clone job";
+  }
+}
+
+function sectorFieldId(field) {
+  return `sector-${field.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+}
+
+function initRestockSectors() {
+  const grid = $("#restock-sector-grid");
+  if (!grid || grid.dataset.ready) return;
+
+  grid.innerHTML = RESTOCK_SECTORS.map((field) => {
+    const id = sectorFieldId(field);
+    return `
+      <label class="restock-sector-row" for="${id}">
+        <input type="checkbox" name="sector-enabled" value="${field}" id="${id}" data-field="${field}" />
+        <span class="restock-sector-label">${field}</span>
+        <input
+          type="number"
+          name="sector-count"
+          data-field="${field}"
+          min="1"
+          max="${RESTOCK_MAX_PER_FIELD}"
+          value="1"
+          disabled
+          aria-label="How many donors for ${field}"
+        />
+      </label>
+    `;
+  }).join("");
+
+  grid.querySelectorAll('input[type="checkbox"][name="sector-enabled"]').forEach((cb) => {
+    cb.addEventListener("change", () => {
+      const countInput = grid.querySelector(`input[type="number"][data-field="${CSS.escape(cb.dataset.field)}"]`);
+      if (countInput) {
+        countInput.disabled = !cb.checked;
+        if (cb.checked && !countInput.value) countInput.value = "1";
+      }
+      updateRestockSummary();
+    });
+  });
+
+  grid.querySelectorAll('input[type="number"][name="sector-count"]').forEach((input) => {
+    input.addEventListener("input", updateRestockSummary);
+  });
+
+  const otherEnabled = $("#restock-other-enabled");
+  const otherField = $("#restock-other-field");
+  const otherCount = $("#restock-other-count");
+  otherEnabled?.addEventListener("change", () => {
+    const on = otherEnabled.checked;
+    if (otherField) otherField.disabled = !on;
+    if (otherCount) otherCount.disabled = !on;
+    updateRestockSummary();
+  });
+  otherField?.addEventListener("input", updateRestockSummary);
+  otherCount?.addEventListener("input", updateRestockSummary);
+  $("#restock-total-cap")?.addEventListener("input", updateRestockSummary);
+
+  grid.dataset.ready = "1";
+  updateRestockSummary();
+}
+
+function collectRestockTargets() {
+  const targets = [];
+  $("#restock-sector-grid")
+    ?.querySelectorAll('input[type="checkbox"][name="sector-enabled"]:checked')
+    .forEach((cb) => {
+      const field = cb.dataset.field;
+      const countInput = $("#restock-sector-grid")?.querySelector(
+        `input[type="number"][data-field="${CSS.escape(field)}"]`
+      );
+      const count = Math.min(
+        RESTOCK_MAX_PER_FIELD,
+        Math.max(1, parseInt(countInput?.value ?? "1", 10) || 1)
+      );
+      targets.push({ field, count });
+    });
+
+  if ($("#restock-other-enabled")?.checked) {
+    const field = $("#restock-other-field")?.value.trim();
+    if (field) {
+      const count = Math.min(
+        RESTOCK_MAX_PER_FIELD,
+        Math.max(1, parseInt($("#restock-other-count")?.value ?? "1", 10) || 1)
+      );
+      targets.push({ field, count });
+    }
+  }
+
+  return targets;
+}
+
+function formatRestockSummaryText(targets, totalCap) {
+  if (!targets.length) return null;
+  const parts = targets.map((t) => {
+    const short = t.field.split(" / ").pop()?.toLowerCase() ?? t.field.toLowerCase();
+    return t.count === 1 ? `1 ${short}` : `${t.count} ${short}`;
+  });
+  const total = targets.reduce((sum, t) => sum + t.count, 0);
+  const cap =
+    totalCap && Number(totalCap) > 0 && Number(totalCap) !== total ? ` (cap ${totalCap})` : "";
+  return `Find ${parts.join(" + ")} donors (${total} total${cap}) — beauty audition, scored, captured to shelf`;
+}
+
+function updateRestockSummary() {
+  const el = $("#restock-summary");
+  if (!el) return;
+  const targets = collectRestockTargets();
+  const capRaw = $("#restock-total-cap")?.value.trim();
+  const totalCap = capRaw ? parseInt(capRaw, 10) : undefined;
+  const text = formatRestockSummaryText(targets, totalCap);
+  if (!text) {
+    el.classList.add("hidden");
+    el.replaceChildren();
+    return;
+  }
+  el.classList.remove("hidden");
+  el.innerHTML = `<strong>Commission summary</strong>${text}`;
+}
+
+function buildRestockCommissionPayload(form) {
+  const targets = collectRestockTargets();
+  const capRaw = form.totalCap?.value.trim();
+  const totalCap = capRaw ? parseInt(capRaw, 10) : undefined;
+  const notes = form.notes?.value.trim();
+  const payload = { targets };
+  if (notes) payload.notes = notes;
+  if (totalCap && totalCap > 0) payload.totalCap = totalCap;
+  return payload;
+}
+
+function buildLocalStructuredRestockPhrase(commission) {
+  const lines = commission.targets.map((t) => `${t.count} donor(s) for ${t.field}`);
+  const parts = [
+    "Restock the donor shelf. Read factory/playbooks/master-shelf-stocking-prompt.md.",
+    `Job Card: Find ${lines.join("; ")}. Use beauty audition. Fill emptiest shelf slots.`,
+    `Structured commission: ${JSON.stringify(commission)}`
+  ];
+  if (commission.notes) parts.push(`Notes: ${commission.notes}`);
+  return parts.join(" ");
+}
+
+async function loadData() {
+  let res = await fetchWithAuth("/api/data").catch(() => null);
+  if (!res || !res.ok) {
+    res = await fetch("/snapshot.json");
+  }
+  if (!res.ok) throw new Error("Failed to load factory data");
+
+  const data = await res.json();
+  state = data;
+  hostedMode = data.mode === "snapshot" || window.location.hostname.endsWith(".vercel.app");
+
+  if (hostedMode) showHostedBanner(data.snapshotNote);
+
+  $("#updated-at").textContent = hostedMode
+    ? `Snapshot from ${formatDate(data.generatedAt)}`
+    : `Updated ${formatDate(data.generatedAt)}`;
+
+  updateHostedUi();
+  renderSidebarStats();
+  renderProjects();
+  renderProspects();
+  renderDonors();
+  renderMatchmaker();
+  renderInbox();
+  populateDonorSelect();
+  initRestockSectors();
+  scheduleJobPolling();
+}
+
+function showHostedBanner(note) {
+  if (document.getElementById("hosted-banner")) return;
+  const banner = document.createElement("div");
+  banner.id = "hosted-banner";
+  banner.className = "hosted-banner";
+  banner.innerHTML = `<strong>Hosted snapshot mode.</strong> ${note ?? "This view is a point-in-time export."} For live data and inbox tasks, bookmark <a href="http://blueprint.local:4177">blueprint.local</a> after <code>pnpm blueprint:console:install</code>.`;
+  document.querySelector(".main").prepend(banner);
+}
+
+document.querySelectorAll(".nav-btn").forEach((btn) => {
+  btn.addEventListener("click", () => switchView(btn.dataset.view));
+});
+
+$("#menu-toggle").addEventListener("click", () => {
+  $("#sidebar").classList.toggle("open");
+});
+
+$("#refresh-btn").addEventListener("click", async () => {
+  try {
+    await loadData();
+    showToast("Data refreshed");
+  } catch {
+    showToast("Refresh failed");
+  }
+});
+
+$("#project-search").addEventListener("input", renderProjects);
+$("#project-filter").addEventListener("change", renderProjects);
+$("#prospect-search").addEventListener("input", renderProspects);
+$("#prospect-filter").addEventListener("change", renderProspects);
+$("#donor-search").addEventListener("input", renderDonors);
+$("#matchmaker-donor-search")?.addEventListener("input", renderMatchmaker);
+$("#matchmaker-prospect-search")?.addEventListener("input", renderMatchmaker);
+
+document.body.addEventListener("click", (e) => {
+  const goto = e.target.closest("[data-goto]");
+  if (goto) {
+    switchView(goto.dataset.goto);
+    const focus = goto.dataset.focus;
+    if (focus) {
+      requestAnimationFrame(() => {
+        document.getElementById(focus)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    return;
+  }
+  if (e.target.closest(".match-card")) return;
+  const card = e.target.closest(".card");
+  if (!card) return;
+  if (card.dataset.kind === "prospect") {
+    openDrawer(null, "prospect", card.dataset.prospectId);
+    return;
+  }
+  openDrawer(card.dataset.slug, card.dataset.kind);
+});
+
+$("#drawer-close").addEventListener("click", closeDrawer);
+$("#drawer-backdrop").addEventListener("click", closeDrawer);
+
+function buildLocalCallPhrase(payload) {
+  if (payload.taskType === "continue_site") {
+    const slug = payload.clientName.toLowerCase().replace(/\s+/g, "-");
+    return `Continue the ${payload.clientName} clone job. Read factory/playbooks/master-clone-job-prompt.md, then sites/${slug}/qa/run-log.md and qa/worker-notes.md, find the last completed step, and continue.`;
+  }
+  if (payload.taskType === "review") {
+    return `run a beauty pass for ${payload.clientName}`;
+  }
+  if (payload.taskType === "restock_shelf") {
+    const parts = [
+      "Restock the donor shelf. Read factory/playbooks/master-shelf-stocking-prompt.md.",
+      `Job Card: Restock request: ${payload.restockRequest}`
+    ];
+    if (payload.notes) parts.push(`Notes: ${payload.notes}`);
+    return parts.join(" ");
+  }
+  if (payload.taskType === "stock_donor") {
+    const parts = [
+      "Restock the donor shelf. Read factory/playbooks/master-shelf-stocking-prompt.md.",
+      `Job Card: Restock request: ${payload.sector ? `${payload.sector}${payload.donorUrl ? ` — ${payload.donorUrl}` : ""}` : payload.donorUrl}`
+    ];
+    if (payload.whyThisDonor) parts.push(`Notes: ${payload.whyThisDonor}`);
+    return parts.join(" ");
+  }
+
+  const parts = [
+    `Run the ${payload.clientName} clone job. Read factory/playbooks/master-clone-job-prompt.md.`,
+    `Job Card: Client name: ${payload.clientName}, Client's current website: ${payload.clientWebsite}`
+  ];
+  if (payload.donorShelfSlug) {
+    parts.push(`Copy the look of a specific site? ${payload.donorShelfSlug}`);
+  }
+  if (payload.notes) {
+    parts.push(`Anything else: ${payload.notes}`);
+  }
+  return parts.join(" ");
+}
+
+async function submitTask(payload, resultEl, phraseEl, copyBtnId) {
+  const res = await fetchWithAuth("/api/tasks", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) {
+    let err = {};
+    try {
+      err = await res.json();
+    } catch {
+      // ignore
+    }
+    if (res.status === 501 || hostedMode) {
+      const phrase = buildLocalCallPhrase(payload);
+      showToast(hostedMode ? "Copy call phrase into Cursor" : "Use local console to create inbox tasks");
+      phraseEl.textContent = phrase;
+      resultEl.classList.remove("hidden");
+      document.getElementById(copyBtnId).onclick = async () => {
+        await navigator.clipboard.writeText(phrase);
+        showToast("Copied to clipboard");
+      };
+      return null;
+    }
+    showToast(err.error ?? "Could not create task");
+    return null;
+  }
+
+  const { task } = await res.json();
+  phraseEl.textContent = task.callPhrase;
+  resultEl.classList.remove("hidden");
+  document.getElementById(copyBtnId).onclick = async () => {
+    await navigator.clipboard.writeText(task.callPhrase);
+    showToast("Copied to clipboard");
+  };
+  await loadData();
+  showToast("Task created in inbox");
+  return task;
+}
+
+$("#job-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const payload = {
+    clientName: form.clientName.value.trim(),
+    clientWebsite: form.clientWebsite.value.trim(),
+    donorShelfSlug: form.donorShelfSlug.value,
+    notes: form.notes.value.trim(),
+    taskType: form.taskType.value
+  };
+
+  if (!payload.clientName) {
+    showToast("Client name is required");
+    return;
+  }
+  if (payload.taskType === "new_site" && !payload.clientWebsite) {
+    showToast("Client website is required");
+    return;
+  }
+
+  const task = await submitTask(payload, $("#task-result"), $("#task-call-phrase"), "copy-call-phrase");
+  if (task) {
+    $("#view-inbox").onclick = () => {
+      switchView("inbox");
+      loadData();
+    };
+  }
+});
+
+
+$("#restock-form")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const commission = buildRestockCommissionPayload(form);
+
+  if (!commission.targets.length) {
+    showToast("Select at least one target area", { type: "error" });
+    return;
+  }
+  if ($("#restock-other-enabled")?.checked && !$("#restock-other-field")?.value.trim()) {
+    showToast("Enter a name for Other, or uncheck it", { type: "error" });
+    return;
+  }
+
+  const total = commission.targets.reduce((sum, t) => sum + t.count, 0);
+  if (commission.totalCap != null && commission.totalCap < total) {
+    showToast(`Total cap (${commission.totalCap}) is less than requested donors (${total})`, {
+      type: "error"
+    });
+    return;
+  }
+
+  const resultEl = $("#restock-result");
+  const messageEl = $("#restock-result-message");
+  const phraseEl = $("#restock-call-phrase");
+  const copyBtn = $("#copy-restock-call-phrase");
+
+  if (!hostedMode) {
+    const job = await submitJob("/api/jobs/shelf-restock", commission, {
+      submitBtn: $("#restock-submit"),
+      idleLabel: "Find & capture donors",
+      resultEl,
+      messageEl,
+      onSuccess: (job) => {
+        const h3 = resultEl?.querySelector("h3");
+        if (h3) h3.textContent = "Restock commissioned";
+        if (messageEl) messageEl.textContent = jobStartHint(job);
+        phraseEl?.classList.add("hidden");
+        copyBtn?.classList.add("hidden");
+      }
+    });
+    if (job) {
+      $("#view-restock-inbox").onclick = () => {
+        switchView("inbox");
+        loadData();
+      };
+    }
+    return;
+  }
+
+  const phrase = buildLocalStructuredRestockPhrase(commission);
+  if (messageEl) messageEl.textContent = phrase;
+  if (phraseEl) {
+    phraseEl.textContent = phrase;
+    phraseEl.classList.remove("hidden");
+  }
+  copyBtn?.classList.remove("hidden");
+  resultEl?.classList.remove("hidden");
+  copyBtn.onclick = async () => {
+    await navigator.clipboard.writeText(phrase);
+    showToast("Copied to clipboard");
+  };
+  showToast("Copy call phrase into Cursor", { type: "success" });
+});
+
+$("#restock-urls-form")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const raw = form.urls.value.trim();
+  const notes = form.notes.value.trim();
+  if (!raw) {
+    showToast("At least one URL is required", { type: "error" });
+    return;
+  }
+
+  const urls = raw
+    .split(/\s+/)
+    .map((u) => u.trim())
+    .filter((u) => /^https?:\/\//i.test(u));
+
+  if (!urls.length) {
+    showToast("Paste valid http(s) URLs", { type: "error" });
+    return;
+  }
+
+  const resultEl = $("#restock-result");
+  const messageEl = $("#restock-result-message");
+  const phraseEl = $("#restock-call-phrase");
+  const copyBtn = $("#copy-restock-call-phrase");
+
+  if (!hostedMode) {
+    const job = await submitJob(
+      "/api/jobs/shelf-capture",
+      { request: urls.join("\n"), urls, notes: notes || undefined },
+      {
+        submitBtn: $("#restock-urls-submit"),
+        idleLabel: "Capture URLs directly",
+        resultEl,
+        messageEl,
+        onSuccess: (job) => {
+          const h3 = resultEl?.querySelector("h3");
+          if (h3) h3.textContent = "Capture started";
+          if (messageEl) messageEl.textContent = jobStartHint(job);
+          phraseEl?.classList.add("hidden");
+          copyBtn?.classList.add("hidden");
+        }
+      }
+    );
+    if (job) {
+      $("#view-restock-inbox").onclick = () => {
+        switchView("inbox");
+        loadData();
+      };
+    }
+    return;
+  }
+
+  const payload = { restockRequest: urls.join("\n"), notes, taskType: "restock_shelf" };
+  await submitTask(payload, resultEl, phraseEl, "copy-restock-call-phrase");
+  phraseEl?.classList.remove("hidden");
+  copyBtn?.classList.remove("hidden");
+  if (messageEl) messageEl.textContent = "Copy call phrase into Cursor to run capture.";
+});
+
+$("#matchmaker-modal-close")?.addEventListener("click", closeMatchmakerModal);
+$("#matchmaker-cancel")?.addEventListener("click", closeMatchmakerModal);
+$("#matchmaker-modal-backdrop")?.addEventListener("click", closeMatchmakerModal);
+
+$("#matchmaker-form")?.addEventListener("input", (e) => {
+  const form = e.currentTarget;
+  const donor = state.donors.find((d) => d.slug === form.dataset.donorSlug);
+  const prospect = state.prospects?.find((p) => p.id === form.dataset.prospectId);
+  if (!donor || !prospect) return;
+  const notes = form.notes.value;
+  const previewDonor = { ...donor, slug: form.donorShelfSlug.value };
+  const previewProspect = { ...prospect, name: form.clientName.value, websiteUrl: form.clientWebsite.value };
+  $("#matchmaker-preview").textContent = buildMatchmakerPreviewLine(previewDonor, previewProspect);
+  updateMatchmakerTaskPreview(previewDonor, previewProspect, notes);
+});
+
+$("#matchmaker-form")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const payload = {
+    clientName: form.clientName.value.trim(),
+    clientWebsite: form.clientWebsite.value.trim(),
+    donorShelfSlug: form.donorShelfSlug.value.trim(),
+    notes: form.notes.value.trim()
+  };
+
+  if (!payload.clientName || !payload.clientWebsite) {
+    showToast("Client name and website are required");
+    return;
+  }
+
+  const submitBtn = $("#matchmaker-submit");
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = hostedMode ? "Generating…" : "Starting…";
+
+  if (!hostedMode) {
+    const job = await submitJob("/api/jobs/clone-pair", payload, {
+      submitBtn,
+      idleLabel: originalLabel,
+      resultEl: $("#matchmaker-result"),
+      onSuccess: () => {
+        form.classList.add("hidden");
+        $("#matchmaker-call-phrase").textContent =
+          "Clone job started — adopt may run automatically. Continue in Cursor for full build.";
+      }
+    });
+    if (job) {
+      $("#matchmaker-view-inbox").onclick = () => {
+        closeMatchmakerModal();
+        switchView("inbox");
+        loadData();
+      };
+    }
+    return;
+  }
+
+  const taskPayload = { ...payload, taskType: "new_site" };
+  const task = await submitTask(
+    taskPayload,
+    $("#matchmaker-result"),
+    $("#matchmaker-call-phrase"),
+    "matchmaker-copy-phrase"
+  );
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = originalLabel;
+
+  if (task) {
+    form.classList.add("hidden");
+    $("#matchmaker-view-inbox").onclick = () => {
+      closeMatchmakerModal();
+      switchView("inbox");
+      loadData();
+    };
+  }
+});
+
+$("#prospect-search-form")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const lane = form.lane.value.trim();
+  const region = form.region.value.trim();
+  const notes = form.notes.value.trim();
+  if (!lane) {
+    showToast("Search lane is required", { type: "error" });
+    return;
+  }
+
+  await submitJob(
+    "/api/jobs/prospect-search",
+    { lane, region: region || undefined, notes: notes || undefined },
+    {
+      submitBtn: $("#prospect-search-submit"),
+      idleLabel: "Run search",
+      resultEl: $("#prospect-search-result"),
+      messageEl: $("#prospect-search-message"),
+      onSuccess: () => {
+        $("#prospect-search-inbox").onclick = () => switchView("inbox");
+      }
+    }
+  );
+});
+
+loadData().catch(() => {
+  $("#project-grid").innerHTML = `<div class="empty">Could not reach the console server. Run <code>pnpm blueprint:console</code> from the factory root.</div>`;
+});

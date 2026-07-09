@@ -1,0 +1,49 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "built"
+    },
+    {
+      "route": "/signature-treks",
+      "title": "Signature Treks",
+      "status": "built"
+    },
+    {
+      "route": "/signature-treks/everest-base-camp",
+      "title": "Everest Base Camp",
+      "status": "built"
+    },
+    {
+      "route": "/cultural-tours",
+      "title": "Cultural Tours",
+      "status": "deferred",
+      "reason": "Useful commercial page, but outside this homepage plus two supporting pages test scope."
+    },
+    {
+      "route": "/guides",
+      "title": "Guides",
+      "status": "deferred",
+      "reason": "Needs real team bios and guide credentials; avoid inventing named people."
+    },
+    {
+      "route": "/why-everest-tours",
+      "title": "Why Everest Tours",
+      "status": "deferred",
+      "reason": "Can be expanded after owner review of positioning and operational claims."
+    },
+    {
+      "route": "/contact",
+      "title": "Contact",
+      "status": "deferred",
+      "reason": "No live form or CRM is in scope for the static preview."
+    },
+    {
+      "route": "/booking",
+      "title": "Booking",
+      "status": "deferred",
+      "reason": "Checkout, deposits, and availability require real operations data and backend decisions."
+    }
+  ]
+}

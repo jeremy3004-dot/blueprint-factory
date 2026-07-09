@@ -19,6 +19,11 @@
     "blueprint:motion": "tsx factory/scripts/blueprint.ts motion",
     "blueprint:beauty": "tsx factory/scripts/blueprint.ts beauty",
     "blueprint:deploy": "tsx factory/scripts/blueprint.ts deploy",
+    "blueprint:console": "tsx factory/scripts/console-server.ts",
+    "blueprint:console:install": "tsx factory/scripts/console-install.ts install",
+    "blueprint:console:uninstall": "tsx factory/scripts/console-install.ts uninstall",
+    "blueprint:console:deploy": "tsx factory/scripts/console-deploy.ts",
+    "blueprint:console:snapshot": "tsx factory/scripts/export-console-snapshot.ts",
     "test": "tsx --test factory/scripts/*.test.ts"
   },
   "devDependencies": {

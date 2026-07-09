@@ -15,6 +15,66 @@ Always separate these three things:
 
 ## Most Important Call Phrases
 
+### Run A Full Client Clone Job
+
+```text
+Run the [client name] clone job. Read factory/playbooks/master-clone-job-prompt.md.
+Job Card: Client name: [name], Client's current website: [url]
+```
+
+Meaning:
+
+- Use `factory/playbooks/master-clone-job-prompt.md` as the canonical worker prompt.
+- Fill only the two Job Card blanks: client name and their current website.
+- Optional: donor override from `factory/DONOR-SHELF.md` (shelf list in `docs/donor-shelf.md`) and
+  "anything else" notes.
+- The worker derives brand, audience, donor pick, scope, and art direction from evidence.
+- Runs adopt → brand-source capture → clone → translate → verify → preview deploy on branch
+  `job/[client-slug]`. Stops at Beauty Pass for human review.
+
+Continue a stalled job:
+
+```text
+Continue the [client] clone job. Read factory/playbooks/master-clone-job-prompt.md, then
+sites/[client-slug]/qa/run-log.md and qa/worker-notes.md, find the last completed step, and continue.
+```
+
+### Stock The Donor Shelf (Restock)
+
+```text
+Restock the donor shelf. Read factory/playbooks/master-shelf-stocking-prompt.md.
+Job Card: Restock request: [URLs you found — OR a business kind — OR "your choice"]
+```
+
+Meaning:
+
+- Use `factory/playbooks/master-shelf-stocking-prompt.md` as the canonical worker prompt (not the
+  `blueprint-search-nepal` skill — that is prospect scouting only).
+- Fill only the **one** Job Card blank: paste URL(s), name a sector (e.g. "restaurants"), or write
+  **your choice** and the worker fills the emptiest shelf sectors.
+- Optional: notes (batch name, priorities, exclusions).
+- The worker **beauty-auditions** candidates before capture: full desktop + mobile scroll, named
+  signature moment, typography/section/motion checks. Cannot name a moment → reject.
+- Runs `pnpm blueprint:capture`, health-checks the evidence pack, updates `docs/donor-shelf.md`, and
+  logs rejects in **Skipped requested slots**.
+- Work stays on branch `shelf/*` — owner says **"check and merge the shelf branch"** when ready.
+- **Stops before any client site work** — shelf stock only.
+
+Operator Console: **Restock** tab (not Matchmaker — that pairs an existing donor with a prospect).
+
+### Scout Nepal Prospects
+
+```text
+Scout Nepal prospects with blueprint-search-nepal and export to prospects/nepal-leads.csv
+```
+
+Meaning:
+
+- Use the `blueprint-search-nepal` skill at `/Users/dev/.codex/skills/blueprint-search-nepal/`.
+- Score leads on demand, website pain, premium fit, and access (0–100 total).
+- Export the canonical list to `prospects/nepal-leads.csv` for the Operator Console Prospects tab.
+- Helper commands: `python3 .../blueprint_search_nepal.py summary|export|serve|import`.
+
 ### Start A Normal High-Craft Website
 
 ```text

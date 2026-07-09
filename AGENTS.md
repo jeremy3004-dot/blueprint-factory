@@ -4,6 +4,34 @@ Blueprint Factory builds high-craft animated websites. Optimize for standout vis
 
 When Jeremy asks what to call or how to run Blueprint Factory workflows, use `factory/playbooks/blueprint-factory-callbook.md`.
 
+## Full Client Clone Jobs
+
+For a complete paid client rebuild (adopt → clone → translate → preview deploy), use
+`factory/playbooks/master-clone-job-prompt.md`. The owner fills only two blanks in the Job Card:
+**client name** and **their current website URL**. The worker derives tone, colors, facts, donor
+pick, and scope from evidence. Create inbox tasks from the Operator Console (`pnpm blueprint:console`)
+or paste the master prompt into a new session.
+
+## Donor Shelf Stocking
+
+To capture new world-class visual donors onto the shelf (no client build), use
+`factory/playbooks/master-shelf-stocking-prompt.md`. Fill **one blank** in the Job Card: paste URL(s),
+name a business kind, or write **your choice** and the worker fills emptiest shelf sectors. The worker
+**beauty-auditions** each candidate (desktop + mobile scroll, named signature moment) **before**
+`pnpm blueprint:capture` — empty shelf space is better than a mediocre donor. Work lands on branch
+`shelf/*` for supervisor review before merging. Create restock tasks from the Operator Console
+**Restock** tab or paste the master shelf prompt into a new session. Shelf stock stops before any
+client site work.
+
+**Prompt vs skill:** The shelf playbook is the production worker runbook. `blueprint-search-nepal` is
+prospect scouting only — not donor capture.
+
+## Nepal Prospect Scouting
+
+Use the `blueprint-search-nepal` skill (`/Users/dev/.codex/skills/blueprint-search-nepal/`) to find and
+rank Nepal businesses with strong demand and weak websites. Export results to `prospects/nepal-leads.csv`.
+The Operator Console **Prospects** tab reads that CSV and can prefill a demo clone job from any lead.
+
 Every site must have:
 - `brief.md`
 - `art-direction.md` with one named signature moment

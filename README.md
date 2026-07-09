@@ -8,7 +8,10 @@ The factory favors standout visual quality over generic speed. A site is not rea
 
 ## Default Flow
 
-Run `pnpm blueprint:run <slug>`.
+For a full client clone job, use `factory/playbooks/master-clone-job-prompt.md` (two blanks: client
+name + their current website) or create a task from the Operator Console. To stock a new visual donor
+on the shelf, use `factory/playbooks/master-shelf-stocking-prompt.md` (one blank: URLs, sector, or
+"your choice"). For incremental work on an existing site, run `pnpm blueprint:run <slug>`.
 
 The first gate is now reference-first: before art direction or build work, capture a primary 10/10 donor site and secondary references under `sites/<slug>/references/reference-first/`.
 
@@ -37,6 +40,9 @@ non-technical owner can read.
 | `pnpm blueprint:verify <slug> <preview-url>` | The full QA chain: check → screenshots → motion → compare, ending in a plain-language report. |
 | `pnpm blueprint:copydeck <slug>` | Turn the donor's extracted copy into a two-column `copy-deck.md` (donor → brand) for line-by-line translation. |
 | `pnpm blueprint:deploy <slug> --preview` | Build locally, deploy a shareable **Vercel preview** (never production), verify it, and record the URL in `deploy.md`. Blocks while any reference-only asset would ship. |
+| `pnpm blueprint:console` | Open the **Operator Console** — a responsive local dashboard at `http://localhost:4177` to browse projects, **Nepal prospects**, donor shelf, and create master-clone-job or shelf-stocking inbox tasks. |
+| `pnpm blueprint:console:install` | Install a **permanent local console** at `http://blueprint.local:4177` (background service, survives terminal close). |
+| `pnpm blueprint:console:deploy` | Deploy a **hosted snapshot** of the console to Vercel preview (bookmarkable from anywhere; re-deploy for fresh data). |
 | `pnpm blueprint:screenshots` / `:motion` / `:beauty` / `:art` / `:new` | Individual steps (screenshots captures every built route from `pages.json`). |
 
 Copy proven motion/component/section patterns from `factory/reference-library/` before inventing new

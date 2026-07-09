@@ -1,0 +1,73 @@
+{
+  "generatedFrom": "extraction/tokens.json",
+  "colors": {
+    "background": "#000000",
+    "foreground": "#ffffff",
+    "primary": "#0066cc",
+    "accent": "#ff3520",
+    "muted": "#52575c",
+    "palette": [
+      "#000000",
+      "#52575c",
+      "#ffffff",
+      "#444444",
+      "#2f2f2f",
+      "#adadad",
+      "rgba(0, 0, 0, 0.2)",
+      "#e7247a",
+      "#379c8a",
+      "#cccccc",
+      "#cacccf",
+      "#333333"
+    ]
+  },
+  "fonts": {
+    "heading": {
+      "role": "heading",
+      "donor": "AlternateGotNo1D",
+      "family": "Inter",
+      "stack": "\"Inter\", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "source": "Google Fonts",
+      "license": "open",
+      "substituted": true,
+      "note": "unmapped donor font; verify the substitution and add it to font-substitutes.md"
+    },
+    "body": {
+      "role": "body",
+      "donor": "Brandon Grotesque",
+      "family": "Inter",
+      "stack": "\"Inter\", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "source": "Google Fonts",
+      "license": "open",
+      "substituted": true,
+      "note": "unmapped donor font; verify the substitution and add it to font-substitutes.md"
+    }
+  },
+  "typeScale": [
+    60,
+    45,
+    35,
+    34,
+    30,
+    26,
+    25,
+    23
+  ],
+  "spacing": [
+    6,
+    13,
+    41,
+    43,
+    50,
+    60,
+    80
+  ],
+  "radii": [
+    2,
+    3,
+    4,
+    5,
+    25,
+    50
+  ]
+}
