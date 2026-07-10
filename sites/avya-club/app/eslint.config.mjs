@@ -1,15 +1,15 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import nextTypeScript from "eslint-config-next/typescript";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
 
-export default defineConfig([
-  ...nextCoreWebVitals,
-  ...nextTypeScript,
+export default tseslint.config(
+  { ignores: [".next/**"] },
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
+    files: ["**/*.{ts,tsx}"],
     rules: {
-      // Local, dimensioned imagery is intentional for this static editorial clone.
-      "@next/next/no-img-element": "off"
+      // TypeScript performs the undefined-symbol check with project context.
+      "no-undef": "off"
     }
-  },
-  globalIgnores([".next/**"])
-]);
+  }
+);

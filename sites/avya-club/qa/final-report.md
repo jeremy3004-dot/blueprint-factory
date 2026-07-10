@@ -2,7 +2,7 @@
 
 ## Owner summary
 
-Avya Club now has a six-route, responsive website built from Republic BOS's editorial structure and translated entirely into Avya's identity and source-backed content. The homepage signature moment is the First Light Sequence, which moves through Pure energy, Deep recovery, and First light using distinct Avya-owned photography. All local automated gates pass: tests, typecheck, production build, console checks, six internal routes, and critical/serious accessibility checks. A Vercel preview exists at `https://avya-club-qqf3z9ees-jeremys-projects-379e354f.vercel.app`, but Vercel Deployment Protection currently redirects unauthenticated visitors to SSO. Nothing was deployed to production; disable preview protection, reverify the public URL, then perform the owner's human Beauty Pass.
+Avya Club now has a six-route, responsive website built from Republic BOS's editorial structure and translated entirely into Avya's identity and source-backed content. The homepage signature moment is the First Light Sequence, which moves through Pure energy, Deep recovery, and First light using distinct Avya-owned photography. All local automated gates pass: lint, tests, typecheck, production build, console checks, six internal routes, and critical/serious accessibility checks. The latest Vercel preview is `https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app`, but Vercel Deployment Protection redirects unauthenticated visitors to SSO. Nothing was deployed to production; disable preview protection, reverify the public URL, then perform the owner's human Beauty Pass.
 
 ## Reference and scores
 
@@ -16,13 +16,15 @@ Avya Club now has a six-route, responsive website built from Republic BOS's edit
 
 ## Verification and evidence
 
-- App tests: 21/21 passed.
+- App and brand-source lint: passed.
+- App tests: 26/26 passed.
 - TypeScript: passed with no type errors.
 - Production build: passed; all six public routes statically generated.
 - Factory verification: passed typecheck, build, console, six internal links, and axe critical/serious checks.
 - Route captures: desktop, tablet, and mobile for `/`, `/about`, `/services`, `/gallery`, `/contact`, and `/membership`.
 - Motion evidence: normal and reduced-motion recordings under `qa/motion/`.
-- Preview: `https://avya-club-qqf3z9ees-jeremys-projects-379e354f.vercel.app`; authenticated deployment checks reached HTTP 200, but direct unauthenticated requests receive `302` to Vercel SSO, so it is protected rather than publicly shareable.
+- Dependency reproducibility: the b2b29a6 lock was extended only with the two Avya importers and their missing dependency/snapshot records. A filtered frozen install passes in an isolated workspace containing the same root and Avya manifests. The full repository still fails frozen validation on pre-existing unrelated donor importers absent from that baseline lock, beginning with `sites/donor-ace-hotel/app`.
+- Preview: `https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app`; authenticated deployment checks reached HTTP 200, but a fresh direct unauthenticated request returned `302` to Vercel SSO, so it is protected rather than publicly shareable.
 - Production: untouched.
 
 ## Needs client input

@@ -121,3 +121,14 @@
 ### 2026-07-10T21:27:25.192Z
 
 - Ran verify: Every automated check passed for avya-club: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 27.7%; raw pixel match is 36.6% on desktop and 52.2% on mobile, which is informational after brand translation. The weakest area is "Section band 4 (y 2592–3456)" at 20.1% — fix that first. Structurally the build has 10 sections vs the donor's 2, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-10T21:49:58.821Z
+
+- Deployed Vercel preview: https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app. The authenticated deploy helper reached HTTP 200 and incorrectly labeled it shareable. A fresh unauthenticated request returned `302` to `vercel.com/sso-api`; the preview is protected. Recorded in `deploy.md`. Not production.
+
+### 2026-07-11T03:41:59+05:45
+
+- Final review dependency correction restored the `b2b29a6` lock in an isolated temporary workspace and deterministically merged only the Avya and Avya-brand-source importers plus their missing package/snapshot records. The lock diff is `+1064/-0` lines rather than the earlier broad workspace refresh.
+- `pnpm install --frozen-lockfile --filter avya-club --filter avya-club-brand-source --ignore-scripts` passed in the isolated workspace using the narrowed lock and matching root/Avya manifests.
+- The same filtered command from the full repository remains blocked by a pre-existing unrelated importer mismatch, first reported at `sites/donor-ace-hotel/app`; no unrelated donor manifest or lock importer was changed.
+- Independent preview evidence reconfirmed HTTP `302` with a `location` at `https://vercel.com/sso-api`; the latest preview remains protected and the human Beauty Pass remains pending.
