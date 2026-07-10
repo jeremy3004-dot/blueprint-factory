@@ -1,8 +1,8 @@
 # Visual Compare Report: avya-club
 
 Donor: https://republicbos.com
-Build: http://127.0.0.1:4203
-Compared: 2026-07-10T21:25:47.752Z
+Build: http://127.0.0.1:4207
+Compared: 2026-07-10T21:58:56.655Z
 Stage: translation
 Headline score: 27.7% (structure; target >=85%)
 
@@ -20,7 +20,7 @@ Headline score: 27.7% (structure; target >=85%)
 - Structure score: 27.7% (weak)
 - Donor sections: 2 · Build sections: 10 (delta +8)
 - Heading hierarchy match: 55% (13 build vs 20 donor headings)
-- Grayscale row-profile rhythm: 18%
+- Grayscale row-profile rhythm: 18.1%
 - Media/text band agreement: 100%
 
 ## Style tokens
@@ -42,14 +42,14 @@ Headline score: 27.7% (structure; target >=85%)
 
 | # | Section band | Match % |
 | - | ------------ | ------- |
-| 1 | Section band 1 (y 0–864) | 44.2% |
+| 1 | Section band 1 (y 0–864) | 44.3% |
 | 2 | Section band 2 (y 864–1728) | 52.3% |
 | 3 | Section band 3 (y 1728–2592) | 22.6% |
 | 4 | Section band 4 (y 2592–3456) | 20.1% |
 | 5 | Section band 5 (y 3456–4320) | 32% |
 | 6 | Section band 6 (y 4320–5184) | 34.7% |
 | 7 | Section band 7 (y 5184–6048) | 25.6% |
-| 8 | Section band 8 (y 6048–6915) | 61.2% |
+| 8 | Section band 8 (y 6048–6915) | 61.3% |
 
 ## Side-by-side composites
 
