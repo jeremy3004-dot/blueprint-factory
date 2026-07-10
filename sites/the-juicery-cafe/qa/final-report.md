@@ -5,7 +5,7 @@
 The Juicery Cafe now has a complete responsive website covering its full useful public journey. It
 uses Gymkhana's cinematic hospitality structure while keeping the Juicery's real Pokhara story,
 contacts, client-owned photography, and menu/event facts. The site passes the full automated gate
-and is live on a shareable Vercel preview, not production. TripAdvisor photographs are stored only
+and is live on a Vercel preview protected by Vercel login, not production. TripAdvisor photographs are stored only
 as research references because reviewer-uploaded rights are not automatically cleared. The next
 step is Jeremy's human Beauty Pass and client fact confirmation.
 
@@ -20,7 +20,8 @@ photography, long place image, compact hospitality typography, and decisive foot
 - Translation structure: 85.2% in the final fresh verify (7 sections vs 7 donor sections).
 - Checks: PASS typecheck, production build, console errors, 8 internal links, and axe serious/critical.
 - Evidence: desktop/tablet/mobile route screenshots plus standard and reduced-motion captures.
-- Preview: `https://the-juicery-cafe-qhriiphrc-jeremys-projects-379e354f.vercel.app` — shareable, HTTP 200, preview only.
+- Preview: `https://the-juicery-cafe-qhriiphrc-jeremys-projects-379e354f.vercel.app` — protected,
+  HTTP 302 to Vercel SSO, preview only. Disable Vercel Deployment Protection before sharing publicly.
 
 ## Proposed signature moment
 

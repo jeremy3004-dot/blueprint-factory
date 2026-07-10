@@ -4,8 +4,9 @@
 
 Status: NEEDS_HUMAN_BEAUTY_PASS
 
-The production worker has not self-approved the Beauty Pass. The owner should review the shareable
-preview, the motion captures, and the donor composites before changing this status.
+The production worker has not self-approved the Beauty Pass. The owner should review the protected
+preview (authenticated Vercel access required), the motion captures, and the donor composites before
+changing this status.
 
 ## Signature Moment Check
 

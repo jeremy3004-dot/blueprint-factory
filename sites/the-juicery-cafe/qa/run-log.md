@@ -99,3 +99,11 @@
 ### 2026-07-10T17:41:04.730Z
 
 - Deployed Vercel preview: https://the-juicery-cafe-qhriiphrc-jeremys-projects-379e354f.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.
+
+### 2026-07-10 — independent preview audit
+
+- The factory deploy command reported the replacement preview as shareable because its health check
+  accepted the final 200 response after redirects.
+- Independent `curl -I` returned HTTP 302 to `vercel.com/sso-api`; following it returned the Vercel
+  login page. Correct status: protected, not publicly shareable.
+- Handoff now directs the owner to disable Deployment Protection before external review.

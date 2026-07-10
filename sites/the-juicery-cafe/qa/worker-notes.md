@@ -34,3 +34,6 @@
   ships. This is reported plainly rather than treating a translation score as a clone score.
 - The factory's Next 16 Turbopack build rejected the external worktree dependency symlink. The app
   uses the stable `--webpack` dev/build path; typecheck and production build both pass.
+- The deploy helper falsely labeled a protected Vercel preview as shareable by following the 302 SSO
+  redirect to a 200 login page. Independent header inspection caught it; `deploy.md` and the final
+  report now state protected and give the correct dashboard setting to change.
