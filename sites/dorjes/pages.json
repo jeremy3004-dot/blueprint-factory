@@ -1,0 +1,14 @@
+{
+  "pages": [
+    { "route": "/", "title": "Dorje's Resort & Spa", "status": "built" },
+    { "route": "/accommodation-in-pokhara", "title": "Rooms & Suites", "status": "built" },
+    { "route": "/tastes", "title": "Dining", "status": "built" },
+    { "route": "/spa-and-wellness", "title": "Wellness", "status": "deferred", "reason": "Current spa availability language conflicts across the client site; retain as a homepage pillar until confirmed." },
+    { "route": "/resort", "title": "The Resort", "status": "deferred", "reason": "Outside the default homepage plus two supporting-page scope." },
+    { "route": "/about-dorje", "title": "About Dorje", "status": "deferred", "reason": "Founder story is represented on the homepage; full biography remains on the current site." },
+    { "route": "/sustainability", "title": "Sustainability", "status": "deferred", "reason": "Core commitments are represented on the homepage; full detail remains on the current site." },
+    { "route": "/media-gallery", "title": "Media Gallery", "status": "deferred", "reason": "Outside the initial commercial scope." },
+    { "route": "/contact", "title": "Contact", "status": "deferred", "reason": "Existing client contact page remains linked while email and phone are present site-wide." },
+    { "route": "/booking", "title": "Booking", "status": "deferred", "reason": "Existing third-party booking engine remains the source of truth for rates and availability." }
+  ]
+}

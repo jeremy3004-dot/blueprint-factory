@@ -47,7 +47,7 @@ Donor URL: https://www.aman.com
 - Icons are minimal inline SVGs written for the shell; client-owned logo SVG is reused.
 - All client asset origins and rights basis are recorded in `asset-log.md`.
 
-## 6. implementation stack decision
+## 6. Implementation Stack Decision
 
 Decision: Build in TypeScript + Next.js App Router + React + global CSS, with native HTML video, CSS transitions/scroll-snap and a tiny IntersectionObserver layer for one-shot reveals. No GSAP, Three.js, Lottie, Rive, Supabase, CMS, auth or database is needed.
 

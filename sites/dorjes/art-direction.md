@@ -16,9 +16,9 @@ Secondary reference: Dorje's current site (`https://dorjes.com`) for all brand t
 
 **Stillness Above the Lake** treats the resort as a sequence of thresholds: city to hillside, hillside to lake, lake to room, room to inner calm. The visual language is refined Himalayan modernism—warm parchment, moss-black ink, oxidised brass, generous photography and a fine topographic-line motif used sparingly.
 
-## Signature moment: The Lake Aperture
+## 3. The signature moment (required)
 
-The homepage opens on Dorje's own resort film inside a precisely framed Aman-like masthead. On load the film settles from a quiet 1.04 scale while the wordmark and a one-line promise rise in; when the visitor begins to scroll, the frame subtly opens and hands off into a layered lake/room/spa editorial sequence. Motion is slow and purposeful, never ornamental. With reduced motion, the frame and text render immediately without scale or reveal animation.
+**The Lake Aperture** opens on Dorje's photographic lake terrace inside a precisely framed Aman-like masthead. Over the first 300 pixels of scroll, the 1260px frame expands to the viewport edge and hands off into a layered lake/room/spa editorial sequence. Dorje's illustrated resort film remains available through an intentional watch control instead of weakening the default first impression. With reduced motion, the frame stays stable and content renders immediately.
 
 ## Typography and color
 
@@ -29,4 +29,3 @@ The homepage opens on Dorje's own resort film inside a precisely framed Aman-lik
 ## Motion
 
 Copy and adapt the factory's `hero-settle`, `text-reveal`, `scroll-reveal`, and `parallax-media` patterns. All entrances are one-shot IntersectionObserver reveals with restrained durations; hover zoom applies only on hover-capable devices. No looping decorative animation beyond the user's own hero film.
-
