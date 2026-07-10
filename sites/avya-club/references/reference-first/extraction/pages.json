@@ -1,0 +1,182 @@
+[
+  {
+    "path": "/",
+    "url": "https://republicbos.com/",
+    "label": "Skip to content",
+    "area": "header"
+  },
+  {
+    "path": "/about-us",
+    "url": "https://republicbos.com/about-us",
+    "label": "About Us",
+    "area": "nav"
+  },
+  {
+    "path": "/app",
+    "url": "https://republicbos.com/app",
+    "label": "Apps",
+    "area": "header"
+  },
+  {
+    "path": "/careers",
+    "url": "https://republicbos.com/careers",
+    "label": "Careers",
+    "area": "nav"
+  },
+  {
+    "path": "/club-status",
+    "url": "https://republicbos.com/club-status",
+    "label": "Club Status",
+    "area": "nav"
+  },
+  {
+    "path": "/corporate-partnerships",
+    "url": "https://republicbos.com/corporate-partnerships",
+    "label": "Corporate Partnerships",
+    "area": "header"
+  },
+  {
+    "path": "/davis-square",
+    "url": "https://republicbos.com/davis-square",
+    "label": "Davis Square",
+    "area": "header"
+  },
+  {
+    "path": "/davis-square/classes",
+    "url": "https://republicbos.com/davis-square/classes",
+    "label": "Davis Square Classes",
+    "area": "header"
+  },
+  {
+    "path": "/davis-square/classes/fitness-floor",
+    "url": "https://republicbos.com/davis-square/classes/fitness-floor",
+    "label": "Explore Davis Square",
+    "area": "body"
+  },
+  {
+    "path": "/davis-square/classes/move-studio",
+    "url": "https://republicbos.com/davis-square/classes/move-studio",
+    "label": "Explore Davis Square",
+    "area": "body"
+  },
+  {
+    "path": "/davis-square/classes/restore-spa",
+    "url": "https://republicbos.com/davis-square/classes/restore-spa",
+    "label": "Explore Davis Square",
+    "area": "body"
+  },
+  {
+    "path": "/davis-square/classes/strength-studio",
+    "url": "https://republicbos.com/davis-square/classes/strength-studio",
+    "label": "Explore Davis Square",
+    "area": "body"
+  },
+  {
+    "path": "/financial-district",
+    "url": "https://republicbos.com/financial-district",
+    "label": "Financial District",
+    "area": "header"
+  },
+  {
+    "path": "/financial-district/classes",
+    "url": "https://republicbos.com/financial-district/classes",
+    "label": "Financial District Classes",
+    "area": "header"
+  },
+  {
+    "path": "/financial-district/classes/fit-studio",
+    "url": "https://republicbos.com/financial-district/classes/fit-studio",
+    "label": "Explore Financial District",
+    "area": "body"
+  },
+  {
+    "path": "/financial-district/classes/restore-spa",
+    "url": "https://republicbos.com/financial-district/classes/restore-spa",
+    "label": "Explore Financial District",
+    "area": "body"
+  },
+  {
+    "path": "/member-policies",
+    "url": "https://republicbos.com/member-policies",
+    "label": "Member Policies",
+    "area": "nav"
+  },
+  {
+    "path": "/membership-promotion",
+    "url": "https://republicbos.com/membership-promotion",
+    "label": "Pricing",
+    "area": "header"
+  },
+  {
+    "path": "/membership-promotion/davis-square",
+    "url": "https://republicbos.com/membership-promotion/davis-square",
+    "label": "Join Davis Square",
+    "area": "header"
+  },
+  {
+    "path": "/membership-promotion/financial-district",
+    "url": "https://republicbos.com/membership-promotion/financial-district",
+    "label": "Join Financial District",
+    "area": "header"
+  },
+  {
+    "path": "/membership-requests",
+    "url": "https://republicbos.com/membership-requests",
+    "label": "Managing Your Account",
+    "area": "nav"
+  },
+  {
+    "path": "/news",
+    "url": "https://republicbos.com/news",
+    "label": "News",
+    "area": "header"
+  },
+  {
+    "path": "/nutrition",
+    "url": "https://republicbos.com/nutrition",
+    "label": "Nutrition",
+    "area": "header"
+  },
+  {
+    "path": "/personal-training-suite",
+    "url": "https://republicbos.com/personal-training-suite",
+    "label": "Personal Training",
+    "area": "header"
+  },
+  {
+    "path": "/privacy-policy",
+    "url": "https://republicbos.com/privacy-policy",
+    "label": "Privacy Policy",
+    "area": "nav"
+  },
+  {
+    "path": "/recovery",
+    "url": "https://republicbos.com/recovery",
+    "label": "Recovery",
+    "area": "header"
+  },
+  {
+    "path": "/ref",
+    "url": "https://republicbos.com/ref",
+    "label": "Member Referral",
+    "area": "nav"
+  },
+  {
+    "path": "/restore-spa-landing",
+    "url": "https://republicbos.com/restore-spa-landing",
+    "label": "Restore Spa",
+    "area": "header"
+  },
+  {
+    "path": "/resubscribe",
+    "url": "https://republicbos.com/resubscribe",
+    "label": "Resubscribe",
+    "area": "nav"
+  },
+  {
+    "path": "/trial-pass",
+    "url": "https://republicbos.com/trial-pass",
+    "label": "Trial",
+    "area": "header"
+  }
+]

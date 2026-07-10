@@ -1,0 +1,106 @@
+[
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/avya/avyamain1.png",
+    "width": 133,
+    "height": 72,
+    "alt": "logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/avya/avya3.png",
+    "width": 89,
+    "height": 50,
+    "alt": "logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/avya/avya2.png",
+    "width": 126,
+    "height": 71,
+    "alt": "logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/avya/aboutphoto.png",
+    "width": 620,
+    "height": 640,
+    "alt": "About Avya Club",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/avya/avya.png",
+    "width": 1998,
+    "height": 1124,
+    "alt": "Avya Club Logo",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/swim.png",
+    "width": 64,
+    "height": 58,
+    "alt": "Swimming Pool",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/gym.png",
+    "width": 64,
+    "height": 31,
+    "alt": "GYM & Fitness",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/fitness.png",
+    "width": 64,
+    "height": 55,
+    "alt": "Functional Fitness",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/court.png",
+    "width": 64,
+    "height": 59,
+    "alt": "Tennis Court",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/therapy.png",
+    "width": 64,
+    "height": 59,
+    "alt": "Physiotherapy",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/spa.png",
+    "width": 64,
+    "height": 57,
+    "alt": "Massage & Spa",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/club.png",
+    "width": 64,
+    "height": 74,
+    "alt": "Club House",
+    "referenceOnly": true
+  },
+  {
+    "type": "image",
+    "src": "https://avya.club/assets/img/icons/wellbeing.png",
+    "width": 64,
+    "height": 79,
+    "alt": "Well-being & Nutrition",
+    "referenceOnly": true
+  }
+]

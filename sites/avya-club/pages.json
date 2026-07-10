@@ -1,0 +1,15 @@
+{
+  "pages": [
+    { "route": "/", "title": "Home", "status": "planned", "source": "https://avya.club/" },
+    { "route": "/about", "title": "About", "status": "planned", "source": "https://avya.club/about" },
+    { "route": "/services", "title": "Services", "status": "planned", "source": "https://avya.club/service" },
+    { "route": "/gallery", "title": "Gallery", "status": "planned", "source": "https://avya.club/gallery" },
+    { "route": "/contact", "title": "Contact", "status": "planned", "source": "https://avya.club/contact" },
+    { "route": "/membership", "title": "Membership", "status": "planned", "source": "https://avya.club/register" },
+    { "route": "/register", "title": "Legacy registration", "status": "deferred", "reason": "Use the verified Avya registration URL as an external conversion destination; no custom registration backend." },
+    { "route": "/team", "title": "Team", "status": "deferred", "reason": "No staff route in the approved six-route commercial scope." },
+    { "route": "/faq", "title": "FAQ", "status": "deferred", "reason": "FAQ content is not required for the approved six-route launch." },
+    { "route": "/blog", "title": "Blog", "status": "deferred", "reason": "No CMS or editorial publishing workflow is in scope." },
+    { "route": "/service-details/*", "title": "Legacy service details", "status": "deferred", "reason": "Six captured service-detail records are consolidated into /services; no database-backed detail routes." }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/",
+    "url": "https://avya.club/",
+    "label": "home",
+    "area": "header"
+  },
+  {
+    "path": "/about",
+    "url": "https://avya.club/about",
+    "label": "About",
+    "area": "header"
+  },
+  {
+    "path": "/blog",
+    "url": "https://avya.club/blog",
+    "label": "Blog",
+    "area": "header"
+  },
+  {
+    "path": "/contact",
+    "url": "https://avya.club/contact",
+    "label": "Contact",
+    "area": "header"
+  },
+  {
+    "path": "/faq",
+    "url": "https://avya.club/faq",
+    "label": "FAQ",
+    "area": "header"
+  },
+  {
+    "path": "/gallery",
+    "url": "https://avya.club/gallery",
+    "label": "Gallery",
+    "area": "header"
+  },
+  {
+    "path": "/register",
+    "url": "https://avya.club/register",
+    "label": "Join Us Today",
+    "area": "header"
+  },
+  {
+    "path": "/service",
+    "url": "https://avya.club/service",
+    "label": "Service",
+    "area": "header"
+  },
+  {
+    "path": "/team",
+    "url": "https://avya.club/team",
+    "label": "Support",
+    "area": "header"
+  }
+]
