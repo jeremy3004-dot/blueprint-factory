@@ -14,3 +14,5 @@
 - Approved brief and art direction lock the clone-first sequence and the Ambika Living Menu Wall translation.
 - Added site-local red/green contract tests covering all 64 reference routes, page families, navigation links, catalogue slugs, optional facts, and donor-media provenance.
 - Site-local test result: 4 passed, 0 failed. Initial Next build passed after the scoped non-lockfile dependency install.
+- Added the donor chrome shell: announcement bar, fixed contrast-changing header, mega-menu, mobile drawer, cart drawer, newsletter footer, dense site map, and oversized footer wordmark.
+- Chrome contract test cycle: 3 expected RED failures before components; final site-local result 7 passed, 0 failed. Next build passes.
