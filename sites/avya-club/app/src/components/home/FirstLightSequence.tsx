@@ -58,7 +58,7 @@ export function FirstLightSequence() {
   }, [activeIndex, motionAllowed]);
 
   function selectState(index: number) {
-    if (motionAllowed) setActiveIndex(index);
+    setActiveIndex(index);
   }
 
   return (
