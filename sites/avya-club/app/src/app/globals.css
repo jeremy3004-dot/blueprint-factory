@@ -1360,3 +1360,538 @@ a:focus-visible {
     transition: none;
   }
 }
+
+/* Task 6 inner routes */
+
+.innerPage {
+  padding-inline: 4vw;
+  color: #222621;
+  background: #fff8f0;
+}
+
+.innerHero {
+  position: relative;
+  display: flex;
+  min-height: 520px;
+  align-items: flex-end;
+  margin-inline: -4vw;
+  padding: 72px 4vw;
+  overflow: hidden;
+  color: #fff8f0;
+  background: #222621;
+  isolation: isolate;
+}
+
+.innerHeroMedia,
+.innerHeroScrim {
+  position: absolute;
+  inset: 0;
+}
+
+.innerHeroMedia {
+  aspect-ratio: auto !important;
+}
+
+.innerHeroScrim {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(34, 38, 33, 0.88), rgba(34, 38, 33, 0.34));
+}
+
+.innerHeroCopy {
+  position: relative;
+  z-index: 2;
+  width: min(820px, 100%);
+}
+
+.innerHero h1 {
+  margin: 0;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(52px, 4.81vw, 69.216px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.innerHeroSummary {
+  width: min(610px, 100%);
+  margin: 24px 0 28px;
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.innerHero .editorialLink {
+  transition: color 250ms ease;
+}
+
+.innerHero .editorialLink:hover,
+.innerHero .editorialLink:focus-visible {
+  color: #3dbbad;
+}
+
+.aboutStory {
+  display: grid;
+  min-height: 780px;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: -4vw;
+  color: #222621;
+  background: #f2e7d8;
+}
+
+.aboutStoryCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 86.4px 72px 57.6px;
+}
+
+.aboutStory h2,
+.contactStatement h2,
+.membershipRegister h2 {
+  margin: 0 0 28px;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(46px, 4.81vw, 69.216px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.aboutStoryCopy > p:not(.sectionEyebrow) {
+  margin: 0 0 22px;
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.aboutStoryCopy .editorialLink {
+  width: fit-content;
+  margin-top: 14px;
+}
+
+.aboutStoryMedia {
+  height: 100%;
+  aspect-ratio: auto !important;
+}
+
+.serviceIndex {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-inline: -4vw;
+  background: #595d57;
+}
+
+.serviceCard {
+  display: flex;
+  min-height: 510.4px;
+  flex-direction: column;
+  padding: 72px 43.2px;
+  border-right: 1px solid rgba(255, 248, 240, 0.35);
+  border-bottom: 1px solid rgba(255, 248, 240, 0.35);
+  color: #fff8f0;
+  transition: color 250ms ease, background-color 250ms ease;
+}
+
+.serviceCard:hover,
+.serviceCard:focus-within {
+  color: #222621;
+  background: #fff8f0;
+}
+
+.serviceCardNumber,
+.membershipGroupNumber {
+  margin: 0 0 34px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.serviceCardIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 42px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.serviceCard h2,
+.membershipGroup h2 {
+  margin: 0 0 20px;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 34.456px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 41.3472px;
+}
+
+.serviceCard > p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.serviceCard .editorialLink {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 4vw;
+  margin-inline: -4vw;
+  padding: 4vw;
+  color: #fff8f0;
+  background: #222621;
+}
+
+.galleryFigure {
+  padding: 0;
+  margin: 0;
+  background: #f2e7d8;
+}
+
+.galleryFigure1 {
+  grid-column: span 7;
+}
+
+.galleryFigure2 {
+  grid-column: span 5;
+  margin-top: 12vw;
+}
+
+.galleryFigure3 {
+  grid-column: 3 / span 8;
+}
+
+.galleryFigure img {
+  display: block;
+  width: 100%;
+  height: clamp(440px, 55vw, 790px);
+  object-fit: cover;
+}
+
+.galleryFigure2 img {
+  height: clamp(380px, 43vw, 620px);
+}
+
+.galleryFigure figcaption {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px;
+  color: #222621;
+}
+
+.contactSplit {
+  display: grid;
+  min-height: 720px;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: -4vw;
+}
+
+.contactStatement,
+.contactActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 57.6px 86.4px;
+}
+
+.contactStatement {
+  color: #fff8f0;
+  background: #222621;
+}
+
+.contactStatement address,
+.contactHours {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 27.9px;
+}
+
+.contactHours {
+  margin: 22px 0 0;
+}
+
+.contactActions {
+  gap: 0;
+  background: #f2e7d8;
+}
+
+.contactAction {
+  display: grid;
+  min-height: 92px;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid rgba(34, 38, 33, 0.35);
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+
+.contactAction:first-child {
+  border-top: 1px solid rgba(34, 38, 33, 0.35);
+}
+
+.contactAction:hover,
+.contactAction:focus-visible {
+  color: #178f83;
+}
+
+.contactAction svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contactAction span,
+.contactAction small {
+  display: block;
+}
+
+.contactAction small {
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contactActions > .editorialLink {
+  width: fit-content;
+  margin-top: 36px;
+}
+
+.membershipIndex {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-inline: -4vw;
+  background: #f2e7d8;
+}
+
+.membershipGroup {
+  min-height: 520px;
+  padding: 64px 86.4px 60px 57.6px;
+  border-right: 1px solid rgba(34, 38, 33, 0.25);
+  border-bottom: 1px solid rgba(34, 38, 33, 0.25);
+}
+
+.membershipGroup ul {
+  padding: 0;
+  border-top: 1px solid rgba(34, 38, 33, 0.35);
+  margin: 30px 0 24px;
+  list-style: none;
+}
+
+.membershipGroup li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(34, 38, 33, 0.35);
+  font-size: 16px;
+}
+
+.membershipPriceNote {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.membershipRegister {
+  display: grid;
+  min-height: 620px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-inline: -4vw;
+  padding: 57.6px;
+  color: #fff8f0;
+  background: #222621;
+  gap: 86.4px;
+}
+
+.membershipRegister h2 {
+  margin-bottom: 0;
+  font-size: clamp(64px, 6.6vw, 94.928px);
+  line-height: 1.1;
+}
+
+.membershipRegisterActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .innerHero {
+    min-height: 420px;
+    padding: 61.44px 4vw;
+  }
+
+  .aboutStory {
+    min-height: 900px;
+  }
+
+  .aboutStoryCopy {
+    padding: 61.44px 46.08px;
+  }
+
+  .serviceIndex {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .serviceCard {
+    min-height: 500px;
+    padding: 48px 30.72px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .galleryFigure1,
+  .galleryFigure2,
+  .galleryFigure3 {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .galleryFigure3 {
+    grid-column: 1 / -1;
+  }
+
+  .galleryFigure img,
+  .galleryFigure2 img {
+    height: 560px;
+  }
+
+  .contactSplit,
+  .membershipRegister {
+    grid-template-columns: 1fr;
+  }
+
+  .contactStatement,
+  .contactActions,
+  .membershipRegister {
+    min-height: 540px;
+    padding: 61.44px 46.08px;
+  }
+
+  .membershipIndex {
+    grid-template-columns: 1fr;
+  }
+
+  .membershipGroup {
+    min-height: auto;
+    padding: 61.44px 46.08px;
+  }
+}
+
+@media (max-width: 520px) {
+  .innerPage {
+    padding-inline: 16px;
+  }
+
+  .innerHero,
+  .aboutStory,
+  .serviceIndex,
+  .galleryGrid,
+  .contactSplit,
+  .membershipIndex,
+  .membershipRegister {
+    margin-inline: -16px;
+  }
+
+  .innerHero {
+    min-height: 420px;
+    padding: 48px 16px;
+  }
+
+  .innerHero h1 {
+    max-width: 358px;
+    font-size: 46px;
+  }
+
+  .innerHeroSummary {
+    margin: 20px 0 24px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .aboutStory {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .aboutStoryCopy {
+    padding: 64px 24px;
+  }
+
+  .aboutStory h2,
+  .contactStatement h2 {
+    font-size: 46px;
+  }
+
+  .aboutStoryCopy > p:not(.sectionEyebrow) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .aboutStoryMedia {
+    height: 520px;
+  }
+
+  .serviceIndex {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    min-height: 440px;
+    padding: 48px 24px;
+  }
+
+  .galleryGrid {
+    display: block;
+    padding: 16px;
+  }
+
+  .galleryFigure + .galleryFigure {
+    margin-top: 16px;
+  }
+
+  .galleryFigure img,
+  .galleryFigure2 img {
+    height: 440px;
+  }
+
+  .galleryFigure figcaption {
+    min-height: 74px;
+    padding: 16px;
+  }
+
+  .contactStatement,
+  .contactActions {
+    min-height: 470px;
+    padding: 32px 24px;
+  }
+
+  .contactActions {
+    min-height: 560px;
+  }
+
+  .contactAction {
+    min-height: 96px;
+  }
+
+  .membershipGroup {
+    padding: 48px 24px;
+  }
+
+  .membershipRegister {
+    min-height: 720px;
+    padding: 32px 24px;
+    gap: 48px;
+  }
+
+  .membershipRegister h2 {
+    font-size: 62px;
+  }
+}
