@@ -12,3 +12,5 @@
 - Completed `topology.md` and `clone-plan.md` with exact page families, responsive rhythm, interaction states, asset rules, and stack decisions.
 - Expanded `pages.json` from the three default routes to all 64 harvested public donor routes as planned coverage.
 - Approved brief and art direction lock the clone-first sequence and the Ambika Living Menu Wall translation.
+- Added site-local red/green contract tests covering all 64 reference routes, page families, navigation links, catalogue slugs, optional facts, and donor-media provenance.
+- Site-local test result: 4 passed, 0 failed. Initial Next build passed after the scoped non-lockfile dependency install.

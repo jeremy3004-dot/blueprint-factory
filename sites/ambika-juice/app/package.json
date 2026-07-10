@@ -1,10 +1,12 @@
 {
   "name": "ambika-juice",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test tests/*.test.ts"
   },
   "dependencies": {
     "@gsap/react": "latest",
