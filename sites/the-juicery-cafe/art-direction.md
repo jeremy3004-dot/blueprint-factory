@@ -92,3 +92,14 @@ bottom edge.
 - All eight useful public routes render, with the legacy event URL preserved.
 - Client images are local, optimized by Next, and recorded in `asset-log.md`.
 - Visit details are consistent everywhere and all unsupported facts are listed for client input.
+
+## 12. Second-pass refinement (2026-07-11)
+
+- Kept the original 7-band donor topology; the added facts rail belongs to the opening chapter and
+  the day sequence belongs to the community chapter.
+- Replaced the homepage's empty community pause with an asymmetric documentary collage.
+- Added a dark, image-backed morning-to-evening field that aligns with the donor's photographic
+  destination rhythm without repeating its content.
+- Shifted every public route from research/process language to warm, honest hospitality copy.
+- Added restrained paper grain, richer menu-overlay cues, contextual contact pairs, and sharper
+  exterior crops while preserving reduced-motion behavior.

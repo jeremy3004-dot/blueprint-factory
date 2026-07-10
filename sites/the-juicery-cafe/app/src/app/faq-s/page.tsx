@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "What time is the cafe open?",
-    answer: `The current website lists opening hours as ${contact.hours}.`,
+    answer: `Listed opening hours are ${contact.hours}. If you are making a special trip, call or message the cafe to confirm.`,
   },
   {
     question: "What kind of food and drinks do you serve?",
@@ -60,6 +60,9 @@ export default function FaqPage() {
             </details>
           ))}
         </div>
+      </section>
+      <section className="contact-note">
+        <p data-reveal>Still planning? Call, message, or open the map. The cafe is happy to help with the useful details.</p>
       </section>
     </>
   );

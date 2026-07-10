@@ -39,7 +39,7 @@ export default function EventsPage() {
         <p>Weekly kirtan, open-mic jamming, and art talks are part of the community programme.</p>
       </ImageStory>
       <InquiryBand label="Current schedule" title="Ask what's on while you're in Pokhara.">
-        <p>Dates and booking details are not published reliably on the current site, so please contact the cafe directly.</p>
+        <p>The programme moves with the season. Message the cafe for current dates, times, and ways to join.</p>
       </InquiryBand>
     </>
   );

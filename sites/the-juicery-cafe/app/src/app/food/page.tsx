@@ -28,9 +28,9 @@ export default function FoodPage() {
 
       <section className="menu-glimpse">
         <div className="menu-glimpse-heading" data-reveal>
-          <p className="section-label">From the current listing</p>
-          <h2>A glimpse, not a fixed menu.</h2>
-          <p>Prices and full availability need a fresh cafe-supplied menu before publication.</p>
+          <p className="section-label">A few favorites</p>
+          <h2>Look to the board. Follow the season.</h2>
+          <p>The menu changes, but these are a few of the flavors people come looking for.</p>
         </div>
         <div className="menu-glimpse-list">
           {menuHighlights.map((item, index) => (
@@ -80,7 +80,7 @@ export default function FoodPage() {
 
       <InquiryBand label="Three-day programme" title="Juice detox & cleansing">
         <p>{facts.cleansing}</p>
-        <p>Contact the cafe for current availability, inclusions, and guidance before making plans.</p>
+        <p>Ask the cafe about current availability, what is included, and whether the programme is right for you.</p>
       </InquiryBand>
     </>
   );

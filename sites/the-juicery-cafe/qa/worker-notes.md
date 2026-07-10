@@ -41,3 +41,13 @@
   webpack build did not honor the app's `@/` aliases, and its unlocked install omitted TypeScript build
   packages. Relative imports plus an app-local npm lockfile produced a reproducible cloud build. The
   repaired preview is **Ready**; protection and deployment health are now reported as separate states.
+- Second-pass judgment: the highest-leverage miss was not a new feature but the customer-facing
+  editorial layer. The original homepage had an oversized text-only community pause, and several
+  secondary routes exposed QA language. The revision keeps the donor's topology, adds documentary
+  image rhythm and useful decision points, and leaves unconfirmed prices/schedules honest.
+- The first expansion briefly increased the homepage from 7 to 9 measured bands and dropped structure
+  to 66%. Folding the facts and day sequence into the existing hero/community chapters restored 7/7;
+  the final image-backed day field reached the 85% translation gate.
+- Root `pnpm test` is not fully green in this worktree: 149 pass and 3 prospect-thumbnail tests fail
+  because `.blueprint-search-nepal` screenshot fixtures are absent. The Juicery-specific verifier and
+  clean app build pass.

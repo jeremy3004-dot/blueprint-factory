@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { RevealManager, SiteFooter, SiteHeader } from "../components/site-chrome";
+import { contact } from "../data/site";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -28,12 +29,45 @@ export const metadata: Metadata = {
     description: "Cold-pressed mornings and seasonal brunch in North Lakeside, Pokhara.",
     images: ["/images/juicery/brunch-wide.jpg"],
   },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  name: "The Juicery Cafe",
+  url: "https://www.thejuicerycafe.com",
+  image: "https://www.thejuicerycafe.com/images/juicery/brunch-wide.jpg",
+  telephone: contact.phoneDisplay,
+  email: contact.email,
+  servesCuisine: ["Brunch", "Juice", "Vegetarian", "Vegan", "International"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Lakeside near Street 22A, opposite Three Sisters Guesthouse",
+    addressLocality: "Pokhara",
+    postalCode: "33700",
+    addressCountry: "NP",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "07:30",
+      closes: "23:00",
+    },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <a className="skip-link" href="#content">
           Skip to content
         </a>

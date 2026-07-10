@@ -9,7 +9,7 @@ export function HomeHero() {
   const [cardVisible, setCardVisible] = useState(true);
 
   return (
-    <section className="home-hero" aria-labelledby="home-hero-title">
+    <div className="home-hero">
       <Image
         className="hero-media"
         src="/images/juicery/brunch-wide.jpg"
@@ -52,6 +52,6 @@ export function HomeHero() {
           </button>
         </aside>
       ) : null}
-    </section>
+    </div>
   );
 }

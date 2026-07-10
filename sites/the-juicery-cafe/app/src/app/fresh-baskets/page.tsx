@@ -12,15 +12,15 @@ export default function FreshBasketsPage() {
       <InnerHero
         eyebrow="Fresh baskets"
         title="Bring the season home."
-        lede="Availability, contents, pricing, and delivery areas need confirmation from the cafe."
+        lede="A simple way to ask what is fresh, local, and available now."
         image="/images/juicery/brunch-wide.jpg"
         imageAlt="Fresh herbs held by a Juicery Cafe team member"
         imagePosition="center 34%"
       />
-      <EditorialIntro label="From the current site" title="The basket idea stays. Unsupported promises go.">
+      <EditorialIntro label="From the cafe" title="Good produce starts with a conversation.">
         <p>
-          The cafe maintains a Fresh Baskets page, but its current copy is an unfinished template. This version
-          offers a direct inquiry path without promising stock, pricing, contents, or free delivery.
+          Fresh baskets follow availability rather than a fixed catalogue. Ask the cafe what is coming in,
+          what a basket contains, and whether collection or delivery is available for you.
         </p>
       </EditorialIntro>
       <ImageStory
@@ -29,10 +29,10 @@ export default function FreshBasketsPage() {
         label="Ask what's fresh"
         title="A simple conversation first."
       >
-        <p>Contact the cafe to ask whether baskets are currently available and what is included.</p>
+        <p>Message the cafe for today's produce, basket size, price, and the simplest way to receive it.</p>
       </ImageStory>
-      <InquiryBand label="Needs client input" title="Availability, contents, price, and delivery area.">
-        <p>This page is ready to become a live offer once those four details are confirmed.</p>
+      <InquiryBand label="Fresh this week" title="Ask what is going into the next basket.">
+        <p>Availability and contents change. A quick message is the best way to get the current details.</p>
       </InquiryBand>
     </>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { contact } from "../data/site";
 
 type RevealStyle = CSSProperties & { "--delay"?: string };
 
@@ -158,7 +159,13 @@ export function InquiryBand({
         <SectionLabel>{label}</SectionLabel>
         <h2>{title}</h2>
         <div className="body-copy">{children}</div>
-        <OutlineLink href="/contact">Contact the cafe</OutlineLink>
+        <div className="inquiry-actions">
+          <OutlineLink href="/contact">Contact the cafe</OutlineLink>
+          <a className="outline-link" href={contact.whatsappHref} target="_blank" rel="noreferrer">
+            <span>Ask on WhatsApp</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
   );

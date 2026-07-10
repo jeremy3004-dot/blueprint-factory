@@ -14,8 +14,9 @@ export default function ContactPage() {
         eyebrow="North Lakeside · Pokhara"
         title="See you at the cafe."
         lede={`Open ${contact.hours}, near Street 22A.`}
-        image="/images/juicery/smoothies.jpg"
-        imageAlt="The Juicery Cafe entrance in North Lakeside, Pokhara"
+        image="/images/juicery/cafe-counter.jpg"
+        imageAlt="The open-air counter at The Juicery Cafe in North Lakeside, Pokhara"
+        imagePosition="center 48%"
       />
       <section className="contact-grid pattern-field">
         <div className="contact-heading" data-reveal>

@@ -12,14 +12,15 @@ export default function WeekendMarketPage() {
       <InnerHero
         eyebrow="Weekend market"
         title="Meet us around the harvest."
-        lede="Current dates and participation details are being refreshed."
-        image="/images/juicery/smoothies.jpg"
-        imageAlt="The entrance to The Juicery Cafe in North Lakeside"
+        lede="Seasonal produce, familiar faces, and a reason to linger in Lakeside."
+        image="/images/juicery/cafe-counter.jpg"
+        imageAlt="The open-air counter at The Juicery Cafe in North Lakeside"
+        imagePosition="center 48%"
       />
-      <EditorialIntro label="A useful reset" title="Real details, not old template copy.">
+      <EditorialIntro label="When the market is on" title="A slower kind of weekend plan.">
         <p>
-          The previous page mixed in unrelated information about California vendors and events. This rebuilt page
-          keeps the market route available without repeating claims the cafe has not confirmed.
+          Market dates and participants change through the year. The cafe can tell you what is happening this
+          weekend, when to arrive, and whether there is space to take part.
         </p>
       </EditorialIntro>
       <ImageStory
@@ -29,10 +30,10 @@ export default function WeekendMarketPage() {
         title="Ask for this weekend's plan."
         reverse
       >
-        <p>Contact the cafe for current opening dates, stall information, and ways to take part.</p>
+        <p>Message the cafe for this weekend's date, hours, stalls, and participation details.</p>
       </ImageStory>
-      <InquiryBand label="Needs client input" title="Dates, vendors, and participation details.">
-        <p>This page is ready for confirmed market information as soon as the cafe provides it.</p>
+      <InquiryBand label="This weekend" title="Find out what is growing, pouring, and gathering.">
+        <p>A quick message is the most reliable way to get the current market plan.</p>
       </InquiryBand>
     </>
   );

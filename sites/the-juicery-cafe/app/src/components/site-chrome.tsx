@@ -24,6 +24,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -36,6 +37,20 @@ export function SiteHeader() {
       if (event.key === "Escape") {
         setOpen(false);
         triggerRef.current?.focus();
+      }
+      if (event.key === "Tab" && overlayRef.current) {
+        const focusable = Array.from(
+          overlayRef.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
+        );
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -65,7 +80,15 @@ export function SiteHeader() {
         </button>
       </header>
 
-      <div id="site-menu" className={`menu-overlay ${open ? "is-open" : ""}`} aria-hidden={!open}>
+      <div
+        ref={overlayRef}
+        id="site-menu"
+        className={`menu-overlay ${open ? "is-open" : ""}`}
+        aria-hidden={!open}
+        aria-modal={open || undefined}
+        role="dialog"
+        aria-label="Site menu"
+      >
         <div className="menu-topline">
           <span className="menu-eyebrow">North Lakeside · Pokhara</span>
           <button

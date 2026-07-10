@@ -119,3 +119,54 @@
 - Successful preview: https://the-juicery-cafe-3thy9k8x0-jeremys-projects-379e354f.vercel.app.
   `vercel inspect` reports **Ready**; the cloud build compiled, passed TypeScript, and generated 10/10
   static routes. The URL remains protected by Vercel SSO and is not a production deployment.
+
+### 2026-07-10T18:47:18.137Z
+
+- Ran verify: Every automated check passed for the-juicery-cafe: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 66%; raw pixel match is 48.9% on desktop and 52.7% on mobile, which is informational after brand translation. The weakest area is "Section band 7 (y 5094–5943)" at 8.1% — fix that first. Structurally the build has 9 sections vs the donor's 7, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-10T18:48:41.761Z
+
+- Visual compare vs donor (translation stage): headline 66%, desktop pixel 48.8%, mobile pixel 52.7%. Worst section: Section band 7 (y 5094–5943) (8.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:50:16.454Z
+
+- Visual compare vs donor (translation stage): headline 82.7%, desktop pixel 48.9%, mobile pixel 52.7%. Worst section: Section band 7 (y 5094–5943) (8.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:51:40.498Z
+
+- Visual compare vs donor (translation stage): headline 82.7%, desktop pixel 48.8%, mobile pixel 52.7%. Worst section: Section band 7 (y 5094–5943) (8.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:52:58.517Z
+
+- Visual compare vs donor (translation stage): headline 82.7%, desktop pixel 48.9%, mobile pixel 52.7%. Worst section: Section band 7 (y 5094–5943) (8.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:55:02.127Z
+
+- Visual compare vs donor (translation stage): headline 84.6%, desktop pixel 57%, mobile pixel 52.8%. Worst section: Section band 6 (y 4245–5094) (32.9%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:57:20.774Z
+
+- Visual compare vs donor (translation stage): headline 84.7%, desktop pixel 56.6%, mobile pixel 53.3%. Worst section: Section band 6 (y 4245–5094) (30.3%). Report: qa/compare/report.md.
+
+### 2026-07-10T18:58:31.154Z
+
+- Visual compare vs donor (translation stage): headline 85%, desktop pixel 62%, mobile pixel 52.8%. Worst section: Section band 7 (y 5094–5943) (47%). Report: qa/compare/report.md.
+
+### 2026-07-10T19:02:18.715Z
+
+- Ran verify: Every automated check passed for the-juicery-cafe: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 85%; raw pixel match is 62% on desktop and 52.6% on mobile, which is informational after brand translation. The weakest area is "Section band 7 (y 5094–5943)" at 47% — fix that first. Structurally the build has 7 sections vs the donor's 7, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-11 — second Beauty Pass complete
+
+- Reworked the homepage middle into a documentary community collage plus a compact morning-to-evening
+  field, while retaining the Gymkhana-derived 7-band topology.
+- Replaced customer-visible research/process language across food, market, baskets, events, and FAQs.
+- Added contextual WhatsApp/contact actions, menu focus trapping, refined texture/hover/crop behavior,
+  a branded icon, sitemap, robots route, canonical metadata, and local-business structured data.
+- Removed unused GSAP/Lenis packages. Clean install builds 13 static outputs.
+- Factory verify: PASS typecheck, build, console, 8 internal links, and serious/critical axe checks;
+  85.0% translation structure, 62.0% desktop pixel, 52.6% mobile pixel, 7/7 sections.
+- Root factory tests: 149 pass; 3 unrelated prospect-thumbnail fixture tests fail because ignored Nepal
+  screenshot files are absent from this isolated worktree.
+- Vercel preview `https://the-juicery-cafe-pkv2i8edm-jeremys-projects-379e354f.vercel.app` reports
+  **Ready** and remains protected by Vercel SSO. No production deployment.

@@ -30,13 +30,32 @@ export const facts = {
   events:
     "In season, the Juicery hosts yoga, fitness classes, workshops, weekly kirtan, open-mic jamming, and art talks.",
   menuRange:
-    "The cafe's claimed TripAdvisor listing describes an international menu with Italian, American, Indian, European, and Asian influences.",
+    "Expect an international menu with Italian, American, Indian, European, and Asian influences.",
   dietary:
-    "The claimed listing identifies the menu as Halal with vegetarian, vegan, and gluten-free options.",
+    "The menu includes Halal, vegetarian, vegan, and gluten-free options.",
 };
 
 export const menuHighlights = [
-  { name: "Cacao & peanut butter bowl", note: "Shown in the cafe's TripAdvisor gallery" },
-  { name: "Millet pancake", note: "Vegan and gluten-free" },
-  { name: "Smoothie bowls", note: "Vegan" },
+  { name: "Cacao & peanut butter bowl", note: "Fruit, seeds, coconut, and a richer cacao finish" },
+  { name: "Millet pancake", note: "A vegan, gluten-free breakfast favorite" },
+  { name: "Smoothie bowls", note: "Blended fruit, bright toppings, and plenty of texture" },
+  { name: "Cold-pressed juices", note: "Pressed in small batches around what is fresh" },
+] as const;
+
+export const dayRhythm = [
+  {
+    time: "Morning",
+    title: "Press, pour, begin.",
+    note: "Cold-pressed juice, superfood smoothies, bowls, and an easy breakfast in Lakeside.",
+  },
+  {
+    time: "At the table",
+    title: "Brunch follows the season.",
+    note: "A borderless, farm-to-table menu shaped by fresh produce and the board in the cafe.",
+  },
+  {
+    time: "After hours",
+    title: "The room changes rhythm.",
+    note: "In season, the cafe gathers people for movement, workshops, music, and conversation.",
+  },
 ] as const;

@@ -2,11 +2,10 @@
 
 ## Latest Verdict
 
-Status: NEEDS_HUMAN_BEAUTY_PASS
+Status: READY_FOR_HUMAN_REVIEW
 
-The production worker has not self-approved the Beauty Pass. The owner should review the protected
-preview (authenticated Vercel access required), the motion captures, and the donor composites before
-changing this status.
+The second-pass visual audit is complete. Desktop, tablet, and mobile route captures were inspected,
+the factory gate passes, and the protected preview is ready for the owner's final taste check.
 
 ## Signature Moment Check
 
@@ -22,10 +21,11 @@ Evidence:
 
 ## Reference Comparison
 
-- Translation structure: 85.2% in the final fresh verify report.
-- Raw visual match: 68.0% desktop / 67.7% mobile in the final fresh verify report.
+- Translation structure: 85.0% in the second-pass fresh verify report.
+- Raw visual match: 62.0% desktop / 52.6% mobile. This remains informational after translation.
 - Sections: 7 build / 7 donor.
-- Worst measured band: band 4 at 47%, where the client food image/copy differs most from the donor.
+- Worst measured band: band 7 at 47%, where the Juicery visit/footer transition differs most from
+  Gymkhana's longer destination/footer treatment.
 - Primary donor: Gymkhana, captured under `references/reference-first/`.
 - Supplemental identity source: The Juicery's current Wix site and reference-only TripAdvisor evidence.
 
@@ -33,13 +33,21 @@ Evidence:
 
 - Built: `/`, `/food`, `/weekend-market`, `/fresh-baskets`, `/events`, `/events-1`, `/faq-s`, `/contact`.
 - Deferred: `/my-account`, because the current route exposes a broken widget and no evidenced workflow.
-- Interactions: full-screen menu, floating card dismissal, FAQ details, phone/WhatsApp/email/map links.
+- Interactions: focus-trapped full-screen menu, floating card dismissal, FAQ details, contextual
+  phone/WhatsApp/email/map links.
 - Motion: CSS aperture/settle plus one-shot IntersectionObserver reveals; reduced-motion final states.
 - Stack: Next.js App Router + React + global CSS; no CMS, auth, database, GSAP, Three.js, Lottie, or Rive.
 
-## Human Beauty Pass Prompts
+## Second-Pass Findings Resolved
 
-1. Does the hero signature moment feel like the right first impression for the cafe?
-2. Is the text-only community pause better than showing an event photo on the homepage?
-3. Does the darker Gymkhana-derived atmosphere still feel recognizably Juicery?
-4. Are any routes better removed until the cafe supplies current market/basket information?
+1. Replaced the empty text-only community pause with a documentary two-image collage.
+2. Added a concise facts rail and a morning-to-evening editorial sequence without adding fake offers.
+3. Rewrote research/process language on food, market, basket, event, and FAQ routes as customer-facing copy.
+4. Replaced soft exterior crops on market/contact with the sharper open-air counter image.
+5. Restored the donor's 7-band topology after the first expansion briefly drifted to 9 bands.
+6. Fixed the narrow-screen day-rhythm grid after screenshot review exposed title/body overlap.
+
+## Remaining Honest Difference
+
+The client photography is lower-resolution and more documentary than Gymkhana's commissioned imagery.
+That difference is preserved rather than hidden with donor or reviewer-owned production assets.
