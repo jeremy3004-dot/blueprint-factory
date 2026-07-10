@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import tokens from "../../tokens.json";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
 import { siteContent } from "../content/site";
 
 export const metadata: Metadata = {
@@ -28,7 +30,11 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: tokenCssVars() }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
