@@ -1,0 +1,140 @@
+[
+  {
+    "path": "/",
+    "url": "https://dorjes.com/",
+    "label": "Skip to main content",
+    "area": "header"
+  },
+  {
+    "path": "/about-dorje",
+    "url": "https://dorjes.com/about-dorje",
+    "label": "DORJE",
+    "area": "header"
+  },
+  {
+    "path": "/accommodation-in-pokhara",
+    "url": "https://dorjes.com/accommodation-in-pokhara",
+    "label": "COMFORT",
+    "area": "header"
+  },
+  {
+    "path": "/blogs",
+    "url": "https://dorjes.com/blogs",
+    "label": "BLOGS",
+    "area": "header"
+  },
+  {
+    "path": "/booking",
+    "url": "https://dorjes.com/booking",
+    "label": "BOOK NOW",
+    "area": "header"
+  },
+  {
+    "path": "/category/blogs",
+    "url": "https://dorjes.com/category/blogs",
+    "label": "Blogs",
+    "area": "footer"
+  },
+  {
+    "path": "/contact",
+    "url": "https://dorjes.com/contact",
+    "label": "CONTACT",
+    "area": "header"
+  },
+  {
+    "path": "/deluxe-room",
+    "url": "https://dorjes.com/deluxe-room",
+    "label": "Deluxe Room",
+    "area": "footer"
+  },
+  {
+    "path": "/dorje",
+    "url": "https://dorjes.com/dorje",
+    "label": "",
+    "area": "header"
+  },
+  {
+    "path": "/dorje-suite",
+    "url": "https://dorjes.com/dorje-suite",
+    "label": "Dorje Suite",
+    "area": "footer"
+  },
+  {
+    "path": "/faqs",
+    "url": "https://dorjes.com/faqs",
+    "label": "FAQs",
+    "area": "footer"
+  },
+  {
+    "path": "/index.php",
+    "url": "https://dorjes.com/index.php",
+    "label": "TASTE",
+    "area": "header"
+  },
+  {
+    "path": "/jen-suite",
+    "url": "https://dorjes.com/jen-suite",
+    "label": "Jen Suite",
+    "area": "footer"
+  },
+  {
+    "path": "/lakes-in-pokhara",
+    "url": "https://dorjes.com/lakes-in-pokhara",
+    "label": "Famous Lakes in Pokhara to visit in 2026",
+    "area": "body"
+  },
+  {
+    "path": "/media-gallery",
+    "url": "https://dorjes.com/media-gallery",
+    "label": "MEDIA GALLERY",
+    "area": "header"
+  },
+  {
+    "path": "/national-geographic-traveller",
+    "url": "https://dorjes.com/national-geographic-traveller",
+    "label": "",
+    "area": "body"
+  },
+  {
+    "path": "/paragliding-in-pokhara",
+    "url": "https://dorjes.com/paragliding-in-pokhara",
+    "label": "Paragliding in Pokhara: Things You Should Know",
+    "area": "body"
+  },
+  {
+    "path": "/resort",
+    "url": "https://dorjes.com/resort",
+    "label": "RESORT",
+    "area": "header"
+  },
+  {
+    "path": "/spa-and-wellness",
+    "url": "https://dorjes.com/spa-and-wellness",
+    "label": "REJUVENATE",
+    "area": "header"
+  },
+  {
+    "path": "/standard-room",
+    "url": "https://dorjes.com/standard-room",
+    "label": "Standard Room",
+    "area": "footer"
+  },
+  {
+    "path": "/sustainability",
+    "url": "https://dorjes.com/sustainability",
+    "label": "SUSTAINABILITY",
+    "area": "header"
+  },
+  {
+    "path": "/tastes",
+    "url": "https://dorjes.com/tastes",
+    "label": "TASTE",
+    "area": "header"
+  },
+  {
+    "path": "/top-10-places-to-visit-in-pokhara",
+    "url": "https://dorjes.com/top-10-places-to-visit-in-pokhara",
+    "label": "Pokhara valley",
+    "area": "body"
+  }
+]

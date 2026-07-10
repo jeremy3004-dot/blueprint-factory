@@ -1,0 +1,572 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.aman.com/",
+    "label": "Aman resorts",
+    "area": "header"
+  },
+  {
+    "path": "/about-us",
+    "url": "https://www.aman.com/about-us",
+    "label": "- Aman",
+    "area": "nav"
+  },
+  {
+    "path": "/active-adventure",
+    "url": "https://www.aman.com/active-adventure",
+    "label": "Active Adventure",
+    "area": "header"
+  },
+  {
+    "path": "/aman-beverly-hills",
+    "url": "https://www.aman.com/aman-beverly-hills",
+    "label": "Aman Beverly HillsBeverly Hills – Opening 2027",
+    "area": "header"
+  },
+  {
+    "path": "/aman-group",
+    "url": "https://www.aman.com/aman-group",
+    "label": "Aman Group",
+    "area": "nav"
+  },
+  {
+    "path": "/aman-interiors",
+    "url": "https://www.aman.com/aman-interiors",
+    "label": "- Aman Interiors",
+    "area": "nav"
+  },
+  {
+    "path": "/aman-maldives",
+    "url": "https://www.aman.com/aman-maldives",
+    "label": "Aman MaldivesRepublic of Maldives",
+    "area": "header"
+  },
+  {
+    "path": "/aman-spa-connaught",
+    "url": "https://www.aman.com/aman-spa-connaught",
+    "label": "Aman Spa at The ConnaughtLondon",
+    "area": "header"
+  },
+  {
+    "path": "/aman-yachts",
+    "url": "https://www.aman.com/aman-yachts",
+    "label": "Yachts",
+    "area": "header"
+  },
+  {
+    "path": "/amancaya",
+    "url": "https://www.aman.com/amancaya",
+    "label": "AmancayaExuma, The Bahamas, Coming soon",
+    "area": "header"
+  },
+  {
+    "path": "/amandira",
+    "url": "https://www.aman.com/amandira",
+    "label": "Amandira, Indonesia",
+    "area": "nav"
+  },
+  {
+    "path": "/book/aman",
+    "url": "https://www.aman.com/book/aman",
+    "label": "Reserve",
+    "area": "header"
+  },
+  {
+    "path": "/celebrations-events",
+    "url": "https://www.aman.com/celebrations-events",
+    "label": "Celebrations & Events",
+    "area": "header"
+  },
+  {
+    "path": "/contact-us",
+    "url": "https://www.aman.com/contact-us",
+    "label": "Contact us",
+    "area": "header"
+  },
+  {
+    "path": "/cookie-policy",
+    "url": "https://www.aman.com/cookie-policy",
+    "label": "Cookie Policy",
+    "area": "nav"
+  },
+  {
+    "path": "/culture",
+    "url": "https://www.aman.com/culture",
+    "label": "Culture",
+    "area": "header"
+  },
+  {
+    "path": "/destinations",
+    "url": "https://www.aman.com/destinations",
+    "label": "Destinations",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/asia",
+    "url": "https://www.aman.com/destinations/country/asia",
+    "label": "View all",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/china",
+    "url": "https://www.aman.com/destinations/country/china",
+    "label": "View all",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/europe-middle-east-north-africa",
+    "url": "https://www.aman.com/destinations/country/europe-middle-east-north-africa",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/india",
+    "url": "https://www.aman.com/destinations/country/india",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/indonesia",
+    "url": "https://www.aman.com/destinations/country/indonesia",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/italy",
+    "url": "https://www.aman.com/destinations/country/italy",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/japan",
+    "url": "https://www.aman.com/destinations/country/japan",
+    "label": "View all",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/sri-lanka",
+    "url": "https://www.aman.com/destinations/country/sri-lanka",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/thailand",
+    "url": "https://www.aman.com/destinations/country/thailand",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/destinations/country/usa-caribbean",
+    "url": "https://www.aman.com/destinations/country/usa-caribbean",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/digital-accessibility",
+    "url": "https://www.aman.com/digital-accessibility",
+    "label": "Digital Accessibility",
+    "area": "nav"
+  },
+  {
+    "path": "/dining",
+    "url": "https://www.aman.com/dining",
+    "label": "Dining",
+    "area": "header"
+  },
+  {
+    "path": "/dining/arva",
+    "url": "https://www.aman.com/dining/arva",
+    "label": "Arva",
+    "area": "header"
+  },
+  {
+    "path": "/dining/culinary-experiences",
+    "url": "https://www.aman.com/dining/culinary-experiences",
+    "label": "Culinary Experiences",
+    "area": "header"
+  },
+  {
+    "path": "/dining/nama",
+    "url": "https://www.aman.com/dining/nama",
+    "label": "Nama",
+    "area": "header"
+  },
+  {
+    "path": "/dining/nura",
+    "url": "https://www.aman.com/dining/nura",
+    "label": "Nura",
+    "area": "header"
+  },
+  {
+    "path": "/exclusive-offers",
+    "url": "https://www.aman.com/exclusive-offers",
+    "label": "Exclusive Offers",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/aman-miami-beach",
+    "url": "https://www.aman.com/hotels/aman-miami-beach",
+    "label": "Aman Miami BeachMiami Beach - Opening 2027",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/aman-nai-lert-bangkok",
+    "url": "https://www.aman.com/hotels/aman-nai-lert-bangkok",
+    "label": "Aman Nai Lert BangkokBangkok, Thailand",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/aman-new-york",
+    "url": "https://www.aman.com/hotels/aman-new-york",
+    "label": "Aman New YorkNew York, USA",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/aman-tokyo",
+    "url": "https://www.aman.com/hotels/aman-tokyo",
+    "label": "Aman TokyoTokyo, Japan",
+    "area": "header"
+  },
+  {
+    "path": "/hotels/aman-tokyo/residences",
+    "url": "https://www.aman.com/hotels/aman-tokyo/residences",
+    "label": "Aman Residences, Tokyo, Japan",
+    "area": "nav"
+  },
+  {
+    "path": "/hotels/aman-venice",
+    "url": "https://www.aman.com/hotels/aman-venice",
+    "label": "Aman VeniceVenice, Italy",
+    "area": "header"
+  },
+  {
+    "path": "/interiors",
+    "url": "https://www.aman.com/interiors",
+    "label": "Aman Interiors",
+    "area": "header"
+  },
+  {
+    "path": "/into-the-wilderness",
+    "url": "https://www.aman.com/into-the-wilderness",
+    "label": "<picture decoding=\"async\" class=\"aman-responsive-image--square\" loading=\"lazy\" width=\"366\" height=\"366\"><source srcset=\"/sites/default/files/styles/listing_teaser_extra_large/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=ZM0UlVDQ 1x, /sites/default/files/styles/listing_teaser_extra_large_2x/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=KztBtuUD 2x\" media=\"all and (min-width: 1240px)\" type=\"image/webp\" width=\"697\" height=\"697\"><source srcset=\"/sites/default/files/styles/listing_teaser_large/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=holpbA7e 1x, /sites/default/files/styles/listing_teaser_large_2x/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=6erR5N-_ 2x\" media=\"all and (min-width: 1024px)\" type=\"image/webp\" width=\"600\" height=\"600\"><source srcset=\"/sites/default/files/styles/listing_teaser_medium/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=JrU0UToZ 1x, /sites/default/files/styles/listing_teaser_medium_2x/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=rtaBL1lb 2x\" media=\"all and (min-width: 767px) and (max-width: 1023px)\" type=\"image/webp\" width=\"463\" height=\"463\"><source srcset=\"/sites/default/files/styles/listing_teaser_plus/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=v4-JI4r9 1x, /sites/default/files/styles/listing_teaser_plus_2x/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=VcaHL4NT 2x\" media=\"all and (min-width: 413px) and (max-width: 766px)\" type=\"image/webp\" width=\"431\" height=\"431\"><source srcset=\"/sites/default/files/styles/listing_teaser_small/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=xtTFUCU0 1x, /sites/default/files/styles/listing_teaser_small_2x/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=Xb_ijZKG 2x\" type=\"image/webp\" width=\"366\" height=\"366\"><img decoding=\"async\" class=\"media__element\" loading=\"lazy\" width=\"366\" height=\"366\" src=\"/sites/default/files/styles/listing_teaser_small/public/2024-06/aman-i-khas_india_-_spa_exterior.webp?itok=xtTFUCU0\" alt=\"Spa exterior at Aman-i-Khas at dusk, with illuminated canvas pavilion beneath a large tree.\"></picture> Nature To the Wilds",
+    "area": "body"
+  },
+  {
+    "path": "/journeys",
+    "url": "https://www.aman.com/journeys",
+    "label": "Experiences",
+    "area": "header"
+  },
+  {
+    "path": "/journeys/jet-expeditions",
+    "url": "https://www.aman.com/journeys/jet-expeditions",
+    "label": "Jet Expeditions",
+    "area": "header"
+  },
+  {
+    "path": "/leadership",
+    "url": "https://www.aman.com/leadership",
+    "label": "Leadership",
+    "area": "nav"
+  },
+  {
+    "path": "/legal-notice",
+    "url": "https://www.aman.com/legal-notice",
+    "label": "Legal Notice",
+    "area": "nav"
+  },
+  {
+    "path": "/new-developments",
+    "url": "https://www.aman.com/new-developments",
+    "label": "Forthcoming Developments",
+    "area": "nav"
+  },
+  {
+    "path": "/privacy-notice",
+    "url": "https://www.aman.com/privacy-notice",
+    "label": "Privacy Notice",
+    "area": "nav"
+  },
+  {
+    "path": "/residences",
+    "url": "https://www.aman.com/residences",
+    "label": "Residences",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-dubai",
+    "url": "https://www.aman.com/resorts/aman-dubai",
+    "label": "Aman DubaiDubai, United Arab Emirates, Coming Soon",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-dubai/uae",
+    "url": "https://www.aman.com/resorts/aman-dubai/uae",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-i-khas",
+    "url": "https://www.aman.com/resorts/aman-i-khas",
+    "label": "Aman-i-KhasRanthambore, India",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-karingani",
+    "url": "https://www.aman.com/resorts/aman-karingani",
+    "label": "Aman KaringaniMozambique, Coming Soon",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-kyoto",
+    "url": "https://www.aman.com/resorts/aman-kyoto",
+    "label": "Aman KyotoKyoto, Japan",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-le-melezin",
+    "url": "https://www.aman.com/resorts/aman-le-melezin",
+    "label": "Aman Le MélézinCourchevel 1850",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-niseko",
+    "url": "https://www.aman.com/resorts/aman-niseko",
+    "label": "Aman NisekoHokkaido – Opening 2030",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-rosa-alpina",
+    "url": "https://www.aman.com/resorts/aman-rosa-alpina",
+    "label": "Aman Rosa AlpinaDolomites, Italy",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-singapore",
+    "url": "https://www.aman.com/resorts/aman-singapore",
+    "label": "Aman Singapore",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/aman-sveti-stefan",
+    "url": "https://www.aman.com/resorts/aman-sveti-stefan",
+    "label": "Aman Sveti StefanSveti Stefan",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanbagh",
+    "url": "https://www.aman.com/resorts/amanbagh",
+    "label": "AmanbaghRajasthan, India",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amandari",
+    "url": "https://www.aman.com/resorts/amandari",
+    "label": "AmandariUbud, Bali",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amandayan",
+    "url": "https://www.aman.com/resorts/amandayan",
+    "label": "AmandayanLijiang, China",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanemu",
+    "url": "https://www.aman.com/resorts/amanemu",
+    "label": "AmanemuIse-Shima, Japan",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanera",
+    "url": "https://www.aman.com/resorts/amanera",
+    "label": "AmaneraPlaya Grande, Dominican Republic",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanfayun",
+    "url": "https://www.aman.com/resorts/amanfayun",
+    "label": "AmanfayunHangzhou, China",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amangalla",
+    "url": "https://www.aman.com/resorts/amangalla",
+    "label": "AmangallaGalle, Sri Lanka",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amangani",
+    "url": "https://www.aman.com/resorts/amangani",
+    "label": "AmanganiJackson Hole, USA, Reopening soon",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amangiri",
+    "url": "https://www.aman.com/resorts/amangiri",
+    "label": "AmangiriCanyon Point, Utah, USA",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanjena",
+    "url": "https://www.aman.com/resorts/amanjena",
+    "label": "AmanjenaMarrakech",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanjiwo",
+    "url": "https://www.aman.com/resorts/amanjiwo",
+    "label": "AmanjiwoJava, Indonesia",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amankila",
+    "url": "https://www.aman.com/resorts/amankila",
+    "label": "AmankilaManggis, Bali",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amankora",
+    "url": "https://www.aman.com/resorts/amankora",
+    "label": "AmankoraParo",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanoi",
+    "url": "https://www.aman.com/resorts/amanoi",
+    "label": "AmanoiKhanh Hoa, Vietnam",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanpulo",
+    "url": "https://www.aman.com/resorts/amanpulo",
+    "label": "AmanpuloPalawan, The Philippines",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanpuri",
+    "url": "https://www.aman.com/resorts/amanpuri",
+    "label": "AmanpuriPhuket, Thailand",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanruya",
+    "url": "https://www.aman.com/resorts/amanruya",
+    "label": "AmanruyaBodrum, Turkey",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amansamar",
+    "url": "https://www.aman.com/resorts/amansamar",
+    "label": "AmansamarKingdom of Saudi Arabia, Coming Soon",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amansamar/kingdom-of-saudi-arabia",
+    "url": "https://www.aman.com/resorts/amansamar/kingdom-of-saudi-arabia",
+    "label": "View All",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amansanu",
+    "url": "https://www.aman.com/resorts/amansanu",
+    "label": "AmansanuTEXAS HILL COUNTRY, USA, COMING SOON",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amansara",
+    "url": "https://www.aman.com/resorts/amansara",
+    "label": "AmansaraSiem Reap",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amantaka",
+    "url": "https://www.aman.com/resorts/amantaka",
+    "label": "AmantakaLuang Prabang",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanvari",
+    "url": "https://www.aman.com/resorts/amanvari",
+    "label": "AmanvariEast Cape, Mexico",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanwana",
+    "url": "https://www.aman.com/resorts/amanwana",
+    "label": "AmanwanaMoyo Island, Indonesia",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanwella",
+    "url": "https://www.aman.com/resorts/amanwella",
+    "label": "AmanwellaTangalle, Sri Lanka",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanyangyun",
+    "url": "https://www.aman.com/resorts/amanyangyun",
+    "label": "AmanyangyunShanghai, China",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanyara",
+    "url": "https://www.aman.com/resorts/amanyara",
+    "label": "AmanyaraProvidenciales, Turks and Caicos",
+    "area": "header"
+  },
+  {
+    "path": "/resorts/amanzoe",
+    "url": "https://www.aman.com/resorts/amanzoe",
+    "label": "AmanzoePorto Heli, Greece",
+    "area": "header"
+  },
+  {
+    "path": "/stories/an-amanzoe-exhibition",
+    "url": "https://www.aman.com/stories/an-amanzoe-exhibition",
+    "label": "<picture decoding=\"async\" class=\"aman-responsive-image--square\" loading=\"lazy\" width=\"366\" height=\"366\"><source srcset=\"/sites/default/files/styles/listing_teaser_extra_large/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=h2Bb5K_y 1x, /sites/default/files/styles/listing_teaser_extra_large_2x/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=uLg9IfeW 2x\" media=\"all and (min-width: 1240px)\" type=\"image/webp\" width=\"697\" height=\"697\"><source srcset=\"/sites/default/files/styles/listing_teaser_large/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=2wsfOuqJ 1x, /sites/default/files/styles/listing_teaser_large_2x/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=xXjL9-Zq 2x\" media=\"all and (min-width: 1024px)\" type=\"image/webp\" width=\"600\" height=\"600\"><source srcset=\"/sites/default/files/styles/listing_teaser_medium/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=DWLAfV-E 1x, /sites/default/files/styles/listing_teaser_medium_2x/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=lVeiewil 2x\" media=\"all and (min-width: 767px) and (max-width: 1023px)\" type=\"image/webp\" width=\"463\" height=\"463\"><source srcset=\"/sites/default/files/styles/listing_teaser_plus/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=asUKKrfr 1x, /sites/default/files/styles/listing_teaser_plus_2x/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=a0rgDBT5 2x\" media=\"all and (min-width: 413px) and (max-width: 766px)\" type=\"image/webp\" width=\"431\" height=\"431\"><source srcset=\"/sites/default/files/styles/listing_teaser_small/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=xr2OaaS0 1x, /sites/default/files/styles/listing_teaser_small_2x/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=MCc9FFXs 2x\" type=\"image/webp\" width=\"366\" height=\"366\"><img decoding=\"async\" class=\"media__element\" loading=\"lazy\" width=\"366\" height=\"366\" src=\"/sites/default/files/styles/listing_teaser_small/public/2026-06/Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---7-.webp?itok=xr2OaaS0\" alt=\"Ancient olive tree and manicured gardens at Amanzoe, Greece, at golden hour.\"></picture> amanzoe, greece An Amanzoe Exhibition",
+    "area": "body"
+  },
+  {
+    "path": "/stories/global-ambassador-novak-djokovic",
+    "url": "https://www.aman.com/stories/global-ambassador-novak-djokovic",
+    "label": "<picture decoding=\"async\" class=\"aman-responsive-image--square\" loading=\"lazy\" width=\"366\" height=\"366\"><source srcset=\"/sites/default/files/styles/listing_teaser_extra_large/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=an1yz-ox 1x, /sites/default/files/styles/listing_teaser_extra_large_2x/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=BLM2k4h4 2x\" media=\"all and (min-width: 1240px)\" type=\"image/webp\" width=\"697\" height=\"697\"><source srcset=\"/sites/default/files/styles/listing_teaser_large/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=qBgWUSEC 1x, /sites/default/files/styles/listing_teaser_large_2x/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=kDXKHqn0 2x\" media=\"all and (min-width: 1024px)\" type=\"image/webp\" width=\"600\" height=\"600\"><source srcset=\"/sites/default/files/styles/listing_teaser_medium/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=9BtbIdTR 1x, /sites/default/files/styles/listing_teaser_medium_2x/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=hL_zKmqe 2x\" media=\"all and (min-width: 767px) and (max-width: 1023px)\" type=\"image/webp\" width=\"463\" height=\"463\"><source srcset=\"/sites/default/files/styles/listing_teaser_plus/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=a8ClsdMT 1x, /sites/default/files/styles/listing_teaser_plus_2x/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=DaS9_Q1F 2x\" media=\"all and (min-width: 413px) and (max-width: 766px)\" type=\"image/webp\" width=\"431\" height=\"431\"><source srcset=\"/sites/default/files/styles/listing_teaser_small/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=R1Sl6q3P 1x, /sites/default/files/styles/listing_teaser_small_2x/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=gVeYfE9_ 2x\" type=\"image/webp\" width=\"366\" height=\"366\"><img decoding=\"async\" class=\"media__element\" loading=\"lazy\" width=\"366\" height=\"366\" src=\"/sites/default/files/styles/listing_teaser_small/public/2026-05/Brand-Ambassador_-Novak-Djokovic---Aman-New-York--United-States--1-.webp?itok=R1Sl6q3P\" alt=\"Novak Djokovic, brand ambassador for Aman New York, portrait photograph.\"></picture> wellness retreats A Novak Djokovic Programme",
+    "area": "body"
+  },
+  {
+    "path": "/stories/the-wonders-of-aman",
+    "url": "https://www.aman.com/stories/the-wonders-of-aman",
+    "label": "The wonders of Aman Moments of Transformation",
+    "area": "header"
+  },
+  {
+    "path": "/stories/urban-escapes",
+    "url": "https://www.aman.com/stories/urban-escapes",
+    "label": "<picture decoding=\"async\" class=\"aman-responsive-image--square\" loading=\"lazy\" width=\"366\" height=\"366\"><source srcset=\"/sites/default/files/styles/listing_teaser_extra_large/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=cBbon2vg 1x, /sites/default/files/styles/listing_teaser_extra_large_2x/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=rKOwMd9x 2x\" media=\"all and (min-width: 1240px)\" type=\"image/webp\" width=\"697\" height=\"697\"><source srcset=\"/sites/default/files/styles/listing_teaser_large/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=WjhjmjuM 1x, /sites/default/files/styles/listing_teaser_large_2x/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=ITktc9as 2x\" media=\"all and (min-width: 1024px)\" type=\"image/webp\" width=\"600\" height=\"600\"><source srcset=\"/sites/default/files/styles/listing_teaser_medium/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=AzN8Ri_Y 1x, /sites/default/files/styles/listing_teaser_medium_2x/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=C3MCnhar 2x\" media=\"all and (min-width: 767px) and (max-width: 1023px)\" type=\"image/webp\" width=\"463\" height=\"463\"><source srcset=\"/sites/default/files/styles/listing_teaser_plus/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=iwiRTzHp 1x, /sites/default/files/styles/listing_teaser_plus_2x/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=rOzWcObM 2x\" media=\"all and (min-width: 413px) and (max-width: 766px)\" type=\"image/webp\" width=\"431\" height=\"431\"><source srcset=\"/sites/default/files/styles/listing_teaser_small/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=1cxo71Sd 1x, /sites/default/files/styles/listing_teaser_small_2x/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=u7o0BcQb 2x\" type=\"image/webp\" width=\"366\" height=\"366\"><img decoding=\"async\" class=\"media__element\" loading=\"lazy\" width=\"366\" height=\"366\" src=\"/sites/default/files/styles/listing_teaser_small/public/2022-08/Aman%20New%20York%2C%20Exterior%20Facade%2C%20Website%20-%20Square.webp?itok=1cxo71Sd\" alt=\"Aman New York's curved exterior facade with classical arched windows and ornamental balustrade.\"></picture> CITY ESCAPES In the City",
+    "area": "body"
+  },
+  {
+    "path": "/sustainability",
+    "url": "https://www.aman.com/sustainability",
+    "label": "Sustainability",
+    "area": "nav"
+  },
+  {
+    "path": "/villas",
+    "url": "https://www.aman.com/villas",
+    "label": "<picture decoding=\"async\" class=\"aman-responsive-image--square\" loading=\"lazy\" width=\"366\" height=\"366\"><source srcset=\"/sites/default/files/styles/listing_teaser_extra_large/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=YQe8fhGa 1x, /sites/default/files/styles/listing_teaser_extra_large_2x/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=ZOTJQQ3M 2x\" media=\"all and (min-width: 1240px)\" type=\"image/webp\" width=\"697\" height=\"697\"><source srcset=\"/sites/default/files/styles/listing_teaser_large/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=LomEbQfQ 1x, /sites/default/files/styles/listing_teaser_large_2x/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=Zd7Kx0wA 2x\" media=\"all and (min-width: 1024px)\" type=\"image/webp\" width=\"600\" height=\"600\"><source srcset=\"/sites/default/files/styles/listing_teaser_medium/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=f5DAt02v 1x, /sites/default/files/styles/listing_teaser_medium_2x/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=KcqWxDU5 2x\" media=\"all and (min-width: 767px) and (max-width: 1023px)\" type=\"image/webp\" width=\"463\" height=\"463\"><source srcset=\"/sites/default/files/styles/listing_teaser_plus/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=cD1Irn8j 1x, /sites/default/files/styles/listing_teaser_plus_2x/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=uWhZa1gk 2x\" media=\"all and (min-width: 413px) and (max-width: 766px)\" type=\"image/webp\" width=\"431\" height=\"431\"><source srcset=\"/sites/default/files/styles/listing_teaser_small/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=GxQZs7ge 1x, /sites/default/files/styles/listing_teaser_small_2x/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=res2SMmu 2x\" type=\"image/webp\" width=\"366\" height=\"366\"><img decoding=\"async\" class=\"media__element\" loading=\"lazy\" width=\"366\" height=\"366\" src=\"/sites/default/files/styles/listing_teaser_small/public/2024-10/amanzoe-accommodation-villa-21-4299_2.webp?itok=GxQZs7ge\" alt=\"Amanzoe, Greece\"></picture> Exclusive Hideaways Aman Villas",
+    "area": "body"
+  },
+  {
+    "path": "/villas/aman-villas-at-nusa-dua",
+    "url": "https://www.aman.com/villas/aman-villas-at-nusa-dua",
+    "label": "Aman Villas at Nusa DuaNusa Dua, Bali",
+    "area": "header"
+  },
+  {
+    "path": "/wellness",
+    "url": "https://www.aman.com/wellness",
+    "label": "Wellness",
+    "area": "header"
+  }
+]

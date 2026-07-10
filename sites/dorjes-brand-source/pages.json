@@ -1,0 +1,9 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    }
+  ]
+}
