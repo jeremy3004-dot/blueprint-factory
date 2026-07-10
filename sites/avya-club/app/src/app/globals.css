@@ -192,6 +192,380 @@ main {
   transition: width 720ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Homepage editorial sections. The media switcher state treatment is copied
+   and adapted locally from factory/reference-library/components/media-gallery;
+   the alternating editorial rhythm follows the donor section specs. */
+
+.sectionEyebrow {
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.introStory {
+  min-height: 322.8px;
+  padding: 57.6px;
+  margin-inline: -4vw;
+  color: #fff8f0;
+  background: #222621;
+}
+
+.introStoryLayout {
+  display: flex;
+  min-height: 207.7px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 115.2px;
+}
+
+.introStory h2 {
+  max-width: 970px;
+  margin: 0;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(48px, 4.81vw, 69.216px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.introStory .editorialLink {
+  flex: 0 0 auto;
+  transition: color 250ms ease;
+}
+
+.introStory .editorialLink:hover,
+.introStory .editorialLink:focus-visible {
+  color: var(--color-primary, #3dbbad);
+}
+
+.clubOverview {
+  margin-inline: -4vw;
+}
+
+.overviewRow {
+  display: grid;
+  min-height: 900px;
+  grid-template-columns: 1fr 1fr;
+  color: #222621;
+  background: #222621;
+}
+
+.overviewRowReverse .overviewMedia {
+  grid-column: 2;
+}
+
+.overviewRowReverse .overviewCard {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.overviewMedia {
+  width: 100%;
+  height: 900px;
+  aspect-ratio: auto !important;
+}
+
+.overviewMedia .mediaFrameScrim {
+  background: linear-gradient(0deg, rgba(20, 25, 22, 0.22), transparent 52%);
+}
+
+.overviewCard {
+  width: 84%;
+  max-width: 604.8px;
+  min-height: 725.8px;
+  align-self: center;
+  justify-self: center;
+  padding: 86.4px;
+  background: #f2e7d8;
+}
+
+.overviewCard h2 {
+  margin: 0 0 28px;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 46.144px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 54.796px;
+}
+
+.overviewCard > p:not(.sectionEyebrow) {
+  margin: 0 0 34px;
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.experienceGrid,
+.identityGallery {
+  position: relative;
+  margin-inline: -4vw;
+  overflow: hidden;
+  color: #fff8f0;
+  background: #595d57;
+  isolation: isolate;
+}
+
+.experienceGrid {
+  height: 798.4px;
+  padding: 58px 28.8px 60px;
+}
+
+.experienceMedia,
+.experienceMediaLayer,
+.identityMedia,
+.identityMediaLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.experienceMediaLayer,
+.identityMediaLayer {
+  aspect-ratio: auto !important;
+  opacity: 0;
+  transition: opacity 750ms linear;
+}
+
+.experienceMediaLayer.isActive,
+.identityMediaLayer.isActive {
+  opacity: 1;
+}
+
+.experienceMediaLayer::after,
+.identityMediaLayer::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 38, 33, 0.66);
+  content: "";
+}
+
+.experienceMediaLayer .mediaFrameScrim,
+.identityMediaLayer .mediaFrameScrim {
+  display: none;
+}
+
+.experienceHeading,
+.experienceCards,
+.identityCards {
+  position: relative;
+  z-index: 1;
+}
+
+.experienceHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-inline: 14.4px;
+}
+
+.experienceHeading h2 {
+  margin: 0;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.experienceCards {
+  display: flex;
+  gap: 14.4px;
+  padding-top: 52px;
+}
+
+.experienceCard {
+  display: flex;
+  width: calc((100% - 28.8px) / 3);
+  min-height: 510.4px;
+  flex: 0 0 calc((100% - 28.8px) / 3);
+  flex-direction: column;
+  padding: 56px 43.2px 42px;
+  border: 1px solid rgba(255, 248, 240, 0.48);
+  transition: color 250ms ease, background-color 250ms ease;
+}
+
+.experienceCard.isActive {
+  color: #222621;
+  background: #fff8f0;
+}
+
+.experienceCardSelect,
+.identityCard button {
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  gap: 13px;
+  text-align: left;
+}
+
+.experienceCardSelect span,
+.identityCard button span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.experienceCardSelect strong,
+.identityCard button strong {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 34.456px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 41.3472px;
+}
+
+.experienceCard ul {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 27px 0;
+  list-style: none;
+}
+
+.experienceCard li {
+  display: grid;
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentColor;
+  gap: 2px;
+}
+
+.experienceCard li span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.experienceCard li small {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+.experienceCard .editorialLink {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.identityGallery {
+  height: 686.8px;
+}
+
+.identityCards {
+  display: grid;
+  width: min(1120px, calc(100% - 115.2px));
+  min-height: 370px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 216px auto 0;
+}
+
+.identityCard {
+  display: flex;
+  flex-direction: column;
+  padding: 62px 56px 48px;
+  border: 1px solid rgba(255, 248, 240, 0.55);
+  transition: color 250ms ease, background-color 250ms ease;
+}
+
+.identityCard.isActive {
+  color: #222621;
+  background: #fff8f0;
+}
+
+.identityCard p {
+  max-width: 430px;
+  margin: 26px 0;
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.identityCard .editorialLink {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.homeMembershipCta {
+  display: grid;
+  min-height: 798.3px;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: -4vw;
+  color: #222621;
+  background: #fff8f0;
+}
+
+.membershipStatement,
+.membershipSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.membershipStatement {
+  padding: 57.6px;
+  color: #fff8f0;
+  background: #222621;
+}
+
+.membershipStatement h2 {
+  max-width: 620px;
+  margin: 0;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(72px, 6.6vw, 94.928px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.membershipSummary {
+  padding: 57.6px 86.4px;
+}
+
+.membershipSummary h3 {
+  margin: 0 0 28px;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.membershipOptions,
+.membershipGroups {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.membershipOptions {
+  border-top: 1px solid rgba(34, 38, 33, 0.38);
+}
+
+.membershipOptions li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(34, 38, 33, 0.38);
+  font-size: 16px;
+}
+
+.membershipGroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.membershipActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 34px;
+}
+
 @keyframes heroHeadlineLift {
   from {
     opacity: 0;
@@ -731,6 +1105,217 @@ a:focus-visible {
   }
 }
 
+@media (max-width: 1024px) {
+  .introStory {
+    min-height: 368.3px;
+    padding: 92.16px 30.72px;
+  }
+
+  .introStoryLayout {
+    min-height: 184px;
+    gap: 30.72px;
+  }
+
+  .overviewRow,
+  .overviewRowReverse {
+    position: relative;
+    display: flex;
+    min-height: 900px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overviewRowReverse .overviewMedia,
+  .overviewRowReverse .overviewCard {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .overviewMedia {
+    position: absolute;
+    inset: 0;
+  }
+
+  .overviewCard {
+    position: relative;
+    z-index: 1;
+    width: calc(100% - 61.44px);
+    max-width: 706.6px;
+    min-height: 490.8px;
+    padding: 46.08px;
+  }
+
+  .experienceGrid {
+    height: 742.1px;
+    padding: 42px 15.36px;
+  }
+
+  .experienceCards {
+    gap: 15.36px;
+    padding-top: 30px;
+    overflow-x: auto;
+  }
+
+  .experienceCard {
+    width: 293.7px;
+    min-height: 557.8px;
+    flex-basis: 293.7px;
+    padding: 38.4px 23.04px;
+  }
+
+  .identityCards {
+    width: calc(100% - 61.44px);
+  }
+
+  .identityCard {
+    padding: 46px 38.4px;
+  }
+
+  .homeMembershipCta {
+    min-height: 1404.7px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 532.3px 872.4px;
+  }
+
+  .membershipStatement,
+  .membershipSummary {
+    padding: 61.44px 46.08px;
+  }
+}
+
+@media (max-width: 520px) {
+  .introStory,
+  .clubOverview,
+  .experienceGrid,
+  .identityGallery,
+  .homeMembershipCta {
+    margin-inline: -16px;
+  }
+
+  .introStory {
+    min-height: 363px;
+    padding: 48px 16px;
+  }
+
+  .introStoryLayout {
+    min-height: 267px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .introStory h2 {
+    font-size: 48px;
+    line-height: 0.98;
+  }
+
+  .overviewCard {
+    width: calc(100% - 32px);
+    min-height: 648.6px;
+    padding: 24px;
+  }
+
+  .overviewCard h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .overviewCard > p:not(.sectionEyebrow) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .experienceGrid {
+    height: 671.8px;
+    padding: 28px 8px 0;
+  }
+
+  .experienceHeading {
+    display: block;
+    margin-inline: 4px;
+  }
+
+  .experienceHeading .sectionEyebrow {
+    margin-bottom: 4px;
+  }
+
+  .experienceHeading h2 {
+    font-size: 30px;
+  }
+
+  .experienceCards {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 8px;
+    gap: 8px;
+    padding: 0 8px 0 0;
+    overflow-x: auto;
+  }
+
+  .experienceCard {
+    width: 264.5px;
+    min-height: 543.8px;
+    flex-basis: 264.5px;
+    padding: 20px 12px;
+  }
+
+  .experienceCardSelect strong,
+  .identityCard button strong {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .identityGallery {
+    height: 686.8px;
+  }
+
+  .identityCards {
+    display: flex;
+    width: auto;
+    gap: 8px;
+    margin: 180px 0 0;
+    padding: 0 16px;
+    overflow-x: auto;
+  }
+
+  .identityCard {
+    width: 310px;
+    min-height: 410px;
+    flex: 0 0 310px;
+    padding: 40px 24px;
+  }
+
+  .homeMembershipCta {
+    min-height: 1512.1px;
+    grid-template-rows: 512px 1000.1px;
+  }
+
+  .membershipStatement,
+  .membershipSummary {
+    padding: 32px 24px;
+  }
+
+  .membershipStatement h2 {
+    font-size: 62px;
+  }
+
+  .membershipSummary {
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
+
+  .membershipSummary h3 {
+    font-size: 38px;
+  }
+
+  .membershipActions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -768,5 +1353,10 @@ a:focus-visible {
 
   .firstLightMediaLayer:first-child {
     opacity: 1;
+  }
+
+  .experienceMediaLayer,
+  .identityMediaLayer {
+    transition: none;
   }
 }
