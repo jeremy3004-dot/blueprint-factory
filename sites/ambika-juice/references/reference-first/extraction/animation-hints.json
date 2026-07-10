@@ -1,0 +1,13 @@
+{
+  "libraries": [
+    "Swiper"
+  ],
+  "scriptSignals": [
+    "https://onyxcoffeelab.com/cdn/shop/t/31/assets/swiper-bundle-min11.js?v=108059131501615647841759174635"
+  ],
+  "globalsPresent": [
+    "Swiper"
+  ],
+  "hasAutoplayVideo": true,
+  "stickyOrFixedCount": 12
+}
