@@ -58,6 +58,8 @@ export interface SiteContent {
     readonly foundedYear: number;
     readonly campusSquareFeet: number;
     readonly nameMeaning: string;
+    readonly setting: string;
+    readonly inclusivity: string;
     readonly sourceUrl: string;
   };
   readonly services: readonly Service[];
@@ -98,6 +100,8 @@ export const siteContent = {
     foundedYear: 2018,
     campusSquareFeet: 110000,
     nameMeaning: "pure and first light",
+    setting: "The 110,000-square-foot campus has breathtaking Himalayan views.",
+    inclusivity: "Its inclusive facilities welcome all ages and fitness levels.",
     sourceUrl: homeSource
   },
   services: [
@@ -243,6 +247,14 @@ export const siteContent = {
       width: 1998,
       height: 1124,
       sourceUrl: homeSource
+    },
+    {
+      id: "club-house",
+      src: "https://serveravya.onrender.com/api/media/file/club2.jpg",
+      alt: "Avya Club House",
+      width: 6240,
+      height: 4160,
+      sourceUrl: "https://serveravya.onrender.com/api/media/file/club2.jpg"
     }
   ],
   socialLinks: [

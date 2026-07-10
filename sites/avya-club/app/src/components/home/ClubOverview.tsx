@@ -16,13 +16,13 @@ const overviewChapters = [
   {
     eyebrow: "One comprehensive club",
     heading: `${siteContent.about.campusSquareFeet.toLocaleString("en-US")}-square-foot club`,
-    body: `${siteContent.about.heading} in ${siteContent.contact.city}, ${siteContent.contact.country}.`,
+    body: `${siteContent.about.heading} in ${siteContent.contact.city}, ${siteContent.contact.country}. ${siteContent.about.setting}`,
     media: identityMedia
   },
   {
     eyebrow: "The Avya experience",
     heading: "Fitness, healing, and mindfulness",
-    body: siteContent.about.summary,
+    body: `${siteContent.about.summary} ${siteContent.about.inclusivity}`,
     media: aboutMedia
   }
 ] as const;

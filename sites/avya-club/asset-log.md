@@ -8,6 +8,7 @@ All production candidates below are client-owned public Avya assets captured on 
 |---|---|---|
 | `https://avya.club/assets/img/avya/aboutphoto.png` | About Avya Club, 620×640 | candidate; client-owned public source |
 | `https://avya.club/assets/img/avya/avya.png` | Avya identity image, 1998×1124 | candidate; client-owned public source |
+| `https://serveravya.onrender.com/api/media/file/club2.jpg` | Club House experience media | client-owned public source; remote candidate only, mandatory local download and clearance in Task 7 |
 | `https://avya.club/assets/img/icons/swim.png` | Swimming Pool icon, 64×58 | candidate; client-owned public source |
 | `https://avya.club/assets/img/icons/gym.png` | GYM & Fitness icon, 64×31 | candidate; client-owned public source |
 | `https://avya.club/assets/img/icons/fitness.png` | Functional Fitness icon, 64×55 | candidate; client-owned public source |

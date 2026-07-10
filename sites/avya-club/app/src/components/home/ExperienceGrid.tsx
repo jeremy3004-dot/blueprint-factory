@@ -26,7 +26,7 @@ const experienceChapters: readonly ExperienceChapter[] = [
   {
     title: "Club House",
     services: [siteContent.services[6]],
-    mediaIndex: 1
+    mediaIndex: 3
   }
 ];
 
