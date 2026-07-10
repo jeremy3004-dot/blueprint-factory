@@ -1,0 +1,19 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Home",
+      "status": "planned"
+    },
+    {
+      "route": "/menu",
+      "title": "Menu",
+      "status": "planned"
+    },
+    {
+      "route": "/visit",
+      "title": "Visit",
+      "status": "planned"
+    }
+  ]
+}
