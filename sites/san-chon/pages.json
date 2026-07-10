@@ -3,17 +3,17 @@
     {
       "route": "/",
       "title": "Home",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/menu",
       "title": "Menu",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/visit",
       "title": "Visit",
-      "status": "planned"
+      "status": "built"
     }
   ]
 }

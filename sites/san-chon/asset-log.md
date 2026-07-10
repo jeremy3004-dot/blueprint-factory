@@ -30,7 +30,7 @@ All production photographs were generated for this project with OpenAI's built-i
 
 ### Font decisions (blueprint tokens, 2026-07-10T18:53:34.228Z)
 
-- Heading: donor `Sangbleusans` → **Inter** (substituted; Google Fonts; license: open) — unmapped donor font; verify the substitution and add it to font-substitutes.md
-- Body: donor `Sangbleusans` → **Inter** (substituted; Google Fonts; license: open) — unmapped donor font; verify the substitution and add it to font-substitutes.md
+- Heading: donor `Sangbleusans` → **Cormorant Garamond** (substituted; Google Fonts; license: open) — preserves the donor's high-contrast editorial display role.
+- Body: donor `Sangbleusans` → **DM Sans** (substituted; Google Fonts; license: open) — clearer at restaurant-navigation and operational-copy sizes.
 
 See `factory/qa/font-substitutes.md` for the substitution rationale.
