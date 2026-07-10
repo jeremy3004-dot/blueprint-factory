@@ -28,7 +28,7 @@ Flows/states: desktop navigation, keyboard-safe mobile menu, hero sequence selec
 
 Animation mechanisms: timed hero state changes, image crossfades, restrained reveal transitions, and complete `prefers-reduced-motion` handling.
 
-Stack fit: static Next.js app with no backend dependency; Vercel preview verified shareable.
+Stack fit: static Next.js app with no backend dependency; the Vercel preview is deployed but protected by Vercel SSO until the owner disables preview Deployment Protection.
 
 ## Scores
 
