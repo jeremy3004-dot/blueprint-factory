@@ -87,3 +87,37 @@
 - GREEN after the responsive-only margin correction: `706.547px` card + `30.72px` margins at `768px`, and `358px` card + `16px` margins at `390px`, with scroll width equal to client width at both sizes. The `1440px` control retained the donor-aligned desktop `72px` margin and no overflow.
 - One post-fix compare run per stage recorded clone desktop/mobile `36.6% / 52.2%` and translation structure `27.7%`; worst section remains desktop band 4 at `20.1%`. With the visually verified ten donor bands substituted for the broken two-section extraction, the unchanged formula yields `87.7%` corrected structure (`75 + 2.7 + 10`); this interpretation does not alter the DOM, detector, or official report.
 - Fresh post-fix gates passed: app tests `21/21`, standalone `tsc --noEmit`, production build with all six planned routes statically prerendered, and `blueprint:check` typecheck/build/console/internal-links/axe. The controlled server on port `4191` was stopped and `next-env.d.ts` restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.
+
+### 2026-07-10T21:12:04.734Z
+
+- Ran verify: Every automated check passed for avya-club: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 27.7%; raw pixel match is 36.6% on desktop and 52.2% on mobile, which is informational after brand translation. The weakest area is "Section band 4 (y 2592–3456)" at 20.1% — fix that first. Structurally the build has 10 sections vs the donor's 2, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-10T21:12:50.419Z
+
+- Ran verify: Every automated check passed for avya-club: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 27.7%; raw pixel match is 36.6% on desktop and 52.2% on mobile, which is informational after brand translation. The weakest area is "Section band 4 (y 2592–3456)" at 20.1% — fix that first. Structurally the build has 10 sections vs the donor's 2, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-10T21:15:10.722Z
+
+- Beauty evidence is present. Stopped at human beauty pass gate.
+
+### 2026-07-10T21:20:55.572Z
+
+- Deployed Vercel preview: https://avya-club-mntns5687-jeremys-projects-379e354f.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.
+
+### 2026-07-10T21:21:47.448Z
+
+- Deployed Vercel preview: https://avya-club-qqf3z9ees-jeremys-projects-379e354f.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.
+
+### 2026-07-11T03:10:00+05:45
+
+- Independent unauthenticated requests corrected the deploy helper's shareability result: both preview URLs return HTTP `302` to `https://vercel.com/sso-api`, so Vercel Deployment Protection is active. The owner action is recorded in `deploy.md`; no bypass was attempted.
+- Preview-target factory verification therefore audited Vercel's SSO page and reported third-party 403/GSI console noise, three contrast findings, five links, and invalid visual scores. Those are not Avya application results.
+- Authoritative local verification was rerun after that diagnosis and passed typecheck, build, console errors, all six internal links, and axe critical/serious checks. It restored the valid translation evidence: official structure `27.7%`, desktop pixel `36.6%`, mobile pixel `52.2%`, worst section desktop band 4 at `20.1%`.
+
+### 2026-07-10T21:25:21.906Z
+
+- Ran verify: Some checks need attention for avya-club: console-errors, a11y-axe. See the checklist above for details. The translation-stage structure score is 38.6%; raw pixel match is 7% on desktop and 16.5% on mobile, which is informational after brand translation. The weakest area is "Section band 7 (y 822–959)" at 1.4% — fix that first. Structurally the build has 1 sections vs the donor's 2, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.
+
+### 2026-07-10T21:27:25.192Z
+
+- Ran verify: Every automated check passed for avya-club: it compiles, builds, has no console errors, no broken internal links, and no critical accessibility problems. The translation-stage structure score is 27.7%; raw pixel match is 36.6% on desktop and 52.2% on mobile, which is informational after brand translation. The weakest area is "Section band 4 (y 2592–3456)" at 20.1% — fix that first. Structurally the build has 10 sections vs the donor's 2, which is what should stay close even after the brand translation drops the color/imagery match. Nothing has been deployed to production. The next human step is the Beauty Pass: watch the motion capture and compare against the donor before approving.

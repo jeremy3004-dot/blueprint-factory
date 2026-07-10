@@ -28,3 +28,10 @@
 
 - Browser RED/GREEN isolated the sole defect to inherited desktop margins on the responsive `.overviewCard` flex item. Responsive margins now fit the intended card width exactly at 768px and 390px; desktop geometry is unchanged.
 - The official translation report remains `27.7%` because extraction still counts 2 donor sections. The review-corrected ten-band interpretation is `87.7%`; no detector, DOM, or further visual tuning was used to manufacture that number.
+
+## 2026-07-11 — Task 8 preview handoff
+
+- The first quiet `blueprint:verify` process was still active when its wrapper yielded, so a second invocation briefly overlapped. The duplicate was stopped; one complete run then passed typecheck, build, console, six internal links, and axe checks.
+- Fresh desktop, tablet, and mobile evidence covers all six public routes. Normal and reduced-motion recordings were regenerated; live mobile checks confirmed hero selection, timer suppression under reduced motion, menu Escape/focus restoration, valid CTA targets, and no horizontal overflow.
+- `blueprint:status` and `blueprint:run` correctly stop at `RUN_BEAUTY`; the automated worker did not mark the human Beauty Pass approved.
+- Two preview-only deployments were created while the handoff worker and supervisor overlapped. The deploy helper reported both as HTTP 200/shareable, but an independent unauthenticated `curl` proved both return `302` to `vercel.com/sso-api`; Vercel Deployment Protection is active and the helper's protection detector produced a false negative. The factory script was not changed. `deploy.md` records the exact owner action, and no production deployment was attempted.

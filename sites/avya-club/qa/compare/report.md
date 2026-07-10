@@ -1,8 +1,8 @@
 # Visual Compare Report: avya-club
 
 Donor: https://republicbos.com
-Build: http://127.0.0.1:4191
-Compared: 2026-07-10T21:03:13.204Z
+Build: http://127.0.0.1:4203
+Compared: 2026-07-10T21:25:47.752Z
 Stage: translation
 Headline score: 27.7% (structure; target >=85%)
 
