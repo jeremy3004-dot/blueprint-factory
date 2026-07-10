@@ -2,8 +2,8 @@ import { siteContent } from "../../content/site";
 import { EditorialLink } from "../EditorialLink";
 import { MediaFrame } from "../MediaFrame";
 
-const [aboutMedia, identityMedia] = siteContent.media.filter((asset) =>
-  ["about", "identity"].includes(asset.id)
+const overviewMedia = ["pure-energy", "deep-recovery", "club-house"].map(
+  (id) => siteContent.media.find((asset) => asset.id === id)!
 );
 
 const overviewChapters = [
@@ -11,19 +11,19 @@ const overviewChapters = [
     eyebrow: "Our origin",
     heading: `Founded in ${siteContent.about.foundedYear}`,
     body: siteContent.about.story,
-    media: aboutMedia
+    media: overviewMedia[0]
   },
   {
     eyebrow: "One comprehensive club",
     heading: `${siteContent.about.campusSquareFeet.toLocaleString("en-US")}-square-foot club`,
     body: `${siteContent.about.heading} in ${siteContent.contact.city}, ${siteContent.contact.country}. ${siteContent.about.setting}`,
-    media: identityMedia
+    media: overviewMedia[1]
   },
   {
     eyebrow: "The Avya experience",
     heading: "Fitness, healing, and mindfulness",
     body: `${siteContent.about.summary} ${siteContent.about.inclusivity}`,
-    media: aboutMedia
+    media: overviewMedia[2]
   }
 ] as const;
 

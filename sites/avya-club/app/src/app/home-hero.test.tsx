@@ -11,5 +11,5 @@ test("renders the complete Avya first-light homepage hero", () => {
   assert.match(markup, /Deep recovery/);
   assert.match(markup, /First light/);
   assert.match(markup, /Explore membership/);
-  assert.match(markup, /alt="About Avya Club"/);
+  assert.match(markup, /alt="Avya Club gym equipment"/);
 });

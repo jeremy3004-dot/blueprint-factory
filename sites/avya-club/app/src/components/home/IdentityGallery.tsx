@@ -11,13 +11,13 @@ const identityChapters = [
     title: "Fitness & performance",
     body: `${siteContent.services[1].summary}. ${siteContent.services[2].summary}.`,
     href: "/services",
-    media: siteContent.media[1]
+    media: siteContent.media.find((asset) => asset.id === "pure-energy")!
   },
   {
     title: "Recovery & wellbeing",
     body: `${siteContent.services[4].summary}. ${siteContent.services[5].summary}.`,
     href: "/about",
-    media: siteContent.media[2]
+    media: siteContent.media.find((asset) => asset.id === "deep-recovery")!
   }
 ] as const;
 

@@ -247,23 +247,22 @@ main {
 }
 
 .overviewRow {
-  display: grid;
+  position: relative;
+  display: flex;
   min-height: 900px;
-  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: flex-end;
   color: #222621;
   background: #222621;
 }
 
-.overviewRowReverse .overviewMedia {
-  grid-column: 2;
-}
-
-.overviewRowReverse .overviewCard {
-  grid-column: 1;
-  grid-row: 1;
+.overviewRowReverse {
+  justify-content: flex-start;
 }
 
 .overviewMedia {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 900px;
   aspect-ratio: auto !important;
@@ -274,12 +273,12 @@ main {
 }
 
 .overviewCard {
-  width: 84%;
-  max-width: 604.8px;
-  min-height: 725.8px;
-  align-self: center;
-  justify-self: center;
-  padding: 86.4px;
+  position: relative;
+  z-index: 1;
+  width: min(42%, 604.8px);
+  min-height: 540px;
+  padding: 64px;
+  margin: 72px;
   background: #f2e7d8;
 }
 

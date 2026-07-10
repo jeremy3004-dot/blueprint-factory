@@ -3,8 +3,6 @@ import { InnerHero } from "../../components/InnerHero";
 import { siteContent } from "../../content/site";
 
 export default function GalleryPage() {
-  // These are the source-backed Avya media records captured in Task 1. Task 7
-  // remains responsible for local download and final production clearance.
   const galleryMedia = siteContent.media.filter((asset) => asset.id !== "logo-main");
   const copy = siteContent.pageCopy.gallery;
 

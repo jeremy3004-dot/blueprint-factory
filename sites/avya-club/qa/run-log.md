@@ -39,3 +39,36 @@
 - Membership coverage now asserts every option label, not only group names. The unsourced `Contact Avya for current pricing` note and other review-flagged marketing filler were removed without inventing amounts or replacement claims; contact and registration actions remain intact.
 - Fresh gates passed: app tests `18/18`, `tsc --noEmit`, and the production build with all six routes statically prerendered.
 - Controlled Chromium at 1440×1000 and 390×844 passed all six routes with HTTP `200`, one expected H1, one `main`, all six internal destinations, zero horizontal overflow, and zero page-level errors. The server was stopped and `next-env.d.ts` restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.
+
+### 2026-07-10T20:45:51.001Z
+
+- Visual compare vs donor (clone stage): headline 35.5%, desktop pixel 35.5%, mobile pixel 52.9%. Worst section: Section band 3 (y 1728–2592) (15.2%). Report: qa/compare/report.md.
+
+### 2026-07-10T20:46:07.660Z
+
+- Generated copy-deck.md (224 donor lines) for donor→brand translation.
+
+### 2026-07-10T20:49:38.187Z
+
+- Visual compare vs donor (clone stage): headline 36%, desktop pixel 36%, mobile pixel 52.5%. Worst section: Section band 4 (y 2592–3456) (19.9%). Report: qa/compare/report.md.
+
+### 2026-07-10T20:50:21.084Z
+
+- Visual compare vs donor (clone stage): headline 36.5%, desktop pixel 36.5%, mobile pixel 49.2%. Worst section: Section band 4 (y 2592–3456) (20.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T20:51:04.565Z
+
+- Visual compare vs donor (clone stage): headline 36.6%, desktop pixel 36.6%, mobile pixel 48.9%. Worst section: Section band 4 (y 2592–3456) (20.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T20:51:34.956Z
+
+- Visual compare vs donor (translation stage): headline 27.7%, desktop pixel 36.6%, mobile pixel 48.9%. Worst section: Section band 4 (y 2592–3456) (20.1%). Report: qa/compare/report.md.
+
+### 2026-07-11T02:40:00+05:45
+
+- Task 7 asset TDD recorded the required RED (`0/2`: no per-experience image identity and remote `siteContent` media) and GREEN (`2/2`), followed by a second RED/GREEN for three distinct editorial-overview photographs. The focused suite finishes `3/3`.
+- Cleared and localized 15 Avya-owned production files: 5 media images, 8 service icons, the primary logo, and favicon. Pure energy, Deep recovery, and First light now use distinct 6240px-class Avya gym, physiotherapy, and Club House/pool photographs. All planned-route rendered image sources are local.
+- `copy-deck.md` contains 224 completed brand cells and no TODO. Planned-route translations use captured Avya copy; unsupported donor-only capabilities are explicitly deferred rather than invented.
+- Clone compare plateau after three focused passes: desktop `35.5 → 36.0 → 36.5 → 36.6%`; mobile `52.9 → 52.5 → 49.2 → 48.9%`. The final worst section is band 4 at `20.1%`. The detector reports 2 donor sections versus 10 build sections, limiting structure to `27.7%`; no DOM-counter workaround was used.
+- Translation compare: structure `27.7%`, heading hierarchy `55%`, grayscale rhythm `18%`, media/text band agreement `100%`. This remains below the 85% target and is an honest compare/evidence plateau.
+- Fresh final gates passed: app tests `21/21`, `tsc --noEmit`, production build with all six planned routes statically prerendered, and `blueprint:check` typecheck/build/console/internal-links/axe chain. The controlled server on port 4187 was stopped; `next-env.d.ts` was restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.

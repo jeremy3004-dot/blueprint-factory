@@ -9,24 +9,25 @@ const sequenceStates = [
   {
     label: "Pure energy",
     support: "Fitness, healing, and mindfulness in one holistic club.",
-    objectPosition: "46% center"
+    objectPosition: "50% center",
+    src: "/media/avya-pure-energy-gym.jpg",
+    alt: "Avya Club gym equipment"
   },
   {
     label: "Deep recovery",
     support: "A space for personal growth, recovery, and peak performance.",
-    objectPosition: "77% center"
+    objectPosition: "50% center",
+    src: "/media/avya-deep-recovery-physiotherapy.jpg",
+    alt: "Physiotherapy treatment at Avya Club"
   },
   {
     label: "First light",
     support: "Avya means pure and first light.",
-    objectPosition: "18% center"
+    objectPosition: "50% center",
+    src: "/media/avya-first-light-club.jpg",
+    alt: "Avya Club campus and pool beneath a blue sky"
   }
 ] as const;
-
-const heroMedia = {
-  src: "https://avya.club/assets/img/avya/aboutphoto.png",
-  alt: "About Avya Club"
-} as const;
 
 export function FirstLightSequence() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,10 +68,11 @@ export function FirstLightSequence() {
         {sequenceStates.map((state, index) => (
           <MediaFrame
             key={state.label}
-            alt={index === 0 ? heroMedia.alt : ""}
+            alt={index === activeIndex ? state.alt : ""}
             className={`firstLightMediaLayer${index === activeIndex ? " isActive" : ""}`}
+            dataExperience={state.label}
             objectPosition={state.objectPosition}
-            src={heroMedia.src}
+            src={state.src}
           />
         ))}
         <span className="firstLightScrim" />

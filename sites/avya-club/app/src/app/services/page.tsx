@@ -3,14 +3,14 @@ import { InnerHero } from "../../components/InnerHero";
 import { siteContent } from "../../content/site";
 
 const serviceIcons: Readonly<Record<string, string>> = {
-  "swimming-pool": "https://avya.club/assets/img/icons/swim.png",
-  "gym-fitness": "https://avya.club/assets/img/icons/gym.png",
-  "functional-fitness": "https://avya.club/assets/img/icons/fitness.png",
-  "tennis-court": "https://avya.club/assets/img/icons/court.png",
-  physiotherapy: "https://avya.club/assets/img/icons/therapy.png",
-  "massage-spa": "https://avya.club/assets/img/icons/spa.png",
-  "club-house": "https://avya.club/assets/img/icons/club.png",
-  "wellbeing-nutrition": "https://avya.club/assets/img/icons/wellbeing.png"
+  "swimming-pool": "/icons/avya-swimming-pool.png",
+  "gym-fitness": "/icons/avya-gym-fitness.png",
+  "functional-fitness": "/icons/avya-functional-fitness.png",
+  "tennis-court": "/icons/avya-tennis-court.png",
+  physiotherapy: "/icons/avya-physiotherapy.png",
+  "massage-spa": "/icons/avya-massage-spa.png",
+  "club-house": "/icons/avya-club-house.png",
+  "wellbeing-nutrition": "/icons/avya-wellbeing-nutrition.png"
 };
 
 export default function ServicesPage() {

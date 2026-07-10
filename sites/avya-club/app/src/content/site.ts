@@ -281,7 +281,7 @@ export const siteContent = {
   media: [
     {
       id: "logo-main",
-      src: "https://avya.club/assets/img/avya/avyamain1.png",
+      src: "/brand/avya-club-logo.png",
       alt: "Avya Club logo",
       width: 133,
       height: 72,
@@ -289,7 +289,7 @@ export const siteContent = {
     },
     {
       id: "about",
-      src: "https://avya.club/assets/img/avya/aboutphoto.png",
+      src: "/media/avya-about-club.png",
       alt: "About Avya Club",
       width: 620,
       height: 640,
@@ -297,16 +297,32 @@ export const siteContent = {
     },
     {
       id: "identity",
-      src: "https://avya.club/assets/img/avya/avya.png",
+      src: "/media/avya-identity-club.png",
       alt: "Avya Club",
       width: 1998,
       height: 1124,
       sourceUrl: homeSource
     },
     {
+      id: "pure-energy",
+      src: "/media/avya-pure-energy-gym.jpg",
+      alt: "Avya Club gym",
+      width: 6242,
+      height: 4160,
+      sourceUrl: "https://serveravya.onrender.com/api/media/file/gym6.jpg"
+    },
+    {
+      id: "deep-recovery",
+      src: "/media/avya-deep-recovery-physiotherapy.jpg",
+      alt: "Physiotherapy at Avya Club",
+      width: 6240,
+      height: 4160,
+      sourceUrl: "https://serveravya.onrender.com/api/media/file/steam4.jpg"
+    },
+    {
       id: "club-house",
-      src: "https://serveravya.onrender.com/api/media/file/club2.jpg",
-      alt: "Avya Club House",
+      src: "/media/avya-first-light-club.jpg",
+      alt: "Avya Club House and pool",
       width: 6240,
       height: 4160,
       sourceUrl: "https://serveravya.onrender.com/api/media/file/club2.jpg"

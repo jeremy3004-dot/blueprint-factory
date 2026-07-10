@@ -9,24 +9,24 @@ import { MediaFrame } from "../MediaFrame";
 interface ExperienceChapter {
   readonly title: string;
   readonly services: readonly Service[];
-  readonly mediaIndex: number;
+  readonly mediaId: "pure-energy" | "deep-recovery" | "club-house";
 }
 
 const experienceChapters: readonly ExperienceChapter[] = [
   {
     title: "GYM & Fitness",
     services: siteContent.services.slice(0, 4),
-    mediaIndex: 1
+    mediaId: "pure-energy"
   },
   {
     title: "Physiotherapy",
     services: [siteContent.services[4], siteContent.services[5], siteContent.services[7]],
-    mediaIndex: 2
+    mediaId: "deep-recovery"
   },
   {
     title: "Club House",
     services: [siteContent.services[6]],
-    mediaIndex: 3
+    mediaId: "club-house"
   }
 ];
 
@@ -37,7 +37,7 @@ export function ExperienceGrid() {
     <section className="experienceGrid" aria-labelledby="experience-grid-title">
       <div className="experienceMedia" aria-live="polite">
         {experienceChapters.map((chapter, index) => {
-          const asset = siteContent.media[chapter.mediaIndex];
+          const asset = siteContent.media.find((item) => item.id === chapter.mediaId)!;
           return (
             <MediaFrame
               alt={index === activeIndex ? asset.alt : ""}
