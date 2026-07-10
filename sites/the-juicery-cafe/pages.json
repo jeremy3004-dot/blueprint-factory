@@ -1,0 +1,18 @@
+{
+  "pages": [
+    { "route": "/", "title": "Home", "status": "built" },
+    { "route": "/food", "title": "Food & Drink", "status": "built" },
+    { "route": "/weekend-market", "title": "Weekend Market", "status": "built" },
+    { "route": "/fresh-baskets", "title": "Fresh Baskets", "status": "built" },
+    { "route": "/events", "title": "Events", "status": "built" },
+    { "route": "/events-1", "title": "Events (legacy URL)", "status": "built" },
+    { "route": "/faq-s", "title": "FAQs", "status": "built" },
+    { "route": "/contact", "title": "Contact", "status": "built" },
+    {
+      "route": "/my-account",
+      "title": "My Account",
+      "status": "deferred",
+      "reason": "The current route is a broken Wix widget with no evidenced customer workflow."
+    }
+  ]
+}
