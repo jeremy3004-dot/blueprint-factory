@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { renderToStaticMarkup } from "react-dom/server";
+
+import Home from "./page";
+
+test("renders the complete Avya first-light homepage hero", () => {
+  const markup = renderToStaticMarkup(<Home />);
+
+  assert.match(markup, /Pure energy/);
+  assert.match(markup, /Deep recovery/);
+  assert.match(markup, /First light/);
+  assert.match(markup, /Explore membership/);
+  assert.match(markup, /alt="About Avya Club"/);
+});
