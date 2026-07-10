@@ -1,31 +1,22 @@
-const craftNotes = [
-  "Art direction before build",
-  "One signature moment",
-  "Motion judged in context"
-];
+import { CampaignGrid } from "@/components/sections/CampaignGrid";
+import { EditorialSplit } from "@/components/sections/EditorialSplit";
+import { FullBleedMedia } from "@/components/sections/FullBleedMedia";
+import { Hero } from "@/components/sections/Hero";
+import { OriginRail } from "@/components/sections/OriginRail";
+import { PressRail } from "@/components/sections/PressRail";
+import { homeSections } from "@/content/home-sections";
 
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <div className="heroGrid" aria-hidden="true" />
-        <p className="eyebrow">Blueprint Factory Starter</p>
-        <h1>ambika-juice is ready for its signature moment.</h1>
-        <p className="lede">
-          Replace this starter page with the site-specific concept from
-          art-direction.md. The blueprint-line motif is only a starting point.
-        </p>
-        <div className="trace" aria-hidden="true" />
-      </section>
-
-      <section className="proof">
-        {craftNotes.map((note) => (
-          <article key={note}>
-            <span />
-            <h2>{note}</h2>
-          </article>
-        ))}
-      </section>
+    <main id="main-content" className="referenceHome">
+      {homeSections.map((section) => {
+        if (section.kind === "hero") return <Hero section={section} key={section.id} />;
+        if (section.kind === "editorial") return <EditorialSplit section={section} key={section.id} />;
+        if (section.kind === "campaign") return <CampaignGrid section={section} key={section.id} />;
+        if (section.kind === "origin") return <OriginRail section={section} key={section.id} />;
+        if (section.kind === "press") return <PressRail section={section} key={section.id} />;
+        return <FullBleedMedia section={section} key={section.id} />;
+      })}
     </main>
   );
 }

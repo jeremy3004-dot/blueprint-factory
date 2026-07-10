@@ -9,3 +9,5 @@
 - User explicitly approved the broad clone scope and asked the agent to stop asking questions. Ambiguous implementation choices are resolved conservatively and logged here.
 - The adopted site scaffold uses `app/src/app`, while the initial implementation plan assumed `app/app`; all implementation follows the real scaffold and retains the planned component boundaries under `app/src/`.
 - The first site build failed with `next: command not found` because the site was created after the root dependency install. `pnpm install --filter ambika-juice --no-frozen-lockfile --lockfile=false` created only the needed workspace links without rewriting the unrelated lockfile.
+- `pnpm dev -- --hostname 127.0.0.1` was parsed by the generated script as a project directory named `--hostname`; the working command is `pnpm exec next dev --hostname 127.0.0.1`.
+- Several below-fold remote donor media frames appear black until loaded or decoded during a one-shot full-page capture. The formal clone capture must auto-scroll/wait before comparison, as the factory screenshot command does.

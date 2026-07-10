@@ -16,3 +16,7 @@
 - Site-local test result: 4 passed, 0 failed. Initial Next build passed after the scoped non-lockfile dependency install.
 - Added the donor chrome shell: announcement bar, fixed contrast-changing header, mega-menu, mobile drawer, cart drawer, newsletter footer, dense site map, and oversized footer wordmark.
 - Chrome contract test cycle: 3 expected RED failures before components; final site-local result 7 passed, 0 failed. Next build passes.
+- Added the full 20-section homepage as typed reference data with exact donor section order and reference-only media provenance.
+- Added hero, editorial split, full-bleed media, two-up campaign, arched origin rail, and press rail renderers with desktop/mobile/reduced-motion CSS.
+- Homepage contract test cycle: expected missing-module RED; final site-local result 10 passed, 0 failed. Next build passes.
+- Manual 1440px full-page capture confirmed the donor's overall light/dark rhythm, grid alternation, origin arches, and footer close are present.
