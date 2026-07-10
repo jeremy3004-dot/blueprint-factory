@@ -3,322 +3,322 @@
     {
       "route": "/",
       "title": "Skip to content",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/account/login",
       "title": "Login",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/cart",
       "title": "0",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/accessories",
       "title": "Accessories",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/all-merch",
       "title": "All Merch",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/apparel",
       "title": "Apparel",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/barista-provisions",
       "title": "Barista Provisions",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/chocolate-covered",
       "title": "Chocolate Covered",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/coffee",
       "title": "Coffee",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/coffee-archive",
       "title": "Archive",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/collaborations",
       "title": "Collaborations",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/colombia-coffees",
       "title": "Colombia Known for innovation and resilience, Colombia's coffee history dates...",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/cometeer",
       "title": "Cometeer",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/doyenne",
       "title": "Doyenne",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/drinkware",
       "title": "Drinkware",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/ecuador-coffees",
       "title": "Ecuador Ecuador’s coffee production is shaped by its incredible biodiversity,...",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/equipment",
       "title": "Equipment",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/gift-subscriptions",
       "title": "Subscriptions",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/instant-coffee",
       "title": "Specialty Instant",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/matcha",
       "title": "Matcha",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/peru-coffees",
       "title": "Peru Peru offers some of the best offerings for us to enjoy. Known for care a...",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/red",
       "title": "Explore (ONYX)RED",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/special",
       "title": "Box Sets",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/tea",
       "title": "Tea",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/tea-box-sets",
       "title": "Box Sets",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/terroir",
       "title": "Chocolate",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/collections/traditional-bars",
       "title": "Traditional Bars",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/bentonville",
       "title": "Bentonville",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/brew-guides",
       "title": "Brew Guides",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/doyenne-cafe",
       "title": "Doyenne",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/equipment-repair",
       "title": "Espresso Repair",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/faq",
       "title": "FAQ",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/fay-square",
       "title": "Fay Square",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/fayetteville",
       "title": "Gregg St",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/find-my-roast",
       "title": "Find My Roast",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/grind-size-calculator",
       "title": "Grind Sizes",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/help-me-brew",
       "title": "Help Me Brew",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/help-me-choose",
       "title": "Help Me Choose",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/jobs",
       "title": "Careers",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/locations",
       "title": "See Our Cafes",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/our-story",
       "title": "Awards",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/privacy",
       "title": "Privacy Statement",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/private-events",
       "title": "Private Events",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/quick-order",
       "title": "In a hurry?",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/rogers",
       "title": "Rogers",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/springdale",
       "title": "Springdale",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/subscribe",
       "title": "Subscriptions",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/subscribe-tea",
       "title": "Tea",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/support",
       "title": "Help Center",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/terms",
       "title": "Terms & Conditions",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/the-momentary",
       "title": "Momentary",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/pages/wholesale",
       "title": "Wholesale",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/policies/privacy-policy",
       "title": "Privacy Policy",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/policies/terms-of-service",
       "title": "Terms of Use",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/cafe-expressions",
       "title": "Cafe Expressions",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/circadian",
       "title": "Circadian",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/colombia-la-riviera-sudan-rume-26",
       "title": "Explore The Offering",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/decaf-ethiopia-suke-quto-26",
       "title": "Explore This Offering",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/echelon",
       "title": "Echelon",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/echelon-2025",
       "title": "Echelon 2026",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/gift-card",
       "title": "Gift Cards",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/roasters-choice",
       "title": "Roaster's Choice",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/sipping-chocolate-powder",
       "title": "Sipping Chocolate",
-      "status": "planned"
+      "status": "built"
     },
     {
       "route": "/products/usa-cycling",
       "title": "EXPLORE THE COLLAB",
-      "status": "planned"
+      "status": "built"
     }
   ]
 }

@@ -238,6 +238,50 @@ img, video { display: block; max-width: 100%; }
 .pressRail > div { display: grid; place-items: center; padding: 42px; border-right: 1px solid rgba(0,0,0,.17); filter: grayscale(1); }
 .pressRail img { max-width: 130px; max-height: 64px; object-fit: contain; }
 
+.collectionPage, .productDetail, .editorialPage, .utilityPage { padding-top: 100px; }
+.collectionHero { display: flex; align-items: end; justify-content: space-between; min-height: 46vh; padding: 80px 3vw 45px; border-bottom: 1px solid rgba(0,0,0,.2); }
+.collectionHero p, .innerHero p { font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.collectionHero h1, .innerHero h1, .productInfo h1, .utilityPage h1 { max-width: 1100px; margin: 0; font-family: var(--font-heading, Arial, sans-serif); font-size: clamp(62px, 10vw, 155px); font-weight: 500; letter-spacing: .05em; line-height: .82; text-transform: uppercase; }
+.categoryFilter { display: flex; gap: 0; padding: 0 3vw; overflow-x: auto; border-bottom: 1px solid rgba(0,0,0,.2); }
+.categoryFilter button { flex: 0 0 auto; padding: 19px 24px; background: none; border: 0; border-left: 1px solid rgba(0,0,0,.16); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.categoryFilter button[aria-pressed="true"] { color: #fff; background: #000; }
+.productGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(0,0,0,.18); }
+.productCard { background: var(--paper); }
+.productCardMedia { display: grid; place-items: center; min-height: 45vw; padding: 16%; overflow: hidden; background: #eee9df; }
+.productCardMedia img { width: 100%; max-height: 100%; object-fit: contain; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.productCard:hover img { transform: scale(1.035); }
+.productCardCopy { display: flex; justify-content: space-between; gap: 20px; padding: 18px 16px 24px; border-top: 1px solid rgba(0,0,0,.14); }
+.productCardCopy h3 { margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.productCardCopy span { font-size: 10px; text-transform: uppercase; }
+
+.productDetail { display: grid; grid-template-columns: 58% 42%; min-height: 100vh; }
+.productGallery { position: sticky; top: 100px; display: grid; place-items: center; align-self: start; min-height: calc(100vh - 100px); overflow: hidden; background: #eee9df; }
+.productGallery > img { width: min(57%, 580px); max-height: 72vh; object-fit: contain; }
+.productDetailMark { position: absolute; z-index: 0; color: rgba(0,0,0,.05); font-family: Georgia, serif; font-size: 40vw; }
+.productInfo { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: calc(100vh - 100px); padding: 8vw 6vw; border-left: 1px solid rgba(0,0,0,.18); }
+.productInfo h1 { font-size: clamp(48px, 6vw, 98px); }
+.productInfo > p:not(.sectionEyebrow) { max-width: 540px; line-height: 1.55; }
+.tastingNotes { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.optionShell { display: flex; align-items: center; gap: 8px; width: 100%; margin: 32px 0 12px; }
+.optionShell span { margin-right: auto; font-size: 9px; letter-spacing: .15em; }
+.optionShell button { padding: 12px 16px; background: transparent; border: 1px solid #000; font-size: 9px; }
+.addButton { width: 100%; padding: 18px; color: #fff; background: #000; border: 0; font-size: 10px; letter-spacing: .14em; cursor: pointer; }
+
+.innerHero { display: flex; flex-direction: column; justify-content: end; min-height: 78vh; padding: 60px 4vw; color: #fff; background: radial-gradient(circle at 70% 20%, #5e584d, #111 52%); }
+.innerHero h1 { max-width: 1200px; }
+.innerStory { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; padding: 110px 4vw; background: var(--paper); }
+.innerStory h2 { margin: 0; font-size: clamp(42px, 6vw, 90px); font-weight: 500; letter-spacing: .05em; line-height: .9; text-transform: uppercase; }
+.innerStory > p:not(.sectionEyebrow) { align-self: end; line-height: 1.55; }
+.innerMedia { display: grid; place-items: center; min-height: 70vh; overflow: hidden; color: #fff; background: #111; }
+.innerMedia span { font-family: Arial Black, sans-serif; font-size: 25vw; letter-spacing: -.1em; }
+.utilityPage { min-height: 100vh; padding: 25vh 7vw 12vh; }
+.utilityPage > p { max-width: 620px; line-height: 1.55; }
+.utilityPage .darkButton { display: inline-block; }
+.loginForm { display: grid; gap: 10px; width: min(100%, 520px); margin-top: 42px; }
+.loginForm label { margin-top: 12px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.loginForm input { height: 54px; padding: 10px 14px; background: transparent; border: 1px solid #000; }
+.loginForm button { justify-self: start; border: 0; }
+
 @keyframes drawerIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
 
 @media (max-width: 760px) {
@@ -277,6 +321,22 @@ img, video { display: block; max-width: 100%; }
   .originCard { flex: 0 0 76vw; min-height: 128vw; scroll-snap-align: start; }
   .pressRail { grid-template-columns: repeat(2, 1fr); }
   .pressRail > div { min-height: 120px; padding: 28px; }
+  .collectionPage, .productDetail, .editorialPage, .utilityPage { padding-top: 84px; }
+  .collectionHero { display: block; min-height: 42vh; padding: 80px 18px 32px; }
+  .collectionHero h1, .innerHero h1, .utilityPage h1 { margin-top: 12px; font-size: 14vw; }
+  .categoryFilter { padding: 0; }
+  .productGrid { grid-template-columns: repeat(2, 1fr); }
+  .productCardMedia { min-height: 68vw; padding: 12%; }
+  .productCardCopy { display: block; min-height: 82px; padding: 12px; }
+  .productCardCopy h3 { margin-bottom: 8px; }
+  .productDetail { display: block; }
+  .productGallery { position: relative; top: auto; min-height: 110vw; }
+  .productInfo { min-height: auto; padding: 70px 20px; border-left: 0; }
+  .productInfo h1 { font-size: 13vw; }
+  .innerHero { min-height: 70vh; padding: 50px 20px; }
+  .innerStory { grid-template-columns: 1fr; padding: 70px 20px; }
+  .innerStory h2 { font-size: 12vw; }
+  .utilityPage { padding-inline: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -20,3 +20,6 @@
 - Added hero, editorial split, full-bleed media, two-up campaign, arched origin rail, and press rail renderers with desktop/mobile/reduced-motion CSS.
 - Homepage contract test cycle: expected missing-module RED; final site-local result 10 passed, 0 failed. Next build passes.
 - Manual 1440px full-page capture confirmed the donor's overall light/dark rhythm, grid alternation, origin arches, and footer close are present.
+- Added collection, product-detail, editorial/page, policy, cart, and account reference page families.
+- Route-family contract test cycle: expected missing-module RED; final site-local result 13 passed, 0 failed.
+- Next production build prerendered 66 static pages, covering all 64 harvested public donor routes plus framework pages.
