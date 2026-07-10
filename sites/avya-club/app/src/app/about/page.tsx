@@ -5,21 +5,22 @@ import { siteContent } from "../../content/site";
 
 export default function AboutPage() {
   const { about } = siteContent;
+  const copy = siteContent.pageCopy.about;
   const aboutMedia = siteContent.media.find((asset) => asset.id === "about");
 
   return (
     <main className="innerPage">
       <InnerHero
-        eyebrow="About Avya"
-        heading={about.heading}
-        summary={about.summary}
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        summary={copy.summary}
         action={{ href: "/services", label: "Explore our services" }}
       />
 
       <section className="aboutStory" aria-labelledby="about-story-heading">
         <div className="aboutStoryCopy">
-          <p className="sectionEyebrow">Pure &amp; first light</p>
-          <h2 id="about-story-heading">Wellbeing with room to grow</h2>
+          <p className="sectionEyebrow">{copy.sectionEyebrow}</p>
+          <h2 id="about-story-heading">{copy.sectionHeading}</h2>
           <p>{about.story}</p>
           <p>{about.setting} {about.inclusivity}</p>
           <EditorialLink href="/contact">Plan your visit</EditorialLink>

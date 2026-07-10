@@ -12,20 +12,21 @@ function phoneHref(phone: string) {
 
 export default function ContactPage() {
   const { contact } = siteContent;
+  const copy = siteContent.pageCopy.contact;
 
   return (
     <main className="innerPage">
       <InnerHero
-        eyebrow="Visit Avya"
-        heading="Contact Avya Club"
-        summary="Call, email, or get directions to Avya Club in Gharipatan, Pokhara."
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        summary={copy.summary}
         action={{ href: directionsUrl, label: "Get directions" }}
       />
 
       <section className="contactSplit" aria-labelledby="contact-details-heading">
         <div className="contactStatement">
-          <p className="sectionEyebrow">Pokhara, Nepal</p>
-          <h2 id="contact-details-heading">Come as you are.</h2>
+          <p className="sectionEyebrow">{copy.sectionEyebrow}</p>
+          <h2 id="contact-details-heading">{copy.sectionHeading}</h2>
           <address>
             {contact.street}<br />
             {contact.city}, {contact.country}

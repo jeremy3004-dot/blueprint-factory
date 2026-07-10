@@ -4,14 +4,15 @@ import { siteContent } from "../../content/site";
 
 export default function MembershipPage() {
   const { contact, memberships, registrationUrl } = siteContent;
+  const copy = siteContent.pageCopy.membership;
 
   return (
     <main className="innerPage">
       <InnerHero
-        eyebrow="Join Avya"
-        heading="Membership"
-        summary="Choose the Avya experience that fits how you move, recover, and recharge."
-        action={{ href: registrationUrl, label: "Register with Avya" }}
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        summary={copy.summary}
+        action={{ href: registrationUrl, label: copy.sectionEyebrow }}
       />
 
       <section className="membershipIndex" aria-label="Membership options">
@@ -22,18 +23,17 @@ export default function MembershipPage() {
             <ul>
               {group.options.map((option) => <li key={option}>{option}</li>)}
             </ul>
-            <p className="membershipPriceNote">Contact Avya for current pricing</p>
           </article>
         ))}
       </section>
 
       <section className="membershipRegister" aria-labelledby="membership-register-heading">
         <div>
-          <p className="sectionEyebrow">Ready when you are</p>
-          <h2 id="membership-register-heading">Make Avya part of your rhythm.</h2>
+          <p className="sectionEyebrow">{copy.sectionEyebrow}</p>
+          <h2 id="membership-register-heading">{copy.sectionHeading}</h2>
         </div>
         <div className="membershipRegisterActions">
-          <EditorialLink href={registrationUrl}>Register with Avya</EditorialLink>
+          <EditorialLink href={registrationUrl}>{copy.sectionEyebrow}</EditorialLink>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <a href={`tel:${contact.phones[0].replace(/\D/g, "")}`}>{contact.phones[0]}</a>
         </div>

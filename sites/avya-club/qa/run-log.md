@@ -32,3 +32,10 @@
 - At 390px, `.experienceCards` computed `overflow-x: auto`, measured `382px` client width against `818px` scroll width, and accepted a native horizontal scroll from `0` to `180`. Under `prefers-reduced-motion: reduce`, the media transition computed `0.00001s` and selection immediately produced opacities `[0, 0, 1]`.
 - Browser runtime loaded three distinct Experience Grid sources with natural widths `620`, `1998`, and `6240`; the new client-owned Club House source `https://serveravya.onrender.com/api/media/file/club2.jpg` measured `6240×4160`. It remains a remote production candidate and must be downloaded, reviewed, and cleared locally in Task 7.
 - Fresh gates: `pnpm --dir sites/avya-club/app test` passed `11/11`; `pnpm --dir sites/avya-club/app exec tsc --noEmit` exited `0`; `pnpm --dir sites/avya-club/app build` compiled and statically prerendered `/` successfully.
+
+### 2026-07-11T02:22:14+05:45
+
+- Task 6 review fix captured two focused RED/GREEN cycles. The inventory test first failed on the wildcard/incomplete manifest, then passed after recording exactly six built routes plus 11 individual Avya and 30 full-URL Republic deferrals. The copy test then failed on missing provenance and flagged filler, then passed after all five inner routes consumed typed `pageCopy` records with captured Avya phrases.
+- Membership coverage now asserts every option label, not only group names. The unsourced `Contact Avya for current pricing` note and other review-flagged marketing filler were removed without inventing amounts or replacement claims; contact and registration actions remain intact.
+- Fresh gates passed: app tests `18/18`, `tsc --noEmit`, and the production build with all six routes statically prerendered.
+- Controlled Chromium at 1440×1000 and 390×844 passed all six routes with HTTP `200`, one expected H1, one `main`, all six internal destinations, zero horizontal overflow, and zero page-level errors. The server was stopped and `next-env.d.ts` restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.

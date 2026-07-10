@@ -36,11 +36,23 @@ export interface MediaAsset {
   readonly sourceUrl: string;
 }
 
+export interface PageCopyRecord {
+  readonly eyebrow: string;
+  readonly heading: string;
+  readonly summary: string;
+  readonly sectionEyebrow: string;
+  readonly sectionHeading: string;
+  readonly sourceUrl: string;
+}
+
 export interface SiteContent {
   readonly name: string;
   readonly sourceUrl: string;
   readonly description: string;
   readonly routes: readonly NavRoute[];
+  readonly pageCopy: Readonly<
+    Record<"about" | "services" | "gallery" | "contact" | "membership", PageCopyRecord>
+  >;
   readonly registrationUrl: string;
   readonly contact: {
     readonly street: string;
@@ -81,6 +93,49 @@ export const siteContent = {
   description:
     "Join Avya Club for premium gym, spa, yoga, zumba, swimming, and club house memberships in Nepal. Book your wellness experience today!",
   routes: primaryRoutes,
+  pageCopy: {
+    about: {
+      eyebrow: "About",
+      heading: "A Holistic Haven for Health, Fitness & Well-being",
+      summary: "Avya Club blends fitness, healing, and mindfulness into a holistic experience.",
+      sectionEyebrow: "About Avya Club",
+      sectionHeading: "About Avya Club",
+      sourceUrl: homeSource
+    },
+    services: {
+      eyebrow: "Service",
+      heading: "What We Provide",
+      summary:
+        "Achieve peak fitness with our modern gym, dynamic training programs, and expert nutrition plans.",
+      sectionEyebrow: "What We Provide",
+      sectionHeading: "Core Level Facilities",
+      sourceUrl: homeSource
+    },
+    gallery: {
+      eyebrow: "Gallery",
+      heading: "Gallery",
+      summary: "Avya Club blends fitness, healing, and mindfulness into a holistic experience.",
+      sectionEyebrow: "Gallery",
+      sectionHeading: "Explore AVYA CLUB",
+      sourceUrl: homeSource
+    },
+    contact: {
+      eyebrow: "Contact",
+      heading: "CONTACT US",
+      summary: "Gharipatan, Pokhara",
+      sectionEyebrow: "Gharipatan, Pokhara, Nepal",
+      sectionHeading: "Get In Touch",
+      sourceUrl: homeSource
+    },
+    membership: {
+      eyebrow: "Join Us Today",
+      heading: "Our Services & Pricing",
+      summary: "Gym | Functional Fitness | Nutrition",
+      sectionEyebrow: "Join Us Now",
+      sectionHeading: "Join Us Today",
+      sourceUrl: homeSource
+    }
+  },
   registrationUrl: "https://avya.club/register",
   contact: {
     street: "Gharipatan",

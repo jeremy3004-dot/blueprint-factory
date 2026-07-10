@@ -6,13 +6,14 @@ export default function GalleryPage() {
   // These are the source-backed Avya media records captured in Task 1. Task 7
   // remains responsible for local download and final production clearance.
   const galleryMedia = siteContent.media.filter((asset) => asset.id !== "logo-main");
+  const copy = siteContent.pageCopy.gallery;
 
   return (
     <main className="innerPage">
       <InnerHero
-        eyebrow="Inside Avya"
-        heading="Gallery"
-        summary="A look at the spaces that bring movement, recovery, and community together."
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        summary={copy.summary}
         action={{ href: "/contact", label: "Plan your visit" }}
       />
 

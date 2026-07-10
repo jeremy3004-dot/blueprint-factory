@@ -14,12 +14,14 @@ const serviceIcons: Readonly<Record<string, string>> = {
 };
 
 export default function ServicesPage() {
+  const copy = siteContent.pageCopy.services;
+
   return (
     <main className="innerPage">
       <InnerHero
-        eyebrow="What we provide"
-        heading="Services"
-        summary="Fitness, recovery, recreation, and wellbeing come together at Avya Club."
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        summary={copy.summary}
         action={{ href: "/contact", label: "Ask Avya about services" }}
       />
 
