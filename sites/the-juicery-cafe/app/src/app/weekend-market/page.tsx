@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EditorialIntro, ImageStory, InnerHero, InquiryBand } from "@/components/page-sections";
+import { EditorialIntro, ImageStory, InnerHero, InquiryBand } from "../../components/page-sections";
 
 export const metadata: Metadata = {
   title: "Weekend market",

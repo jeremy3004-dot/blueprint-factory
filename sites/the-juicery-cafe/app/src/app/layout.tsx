@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import { RevealManager, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { RevealManager, SiteFooter, SiteHeader } from "../components/site-chrome";
 import "./globals.css";
 
 const display = Cormorant_Garamond({

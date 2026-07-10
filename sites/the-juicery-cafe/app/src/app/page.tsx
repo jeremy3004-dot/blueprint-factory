@@ -1,8 +1,8 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { HomeHero } from "@/components/home-hero";
-import { FramedImage, OutlineLink, SectionLabel } from "@/components/page-sections";
-import { facts } from "@/data/site";
+import { HomeHero } from "../components/home-hero";
+import { FramedImage, OutlineLink, SectionLabel } from "../components/page-sections";
+import { facts } from "../data/site";
 
 type RevealStyle = CSSProperties & { "--delay"?: string };
 

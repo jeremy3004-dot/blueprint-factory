@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { InnerHero, OutlineLink, SectionLabel } from "@/components/page-sections";
-import { contact } from "@/data/site";
+import { InnerHero, OutlineLink, SectionLabel } from "../../components/page-sections";
+import { contact } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Contact",

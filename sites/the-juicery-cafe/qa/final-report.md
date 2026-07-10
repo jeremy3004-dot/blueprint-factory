@@ -20,8 +20,9 @@ photography, long place image, compact hospitality typography, and decisive foot
 - Translation structure: 85.2% in the final fresh verify (7 sections vs 7 donor sections).
 - Checks: PASS typecheck, production build, console errors, 8 internal links, and axe serious/critical.
 - Evidence: desktop/tablet/mobile route screenshots plus standard and reduced-motion captures.
-- Preview: `https://the-juicery-cafe-qhriiphrc-jeremys-projects-379e354f.vercel.app` — protected,
-  HTTP 302 to Vercel SSO, preview only. Disable Vercel Deployment Protection before sharing publicly.
+- Preview: `https://the-juicery-cafe-3thy9k8x0-jeremys-projects-379e354f.vercel.app` — Vercel status
+  **Ready**, protected by HTTP 302 to Vercel SSO, preview only. Disable Vercel Deployment Protection
+  before sharing publicly.
 
 ## Proposed signature moment
 

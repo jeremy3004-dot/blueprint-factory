@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { contact, navigation } from "@/data/site";
+import { contact, navigation } from "../data/site";
 
 function BrandMark() {
   return (

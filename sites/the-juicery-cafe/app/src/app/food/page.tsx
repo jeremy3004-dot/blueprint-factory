@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { EditorialIntro, FramedImage, ImageStory, InnerHero, InquiryBand } from "@/components/page-sections";
-import { facts, menuHighlights } from "@/data/site";
+import { EditorialIntro, FramedImage, ImageStory, InnerHero, InquiryBand } from "../../components/page-sections";
+import { facts, menuHighlights } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Food & drink",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { InnerHero, SectionLabel } from "@/components/page-sections";
-import { contact, facts } from "@/data/site";
+import { InnerHero, SectionLabel } from "../../components/page-sections";
+import { contact, facts } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "FAQs",

@@ -37,3 +37,7 @@
 - The deploy helper falsely labeled a protected Vercel preview as shareable by following the 302 SSO
   redirect to a 200 login page. Independent header inspection caught it; `deploy.md` and the final
   report now state protected and give the correct dashboard setting to change.
+- A second deployment check exposed a separate failure behind that login redirect: Vercel's cloud
+  webpack build did not honor the app's `@/` aliases, and its unlocked install omitted TypeScript build
+  packages. Relative imports plus an app-local npm lockfile produced a reproducible cloud build. The
+  repaired preview is **Ready**; protection and deployment health are now reported as separate states.

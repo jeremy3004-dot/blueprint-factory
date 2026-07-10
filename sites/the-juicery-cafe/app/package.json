@@ -8,18 +8,14 @@
   },
   "dependencies": {
     "@gsap/react": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "gsap": "latest",
     "lenis": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "tailwindcss": "latest",
+    "react-dom": "latest",
     "typescript": "latest"
   }
 }

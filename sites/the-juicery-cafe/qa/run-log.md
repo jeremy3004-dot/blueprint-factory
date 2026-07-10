@@ -107,3 +107,15 @@
 - Independent `curl -I` returned HTTP 302 to `vercel.com/sso-api`; following it returned the Vercel
   login page. Correct status: protected, not publicly shareable.
 - Handoff now directs the owner to disable Deployment Protection before external review.
+
+### 2026-07-10 — Vercel deployment repair
+
+- Confirmed both earlier deployments were in Vercel's **Error** state; the SSO login response had
+  obscured the failed app deployment.
+- Replaced local-only `@/` aliases with portable relative imports after the cloud webpack build could
+  not resolve them.
+- Added the app-local npm lockfile and made the TypeScript compiler/type packages build dependencies;
+  this prevents Vercel's production-oriented install from omitting packages required by `next build`.
+- Successful preview: https://the-juicery-cafe-3thy9k8x0-jeremys-projects-379e354f.vercel.app.
+  `vercel inspect` reports **Ready**; the cloud build compiled, passed TypeScript, and generated 10/10
+  static routes. The URL remains protected by Vercel SSO and is not a production deployment.

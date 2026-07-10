@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { EditorialIntro, ImageStory, InnerHero, InquiryBand } from "@/components/page-sections";
-import { facts } from "@/data/site";
+import { EditorialIntro, ImageStory, InnerHero, InquiryBand } from "../../components/page-sections";
+import { facts } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Events",
