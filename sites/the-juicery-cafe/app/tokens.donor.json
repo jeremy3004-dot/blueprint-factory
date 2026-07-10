@@ -1,0 +1,51 @@
+{
+  "generatedFrom": "extraction/tokens.json",
+  "colors": {
+    "background": "#fff1d6",
+    "foreground": "#000000",
+    "primary": "#66090f",
+    "accent": "#27372f",
+    "muted": "#000000",
+    "palette": [
+      "#fff1d6",
+      "#27372f",
+      "#000000",
+      "#66090f"
+    ]
+  },
+  "fonts": {
+    "heading": {
+      "role": "heading",
+      "donor": "baskerville",
+      "family": "Libre Baskerville",
+      "stack": "\"Libre Baskerville\", Georgia, \"Times New Roman\", serif",
+      "source": "Google Fonts",
+      "license": "open",
+      "substituted": true,
+      "note": "Baskerville is licensed/system"
+    },
+    "body": {
+      "role": "body",
+      "donor": "baskerville",
+      "family": "Libre Baskerville",
+      "stack": "\"Libre Baskerville\", Georgia, \"Times New Roman\", serif",
+      "source": "Google Fonts",
+      "license": "open",
+      "substituted": true,
+      "note": "Baskerville is licensed/system"
+    }
+  },
+  "typeScale": [
+    36,
+    32,
+    28,
+    20,
+    18,
+    16,
+    12
+  ],
+  "spacing": [
+    160
+  ],
+  "radii": []
+}
