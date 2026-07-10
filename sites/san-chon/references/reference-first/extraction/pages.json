@@ -1,0 +1,146 @@
+[
+  {
+    "path": "/",
+    "url": "https://www.cotekoreansteakhouse.com/",
+    "label": "Skip to main content",
+    "area": "header"
+  },
+  {
+    "path": "/550-madison-menu",
+    "url": "https://www.cotekoreansteakhouse.com/550-madison-menu",
+    "label": "550",
+    "area": "header"
+  },
+  {
+    "path": "/careers",
+    "url": "https://www.cotekoreansteakhouse.com/careers",
+    "label": "Careers",
+    "area": "header"
+  },
+  {
+    "path": "/educotetion",
+    "url": "https://www.cotekoreansteakhouse.com/educotetion",
+    "label": "EduCOTEion",
+    "area": "header"
+  },
+  {
+    "path": "/events",
+    "url": "https://www.cotekoreansteakhouse.com/events",
+    "label": "groups & events",
+    "area": "header"
+  },
+  {
+    "path": "/locations/cotemiami",
+    "url": "https://www.cotekoreansteakhouse.com/locations/cotemiami",
+    "label": "Miami",
+    "area": "header"
+  },
+  {
+    "path": "/locations/cotenycflatiron",
+    "url": "https://www.cotekoreansteakhouse.com/locations/cotenycflatiron",
+    "label": "Flatiron",
+    "area": "header"
+  },
+  {
+    "path": "/locations/cotesingapore",
+    "url": "https://www.cotekoreansteakhouse.com/locations/cotesingapore",
+    "label": "Singapore",
+    "area": "header"
+  },
+  {
+    "path": "/locations/cotevegas",
+    "url": "https://www.cotekoreansteakhouse.com/locations/cotevegas",
+    "label": "Vegas",
+    "area": "header"
+  },
+  {
+    "path": "/locations/eumm",
+    "url": "https://www.cotekoreansteakhouse.com/locations/eumm",
+    "label": "Eumm",
+    "area": "header"
+  },
+  {
+    "path": "/locations/heuk",
+    "url": "https://www.cotekoreansteakhouse.com/locations/heuk",
+    "label": "Heuk",
+    "area": "header"
+  },
+  {
+    "path": "/locations/location-550-madison",
+    "url": "https://www.cotekoreansteakhouse.com/locations/location-550-madison",
+    "label": "550",
+    "area": "header"
+  },
+  {
+    "path": "/locations/location-millim-bar",
+    "url": "https://www.cotekoreansteakhouse.com/locations/location-millim-bar",
+    "label": "Millim Bar",
+    "area": "header"
+  },
+  {
+    "path": "/locations/location-undercote",
+    "url": "https://www.cotekoreansteakhouse.com/locations/location-undercote",
+    "label": "Undercote",
+    "area": "header"
+  },
+  {
+    "path": "/menu-undercote",
+    "url": "https://www.cotekoreansteakhouse.com/menu-undercote",
+    "label": "Undercote",
+    "area": "header"
+  },
+  {
+    "path": "/miamidinnermenu",
+    "url": "https://www.cotekoreansteakhouse.com/miamidinnermenu",
+    "label": "Miami",
+    "area": "header"
+  },
+  {
+    "path": "/nycdinnermenu",
+    "url": "https://www.cotekoreansteakhouse.com/nycdinnermenu",
+    "label": "Flatiron",
+    "area": "header"
+  },
+  {
+    "path": "/our-locations",
+    "url": "https://www.cotekoreansteakhouse.com/our-locations",
+    "label": "All Locations",
+    "area": "header"
+  },
+  {
+    "path": "/ourteam",
+    "url": "https://www.cotekoreansteakhouse.com/ourteam",
+    "label": "Team",
+    "area": "header"
+  },
+  {
+    "path": "/press",
+    "url": "https://www.cotekoreansteakhouse.com/press",
+    "label": "Press",
+    "area": "header"
+  },
+  {
+    "path": "/privacypolicy",
+    "url": "https://www.cotekoreansteakhouse.com/privacypolicy",
+    "label": "Privacy Policy",
+    "area": "footer"
+  },
+  {
+    "path": "/singaporedinnermenu",
+    "url": "https://www.cotekoreansteakhouse.com/singaporedinnermenu",
+    "label": "Singapore",
+    "area": "header"
+  },
+  {
+    "path": "/vegas-menu",
+    "url": "https://www.cotekoreansteakhouse.com/vegas-menu",
+    "label": "Vegas",
+    "area": "header"
+  },
+  {
+    "path": "/whatsnew",
+    "url": "https://www.cotekoreansteakhouse.com/whatsnew",
+    "label": "What's New",
+    "area": "header"
+  }
+]
