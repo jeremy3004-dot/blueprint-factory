@@ -72,3 +72,18 @@
 - Clone compare plateau after three focused passes: desktop `35.5 → 36.0 → 36.5 → 36.6%`; mobile `52.9 → 52.5 → 49.2 → 48.9%`. The final worst section is band 4 at `20.1%`. The detector reports 2 donor sections versus 10 build sections, limiting structure to `27.7%`; no DOM-counter workaround was used.
 - Translation compare: structure `27.7%`, heading hierarchy `55%`, grayscale rhythm `18%`, media/text band agreement `100%`. This remains below the 85% target and is an honest compare/evidence plateau.
 - Fresh final gates passed: app tests `21/21`, `tsc --noEmit`, production build with all six planned routes statically prerendered, and `blueprint:check` typecheck/build/console/internal-links/axe chain. The controlled server on port 4187 was stopped; `next-env.d.ts` was restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.
+
+### 2026-07-10T21:03:12.567Z
+
+- Visual compare vs donor (clone stage): headline 36.6%, desktop pixel 36.6%, mobile pixel 52.2%. Worst section: Section band 4 (y 2592–3456) (20.1%). Report: qa/compare/report.md.
+
+### 2026-07-10T21:03:29.414Z
+
+- Visual compare vs donor (translation stage): headline 27.7%, desktop pixel 36.6%, mobile pixel 52.2%. Worst section: Section band 4 (y 2592–3456) (20.1%). Report: qa/compare/report.md.
+
+### 2026-07-11T03:00:00+05:45
+
+- Task 7 review geometry RED reproduced in Chromium: at `768px`, `.overviewCard` was `624px` wide with inherited `72px` margins rather than approximately `706.6px`; at `390px`, it was `246px` rather than `358px`. Both documents had zero horizontal overflow because flex shrink absorbed the invalid outer width.
+- GREEN after the responsive-only margin correction: `706.547px` card + `30.72px` margins at `768px`, and `358px` card + `16px` margins at `390px`, with scroll width equal to client width at both sizes. The `1440px` control retained the donor-aligned desktop `72px` margin and no overflow.
+- One post-fix compare run per stage recorded clone desktop/mobile `36.6% / 52.2%` and translation structure `27.7%`; worst section remains desktop band 4 at `20.1%`. With the visually verified ten donor bands substituted for the broken two-section extraction, the unchanged formula yields `87.7%` corrected structure (`75 + 2.7 + 10`); this interpretation does not alter the DOM, detector, or official report.
+- Fresh post-fix gates passed: app tests `21/21`, standalone `tsc --noEmit`, production build with all six planned routes statically prerendered, and `blueprint:check` typecheck/build/console/internal-links/axe. The controlled server on port `4191` was stopped and `next-env.d.ts` restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.

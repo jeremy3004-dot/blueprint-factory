@@ -23,3 +23,8 @@
 - Clone compare plateau: initial desktop/mobile pixel scores were `35.5% / 52.9%`. Three bounded media/geometry passes produced `36.0% / 52.5%`, `36.5% / 49.2%`, and `36.6% / 48.9%`. The 85% target was not attainable without undoing translation; the mechanical detector sees only 2 donor sections against 10 build sections.
 - Translation compare: structure `27.7%`, heading hierarchy `55%`, grayscale rhythm `18%`, media/text band agreement `100%`; worst section remained desktop band 4 at `20.1%`. This is recorded as a tool/donor-evidence plateau, not hidden or gamed.
 - Final gates: app tests `21/21`, `tsc --noEmit`, production build, and `blueprint:check` all passed. The controlled `127.0.0.1:4187` server was stopped and `next-env.d.ts` restored to SHA-1 `16f9ac398c0d5e5fe79b8d0973cb1c13ee21235d`.
+
+## 2026-07-11 — Task 7 review correction
+
+- Browser RED/GREEN isolated the sole defect to inherited desktop margins on the responsive `.overviewCard` flex item. Responsive margins now fit the intended card width exactly at 768px and 390px; desktop geometry is unchanged.
+- The official translation report remains `27.7%` because extraction still counts 2 donor sections. The review-corrected ten-band interpretation is `87.7%`; no detector, DOM, or further visual tuning was used to manufacture that number.

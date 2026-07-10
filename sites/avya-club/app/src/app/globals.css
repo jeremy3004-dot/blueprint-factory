@@ -1142,6 +1142,7 @@ a:focus-visible {
     max-width: 706.6px;
     min-height: 490.8px;
     padding: 46.08px;
+    margin: 30.72px;
   }
 
   .experienceGrid {
@@ -1213,6 +1214,7 @@ a:focus-visible {
     width: calc(100% - 32px);
     min-height: 648.6px;
     padding: 24px;
+    margin: 16px;
   }
 
   .overviewCard h2 {

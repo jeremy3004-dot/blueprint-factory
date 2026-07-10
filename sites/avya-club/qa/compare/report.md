@@ -1,8 +1,8 @@
 # Visual Compare Report: avya-club
 
 Donor: https://republicbos.com
-Build: http://127.0.0.1:4187
-Compared: 2026-07-10T20:51:18.656Z
+Build: http://127.0.0.1:4191
+Compared: 2026-07-10T21:03:13.204Z
 Stage: translation
 Headline score: 27.7% (structure; target >=85%)
 
@@ -13,7 +13,7 @@ Headline score: 27.7% (structure; target >=85%)
 ## Overall Pixel Match
 
 - desktop: 36.6% (weak)
-- mobile: 48.9% (weak)
+- mobile: 52.2% (loose)
 
 ## Structure (should stay high through translation)
 
