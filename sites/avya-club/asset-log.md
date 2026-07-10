@@ -25,7 +25,7 @@ All production candidates below are client-owned public Avya assets captured on 
 ## Fonts
 
 - Republic `Geller Headline` and `Indivisible`: proprietary/reference-only; never ship.
-- Production replacements: rights-cleared open serif + sans to be selected and logged in Task 2.
+- Production replacements: Cormorant Garamond for editorial display and Space Grotesk for body/UI; both are available under the SIL Open Font License 1.1.
 
 ## Logos
 
@@ -47,5 +47,13 @@ None in Task 1.
 ## Unknown Or Needs Review
 
 - Numeric membership/therapy prices: live `.pricing-plan-card .price-options` containers are empty; needs client input.
-- Confirm final open-font licenses and exact Avya logo variant in Task 2.
+- Confirm the exact Avya logo variant during the Task 7 asset-clearance pass.
 - Any image URL not present in the captured Avya inventory requires new provenance before use.
+
+### Font decisions (blueprint tokens, 2026-07-10T18:39:25.769Z; curated in Task 2)
+
+- Heading: donor `Geller Headline` → **Cormorant Garamond** (Google Fonts; SIL Open Font License 1.1) to preserve the high-contrast editorial display role.
+- Body: donor `Indivisible` → **Space Grotesk** (Google Fonts; SIL Open Font License 1.1) to retain a restrained grotesk utility role and align with the captured Avya source typography.
+- Color roles: donor red accents were removed; captured Avya teal `#3dbbad` is primary and blue-teal `#5190a2` is accent, while donor ink/cream hierarchy remains.
+
+See `factory/qa/font-substitutes.md` for the substitution rationale.
