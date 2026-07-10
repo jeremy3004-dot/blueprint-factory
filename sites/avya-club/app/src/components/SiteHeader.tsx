@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { MobileMenu } from "./MobileMenu";
 import { siteContent } from "../content/site";
 
@@ -5,9 +7,9 @@ export function SiteHeader() {
   return (
     <header className="siteHeader">
       <nav className="siteHeaderNav" aria-label="Primary navigation">
-        <a className="siteLogo" href="/" aria-label="Avya Club home">
-          Avya Club
-        </a>
+        <Link className="siteLogo" href="/" aria-label="Avya Club home">
+          <img src="/brand/avya-club-logo.png" alt="Avya Club" width="133" height="72" />
+        </Link>
 
         <ul className="desktopNav">
           {siteContent.routes.map((route) => (

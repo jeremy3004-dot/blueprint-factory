@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+import "@fontsource-variable/space-grotesk/index.css";
 import "./globals.css";
 import tokens from "../../tokens.json";
 import { SiteFooter } from "../components/SiteFooter";

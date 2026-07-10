@@ -1,0 +1,15 @@
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypeScript from "eslint-config-next/typescript";
+
+export default defineConfig([
+  ...nextCoreWebVitals,
+  ...nextTypeScript,
+  {
+    rules: {
+      // Local, dimensioned imagery is intentional for this static editorial clone.
+      "@next/next/no-img-element": "off"
+    }
+  },
+  globalIgnores([".next/**"])
+]);

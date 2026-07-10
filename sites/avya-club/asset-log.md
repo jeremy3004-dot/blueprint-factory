@@ -28,7 +28,7 @@ All production files below were downloaded on 2026-07-11 from Avya's public webs
 ## Fonts
 
 - Republic `Geller Headline` and `Indivisible`: proprietary/reference-only; never ship.
-- Production replacements: Cormorant Garamond for editorial display and Space Grotesk for body/UI; both are available under the SIL Open Font License 1.1.
+- Production replacements: Cormorant Garamond for editorial display and Space Grotesk for body/UI; both are bundled reproducibly through pinned Fontsource packages (`@fontsource-variable/cormorant-garamond@5.2.6` and `@fontsource-variable/space-grotesk@5.2.10`) under the SIL Open Font License 1.1.
 
 ## Logos
 

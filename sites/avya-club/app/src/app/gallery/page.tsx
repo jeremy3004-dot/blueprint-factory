@@ -1,4 +1,3 @@
-import { EditorialLink } from "../../components/EditorialLink";
 import { InnerHero } from "../../components/InnerHero";
 import { siteContent } from "../../content/site";
 
@@ -26,9 +25,6 @@ export default function GalleryPage() {
             />
             <figcaption>
               <span>{asset.alt}</span>
-              <EditorialLink href={asset.sourceUrl} aria-label={`View source for ${asset.alt}`}>
-                Source
-              </EditorialLink>
             </figcaption>
           </figure>
         ))}

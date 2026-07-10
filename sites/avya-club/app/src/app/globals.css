@@ -727,6 +727,14 @@ a:focus-visible {
   text-decoration: none;
 }
 
+.siteLogo img,
+.footerLogo img {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
 .siteLogo {
   width: 150px;
   height: 40.3px;
@@ -1348,11 +1356,12 @@ a:focus-visible {
     transition: none;
   }
 
-  .firstLightMediaLayer:not(:first-child) {
+  .firstLightMediaLayer:not(.isActive) {
     display: none;
   }
 
-  .firstLightMediaLayer:first-child {
+  .firstLightMediaLayer.isActive {
+    display: block;
     opacity: 1;
   }
 

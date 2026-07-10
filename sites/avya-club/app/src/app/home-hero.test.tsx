@@ -13,3 +13,12 @@ test("renders the complete Avya first-light homepage hero", () => {
   assert.match(markup, /Explore membership/);
   assert.match(markup, /alt="Avya Club gym equipment"/);
 });
+
+test("renders matching copy and media labels for every selectable hero state", () => {
+  const markup = renderToStaticMarkup(<Home />);
+
+  for (const state of ["Pure energy", "Deep recovery", "First light"]) {
+    assert.match(markup, new RegExp(`data-experience="${state}"`));
+    assert.match(markup, new RegExp(`>${state}<`));
+  }
+});

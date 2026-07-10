@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type ReactNode } from "react";
+import Link from "next/link";
 
 import { ChevronDownIcon } from "./icons";
 import { siteContent } from "../content/site";
@@ -45,9 +46,9 @@ export function SiteFooter() {
     <footer className="siteFooter">
       <div className="siteFooterGrid">
         <section className="footerAbout" aria-labelledby="footer-about-heading">
-          <a className="footerLogo" href="/" aria-label="Avya Club home">
-            Avya Club
-          </a>
+          <Link className="footerLogo" href="/" aria-label="Avya Club home">
+            <img src="/brand/avya-club-logo.png" alt="Avya Club" width="133" height="72" />
+          </Link>
           <h2 className="srOnly" id="footer-about-heading">
             About Avya Club
           </h2>

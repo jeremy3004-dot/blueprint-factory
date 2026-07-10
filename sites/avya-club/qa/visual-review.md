@@ -11,10 +11,11 @@ The homepage First Light Sequence moves among Pure energy, Deep recovery, and Fi
 ## Reference Comparison
 
 Compare scores (from `qa/compare/report.md`):
-- Overall pixel match: desktop __% / mobile __%
-- Worst section: __ (__%)
-- Structure (should stay high): sections __ vs donor __, heading match __%
-- Style tokens: palette coverage __%, heading font match __
+- Final translated pixel match: desktop 36.6% / mobile 52.2%.
+- Worst measured section: desktop band 4, y 2592–3456 (20.1%).
+- Official mechanical structure score: 27.7% — the extractor reports 10 build sections versus 2 donor sections, a 55% heading-hierarchy match, 18% grayscale row-profile rhythm, and 100% media/text band agreement.
+- Contextual ten-band structure interpretation: 87.7% — this separately treats the donor's ten visually verified content bands as the denominator. It is reviewer context, not a replacement for the official 27.7% factory score.
+- Style tokens: 50% donor-palette coverage; heading and body fonts intentionally do not match because production uses open Avya-appropriate substitutes rather than donor proprietary faces.
 
 Primary donor: Republic BOS (`https://republicbos.com`) for its editorial sequencing, full-bleed photography, restrained navigation, and section rhythm.
 
@@ -34,8 +35,8 @@ Stack fit: static Next.js app with no backend dependency; the Vercel preview is 
 
 - Initial clone pixel: desktop 35.5%, mobile 52.9%.
 - Final translated pixel: desktop 36.6%, mobile 52.2%.
-- Official translation structure: 27.7% because the extractor mechanically identifies only 2 donor sections.
-- Corrected ten-band structure interpretation: 87.7%; the DOM and detector were not altered to manufacture this result.
+- Official translation structure: **27.7%** because the extractor mechanically identifies only 2 donor sections.
+- Contextual ten-band structure interpretation: **87.7%**; this is a separately calculated review aid based on the ten visually verified donor bands. The DOM and detector were not altered, and this number does not supersede the official score.
 
 ## Highest Impact Next Fix
 
