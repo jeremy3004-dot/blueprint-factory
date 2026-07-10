@@ -20,6 +20,12 @@
 - Donor mismatch: the target full-bleed dimensions and left-aligned editorial type are recognizable, but Avya's single 620px collage produces framed, multi-plane imagery and desktop softness instead of the donor's immersive single-photo plane. Mobile is more fragmented than the donor because the collage, two-line headline, and large dark intervals compete; the shared shell's round `N` control also overlaps the hero's lower-left edge.
 - Task 7 must replace the repeated collage with distinct, cleared, sufficiently high-resolution experience media for Pure energy, Deep recovery, and First light. This remains mandatory: crop changes of one source image do not make the three experience states visually distinct.
 
+### 2026-07-11T02:05:00+05:45
+
+- Task 6 route verification passed for `/`, `/about`, `/services`, `/gallery`, `/contact`, and `/membership` at 1440px and 390px: every document returned 200, each had one route-appropriate H1, and every page had zero horizontal overflow.
+- Every page exposed the exact six internal navigation routes. All six internal destinations returned HTTP 200 from every route at both widths.
+- The controlled local server was stopped after verification. The known missing `/favicon.ico` remains assigned to Task 7 asset clearance.
+
 ### 2026-07-11T01:58:00+05:45
 
 - Task 5 review fix verified in controlled Chromium against the production build at `127.0.0.1:4175`, then the server was stopped. Normal-motion Experience Grid layers computed `transition-duration: 0.75s`; at 100ms after hovering Club House the old/new opacities were `0.876853 / 0.123147`, and they settled to `0 / 1`. Club House remained selected after the pointer left the card. Keyboard focus selected Physiotherapy, click selected Club House, and each change updated `aria-current="true"`.
