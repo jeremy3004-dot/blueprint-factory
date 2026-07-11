@@ -3,6 +3,7 @@ import "./globals.css";
 import tokens from "../../tokens.json";
 import { Footer } from "@/components/chrome/Footer";
 import { Header } from "@/components/chrome/Header";
+import { RevealController } from "@/components/motion/RevealController";
 
 export const metadata: Metadata = {
   title: "Onyx Coffee Lab — Reference Clone",
@@ -30,6 +31,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: tokenCssVars() }} />
       </head>
       <body>
+        <RevealController />
         <Header />
         {children}
         <Footer />

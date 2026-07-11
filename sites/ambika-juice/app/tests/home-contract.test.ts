@@ -25,5 +25,5 @@ test("homepage provides the skip-link target and all section renderers", async (
   assert.match(page, /EditorialSplit/);
   assert.match(page, /CampaignGrid/);
   assert.match(page, /OriginRail/);
+  assert.match(page, /CategoryBand/);
 });
-

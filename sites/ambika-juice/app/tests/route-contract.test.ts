@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { referenceNavigation, referenceRoutes } from "../src/content/onyx-reference.ts";
+import type { RouteFamily } from "../src/content/types.ts";
 
 test("reference routes are unique internal paths covering every page family", () => {
   assert.equal(referenceRoutes.length, 64);
@@ -9,7 +10,8 @@ test("reference routes are unique internal paths covering every page family", ()
   assert.ok(referenceRoutes.every((route) => route.path.startsWith("/")));
 
   const families = new Set(referenceRoutes.map((route) => route.family));
-  for (const family of ["home", "collection", "product", "editorial", "cart", "account", "policy"]) {
+  const expectedFamilies: RouteFamily[] = ["home", "collection", "product", "editorial", "cart", "account", "policy"];
+  for (const family of expectedFamilies) {
     assert.ok(families.has(family), `missing ${family} route family`);
   }
 });

@@ -9,8 +9,8 @@ export function Hero({ section }: { section: HomeSection }) {
     <section className="homeHero" data-section={section.order}>
       {asset && <SectionMedia asset={asset} className="sectionBackdrop" />}
       <div className="mediaScrim" />
-      <div className="heroMark" aria-hidden="true">O</div>
-      <div className="heroCopy">
+      <div className="heroMark" aria-hidden="true">Onyx</div>
+      <div className="heroCopy" data-reveal>
         <p>QUALITY · TRUTH · ACCOUNTABILITY</p>
         <h1>{section.title}</h1>
         <p>{section.body}</p>
@@ -20,4 +20,3 @@ export function Hero({ section }: { section: HomeSection }) {
     </section>
   );
 }
-

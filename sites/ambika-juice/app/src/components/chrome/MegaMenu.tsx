@@ -12,7 +12,7 @@ export function MegaMenu({ open, onNavigate }: MegaMenuProps) {
     <div className="megaMenu" data-open={open} id="site-menu" aria-hidden={!open}>
       <div className="megaMenuInner">
         {referenceNavigation.map((group) => (
-          <section className="megaGroup" key={group.label}>
+          <div className="megaGroup" key={group.label}>
             <p>{group.label}</p>
             <ul>
               {group.items.map((item) => (
@@ -24,7 +24,7 @@ export function MegaMenu({ open, onNavigate }: MegaMenuProps) {
                 </li>
               ))}
             </ul>
-          </section>
+          </div>
         ))}
         <aside className="megaFeature">
           <p>Current release</p>
@@ -37,4 +37,3 @@ export function MegaMenu({ open, onNavigate }: MegaMenuProps) {
     </div>
   );
 }
-

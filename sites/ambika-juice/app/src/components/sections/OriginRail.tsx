@@ -13,11 +13,10 @@ export function OriginRail({ section }: { section: HomeSection }) {
         {section.media?.map((asset, index) => (
           <Link className="originCard" href={index === 0 ? "/collections/peru-coffees" : index === 1 ? "/collections/ecuador-coffees" : "/collections/colombia-coffees"} key={asset.src} role="listitem">
             <SectionMedia asset={asset} />
-            <span>{names[index]}</span>
+            <h3 data-reveal>{names[index]}</h3>
           </Link>
         ))}
       </div>
     </section>
   );
 }
-

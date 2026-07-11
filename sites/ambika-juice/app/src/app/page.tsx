@@ -1,4 +1,5 @@
 import { CampaignGrid } from "@/components/sections/CampaignGrid";
+import { CategoryBand } from "@/components/sections/CategoryBand";
 import { EditorialSplit } from "@/components/sections/EditorialSplit";
 import { FullBleedMedia } from "@/components/sections/FullBleedMedia";
 import { Hero } from "@/components/sections/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
         if (section.kind === "campaign") return <CampaignGrid section={section} key={section.id} />;
         if (section.kind === "origin") return <OriginRail section={section} key={section.id} />;
         if (section.kind === "press") return <PressRail section={section} key={section.id} />;
+        if (section.kind === "category") return <CategoryBand section={section} key={section.id} />;
         return <FullBleedMedia section={section} key={section.id} />;
       })}
     </main>

@@ -5,13 +5,8 @@ import { referenceNavigation } from "@/content/onyx-reference";
 export function Footer() {
   return (
     <footer className="siteFooter">
-      <div className="footerPicks">
-        {referenceNavigation[0].items.map((item) => (
-          <Link href={item.href} key={item.href}>{item.label}</Link>
-        ))}
-      </div>
       <div className="footerGrid">
-        <section className="footerNewsletter">
+        <div className="footerNewsletter">
           <p>Join our pilgrimage</p>
           <h2>Quality, truth and accountability in coffee.</h2>
           <form>
@@ -19,7 +14,7 @@ export function Footer() {
             <input id="footer-email" type="email" placeholder="Email address" />
             <button type="submit">GO</button>
           </form>
-        </section>
+        </div>
         {referenceNavigation.map((group) => (
           <section key={group.label}>
             <p>{group.label}</p>
@@ -42,4 +37,3 @@ export function Footer() {
     </footer>
   );
 }
-

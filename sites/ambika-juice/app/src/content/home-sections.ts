@@ -7,7 +7,7 @@ export interface HomeMedia extends MediaAsset {
 export interface HomeSection {
   order: number;
   id: string;
-  kind: "hero" | "editorial" | "media" | "campaign" | "origin" | "press";
+  kind: "hero" | "editorial" | "media" | "campaign" | "origin" | "press" | "category";
   theme: "paper" | "dark";
   eyebrow?: string;
   title: string;
@@ -78,12 +78,7 @@ export const homeSections: HomeSection[] = [
     ],
   },
   {
-    order: 11, id: "summer-offerings", kind: "media", theme: "dark", title: "Summer Offerings",
-    body: "Latest offerings from around the world, brought straight to you.", cta: "Learn More", href: "/collections/coffee",
-    media: [video("https://product.onyxcontent.com/media/pages/ecom/home/224fcadae6-1780544070/new.mp4", "Summer coffee offerings")],
-  },
-  {
-    order: 12, id: "origins", kind: "origin", theme: "dark", title: "Explore By Origin", cta: "View Coffees", href: "/collections/coffee",
+    order: 11, id: "origins", kind: "origin", theme: "dark", title: "Explore By Origin", cta: "View Coffees", href: "/collections/coffee",
     media: [
       video("https://product.onyxcontent.com/media/pages/ecom/home/4108535e73-1780544059/honduras-fill.mp4", "Peru coffee landscape"),
       video("https://product.onyxcontent.com/media/pages/ecom/home/cb45055b2c-1780544046/colombia-10.mp4", "Ecuador coffee landscape"),
@@ -91,49 +86,53 @@ export const homeSections: HomeSection[] = [
     ],
   },
   {
-    order: 13, id: "awards", kind: "editorial", theme: "paper", eyebrow: "Recognition", title: "James Beard Awards Finalist",
-    body: "At its core, this recognition is about hospitality and the care extended to every guest.", cta: "Learn More", href: "/pages/our-story", orientation: "right",
-    media: [video("https://product.onyxcontent.com/media/pages/ecom/home/8fa9855ccf-1780544060/hqfootage.mp4", "Onyx hospitality at Rogers HQ")],
+    order: 12, id: "james-beard", kind: "editorial", theme: "paper", title: "We Are A James Beard Finalist",
+    body: "We are honored to be named one of the finalists for Outstanding Bar by the James Beard Foundation. At its core, this recognition is about hospitality.",
+    cta: "Learn More", href: "/pages/our-story", orientation: "right",
+    media: [video("https://product.onyxcontent.com/media/pages/ecom/home/8fa9855ccf-1780544060/hqfootage.mp4", "Guests at the Onyx bar")],
   },
   {
-    order: 14, id: "most-awarded", kind: "media", theme: "dark", title: "The Most Awarded Coffee Roaster",
+    order: 13, id: "most-awarded", kind: "media", theme: "dark", title: "The Most Awarded Coffee Roaster",
     body: "A record of competition, craft, design and hospitality since 2012.", cta: "Our Story", href: "/pages/our-story",
-    media: [image("https://onyxcoffeelab.com/cdn/shop/t/31/assets/most-awarded.svg?v=108443281618992592451742949812", "The most awarded coffee roaster")],
+    media: [video("https://cdn.shopify.com/videos/c/o/v/8a4fe1bf1ae34687aadb4d96c1b4427b.mp4", "Onyx hospitality and awards")],
   },
   {
-    order: 15, id: "red", kind: "editorial", theme: "paper", eyebrow: "Partnership", title: "(Onyx) Red",
+    order: 14, id: "red", kind: "editorial", theme: "paper", eyebrow: "Partnership", title: "(Onyx) Red",
     body: "Everyday things can and should do powerful good.", cta: "Explore (Onyx) Red", href: "/collections/red", orientation: "left",
     media: [image("https://product.onyxcontent.com/media/pages/ecom/home/8ad943542a-1780544076/red-squareoption.webp", "Onyx RED coffee and box")],
   },
   {
-    order: 16, id: "merch-matcha", kind: "campaign", theme: "paper", title: "New Merch / Specialty Matcha", cta: "Explore", href: "/collections/all-merch",
+    order: 15, id: "merch-matcha", kind: "campaign", theme: "paper", title: "New Merch / Specialty Matcha", cta: "Explore", href: "/collections/all-merch",
     media: [
       image("https://product.onyxcontent.com/media/pages/ecom/home/aadd7a2b26-1780544067/merch-cover-new.jpg", "Onyx merchandise"),
       image("https://product.onyxcontent.com/media/pages/ecom/home/82b25c05d6-1780544066/matcha-homepage.webp", "Onyx specialty matcha"),
     ],
   },
   {
-    order: 17, id: "doyenne", kind: "media", theme: "dark", title: "Doyenne",
+    order: 16, id: "doyenne", kind: "media", theme: "dark", title: "Doyenne",
     body: "As Doyenne grows, we invite you to be part of this new chapter.", cta: "Order Now", href: "/collections/doyenne",
     media: [image("https://product.onyxcontent.com/media/pages/ecom/home/424bc4945f-1780544051/doyenne-3.webp", "Doyenne campaign")],
   },
   {
-    order: 18, id: "visit", kind: "editorial", theme: "paper", eyebrow: "Northwest Arkansas", title: "Come Visit Us",
+    order: 17, id: "visit", kind: "editorial", theme: "paper", eyebrow: "Northwest Arkansas", title: "Come Visit Us",
     body: "Our community is at the heart of what we do. See cafe hours, explore the menu, and make plans to come see us.", cta: "Our Locations", href: "/pages/locations", orientation: "right",
     media: [image("https://product.onyxcontent.com/media/pages/ecom/home/2fffa54e9c-1783090761/cafe-po.webp", "Onyx cafe interior")],
   },
   {
-    order: 19, id: "b-corp", kind: "media", theme: "dark", title: "We Are A Certified B-Corp",
+    order: 18, id: "b-corp", kind: "media", theme: "dark", title: "We Are A Certified B-Corp",
     body: "A statement of how we work: social and environmental performance, transparency, and accountability.", cta: "See Our Certification", href: "/pages/our-story",
     media: [image("https://product.onyxcontent.com/media/pages/ecom/home/9f7ebcff3b-1780544045/certified-b-corp.webp", "Onyx B Corp campaign")],
   },
   {
-    order: 20, id: "press", kind: "press", theme: "paper", title: "In The Press",
+    order: 19, id: "press", kind: "press", theme: "paper", title: "In The Press",
     media: [
       image("https://product.onyxcontent.com/media/pages/ecom/home/a00768816e-1780544070/nyt-logo-01.webp", "The New York Times"),
       image("https://product.onyxcontent.com/media/pages/ecom/home/bf8dc345ae-1780544042/bon-appetit-logo-01.webp", "Bon Appetit"),
       image("https://product.onyxcontent.com/media/pages/ecom/home/c53c799a48-1780544066/logo-gear-patrol.webp", "Gear Patrol"),
       image("https://product.onyxcontent.com/media/pages/ecom/home/833717b3ba-1780544054/food-and-wine-logo-01.webp", "Food and Wine"),
     ],
+  },
+  {
+    order: 20, id: "category-band", kind: "category", theme: "dark", title: "Shop By Category",
   },
 ];

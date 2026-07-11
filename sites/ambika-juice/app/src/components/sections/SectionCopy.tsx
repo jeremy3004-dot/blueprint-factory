@@ -4,7 +4,7 @@ import type { HomeSection } from "@/content/home-sections";
 
 export function SectionCopy({ section }: { section: HomeSection }) {
   return (
-    <div className="sectionCopy">
+    <div className="sectionCopy" data-reveal>
       {section.eyebrow && <p className="sectionEyebrow">{section.eyebrow}</p>}
       <h2>{section.title}</h2>
       {section.body && <p className="sectionBody">{section.body}</p>}
@@ -12,4 +12,3 @@ export function SectionCopy({ section }: { section: HomeSection }) {
     </div>
   );
 }
-
