@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { liveDemoCount, liveDemoRecords } from "./project-records.ts";
 
-test("live demo registry exposes all six approved public builds", () => {
-  assert.equal(liveDemoCount, 6);
-  assert.equal(liveDemoRecords.length, 6);
+test("live demo registry exposes all ten approved public builds", () => {
+  assert.equal(liveDemoCount, 10);
+  assert.equal(liveDemoRecords.length, 10);
 });
 
 test("every live demo record includes required showcase fields", () => {
@@ -29,7 +29,11 @@ test("carousel and index CTAs point at the expected external demo URLs", () => {
     dorjes: "https://dorjes-k2ow015ll-jeremys-projects-379e354f.vercel.app",
     "the-juicery-cafe":
       "https://the-juicery-cafe-pkv2i8edm-jeremys-projects-379e354f.vercel.app",
-    "avya-club": "https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app"
+    "avya-club": "https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app",
+    "green-pastures": "https://gptrek.com",
+    "alpine-bloom": "https://app-nine-wine-27.vercel.app",
+    "everest-tours": "https://app-mlcydyuc7-jeremys-projects-379e354f.vercel.app",
+    "jeremy-joseph-curry": "https://jeremyjosephcurry.com"
   };
 
   for (const project of liveDemoRecords) {

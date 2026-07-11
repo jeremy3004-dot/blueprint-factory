@@ -12,15 +12,15 @@ export default function Home() {
 
       <main>
         <section className="introSection">
-          <p className="introEyebrow">Interactive concept portfolio</p>
+          <p className="introEyebrow">Interactive website portfolio</p>
           <h1>
             High-craft website demos,
             <span> ready to open full screen.</span>
           </h1>
           <p className="introCopy">
             Blueprint Factory builds animated websites for real businesses. This page collects{" "}
-            {liveDemoCount} completed live demos — each one a full independent site you can browse,
-            scroll, and judge on its own terms.
+            {liveDemoCount} completed live projects and concept demos — each one a full independent
+            site you can browse, scroll, and judge on its own terms.
           </p>
           <dl className="introStats">
             <div>
@@ -33,7 +33,7 @@ export default function Home() {
             </div>
             <div>
               <dt>Status</dt>
-              <dd>Concept demonstrations</dd>
+              <dd>Live websites &amp; demos</dd>
             </div>
           </dl>
         </section>
@@ -44,9 +44,9 @@ export default function Home() {
 
       <footer className="siteFooter">
         <p>
-          These are interactive concept demonstrations built by Blueprint Factory. They do not
-          imply that the represented businesses commissioned, approved, or currently operate each
-          concept.
+          This collection includes production websites and interactive concept demonstrations built
+          by Blueprint Factory. Concept entries do not imply that the represented businesses
+          commissioned, approved, or currently operate them.
         </p>
       </footer>
     </>

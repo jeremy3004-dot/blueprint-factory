@@ -19,6 +19,10 @@ Date: 2026-07-11
 | Dorje's Resort & Spa | 200 | Public |
 | The Juicery Cafe | 200 | Public |
 | Avya Club | 200 | Public |
+| Green Pastures Adventures | 200 | Production |
+| Alpine Bloom | 200 | Production |
+| Everest Tours | 200 | Public preview refreshed 2026-07-11 |
+| Jeremy Joseph Curry | 200 | Production |
 
 ## Interaction Checks
 
@@ -37,7 +41,7 @@ Date: 2026-07-11
 
 ## Release State
 
-- All six demo URLs are public without authentication.
+- All ten project URLs are public without authentication.
 - The showcase remains on its public preview alias; production promotion remains approval-gated.
 
 ### 2026-07-11T06:31:04.537Z
@@ -48,3 +52,9 @@ Date: 2026-07-11
 
 - Refreshed public alias: https://blueprint-factory-live-demos.vercel.app
 - Live browser proof: correct page title, six-project copy, 12 rendered CTAs, six unique destination URLs, and a 342px carousel card inside a 390px mobile viewport.
+
+### Ten-project expansion 2026-07-11
+
+- Added four verified portfolio projects: Green Pastures Adventures, Alpine Bloom, Everest Tours, and Jeremy Joseph Curry.
+- Refreshed the desktop and mobile evidence with 10 index entries and a `01 / 10` carousel counter.
+- Verified the longer index stays readable and contained at 1440px and 390px widths.

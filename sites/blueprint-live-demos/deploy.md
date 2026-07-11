@@ -27,6 +27,10 @@ Backend: none
 | Dorje's Resort & Spa | https://dorjes-k2ow015ll-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | The Juicery Cafe | https://the-juicery-cafe-pkv2i8edm-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | Avya Club | https://avya-club-fjmwlb1ev-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
+| Green Pastures Adventures | https://gptrek.com | Production HTTP 200 |
+| Alpine Bloom | https://app-nine-wine-27.vercel.app | Production HTTP 200 |
+| Everest Tours | https://app-mlcydyuc7-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
+| Jeremy Joseph Curry | https://jeremyjosephcurry.com | Production HTTP 200 |
 
 ## Remaining Follow-up
 
@@ -52,3 +56,9 @@ Backend: none
 - Disabled Vercel SSO deployment protection for Ambika Juice and verified the direct URL returns the website with HTTP 200.
 - Deployed preview `https://blueprint-live-demos-1vwqjvsui-jeremys-projects-379e354f.vercel.app` and refreshed the public alias at 2026-07-11T12:54:07+05:45.
 - Verified `https://blueprint-factory-live-demos.vercel.app` returns HTTP 200 and renders 12 CTAs covering six unique full-page demo URLs.
+
+### Ten-project expansion 2026-07-11
+
+- Added Green Pastures Adventures, Alpine Bloom, Everest Tours, and Jeremy Joseph Curry.
+- Refreshed Everest Tours to an unauthenticated public preview after its older deployment remained protected.
+- Kept donor-only clones, internal examples, unfinished drafts, and unresolved-license builds out of the public collection.

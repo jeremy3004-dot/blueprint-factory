@@ -81,6 +81,42 @@ export const liveDemoRecords: LiveDemoRecord[] = [
     ),
     screenshotFile: "avya-club-desktop.png",
     screenshotAlt: "Avya Club homepage with full-bleed fitness imagery and membership pathways."
+  },
+  {
+    slug: "green-pastures",
+    name: "Green Pastures Adventures",
+    category: "Production · Trekking Platform",
+    description: "A full Nepal trekking platform with route discovery, booking, maps, and an AI concierge.",
+    url: projectUrl("https://gptrek.com"),
+    screenshotFile: "green-pastures-desktop.png",
+    screenshotAlt: "Green Pastures Adventures homepage with a Himalayan lake hero and route planning tools."
+  },
+  {
+    slug: "alpine-bloom",
+    name: "Alpine Bloom",
+    category: "Travel · Women-Led Trekking",
+    description: "A women-powered Himalayan travel platform with guided routes, planning, and operations tools.",
+    url: projectUrl("https://app-nine-wine-27.vercel.app"),
+    screenshotFile: "alpine-bloom-desktop.png",
+    screenshotAlt: "Alpine Bloom homepage with colorful Himalayan typography and women-led trekking tools."
+  },
+  {
+    slug: "everest-tours",
+    name: "Everest Tours",
+    category: "Travel · Premium Trekking",
+    description: "A calm, expert trekking concept for small-group Nepal journeys and clear mountain logistics.",
+    url: projectUrl("https://app-mlcydyuc7-jeremys-projects-379e354f.vercel.app"),
+    screenshotFile: "everest-tours-desktop.png",
+    screenshotAlt: "Everest Tours homepage with a mountain hero and small-group trekking message."
+  },
+  {
+    slug: "jeremy-joseph-curry",
+    name: "Jeremy Joseph Curry",
+    category: "Production · Developer Portfolio",
+    description: "A production portfolio presenting Jeremy's mobile, web, backend, and AI software work.",
+    url: projectUrl("https://jeremyjosephcurry.com"),
+    screenshotFile: "jeremy-joseph-curry-desktop.png",
+    screenshotAlt: "Jeremy Joseph Curry portfolio homepage with dark console-inspired presentation."
   }
 ];
 

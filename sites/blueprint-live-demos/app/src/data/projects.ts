@@ -4,6 +4,10 @@ import sanChonScreenshot from "../../public/screenshots/san-chon-desktop.png";
 import dorjesScreenshot from "../../public/screenshots/dorjes-desktop.png";
 import juiceryScreenshot from "../../public/screenshots/the-juicery-cafe-desktop.png";
 import avyaClubScreenshot from "../../public/screenshots/avya-club-desktop.png";
+import greenPasturesScreenshot from "../../public/screenshots/green-pastures-desktop.png";
+import alpineBloomScreenshot from "../../public/screenshots/alpine-bloom-desktop.png";
+import everestToursScreenshot from "../../public/screenshots/everest-tours-desktop.png";
+import jeremyJosephCurryScreenshot from "../../public/screenshots/jeremy-joseph-curry-desktop.png";
 import type { StaticImageData } from "next/image";
 import { liveDemoCount, liveDemoRecords } from "./project-records";
 
@@ -23,7 +27,11 @@ const screenshots: Record<string, StaticImageData> = {
   "san-chon-desktop.png": sanChonScreenshot,
   "dorjes-desktop.png": dorjesScreenshot,
   "the-juicery-cafe-desktop.png": juiceryScreenshot,
-  "avya-club-desktop.png": avyaClubScreenshot
+  "avya-club-desktop.png": avyaClubScreenshot,
+  "green-pastures-desktop.png": greenPasturesScreenshot,
+  "alpine-bloom-desktop.png": alpineBloomScreenshot,
+  "everest-tours-desktop.png": everestToursScreenshot,
+  "jeremy-joseph-curry-desktop.png": jeremyJosephCurryScreenshot
 };
 
 export { liveDemoCount };

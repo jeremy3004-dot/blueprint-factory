@@ -12,7 +12,7 @@ Prospective clients, collaborators, and anyone Jeremy shares the Blueprint Facto
 
 ## Initial Collection
 
-Six completed live demos ship in v1:
+Ten completed live projects and demos ship in the public collection:
 
 1. Ambika Juice
 2. Americana Grill
@@ -20,6 +20,10 @@ Six completed live demos ship in v1:
 4. Dorje's Resort & Spa
 5. The Juicery Cafe
 6. Avya Club
+7. Green Pastures Adventures
+8. Alpine Bloom
+9. Everest Tours
+10. Jeremy Joseph Curry
 
 ## Required Experience
 

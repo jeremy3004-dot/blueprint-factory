@@ -14,7 +14,7 @@ Pass for v1 implementation handoff. The page reads as an editorial studio contac
 | --- | --- | --- |
 | Introduction + project count | Pass | Clear Blueprint Factory positioning |
 | Carousel scale | Pass | Cards read as contact prints, not thumbnails |
-| Position indicator | Pass | Six-project counter + swipe hint |
+| Position indicator | Pass | Ten-project counter + swipe hint |
 | Static index | Pass | All registry projects discoverable without motion |
 | Live Demo badge | Pass | Present on carousel and index rows |
 | CTA clarity | Pass | View Live Demo on every project |
@@ -31,3 +31,9 @@ Pass for v1 implementation handoff. The page reads as an editorial studio contac
 ## Follow-up
 
 - Promote the public preview alias to a Vercel production target only after owner approval.
+
+## Ten-Project Expansion
+
+Status: PASS
+
+The four added projects keep the contact-sheet rhythm intact. The desktop index remains easy to scan, the mobile index keeps one clear CTA per project, and the carousel counter now communicates the larger 10-project collection without crowding the controls.
