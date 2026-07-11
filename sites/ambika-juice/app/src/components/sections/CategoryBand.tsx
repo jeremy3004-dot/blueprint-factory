@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import type { HomeSection } from "@/content/home-sections";
-import { referenceNavigation } from "@/content/onyx-reference";
+import { referenceNavigation } from "@/content/ambika-content";
 
 export function CategoryBand({ section }: { section: HomeSection }) {
   return (

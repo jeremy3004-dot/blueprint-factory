@@ -61,3 +61,28 @@
 - Visual compare vs donor (clone stage): headline 63.4%, desktop pixel 63.4%, mobile pixel 56.3%. Worst section: Section band 2 (y 1951–3902) (50.7%). Report: qa/compare/report.md.
 - Clone tuning stopped after five focused iterations as required by the clone plan. The final build preserves all 20 donor sections, exact desktop section heights, all public route families, responsive choreography, drawers, mega-menu, reveal/reset motion, and a 96.8% structural score.
 - Pixel similarity plateaued below the 85% target because the live donor relies on time-dependent remote video frames, proprietary inline SVG headline art, and reveal states captured at different scroll moments. The final two passes corrected the actual late-page order and the missing James Beard section, raising desktop similarity from 45.5% to 63.4% and mobile from 43.8% to 56.3% without substituting screenshots for working UI.
+
+### 2026-07-11T01:36:03.113Z
+
+- Generated copy-deck.md (358 donor lines) for donor→brand translation.
+
+### 2026-07-11T01:41:23.581Z
+
+- Visual compare vs donor (translation stage): headline 96.8%, desktop pixel 57.5%, mobile pixel 50.6%. Worst section: Section band 6 (y 9755–11706) (40.3%). Report: qa/compare/report.md.
+
+### 2026-07-11T01:41:38.566Z
+
+- Visual compare vs donor (translation stage): headline 96.8%, desktop pixel 57.5%, mobile pixel 50.6%. Worst section: Section band 6 (y 9755–11706) (40.3%). Report: qa/compare/report.md.
+- Translated the complete 20-section system to Ambika Juice, replaced donor commerce with visit/directions conversion, and generated four production-safe local image assets.
+- Final Ambika coverage: 29 routes, seven menu categories, 14 drink pages, five editorial pages, and two policy pages.
+- Factory check passed typecheck, production build, console-error scan, internal-link crawl, and axe. Site-local tests: 16 passed.
+- Captured all 29 routes at desktop, tablet, and mobile plus current normal and reduced-motion recordings. Factory status reached the human Beauty Pass gate.
+- Deployed a Ready Vercel preview at `https://ambika-juice-njv7d2xbo-jeremys-projects-379e354f.vercel.app`; public access is currently protected by the Vercel team's SSO setting. No production deployment was made.
+
+### 2026-07-11T01:48:00.465Z
+
+- Deployed Vercel preview: https://ambika-juice-aea8opixg-jeremys-projects-379e354f.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.
+
+### 2026-07-11T01:55:24.661Z
+
+- Deployed Vercel preview: https://ambika-juice-njv7d2xbo-jeremys-projects-379e354f.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.

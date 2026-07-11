@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { referenceCategories, referenceProducts } from "../src/content/onyx-reference.ts";
+import { businessFacts, referenceCategories, referenceProducts } from "../src/content/ambika-content.ts";
 
 test("reference catalogue uses unique slugs and explicit media provenance", () => {
   assert.ok(referenceCategories.length >= 3);
@@ -15,9 +15,16 @@ test("reference catalogue uses unique slugs and explicit media provenance", () =
   for (const product of referenceProducts) {
     assert.ok(product.name.trim());
     assert.ok(referenceCategories.some((category) => category.slug === product.category));
-    assert.equal(product.media.provenance, "reference-only");
-    assert.ok(product.media.src.startsWith("/reference-only/"));
+    assert.equal(product.media.provenance, "generated");
+    assert.ok(product.media.src.startsWith("/images/ambika/"));
   }
+});
+
+test("Ambika facts expose the visit-first conversion path", () => {
+  assert.equal(businessFacts.name, "Ambika Juice");
+  assert.match(businessFacts.phone, /^\+977/);
+  assert.match(businessFacts.address, /Rastra Bank Chowk/);
+  assert.match(businessFacts.directionsUrl, /google\.com\/maps/);
 });
 
 test("optional product facts may be omitted without placeholder values", () => {
@@ -25,4 +32,3 @@ test("optional product facts may be omitted without placeholder values", () => {
   assert.ok(withoutPrice);
   assert.equal(withoutPrice.price, undefined);
 });
-

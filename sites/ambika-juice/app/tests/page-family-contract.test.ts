@@ -2,10 +2,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-import { referenceRoutes } from "../src/content/onyx-reference.ts";
+import { referenceRoutes } from "../src/content/ambika-content.ts";
 import { routeParamsForFamily } from "../src/content/route-helpers.ts";
 
-test("dynamic page families cover every harvested reference route", () => {
+test("dynamic page families cover every Ambika route", () => {
   for (const family of ["collection", "product", "editorial", "policy"] as const) {
     const expected = referenceRoutes.filter((route) => route.family === family).length;
     const params = routeParamsForFamily(family);
@@ -26,12 +26,8 @@ test("catalogue controls expose accessible filter and product semantics", async 
   assert.match(detail, /aria-label="Product media"/);
 });
 
-test("cart and login routes remain non-transactional reference shells", async () => {
-  const [cart, login] = await Promise.all([
-    readFile(new URL("../src/app/cart/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../src/app/account/login/page.tsx", import.meta.url), "utf8"),
-  ]);
-  assert.match(cart, /Reference-only cart state/);
-  assert.match(login, /Reference-only account state/);
+test("drink pages are informational and convert to directions", async () => {
+  const detail = await readFile(new URL("../src/components/catalogue/ProductDetail.tsx", import.meta.url), "utf8");
+  assert.match(detail, /VISIT US · GET DIRECTIONS/);
+  assert.doesNotMatch(detail, /ADD TO CART/);
 });
-

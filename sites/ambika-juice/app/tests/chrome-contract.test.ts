@@ -16,13 +16,13 @@ test("header exposes keyboard and screen-reader menu state", async () => {
 test("drawers have labelled dialog semantics and close controls", async () => {
   const [menu, cart] = await Promise.all([
     source("../src/components/chrome/MobileDrawer.tsx"),
-    source("../src/components/chrome/CartDrawer.tsx"),
+    source("../src/components/chrome/VisitDrawer.tsx"),
   ]);
   assert.match(menu, /role="dialog"/);
   assert.match(menu, /aria-modal="true"/);
   assert.match(menu, /aria-label="Close menu"/);
   assert.match(cart, /role="dialog"/);
-  assert.match(cart, /aria-label="Close cart"/);
+  assert.match(cart, /aria-label="Close visit details"/);
 });
 
 test("global motion contract includes reduced-motion overrides", async () => {

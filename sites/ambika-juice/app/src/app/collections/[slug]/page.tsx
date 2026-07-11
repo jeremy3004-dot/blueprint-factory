@@ -9,9 +9,8 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   const title = route?.title ?? slug.replaceAll("-", " ");
   return (
     <main id="main-content" className="collectionPage">
-      <header className="collectionHero"><p>SHOP ONYX</p><h1>{title}</h1></header>
-      <ProductGrid />
+      <header className="collectionHero"><p>AMBIKA MENU</p><h1>{title}</h1></header>
+      <ProductGrid initialCategory={slug} />
     </main>
   );
 }
-

@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { CartDrawer } from "./CartDrawer";
+import { VisitDrawer } from "./VisitDrawer";
 import { MegaMenu } from "./MegaMenu";
 import { MobileDrawer } from "./MobileDrawer";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
+  const [visitOpen, setVisitOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -23,13 +23,13 @@ export function Header() {
   const closeAll = () => {
     setMenuOpen(false);
     setMobileOpen(false);
-    setCartOpen(false);
+    setVisitOpen(false);
   };
 
   return (
     <>
       <a className="skipLink" href="#main-content">Skip to content</a>
-      <div className="announcementBar">FREE SHIPPING ON ORDERS $40+</div>
+      <div className="announcementBar">OPEN DAILY · 10:00 AM–7:30 PM · RASTRA BANK CHOWK</div>
       <header
         className="siteHeader"
         data-scrolled={scrolled}
@@ -55,17 +55,16 @@ export function Header() {
         >
           MENU
         </button>
-        <Link className="wordmark" href="/" aria-label="Onyx Coffee Lab home">ONYX</Link>
+        <Link className="wordmark" href="/" aria-label="Ambika Juice home">AMBIKA</Link>
         <nav className="headerTools" aria-label="Utility navigation">
-          <Link className="desktopOnly" href="/account/login">LOGIN</Link>
-          <button type="button" aria-label="Search">SEARCH</button>
-          <button type="button" onClick={() => setCartOpen(true)} aria-label="Open cart">CART (0)</button>
+          <a className="desktopOnly" href="tel:+9779804172590">CALL</a>
+          <Link href="/pages/menu">MENU</Link>
+          <button type="button" onClick={() => setVisitOpen(true)} aria-label="Open visit details">VISIT US</button>
         </nav>
         <MegaMenu open={menuOpen} onNavigate={closeAll} />
       </header>
       <MobileDrawer open={mobileOpen} onClose={() => setMobileOpen(false)} />
-      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+      <VisitDrawer open={visitOpen} onClose={() => setVisitOpen(false)} />
     </>
   );
 }
-

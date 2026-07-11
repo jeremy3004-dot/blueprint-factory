@@ -8,9 +8,8 @@ export function ProductCard({ product }: { product: CatalogueProduct }) {
       <div className="productCardMedia"><img src={product.media.src} alt={product.media.alt} /></div>
       <div className="productCardCopy">
         <h3>{product.name}</h3>
-        <span>{product.price ?? "Explore offering"}</span>
+        <span>{product.price ?? "View drink"}</span>
       </div>
     </Link>
   );
 }
-

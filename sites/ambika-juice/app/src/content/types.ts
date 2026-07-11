@@ -1,5 +1,4 @@
 export type MediaProvenance =
-  | "reference-only"
   | "ambika-owned"
   | "licensed"
   | "generated";
@@ -9,8 +8,6 @@ export type RouteFamily =
   | "collection"
   | "product"
   | "editorial"
-  | "cart"
-  | "account"
   | "policy";
 
 export interface MediaAsset {
@@ -59,4 +56,3 @@ export interface BusinessFacts {
   directionsUrl: string;
   hours?: string;
 }
-

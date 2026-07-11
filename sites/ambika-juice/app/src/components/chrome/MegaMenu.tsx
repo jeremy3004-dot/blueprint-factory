@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { referenceNavigation } from "@/content/onyx-reference";
+import { referenceNavigation } from "@/content/ambika-content";
 
 interface MegaMenuProps {
   open: boolean;
@@ -27,10 +27,10 @@ export function MegaMenu({ open, onNavigate }: MegaMenuProps) {
           </div>
         ))}
         <aside className="megaFeature">
-          <p>Current release</p>
-          <div className="megaFeatureArt" aria-hidden="true">O</div>
-          <Link href="/collections/coffee" onClick={onNavigate} tabIndex={open ? 0 : -1}>
-            Explore offerings <span aria-hidden="true">→</span>
+          <p>Ambika favourite</p>
+          <div className="megaFeatureArt" aria-hidden="true">A</div>
+          <Link href="/collections/house-specials" onClick={onNavigate} tabIndex={open ? 0 : -1}>
+            Explore house specials <span aria-hidden="true">→</span>
           </Link>
         </aside>
       </div>

@@ -10,11 +10,11 @@ test("homepage contract keeps the captured 20-section order", () => {
   assert.equal(new Set(homeSections.map((section) => section.id)).size, 20);
 });
 
-test("every donor homepage medium is explicitly reference-only", () => {
+test("every Ambika homepage medium is production-safe and local", () => {
   const media = homeSections.flatMap((section) => section.media ?? []);
   assert.ok(media.length >= 20);
-  assert.ok(media.every((asset) => asset.provenance === "reference-only"));
-  assert.ok(media.every((asset) => asset.src.startsWith("https://")));
+  assert.ok(media.every((asset) => asset.provenance === "generated"));
+  assert.ok(media.every((asset) => asset.src.startsWith("/images/ambika/")));
 });
 
 test("homepage provides the skip-link target and all section renderers", async () => {

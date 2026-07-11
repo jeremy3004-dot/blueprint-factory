@@ -1,4 +1,4 @@
-import { referenceRoutes } from "./onyx-reference.ts";
+import { referenceRoutes } from "./ambika-content.ts";
 import type { RouteFamily } from "./types.ts";
 
 export function routeParamsForFamily(family: RouteFamily) {

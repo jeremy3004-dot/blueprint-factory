@@ -9,9 +9,9 @@ export function Hero({ section }: { section: HomeSection }) {
     <section className="homeHero" data-section={section.order}>
       {asset && <SectionMedia asset={asset} className="sectionBackdrop" />}
       <div className="mediaScrim" />
-      <div className="heroMark" aria-hidden="true">Onyx</div>
+      <div className="heroMark" aria-hidden="true">Ambika</div>
       <div className="heroCopy" data-reveal>
-        <p>QUALITY · TRUTH · ACCOUNTABILITY</p>
+        <p>FRESH FRUIT · MADE TO ORDER · POKHARA</p>
         <h1>{section.title}</h1>
         <p>{section.body}</p>
         {section.href && <Link className="lightLink" href={section.href}>{section.cta} <span aria-hidden="true">→</span></Link>}

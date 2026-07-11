@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { referenceNavigation } from "@/content/onyx-reference";
+import { referenceNavigation } from "@/content/ambika-content";
 
 interface MobileDrawerProps {
   open: boolean;
@@ -13,7 +13,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
   return (
     <div className="drawer mobileDrawer" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation">
       <div className="drawerTop">
-        <span className="wordmark">ONYX</span>
+        <span className="wordmark">AMBIKA</span>
         <button className="iconButton" type="button" onClick={onClose} aria-label="Close menu">×</button>
       </div>
       <div className="mobileDrawerBody">
@@ -26,8 +26,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
           </section>
         ))}
       </div>
-      <div className="drawerFoot">SEEK QUALITY · TRUTH · ACCOUNTABILITY</div>
+      <div className="drawerFoot">FRESH FRUIT · MADE TO ORDER · POKHARA</div>
     </div>
   );
 }
-
