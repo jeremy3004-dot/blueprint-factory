@@ -1,0 +1,10 @@
+{
+  "site": "blueprint-live-demos",
+  "routes": [
+    {
+      "path": "/",
+      "title": "Blueprint Factory — Live Demos",
+      "status": "implemented"
+    }
+  ]
+}
