@@ -65,3 +65,4 @@ Date: 2026-07-11
 
 - Verified `https://gurkhafit.app` and `https://www.gurkhafit.app` return the current production fitness website with HTTP 200.
 - Added the eleventh registry entry and live screenshot.
+- Refreshed the public showcase and verified 22 CTAs, 11 unique links, an `01 / 11` counter, and a contained 342px mobile card.

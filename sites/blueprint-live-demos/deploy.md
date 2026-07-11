@@ -70,3 +70,5 @@ Backend: none
 
 - Added the production Gurkha Fit website at `https://gurkhafit.app` as the eleventh project.
 - Captured the current live desktop hero and verified both root and `www` domains return HTTP 200.
+- Deployed preview `https://blueprint-live-demos-9b7xbooqk-jeremys-projects-379e354f.vercel.app` and refreshed the public alias at 2026-07-11T15:42:22+05:45.
+- Live browser verification found 22 rendered CTAs covering 11 unique project URLs, including Gurkha Fit.
