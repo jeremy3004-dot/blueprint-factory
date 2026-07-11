@@ -58,3 +58,4 @@ Date: 2026-07-11
 - Added four verified portfolio projects: Green Pastures Adventures, Alpine Bloom, Everest Tours, and Jeremy Joseph Curry.
 - Refreshed the desktop and mobile evidence with 10 index entries and a `01 / 10` carousel counter.
 - Verified the longer index stays readable and contained at 1440px and 390px widths.
+- Refreshed `https://blueprint-factory-live-demos.vercel.app` and verified 20 CTAs, 10 unique links, and HTTP 200 for every destination.
