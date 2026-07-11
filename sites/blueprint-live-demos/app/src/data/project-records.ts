@@ -117,6 +117,15 @@ export const liveDemoRecords: LiveDemoRecord[] = [
     url: projectUrl("https://jeremyjosephcurry.com"),
     screenshotFile: "jeremy-joseph-curry-desktop.png",
     screenshotAlt: "Jeremy Joseph Curry portfolio homepage with dark console-inspired presentation."
+  },
+  {
+    slug: "gurkha-fit",
+    name: "Gurkha Fit",
+    category: "Production · Fitness Platform",
+    description: "A production fitness platform for warrior training, community challenges, and AI coaching.",
+    url: projectUrl("https://gurkhafit.app"),
+    screenshotFile: "gurkha-fit-desktop.png",
+    screenshotAlt: "Gurkha Fit website with a dark mountain hero, neon training message, and mobile app preview."
   }
 ];
 

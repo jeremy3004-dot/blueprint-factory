@@ -31,6 +31,7 @@ Backend: none
 | Alpine Bloom | https://app-nine-wine-27.vercel.app | Production HTTP 200 |
 | Everest Tours | https://app-mlcydyuc7-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | Jeremy Joseph Curry | https://jeremyjosephcurry.com | Production HTTP 200 |
+| Gurkha Fit | https://gurkhafit.app | Production HTTP 200 |
 
 ## Remaining Follow-up
 
@@ -64,3 +65,8 @@ Backend: none
 - Kept donor-only clones, internal examples, unfinished drafts, and unresolved-license builds out of the public collection.
 - Deployed preview `https://blueprint-live-demos-l4yoyo18f-jeremys-projects-379e354f.vercel.app` and refreshed the public alias at 2026-07-11T13:50:08+05:45.
 - Live browser verification found 20 rendered CTAs covering 10 unique project URLs; all 10 destinations returned HTTP 200 without authentication.
+
+### Gurkha Fit addition 2026-07-11
+
+- Added the production Gurkha Fit website at `https://gurkhafit.app` as the eleventh project.
+- Captured the current live desktop hero and verified both root and `www` domains return HTTP 200.

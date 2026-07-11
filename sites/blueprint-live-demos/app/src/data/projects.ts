@@ -8,6 +8,7 @@ import greenPasturesScreenshot from "../../public/screenshots/green-pastures-des
 import alpineBloomScreenshot from "../../public/screenshots/alpine-bloom-desktop.png";
 import everestToursScreenshot from "../../public/screenshots/everest-tours-desktop.png";
 import jeremyJosephCurryScreenshot from "../../public/screenshots/jeremy-joseph-curry-desktop.png";
+import gurkhaFitScreenshot from "../../public/screenshots/gurkha-fit-desktop.png";
 import type { StaticImageData } from "next/image";
 import { liveDemoCount, liveDemoRecords } from "./project-records";
 
@@ -31,7 +32,8 @@ const screenshots: Record<string, StaticImageData> = {
   "green-pastures-desktop.png": greenPasturesScreenshot,
   "alpine-bloom-desktop.png": alpineBloomScreenshot,
   "everest-tours-desktop.png": everestToursScreenshot,
-  "jeremy-joseph-curry-desktop.png": jeremyJosephCurryScreenshot
+  "jeremy-joseph-curry-desktop.png": jeremyJosephCurryScreenshot,
+  "gurkha-fit-desktop.png": gurkhaFitScreenshot
 };
 
 export { liveDemoCount };
