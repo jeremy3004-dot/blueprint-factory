@@ -48,3 +48,10 @@
 - Corrected preview shareability after browser verification: the URL redirects unauthenticated visitors to Vercel login and is protected, despite the deploy command's initial shareable label.
 - A remote `blueprint:check` therefore reached Vercel's login UI, where injected Google-account scripts produced a 403/console error and three contrast findings. The local application check remains fully green.
 - Owner action is recorded in `deploy.md`; no deployment-protection bypass was attempted.
+
+### 2026-07-11T01:19:19.822Z
+
+- Reproduced the failed remote build and traced it to `typescript: "latest"` resolving to incompatible TypeScript 7.0.2 on Vercel instead of the locally resolved 6.0.3.
+- Pinned TypeScript to 6.0.3, passed a clean npm install/build, and redeployed.
+- New preview `https://san-chon-6s5kof8zg-jeremys-projects-379e354f.vercel.app` reached Vercel status **Ready** with `/`, `/menu`, and `/visit` prerendered.
+- Deployment Protection still redirects unauthenticated visitors to Vercel login.

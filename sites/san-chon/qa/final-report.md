@@ -14,7 +14,7 @@ COTE Korean Steakhouse — chosen by the owner and used for its black/brass navi
 - Final translation: 85.5% structure, 55.4% desktop pixel, 52.6% mobile pixel.
 - Section coverage: 12/12 donor structural bands; 3/3 San Chon routes built and captured.
 - Check: typecheck pass, build pass, console pass, 7 internal links pass, axe pass.
-- Preview: `https://san-chon-btknfspqd-jeremys-projects-379e354f.vercel.app`.
+- Preview: `https://san-chon-6s5kof8zg-jeremys-projects-379e354f.vercel.app` (Vercel status: Ready).
 - Shareability: protected by Vercel Deployment Protection; owner must disable preview protection before sharing.
 
 ## Signature Moment
@@ -36,3 +36,7 @@ COTE Korean Steakhouse — chosen by the owner and used for its black/brass navi
 3. The repository lockfile is stale against one donor package; installation required a lockfile-preserving workaround.
 4. Three unrelated console prospect-thumbnail tests fail in this isolated checkout because their screenshot paths are absent.
 5. The deploy command labeled the preview shareable, but unauthenticated browser verification proved Vercel protection is enabled.
+
+## Deployment Repair
+
+The first remote build exposed dependency drift hidden by the local workspace: `typescript: "latest"` installed TypeScript 7.0.2 on Vercel, while the verified local build used 6.0.3. TypeScript is now pinned to 6.0.3. A clean npm install/build and the Vercel remote build both pass.
