@@ -50,3 +50,5 @@ Backend: none
 
 - Added Ambika Juice as the sixth public live demo.
 - Disabled Vercel SSO deployment protection for Ambika Juice and verified the direct URL returns the website with HTTP 200.
+- Deployed preview `https://blueprint-live-demos-1vwqjvsui-jeremys-projects-379e354f.vercel.app` and refreshed the public alias at 2026-07-11T12:54:07+05:45.
+- Verified `https://blueprint-factory-live-demos.vercel.app` returns HTTP 200 and renders 12 CTAs covering six unique full-page demo URLs.

@@ -43,3 +43,8 @@ Date: 2026-07-11
 ### 2026-07-11T06:31:04.537Z
 
 - Deployed Vercel preview: https://blueprint-live-demos.vercel.app (verified 200, shareable). Recorded in deploy.md. Not production.
+
+### 2026-07-11T12:54:07+05:45
+
+- Refreshed public alias: https://blueprint-factory-live-demos.vercel.app
+- Live browser proof: correct page title, six-project copy, 12 rendered CTAs, six unique destination URLs, and a 342px carousel card inside a 390px mobile viewport.
