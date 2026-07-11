@@ -13,11 +13,12 @@ Date: 2026-07-11
 
 | Demo URL | HTTP | Notes |
 | --- | --- | --- |
+| Ambika Juice | 200 | Public |
 | Americana Grill | 200 | Public |
-| San Chon | 302 → Vercel SSO | Protected |
-| Dorje's Resort & Spa | 302 → Vercel SSO | Protected |
-| The Juicery Cafe | 302 → Vercel SSO | Protected |
-| Avya Club | 302 → Vercel SSO | Protected |
+| San Chon | 200 | Public |
+| Dorje's Resort & Spa | 200 | Public |
+| The Juicery Cafe | 200 | Public |
+| Avya Club | 200 | Public |
 
 ## Interaction Checks
 
@@ -27,17 +28,17 @@ Date: 2026-07-11
 - Static index lists all registry projects with matching metadata.
 - Every card and index row exposes **View Live Demo** opening a new tab.
 - `prefers-reduced-motion` path uses instant scroll behavior in the carousel controller.
+- Mobile cards use CSS flex-basis before hydration; the 390px capture verifies the full CTA remains inside the viewport.
 
 ## Screenshots
 
 - Desktop: `qa/compare/build/desktop.png`
 - Mobile: `qa/compare/build/mobile.png`
 
-## Release Blockers
+## Release State
 
-1. Ambika Juice has no completed build yet — omitted from v1 registry.
-2. Four demo previews still require Vercel Deployment Protection to be disabled.
-3. Showcase production deploy requires owner approval before publishing.
+- All six demo URLs are public without authentication.
+- The showcase remains on its public preview alias; production promotion remains approval-gated.
 
 ### 2026-07-11T06:31:04.537Z
 

@@ -21,6 +21,7 @@ Backend: none
 
 | Demo | Public URL | Shareability (2026-07-11) |
 | --- | --- | --- |
+| Ambika Juice | https://ambika-juice-njv7d2xbo-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | Americana Grill | https://americana-grill-3l4n4y23x-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | San Chon | https://san-chon-6s5kof8zg-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
 | Dorje's Resort & Spa | https://dorjes-k2ow015ll-jeremys-projects-379e354f.vercel.app | Public HTTP 200 |
@@ -29,12 +30,10 @@ Backend: none
 
 ## Remaining Follow-up
 
-1. Add Ambika Juice to the registry once that build exists and has a public URL.
-2. Request explicit production promotion if you want this moved off preview target.
+1. Request explicit production promotion if you want this moved off the public preview alias.
 
 ## Notes
 
-- Ambika Juice is intentionally omitted from v1 because no completed build or public deployment exists in the repo yet.
 - The showcase opens demos in new tabs; it does not iframe them.
 
 ### Preview deploy 2026-07-11T06:31:04.535Z
@@ -46,3 +45,8 @@ Backend: none
 
 - https://blueprint-factory-live-demos.vercel.app (verified HTTP 200, aliased to latest showcase preview).
 - Disabled Vercel SSO deployment protection on San Chon, Dorje's, The Juicery Cafe, and Avya Club so all linked demos open without login.
+
+### Six-demo refresh 2026-07-11
+
+- Added Ambika Juice as the sixth public live demo.
+- Disabled Vercel SSO deployment protection for Ambika Juice and verified the direct URL returns the website with HTTP 200.

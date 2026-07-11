@@ -12,15 +12,14 @@ Prospective clients, collaborators, and anyone Jeremy shares the Blueprint Facto
 
 ## Initial Collection
 
-Five completed live demos ship in v1:
+Six completed live demos ship in v1:
 
-1. Americana Grill
-2. San Chon
-3. Dorje's Resort & Spa
-4. The Juicery Cafe
-5. Avya Club
-
-Ambika Juice is deferred until a completed build and public deployment exist.
+1. Ambika Juice
+2. Americana Grill
+3. San Chon
+4. Dorje's Resort & Spa
+5. The Juicery Cafe
+6. Avya Club
 
 ## Required Experience
 

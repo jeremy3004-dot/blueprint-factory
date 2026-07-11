@@ -1,3 +1,4 @@
+import ambikaJuiceScreenshot from "../../public/screenshots/ambika-juice-desktop.png";
 import americanaGrillScreenshot from "../../public/screenshots/americana-grill-desktop.png";
 import sanChonScreenshot from "../../public/screenshots/san-chon-desktop.png";
 import dorjesScreenshot from "../../public/screenshots/dorjes-desktop.png";
@@ -17,6 +18,7 @@ export type LiveDemoProject = {
 };
 
 const screenshots: Record<string, StaticImageData> = {
+  "ambika-juice-desktop.png": ambikaJuiceScreenshot,
   "americana-grill-desktop.png": americanaGrillScreenshot,
   "san-chon-desktop.png": sanChonScreenshot,
   "dorjes-desktop.png": dorjesScreenshot,

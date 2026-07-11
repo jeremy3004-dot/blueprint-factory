@@ -8,16 +8,9 @@ type DemoCarouselProps = {
   projects: LiveDemoProject[];
 };
 
-function cardWidth(viewport: number) {
-  if (viewport < 640) return Math.min(viewport - 48, 320);
-  if (viewport < 1024) return Math.min(viewport * 0.72, 560);
-  return Math.min(viewport * 0.58, 760);
-}
-
 export function DemoCarousel({ projects }: DemoCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [cardSize, setCardSize] = useState(760);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -26,13 +19,6 @@ export function DemoCarousel({ projects }: DemoCarouselProps) {
     sync();
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
-  }, []);
-
-  useEffect(() => {
-    const syncSize = () => setCardSize(cardWidth(window.innerWidth));
-    syncSize();
-    window.addEventListener("resize", syncSize);
-    return () => window.removeEventListener("resize", syncSize);
   }, []);
 
   const scrollToIndex = useCallback(
@@ -131,7 +117,6 @@ export function DemoCarousel({ projects }: DemoCarouselProps) {
           <article
             key={project.slug}
             className="carouselCard"
-            style={{ width: `${cardSize}px` }}
             aria-hidden={index !== activeIndex}
           >
             <div className="carouselMedia">

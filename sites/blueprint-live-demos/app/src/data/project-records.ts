@@ -17,6 +17,17 @@ function projectUrl(value: string): string {
 
 export const liveDemoRecords: LiveDemoRecord[] = [
   {
+    slug: "ambika-juice",
+    name: "Ambika Juice",
+    category: "Juice Bar · Pokhara",
+    description: "A vibrant, product-led juice shop experience built around Ambika's real Pokhara menu.",
+    url: projectUrl(
+      "https://ambika-juice-njv7d2xbo-jeremys-projects-379e354f.vercel.app"
+    ),
+    screenshotFile: "ambika-juice-desktop.png",
+    screenshotAlt: "Ambika Juice homepage with bright product photography and juice menu storytelling."
+  },
+  {
     slug: "americana-grill",
     name: "Americana Grill",
     category: "Restaurant · American Diner",

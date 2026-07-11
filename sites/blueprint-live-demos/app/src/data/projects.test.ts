@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { liveDemoCount, liveDemoRecords } from "./project-records.ts";
 
-test("live demo registry exposes five initial public-ready builds", () => {
-  assert.equal(liveDemoCount, 5);
-  assert.equal(liveDemoRecords.length, 5);
+test("live demo registry exposes all six approved public builds", () => {
+  assert.equal(liveDemoCount, 6);
+  assert.equal(liveDemoRecords.length, 6);
 });
 
 test("every live demo record includes required showcase fields", () => {
@@ -21,6 +21,8 @@ test("every live demo record includes required showcase fields", () => {
 
 test("carousel and index CTAs point at the expected external demo URLs", () => {
   const expected = {
+    "ambika-juice":
+      "https://ambika-juice-njv7d2xbo-jeremys-projects-379e354f.vercel.app",
     "americana-grill":
       "https://americana-grill-3l4n4y23x-jeremys-projects-379e354f.vercel.app",
     "san-chon": "https://san-chon-6s5kof8zg-jeremys-projects-379e354f.vercel.app",

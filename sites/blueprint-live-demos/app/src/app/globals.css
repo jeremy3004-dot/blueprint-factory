@@ -231,7 +231,9 @@ main {
 }
 
 .carouselCard {
-  flex: 0 0 auto;
+  width: min(58vw, 760px);
+  min-width: 0;
+  flex: 0 0 min(58vw, 760px);
   scroll-snap-align: start;
   border: 1px solid var(--line);
   background: rgba(255, 252, 247, 0.82);
@@ -413,6 +415,11 @@ main {
     align-items: start;
   }
 
+  .carouselCard {
+    width: min(72vw, 560px);
+    flex-basis: min(72vw, 560px);
+  }
+
   .indexItem {
     grid-template-columns: auto 96px minmax(0, 1fr);
   }
@@ -428,6 +435,11 @@ main {
     flex-direction: column;
     align-items: start;
     gap: 6px;
+  }
+
+  .carouselCard {
+    width: calc(100vw - 48px);
+    flex-basis: calc(100vw - 48px);
   }
 
   .indexItem {
