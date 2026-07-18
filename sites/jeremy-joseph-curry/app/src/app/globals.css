@@ -775,8 +775,9 @@ h1 {
   text-transform: uppercase;
 }
 
-.writingIndexCard strong {
+.writingIndexCard h2 {
   align-self: end;
+  margin: 0;
   color: rgba(246, 235, 212, 0.96);
   font-family: var(--font-heading, ui-sans-serif);
   font-size: clamp(1.65rem, 3vw, 2.35rem);
@@ -811,8 +812,9 @@ h1 {
   text-transform: uppercase;
 }
 
-.writingFeature strong {
+.writingFeature h2 {
   max-width: 24ch;
+  margin: 0;
   color: rgba(246, 235, 212, 0.96);
   font-family: var(--font-heading, ui-sans-serif);
   font-size: clamp(1.75rem, 4vw, 2.8rem);

@@ -273,7 +273,7 @@ export default function Home() {
         <div className="writingGrid">
           <Link className="writingFeature reveal" href="/writing/shipping-ios-app-from-nepal">
             <span>Release engineering / iOS</span>
-            <strong>Shipping an iOS App from Nepal: My Release Evidence Method</strong>
+            <h2>Shipping an iOS App from Nepal: My Release Evidence Method</h2>
             <p>
               How Jeremy connects source revision, IPA identity, TestFlight distribution, App Store
               metadata, and the public product page.
@@ -282,10 +282,22 @@ export default function Home() {
           </Link>
           <Link className="writingFeature reveal" href="/writing/five-product-contracts">
             <span>Product engineering / Architecture</span>
-            <strong>From Idea to Launch: The Five Product Contracts I Define Before I Build</strong>
+            <h2>From Idea to Launch: The Five Product Contracts I Define Before I Build</h2>
             <p>
               A practical model for keeping the problem, interface, data, AI behavior, and release
               path coherent from idea to launch.
+            </p>
+            <span className="cardArrow" aria-hidden="true">Read the article -&gt;</span>
+          </Link>
+          <Link
+            className="writingFeature reveal"
+            href="/writing/reading-the-himalrx-workflow-as-decisions-not-screens"
+          >
+            <span>Product engineering / Operations</span>
+            <h2>Reading the HimalRx Workflow as Decisions, Not Screens</h2>
+            <p>
+              How batch-aware inventory, connected counter actions, role-specific views, alerts,
+              history, and reporting support one coherent operating truth.
             </p>
             <span className="cardArrow" aria-hidden="true">Read the article -&gt;</span>
           </Link>

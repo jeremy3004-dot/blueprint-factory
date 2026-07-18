@@ -22,6 +22,13 @@ const articles = [
     title: "From Idea to Launch: The Five Product Contracts I Define Before I Build",
     description:
       "Five concise contracts for keeping the problem, interface, data, AI behavior, and release path coherent from idea to launch."
+  },
+  {
+    path: "/writing/reading-the-himalrx-workflow-as-decisions-not-screens",
+    label: "Product engineering / Operations",
+    title: "Reading the HimalRx Workflow as Decisions, Not Screens",
+    description:
+      "How batch-aware inventory, connected counter actions, role-specific views, alerts, history, and reporting support one coherent operating truth."
   }
 ];
 
@@ -55,7 +62,7 @@ export default function WritingIndex() {
           {articles.map((article) => (
             <Link className="writingIndexCard" href={article.path} key={article.path}>
               <span>{article.label}</span>
-              <strong>{article.title}</strong>
+              <h2>{article.title}</h2>
               <p>{article.description}</p>
               <span className="cardArrow" aria-hidden="true">
                 Read the article -&gt;

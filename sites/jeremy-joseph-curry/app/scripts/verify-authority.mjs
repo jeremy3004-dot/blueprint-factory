@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -45,6 +46,19 @@ const approvedProductContractsSource = path.join(
   "content",
   "product-from-idea-to-launch.md"
 );
+const himalRxArticleRoute =
+  "/writing/reading-the-himalrx-workflow-as-decisions-not-screens";
+const himalRxArticleUrl = `${origin}${himalRxArticleRoute}`;
+const himalRxArticleTitle = "Reading the HimalRx Workflow as Decisions, Not Screens";
+const himalRxArticleDescription =
+  "Jeremy Joseph Curry examines the publicly presented HimalRx workflow through batch-aware inventory, connected counter actions, role-specific views, alerts, history, and operational evidence.";
+const approvedHimalRxArticleSource = path.join(
+  appRoot,
+  "content",
+  "himalrx-engineering-case-study.md"
+);
+const approvedHimalRxArticleSha256 =
+  "24b4dadf06f2636f553e7fd8250712d7b3f79e99777e18debbb92da8945503d6";
 
 const expectedPerson = {
   "@type": "Person",
@@ -83,7 +97,7 @@ const expectedRoutes = {
       "Jeremy Joseph Curry is a software engineer and independent app developer based in Nepal, building mobile apps, web applications, websites, backend systems, and AI-powered software.",
     type: "website",
     schema: "home",
-    requiredLinks: [writingIndexUrl, writingUrl, productContractsUrl]
+    requiredLinks: [writingIndexUrl, writingUrl, productContractsUrl, himalRxArticleUrl]
   },
   "/about": {
     file: "about.html",
@@ -142,7 +156,7 @@ const expectedRoutes = {
     description: writingIndexDescription,
     type: "website",
     schema: "writingIndex",
-    requiredLinks: [writingUrl, productContractsUrl]
+    requiredLinks: [writingUrl, productContractsUrl, himalRxArticleUrl]
   },
   [writingRoute]: {
     file: "writing/shipping-ios-app-from-nepal.html",
@@ -186,6 +200,24 @@ const expectedRoutes = {
       "https://apps.apple.com/us/app/gurkha-fit/id6758262705",
       `${origin}/`
     ]
+  },
+  [himalRxArticleRoute]: {
+    file: "writing/reading-the-himalrx-workflow-as-decisions-not-screens.html",
+    url: himalRxArticleUrl,
+    title: himalRxArticleTitle,
+    description: himalRxArticleDescription,
+    type: "article",
+    schema: "publishedArticle",
+    datePublished: writingDate,
+    dateModified: writingDate,
+    approvedSource: approvedHimalRxArticleSource,
+    approvedSourceSha256: approvedHimalRxArticleSha256,
+    requiredLinks: [
+      authorUrl,
+      writingIndexUrl,
+      "https://himalrx.com/",
+      `${origin}/work/himalrx`
+    ]
   }
 };
 
@@ -207,7 +239,7 @@ const expectedWritingIndexNodes = [
     "@type": "ItemList",
     "@id": `${writingIndexUrl}#article-list`,
     name: "Jeremy Joseph Curry engineering articles",
-    numberOfItems: 2,
+    numberOfItems: 3,
     itemListElement: [
       {
         "@type": "ListItem",
@@ -225,6 +257,15 @@ const expectedWritingIndexNodes = [
           "@id": `${productContractsUrl}#article`,
           url: productContractsUrl,
           name: productContractsTitle
+        }
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@id": `${himalRxArticleUrl}#article`,
+          url: himalRxArticleUrl,
+          name: himalRxArticleTitle
         }
       }
     ]
@@ -378,6 +419,7 @@ function normalizeApprovedMarkdown(markdown) {
     .replace(/^>\s+/gm, "")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -488,6 +530,26 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
   } else {
     assert.equal(people.length, 0, `${route}: duplicate Person node must not be embedded`);
   }
+  if (requirement.schema === "home") {
+    const writingCards = [
+      ...html.matchAll(
+        /<a\b[^>]*class=["'][^"']*\bwritingFeature\b[^"']*["'][^>]*>(.*?)<\/a>/gis
+      )
+    ];
+    assert.equal(writingCards.length, 3, "/: expected exactly three writing cards");
+    for (const [index, card] of writingCards.entries()) {
+      assert.equal(
+        (card[1].match(/<h2\b/gi) || []).length,
+        1,
+        `/: writing card ${index + 1} must use one h2 for its title`
+      );
+      assert.equal(
+        (card[1].match(/<strong\b/gi) || []).length,
+        0,
+        `/: writing card ${index + 1} must not use strong for its title`
+      );
+    }
+  }
   if (requirement.schema === "profile") {
     const profiles = nodes.filter((node) => node["@type"] === "ProfilePage");
     assert.equal(profiles.length, 1, "/about: exactly one ProfilePage required");
@@ -497,6 +559,24 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
   }
   if (requirement.schema === "writingIndex") {
     assert.deepEqual(nodes, expectedWritingIndexNodes, "/writing: collection graph differs");
+    const cards = [
+      ...html.matchAll(
+        /<a\b[^>]*class=["'][^"']*\bwritingIndexCard\b[^"']*["'][^>]*>(.*?)<\/a>/gis
+      )
+    ];
+    assert.equal(cards.length, 3, "/writing: expected exactly three article cards");
+    for (const [index, card] of cards.entries()) {
+      assert.equal(
+        (card[1].match(/<h2\b/gi) || []).length,
+        1,
+        `/writing: card ${index + 1} must use one h2 for its title`
+      );
+      assert.equal(
+        (card[1].match(/<strong\b/gi) || []).length,
+        0,
+        `/writing: card ${index + 1} must not use strong for its title`
+      );
+    }
     assert.ok(
       text.includes("iOS releases") &&
         text.includes("product interfaces") &&
@@ -525,6 +605,22 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
     );
     const articleMatch = html.match(/<article\b[^>]*data-approved-article=["']true["'][^>]*>(.*?)<\/article>/is);
     assert.ok(articleMatch, `${route}: approved article wrapper missing`);
+    assert.ok(
+      visibleText(articleMatch[1]).includes(
+        "By Jeremy Joseph Curry Software Engineer & App Developer based in Nepal"
+      ),
+      `${route}: exact visible author and current-role byline missing`
+    );
+    if (requirement.approvedSourceSha256) {
+      assert.equal(
+        crypto
+          .createHash("sha256")
+          .update(fs.readFileSync(requirement.approvedSource))
+          .digest("hex"),
+        requirement.approvedSourceSha256,
+        `${route}: approved article source bytes differ`
+      );
+    }
     assert.equal(
       normalizeArticleText(visibleText(articleMatch[1])),
       normalizeArticleText(

@@ -9,7 +9,7 @@ type ApprovedMarkdownArticleProps = {
 
 function inlineMarkdown(value: string): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const pattern = /(\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*)/g;
+  const pattern = /(\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*)/g;
   let cursor = 0;
   let match;
 
@@ -21,8 +21,10 @@ function inlineMarkdown(value: string): ReactNode[] {
           {match[2]}
         </a>
       );
-    } else {
+    } else if (match[4]) {
       nodes.push(<strong key={`${match.index}-${match[4]}`}>{match[4]}</strong>);
+    } else {
+      nodes.push(<em key={`${match.index}-${match[5]}`}>{match[5]}</em>);
     }
     cursor = pattern.lastIndex;
   }
