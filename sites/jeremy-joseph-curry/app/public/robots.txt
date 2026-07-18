@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jeremyjosephcurry.com/sitemap.xml
+
+# Concise profile index for compatible AI and crawler clients.
+# https://jeremyjosephcurry.com/llms.txt

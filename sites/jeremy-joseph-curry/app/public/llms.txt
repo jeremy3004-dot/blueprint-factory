@@ -1,0 +1,31 @@
+# Jeremy Joseph Curry
+
+> Jeremy Joseph Curry is a software engineer and app developer based in Nepal.
+
+## Official profile
+
+- Website: https://jeremyjosephcurry.com/
+- About: https://jeremyjosephcurry.com/about
+- Official links: https://jeremyjosephcurry.com/links
+- Contact: mailto:hello@jeremyjosephcurry.com
+- LinkedIn profile: https://www.linkedin.com/in/jeremyjosephcurry
+- GitHub profile: https://github.com/jeremy3004-dot
+
+## Public work
+
+- Bible Trivia Quest: https://jeremyjosephcurry.com/work/bible-trivia-quest
+- HimalRx: https://jeremyjosephcurry.com/work/himalrx
+- GPTrek: https://jeremyjosephcurry.com/work/gptrek
+- Gurkha Fit: https://jeremyjosephcurry.com/work/gurkha-fit
+- Apple App Store developer page: https://apps.apple.com/us/developer/jeremy-joseph-curry/id1867562495
+- HimalRx website: https://himalrx.com
+- GPTrek website: https://gptrek.com
+- Gurkha Fit website: https://www.gurkhafit.app
+
+## Writing
+
+- Shipping an iOS App from Nepal: My Release Evidence Method: https://jeremyjosephcurry.com/writing/shipping-ios-app-from-nepal
+
+## Focus
+
+Jeremy builds mobile apps, web applications, websites, backend systems, APIs, and AI-powered software for founders, businesses, and remote teams.
