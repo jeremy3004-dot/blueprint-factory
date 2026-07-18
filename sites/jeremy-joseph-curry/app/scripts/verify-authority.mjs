@@ -22,6 +22,11 @@ const portraitImages = [
   `${origin}/images/jeremy-joseph-curry-16x9.jpg`
 ];
 const socialImage = portraitImages[2];
+const writingIndexRoute = "/writing";
+const writingIndexUrl = `${origin}${writingIndexRoute}`;
+const writingIndexTitle = "Writing | Jeremy Joseph Curry";
+const writingIndexDescription =
+  "Current engineering notes by Jeremy Joseph Curry on iOS releases, product interfaces, data contracts, bounded AI behavior, and deployment evidence.";
 const writingRoute = "/writing/shipping-ios-app-from-nepal";
 const writingUrl = `${origin}${writingRoute}`;
 const writingTitle = "Shipping an iOS App from Nepal: My Release Evidence Method";
@@ -29,6 +34,17 @@ const writingDescription =
   "Jeremy Joseph Curry explains the release evidence method he uses to connect source code, IPA identity, TestFlight distribution, App Store metadata, and the public product page.";
 const writingDate = "2026-07-18";
 const approvedArticleSource = path.join(appRoot, "content", "app-store-from-nepal.md");
+const productContractsRoute = "/writing/five-product-contracts";
+const productContractsUrl = `${origin}${productContractsRoute}`;
+const productContractsTitle =
+  "From Idea to Launch: The Five Product Contracts I Define Before I Build";
+const productContractsDescription =
+  "Jeremy Joseph Curry explains five product contracts for problem definition, interface states, data integrity, bounded AI behavior, and release evidence.";
+const approvedProductContractsSource = path.join(
+  appRoot,
+  "content",
+  "product-from-idea-to-launch.md"
+);
 
 const expectedPerson = {
   "@type": "Person",
@@ -67,7 +83,7 @@ const expectedRoutes = {
       "Jeremy Joseph Curry is a software engineer and independent app developer based in Nepal, building mobile apps, web applications, websites, backend systems, and AI-powered software.",
     type: "website",
     schema: "home",
-    requiredLinks: [writingUrl]
+    requiredLinks: [writingIndexUrl, writingUrl, productContractsUrl]
   },
   "/about": {
     file: "about.html",
@@ -119,6 +135,15 @@ const expectedRoutes = {
     type: "article",
     schema: "article"
   },
+  [writingIndexRoute]: {
+    file: "writing.html",
+    url: writingIndexUrl,
+    title: writingIndexTitle,
+    description: writingIndexDescription,
+    type: "website",
+    schema: "writingIndex",
+    requiredLinks: [writingUrl, productContractsUrl]
+  },
   [writingRoute]: {
     file: "writing/shipping-ios-app-from-nepal.html",
     url: writingUrl,
@@ -128,8 +153,10 @@ const expectedRoutes = {
     schema: "publishedArticle",
     datePublished: writingDate,
     dateModified: writingDate,
+    approvedSource: approvedArticleSource,
     requiredLinks: [
       authorUrl,
+      writingIndexUrl,
       "https://apps.apple.com/us/app/gurkha-fit/id6758262705",
       "https://developer.apple.com/app-store/review/guidelines/",
       "https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/",
@@ -139,8 +166,70 @@ const expectedRoutes = {
       `${origin}/`,
       "https://apps.apple.com/us/developer/jeremy-joseph-curry/id1867562495"
     ]
+  },
+  [productContractsRoute]: {
+    file: "writing/five-product-contracts.html",
+    url: productContractsUrl,
+    title: productContractsTitle,
+    description: productContractsDescription,
+    type: "article",
+    schema: "publishedArticle",
+    datePublished: writingDate,
+    dateModified: writingDate,
+    approvedSource: approvedProductContractsSource,
+    requiredLinks: [
+      authorUrl,
+      writingIndexUrl,
+      "https://himalrx.com/",
+      "https://www.gurkhafit.app/",
+      "https://gptrek.com/",
+      "https://apps.apple.com/us/app/gurkha-fit/id6758262705",
+      `${origin}/`
+    ]
   }
 };
+
+const expectedWritingIndexNodes = [
+  {
+    "@type": "CollectionPage",
+    "@id": `${writingIndexUrl}#collection-page`,
+    url: writingIndexUrl,
+    name: writingIndexTitle,
+    description: writingIndexDescription,
+    author: {
+      "@id": personId
+    },
+    mainEntity: {
+      "@id": `${writingIndexUrl}#article-list`
+    }
+  },
+  {
+    "@type": "ItemList",
+    "@id": `${writingIndexUrl}#article-list`,
+    name: "Jeremy Joseph Curry engineering articles",
+    numberOfItems: 2,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": `${writingUrl}#article`,
+          url: writingUrl,
+          name: writingTitle
+        }
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": `${productContractsUrl}#article`,
+          url: productContractsUrl,
+          name: productContractsTitle
+        }
+      }
+    ]
+  }
+];
 
 const expectedImages = {
   "/images/jeremy-joseph-curry-1x1.jpg": [1200, 1200],
@@ -283,11 +372,12 @@ function normalizeApprovedMarkdown(markdown) {
     .replaceAll("\r", "")
     .replace(/^```[^\n]*$/gm, "")
     .replace(/^---\s*$/gm, "")
-    .replace(/^#{1,6}\s+/gm, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/^\s*[-*]\s+/gm, "")
     .replace(/^\s*\d+\.\s+/gm, "")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^>\s+/gm, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -323,6 +413,10 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
       `${route}: required crawlable link missing: ${expectedLink}`
     );
   }
+  assert.ok(
+    anchors.some((anchor) => normalizeHref(anchor.href) === writingIndexUrl),
+    `${route}: primary Writing link must target ${writingIndexUrl}`
+  );
 
   const title = decodeHtml(html.match(/<title\b[^>]*>(.*?)<\/title>/is)?.[1]);
   assert.equal(title, requirement.title, `${route}: title mismatch`);
@@ -401,6 +495,17 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
     assert.ok(!("dateCreated" in profiles[0]), "/about: unsupported dateCreated must be omitted");
     assert.ok(!("dateModified" in profiles[0]), "/about: unsupported dateModified must be omitted");
   }
+  if (requirement.schema === "writingIndex") {
+    assert.deepEqual(nodes, expectedWritingIndexNodes, "/writing: collection graph differs");
+    assert.ok(
+      text.includes("iOS releases") &&
+        text.includes("product interfaces") &&
+        text.includes("data contracts") &&
+        text.includes("AI behavior") &&
+        text.includes("deployment evidence"),
+      "/writing: current engineering scope description is incomplete"
+    );
+  }
   if (requirement.schema === "article" || requirement.schema === "publishedArticle") {
     const articles = nodes.filter((node) => node["@type"] === "Article");
     assert.equal(articles.length, 1, `${route}: exactly one Article node required`);
@@ -414,12 +519,17 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
   }
 
   if (requirement.schema === "publishedArticle") {
-    assert.ok(fs.existsSync(approvedArticleSource), `approved article source missing: ${approvedArticleSource}`);
+    assert.ok(
+      fs.existsSync(requirement.approvedSource),
+      `approved article source missing: ${requirement.approvedSource}`
+    );
     const articleMatch = html.match(/<article\b[^>]*data-approved-article=["']true["'][^>]*>(.*?)<\/article>/is);
     assert.ok(articleMatch, `${route}: approved article wrapper missing`);
     assert.equal(
       normalizeArticleText(visibleText(articleMatch[1])),
-      normalizeArticleText(normalizeApprovedMarkdown(fs.readFileSync(approvedArticleSource, "utf8"))),
+      normalizeArticleText(
+        normalizeApprovedMarkdown(fs.readFileSync(requirement.approvedSource, "utf8"))
+      ),
       `${route}: rendered title, byline, or body differs from approved source`
     );
   }

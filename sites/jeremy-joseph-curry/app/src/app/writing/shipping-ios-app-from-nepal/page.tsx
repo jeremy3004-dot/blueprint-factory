@@ -36,6 +36,9 @@ export default function ShippingIosAppFromNepal() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Link className="articleBack" href="/writing">
+        &lt;- Back to Writing
+      </Link>
       <article className="articlePage" data-approved-article="true">
         <header className="articleHeader">
           <h1>{title}</h1>

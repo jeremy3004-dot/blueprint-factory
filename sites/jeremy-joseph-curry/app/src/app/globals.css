@@ -688,6 +688,116 @@ h1 {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.36);
 }
 
+.writingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: min(100%, 70rem);
+  margin: 0 auto;
+}
+
+.writingGrid .writingFeature {
+  width: 100%;
+  margin: 0;
+}
+
+.writingIndexLink,
+.articleBack {
+  color: var(--color-primary, #f6d585);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.writingIndexLink {
+  display: inline-block;
+  margin-top: 1.2rem;
+}
+
+.writingIndexPage {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 3rem, 70rem);
+  margin: 0 auto;
+  padding: 10rem 0 7rem;
+}
+
+.writingIndexHeader {
+  max-width: 54rem;
+  padding-bottom: 3.5rem;
+}
+
+.writingIndexHeader h1 {
+  max-width: 17ch;
+  margin-top: 0.8rem;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 0.98;
+}
+
+.writingIndexHeader > p:last-child {
+  max-width: 48rem;
+  margin-top: 1.5rem;
+  color: rgba(246, 235, 212, 0.68);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.writingIndexGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.writingIndexCard {
+  display: grid;
+  gap: 1rem;
+  min-height: 24rem;
+  padding: 2rem;
+  border: 1px solid rgba(246, 213, 133, 0.24);
+  border-radius: 0.85rem;
+  background:
+    radial-gradient(circle at 82% 0%, rgba(104, 199, 160, 0.13), transparent 20rem),
+    linear-gradient(145deg, rgba(246, 213, 133, 0.08), rgba(8, 6, 4, 0.72));
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+
+.writingIndexCard:hover,
+.writingIndexCard:focus-visible {
+  border-color: rgba(246, 213, 133, 0.48);
+  transform: translateY(-2px);
+}
+
+.writingIndexCard > span:first-child {
+  color: var(--color-primary, #f6d585);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.writingIndexCard strong {
+  align-self: end;
+  color: rgba(246, 235, 212, 0.96);
+  font-family: var(--font-heading, ui-sans-serif);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.writingIndexCard p {
+  margin: 0;
+  color: rgba(246, 235, 212, 0.62);
+  line-height: 1.8;
+}
+
+.articleBack {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100% - 3rem, 52rem);
+  margin: 0 auto -7rem;
+  padding-top: 8rem;
+}
+
 .writingFeature:hover,
 .writingFeature:focus-visible {
   border-color: rgba(246, 213, 133, 0.48);
@@ -796,6 +906,16 @@ h1 {
   background: rgba(8, 6, 4, 0.72);
   font-size: 0.86rem;
   line-height: 1.7;
+}
+
+.articleBody blockquote {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid rgba(104, 199, 160, 0.65);
+  color: rgba(246, 235, 212, 0.86);
+  background: rgba(104, 199, 160, 0.07);
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
 .articleRule {
@@ -1174,6 +1294,11 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .writingGrid,
+  .writingIndexGrid {
+    grid-template-columns: 1fr;
+  }
+
   .consoleMain {
     border-right: 0;
     border-bottom: 1px solid rgba(246, 235, 212, 0.09);
@@ -1334,6 +1459,21 @@ h1 {
   .articlePage {
     width: min(100% - 2rem, 52rem);
     padding-top: 8rem;
+  }
+
+  .articleBack {
+    width: min(100% - 2rem, 52rem);
+    margin-bottom: -6rem;
+    padding-top: 7rem;
+  }
+
+  .writingIndexPage {
+    width: min(100% - 2rem, 70rem);
+    padding-top: 8rem;
+  }
+
+  .writingIndexHeader h1 {
+    font-size: 2.35rem;
   }
 
   .capabilityRow {

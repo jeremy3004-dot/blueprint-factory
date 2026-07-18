@@ -8,7 +8,7 @@ export default function SiteNav() {
         <span>Jeremy Joseph Curry</span>
       </Link>
       <nav className="siteNav" aria-label="Primary navigation">
-        <Link href="/writing/shipping-ios-app-from-nepal">Writing</Link>
+        <Link href="/writing">Writing</Link>
         <Link href="/about">About</Link>
         <Link href="/links">Links</Link>
         <a className="headerLink" href="mailto:hello@jeremyjosephcurry.com">

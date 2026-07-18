@@ -192,3 +192,51 @@ export function publishedArticleJsonLd({
     }
   ]);
 }
+
+export function writingCollectionJsonLd({
+  path,
+  title,
+  description,
+  articles
+}: {
+  path: string;
+  title: string;
+  description: string;
+  articles: { path: string; title: string }[];
+}) {
+  const url = `${SITE_ORIGIN}${path}`;
+  const listId = `${url}#article-list`;
+  return authorityGraph([
+    {
+      "@type": "CollectionPage",
+      "@id": `${url}#collection-page`,
+      url,
+      name: title,
+      description,
+      author: {
+        "@id": PERSON_ID
+      },
+      mainEntity: {
+        "@id": listId
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": listId,
+      name: "Jeremy Joseph Curry engineering articles",
+      numberOfItems: articles.length,
+      itemListElement: articles.map((article, index) => {
+        const articleUrl = `${SITE_ORIGIN}${article.path}`;
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@id": `${articleUrl}#article`,
+            url: articleUrl,
+            name: article.title
+          }
+        };
+      })
+    }
+  ]);
+}

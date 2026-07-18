@@ -24,7 +24,9 @@
 
 ## Writing
 
+- Writing index: https://jeremyjosephcurry.com/writing
 - Shipping an iOS App from Nepal: My Release Evidence Method: https://jeremyjosephcurry.com/writing/shipping-ios-app-from-nepal
+- From Idea to Launch: The Five Product Contracts I Define Before I Build: https://jeremyjosephcurry.com/writing/five-product-contracts
 
 ## Focus
 

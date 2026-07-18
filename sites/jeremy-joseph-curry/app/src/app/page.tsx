@@ -101,7 +101,7 @@ export default function Home() {
           <span>Jeremy Joseph Curry</span>
         </a>
         <nav className="siteNav" aria-label="Primary navigation">
-          <Link href="/writing/shipping-ios-app-from-nepal">Writing</Link>
+          <Link href="/writing">Writing</Link>
           <Link href="/about">About</Link>
           <Link href="/links">Links</Link>
           <a className="headerLink" href="mailto:hello@jeremyjosephcurry.com">Contact</a>
@@ -261,21 +261,35 @@ export default function Home() {
       <section id="writing" className="writingSection" aria-labelledby="writing-title">
         <div className="sectionHeading reveal">
           <p className="eyebrow">Writing</p>
-          <h2 id="writing-title">Release engineering from the evidence outward.</h2>
+          <h2 id="writing-title">Engineering notes for shipping real products.</h2>
           <p>
-            Practical notes on shipping software with a traceable path from reviewed source to the
-            version users can actually install.
+            Current notes on product interfaces, data contracts, bounded AI behavior, and release
+            systems that connect reviewed source to public proof.
           </p>
+          <Link className="writingIndexLink" href="/writing">
+            Browse all engineering writing -&gt;
+          </Link>
         </div>
-        <Link className="writingFeature reveal" href="/writing/shipping-ios-app-from-nepal">
-          <span>Release engineering / iOS</span>
-          <strong>Shipping an iOS App from Nepal: My Release Evidence Method</strong>
-          <p>
-            How Jeremy connects source revision, IPA identity, TestFlight distribution, App Store
-            metadata, and the public product page.
-          </p>
-          <span className="cardArrow" aria-hidden="true">Read the article -&gt;</span>
-        </Link>
+        <div className="writingGrid">
+          <Link className="writingFeature reveal" href="/writing/shipping-ios-app-from-nepal">
+            <span>Release engineering / iOS</span>
+            <strong>Shipping an iOS App from Nepal: My Release Evidence Method</strong>
+            <p>
+              How Jeremy connects source revision, IPA identity, TestFlight distribution, App Store
+              metadata, and the public product page.
+            </p>
+            <span className="cardArrow" aria-hidden="true">Read the article -&gt;</span>
+          </Link>
+          <Link className="writingFeature reveal" href="/writing/five-product-contracts">
+            <span>Product engineering / Architecture</span>
+            <strong>From Idea to Launch: The Five Product Contracts I Define Before I Build</strong>
+            <p>
+              A practical model for keeping the problem, interface, data, AI behavior, and release
+              path coherent from idea to launch.
+            </p>
+            <span className="cardArrow" aria-hidden="true">Read the article -&gt;</span>
+          </Link>
+        </div>
       </section>
 
       <section className="contactSection" aria-labelledby="contact-title">
