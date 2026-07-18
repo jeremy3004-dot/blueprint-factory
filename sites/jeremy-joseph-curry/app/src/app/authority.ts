@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const SITE_ORIGIN = "https://jeremyjosephcurry.com";
 export const AUTHOR_NAME = "Jeremy Joseph Curry";
 export const AUTHOR_URL = `${SITE_ORIGIN}/about`;
+export const WRITING_FEED_URL = `${SITE_ORIGIN}/writing/feed.xml`;
+export const WRITING_FEED_TITLE =
+  "Jeremy Joseph Curry - Software Engineer & App Developer in Nepal";
 export const PERSON_ID = `${SITE_ORIGIN}/#person`;
 export const PORTRAIT_ALT =
   "Portrait of Jeremy Joseph Curry, software engineer and app developer in Nepal";
@@ -115,7 +118,15 @@ export function createPageMetadata({
     title,
     description,
     alternates: {
-      canonical: url
+      canonical: url,
+      types: {
+        "application/atom+xml": [
+          {
+            url: WRITING_FEED_URL,
+            title: WRITING_FEED_TITLE
+          }
+        ]
+      }
     },
     openGraph,
     twitter: {

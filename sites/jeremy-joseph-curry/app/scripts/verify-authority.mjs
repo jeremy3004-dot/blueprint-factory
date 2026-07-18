@@ -28,6 +28,13 @@ const writingIndexUrl = `${origin}${writingIndexRoute}`;
 const writingIndexTitle = "Writing | Jeremy Joseph Curry";
 const writingIndexDescription =
   "Current engineering notes by Jeremy Joseph Curry on iOS releases, product interfaces, data contracts, bounded AI behavior, and deployment evidence.";
+const writingFeedFile = "writing/feed.xml";
+const writingFeedUrl = `${origin}/writing/feed.xml`;
+const writingFeedTitle =
+  "Jeremy Joseph Curry - Software Engineer & App Developer in Nepal";
+const writingFeedDescription =
+  "Engineering writing by Jeremy Joseph Curry, a Software Engineer & App Developer based in Nepal.";
+const writingFeedMimeType = "application/atom+xml";
 const writingRoute = "/writing/shipping-ios-app-from-nepal";
 const writingUrl = `${origin}${writingRoute}`;
 const writingTitle = "Shipping an iOS App from Nepal: My Release Evidence Method";
@@ -59,6 +66,27 @@ const approvedHimalRxArticleSource = path.join(
 );
 const approvedHimalRxArticleSha256 =
   "24b4dadf06f2636f553e7fd8250712d7b3f79e99777e18debbb92da8945503d6";
+
+const expectedFeedEntries = [
+  {
+    title: writingTitle,
+    url: writingUrl,
+    date: writingDate,
+    description: writingDescription
+  },
+  {
+    title: productContractsTitle,
+    url: productContractsUrl,
+    date: writingDate,
+    description: productContractsDescription
+  },
+  {
+    title: himalRxArticleTitle,
+    url: himalRxArticleUrl,
+    date: writingDate,
+    description: himalRxArticleDescription
+  }
+];
 
 const expectedPerson = {
   "@type": "Person",
@@ -332,6 +360,86 @@ function normalizeHref(href) {
   }
 }
 
+function assertValidXmlEntities(value, label) {
+  assert.doesNotMatch(
+    value,
+    /&(?!amp;|lt;|gt;|quot;|apos;|#\d+;|#x[\dA-Fa-f]+;)/,
+    `${label}: invalid XML entity`
+  );
+}
+
+function assertWellFormedXml(xml, label) {
+  assert.match(
+    xml,
+    /^<\?xml version="1\.0" encoding="UTF-8"\?>\s*/,
+    `${label}: XML declaration must be exact`
+  );
+  const stack = [];
+  const tokenPattern = /<\?[^?]*\?>|<!--.*?-->|<!\[CDATA\[.*?\]\]>|<[^>]+>|[^<]+/gs;
+  let cursor = 0;
+
+  for (const match of xml.matchAll(tokenPattern)) {
+    assert.equal(match.index, cursor, `${label}: invalid XML token near byte ${cursor}`);
+    cursor += match[0].length;
+    const token = match[0];
+
+    if (token.startsWith("<?") || token.startsWith("<!--") || token.startsWith("<![CDATA[")) {
+      continue;
+    }
+    if (!token.startsWith("<")) {
+      assertValidXmlEntities(token, label);
+      continue;
+    }
+    if (token.startsWith("</")) {
+      const closing = token.match(/^<\/([A-Za-z_][\w.:-]*)\s*>$/);
+      assert.ok(closing, `${label}: invalid closing tag ${token}`);
+      assert.equal(stack.pop(), closing[1], `${label}: mismatched closing tag ${closing[1]}`);
+      continue;
+    }
+
+    const opening = token.match(/^<([A-Za-z_][\w.:-]*)([\s\S]*?)(\/?)>$/);
+    assert.ok(opening, `${label}: invalid opening tag ${token}`);
+    let attributesSource = opening[2];
+    const attributeNames = new Set();
+    while (attributesSource.trim()) {
+      const attribute = attributesSource.match(
+        /^\s+([A-Za-z_:][\w.:-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/
+      );
+      assert.ok(attribute, `${label}: invalid attribute syntax in ${token}`);
+      assert.ok(
+        !attributeNames.has(attribute[1]),
+        `${label}: duplicate attribute ${attribute[1]} in ${opening[1]}`
+      );
+      attributeNames.add(attribute[1]);
+      assertValidXmlEntities(attribute[2] ?? attribute[3] ?? "", label);
+      attributesSource = attributesSource.slice(attribute[0].length);
+    }
+    if (opening[3] !== "/") stack.push(opening[1]);
+  }
+
+  assert.equal(cursor, xml.length, `${label}: unparsed XML content remains`);
+  assert.deepEqual(stack, [], `${label}: unclosed XML elements remain`);
+}
+
+function xmlElementText(xml, name, label) {
+  const matches = [
+    ...xml.matchAll(new RegExp(`<${name}\\b[^>]*>(.*?)</${name}>`, "gs"))
+  ];
+  assert.equal(matches.length, 1, `${label}: expected exactly one <${name}>`);
+  assert.doesNotMatch(matches[0][1], /<[^>]+>/, `${label}: <${name}> must contain text only`);
+  return decodeHtml(matches[0][1]);
+}
+
+function xmlChildElements(xml, name) {
+  return [
+    ...xml.matchAll(new RegExp(`<${name}\\b[^>]*>(.*?)</${name}>`, "gs"))
+  ].map((match) => match[0]);
+}
+
+function xmlLinkAttributes(xml) {
+  return [...xml.matchAll(/<link\b[^>]*\/>/g)].map((match) => attributes(match[0]));
+}
+
 function parseJsonLd(html, route) {
   const blocks = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)];
   return blocks.map((block, index) => {
@@ -471,6 +579,21 @@ for (const [route, requirement] of Object.entries(expectedRoutes)) {
     .filter((link) => (link.rel || "").split(/\s+/).includes("canonical"))
     .map((link) => link.href);
   requireSingle(canonical, requirement.url, `${route} canonical`);
+
+  if (route === "/" || requirement.schema === "writingIndex" || requirement.schema === "publishedArticle") {
+    const feedDiscovery = links.filter(
+      (link) =>
+        (link.rel || "").split(/\s+/).includes("alternate") &&
+        link.type === writingFeedMimeType
+    );
+    assert.equal(feedDiscovery.length, 1, `${route}: expected one Atom feed discovery link`);
+    assert.equal(feedDiscovery[0].href, writingFeedUrl, `${route}: Atom feed URL differs`);
+    assert.equal(
+      feedDiscovery[0].title,
+      writingFeedTitle,
+      `${route}: Atom feed discovery title differs`
+    );
+  }
 
   const authorLinks = links
     .filter((link) => (link.rel || "").split(/\s+/).includes("author"))
@@ -674,5 +797,94 @@ assert.doesNotMatch(llms, /github\.com\/jeremy3004-dot\/jeremy3004-dot/, "llms u
 for (const requirement of Object.values(expectedRoutes)) {
   assert.ok(llms.includes(requirement.url), `llms missing controlled URL: ${requirement.url}`);
 }
+assert.ok(llms.includes(writingFeedUrl), `llms missing Writing feed URL: ${writingFeedUrl}`);
+
+const feedPath = path.join(outRoot, writingFeedFile);
+assert.ok(fs.existsSync(feedPath), `Writing feed missing: ${feedPath}`);
+const feed = fs.readFileSync(feedPath, "utf8");
+assertWellFormedXml(feed, "Writing feed");
+assert.doesNotMatch(
+  feed,
+  /blogger\.com|07842266447634597211/i,
+  "Writing feed must not reference the legacy Blogger profile"
+);
+const feedRoot = feed.match(/<feed\b([^>]*)>([\s\S]*)<\/feed>\s*$/);
+assert.ok(feedRoot, "Writing feed: one Atom <feed> root is required");
+const feedRootAttributes = attributes(`<feed${feedRoot[1]}>`);
+assert.equal(feedRootAttributes.xmlns, "http://www.w3.org/2005/Atom", "Writing feed: Atom namespace differs");
+assert.equal(feedRootAttributes["xml:lang"], "en", "Writing feed: xml:lang differs");
+
+const feedWithoutEntries = feed.replace(/<entry\b[^>]*>[\s\S]*?<\/entry>/g, "");
+assert.equal(xmlElementText(feedWithoutEntries, "title", "Writing feed"), writingFeedTitle);
+assert.equal(
+  xmlElementText(feedWithoutEntries, "subtitle", "Writing feed"),
+  writingFeedDescription
+);
+assert.equal(xmlElementText(feedWithoutEntries, "id", "Writing feed"), writingFeedUrl);
+assert.equal(
+  xmlElementText(feedWithoutEntries, "updated", "Writing feed"),
+  `${writingDate}T00:00:00Z`
+);
+const feedLinks = xmlLinkAttributes(feedWithoutEntries);
+assert.deepEqual(
+  feedLinks,
+  [
+    { rel: "self", type: writingFeedMimeType, href: writingFeedUrl },
+    { rel: "alternate", type: "text/html", href: writingIndexUrl },
+    {
+      rel: "related",
+      type: "text/html",
+      href: `${origin}/`,
+      title: authorName
+    }
+  ],
+  "Writing feed: self, Writing index, or homepage link differs"
+);
+const feedAuthor = xmlChildElements(feedWithoutEntries, "author");
+assert.equal(feedAuthor.length, 1, "Writing feed: exactly one feed author is required");
+assert.equal(xmlElementText(feedAuthor[0], "name", "Writing feed author"), authorName);
+assert.equal(xmlElementText(feedAuthor[0], "uri", "Writing feed author"), authorUrl);
+
+const feedEntries = xmlChildElements(feed, "entry");
+assert.equal(feedEntries.length, expectedFeedEntries.length, "Writing feed: entry count differs");
+for (const [index, expected] of expectedFeedEntries.entries()) {
+  const entry = feedEntries[index];
+  const label = `Writing feed entry ${index + 1}`;
+  assert.equal(xmlElementText(entry, "title", label), expected.title, `${label}: title differs`);
+  assert.equal(xmlElementText(entry, "id", label), expected.url, `${label}: ID differs`);
+  assert.equal(
+    xmlElementText(entry, "published", label),
+    `${expected.date}T00:00:00Z`,
+    `${label}: publication date differs`
+  );
+  assert.equal(
+    xmlElementText(entry, "updated", label),
+    `${expected.date}T00:00:00Z`,
+    `${label}: update date differs`
+  );
+  assert.equal(
+    xmlElementText(entry, "summary", label),
+    expected.description,
+    `${label}: description differs`
+  );
+  const entryLinks = xmlLinkAttributes(entry);
+  assert.deepEqual(
+    entryLinks,
+    [{ rel: "alternate", type: "text/html", href: expected.url }],
+    `${label}: canonical article link differs`
+  );
+  assert.ok(expected.url.startsWith(`${origin}/writing/`), `${label}: article URL must be absolute`);
+  const entryAuthors = xmlChildElements(entry, "author");
+  assert.equal(entryAuthors.length, 1, `${label}: exactly one author is required`);
+  assert.equal(xmlElementText(entryAuthors[0], "name", `${label} author`), authorName);
+  assert.equal(xmlElementText(entryAuthors[0], "uri", `${label} author`), authorUrl);
+}
+assert.deepEqual(
+  feedEntries.map((entry, index) =>
+    xmlElementText(entry, "id", `Writing feed entry ${index + 1}`)
+  ),
+  expectedFeedEntries.map((entry) => entry.url),
+  "Writing feed: canonical article set or index order differs"
+);
 
 console.log(`PASS authority contract for ${Object.keys(expectedRoutes).length} routes in ${outRoot}`);

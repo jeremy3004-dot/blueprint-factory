@@ -25,6 +25,7 @@
 ## Writing
 
 - Writing index: https://jeremyjosephcurry.com/writing
+- Writing feed: https://jeremyjosephcurry.com/writing/feed.xml
 - Shipping an iOS App from Nepal: My Release Evidence Method: https://jeremyjosephcurry.com/writing/shipping-ios-app-from-nepal
 - From Idea to Launch: The Five Product Contracts I Define Before I Build: https://jeremyjosephcurry.com/writing/five-product-contracts
 - Reading the HimalRx Workflow as Decisions, Not Screens: https://jeremyjosephcurry.com/writing/reading-the-himalrx-workflow-as-decisions-not-screens
